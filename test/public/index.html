@@ -8,18 +8,15 @@
     <script src="/test/lib/jasmine.phantomjs-reporter.js" type="text/javascript" charset="utf-8"></script>
     <script src="/application.js" type="text/javascript" charset="utf-8"></script>
     <script src="/test/specs.js" type="text/javascript" charset="utf-8"></script>
-    
-    <script type="text/javascript" charset="utf-8">
-      for(var key in specs.modules) {
-        specs(key);
-      }
-    </script>
   </head>
   <body>
     <script type="text/javascript">
       jasmine.getEnv().addReporter(new jasmine.TrivialReporter());
       jasmine.getEnv().addReporter(new jasmine.PhantomJSReporter());
       window.onload = function(){
+        for(var key in specs.modules) {
+          specs(key);
+        }
         jasmine.getEnv().execute();
       };
     </script>
