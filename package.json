@@ -8,8 +8,8 @@
     "url": "https://github.com/zooniverse/Galaxy-Zoo.git"
   },
   "scripts": {
-    "pretest": "hem server & echo $! > ./hem.pid",
-    "test": "phantomjs test/public/lib/run-jasmine.js http://localhost:9294/test",
+    "pretest": "hem server --port 9290 & echo $! > ./hem.pid",
+    "test": "phantomjs test/public/lib/run-jasmine.js http://localhost:9290/test",
     "posttest": "kill `cat hem.pid`; rm hem.pid"
   },
   "dependencies": {
