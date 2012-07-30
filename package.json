@@ -1,0 +1,23 @@
+{
+  "name": "galaxy-zoo",
+  "private": true,
+  "version": "0.0.1",
+  "author": "zooniverse",
+  "repository": {
+    "type" : "git",
+    "url": "https://github.com/zooniverse/Galaxy-Zoo.git"
+  },
+  "scripts": {
+    "pretest": "hem server & echo $! > ./hem.pid",
+    "test": "phantomjs test/public/lib/run-jasmine.js http://localhost:9294/test",
+    "posttest": "kill `cat hem.pid`; rm hem.pid"
+  },
+  "dependencies": {
+    "hem": "git://github.com/maccman/hem.git#517c97a3ce7",
+    "es5-shimify": "~0.0.1",
+    "json2ify": "~0.0.1",
+    "jqueryify": "~0.0.1",
+    "spine": "~1.0.7",
+    "zooniverse": "git+ssh://git@github.com:zooniverse/Zooniverse.git"
+  }
+}
