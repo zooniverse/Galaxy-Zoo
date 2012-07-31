@@ -1,5 +1,5 @@
 @import "grid"
-@import url("http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700")
+@import url("http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700|Open+Sans+Condensed:700,300)")
 
 // column $column-size
 // gutters $gutter-size
@@ -139,5 +139,72 @@ nav
         text-decoration none
         padding 3px 10px
         -webkit-border-radius 3px
+
+.content-block
+  display block
+  width 100%
+  clear both
+  .left, .right
+    .heading
+      font-family "Open Sans Condensed"
+      font-weight 300
+      font-size 32px
+      line-height 55px
+      color #efefef
+      border-bottom 1px solid $rules
+      margin-bottom 10px
+      
+    .description
+      font-family "Open Sans"
+      font-weight 300
+      font-size 12px
+      line-height 20px
+      color #efefef
+      float left
+      a
+        text-transform uppercase
+        text-decoration none
+        font-weight bold
+      img
+        border 2px solid #efefef
+        margin-left $gutter-size
+
+        &.first
+          margin-left 0px
+    ul
+      list-style none
+      font-family "Open Sans"
+      font-weight 300
+      font-size 12px
+      line-height 20px
+      color #efefef
+      float left
+      padding 0px
+      margin 0px
+      width $one-half
+      
+      li
+        list-style none
+        display block
+        a
+          text-align right
+          float right
+          text-transform uppercase
+          font-weight 600
+          text-decoration none
+        
+          
+  
+  .left
+    width $one-half
+    float left
+      
+  .right
+    width $one-half
+    float left
+    margin-left $gutter-size
+  
+    
+  
         
   
