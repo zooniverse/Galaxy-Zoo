@@ -21,6 +21,8 @@ body
 
 nav
   ul
+    padding 0
+    margin 0
     li
       font-family "Open Sans"
       font-weight 700
@@ -34,13 +36,15 @@ nav
       float left
       text-align center
       margin-right $gutter-size
-      
+
+      &.last
+        margin-right 0
+
       &.logo
-        width $one-third
+        min-width $one-third
         background url("images/gz_logo.png") no-repeat
-        width 189px
+        background-position center
         height 76px
-        margin-left $gutter-size
 
 #headline
   font-family "Open Sans"
