@@ -1,0 +1,1 @@
+../../../node_modules/Zooniverse/test/proxy/proxy.js
