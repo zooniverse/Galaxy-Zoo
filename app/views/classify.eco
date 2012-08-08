@@ -1,6 +1,6 @@
 <div id="classify">
   <div class="galaxy">
-    <img src="images/spiral_galaxy.jpeg" id="subject" />
+    <img src="<%= @subject.image() %>" />
   </div>
   <div class="tree">
     <div class="top">
@@ -11,16 +11,25 @@
       </ul>
     </div>
     <div class="question">
-      <p class="question-heading">Shape</p>
-      <p class="question-text">Is this galaxy elliptical, spiral, or irregularly shaped?</p>
+      <p class="heading"><%= @classification.question.title %></p>
+      <p class="text"><%= @classification.question.text %></p>
+    </div>
+    
+    <div class="buttons">
+      <% for id, answer of @classification.question.answers : %>
+        <div class="answer">
+          <!-- <div class="hover"><%= answer.text %></div>
+          <div class="icon">
+            <a data-id="<%= id %>">
+              <img src="<%= answer.icon %>" />
+            </a>
+          </div>
+          -->
+          <a data-id="<%= id %>"><%= answer.text %></a>
+        </div>
+      <% end %>
     </div>
   </div>
   
-  <div id="buttons">
-    <div id="hover">
-      Elliptical
-    </div>
-    <img src="images/buttons.png" style="padding-left:20px" />
-  </div>
   <div style="clear:both;"></div>
 </div>

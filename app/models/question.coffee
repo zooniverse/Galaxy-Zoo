@@ -2,7 +2,7 @@ Spine = require 'spine'
 _ = require 'underscore/underscore'
 
 class Question extends Spine.Model
-  @configure 'Question', 'tree', 'text', 'answers', 'leadsTo'
+  @configure 'Question', 'tree', 'title', 'text', 'answers', 'leadsTo'
   
   @findByTreeAndText: (tree, text) ->
     @select (q) -> q.tree is tree and q.text is text

@@ -1,10 +1,10 @@
 <div id="home">
-  <div id="headline">
+  <div class="headline">
     Few have witnessed what you're about to see
-    <p class="dek">Experience a privileged glimpse of the distant universe, observed by the SDSS and Hubble  Telescope <span class="button">Begin Classifying</span></p>
+    <p class="call-to-action">Experience a privileged glimpse of the distant universe, observed by the SDSS and Hubble  Telescope <span class="button">Begin Classifying</span></p>
   </div>
   
-  <div id="slider">
+  <div class="slider">
     <div class="slide-element galaxy-zoo">
       <div class="left">
         <p class="header-blue">Featured Project</p>

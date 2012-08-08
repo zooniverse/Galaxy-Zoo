@@ -10,15 +10,17 @@ class DecisionTree
     Question.create args
   
   extractArgsFrom: (args) ->
-    if typeof args[1] == 'function'
+    if typeof args[2] == 'function'
       tree: @name
-      text: args[0]
+      title: args[0]
+      text: args[1]
       leadsTo: null
-      answerWith: args[1]
+      answerWith: args[2]
     else
       tree: @name
-      text: args[0]
-      leadsTo: args[1].leadsTo
-      answerWith: args[2]
+      title: args[0]
+      text: args[1]
+      leadsTo: args[2].leadsTo
+      answerWith: args[3]
 
 module.exports = DecisionTree
