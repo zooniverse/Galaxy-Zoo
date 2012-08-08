@@ -4,6 +4,12 @@ _ = require 'underscore/underscore'
 class Question extends Spine.Model
   @configure 'Question', 'tree', 'text', 'answers', 'leadsTo'
   
+  @findByTreeAndText: (tree, text) ->
+    @select (q) -> q.tree is tree and q.text is text
+  
+  @firstForTree: (tree) ->
+    @find "#{ tree }-0"
+  
   constructor: (hash) ->
     count = Question.findAllByAttribute('tree', hash.tree).length
     @id or= "#{ hash.tree }-#{ count }"
@@ -18,8 +24,7 @@ class Question extends Spine.Model
   
   nextQuestionFrom: (answer) ->
     text = @answers[answer]?.leadsTo or @leadsTo
-    question = Question.select (question) =>
-      question.tree is @tree and question.text is text
+    question = @constructor.findByTreeAndText @tree, text
     question[0] or null
-  
+
 module.exports = Question

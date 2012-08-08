@@ -3,6 +3,7 @@ _ = require 'underscore/underscore'
 
 class DecisionTree
   constructor: (@name, tree) -> tree.apply @
+  first: -> Question.firstForTree @name
   
   question: (args...) ->
     args = @extractArgsFrom args
