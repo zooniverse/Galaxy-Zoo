@@ -4,86 +4,19 @@
     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
     <link rel="stylesheet" href="/application.css" type="text/css" charset="utf-8">
     <script src="/application.js" type="text/javascript" charset="utf-8"></script>
-    
-    <script type="text/javascript" charset="utf-8">
-      var jQuery = require("jqueryify");
-      var exports = this;
-      jQuery(function() {
-        var App = require("index");
-        exports.app = new App({el: $("body")});
-      });
-    </script>
     <title>Galaxy Zoo</title>
   </head>
-<body>
-  <nav>
-    <ul>
-      <li>
-        <a href="#classify">Classify</a>
-      </li>
-      <li>
-        <a href="#science">Science</a>
-      </li>
-      <li class="logo">
-        <a href="/"><img src="images/gz_logo.png" alt="Galaxy Zoo" /></a>
-      </li>
-      <li>
-        <a href="http://talk.galaxyzoo.org" target="_blank">Talk</a>
-      </li>
-      <li class="last">
-        DavidMill
-      </li>
-    </ul>
-  </nav>
-  <div id="headline">
-    Few have witnessed what you're about to see
-    <p class="dek">Experience a privileged glimpse of the distant universe, observed by the SDSS and Hubble  Telescope <span class="button">Begin Classifying</span></p>
-  </div>
-  
-  <div id="slider">
-    <div class="slide-element galaxy-zoo">
-      <div class="left">
-        <p class="header-blue">Featured Project</p>
-        <p class="header-title">Hubble</p>
-        <p class="description">To understand how galaxies formed we need your help to classify them according to their shapes. If you're quick, you may even be the first person to see the galaxies you're asked to classify.</p>
-        <a href="#tutorial" class="blue-button">Tutorial</a>
-      </div>
-    </div>
-  </div>
-  
-  <div class="content-block">
-    <div class="left">
-      <h1 class="heading">How Do Galaxies Form?</h1>
-      <p class="description">
-        Biltong pork belly drumstick pig andouille boudin. Chuck capicola ribeye shank, kielbasa ham hock prosciutto drumstick tongue. Beef ribs chicken boudin hamburger turducken chuck meatball, prosciutto corned beef swine capicola pastrami salami. Ribeye chuck swine, salami cow capicola sirloin pork chop turkey meatloaf tongue turducken. Brisket cow boudin ground round swine meatloaf. <a href="#more">more</a>
-      </p>
-    </div>
-    <div class="right">
-      <h1 class="heading">History of Galaxy Zoo</h1>
-      <p class="description">
-        Biltong pork belly drumstick pig andouille boudin. Chuck capicola ribeye shank, kielbasa ham hock prosciutto drumstick tongue. Beef ribs chicken boudin hamburger turducken chuck meatball, prosciutto corned beef swine capicola pastrami salami. Ribeye chuck swine, salami cow capicola sirloin pork chop turkey meatloaf tongue turducken. Brisket cow boudin ground round swine meatloaf. <a href="#more">more</a>
-      </p>
-    </div>
-  </div>
-  
-  <div class="content-block">
-    <div class="left">
-      <h1 class="heading">Trending Forum Discussions</h1>
-      <ul>
-        <li>Tenderloin jerky prosciutto tri-tip chuck leberkas pastrami <a href="#">13 new posts</a></li>
-        <li>Chicken chuck pork belly corned beef rump tongue <a href="#">8 new posts</a></li>
-        <li>Ground round chicken chuck beef fatback strip steak <a href="#">16 new posts</a></li>
-      </ul>
-    </div>
-    <div class="right">
-      <h1 class="heading">Recent Favourite Images</h1>
-      <p class="description">
-        <img src="images/gz_thumbnail.jpg" class="first" />
-        <img src="images/gz_thumbnail.jpg" />                
-        <img src="images/gz_thumbnail.jpg" />
-      </p>
-    </div>
-  </div>
-  
-</body>
+  <body>
+    <div id="navigation"></div>
+    <div id="main"></div>
+    
+    <script type="text/javascript" charset="utf-8">
+      var jQuery = require('jqueryify');
+      var exports = this;
+      jQuery(function() {
+        var App = require('index');
+        new App({el: $('body')});
+      });
+    </script>
+  </body>
 </html>

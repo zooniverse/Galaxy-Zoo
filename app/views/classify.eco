@@ -1,0 +1,26 @@
+<div id="classify">
+  <div class="galaxy">
+    <img src="images/spiral_galaxy.jpeg" id="subject" />
+  </div>
+  <div class="tree">
+    <div class="top">
+      <h1 class="heading">Classify</h1>
+      <ul class="help">
+        <li>Help</li>
+        <li>Restart</li>
+      </ul>
+    </div>
+    <div class="question">
+      <p class="question-heading">Shape</p>
+      <p class="question-text">Is this galaxy elliptical, spiral, or irregularly shaped?</p>
+    </div>
+  </div>
+  
+  <div id="buttons">
+    <div id="hover">
+      Elliptical
+    </div>
+    <img src="images/buttons.png" style="padding-left:20px" />
+  </div>
+  <div style="clear:both;"></div>
+</div>
