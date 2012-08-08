@@ -1,0 +1,19 @@
+<div class="question">
+  <p class="heading"><%= @title %></p>
+  <p class="text"><%= @text %></p>
+  
+  <div class="buttons">
+    <% for id, answer of @answers : %>
+      <div class="answer">
+        <!-- <div class="hover"><%= answer.text %></div>
+        <div class="icon">
+          <a data-id="<%= id %>">
+            <img src="<%= answer.icon %>" />
+          </a>
+        </div>
+        -->
+        <a data-id="<%= id %>"><%= answer.text %></a>
+      </div>
+    <% end %>
+  </div>
+</div>

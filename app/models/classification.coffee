@@ -1,5 +1,4 @@
 Spine = require 'spine'
-Annotation = require 'models/annotation'
 GalaxyZooSubject = require 'models/galaxy_zoo_subject'
 
 class Classification extends Spine.Model
@@ -12,5 +11,11 @@ class Classification extends Spine.Model
   
   subject: ->
     GalaxyZooSubject.find @subject_id
+  
+  annotate: (answerId) ->
+    annotation = { }
+    annotation[@question.id] = answerId
+    @annotations.push annotation
+    @question = @question.nextQuestionFrom answerId
 
 module.exports = Classification
