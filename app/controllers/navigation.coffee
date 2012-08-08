@@ -9,7 +9,7 @@ class Navigation extends Spine.Controller
     super
   
   navTo: ({ originalEvent: e }) ->
-    path = $(e.target).data 'nav'
+    path = $(e.target).closest('a').data 'nav'
     e.preventDefault()
     @navigate path
   
