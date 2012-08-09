@@ -19,6 +19,25 @@ class GalaxyZooSubject extends Subject
   @url: (params) -> @withParams "/projects/galaxy_zoo/groups/#{ @randomSurveyId() }/subjects", params
   @randomSurveyId: -> if Math.random() > 0.5 then @::surveys.sloan.id else @::surveys.candels.id
   
+  @next: ->
+    if @current
+      @current.destroy()
+      @current = @first()
+      @fetch() if @count() is 1
+    else
+      @fetch().onSuccess =>
+        @current = @first()
+        @trigger 'fetched'
+  
+  @fetch: ->
+    count = Config.subjectCache - @count()
+    super count
+  
+  constructor: ->
+    super
+    img = new Image
+    img.src = @image()
+  
   tree: -> @surveys[@metadata.survey].tree
   image: -> @location.standard
   thumbnail: -> @location.thumbnail
