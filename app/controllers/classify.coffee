@@ -7,7 +7,7 @@ class Classify extends Spine.Controller
     '.tree .question': 'question'
   
   events:
-    'click .tree .answer': 'answer'
+    'click .tree .answer a': 'answer'
   
   constructor: ->
     super
