@@ -10,10 +10,12 @@ class GalaxyZooSubject extends Subject
   
   surveys:
     sloan:
-      id: Config.surveys.sloan
+      id: Config.surveys.sloan.id
+      workflowId: Config.surveys.sloan.workflowId
       tree: SloanTree
     candels:
-      id: Config.surveys.candels
+      id: Config.surveys.candels.id
+      workflowId: Config.surveys.candels.workflowId
       tree: CandelsTree
   
   @url: (params) -> @withParams "/projects/galaxy_zoo/groups/#{ @randomSurveyId() }/subjects", params
@@ -39,7 +41,9 @@ class GalaxyZooSubject extends Subject
     img = new Image
     img.src = @image()
   
-  tree: -> @surveys[@metadata.survey].tree
+  survey: -> @surveys[@metadata.survey]
+  tree: -> @survey().tree
+  workflowId: -> @survey().workflowId
   image: -> @location.standard
   thumbnail: -> @location.thumbnail
 

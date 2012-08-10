@@ -24,7 +24,7 @@ class Classify extends Spine.Controller
   
   nextSubject: =>
     @subject = GalaxyZooSubject.current
-    @classification = Classification.create subject_id: @subject.id
+    @classification = new Classification subject_id: @subject.id
     @render()
   
   answer: ({ originalEvent: e }) ->
@@ -38,7 +38,7 @@ class Classify extends Spine.Controller
     @question.html require('views/question')(@classification.question)
   
   finish: ->
-    console.info 'create classification ', @classification.toJSON()
+    @classification.send()
     GalaxyZooSubject.next()
     @nextSubject()
 

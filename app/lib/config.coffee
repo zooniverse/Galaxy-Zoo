@@ -2,22 +2,34 @@ Config =
   test:
     apiHost: null
     surveys:
-      candels: '50217561516bcb0fda00000d'
-      sloan: '50217561516bcb0fda00000e'
+      candels:
+        id: '50217561516bcb0fda00000d'
+        workflowId: '50217499516bcb0fda000003'
+      sloan:
+        id: '50217561516bcb0fda00000e'
+        workflowId: '50217499516bcb0fda000002'
     subjectCache: 1
   
   development:
     apiHost: 'http://localhost:3000'
     surveys:
-      candels: '50241171516bcb61680003eb'
-      sloan: '50241171516bcb61680003ec'
+      candels:
+        id: '50217561516bcb0fda00000d'
+        workflowId: '50217499516bcb0fda000003'
+      sloan:
+        id: '50217561516bcb0fda00000e'
+        workflowId: '50217499516bcb0fda000002'
     subjectCache: 5
   
   production:
     apiHost: 'https://api.zooniverse.org'
     surveys:
-      candels: '50217561516bcb0fda00000d'
-      sloan: '50217561516bcb0fda00000e'
+      candels:
+        id: '50217561516bcb0fda00000d'
+        workflowId: '50217499516bcb0fda000003'
+      sloan:
+        id: '50217561516bcb0fda00000e'
+        workflowId: '50217499516bcb0fda000002'
     subjectCache: 5
 
 env = if window.jasmine

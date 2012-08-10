@@ -6,7 +6,7 @@ class GalaxyZooSurveyGroup extends Group
   projectName: 'galaxy_zoo'
   type: 'survey'
   
-  @show(Config.surveys.sloan).always (group) => @sloan = @create group
-  @show(Config.surveys.candels).always (group) => @candels = @create group
+  @show(Config.surveys.sloan.id).always (group) => @sloan = @create group
+  @show(Config.surveys.candels.id).always (group) => @candels = @create group
 
 module.exports = GalaxyZooSurveyGroup
