@@ -1,7 +1,7 @@
 <div id="home">
   <div class="headline">
     Few have witnessed what you're about to see
-    <p class="call-to-action">Experience a privileged glimpse of the distant universe, observed by the SDSS and Hubble  Telescope <span class="button">Begin Classifying</span></p>
+    <p class="call-to-action">Experience a privileged glimpse of the distant universe, observed by the SDSS and Hubble  Telescope <a class="button" href="#/classify">Begin Classifying</a></p>
   </div>
   
   <div class="slider">
@@ -10,7 +10,7 @@
         <p class="header-blue">Featured Project</p>
         <p class="header-title">Hubble</p>
         <p class="description">To understand how galaxies formed we need your help to classify them according to their shapes. If you're quick, you may even be the first person to see the galaxies you're asked to classify.</p>
-        <a href="#tutorial" class="blue-button">Tutorial</a>
+        <a href="/#/classify?tutorial=1" class="blue-button">Tutorial</a>
       </div>
     </div>
   </div>
