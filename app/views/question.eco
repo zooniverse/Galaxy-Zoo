@@ -3,16 +3,16 @@
   <p class="text"><%= @text %></p>
   
   <div class="buttons">
-    <% for id, answer of @answers : %>
-      <div class="answer">
-        <!-- <div class="hover"><%= answer.text %></div>
-        <div class="icon">
-          <a data-id="<%= id %>">
-            <img src="<%= answer.icon %>" />
-          </a>
-        </div>
-        -->
-        <a data-id="<%= id %>"><%= answer.text %></a>
+    <% for row in _(@answers).inGroupsOf(4) : %>
+      <div class="row">
+        <% for [id, answer] in row : %>
+          <div class="answer">
+            <div class="icon">
+              <a data-id="<%= id %>" class="workflow-<%= answer.icon %>"></a>
+              <div class="hover"><%= answer.text %></div>
+            </div>
+          </div>
+        <% end %>
       </div>
     <% end %>
   </div>

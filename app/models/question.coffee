@@ -1,5 +1,4 @@
 Spine = require 'spine'
-_ = require 'underscore/underscore'
 
 class Question extends Spine.Model
   @configure 'Question', 'tree', 'title', 'text', 'answers', 'leadsTo'
@@ -17,10 +16,8 @@ class Question extends Spine.Model
     hash.answerWith?.apply @
     super
   
-  answer: (text, { leadsTo: leadsTo } = { leadsTo: null }) ->
-    @answers["a-#{ _(@answers).keys().length }"] =
-      text: text
-      leadsTo: leadsTo
+  answer: (text, { leadsTo: leadsTo, icon: icon } = { leadsTo: null, icon: null }) ->
+    @answers["a-#{ _(@answers).keys().length }"] = { text, leadsTo, icon }
   
   nextQuestionFrom: (answer) ->
     text = @answers[answer]?.leadsTo or @leadsTo

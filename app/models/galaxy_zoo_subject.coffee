@@ -31,7 +31,8 @@ class GalaxyZooSubject extends Subject
   
   @fetch: ->
     count = Config.subjectCache - @count()
-    super count
+    _(super).tap =>
+      _(count - 1).times => super(1)
   
   constructor: ->
     super

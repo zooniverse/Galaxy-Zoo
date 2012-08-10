@@ -1,5 +1,4 @@
 Question = require 'models/question'
-_ = require 'underscore/underscore'
 
 class DecisionTree
   constructor: (@name, tree) -> tree.apply @
