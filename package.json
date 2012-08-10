@@ -14,11 +14,12 @@
   },
   "dependencies": {
     "hem": "git://github.com/maccman/hem.git#517c97a3ce7",
+    "nib": "*",
     "es5-shimify": "~0.0.1",
     "json2ify": "~0.0.1",
     "jqueryify": "~0.0.1",
     "underscore": "*",
     "spine": "~1.0.7",
-    "zooniverse": "git+ssh://git@github.com:zooniverse/Zooniverse.git#c35215f977"
+    "zooniverse": "git+ssh://git@github.com:zooniverse/Zooniverse.git#HEAD"
   }
 }
