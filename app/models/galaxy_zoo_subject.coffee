@@ -3,7 +3,6 @@ Subject = require 'zooniverse/lib/models/subject'
 GalaxyZooSurveyGroup = require 'models/galaxy_zoo_survey_group'
 SloanTree = require 'lib/sloan_tree'
 CandelsTree = require 'lib/candels_tree'
-_ = require 'underscore/underscore'
 
 class GalaxyZooSubject extends Subject
   @configure 'GalaxyZooSubject', 'zooniverse_id', 'coords', 'location', 'metadata'

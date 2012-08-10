@@ -46,7 +46,14 @@
     
     .question
       font-family: "Open Sans"
-      margin-top: 170px
+      position: absolute
+      bottom: 0px
+      right: 0px
+      
+      -webkit-transition: all 0.5s ease-out
+      -moz-transition: all 0.5s ease-out
+      -o-transition: all 0.5s ease-out
+      transition: all 0.5s ease-out
       
       .heading
         text-transform: uppercase
@@ -58,29 +65,51 @@
       .text
         font-size: 15px
         padding: 0px
-        margin: 0px
+        margin: 0 0 40px 0
       
       .buttons
-        position: absolute
+        display: table
         width: $one-half
-        bottom: 0px
-        right: 0px
-        padding: 10px 0px
+        padding: 0px
         border-top: 1px solid $rules
         border-right: 1px solid $rules
         border-left: 1px solid $rules
         
-        .hover
-          font-family: "Open Sans"
-          font-size: 10px
-          line-height: 18px
-          padding: 0px 3px
-          width: $one-sixth
-          color: #efefef
-          height: $gutter-size
-          text-transform: uppercase
-          background: $rules
-          position: absolute
-          left: -1px
-          top: - $gutter-size
+        .row
+          display: table-row
+          height: 120px
           text-align: center
+          padding: 10px 0
+          
+          .answer
+            display: table-cell
+            position: relative
+            height: 100px
+            text-align: center
+            padding: 0
+            
+            .hover
+              $line-height = 18px
+              position: absolute
+              bottom: $gutter-size - $line-height - 2px
+              left: -1px
+              width: 100px
+              height: $gutter-size
+              color: #AAAAAA
+              font-family: 'Open Sans'
+              font-weight: 600
+              font-size: 11px
+              line-height: $line-height
+              margin: 0 auto
+              padding: 0px 3px
+            
+            .icon, .icon a, .icon a img
+              margin: 0 auto
+              display: block
+              position: relative
+              width: 100px
+              height: 100px
+          
+          .answer:hover
+            .hover
+              visibility: visible
