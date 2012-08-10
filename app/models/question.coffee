@@ -17,10 +17,7 @@ class Question extends Spine.Model
     super
   
   answer: (text, { leadsTo: leadsTo, icon: icon } = { leadsTo: null, icon: null }) ->
-    @answers["a-#{ _(@answers).keys().length }"] =
-      text: text
-      leadsTo: leadsTo
-      icon: "images/workflow/#{ icon }.png"
+    @answers["a-#{ _(@answers).keys().length }"] = { text, leadsTo, icon }
   
   nextQuestionFrom: (answer) ->
     text = @answers[answer]?.leadsTo or @leadsTo

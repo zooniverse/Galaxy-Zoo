@@ -88,27 +88,74 @@
             text-align: center
             padding: 0
             
-            .hover
-              $line-height = 18px
-              position: absolute
-              bottom: $gutter-size - $line-height - 2px
-              left: -1px
-              width: 100px
-              height: $gutter-size
-              color: #AAAAAA
-              font-family: 'Open Sans'
-              font-weight: 600
-              font-size: 11px
-              line-height: $line-height
-              margin: 0 auto
-              padding: 0px 3px
-            
-            .icon, .icon a, .icon a img
+            .icon, .icon .hover
               margin: 0 auto
               display: block
               position: relative
-              width: 100px
-              height: 100px
+              text-align: center
+              
+              .hover
+                $line-height = 18px
+                position: relative
+                top: -($line-height)
+                width: 100px
+                height: $gutter-size
+                color: #AAAAAA
+                font-family: 'Open Sans'
+                font-weight: 600
+                font-size: 11px
+                line-height: $line-height
+                margin: 0 auto
+                padding: 0px 3px
+              
+              a
+                display: block
+                position: relative
+                margin: 0 auto
+                background: url('images/workflow.png') no-repeat top left
+                
+                &.workflow-spiral_medium { background-position: -0px -0px; width: 100px; height: 100px; }
+                &.workflow-spiral_1 { background-position: -100px -0px; width: 100px; height: 100px; }
+                &.workflow-edge_round { background-position: -200px -0px; width: 100px; height: 100px; }
+                &.workflow-clump_symmetrical { background-position: -300px -0px; width: 100px; height: 100px; }
+                &.workflow-smooth_round { background-position: -400px -0px; width: 100px; height: 100px; }
+                &.workflow-irregular { background-position: -500px -0px; width: 100px; height: 100px; }
+                &.workflow-spiral_3 { background-position: -0px -100px; width: 100px; height: 100px; }
+                &.workflow-clump_2 { background-position: -100px -100px; width: 100px; height: 100px; }
+                &.workflow-other { background-position: -200px -100px; width: 100px; height: 100px; }
+                &.workflow-disturbed { background-position: -300px -100px; width: 100px; height: 100px; }
+                &.workflow-bulge_none { background-position: -400px -100px; width: 100px; height: 100px; }
+                &.workflow-clump_one-brighter { background-position: -500px -100px; width: 100px; height: 100px; }
+                &.workflow-spiral_tight { background-position: -0px -200px; width: 100px; height: 100px; }
+                &.workflow-bulge_dominant { background-position: -100px -200px; width: 100px; height: 100px; }
+                &.workflow-merger { background-position: -200px -200px; width: 100px; height: 100px; }
+                &.workflow-clump_chain { background-position: -300px -200px; width: 100px; height: 100px; }
+                &.workflow-clump_4-plus { background-position: -400px -200px; width: 100px; height: 100px; }
+                &.workflow-smooth_bar { background-position: -500px -200px; width: 100px; height: 100px; }
+                &.workflow-clump_1 { background-position: -0px -300px; width: 100px; height: 100px; }
+                &.workflow-spiral_4 { background-position: -100px -300px; width: 100px; height: 100px; }
+                &.workflow-edge_boxy { background-position: -200px -300px; width: 100px; height: 100px; }
+                &.workflow-clump_spiral { background-position: -300px -300px; width: 100px; height: 100px; }
+                &.workflow-clump_3 { background-position: -400px -300px; width: 100px; height: 100px; }
+                &.workflow-bulge_obvious { background-position: -500px -300px; width: 100px; height: 100px; }
+                &.workflow-smooth_in-between { background-position: -0px -400px; width: 100px; height: 100px; }
+                &.workflow-clump_line { background-position: -100px -400px; width: 100px; height: 100px; }
+                &.workflow-dustlane { background-position: -200px -400px; width: 100px; height: 100px; }
+                &.workflow-clump_bright-center { background-position: -300px -400px; width: 100px; height: 100px; }
+                &.workflow-bulge_noticeable { background-position: -400px -400px; width: 100px; height: 100px; }
+                &.workflow-clump_not-embedded { background-position: -500px -400px; width: 100px; height: 100px; }
+                &.workflow-no { background-position: -0px -500px; width: 100px; height: 100px; }
+                &.workflow-star { background-position: -100px -500px; width: 100px; height: 100px; }
+                &.workflow-yes { background-position: -200px -500px; width: 100px; height: 100px; }
+                &.workflow-smooth_cigar { background-position: -300px -500px; width: 100px; height: 100px; }
+                &.workflow-lens { background-position: -400px -500px; width: 100px; height: 100px; }
+                &.workflow-spiral_4-plus { background-position: -500px -500px; width: 100px; height: 100px; }
+                &.workflow-spiral_loose { background-position: -0px -600px; width: 100px; height: 100px; }
+                &.workflow-spiral_bar { background-position: -100px -600px; width: 100px; height: 100px; }
+                &.workflow-clump_cluster { background-position: -200px -600px; width: 100px; height: 100px; }
+                &.workflow-spiral_2 { background-position: -300px -600px; width: 100px; height: 100px; }
+                &.workflow-clump_4 { background-position: -400px -600px; width: 100px; height: 100px; }
+                &.workflow-ring { background-position: -500px -600px; width: 100px; height: 100px; }
           
           .answer:hover
             .hover

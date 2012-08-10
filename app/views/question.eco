@@ -8,10 +8,8 @@
         <% for [id, answer] in row : %>
           <div class="answer">
             <div class="icon">
+              <a data-id="<%= id %>" class="workflow-<%= answer.icon %>"></a>
               <div class="hover"><%= answer.text %></div>
-              <a data-id="<%= id %>">
-                <img src="<%= answer.icon %>" />
-              </a>
             </div>
           </div>
         <% end %>
