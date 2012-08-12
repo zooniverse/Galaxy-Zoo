@@ -13,6 +13,4 @@
     
     <%- require('views/question')(@classification.question) %>
   </div>
-  
-  <div style="clear:both;"></div>
 </div>

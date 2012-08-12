@@ -1,3 +1,42 @@
-$green = #c1ea00
-$light-blue = #0079ae
+$green = #C1EA00
+$light-blue = #0079AE
+$gray = #EEF3F5
 $rules = #0079ae
+
+clearfix()
+  &:after
+    content: ''
+    display: block
+    clear: both
+
+.headline
+  font-family: "Open Sans"
+  font-weight: 700
+  font-size: 36px
+  color: #efefef
+  width: 100%
+  text-align: center
+  margin-top: 85px
+  padding: 0px
+
+.call-to-action
+  font-family: "Open Sans"
+  font-weight: 300
+  font-size: 14px
+  color: #efefef
+  padding: 0px
+  margin: 0px
+  
+  .button
+    height: 20px
+    width: 130px
+    background: #c1ea00
+    font-family: "Open Sans"
+    font-weight: 800
+    font-size: 10px
+    padding: 3px 5px
+    color: #000000
+    text-transform: uppercase
+    -webkit-border-radius: 3px
+    border-radius: 3px
+    text-decoration: none

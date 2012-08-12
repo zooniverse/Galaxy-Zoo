@@ -1,0 +1,51 @@
+#science
+  .content
+    background-color: $gray
+    color: #01050F
+    margin-top: 80px
+    
+    .content-block
+      clearfix()
+      display: block
+      width: 100%
+      
+      $vertical-padding = 30px
+      $middle-padding = 100px
+      $side-padding = 80px
+      
+      .left, .right
+        font-family: "Open Sans"
+        font-weight: 300
+        font-size: 12px
+        line-height: 20px
+        float: left
+        
+        .heading
+          font-family: "Open Sans Condensed"
+          font-weight: 300
+          font-size: 32px
+          line-height: 55px
+          margin-bottom: 10px
+        
+        .sub-heading
+          font-family: "Open Sans Condensed"
+          color: #23799C
+        
+        ul
+          list-style: none
+          margin: 0
+          padding: 0 0 0 20px
+          
+          a
+            text-decoration: none
+            color: #23799C
+      
+      .left
+        padding: $vertical-padding ($middle-padding / 2) $vertical-padding $side-padding
+        width: ($full-width * 0.60) - ($middle-padding / 2) - $side-padding
+        float: left
+      
+      .right
+        padding: $vertical-padding $side-padding $vertical-padding ($middle-padding / 2)
+        width: ($full-width * 0.39) - ($middle-padding / 2) - $side-padding
+        float: left
