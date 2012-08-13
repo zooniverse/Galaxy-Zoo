@@ -11,5 +11,7 @@
     "spine/lib/route",
     "spine/lib/manager"
   ],
-  "libs": []
+  "libs": [
+    "node_modules/Zooniverse/vendor/base64.js"
+  ]
 }
