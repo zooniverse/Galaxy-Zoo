@@ -17,7 +17,7 @@
         
         <p>The primary goal of Galaxy Zoo is to construct a database of detailed shape information for almost all the galaxies the Hubble Space Telescope has ever seen. Such a database will have substantial legacy value for the international astronomy community. In short, we hope to find out everything there is to know about the appearance of galaxies!</p>
         
-        <h3 class="sub-heading">Helpful Links</h3>
+        <h3 class="spaced sub-heading">Helpful Links</h3>
         <ul>
           <li><a>Nature of Voorwerp</a></li>
           <li><a>The Mystery Deepens</a></li>
@@ -30,10 +30,10 @@
         <h3 class="sub-heading">Gravitational Lenses</h3>
         <p>Gravitational lenses are galaxies and groups of galaxies that are so massive that they bend the path of light from more distant objects towards themselves, distorting the shapes of background galaxies into arcs and rings, and even causing multiple copies of the images of galaxies and quasars to appear in symmetrical patterns around them on the sky.</p>
         
-        <h3 class="sub-heading">Galaxy Mergers</h3>
+        <h3 class="spaced sub-heading">Galaxy Mergers</h3>
         <p>Galaxies can grow in two ways: by forming stars, or by merging together. Our current theories of galaxy formation expect there to be a lot of merging happening, and indeed we do see many examples, but it is very difficult to reliably measure how much merging is really going on. We need big samples, and keen eyes &mdash; Sounds like a job for Galaxy Zoo!</p>
         
-        <h3 class="sub-heading">Expect the Unexpected &mdash; Hanny's Voorwerp</h3>
+        <h3 class="spaced sub-heading">Expect the Unexpected &mdash; Hanny's Voorwerp</h3>
         <p>One of the most exciting discoveries from the original Galaxy Zoo was something we never expected. Hanny Van Arkel, a Dutch schoolteacher and Galaxy Zoo volunteer, posted an image to the Galaxy Zoo forum and asked 'What's the blue stuff below?' No one knew. The object became known as Hanny's 'Voorwerp'.</p>
       </div>
     </div>
