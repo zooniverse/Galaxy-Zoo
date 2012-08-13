@@ -5,9 +5,9 @@
   <div class="tree">
     <div class="top">
       <h1 class="heading">Classify</h1>
-      <ul class="help">
-        <li>Help</li>
-        <li>Restart</li>
+      <ul class="buttons">
+        <li><a class="help">Help</a></li>
+        <li><a class="restart">Restart</a></li>
       </ul>
     </div>
     

@@ -1,6 +1,7 @@
 Spine = require 'spine'
 Subject = require 'models/subject'
 Classification = require 'models/classification'
+Dialog = require 'lib/dialog'
 
 class Classify extends Spine.Controller
   elements:
@@ -8,9 +9,15 @@ class Classify extends Spine.Controller
   
   events:
     'click .tree .answer a': 'answer'
+    'click .top .buttons .help': 'help'
+    'click .top .buttons .restart': 'restart'
   
   constructor: ->
     super
+    @helpDialog = new Dialog
+      template: 'views/help'
+      quickHide: true
+    
     Subject.bind 'fetched', @nextSubject
     Subject.next()
   
@@ -32,6 +39,15 @@ class Classify extends Spine.Controller
     @classification.annotate id
     @updateQuestion()
     e.preventDefault()
+  
+  help: (ev) ->
+    @helpDialog.render()
+    ev.preventDefault()
+  
+  restart: (ev) ->
+    @classification = new Classification subject_id: @subject.id
+    @render()
+    ev.preventDefault()
   
   updateQuestion: ->
     @finish() unless @classification.question

@@ -14,7 +14,9 @@ class QuizQuestion extends Subject
       @trigger 'fetched'
   
   show: (index = 0) ->
-    new Dialog 'views/quiz_invitation', @callback
+    new Dialog
+      template: 'views/quiz_invitation'
+      callback: @callback
   
   callback: =>
     console.log 'callback', @, arguments
