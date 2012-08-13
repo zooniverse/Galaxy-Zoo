@@ -17,7 +17,7 @@ class Dialog
     @el().removeClass 'open'
   
   show: ->
-    if @el()
+    if @el()[0]
       @el().addClass 'open'
     else
       @render()

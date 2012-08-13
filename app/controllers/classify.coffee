@@ -41,7 +41,7 @@ class Classify extends Spine.Controller
     e.preventDefault()
   
   help: (ev) ->
-    @helpDialog.render()
+    @helpDialog.show()
     ev.preventDefault()
   
   restart: (ev) ->
