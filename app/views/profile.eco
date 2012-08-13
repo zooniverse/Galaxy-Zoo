@@ -1,3 +1,18 @@
 <div id="profile">
+  <%- require('views/headline')() %>
   
+  <div class="content">
+    <div class="content-block">
+      
+      <h1>Hey there <%- @user().name %></h1>
+      
+      <div class="left">
+        
+      </div>
+      
+      <div class="right" style="height: 500px">
+        
+      </div>
+    </div>
+  </div>
 </div>
