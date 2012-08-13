@@ -1,6 +1,6 @@
 Spine = require 'spine'
 Api = require 'zooniverse/lib/api'
-GalaxyZooSubject = require 'models/galaxy_zoo_subject'
+Subject = require 'models/subject'
 
 class Classification extends Spine.Model
   @configure 'Classification', 'subject_id', 'annotations'
@@ -11,7 +11,7 @@ class Classification extends Spine.Model
     @question = @subject().tree().first()
   
   subject: ->
-    GalaxyZooSubject.find @subject_id
+    Subject.find @subject_id
   
   annotate: (answerId) ->
     annotation = { }

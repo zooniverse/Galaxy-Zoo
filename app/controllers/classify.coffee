@@ -1,5 +1,5 @@
 Spine = require 'spine'
-GalaxyZooSubject = require 'models/galaxy_zoo_subject'
+Subject = require 'models/subject'
 Classification = require 'models/classification'
 
 class Classify extends Spine.Controller
@@ -11,8 +11,8 @@ class Classify extends Spine.Controller
   
   constructor: ->
     super
-    GalaxyZooSubject.bind 'fetched', @nextSubject
-    GalaxyZooSubject.next()
+    Subject.bind 'fetched', @nextSubject
+    Subject.next()
   
   active: ->
     super
@@ -23,7 +23,7 @@ class Classify extends Spine.Controller
     @html require('views/classify')(@)
   
   nextSubject: =>
-    @subject = GalaxyZooSubject.current
+    @subject = Subject.current
     @classification = new Classification subject_id: @subject.id
     @render()
   
@@ -39,7 +39,7 @@ class Classify extends Spine.Controller
   
   finish: ->
     @classification.send()
-    GalaxyZooSubject.next()
+    Subject.next()
     @nextSubject()
 
 module.exports = Classify

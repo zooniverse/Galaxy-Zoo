@@ -1,11 +1,11 @@
 Config = require 'lib/config'
-Subject = require 'zooniverse/lib/models/subject'
-GalaxyZooSurveyGroup = require 'models/galaxy_zoo_survey_group'
+BaseSubject = require 'zooniverse/lib/models/subject'
+SurveyGroup = require 'models/survey_group'
 SloanTree = require 'lib/sloan_tree'
 CandelsTree = require 'lib/candels_tree'
 
-class GalaxyZooSubject extends Subject
-  @configure 'GalaxyZooSubject', 'zooniverse_id', 'coords', 'location', 'metadata'
+class Subject extends BaseSubject
+  @configure 'Subject', 'zooniverse_id', 'coords', 'location', 'metadata'
   projectName: 'galaxy_zoo'
   
   surveys:
@@ -47,4 +47,4 @@ class GalaxyZooSubject extends Subject
   image: -> @location.standard
   thumbnail: -> @location.thumbnail
 
-module.exports = GalaxyZooSubject
+module.exports = Subject
