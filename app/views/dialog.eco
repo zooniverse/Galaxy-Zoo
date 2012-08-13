@@ -1,0 +1,5 @@
+<div id="<%= @id %>" class="dialog-underlay open">
+  <div class="dialog">
+    <%- @template @ %>
+  </div>
+</div>

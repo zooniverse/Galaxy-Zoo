@@ -1,0 +1,28 @@
+<div class="quiz-invitation">
+  <h1>Galaxy Zoo needs your help!</h1>
+  <p class="sub-title">We are doing research to better understand what Galaxy Zoo volunteers think about the universe.</p>
+  
+  <div class="content-block">
+    <div class="left">
+      <p class="bold">If you agree to help, you will be asked a set of 5&ndash;6 short questions once every week. A question might be:</p>
+      
+      <p class="question">Hubble's observation that galaxies farther away from us are moving faster led to which conclusion?</p>
+      <ul class="answers">
+        <li class="bold">The universe is expanding</li>
+        <li class="bold">The universe is contracting</li>
+        <li class="bold">We are located at the center of the universe</li>
+        <li class="bold">Our galaxy repels other galaxies</li>
+      </ul>
+    </div>
+    
+    <div class="right">
+      <p class="bold reward">As a reward, each time you complete a set of questions you will be entered in a raffle to win a <strong>$20 Amazon Gift Certificate</strong>.</p>
+      <p class="call">Would you like to participate?</p>
+      <div class="buttons">
+        <button data-dialog="true" data-value="yes">Yes!</button>
+        <button data-dialog="true" data-value="no">No, thanks</button>
+        <button data-dialog="true" data-value="later">Ask later</button>
+      </div>
+    </div>
+  </div>
+</div>

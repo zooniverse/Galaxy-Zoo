@@ -11,6 +11,40 @@ clearfix()
     display: block
     clear: both
 
+standard-button()
+  box-sizing(border-box)
+  cursor: pointer
+  background: #E8E8E8
+  border: 1px solid rgba(#070E17, 0.33)
+  border-radius: 0.33em
+  box-shadow: 0 0.67em 0.67em rgba(#FCFCFC, 0.33) inset, 0 -0.5em 0.5em rgba(#070E17, 0.125) inset, 0 0.125ex 0.25ex rgba(#070E17, 0.33)
+  display: inline-block
+  font-family: "Open Sans"
+  font-size: inherit
+  line-height: 1
+  margin-left: 0.75em
+  padding: 0.5em 2em
+  text-decoration: none
+  text-shadow: 0 0.125ex #FCFCFC
+  vertical-align: middle
+  
+  &:hover
+    border-color: rgba(#002736, 0.5)
+  
+  &.default
+    background: #0095CC
+    text-shadow: 0 0.125ex rgba(#002736, 0.5)
+    
+    &:hover
+      border-color: rgba(#002736, 0.75)
+  
+  &.toggle.selected, &:active
+    box-shadow: 0 0.125ex 0.25ex rgba(#070E17, 0.5) inset
+  
+  &:disabled
+    box-shadow: none
+    opacity: 0.5
+
 .headline
   font-family: "Open Sans"
   font-weight: 700
@@ -39,6 +73,6 @@ clearfix()
     padding: 3px 5px
     color: #000000
     text-transform: uppercase
-    -webkit-border-radius: 3px
-    border-radius: 3px
+    -webkit-border-radius: 2px
+    border-radius: 2px
     text-decoration: none

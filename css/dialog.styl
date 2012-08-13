@@ -1,0 +1,27 @@
+.dialog-underlay
+  display: none
+  position: fixed
+  z-index: 999
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  height: 100%
+  text-align: center
+  vertical-align: middle
+  background: vendor-value(radial-gradient(rgba(#070E17, 0.5), rgba(#002736, .75)))
+  
+  &.open
+    display: block
+  
+  .dialog
+    position: relative
+    display: inline-block
+    background-color: $light-gray
+    border-radius: 5px
+    box-shadow: 0 5px 10px rgba(#070E17, 0.33), 0 0 0 3px rgba($blue, 0.67)
+    max-width: 80%
+    top: 15%
+    display: inline-block
+    margin: 20px
+    padding: 2px
