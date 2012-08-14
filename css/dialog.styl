@@ -17,11 +17,24 @@
   .dialog
     position: relative
     display: inline-block
-    background-color: $light-gray
-    border-radius: 5px
-    box-shadow: 0 5px 10px rgba(#070E17, 0.33), 0 0 0 3px rgba($blue, 0.67)
-    max-width: 80%
     top: 15%
-    display: inline-block
+    max-width: 80%
+    max-height: 450px
+    overflow-y: auto
     margin: 20px
     padding: 2px
+    background-color: $light-gray
+    color: $dark-gray
+    border-radius: 5px
+    box-shadow: 0 5px 10px rgba(#070E17, 0.33), 0 0 0 3px rgba($blue, 0.67)
+    
+    .close
+      $size = 8px
+      standard-button()
+      float: right
+      padding: $size
+      margin: $size
+      line-height: $size
+      font-size: 2 * $size
+      color: $dark-gray
+      text-shadow: 1px 1px 2px #FFFFFF

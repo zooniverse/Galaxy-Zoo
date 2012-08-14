@@ -25,9 +25,13 @@ class Dialog
   buttons: ->
     $ 'button[data-dialog="true"]', @el()
   
+  closer: ->
+    $ '.dialog > .close', @el()
+  
   unbind: ->
     @el().die 'click'
     @buttons().die 'click'
+    @closer().die 'click'
   
   clicked: (ev) =>
     @callback? $(ev.target).data('value')
@@ -37,10 +41,8 @@ class Dialog
   bind: ->
     if @quickHide
       @el().live 'click', (ev) =>
-        if ev.target is @el()[0]
-          @callback? null
-          @close()
-          ev.preventDefault()
+        @clicked(ev) if ev.target is @el()[0]
+        @closer().live 'click', @clicked
     
     @buttons().live 'click', @clicked
 
