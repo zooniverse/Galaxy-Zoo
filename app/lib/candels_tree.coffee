@@ -3,7 +3,7 @@ DecisionTree = require 'lib/decision_tree'
 CandelsTree = new DecisionTree 'candels', ->
   @question 'Shape', 'Is the galaxy simply smooth and rounded, with no sign of a disk?', ->
     @answer 'Smooth', leadsTo: 'How rounded is it?', icon: 'smooth_round'
-    @answer 'Features or disk', leadsTo: 'Does the galaxy have a mostly clumpy appearance?', icon: 'ring'
+    @answer 'Features or disk', leadsTo: 'Does the galaxy have a mostly clumpy appearance?', icon: 'feature'
     @answer 'Star or artifact', icon: 'star'
   
   @question 'Round', 'How rounded is it?', leadsTo: 'Is the galaxy currently merging or is there any sign of tidal debris?', ->
@@ -21,7 +21,7 @@ CandelsTree = new DecisionTree 'candels', ->
     @answer '3', icon: 'clump_3'
     @answer '4', icon: 'clump_4'
     @answer 'More than 4', icon: 'clump_4-plus'
-    @answer "Can't tell", icon: 'clump_4-plus' # To be replaced
+    @answer "Can't tell", icon: 'clump_cant-tell'
   
   @question 'Clumps', 'Do the clumps appear in a straight line, a chain, or a cluster?', leadsTo: 'Is there one clump which is clearly brighter than the others?', ->
     @answer 'Straight Line', icon: 'clump_line'
@@ -72,7 +72,7 @@ CandelsTree = new DecisionTree 'candels', ->
     @answer '3', icon: 'spiral_3'
     @answer '4', icon: 'spiral_4'
     @answer 'More than 4', icon: 'spiral_4-plus'
-    @answer "Can't tell", icon: 'spiral_4-plus' # To be replaced
+    @answer "Can't tell", icon: 'spiral_cant-tell'
   
   @question 'Bulge', 'How prominent is the central bulge, compared with the rest of the galaxy?', leadsTo: 'Is the galaxy currently merging or is there any sign of tidal debris?', ->
     @answer 'No bulge', icon: 'bulge_none'
@@ -81,8 +81,8 @@ CandelsTree = new DecisionTree 'candels', ->
   
   @question 'Merger', 'Is the galaxy currently merging or is there any sign of tidal debris?', ->
     @answer 'Merging', icon: 'merger'
-    @answer 'Tidal debris', icon: 'merger' # To be replaced
-    @answer 'Both', icon: 'merger' # To be replaced
-    @answer 'Neither', icon: 'merger' # To be replaced
+    @answer 'Tidal debris', icon: 'tidal-debris'
+    @answer 'Both', icon: 'merger_tidal'
+    @answer 'Neither', icon: 'no'
 
 module.exports = CandelsTree
