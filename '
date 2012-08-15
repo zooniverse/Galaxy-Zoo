@@ -1,0 +1,64 @@
+#profile
+  .content
+    background-color: $light-gray
+    color: $dark-gray
+    
+    .content-block
+      clearfix()
+      display: block
+      width: $full-width
+      
+      .heading
+        color: #01050f
+        font-family: "Open Sans Condensed"
+        font-weight: 300
+        font-size: 45px
+        padding-top: $column-size + $gutter-size
+        padding-left: $column-size + $gutter-size
+
+      .left, .right
+        font-family: "Open Sans"
+        font-weight: 300
+        font-size: 12px
+        line-height: 20px
+        float: left
+
+        .sub-heading
+          color: #23799c
+          font-family: "Open Sans"
+          font-weight: 700
+          font-size: 14px
+
+          &.spaced
+            margin-top: 25px
+
+        .thumb
+          float: left
+          margin-right: $gutter-size
+
+        .classification-counts
+          padding-left: $gutter-size
+          font-family: "Open Sans"
+          font-size: 30pt
+
+          .count 
+            font-weight: 700
+
+          li
+            font-weight: 400
+            padding-bottom: $gutter-size
+
+          .caption
+            font-size: 12px
+            display: block
+
+      .left
+        padding: 0 0 0 ($column-size + $gutter-size) 
+        width: $two-thirds - ($column-size + $gutter-size)
+        float: left
+
+      .right
+        padding: 0 0 0 ($column-size + $gutter-size)
+        width: $one-quarter
+        float: left
+

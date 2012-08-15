@@ -1,0 +1,7 @@
+<% for favorite in @recents: %>
+  <div class="thumbnail">
+    <img src="<%- favorite.subject.location.thumbnail %>" height="150" width="150" />
+  </div>
+<% end %>
+
+
