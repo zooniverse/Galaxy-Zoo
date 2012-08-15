@@ -1,8 +1,9 @@
 $ = require 'jqueryify'
 
 class Dialog
-  constructor: ({ template, @callback, @quickHide }) ->
+  constructor: ({ template, @callback, @quickHide, @closeButton, @buttonSelector }) ->
     @id = _.uniqueId 'dialog-'
+    @buttonSelector or= 'button[data-dialog="true"]'
     @template = require template
     @unbind()
     @bind()
@@ -23,7 +24,7 @@ class Dialog
       @render()
   
   buttons: ->
-    $ 'button[data-dialog="true"]', @el()
+    $ @buttonSelector, @el()
   
   closer: ->
     $ '.dialog > .close', @el()
@@ -42,8 +43,8 @@ class Dialog
     if @quickHide
       @el().live 'click', (ev) =>
         @clicked(ev) if ev.target is @el()[0]
-        @closer().live 'click', @clicked
     
+    @closer().live('click', @clicked) if @closeButton
     @buttons().live 'click', @clicked
 
 module.exports = Dialog

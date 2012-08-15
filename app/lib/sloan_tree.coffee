@@ -45,7 +45,7 @@ SloanTree = new DecisionTree 'sloan', ->
   @question 'Bulge', 'Does the galaxy have a bulge at its center? If so, what shape?', leadsTo: 'Is there anything odd?', ->
     @answer 'Rounded', icon: 'edge_round'
     @answer 'Boxy', icon: 'edge_boxy'
-    @answer 'No bulge', icon: 'no'
+    @answer 'No bulge', icon: 'edge_none'
   
   @question 'Spiral', 'How tightly wound do the spiral arms appear?', leadsTo: 'How many spiral arms are there?', ->
     @answer 'Tight', icon: 'spiral_tight'
