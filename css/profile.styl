@@ -2,20 +2,84 @@
   .content
     background-color: $light-gray
     color: $dark-gray
-    margin-top: 80px
+    padding: $column-size ($column-size + $gutter-size) 0 ($gutter-size + $column-size)
+    margin-top: $column-size
+    margin-left: -($column-size + $gutter-size)
+    width: $full-width
     
     .content-block
       clearfix()
       display: block
-      width: 100%
+      width: $full-width
       
-      $vertical-padding = 30px
-      $middle-padding = 100px
-      $side-padding = 80px
-      
+      .heading
+        color: #01050f
+        font-family: "Open Sans Condensed"
+        font-weight: 300
+        font-size: 45px
+        margin: 0
+
       .left, .right
         font-family: "Open Sans"
         font-weight: 300
         font-size: 12px
         line-height: 20px
         float: left
+
+        .sub-heading
+          color: #23799c
+          font-family: "Open Sans"
+          font-weight: 700
+          font-size: 14px
+          padding-bottom: $gutter-size
+
+          .recents, .favs
+            display: inline
+            padding-right: $gutter-size
+
+          .inactive
+            color: #8ACBE6
+
+        .thumbnails
+          display: block
+
+          .thumb
+            float: left
+            padding-right: $gutter-size
+            padding-bottom: $gutter-size
+
+        .classification-counts
+          color: #01050f
+          font-family: "Open Sans"
+          font-size: 30pt
+          font-weight: 400
+          padding: 0 0 $gutter-size 0
+
+          .count 
+            font-weight: 700
+
+          .hubble
+            background-image: url(images/gz-icon-hubble.png)
+            background-repeat: no-repeat
+            padding-left: 2*($gutter-size)
+            padding-bottom: $gutter-size
+
+          .sdss
+            background-image: url(images/gz-icon-sdss.png)
+            background-repeat: no-repeat
+            padding-left: 2*($gutter-size)
+
+          .caption
+            font-size: 12px
+            display: block
+            padding-top: 6px
+
+      .left
+        width: $two-thirds
+        float: left
+
+      .right
+        width: $one-quarter
+        padding-left: $gutter-size + $column-size
+        float: left
+
