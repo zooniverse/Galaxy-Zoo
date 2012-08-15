@@ -7,17 +7,22 @@
       <h1 class="heading">Hey there, <%- @user.name %>!</h1>
       
       <div class="left">
-        <h3 class="sub-heading">Favourites</h3>
+        <h3 class="sub-heading"><a class="favs">Favourites</a> <a class="recents inactive">Recents</a></h3>
         <div class="thumbnails">
+          <% if @thumbs: %>
+            <% for thumb in @thumbs: %>
+              <div class="thumb"><img src="<%- thumb.subjects.location.thumbnail %>" height="140" width="140" /></div>
+            <% end %>
+          <% end %>
         </div>
       </div>
       
       <div class="right" style="height: 500px">
         <h3 class="sub-heading">Classifications</h3>
-        <ul class="classification-counts">
-          <li><span class="count"><%- @user.project.groups['50251c3b516bcb6ecb000001'].classification_count %></span> Hubble <span class="caption">Total Hubble Classications</span></li>
-          <li><span class="count"><%- @user.project.groups['50251c3b516bcb6ecb000002'].classification_count %></span> SDSS <span class="caption">Total SDSS Classifications</span></li>
-        </ul>
+        <div class="classification-counts">
+          <div class="hubble"><span class="count"><%- @user.project.groups['50251c3b516bcb6ecb000001'].classification_count %></span> Hubble <span class="caption">Total Hubble Classications</span></div>
+          <div class="sdss"><span class="count"><%- @user.project.groups['50251c3b516bcb6ecb000002'].classification_count %></span> SDSS <span class="caption">Total SDSS Classifications</span></div>
+        </div>
       </div>
     </div>
   </div>
