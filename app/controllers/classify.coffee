@@ -2,6 +2,7 @@ Spine = require 'spine'
 Subject = require 'models/subject'
 Classification = require 'models/classification'
 Dialog = require 'lib/dialog'
+Recent = require 'zooniverse/lib/models/recent'
 
 class Classify extends Spine.Controller
   elements:
@@ -55,7 +56,14 @@ class Classify extends Spine.Controller
   
   finish: ->
     @classification.send()
+    @addToRecents()
     Subject.next()
     @nextSubject()
+
+  addToRecents: ->
+    console.log "Here: ", Subject.current
+    Recent.create
+      subjects: Subject.current
+      created_at: new Date
 
 module.exports = Classify
