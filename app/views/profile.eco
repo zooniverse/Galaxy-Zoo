@@ -20,8 +20,8 @@
       <div class="right" style="height: 500px">
         <h3 class="sub-heading">Classifications</h3>
         <div class="classification-counts">
-          <div class="hubble"><span class="count"><%- @user.project.groups['50251c3b516bcb6ecb000001'].classification_count %></span> Hubble <span class="caption">Total Hubble Classications</span></div>
-          <div class="sdss"><span class="count"><%- @user.project.groups['50251c3b516bcb6ecb000002'].classification_count %></span> SDSS <span class="caption">Total SDSS Classifications</span></div>
+          <div class="hubble"><span class="count"><%= @surveyCount 'candels' %></span> Hubble <span class="caption">Hubble Classications</span></div>
+          <div class="sdss"><span class="count"><%= @surveyCount 'sloan' %></span> SDSS <span class="caption">SDSS Classifications</span></div>
         </div>
       </div>
     </div>
