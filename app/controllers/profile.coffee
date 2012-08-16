@@ -6,20 +6,24 @@ Favorite = require 'zooniverse/lib/models/favorite'
 
 class Profile extends Spine.Controller
   events:
-    'click .favs'   : 'displayFavs'
-    'click .recents': 'displayRecents'
+    'click .favorites-link' : 'switch'
+    'click .recents-link': 'switch'
   
   elements:
-    '.favs'      : 'favs'
-    '.recents'   : 'recents'
+    '.favorites-link' : 'favoritesLink'
+    '.recents-link' : 'recentsLink'
   
   constructor: ->
     super
+    @showing = 'recents'
     User.bind 'sign-in', @setUser
+  
+  collection: =>
+    if @showing is 'recents' then Recent else Favorite
   
   setUser: =>
     @user = User.current
-    fetcher = Recent.fetch()
+    fetcher = @collection().fetch()
     fetcher.onSuccess(@render) if @isActive()
   
   active: ->
@@ -28,26 +32,18 @@ class Profile extends Spine.Controller
   
   render: =>
     return unless @user # FIX-ME: Should display a login form instead of just not rendering
+    @items = @collection().all()
     @html require('views/profile')(@)
   
   surveyCount: (survey) ->
     @user.project?.groups?[Config.surveys[survey].id]?.classification_count
   
-  displayRecents: (e) =>
-    @thumbs = Recent.all().sort @sortThumbs
-    @render() if @isActive()
-    @recents.removeClass 'inactive'
-    @favs.addClass 'inactive'
+  switch: ({ originalEvent: e }) ->
+    toShow = $(e.target).closest('a').data 'show'
+    return if toShow is @showing
+    @showing = toShow
+    @recentsLink.toggleClass 'inactive'
+    @favoritesLink.toggleClass 'inactive'
+    @collection().fetch().onSuccess @render
   
-  displayFavs: (e) =>
-    @thumbs = Favorite.all().sort @sortThumbs
-    @render() if @isActive()
-    @recents.addClass 'inactive'
-    @favs.removeClass 'inactive'
-  
-  sortThumbs: (left, right) ->
-    return -1 if left.created_at > right.created_at
-    return 1 if left.created_at < right.created_at
-    return 0
-
 module.exports = Profile
