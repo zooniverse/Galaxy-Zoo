@@ -1,0 +1,24 @@
+<% QuizQuestion = require 'models/quiz_question' %>
+<% quiz = QuizQuestion.current %>
+
+<div class="quiz-question">
+  <div class="content-block">
+    <div class="question">
+      <h1><%- quiz.question().text %></h1>
+      <% if quiz.question().image : %>
+        <img src="<%= quiz.question().image %>" />
+      <% end %>
+    </div>
+    
+    <div class="answers">
+      <% for answer in quiz.answers() : %>
+        <div class="answer">
+          <span><%- answer.text %></span>
+          <% if answer.image : %>
+            <img src="<%= answer.image %>" />
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

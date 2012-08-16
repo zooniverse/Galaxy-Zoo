@@ -3,7 +3,7 @@ DecisionTree = require 'lib/decision_tree'
 SloanTree = new DecisionTree 'sloan', ->
   @question 'Shape', 'Is the galaxy simply smooth and rounded, with no sign of a disk?', ->
     @answer 'Smooth', leadsTo: 'How rounded is it?', icon: 'smooth_round'
-    @answer 'Features or disk', leadsTo: 'Could this be a disk viewed edge-on?', icon: 'ring'
+    @answer 'Features or disk', leadsTo: 'Could this be a disk viewed edge-on?', icon: 'feature'
     @answer 'Star or artifact', icon: 'star'
   
   @question 'Disk', 'Could this be a disk viewed edge-on?', ->
@@ -45,7 +45,7 @@ SloanTree = new DecisionTree 'sloan', ->
   @question 'Bulge', 'Does the galaxy have a bulge at its center? If so, what shape?', leadsTo: 'Is there anything odd?', ->
     @answer 'Rounded', icon: 'edge_round'
     @answer 'Boxy', icon: 'edge_boxy'
-    @answer 'No bulge', icon: 'edge_boxy' # To be replaced
+    @answer 'No bulge', icon: 'edge_none'
   
   @question 'Spiral', 'How tightly wound do the spiral arms appear?', leadsTo: 'How many spiral arms are there?', ->
     @answer 'Tight', icon: 'spiral_tight'
@@ -58,6 +58,6 @@ SloanTree = new DecisionTree 'sloan', ->
     @answer '3', icon: 'spiral_3'
     @answer '4', icon: 'spiral_4'
     @answer 'More than 4', icon: 'spiral_4-plus'
-    @answer "Can't tell", icon: 'spiral_4-plus' # To be replaced
+    @answer "Can't tell", icon: 'spiral_cant-tell'
 
 module.exports = SloanTree

@@ -32,6 +32,7 @@ class Classification extends Spine.Model
     json
   
   send: ->
+    Classification.trigger 'classified'
     Api.post @url(), @toJSON()
 
 module.exports = Classification

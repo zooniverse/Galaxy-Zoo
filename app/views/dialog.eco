@@ -1,6 +1,6 @@
 <div id="<%= @id %>" class="dialog-underlay open">
   <div class="dialog">
-    <% if @quickHide : %>
+    <% if @closeButton : %>
       <span class="close">&times;</span>
     <% end %>
     

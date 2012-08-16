@@ -18,6 +18,7 @@ class Classify extends Spine.Controller
     @helpDialog = new Dialog
       template: 'views/help'
       quickHide: true
+      closeButton: true
     
     Subject.bind 'fetched', @nextSubject
     Subject.next()
@@ -51,17 +52,18 @@ class Classify extends Spine.Controller
     ev.preventDefault()
   
   updateQuestion: ->
-    @finish() unless @classification.question
-    @question.html require('views/question')(@classification.question)
+    if @classification.question
+      @question.html require('views/question')(@classification.question)
+    else
+      @classification.send()
+      @addToRecents()
+      @finish() # should be a interrupt page for favoriting, info, talk, etc
   
   finish: ->
-    @classification.send()
-    @addToRecents()
     Subject.next()
     @nextSubject()
-
+  
   addToRecents: ->
-    console.log "Here: ", Subject.current
     Recent.create
       subjects: Subject.current
       created_at: new Date
