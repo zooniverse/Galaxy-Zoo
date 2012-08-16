@@ -8,8 +8,8 @@
       
       <div class="left">
         <h3 class="sub-heading">
-          <a data-show="favorites" class="favorites-link">Favourites</a>
-          <a data-show="recents" class="inactive recents-link">Recents</a>
+          <a data-show="favorites" class="inactive favorites-link">Favourites</a>
+          <a data-show="recents" class="recents-link">Recents</a>
         </h3>
         
         <div class="thumbnails">
