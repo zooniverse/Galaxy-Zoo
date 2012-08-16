@@ -2,6 +2,7 @@ Spine = require 'spine'
 User = require 'zooniverse/lib/models/user'
 Recent = require 'zooniverse/lib/models/recent'
 Favorite = require 'zooniverse/lib/models/favorite'
+LoginForm = require 'zooniverse/lib/controllers/login_form'
 
 class Profile extends Spine.Controller
   events:
@@ -11,6 +12,7 @@ class Profile extends Spine.Controller
   elements:
     '.favs'      : 'favs'
     '.recents'   : 'recents'
+    '#login'     : 'login'
 
   user: null
 
@@ -28,11 +30,14 @@ class Profile extends Spine.Controller
     super
     if @user
       @render()
+    else 
+      @renderLogin()
     
   render: ->
     @html require('views/profile')(@)
 
   renderLogin: ->
+    new LoginForm el: @login
 
   displayRecents: (e) =>
     @thumbs = Recent.all().sort @sortThumbs
