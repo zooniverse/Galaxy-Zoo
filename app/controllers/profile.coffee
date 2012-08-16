@@ -57,8 +57,8 @@ class Profile extends Spine.Controller
     toShow = $(e.target).closest('a').data 'show'
     return if toShow is @showing
     @showing = toShow
+    @collection().fetch().onSuccess @render
     @recentsLink.toggleClass 'inactive'
     @favoritesLink.toggleClass 'inactive'
-    @collection().fetch().onSuccess @render
   
 module.exports = Profile
