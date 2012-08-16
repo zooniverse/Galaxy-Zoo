@@ -27,6 +27,7 @@ class Profile extends Spine.Controller
   setUser: =>
     if User.current
       @user = User.current
+      Favorite.fetch()
       fetcher = @collection().fetch()
       fetcher.onSuccess(@render) if @isActive()
     else
@@ -57,8 +58,6 @@ class Profile extends Spine.Controller
     toShow = $(e.target).closest('a').data 'show'
     return if toShow is @showing
     @showing = toShow
-    @collection().fetch().onSuccess @render
-    @recentsLink.toggleClass 'inactive'
-    @favoritesLink.toggleClass 'inactive'
+    @render()
   
 module.exports = Profile
