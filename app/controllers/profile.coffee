@@ -8,6 +8,7 @@ class Profile extends Spine.Controller
   events:
     'click .favorites-link' : 'switch'
     'click .recents-link': 'switch'
+    'click .item .remove': 'remove'
   
   elements:
     '.favorites-link' : 'favoritesLink'
@@ -37,6 +38,10 @@ class Profile extends Spine.Controller
   
   surveyCount: (survey) ->
     @user.project?.groups?[Config.surveys[survey].id]?.classification_count
+  
+  remove: ({ originalEvent: e }) ->
+    item = @collection().find $(e.target).closest('.item').data 'id'
+    item.destroy().onSuccess @render
   
   switch: ({ originalEvent: e }) ->
     toShow = $(e.target).closest('a').data 'show'

@@ -14,7 +14,12 @@
         
         <div class="thumbnails">
           <% for item in @collection().all() : %>
-            <div class="thumb"><img src="<%- item.subjects.location.thumbnail %>" height="140" width="140" /></div>
+            <div class="item" data-id="<%= item.id %>">
+              <div class="thumb"><img src="<%- item.subjects.location.thumbnail %>" height="140" width="140" /></div>
+              <% if @showing is 'favorites' : %>
+                <a class="remove">&times;</a>
+              <% end %>
+            </div>
           <% end %>
         </div>
       </div>
