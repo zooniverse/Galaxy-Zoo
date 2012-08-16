@@ -37,10 +37,7 @@
           list-style: none
           min-width: $column-size + 0.5 * $gutter-size
           float: left
-          background: $light-blue
           margin-left: 10px
-          -webkit-border-radius: 3px
-          border-radius: 3px
           
           a
             display: block
@@ -48,7 +45,13 @@
             font-family: "Open Sans"
             font-size: 10px
             font-weight: 700
+            background-color: $light-blue
             color: #000000
+            -webkit-border-radius: 3px
+            border-radius: 3px
+            
+            &.active
+              background-color: $green
     
     .question
       font-family: "Open Sans"

@@ -26,6 +26,7 @@ class Classification extends Spine.Model
     json =
       classification:
         subject_ids: [@subject().id]
+        favorite: @isFavorited
     
     json.classification = $.extend json.classification, super
     delete json.classification.subject_id
