@@ -14,41 +14,36 @@ class Profile extends Spine.Controller
   elements:
     '.favorites-link' : 'favoritesLink'
     '.recents-link' : 'recentsLink'
-    '#login'        : 'login'
   
   constructor: ->
     super
     @showing = 'recents'
-    User.bind 'sign-in', @setUser
+    User.bind 'sign-in', @refresh
   
   collection: =>
     if @showing is 'recents' then Recent else Favorite
   
-  setUser: =>
+  user: ->
+    User.current
+  
+  refresh: =>
     if User.current
-      @user = User.current
-      Favorite.fetch()
       fetcher = @collection().fetch()
       fetcher.onSuccess(@render) if @isActive()
-    else
-      @user = null
-      @renderLogin()
   
   active: ->
     super
     @render()
   
   render: =>
-    @renderLogin() unless @user # FIX-ME: Should display a login form instead of just not rendering
-    @items = @collection().all()
-    @html require('views/profile')(@)
-
-  renderLogin: =>
-    @html require('views/login')()
-    new LoginForm el: @login
+    if User.current
+      @html require('views/profile')(@)
+    else
+      @html require('views/login')()
+      new LoginForm el: '#login'
   
   surveyCount: (survey) ->
-    @user.project?.groups?[Config.surveys[survey].id]?.classification_count
+    User.current.project?.groups?[Config.surveys[survey].id]?.classification_count
   
   remove: ({ originalEvent: e }) ->
     item = @collection().find $(e.target).closest('.item').data 'id'
@@ -58,6 +53,6 @@ class Profile extends Spine.Controller
     toShow = $(e.target).closest('a').data 'show'
     return if toShow is @showing
     @showing = toShow
-    @render()
-  
+    @collection().fetch().onSuccess @render
+
 module.exports = Profile
