@@ -1,0 +1,7 @@
+<div id="profile">
+  <%- require('views/headline')() %>
+  <div class="content">
+    <div id="login">
+    </div>
+  </div>
+</div>

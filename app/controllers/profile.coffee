@@ -21,10 +21,13 @@ class Profile extends Spine.Controller
     User.bind 'sign-in', @setUser
   
   setUser: =>
-    @user = User.current
-    Recent.fetch()
-    if @isActive() and @user
-      @render()
+    if User.current
+      @user = User.current
+      Recent.fetch()
+      Favorite.fetch()
+      @render() if @isActive() 
+    else
+      @renderLogin() if @isActive()
   
   active: ->
     super
@@ -37,10 +40,12 @@ class Profile extends Spine.Controller
     @html require('views/profile')(@)
 
   renderLogin: ->
+    @html require('views/login')
     new LoginForm el: @login
 
   displayRecents: (e) =>
     @thumbs = Recent.all().sort @sortThumbs
+    @thumbs = @thumbs.slice(0, 11)
     @render() if @isActive()
     @recents.removeClass 'inactive'
     @favs.addClass 'inactive'

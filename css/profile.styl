@@ -1,12 +1,21 @@
 #profile
+
   .content
     background-color: $light-gray
     color: $dark-gray
-    padding: $column-size ($column-size + $gutter-size) 0 ($gutter-size + $column-size)
+    padding: $column-size ($column-size + $gutter-size) $column-size ($gutter-size + $column-size)
     margin-top: $column-size
     margin-left: -($column-size + $gutter-size)
     width: $full-width
-    
+
+    #login
+      padding: $gutter-size $gutter-size $gutter-size 0
+      width: $one-half
+      margin-left: auto
+      margin-right: auto
+      border: 1px solid black
+      font-family: "Open Sans"
+
     .content-block
       clearfix()
       display: block

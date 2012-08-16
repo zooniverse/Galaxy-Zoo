@@ -17,7 +17,7 @@
         </div>
       </div>
       
-      <div class="right" style="height: 500px">
+      <div class="right">
         <h3 class="sub-heading">Classifications</h3>
         <div class="classification-counts">
           <div class="hubble"><span class="count"><%- @user.project.groups['50251c3b516bcb6ecb000001'].classification_count %></span> Hubble <span class="caption">Total Hubble Classications</span></div>
@@ -25,7 +25,5 @@
         </div>
       </div>
     </div>
-  </div>
-  <div id="login">
   </div>
 </div>
