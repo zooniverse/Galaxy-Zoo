@@ -3,6 +3,7 @@ Subject = require 'models/subject'
 Classification = require 'models/classification'
 Dialog = require 'lib/dialog'
 Recent = require 'zooniverse/lib/models/recent'
+User = require 'zooniverse/lib/models/user'
 
 class Classify extends Spine.Controller
   elements:
@@ -56,7 +57,7 @@ class Classify extends Spine.Controller
       @question.html require('views/question')(@classification.question)
     else
       @classification.send()
-      @addToRecents()
+      @addToRecents() if User.current
       @finish() # should be a interrupt page for favoriting, info, talk, etc
   
   finish: ->

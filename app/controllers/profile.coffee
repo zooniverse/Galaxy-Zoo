@@ -1,3 +1,4 @@
+Config = require 'lib/config'
 Spine = require 'spine'
 User = require 'zooniverse/lib/models/user'
 Recent = require 'zooniverse/lib/models/recent'
@@ -8,7 +9,7 @@ class Profile extends Spine.Controller
   events:
     'click .favs'   : 'displayFavs'
     'click .recents': 'displayRecents'
-
+  
   elements:
     '.favs'      : 'favs'
     '.recents'   : 'recents'
@@ -24,8 +25,8 @@ class Profile extends Spine.Controller
     if User.current
       @user = User.current
       Recent.fetch()
-      Favorite.fetch()
-      @render() if @isActive() 
+      favFetcher = Favorite.fetch()
+      favFetcher.onSuccess(@render) if @isActive() 
     else
       @renderLogin() if @isActive()
   
@@ -42,20 +43,23 @@ class Profile extends Spine.Controller
   renderLogin: ->
     @html require('views/login')
     new LoginForm el: @login
-
+  
+  surveyCount: (survey) ->
+    @user.project?.groups?[Config.surveys[survey].id]?.classification_count
+  
   displayRecents: (e) =>
     @thumbs = Recent.all().sort @sortThumbs
     @thumbs = @thumbs.slice(0, 11)
     @render() if @isActive()
     @recents.removeClass 'inactive'
     @favs.addClass 'inactive'
-
+  
   displayFavs: (e) =>
     @thumbs = Favorite.all().sort @sortThumbs
     @render() if @isActive()
     @recents.addClass 'inactive'
     @favs.removeClass 'inactive'
-
+  
   sortThumbs: (left, right) ->
     return -1 if left.created_at > right.created_at
     return 1 if left.created_at < right.created_at
