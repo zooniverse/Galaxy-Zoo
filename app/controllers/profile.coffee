@@ -7,62 +7,58 @@ LoginForm = require 'zooniverse/lib/controllers/login_form'
 
 class Profile extends Spine.Controller
   events:
-    'click .favs'   : 'displayFavs'
-    'click .recents': 'displayRecents'
+    'click .favorites-link' : 'switch'
+    'click .recents-link': 'switch'
+    'click .item .remove': 'remove'
   
   elements:
-    '.favs'      : 'favs'
-    '.recents'   : 'recents'
-    '#login'     : 'login'
-
-  user: null
-
+    '.favorites-link' : 'favoritesLink'
+    '.recents-link' : 'recentsLink'
+    '#login'        : 'login'
+  
   constructor: ->
     super
+    @showing = 'recents'
     User.bind 'sign-in', @setUser
+  
+  collection: =>
+    if @showing is 'recents' then Recent else Favorite
   
   setUser: =>
     if User.current
       @user = User.current
-      Recent.fetch()
-      favFetcher = Favorite.fetch()
-      favFetcher.onSuccess(@render) if @isActive() 
+      fetcher = @collection().fetch()
+      fetcher.onSuccess(@render) if @isActive()
     else
-      @renderLogin() if @isActive()
+      @user = null
+      @renderLogin()
   
   active: ->
     super
-    if @user
-      @render()
-    else 
-      @renderLogin()
-    
-  render: ->
+    @render()
+  
+  render: =>
+    @renderLogin() unless @user # FIX-ME: Should display a login form instead of just not rendering
+    @items = @collection().all()
     @html require('views/profile')(@)
 
-  renderLogin: ->
-    @html require('views/login')
+  renderLogin: =>
+    @html require('views/login')()
     new LoginForm el: @login
   
   surveyCount: (survey) ->
     @user.project?.groups?[Config.surveys[survey].id]?.classification_count
   
-  displayRecents: (e) =>
-    @thumbs = Recent.all().sort @sortThumbs
-    @thumbs = @thumbs.slice(0, 11)
-    @render() if @isActive()
-    @recents.removeClass 'inactive'
-    @favs.addClass 'inactive'
+  remove: ({ originalEvent: e }) ->
+    item = @collection().find $(e.target).closest('.item').data 'id'
+    item.destroy().onSuccess @render
   
-  displayFavs: (e) =>
-    @thumbs = Favorite.all().sort @sortThumbs
-    @render() if @isActive()
-    @recents.addClass 'inactive'
-    @favs.removeClass 'inactive'
+  switch: ({ originalEvent: e }) ->
+    toShow = $(e.target).closest('a').data 'show'
+    return if toShow is @showing
+    @showing = toShow
+    @recentsLink.toggleClass 'inactive'
+    @favoritesLink.toggleClass 'inactive'
+    @collection().fetch().onSuccess @render
   
-  sortThumbs: (left, right) ->
-    return -1 if left.created_at > right.created_at
-    return 1 if left.created_at < right.created_at
-    return 0
-
 module.exports = Profile
