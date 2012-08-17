@@ -37,11 +37,9 @@
     </div>
     <div class="right">
       <h1 class="heading">Recent Favourite Images</h1>
-      <p class="description">
-        <img src="images/gz_thumbnail.jpg" class="first" />
-        <img src="images/gz_thumbnail.jpg" />
-        <img src="images/gz_thumbnail.jpg" />
-      </p>
+      <div class="recents">
+        <%- require('views/recents')(@recents) %>
+      </div>
     </div>
   </div>
 </div>
