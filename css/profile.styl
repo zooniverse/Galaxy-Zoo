@@ -1,25 +1,26 @@
 #profile
-
   .content
     background-color: $light-gray
     color: $dark-gray
-    padding: $column-size ($column-size + $gutter-size) $column-size ($gutter-size + $column-size)
-    margin-top: $column-size
-    margin-left: -($column-size + $gutter-size)
-    width: $full-width
-
+    margin-top: 80px
+    
     #login
-      padding: $gutter-size $gutter-size $gutter-size 0
       width: $one-half
-      margin-left: auto
-      margin-right: auto
-      border: 1px solid black
+      margin: 0 auto
+      border-top: none
       font-family: "Open Sans"
+      
+      button:hover
+        background: none
 
     .content-block
       clearfix()
       display: block
-      width: $full-width
+      width: 100%
+      
+      $vertical-padding = 30px
+      $middle-padding = 10px
+      $side-padding = 40px
       
       .heading
         color: #01050f
@@ -27,36 +28,36 @@
         font-weight: 300
         font-size: 45px
         margin: 0
-
+        padding: $vertical-padding 0 0 $side-padding
+      
       .left, .right
         font-family: "Open Sans"
         font-weight: 400
         font-size: 12px
         line-height: 20px
         float: left
-
+        
         .sub-heading
           color: #23799c
           font-family: "Open Sans"
           font-weight: 700
           font-size: 14px
           padding-bottom: $gutter-size
-
+          
           .recents-link, .favorites-link
             display: inline
             padding-right: $gutter-size
-
+          
           .inactive
             color: #8ACBE6
-
+        
         .thumbnails
           display: block
-
+          
           .item
             display: inline-block
             position: relative
-            padding-right: $gutter-size
-            padding-bottom: $gutter-size
+            padding: 5px // $gutter-size $gutter-size 0 0
             
             .remove
               display: none
@@ -65,46 +66,46 @@
               .remove
                 standard-button()
                 position: absolute
-                top: -10px
-                right: 10px
+                top: -5px
+                right: -5px
                 padding: 0 5px
                 border-radius: 10px
                 line-height: 20px
                 font-size: 20px
-
+        
         .classification-counts
           color: #01050f
           font-family: "Open Sans"
           font-size: 30pt
           font-weight: 400
           padding: 0 0 $gutter-size 0
-
-          .count 
+          
+          .count
             font-weight: 700
-
+          
           .hubble
-            background-image: url(images/gz-icon-hubble.png)
+            background-image: url('images/gz-icon-hubble.png')
             background-repeat: no-repeat
-            padding-left: 2*($gutter-size)
+            padding-left: 2 * $gutter-size
             padding-bottom: $gutter-size
-
+          
           .sdss
-            background-image: url(images/gz-icon-sdss.png)
+            background-image: url('images/gz-icon-sdss.png')
             background-repeat: no-repeat
-            padding-left: 2*($gutter-size)
-
+            padding-left: 2 * $gutter-size
+          
           .caption
             font-size: 12px
             display: block
             padding-top: 6px
-
+      
       .left
-        width: $two-thirds
+        padding: 0 ($middle-padding / 2) $vertical-padding $side-padding
+        width: ($full-width * 0.70) - ($middle-padding / 2) - $side-padding
         float: left
-
+      
       .right
-        width: $one-quarter
-        padding-left: $gutter-size + $column-size
+        padding: 0 $side-padding $vertical-padding ($middle-padding / 2)
+        width: ($full-width * 0.29) - ($middle-padding / 2) - $side-padding
         float: left
         min-height: 565px
-
