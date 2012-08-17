@@ -39,6 +39,7 @@ index.gsub! 'application.js', "application-#{ timestamp }.js"
 index.gsub! 'application.css', "application-#{ timestamp }.css"
 File.open('build/index.html', 'w'){ |f| f.puts index }
 
+working_directory = Dir.pwd
 Dir.chdir 'build'
 to_upload = Dir['**/*'].reject{ |path| File.directory? path }
 to_upload.delete 'index.html'
@@ -46,8 +47,6 @@ to_upload << 'index.html'
 total = to_upload.length
 
 to_upload.each.with_index do |file, index|
-  puts "[ #{ index + 1 } / #{ total } ]: Uploading #{ file }"
-  
   content_type = case File.extname(file)
   when '.html'
     'text/html'
@@ -63,7 +62,10 @@ to_upload.each.with_index do |file, index|
     `file --mime-type -b #{ file }`.chomp
   end
   
+  puts "#{ '%2d' % (index + 1) } / #{ '%2d' % total }: Uploading #{ file } as #{ content_type }"
   bucket.objects[file].write file: file, acl: :public_read, content_type: content_type
 end
 
+Dir.chdir working_directory
+`rm -rf build`
 puts 'Done!'
