@@ -21,6 +21,6 @@
     "underscore": "*",
     "spine": "~1.0.7",
     "clean-css": "0.6.0",
-    "zooniverse": "git+ssh://git@github.com:zooniverse/Zooniverse.git#e546787b56"
+    "zooniverse": "git+ssh://git@github.com:zooniverse/Zooniverse.git#c6ab220ad"
   }
 }
