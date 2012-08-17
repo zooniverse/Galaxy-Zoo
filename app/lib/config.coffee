@@ -18,10 +18,10 @@ Config =
     surveys:
       candels:
         id: '50251c3b516bcb6ecb000001'
-        workflowId: '50217499516bcb0fda000001'
+        workflowId: '50251c3b516bcb6ecb000001'
       sloan:
         id: '50251c3b516bcb6ecb000002'
-        workflowId: '50217499516bcb0fda000001'
+        workflowId: '50251c3b516bcb6ecb000002'
     subjectCache: 5
     quiz:
       invitationId: '502bfa73516bcb3c600003e9'
@@ -32,10 +32,10 @@ Config =
     surveys:
       candels:
         id: '50251c3b516bcb6ecb000001'
-        workflowId: '50217499516bcb0fda000001'
+        workflowId: '50251c3b516bcb6ecb000001'
       sloan:
         id: '50251c3b516bcb6ecb000002'
-        workflowId: '50217499516bcb0fda000001'
+        workflowId: '50251c3b516bcb6ecb000002'
     subjectCache: 5
     quiz:
       invitationId: '502bfa73516bcb3c600003e9'
