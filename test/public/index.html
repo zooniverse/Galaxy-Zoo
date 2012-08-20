@@ -12,13 +12,6 @@
   <body>
     <script type="text/javascript">
       jasmine.getEnv().addReporter(new jasmine.TrivialReporter());
-      jasmine.getEnv().addReporter(new jasmine.PhantomJSReporter());
-      window.onload = function(){
-        for(var key in specs.modules) {
-          specs(key);
-        }
-        jasmine.getEnv().execute();
-      };
     </script>
   </body>
 </html>

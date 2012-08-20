@@ -9,7 +9,7 @@
   },
   "scripts": {
     "pretest": "hem server --port 9290 & echo $! > ./hem.pid",
-    "test": "phantomjs test/public/lib/run-jasmine.js http://localhost:9290/test",
+    "test": "jasmine-phantom-node --port 9290",
     "posttest": "kill `cat hem.pid`; rm hem.pid"
   },
   "dependencies": {
@@ -22,5 +22,8 @@
     "spine": "~1.0.7",
     "clean-css": "0.6.0",
     "zooniverse": "git+ssh://git@github.com:zooniverse/Zooniverse.git#c6ab220ad"
+  },
+  "devDependencies": {
+    "jasmine-phantom-node": "git://github.com/edpaget/jasmine-phantom-node.git"
   }
 }
