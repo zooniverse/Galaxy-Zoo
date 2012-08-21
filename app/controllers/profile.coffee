@@ -19,6 +19,8 @@ class Profile extends Spine.Controller
   constructor: ->
     super
     @showing = 'recents'
+    @opts =
+      per_page: 12
     User.bind 'sign-in', @refresh
   
   collection: =>
@@ -29,7 +31,7 @@ class Profile extends Spine.Controller
   
   refresh: =>
     if User.current
-      fetcher = @collection().fetch()
+      fetcher = @collection().fetch(@opts)
       fetcher.onSuccess(@render) if @isActive()
   
   active: ->
@@ -54,10 +56,10 @@ class Profile extends Spine.Controller
     item = @collection().find $(e.target).closest('.item').data 'id'
     item.favorite().onSuccess @render
   
-  switch: ({ originalEvent: e }) ->
+  switch: ({ originalEvent: e }) =>
     toShow = $(e.target).closest('a').data 'show'
     return if toShow is @showing
     @showing = toShow
-    @collection().fetch().onSuccess @render
+    @collection().fetch(@opts).onSuccess @render
 
 module.exports = Profile
