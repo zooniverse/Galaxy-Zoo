@@ -5,14 +5,41 @@
     margin-top: 80px
     
     #login
+      position: relative
       width: $one-half
       margin: 0 auto
-      border-top: none
+      padding: 50px 0
       font-family: "Open Sans"
+      text-align: center
       
-      button:hover
-        background: none
-
+      .title
+        text-align: center
+      
+      label
+        display: block
+        margin: 15px 0
+        
+        &.privacy-policy
+          text-align: right
+          padding-right: $gutter-size
+          
+          input
+            width: auto
+        
+        span
+          display: inline-block
+          text-align: right
+          width: $one-quarter - $gutter-size
+          padding-right: $gutter-size
+        
+        input
+          width: $one-quarter - $gutter-size
+      
+      button
+        cursor: pointer
+        border: 1px solid #555555
+        margin: 10px 0
+    
     .content-block
       clearfix()
       display: block
@@ -76,7 +103,7 @@
         .classification-counts
           color: #01050f
           font-family: "Open Sans"
-          font-size: 30pt
+          font-size: 30px
           font-weight: 400
           padding: 0 0 $gutter-size 0
           
