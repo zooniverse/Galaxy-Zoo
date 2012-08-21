@@ -86,19 +86,23 @@
             position: relative
             padding: 0 15px 15px 0
             
-            .remove
+            .hover-button
               display: none
             
             &:hover
-              .remove
+              .hover-button
                 standard-button()
+                color: $dark-gray
                 position: absolute
-                top: -5px
-                right: -5px
+                top: -12.5px
+                right: 2.5px
                 padding: 0 5px
                 border-radius: 10px
                 line-height: 20px
                 font-size: 20px
+                
+                &.active
+                  color: $blue
         
         .classification-counts
           color: #01050f
