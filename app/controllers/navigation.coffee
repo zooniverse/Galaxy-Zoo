@@ -6,7 +6,6 @@ class Navigation extends Spine.Controller
     'click a[data-nav]': 'navTo'
   
   constructor: ->
-    console.log @
     super
   
   navTo: ({ originalEvent: e }) ->
