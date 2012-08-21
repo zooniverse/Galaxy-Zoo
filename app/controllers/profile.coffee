@@ -51,7 +51,8 @@ class Profile extends Spine.Controller
     item.unfavorite().onSuccess @render
   
   addFavorite: ({ originalEvent: e }) ->
-    alert 'TO-DO: add favorite'
+    item = @collection().find $(e.target).closest('.item').data 'id'
+    item.favorite().onSuccess @render
   
   switch: ({ originalEvent: e }) ->
     toShow = $(e.target).closest('a').data 'show'
