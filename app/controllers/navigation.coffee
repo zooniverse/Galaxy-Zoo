@@ -1,23 +1,25 @@
 Spine = require 'spine'
 
 class Navigation extends Spine.Controller
-  el: '#navigation'
+  el: 'html'
   events:
-    'click nav a': 'navTo'
+    'click a[data-nav]': 'navTo'
   
   constructor: ->
+    console.log @
     super
   
   navTo: ({ originalEvent: e }) ->
     path = $(e.target).closest('a').data 'nav'
     e.preventDefault()
-    @navigate path
+    @navigate(path)
+    $('html,body').animate({ scrollTop: $('#main').offset().top }, 'fast')
   
   active: ->
     super
     @render()
   
   render: ->
-    @html require('views/navigation')(@)
+    $('#navigation').html require('views/navigation')(@)
 
 module.exports = Navigation
