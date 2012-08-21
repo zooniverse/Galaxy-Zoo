@@ -9,8 +9,9 @@ class Profile extends Spine.Controller
   events:
     'click .favorites-link' : 'switch'
     'click .recents-link': 'switch'
-    'click .item .active.hover-button': 'removeFavorite'
-    'click .item .inactive.hover-button': 'addFavorite'
+    'click .item .inactive.remove': 'removeFavorite'
+    'click .item .active.favorite': 'removeFavorite'
+    'click .item .inactive.favorite': 'addFavorite'
   
   elements:
     '.favorites-link' : 'favoritesLink'
