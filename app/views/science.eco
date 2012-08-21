@@ -1,25 +1,21 @@
 <div id="science">
-  <%- require('views/headline')() %>
   <div class="content">
     <div class="content-block">
       <div class="left">
         <h1 class="heading">The Science</h1>
-        <h3 class="sub-heading">What We Want to Know</h3>
-        <p>The aim of the project is to collect information on the shape of the galaxies. This one fact turns out to be a guide to many other facts about a galaxy. Find a spiral galaxy and normally &mdash; but crucially not always &mdash; you'll know that it's a rotating disk which has plenty of fuel for its ongoing star formation. A typical elliptical, on the other hand, has older stars and will have long since finished forming stars.</p>
+        <h3 class="sub-heading">The Science behind the Site</h3>
+        <p>Roughly one hundred billion galaxies are scattered throughout our observable Universe, each a glorious system that might contain billions of stars. Many are remarkably beautiful, and the aim of Galaxy Zoo is to study them, assisting astronomers in attempting to understand how the galaxies we see around us formed, and what their stories can tell us about the past, present and future of our Universe as a whole.</p>
         
-        <p>With Galaxy Zoo: Hubble, we want to see how the mix of galaxies has changed over time. More stars were forming back then, so does that mean we should expect more spirals? Or does the proportion of blue ellipticals increase as we travel back in time? Only you can tell us.</p>
+        <p>Our strategy is based on the remarkable fact that you can tell a lot about a galaxy just from its shape. Find a system with spiral arms, for example, and normally - but critically not always - you'll know that you’re looking at a rotating disk of stars, dust and gas with plenty of fuel for future star formation. Find one of the big balls of stars we call ellipticals, however, and you’re probably looking at a more mature system, one which long ago finished forming stars. The galaxies' histories are also revealed; that elliptical is likely to be the product of a head-on collision between two smaller galaxies, and smaller scars such as warped disks, large bulges or long streams of stars bear testament to the complexity of these galaxies' lives.</p>
         
-        <p>Another critical question is what happens to the number of merging galaxies. We know that a merger can have a dramatic effect on the galaxies involved; one good way to form an elliptical, for example, is to collide two spirals together. The question is how much of an effect mergers had in producing the mix of galaxies we see today and to determine that we need to know how common they were in the past. Yesterday's mergers may well have produced today's galaxies.</p>
+        <p>We've already said that a merger can have a major impact on a galaxy's appearance, but many other factors could have played an important role; for example, there is steadily growing evidence (not least from previous Galaxy Zoo projects) that the black holes that lurk at the heart of galaxies may have a profound effect on their surroundings.</p>
         
-        <p>The primary goal of Galaxy Zoo is to construct a database of detailed shape information for almost all the galaxies the Hubble Space Telescope has ever seen. Such a database will have substantial legacy value for the international astronomy community. In short, we hope to find out everything there is to know about the appearance of galaxies!</p>
+        <p>As material falls towards the black hole, it can be heated to enormous temperatures and the resulting radiation packs a powerful punch, sometimes aided by the presence of powerful jets of materials flung away from the vicinity of the black hole (though not, of course, from the black hole itself) at close to the speed of light. These combination of forces can, it seems, heat or expel gas from the galaxy, depriving it of fuel for future star formation and changing its face for ever.</p>
         
-        <h3 class="spaced sub-heading">Helpful Links</h3>
-        <ul>
-          <li><a>Nature of Voorwerp</a></li>
-          <li><a>The Mystery Deepens</a></li>
-          <li><a>Follow-up observations</a></li>
-          <li><a>HST plans</a></li>
-        </ul>
+        <p>A galaxy's surroundings matter too. At the centre of the Virgo cluster, our nearest large group of galaxies, mergers between systems are rare - held by the cluster’s powerful gravitational grip, galaxies are moving too fast for more than brief encounters. In the emptiest parts of space, the density of galaxies is just too low for mergers to play a significant role, and so it’s only on the outskirts of clusters or in small groups like our own Local Group that mergers currently play a significant part. It should come as no surprise, then, that we find different types of galaxies in different places, and this too must be taken into account.</p>
+        
+        <p>Disentangling these effects, and many more, requires the largest possible samples of classified galaxies. It's not uncommon for us to need, for example, a large sample of red, barred, spiral galaxies that reside on the edges of clusters, and if we don’t have a large sample to begin with there will be none left when we've narrowed the search. Modern surveys provide enough images - hundreds of thousands upon hundreds of thousands of them - but we still need people to classify them. That's where you come in...</p>
+        
       </div>
       <div class="right">
         <h1 class="heading">Rare Objects</h1>
