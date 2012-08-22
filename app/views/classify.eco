@@ -8,6 +8,7 @@
       <ul class="buttons">
         <li><a class="help">Help</a></li>
         <li><a class="restart">Restart</a></li>
+        <li><a class="invert">Invert</a></li>
         <% if require('zooniverse/lib/models/user').current : %>
           <li><a class="favorite">Favourite</a></li>
         <% end %>

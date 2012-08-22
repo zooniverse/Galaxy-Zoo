@@ -8,13 +8,17 @@ User = require 'zooniverse/lib/models/user'
 
 class Classify extends Spine.Controller
   elements:
+    '#classify .galaxy img': 'image'
     '.tree .question': 'question'
+    '.top .buttons .invert': 'invertLink'
     '.top .buttons .favorite': 'favoriteLink'
   
   events:
+    'click #classify .galaxy img': 'toggleInverted'
     'click .tree .answer a': 'answer'
     'click .top .buttons .help': 'help'
     'click .top .buttons .restart': 'restart'
+    'click .top .buttons .invert': 'toggleInverted'
     'click .top .buttons .favorite': 'toggleFavorite'
   
   constructor: ->
@@ -55,6 +59,15 @@ class Classify extends Spine.Controller
     @classification = new Classification subject_id: @subject.id
     @render()
     ev.preventDefault()
+  
+  toggleInverted: (ev) ->
+    if @image.hasClass 'inverted'
+      @image.attr 'src', Subject.current.location.standard
+    else
+      @image.attr 'src', Subject.current.location.inverted
+    
+    @invertLink.toggleClass 'active'
+    @image.toggleClass 'inverted'
   
   toggleFavorite: (ev) ->
     @favoriteLink.toggleClass 'active'
