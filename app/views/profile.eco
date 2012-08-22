@@ -17,7 +17,11 @@
             <div class="item" data-id="<%= item.id %>">
               <div class="thumb"><img src="<%- item.subjects.location.thumbnail %>" height="140" width="140" /></div>
               <% if @showing is 'favorites' : %>
-                <a class="remove">&times;</a>
+                <a title="Remove this favorite" class="inactive hover-button remove">&times;</a>
+              <% else if item.favorited : %>
+                <a title="Remove this favorite" class="active hover-button favorite">&hearts;</a>
+              <% else : %>
+                <a title="Favorite this" class="inactive hover-button favorite">&hearts;</a>
               <% end %>
             </div>
           <% end %>

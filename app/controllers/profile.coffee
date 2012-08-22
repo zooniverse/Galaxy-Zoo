@@ -9,7 +9,9 @@ class Profile extends Spine.Controller
   events:
     'click .favorites-link' : 'switch'
     'click .recents-link': 'switch'
-    'click .item .remove': 'remove'
+    'click .item .inactive.remove': 'removeFavorite'
+    'click .item .active.favorite': 'removeFavorite'
+    'click .item .inactive.favorite': 'addFavorite'
   
   elements:
     '.favorites-link' : 'favoritesLink'
@@ -18,6 +20,8 @@ class Profile extends Spine.Controller
   constructor: ->
     super
     @showing = 'recents'
+    @opts =
+      per_page: 12
     User.bind 'sign-in', @refresh
   
   collection: =>
@@ -28,7 +32,7 @@ class Profile extends Spine.Controller
   
   refresh: =>
     if User.current
-      fetcher = @collection().fetch()
+      fetcher = @collection().fetch(@opts)
       fetcher.onSuccess(@render) if @isActive()
   
   active: ->
@@ -45,14 +49,18 @@ class Profile extends Spine.Controller
   surveyCount: (survey) ->
     User.current.project?.groups?[Config.surveys[survey].id]?.classification_count
   
-  remove: ({ originalEvent: e }) ->
+  removeFavorite: ({ originalEvent: e }) ->
     item = @collection().find $(e.target).closest('.item').data 'id'
-    item.destroy().onSuccess @render
+    item.unfavorite().onSuccess @render
   
-  switch: ({ originalEvent: e }) ->
+  addFavorite: ({ originalEvent: e }) ->
+    item = @collection().find $(e.target).closest('.item').data 'id'
+    item.favorite().onSuccess @render
+  
+  switch: ({ originalEvent: e }) =>
     toShow = $(e.target).closest('a').data 'show'
     return if toShow is @showing
     @showing = toShow
-    @collection().fetch().onSuccess @render
+    @collection().fetch(@opts).onSuccess @render
 
 module.exports = Profile
