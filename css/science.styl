@@ -1,4 +1,4 @@
-#science, #story
+#science, #story, #papers
   .content
     background-color: $light-gray
     color: $dark-gray
@@ -13,7 +13,7 @@
       $middle-padding = 100px
       $side-padding = 80px
       
-      .left, .right
+      .left, .right, .full
         font-family: "Open Sans"
         font-weight: 400
         font-size: 12px
@@ -43,6 +43,12 @@
           a
             text-decoration: none
             color: #23799C
+          
+          &.papers
+            list-style: disc
+      
+      .full
+        padding: $vertical-padding $side-padding $vertical-padding $side-padding
       
       .left
         padding: $vertical-padding ($middle-padding / 2) $vertical-padding $side-padding
