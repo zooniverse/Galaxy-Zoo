@@ -1,0 +1,19 @@
+<div class="quiz-invitation reminder">
+  <h1>Galaxy Zoo needs your help!</h1>
+  <p class="sub-title">We are doing research to better understand what Galaxy Zoo volunteers think about the universe.</p>
+  
+  <div class="content-block">
+    <div class="left">
+      <p class="bold">You have previously agreed to be asked a set of 5&ndash;6 short questions once every week.</p>
+      <p class="bold reward">Each time you complete a set of questions you will be entered in a raffle to win a <strong>$20 Amazon Gift Certificate</strong>.</p>
+    </div>
+    
+    <div class="right">
+      <p class="call">Are you ready?</p>
+      <div class="buttons">
+        <button data-dialog="true" data-value="yes">Yes!</button>
+        <button data-dialog="true" data-value="no">Never ask again</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+<div class="quiz-invitation finish">
+  <h1>Thanks!</h1>
+  <p class="sub-title">You are helping us better understand what Galaxy Zoo volunteers think about the universe.</p>
+  
+  <div class="content-block">
+    <div class="left">
+      <p class="bold reward">You have been entered intp a raffle to win a <strong>$20 Amazon Gift Certificate</strong>.</p>
+    </div>
+    
+    <div class="right">
+      <div class="buttons">
+        <button data-dialog="true" data-value="yes">Okay</button>
+      </div>
+    </div>
+  </div>
+</div>
