@@ -15,7 +15,7 @@ class Classify extends Spine.Controller
   
   events:
     'click #classify .galaxy img': 'toggleInverted'
-    'click .tree .answer a': 'answer'
+    'click .tree .answer': 'answer'
     'click .top .buttons .help': 'help'
     'click .top .buttons .restart': 'restart'
     'click .top .buttons .invert': 'toggleInverted'
@@ -46,7 +46,7 @@ class Classify extends Spine.Controller
     @render()
   
   answer: ({ originalEvent: e }) ->
-    id = $(e.target).closest('a').data 'id'
+    id = $(e.target).closest('.answer').data 'id'
     @classification.annotate id
     @updateQuestion()
     e.preventDefault()

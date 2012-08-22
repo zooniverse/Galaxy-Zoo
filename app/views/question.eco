@@ -6,9 +6,9 @@
     <% for row in _(@answers).inGroupsOf(4) : %>
       <div class="row">
         <% for [id, answer] in row : %>
-          <div class="answer">
+          <div data-id="<%= id %>" class="answer">
             <div class="icon">
-              <a data-id="<%= id %>" class="workflow-<%= answer.icon %>"></a>
+              <a class="workflow-<%= answer.icon %>"></a>
               <div class="hover"><%= answer.text %></div>
             </div>
           </div>
