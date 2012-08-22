@@ -19,6 +19,10 @@ class QuizQuestion extends Subject
           classification:
             subject_ids: [Config.quiz.invitationId]
             annotations: [{ response: answer }]
+        
+        switch answer
+          when 'yes'
+            QuizQuestion.next()
     
     @invitationDialog.show()
   
