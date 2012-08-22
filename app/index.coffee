@@ -5,7 +5,7 @@ Spine = require 'spine'
 Api = require 'zooniverse/lib/api'
 Navigation = require 'controllers/navigation'
 Main = require 'controllers/main'
-Quiz = require 'controllers/quiz'
+Quizzes = require 'controllers/quizzes'
 TopBar = require 'zooniverse/lib/controllers/top_bar'
 
 class App extends Spine.Controller
@@ -21,7 +21,7 @@ class App extends Spine.Controller
     
     @navigation = new Navigation
     @main = new Main
-    @quiz = new Quiz
+    @quizzes = new Quizzes
     
     @append @navigation.active(), @main
     Spine.Route.setup()

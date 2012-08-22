@@ -12,6 +12,7 @@
     float: left
     
     img
+      cursor: pointer
       width: 424px
       height: 424px
       float: left
@@ -89,6 +90,7 @@
             height: 100px
             text-align: center
             padding: 0
+            cursor: pointer
             
             .icon, .icon .hover
               margin: 0 auto
@@ -99,7 +101,7 @@
               .hover
                 $line-height = 18px
                 position: relative
-                top: -($line-height)
+                top: -($line-height / 2.0)
                 width: 100px
                 height: $gutter-size
                 color: #AAAAAA
@@ -166,7 +168,15 @@
                 &.workflow-spiral_loose { background-position: 0px -4500px; }
                 &.workflow-spiral_medium { background-position: 0px -4600px; }
                 &.workflow-spiral_tight { background-position: 0px -4700px; }
-          
-          .answer:hover
-            .hover
-              visibility: visible
+            
+            &:hover
+                background-color: rgba(0, 60, 87, 0.7)
+                
+                .hover
+                  color: $light-gray
+            
+            &.active
+              background-color: rgba(0, 60, 87, 1.0)
+              
+              .hover
+                color: $light-gray

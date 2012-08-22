@@ -1,24 +1,25 @@
-<% QuizQuestion = require 'models/quiz_question' %>
-<% quiz = QuizQuestion.current %>
+<% Quiz = require 'models/quiz' %>
+<% quiz = Quiz.current %>
+<% question = quiz.question() %>
 
 <div class="quiz-question">
   <div class="content-block">
     <div class="question">
-      <h1><%- quiz.question().text %></h1>
-      <% if quiz.question().image : %>
-        <img src="<%= quiz.question().image %>" />
+      <h1><%- question.text %></h1>
+      <% if question.image : %>
+        <img src="<%= question.image %>" />
       <% end %>
     </div>
     
-    <div class="answers">
-      <% for answer in quiz.answers() : %>
-        <div class="answer">
-          <span><%- answer.text %></span>
+    <ul class="answers">
+      <% for letter, answer of question.answersWithLetters() : %>
+        <li class="answer">
+          <span data-dialog="true" data-value="<%= letter %>"><%- answer.text %></span>
           <% if answer.image : %>
-            <img src="<%= answer.image %>" />
+            <img data-dialog="true" data-value="<%= letter %>" src="<%= answer.image %>" />
           <% end %>
-        </div>
+        </li>
       <% end %>
-    </div>
+    </ul>
   </div>
 </div>
