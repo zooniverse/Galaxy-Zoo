@@ -79,16 +79,10 @@ class Classify extends Spine.Controller
       @question.html require('views/question')(@classification.question)
     else
       @classification.send()
-      @addToRecents() if User.current
       @finish() # should be a interrupt page for favoriting, info, talk, etc
   
   finish: ->
     Subject.next()
     @nextSubject()
-  
-  addToRecents: ->
-    Recent.create
-      subjects: Subject.current
-      created_at: new Date
 
 module.exports = Classify

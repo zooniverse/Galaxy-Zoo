@@ -38,6 +38,7 @@ class Profile extends Spine.Controller
   active: ->
     super
     @render()
+    @refresh()
   
   render: =>
     if User.current
@@ -47,7 +48,7 @@ class Profile extends Spine.Controller
       new LoginForm el: '#login'
   
   surveyCount: (survey) ->
-    User.current.project?.groups?[Config.surveys[survey].id]?.classification_count
+    User.current.project?.groups?[Config.surveys[survey].id]?.classification_count or 0
   
   removeFavorite: ({ originalEvent: e }) ->
     item = @collection().find $(e.target).closest('.item').data 'id'
