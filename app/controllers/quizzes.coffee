@@ -19,8 +19,9 @@ class Quizzes extends Spine.Controller
     return unless User.current
     checker = Api.getJSON "/projects/galaxy_zoo_quiz/current_user"
     checker.onSuccess (user) =>
+      Quiz.user = user
       Quiz.classificationCount = user.project?.classification_count or 0
-      console.info 'Quiz.classificationCount: ', Quiz.classificationCount
+      Quiz.trigger 'quiz-user'
     
     checker.onSuccess(@triggerQuizzesFor) if @classificationCount is 5
   
@@ -28,7 +29,6 @@ class Quizzes extends Spine.Controller
     answer = user.project.invitation?.response
     lastInvite = user.project.invitation?.timestamp
     lastActive = user.project.last_active_at
-    
     
     return unless Quiz.classificationCount < 6
     Quiz.invitation() if answer is undefined or (answer is 'later' and @aWeekSince(lastInvite))

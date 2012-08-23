@@ -27,10 +27,38 @@
       </div>
       
       <div class="right">
-        <h3 class="sub-heading">Classifications</h3>
-        <div class="classification-counts">
-          <div class="hubble"><span class="count"><%= @surveyCount 'candels' %></span> Hubble <span class="caption">Hubble Classications</span></div>
-          <div class="sdss"><span class="count"><%= @surveyCount 'sloan' %></span> SDSS <span class="caption">SDSS Classifications</span></div>
+        <div class="classifications">
+          <h3 class="sub-heading">Classifications</h3>
+          <div class="classification-counts">
+            <div class="hubble">
+              <span class="count"><%= @surveyCount 'candels' %></span>
+              Hubble
+              <span class="caption">Hubble Classications</span>
+            </div>
+            
+            <div class="sdss">
+              <span class="count"><%= @surveyCount 'sloan' %></span>
+              SDSS
+              <span class="caption">SDSS Classifications</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="quizzes">
+          <h3 class="sub-heading">Quizzes</h3>
+          <div class="classification-counts">
+            <div class="quizzes">
+              <span class="count"><%= @quizCount() %></span>
+              <%= if @quizCount() is 1 then 'Quiz' else 'Quizzes' %>
+              <span class="caption">Quizzes Taken</span>
+              
+              <% if @quizCount() < 6 : %>
+                <button class="take-a-quiz">
+                  Take a quiz now
+                </button>
+              <% end %>
+            </div>
+          </div>
         </div>
       </div>
     </div>

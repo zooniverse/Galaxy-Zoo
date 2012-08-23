@@ -34,11 +34,11 @@ class Quiz extends Subject
     
     @next() if answer is 'yes'
   
-  @next: ->
+  @next: (opts = { }) ->
     @fetch().onSuccess =>
       @current?.destroy()
       @current = @first()
-      @current.show()
+      @current.show opts
   
   constructor: ->
     super
@@ -59,10 +59,13 @@ class Quiz extends Subject
         subject_ids: [@id]
         annotations: @results
   
-  show: =>
+  show: ({ @required } = { }) =>
+    @required ?= true
+    
     dialog = new Dialog
       template: 'views/quiz_question'
       buttonSelector: '.answer [data-dialog="true"]'
+      closeButton: not @required
       callback: @callback
     
     dialog.show()
@@ -70,6 +73,7 @@ class Quiz extends Subject
   finish: =>
     @send()
     Quiz.classificationCount += 1
+    @trigger 'quiz-finished'
     dialog = new Dialog
       template: 'views/quiz_finish'
       callback: (answer) =>
@@ -80,6 +84,6 @@ class Quiz extends Subject
   callback: (answer) =>
     @results.push question: @index, answer: answer
     @index += 1
-    if @question() then @show() else @finish()
+    if @question() then @show(required: @required) else @finish()
 
 module.exports = Quiz
