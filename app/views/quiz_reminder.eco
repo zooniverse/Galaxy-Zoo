@@ -12,6 +12,7 @@
       <p class="call">Are you ready?</p>
       <div class="buttons">
         <button data-dialog="true" data-value="yes">Yes!</button>
+        <button data-dialog="true" data-value="later">Later</button>
         <button data-dialog="true" data-value="no">Never ask again</button>
       </div>
     </div>
