@@ -6,12 +6,13 @@
     <div class="top">
       <h1 class="heading">Classify</h1>
       <ul class="buttons">
-        <li><a class="help">Help</a></li>
-        <li><a class="restart">Restart</a></li>
-        <li><a class="invert">Invert</a></li>
+        <li class="right"><a class="restart">Restart</a></li>
+        <li class="right"><a class="help">Help</a></li>
+        <li class="left"><a class="icon <%= @subject.metadata.survey %>">&nbsp;</a></li>
         <% if require('zooniverse/lib/models/user').current : %>
-          <li><a class="favorite">Favourite</a></li>
+          <li class="left"><a title="Favorite" class="icon favorite" src="">&nbsp;</a></li>
         <% end %>
+        <li class="left"><a title="Invert" class="icon invert" src="">&nbsp;</a></li>
       </ul>
     </div>
     

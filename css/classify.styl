@@ -23,19 +23,30 @@
     margin-top: $gutter-size
     
     .top
+      clearfix()
+      
       h1
+        float: left
         display: inline
         font-family: "Open Sans Condensed"
+        font-weight: 300
+        margin: 0
+        width: 100px
       
       .buttons
+        clearfix()
         float: right
+        display: inline-block
+        width: $one-half - 100px
+        margin: 15px 0
+        padding: 0
         
         li
+          display: inline-block
           text-align: center
-          line-height: 20px
+          line-height: 30px
           list-style: none
-          min-width: $column-size + 0.5 * $gutter-size
-          float: left
+          width: $column-size + 0.5 * $gutter-size
           margin-left: 10px
           
           a
@@ -51,6 +62,15 @@
             
             &.active
               background-color: $green
+        
+        li.left
+          icons()
+          float: left
+          width: 30px
+          height: 30px
+        
+        li.right
+          float: right
     
     .question
       font-family: "Open Sans"
