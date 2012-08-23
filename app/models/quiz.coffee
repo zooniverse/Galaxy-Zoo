@@ -11,6 +11,7 @@ class Quiz extends Subject
   @configure 'Quiz', 'metadata'
   projectName: 'galaxy_zoo_quiz'
   
+  @workflowUrl: (params) -> @withParams "/projects/galaxy_zoo_quiz/workflows/#{ Config.quiz.workflowId }/classifications", params
   @url: (params) -> @withParams "/projects/galaxy_zoo_quiz/subjects", params
   
   @invitation: ->
@@ -26,7 +27,7 @@ class Quiz extends Subject
     @reminderDialog.show()
   
   @dialogCallback: (answer) =>
-    Api.post "/projects/galaxy_zoo_quiz/workflows/#{ Config.quiz.workflowId }/classifications",
+    Api.post @workflowUrl(),
       classification:
         subject_ids: [Config.quiz.invitationId]
         annotations: [{ response: answer }]
@@ -42,6 +43,7 @@ class Quiz extends Subject
   constructor: ->
     super
     @questions or= _(@metadata.questions).collect (question) -> new QuizQuestion(question)
+    @results = []
     @index = 0
   
   question: =>
@@ -49,6 +51,12 @@ class Quiz extends Subject
   
   answers: =>
     @question().answers
+  
+  send: =>
+    Api.post Quiz.workflowUrl(),
+      classification:
+        subject_ids: [@id]
+        annotations: @results
   
   show: =>
     dialog = new Dialog
@@ -59,12 +67,13 @@ class Quiz extends Subject
     dialog.show()
   
   finish: =>
+    @send()
     dialog = new Dialog
       template: 'views/quiz_finish'
     dialog.show()
   
   callback: (answer) =>
-    # console.log 'record: ', { question: @index, answer: answer }
+    @results.push question: @index, answer: answer
     @index += 1
     if @question() then @show() else @finish()
 

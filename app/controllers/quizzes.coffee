@@ -21,6 +21,8 @@ class Quizzes extends Spine.Controller
       lastInvite = user.project.invitation?.timestamp
       lastActive = user.project.last_active_at
       
+      count = user.project?.classification_count or 0
+      return unless count < 6
       Quiz.invitation() if answer is undefined or (answer is 'later' and @aWeekSince(lastInvite))
       Quiz.reminder() if answer is 'yes' and @aWeekSince(lastActive)
   
