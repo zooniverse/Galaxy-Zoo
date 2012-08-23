@@ -42,6 +42,7 @@ class Quiz extends Subject
   
   constructor: ->
     super
+    Quiz.classificationCount or= 0
     @questions or= _(@metadata.questions).collect (question) -> new QuizQuestion(question)
     @results = []
     @index = 0
@@ -68,8 +69,12 @@ class Quiz extends Subject
   
   finish: =>
     @send()
+    Quiz.classificationCount += 1
     dialog = new Dialog
       template: 'views/quiz_finish'
+      callback: (answer) =>
+        Quiz.next() if answer is 'now'
+    
     dialog.show()
   
   callback: (answer) =>

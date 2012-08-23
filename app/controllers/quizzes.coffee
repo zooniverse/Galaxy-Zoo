@@ -11,20 +11,28 @@ class Quizzes extends Spine.Controller
     
     User.bind 'sign-in', @check
     Classification.bind 'classified', =>
-      @classificationCount += 1
-      @check()
+      if User.current
+        @classificationCount += 1
+        @check()
   
   check: =>
-    return unless User.current and @classificationCount is 5
-    Api.getJSON "/projects/galaxy_zoo_quiz/current_user", (user) =>
-      answer = user.project.invitation?.response
-      lastInvite = user.project.invitation?.timestamp
-      lastActive = user.project.last_active_at
-      
-      count = user.project?.classification_count or 0
-      return unless count < 6
-      Quiz.invitation() if answer is undefined or (answer is 'later' and @aWeekSince(lastInvite))
-      Quiz.reminder() if answer is 'yes' and @aWeekSince(lastActive)
+    return unless User.current
+    checker = Api.getJSON "/projects/galaxy_zoo_quiz/current_user"
+    checker.onSuccess (user) =>
+      Quiz.classificationCount = user.project?.classification_count or 0
+      console.info 'Quiz.classificationCount: ', Quiz.classificationCount
+    
+    checker.onSuccess(@triggerQuizzesFor) if @classificationCount is 5
+  
+  triggerQuizzesFor: (user) =>
+    answer = user.project.invitation?.response
+    lastInvite = user.project.invitation?.timestamp
+    lastActive = user.project.last_active_at
+    
+    
+    return unless Quiz.classificationCount < 6
+    Quiz.invitation() if answer is undefined or (answer is 'later' and @aWeekSince(lastInvite))
+    Quiz.reminder() if answer is 'yes' and @aWeekSince(lastActive)
   
   aWeekSince: (timestamp) ->
     return false unless timestamp

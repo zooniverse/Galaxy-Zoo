@@ -1,3 +1,5 @@
+<% Quiz = require('models/quiz') %>
+
 <div class="quiz-invitation finish">
   <h1>Thanks!</h1>
   <p class="sub-title">You are helping us better understand what Galaxy Zoo volunteers think about the universe.</p>
@@ -8,9 +10,18 @@
     </div>
     
     <div class="right">
-      <div class="buttons">
-        <button data-dialog="true" data-value="yes">Okay</button>
-      </div>
+      <% if Quiz.classificationCount < 6 : %>
+        <p class="call">When would you like to take the next set of questions?</p>
+        <div class="buttons">
+          <button data-dialog="true" data-value="now">Now</button>
+          <button data-dialog="true" data-value="later">Later</button>
+        </div>
+      <% else : %>
+        <p class="call">You have completed all the quizzes!</p>
+        <div class="buttons">
+          <button data-dialog="true" data-value="done">Okay</button>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
