@@ -1,5 +1,8 @@
 <div id="home">
-  <%- require('views/headline')() %>
+  <div class="headline">
+    Few have witnessed what you're about to see
+    <p class="call-to-action">Experience a privileged glimpse of the distant universe, observed by the SDSS and Hubble  Telescope <a class="button" data-nav="#/classify" href="#/classify">Begin Classifying</a></p>
+  </div>
   <div class="slider">
     <div class="slide-element galaxy-zoo">
       <div class="left">

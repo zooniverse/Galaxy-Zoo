@@ -1,6 +1,4 @@
 <div id="profile">
-  <%- require('views/headline')() %>
-  
   <div class="content">
     <div class="content-block">
       
