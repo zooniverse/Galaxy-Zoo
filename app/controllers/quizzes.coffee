@@ -20,7 +20,6 @@ class Quizzes extends Spine.Controller
       answer = user.project.invitation?.response
       lastInvite = user.project.invitation?.timestamp
       lastActive = user.project.last_active_at
-      console.log 'here!', lastActive
       
       Quiz.invitation() if answer is undefined or (answer is 'later' and @aWeekSince(lastInvite))
       Quiz.reminder() if answer is 'yes' and @aWeekSince(lastActive)

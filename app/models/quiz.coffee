@@ -64,7 +64,7 @@ class Quiz extends Subject
     dialog.show()
   
   callback: (answer) =>
-    console.log 'record: ', { question: @index, answer: answer }
+    # console.log 'record: ', { question: @index, answer: answer }
     @index += 1
     if @question() then @show() else @finish()
 
