@@ -26,7 +26,7 @@ CandelsTree = new DecisionTree 'candels', ->
   @question 'Clumps', 'Do the clumps appear in a straight line, a chain, or a cluster?', leadsTo: 'Is there one clump which is clearly brighter than the others?', ->
     @answer 'Straight Line', icon: 'clump_line'
     @answer 'Chain', icon: 'clump_chain'
-    @answer 'Cluster', icon: 'clump_cluster'
+    @answer 'Cluster / Irregular', icon: 'clump_cluster'
     @answer 'Spiral', icon: 'clump_spiral'
   
   @question 'Clumps', 'Is there one clump which is clearly brighter than the others?', ->
