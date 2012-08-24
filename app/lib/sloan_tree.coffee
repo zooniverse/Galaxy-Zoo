@@ -29,13 +29,14 @@ SloanTree = new DecisionTree 'sloan', ->
     @answer 'No', icon: 'no'
   
   @question 'Odd', 'What are the odd features?', ->
-    @answer 'Ring', icon: 'ring'
-    @answer 'Lens or arc', icon: 'lens'
-    @answer 'Disturbed', icon: 'disturbed'
-    @answer 'Irregular', icon: 'irregular'
-    @answer 'Other', icon: 'other'
-    @answer 'Merger', icon: 'merger'
-    @answer 'Dust lane', icon: 'dustlane'
+    @checkbox 'Ring', icon: 'ring'
+    @checkbox 'Lens or arc', icon: 'lens'
+    @checkbox 'Disturbed', icon: 'disturbed'
+    @checkbox 'Irregular', icon: 'irregular'
+    @checkbox 'Other', icon: 'other'
+    @checkbox 'Merger', icon: 'merger'
+    @checkbox 'Dust lane', icon: 'dustlane'
+    @answer 'Done', icon: 'yes'
   
   @question 'Round', 'How rounded is it?', leadsTo: 'Is there anything odd?', ->
     @answer 'Completely round', icon: 'smooth_round'

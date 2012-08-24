@@ -16,6 +16,7 @@ class Classify extends Spine.Controller
   events:
     'click #classify .galaxy img': 'toggleInverted'
     'click .tree .answer': 'answer'
+    'click .tree .checkbox': 'checkBox'
     'click .top .buttons .help': 'help'
     'click .top .buttons .restart': 'restart'
     'click .top .buttons .invert': 'toggleInverted'
@@ -45,11 +46,22 @@ class Classify extends Spine.Controller
     @classification = new Classification subject_id: @subject.id
     @render()
   
-  answer: ({ originalEvent: e }) ->
-    id = $(e.target).closest('.answer').data 'id'
-    @classification.annotate id
+  answer: (ev) ->
+    id = $(ev.target).closest('.answer').data 'id'
+    checks = _ $('.buttons .active.checkbox')
+    checkIds = checks.collect (check) -> $(check).data('id')
+    
+    if checkIds.length is 0
+      @classification.annotate id
+    else
+      @classification.annotate checkIds
+    
     @updateQuestion()
-    e.preventDefault()
+    ev.preventDefault()
+  
+  checkBox: (ev) ->
+    item = $(ev.target).closest('.checkbox')
+    item.toggleClass 'active'
   
   help: (ev) ->
     @helpDialog.show()
