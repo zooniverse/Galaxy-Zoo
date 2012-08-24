@@ -10,6 +10,7 @@ class Profile extends Spine.Controller
   events:
     'click .favorites-link' : 'switch'
     'click .recents-link': 'switch'
+    'click .item img': 'examine'
     'click .item .inactive.remove': 'removeFavorite'
     'click .item .active.favorite': 'removeFavorite'
     'click .item .inactive.favorite': 'addFavorite'
@@ -35,7 +36,7 @@ class Profile extends Spine.Controller
     User.current
   
   refresh: =>
-    if User.current
+    if User.current && @isActive()
       fetcher = @collection().fetch(@opts)
       fetcher.onSuccess(@render) if @isActive()
   
@@ -60,16 +61,22 @@ class Profile extends Spine.Controller
   surveyCount: (survey) ->
     User.current.project?.groups?[Config.surveys[survey].id]?.classification_count or 0
   
-  removeFavorite: ({ originalEvent: e }) ->
-    item = @collection().find $(e.target).closest('.item').data 'id'
+  removeFavorite: (ev) ->
+    item = @collection().find $(ev.target).closest('.item').data 'id'
     item.unfavorite().onSuccess @render
+    ev.preventDefault()
   
-  addFavorite: ({ originalEvent: e }) ->
-    item = @collection().find $(e.target).closest('.item').data 'id'
+  addFavorite: (ev) ->
+    item = @collection().find $(ev.target).closest('.item').data 'id'
     item.favorite().onSuccess @render
+    ev.preventDefault()
   
-  switch: ({ originalEvent: e }) =>
-    toShow = $(e.target).closest('a').data 'show'
+  examine: (ev) ->
+    item = @collection().find $(ev.target).closest('.item').data 'id'
+    @navigate "/examine/#{ item.subjects.zooniverse_id }"
+  
+  switch: (ev) =>
+    toShow = $(ev.target).closest('a').data 'show'
     return if toShow is @showing
     @showing = toShow
     @collection().fetch(@opts).onSuccess @render

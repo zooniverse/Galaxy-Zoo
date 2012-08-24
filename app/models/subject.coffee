@@ -1,4 +1,5 @@
 Config = require 'lib/config'
+Api = require 'zooniverse/lib/api'
 BaseSubject = require 'zooniverse/lib/models/subject'
 SurveyGroup = require 'models/survey_group'
 SloanTree = require 'lib/sloan_tree'
@@ -35,6 +36,9 @@ class Subject extends BaseSubject
     count = Config.subjectCache - @count()
     _(super).tap =>
       _(count - 1).times => super(1)
+  
+  @show: (id) ->
+    Api.get "/projects/galaxy_zoo/subjects/#{ id }"
   
   constructor: ->
     super

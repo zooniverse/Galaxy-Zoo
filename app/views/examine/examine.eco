@@ -1,0 +1,24 @@
+<div id="examine">
+  <div class="content">
+    <div class="content-block">
+      <h1 class="heading">Examine</h1>
+      
+      <div class="left">
+        <div class="subject">
+          <% if @subject : %>
+            <img src="<%= @subject.image() %>" class="name">
+          <% end %>
+        </div>
+      </div>
+      
+      <div class="right">
+        <% if @subject : %>
+          <h2><%= @subject.zooniverse_id.toUpperCase() %></h3>
+          <div class="subject-info">
+            <%- require("views/examine/#{ @subject.metadata.survey }")(@) %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
