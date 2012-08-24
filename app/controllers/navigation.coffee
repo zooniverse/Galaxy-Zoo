@@ -3,13 +3,13 @@ Spine = require 'spine'
 class Navigation extends Spine.Controller
   el: 'html'
   events:
-    'click a[data-nav]': 'navTo'
+    'click [data-nav]': 'navTo'
   
   constructor: ->
     super
   
   navTo: (ev) ->
-    path = $(ev.target).closest('a').data 'nav'
+    path = $(ev.target).closest('[data-nav]').data 'nav'
     ev.preventDefault()
     @navigate path
     $('html,body').animate { scrollTop: $('#main').offset().top }, 'fast'

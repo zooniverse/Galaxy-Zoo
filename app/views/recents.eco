@@ -1,3 +1,3 @@
 <% for recent, index in @ : %>
-  <img src="<%= recent.thumbnail() %>" <%- 'class="first"' if index is 0 %> />
+  <img data-nav="/examine/<%= recent.subjects[0].zooniverse_id %>" src="<%= recent.thumbnail() %>" <%- 'class="first"' if index is 0 %> />
 <% end %>
