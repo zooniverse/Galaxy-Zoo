@@ -14,8 +14,11 @@
 @import 'dialog'
 @import 'quiz'
 
-.stack > *:not(.active)
+.stack > *
   display: none
+  
+  &.active
+    display: block
 
 a
   cursor: pointer

@@ -8,11 +8,11 @@ class Navigation extends Spine.Controller
   constructor: ->
     super
   
-  navTo: ({ originalEvent: e }) ->
-    path = $(e.target).closest('a').data 'nav'
-    e.preventDefault()
-    @navigate(path)
-    $('html,body').animate({ scrollTop: $('#main').offset().top }, 'fast')
+  navTo: (ev) ->
+    path = $(ev.target).closest('a').data 'nav'
+    ev.preventDefault()
+    @navigate path
+    $('html,body').animate { scrollTop: $('#main').offset().top }, 'fast'
   
   active: ->
     super
