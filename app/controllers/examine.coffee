@@ -22,5 +22,16 @@ class Examine extends Spine.Controller
   
   render: =>
     @html require('views/examine/examine')(@)
+  
+  info: (key, values...) =>
+    value = values.shift()
+    return unless value
+    
+    """
+      <div class="row">
+        <span class="key">#{ key }:</span>
+        <span class="value">#{ value } #{ values.join(' ') }</span>
+      </div>
+    """
 
 module.exports = Examine

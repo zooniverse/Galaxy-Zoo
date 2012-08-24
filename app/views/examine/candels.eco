@@ -1,19 +1,4 @@
-<div class="row">
-  <span class="key">Survey:</span>
-  <span class="value">Hubble</span>
-</div>
-
-<div class="row">
-  <span class="key">Right Ascension:</span>
-  <span class="value"><%= @subject.coords[0] %> &deg;</span>
-</div>
-
-<div class="row">
-  <span class="key">Declination:</span>
-  <span class="value"><%= @subject.coords[0] %> &deg;</span>
-</div>
-
-<div class="row">
-  <span class="key">Magnitude:</span>
-  <span class="value"><%= @subject.metadata.magnitude %></span>
-</div>
+<%- @info 'Survey', 'Hubble' %>
+<%- @info 'Right Ascension', @subject.coords[0], '&deg;' %>
+<%- @info 'Declination', @subject.coords[1], '&deg;' %>
+<%- @info 'Magnitude', @subject.metadata.magnitude %>
