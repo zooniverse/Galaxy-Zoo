@@ -16,13 +16,13 @@ class Quiz extends Subject
   
   @invitation: ->
     @invitationDialog or= new Dialog
-      template: 'views/quiz_invitation'
+      template: 'views/quiz/invitation'
       callback: @dialogCallback
     @invitationDialog.show()
   
   @reminder: ->
     @reminderDialog or= new Dialog
-      template: 'views/quiz_reminder'
+      template: 'views/quiz/reminder'
       callback: @dialogCallback
     @reminderDialog.show()
   
@@ -63,7 +63,7 @@ class Quiz extends Subject
     @required ?= true
     
     dialog = new Dialog
-      template: 'views/quiz_question'
+      template: 'views/quiz/question'
       buttonSelector: '.answer [data-dialog="true"]'
       closeButton: not @required
       callback: @callback
@@ -75,7 +75,7 @@ class Quiz extends Subject
     Quiz.classificationCount += 1
     @trigger 'quiz-finished'
     dialog = new Dialog
-      template: 'views/quiz_finish'
+      template: 'views/quiz/finish'
       callback: (answer) =>
         Quiz.next() if answer is 'now'
     
