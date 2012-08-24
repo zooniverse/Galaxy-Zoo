@@ -35,9 +35,9 @@ class Quiz extends Subject
     @next() if answer is 'yes'
   
   @next: (opts = { }) ->
-    @fetch().onSuccess =>
-      @current?.destroy()
-      @current = @first()
+    @fetch().onSuccess (quizzes) =>
+      quiz = quizzes[0]
+      @current = @find quiz.id
       @current.show opts
   
   constructor: ->
@@ -82,8 +82,12 @@ class Quiz extends Subject
     dialog.show()
   
   callback: (answer) =>
-    @results.push question: @index, answer: answer
-    @index += 1
-    if @question() then @show(required: @required) else @finish()
+    if answer
+      @results.push question: @index, answer: answer
+      @index += 1
+      if @question() then @show(required: @required) else @finish()
+    else
+      @results = []
+      @index = 0
 
 module.exports = Quiz
