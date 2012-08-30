@@ -2,6 +2,7 @@ Spine = require 'spine'
 Subject = require 'models/subject'
 Api = require 'zooniverse/lib/api'
 FITSViewer = require 'controllers/fitsviewer'
+WebGL = require('lib/WebGL')
 
 class Examine extends Spine.Controller
   @validDestination = "http://www.galaxyzoo.org.s3.amazonaws.com/"
@@ -39,11 +40,12 @@ class Examine extends Spine.Controller
       </div>
     """
   
-  # TODO: Check for WebGL
   checkBrowserFeatures: =>
     checkDataView = DataView?
-    checkWorker = Worker?
-    return (checkDataView and checkWorker)
+    checkWorker   = Worker?
+    checkWebGL    = WebGL.check()
+    
+    return (checkDataView and checkWorker and checkWebGL)
   
   requestFITS: =>
     console.log 'requestFITS'
@@ -59,12 +61,14 @@ class Examine extends Spine.Controller
     # $('#load-fits').attr("disabled", true)
     
     # Initialize new controller for viewer
-    @viewer = new FITSViewer({el: $('#examine')})
+    bands = @subject.metadata.bands
+    console.log bands
+    @viewer = new FITSViewer({el: $('#examine'), bands: bands})
     
     # Send a message to iframe requesting data
     msg =
       location: @subject.location.raw
-      bands: @subject.metadata.bands
+      bands: bands
     $("#dataonwire")[0].contentWindow.postMessage(msg, Examine.validDestination)
   
   receiveFITS: (e) =>
