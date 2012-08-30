@@ -5,6 +5,9 @@ Workers = require('lib/workers')
 class FITSViewer extends Spine.Controller
   @bins = 500
   
+  events:
+    "click .band": "selectBand"
+  
   constructor: ->
     super
     
@@ -16,13 +19,13 @@ class FITSViewer extends Spine.Controller
     @means = {}
     @stds = {}
     
-    @container = $("#examine .subject")
+    @container = document.querySelector("#examine .subject")
     @createBandButtons()
+    @setupWebGL()
     
-  
   createBandButtons: ->
     for band in @bands
-      $("#examine .content-block").append("<button id='band-#{band}' class='band' disabled='disabled'>#{band}</button>")
+      $("#examine .content-block").append("<button id='band-#{band}' class='band' value='#{band}' disabled='disabled'>#{band}</button>")
   
   addImage: (obj) ->
     band = obj.band
@@ -36,11 +39,10 @@ class FITSViewer extends Spine.Controller
     dataunit.getFrame()
     dataunit.getExtremes()
     
-    @setupHistogram(band)
-    
+    @computeStatistics(band)
     
   # Compute histogram using inline worker
-  setupHistogram: (band) ->
+  computeStatistics: (band) ->
     dataunit = @images[band].getDataUnit()
     
     # Set up message to pass to worker
@@ -62,9 +64,27 @@ class FITSViewer extends Spine.Controller
       @histograms[band] = data.histogram
       @means[band]      = data.mean
       @stds[band]       = data.std
+      
+      # Enable associated button
+      $("#band-#{band}").removeAttr('disabled')
+      
     ), false
     worker.postMessage(msg)
+  
+  setupWebGL: =>
+    # TODO: Set this dynamically
+    [@width, @height] = [424, 424]
+    canvas  = WebGL.setupCanvas(@container, @width, @height)
+    @gl     = WebGL.create3DContext(canvas)
+    @ext    = @gl.getExtension('OES_texture_float')
     
-    console.log @histograms, @means, @stds
+    unless @ext
+      alert "No OES_texture_float"
+      return null
+    
+    @vertexShader = WebGL.loadShader(@gl, WebGL.vertexShader, @gl.VERTEX_SHADER)
+    
+  selectBand: (e) =>
+    console.log e.currentTarget.value
     
 module.exports = FITSViewer
