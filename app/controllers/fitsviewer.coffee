@@ -7,6 +7,7 @@ class FITSViewer extends Spine.Controller
   
   events:
     "click .band": "selectBand"
+    "change #stretch": "selectStretch"
   
   constructor: ->
     super
@@ -14,18 +15,37 @@ class FITSViewer extends Spine.Controller
     # For inline workers
     window.URL = window.URL or window.webkitURL
     
+    # Storage for data
     @images = {}
     @histograms = {}
     @means = {}
     @stds = {}
     
+    # Parent container for WebGL context
     @container = document.querySelector("#examine .subject")
+    
+    # Setup UI
+    @controls = $("#viewer-controls")
+    @controls.empty()
     @createBandButtons()
+    @createStretchButtons()
+    
     @setupWebGL()
     
-  createBandButtons: ->
+    
+  createBandButtons: =>
     for band in @bands
-      $("#examine .content-block").append("<button id='band-#{band}' class='band' value='#{band}' disabled='disabled'>#{band}</button>")
+      @controls.append("<button id='band-#{band}' class='band' value='#{band}' disabled='disabled'>#{band}</button>")
+  
+  createStretchButtons: =>
+    @controls.append("<select id='stretch'>
+                        <option value='linear'>Linear</option>
+                        <option value='logarithm'>Logarithm</option>
+                        <option value='sqrt'>Square Root</option>
+                        <option value='arcsinh'>Arcsinh</option>
+                        <option value='power'>Power</option>
+                      </select>")
+    @stretch = $("#stretch")
   
   addImage: (obj) ->
     band = obj.band
@@ -84,7 +104,30 @@ class FITSViewer extends Spine.Controller
     
     @vertexShader = WebGL.loadShader(@gl, WebGL.vertexShader, @gl.VERTEX_SHADER)
     
+    # Storing one WebGL program per filter.  There are better ways to do this, especially in GLSL 4.0.
+    @programs = {}
+    for func in ['linear', 'logarithm', 'sqrt', 'arcsinh', 'power']
+      fragmentShader  = WebGL.loadShader(@gl, WebGL.fragmentShaders[func], @gl.FRAGMENT_SHADER)
+      @programs[func] = WebGL.createProgram(@gl, [@vertexShader, fragmentShader])
+    
+    stretch = @stretch.val()
+    @program = @programs[stretch]
+    @gl.useProgram(@program)
+    
+    # Locations of WebGL program variables
+    positionLocation    = @gl.getAttribLocation(@program, 'a_position')
+    resolutionLocation  = @gl.getUniformLocation(@program, 'u_resolution')
+    extremesLocation    = @gl.getUniformLocation(@program, 'u_extremes')
+    
+    # Send the resolutionLocation and extremeLocation values to program
+    @gl.uniform2f(resolutionLocation, @width, @height)
+    
+    
+    
   selectBand: (e) =>
+    console.log e.currentTarget.value
+    
+  selectStretch: (e) =>
     console.log e.currentTarget.value
     
 module.exports = FITSViewer

@@ -21,6 +21,7 @@
         <% end %>
       </div>
       <button id="load-fits">Load FITS</button>
+      <div id="viewer-controls"></div>
     </div>
   </div>
 </div>
