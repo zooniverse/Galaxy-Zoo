@@ -4,6 +4,8 @@ Workers = require('lib/workers')
 
 class FITSViewer extends Spine.Controller
   @bins = 500
+  @viewportWidth  = 424
+  @viewportHeight = 424
   
   events:
     "click .band": "selectBand"
@@ -21,6 +23,10 @@ class FITSViewer extends Spine.Controller
     @means = {}
     @stds = {}
     
+    # Store band and texture location
+    @textureCount = 0
+    @textures = {}
+    
     # Parent container for WebGL context
     @container = document.querySelector("#examine .subject")
     
@@ -31,7 +37,6 @@ class FITSViewer extends Spine.Controller
     @createStretchButtons()
     
     @setupWebGL()
-    
     
   createBandButtons: =>
     for band in @bands
@@ -60,6 +65,7 @@ class FITSViewer extends Spine.Controller
     dataunit.getExtremes()
     
     @computeStatistics(band)
+    @addTexture(band, dataunit.data)
     
   # Compute histogram using inline worker
   computeStatistics: (band) ->
@@ -91,7 +97,9 @@ class FITSViewer extends Spine.Controller
     ), false
     worker.postMessage(msg)
   
+  # Sets up everything except for textures
   setupWebGL: =>
+    
     # TODO: Set this dynamically
     [@width, @height] = [424, 424]
     canvas  = WebGL.setupCanvas(@container, @width, @height)
@@ -104,7 +112,7 @@ class FITSViewer extends Spine.Controller
     
     @vertexShader = WebGL.loadShader(@gl, WebGL.vertexShader, @gl.VERTEX_SHADER)
     
-    # Storing one WebGL program per filter.  There are better ways to do this, especially in GLSL 4.0.
+    # Storing one WebGL program per stretch function.  There are better ways to do this, especially in GLSL 4.0.
     @programs = {}
     for func in ['linear', 'logarithm', 'sqrt', 'arcsinh', 'power']
       fragmentShader  = WebGL.loadShader(@gl, WebGL.fragmentShaders[func], @gl.FRAGMENT_SHADER)
@@ -114,18 +122,82 @@ class FITSViewer extends Spine.Controller
     @program = @programs[stretch]
     @gl.useProgram(@program)
     
-    # Locations of WebGL program variables
+    # Grab locations of WebGL program variables
     positionLocation    = @gl.getAttribLocation(@program, 'a_position')
-    resolutionLocation  = @gl.getUniformLocation(@program, 'u_resolution')
+    texCoordLocation    = @gl.getAttribLocation(@program, 'a_textureCoord')
     extremesLocation    = @gl.getUniformLocation(@program, 'u_extremes')
+    offsetLocation      = @gl.getUniformLocation(@program, 'u_offset')
+    scaleLocation       = @gl.getUniformLocation(@program, 'u_scale')
     
-    # Send the resolutionLocation and extremeLocation values to program
-    @gl.uniform2f(resolutionLocation, @width, @height)
+    # Buffer for texture coordinates
+    texCoordBuffer = @gl.createBuffer()
+    @gl.bindBuffer(@gl.ARRAY_BUFFER, texCoordBuffer)
+    @gl.bufferData(@gl.ARRAY_BUFFER, new Float32Array([0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0]), @gl.STATIC_DRAW)
+    @gl.enableVertexAttribArray(texCoordLocation)
+    @gl.vertexAttribPointer(texCoordLocation, 2, @gl.FLOAT, false, 0, 0)
     
+    # Buffer for position
+    buffer = @gl.createBuffer()
+    @gl.bindBuffer(@gl.ARRAY_BUFFER, buffer)
+    @gl.enableVertexAttribArray(positionLocation)
+    @gl.vertexAttribPointer(positionLocation, 2, @gl.FLOAT, false, 0, 0)
+    @setRectangle(0, 0, @width, @height)
     
+    # Set the initial variables for panning and zooming
+    @xOffset = -@width / 2
+    @yOffset = -@height / 2
+    @xOldOffset = @xOffset
+    @yOldOffset = @yOffset
+    @scale = 2 / @width
+    @minScale = 1 / (FITSViewer.viewportWidth * FITSViewer.viewportWidth)
+    @maxScale = 2
+    @drag = false
+  
+  addTexture: (band, data) =>
+    address = "TEXTURE#{@textureCount}"
+    @gl.activeTexture(@gl[address])
     
+    texture = @gl.createTexture()
+    @gl.bindTexture(@gl.TEXTURE_2D, texture)
+    @gl.texParameteri(@gl.TEXTURE_2D, @gl.TEXTURE_WRAP_S, @gl.CLAMP_TO_EDGE)
+    @gl.texParameteri(@gl.TEXTURE_2D, @gl.TEXTURE_WRAP_T, @gl.CLAMP_TO_EDGE)
+    @gl.texParameteri(@gl.TEXTURE_2D, @gl.TEXTURE_MIN_FILTER, @gl.NEAREST)
+    @gl.texParameteri(@gl.TEXTURE_2D, @gl.TEXTURE_MAG_FILTER, @gl.NEAREST)
+    @gl.texImage2D(@gl.TEXTURE_2D, 0, @gl.LUMINANCE, @width, @height, 0, @gl.LUMINANCE, @gl.FLOAT, data)
+    
+    @textures[band] = address
+    @textureCount += 1
+    
+  setRectangle: (x, y, width, height) =>
+    [x1, x2] = [x, x + width]
+    [y1, y2] = [y, y + height]
+    @gl.bufferData(@gl.ARRAY_BUFFER, new Float32Array([x1, y1, x2, y1, x1, y2, x1, y2, x2, y1, x2, y2]), @gl.STATIC_DRAW)
+
+  drawScene: =>
+    $("#examine .subject img").hide()
+    
+    offsetLocation = @gl.getUniformLocation(@program, 'u_offset')
+    scaleLocation = @gl.getUniformLocation(@program, 'u_scale')
+    @gl.uniform2f(offsetLocation, @xOffset, @yOffset)
+    @gl.uniform1f(scaleLocation, @scale)
+    @setRectangle(0, 0, @width, @height)
+    @gl.drawArrays(@gl.TRIANGLES, 0, 6)  
+  
   selectBand: (e) =>
-    console.log e.currentTarget.value
+    band = e.currentTarget.value
+    
+    # Get extremes
+    dataunit  = @images[band].getDataUnit()
+    minimum   = dataunit.min
+    maximum   = dataunit.max
+    
+    extremesLocation = @gl.getUniformLocation(@program, 'u_extremes')
+    @gl.uniform2f(extremesLocation, minimum, maximum)
+    
+    address = @textures[band]
+    @gl.activeTexture(@gl[address])
+    
+    @drawScene()
     
   selectStretch: (e) =>
     console.log e.currentTarget.value

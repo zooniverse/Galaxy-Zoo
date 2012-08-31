@@ -2,27 +2,39 @@ WebGL =
 
   vertexShader: [
       "attribute vec2 a_position;",
+      "attribute vec2 a_textureCoord;",
+      
+      "uniform vec2 u_offset;",
+      "uniform float u_scale;",
+      
+      "varying vec2 v_textureCoord;",
+      
       "void main() {",
-          "gl_Position = vec4(a_position, 0, 1);",
+          "vec2 position = a_position + u_offset;",
+          "position = position * u_scale;",
+          "gl_Position = vec4(position, 0.0, 1.0);",
+          
+          # Pass coordinate to fragment shader
+          "v_textureCoord = a_textureCoord;",
       "}"
     ].join("\n")
-
+  
   fragmentShaders:
       linear: [
         "precision mediump float;",
-
-        "uniform vec2 u_resolution;",
+        
         "uniform sampler2D u_tex;",
         "uniform vec2 u_extremes;",
-
+        
+        "varying vec2 v_textureCoord;",
+        
         "void main() {",
-            "vec2 texCoord = gl_FragCoord.xy / u_resolution;",
-            "vec4 pixel_v = texture2D(u_tex, texCoord);",
-
+            "vec4 pixel_v = texture2D(u_tex, v_textureCoord);",
+            
             "float min = u_extremes[0];",
             "float max = u_extremes[1];",
             "float pixel = (pixel_v[0] - min) / (max - min);",
-
+            
             "gl_FragColor = vec4(pixel, pixel, pixel, 1.0);",
         "}"
       ].join("\n")
