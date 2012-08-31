@@ -200,6 +200,10 @@ class FITSViewer extends Spine.Controller
     @drawScene()
     
   selectStretch: (e) =>
-    console.log e.currentTarget.value
+    stretch = e.currentTarget.value
+    @program = @programs[stretch]
+    @gl.useProgram(@program)
+    
+    @drawScene()
     
 module.exports = FITSViewer
