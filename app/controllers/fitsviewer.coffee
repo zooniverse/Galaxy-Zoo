@@ -102,8 +102,8 @@ class FITSViewer extends Spine.Controller
     
     # TODO: Set this dynamically
     [@width, @height] = [424, 424]
-    canvas  = WebGL.setupCanvas(@container, @width, @height)
-    @gl     = WebGL.create3DContext(canvas)
+    @canvas = WebGL.setupCanvas(@container, @width, @height)
+    @gl     = WebGL.create3DContext(@canvas)
     @ext    = @gl.getExtension('OES_texture_float')
     
     unless @ext
@@ -152,6 +152,53 @@ class FITSViewer extends Spine.Controller
     @minScale = 1 / (FITSViewer.viewportWidth * FITSViewer.viewportWidth)
     @maxScale = 2
     @drag = false
+    
+    @canvas.onmousedown = (e) =>
+      @drag = true
+      
+      @xOldOffset = @xOffset
+      @yOldOffset = @yOffset
+      @xMouseDown = e.clientX 
+      @yMouseDown = e.clientY
+
+    @canvas.onmouseup = (e) =>
+      @drag = false
+      
+      # Prevents a NaN from being sent to the GPU
+      return null unless @xMouseDown?
+      
+      xDelta = e.clientX - @xMouseDown
+      yDelta = e.clientY - @yMouseDown
+      @xOffset = @xOldOffset + (xDelta / @canvas.width / @scale * 2.0)
+      @yOffset = @yOldOffset - (yDelta / @canvas.height / @scale * 2.0)
+      @drawScene()
+    
+    @canvas.onmousemove = (e) =>
+      xDelta = -1 * (@canvas.width / 2 - e.offsetX) / @canvas.width / @scale * 2.0
+      yDelta = (@canvas.height / 2 - e.offsetY) / @canvas.height / @scale * 2.0
+      
+      x = ((-1 * (@xOffset + 0.5)) + xDelta) + 0.5 << 0
+      y = ((-1 * (@yOffset + 0.5)) + yDelta) + 0.5 << 0
+      
+      return unless @drag
+      
+      xDelta = e.clientX - @xMouseDown
+      yDelta = e.clientY - @yMouseDown
+      
+      @xOffset = @xOldOffset + (xDelta / @canvas.width / @scale * 2.0)
+      @yOffset = @yOldOffset - (yDelta / @canvas.height / @scale * 2.0)
+      
+      @drawScene()
+    
+    @canvas.onmouseout = (e) =>
+      @drag = false
+      
+    @canvas.onmouseover = (e) =>
+      @drag = false
+    
+    # Listen for the mouse wheel
+    @canvas.addEventListener('mousewheel', @wheelHandler, false)
+    @canvas.addEventListener('DOMMouseScroll', @wheelHandler, false)
   
   addTexture: (band, data) =>
     address = "TEXTURE#{@textureCount}"
@@ -204,6 +251,17 @@ class FITSViewer extends Spine.Controller
     @program = @programs[stretch]
     @gl.useProgram(@program)
     
+    @drawScene()
+
+  wheelHandler: (e) =>
+    e.preventDefault()
+    e.stopPropagation()
+    factor = if e.shiftKey then 1.01 else 1.1
+    @scale *= if (e.detail or e.wheelDelta) < 0 then factor else 1 / factor
+
+    # Probably not the most efficient way to do this ...
+    @scale = if @scale > @maxScale then @maxScale else @scale
+    @scale = if @scale < @minScale then @minScale else @scale
     @drawScene()
     
 module.exports = FITSViewer
