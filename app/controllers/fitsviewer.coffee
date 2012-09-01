@@ -52,9 +52,8 @@ class FITSViewer extends Spine.Controller
                       </select>")
     @stretch = $("#stretch")
   
-  addImage: (obj) ->
-    band = obj.band
-    @images[band] = new FITS.File(obj.arraybuffer)
+  addImage: (band, arraybuffer) ->
+    @images[band] = new FITS.File(arraybuffer)
     
     # Select the dataunit
     dataunit = @images[band].getDataUnit()

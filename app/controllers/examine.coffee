@@ -50,8 +50,6 @@ class Examine extends Spine.Controller
   requestFITS: =>
     console.log 'requestFITS'
     
-    window.addEventListener("message", @receiveFITS, false)
-    
     # First check browser version
     unless @checkBrowserFeatures()
       alert('Upgrade your browser to use this feature.')
@@ -61,18 +59,19 @@ class Examine extends Spine.Controller
     # $('#load-fits').attr("disabled", true)
     
     # Initialize new controller for viewer
-    bands = @subject.metadata.bands
-    console.log bands
+    bands     = @subject.metadata.bands
+    hubble_id = @subject.metadata.hubble_id # This should be more generic from Ouroboros.
     @viewer = new FITSViewer({el: $('#examine'), bands: bands})
     
-    # Send a message to iframe requesting data
-    msg =
-      location: @subject.location.raw
-      bands: bands
-    $("#dataonwire")[0].contentWindow.postMessage(msg, Examine.validDestination)
-  
-  receiveFITS: (e) =>
-    @viewer.addImage(e.data)
-
+    for band in bands
+      do (band, hubble_id) =>
+        # CORS BABY!
+        url = "https://s3.amazonaws.com/www.galaxyzoo.org/subjects/raw/#{hubble_id}_#{band}.fits.fz"
+        xhr = new XMLHttpRequest()
+        xhr.open('GET', url)
+        xhr.responseType = 'arraybuffer'
+        xhr.onload = (e) =>
+          @viewer.addImage(band, xhr.response)
+        xhr.send()
 
 module.exports = Examine
