@@ -66,7 +66,7 @@ class Examine extends Spine.Controller
     for band in bands
       do (band, hubble_id) =>
         # CORS BABY!
-        url = "https://s3.amazonaws.com/www.galaxyzoo.org/subjects/raw/#{hubble_id}_#{band}.fits.fz"
+        url = "http://www.galaxyzoo.org.s3-website-us-east-1.amazonaws.com/subjects/raw/#{hubble_id}_#{band}.fits.fz"
         xhr = new XMLHttpRequest()
         xhr.open('GET', url)
         xhr.responseType = 'arraybuffer'
