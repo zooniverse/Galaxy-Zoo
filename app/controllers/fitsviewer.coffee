@@ -33,10 +33,26 @@ class FITSViewer extends Spine.Controller
     # Setup UI
     @controls = $("#viewer-controls")
     @controls.empty()
+    @createMetadata()
     @createBandButtons()
     @createStretchButtons()
     
     @setupWebGL()
+  
+  createMetadata: =>
+    subjectInfo = $("#examine .subject-info")      
+    subjectInfo.append("""
+      <div class='row'>
+        <span class='key'>X, Y</span>
+        <span class='value' id='xy'></span>
+      </div>
+    """)
+    subjectInfo.append("""
+      <div class='row'>
+        <span class='key'>Intensity</span>
+        <span class='value' id='intensity'></span>
+      </div>
+    """)
     
   createBandButtons: =>
     for band in @bands
@@ -179,6 +195,10 @@ class FITSViewer extends Spine.Controller
       x = ((-1 * (@xOffset + 0.5)) + xDelta) + 0.5 << 0
       y = ((-1 * (@yOffset + 0.5)) + yDelta) + 0.5 << 0
       
+      # TODO: Write to screen
+      $("#xy").html("#{x}, #{y}")
+      $("#intensity").html(@images[@band].getDataUnit().getPixel(x, y))
+      
       return unless @drag
       
       xDelta = e.clientX - @xMouseDown
@@ -220,30 +240,37 @@ class FITSViewer extends Spine.Controller
     @gl.bufferData(@gl.ARRAY_BUFFER, new Float32Array([x1, y1, x2, y1, x1, y2, x1, y2, x2, y1, x2, y2]), @gl.STATIC_DRAW)
 
   drawScene: =>
+    # TODO: Try to call this only once
     $("#examine .subject img").hide()
     
-    offsetLocation = @gl.getUniformLocation(@program, 'u_offset')
-    scaleLocation = @gl.getUniformLocation(@program, 'u_scale')
+    # Get extremes
+    dataunit  = @images[@band].getDataUnit()
+    minimum   = dataunit.min
+    maximum   = dataunit.max
+    
+    # Get and set program locations
+    offsetLocation    = @gl.getUniformLocation(@program, 'u_offset')
+    scaleLocation     = @gl.getUniformLocation(@program, 'u_scale')
+    extremesLocation  = @gl.getUniformLocation(@program, 'u_extremes')
+    
     @gl.uniform2f(offsetLocation, @xOffset, @yOffset)
     @gl.uniform1f(scaleLocation, @scale)
+    @gl.uniform2f(extremesLocation, minimum, maximum)
+    
     @setRectangle(0, 0, @width, @height)
     @gl.drawArrays(@gl.TRIANGLES, 0, 6)  
   
   selectBand: (e) =>
-    band = e.currentTarget.value
+    @band = e.currentTarget.value
     
-    # Get extremes
-    dataunit  = @images[band].getDataUnit()
-    minimum   = dataunit.min
-    maximum   = dataunit.max
-    
-    extremesLocation = @gl.getUniformLocation(@program, 'u_extremes')
-    @gl.uniform2f(extremesLocation, minimum, maximum)
-    
-    address = @textures[band]
+    # Select correct texture and draw
+    address = @textures[@band]
     @gl.activeTexture(@gl[address])
-    
     @drawScene()
+    
+    # Plot histogram
+    console.log @histograms[@band]
+    @histogram = $.plot($("#histogram"), [{color: '#002332', data: @histograms[@band]}], FITSViewer.setHistogramOptions(minimum, maximum))
     
   selectStretch: (e) =>
     stretch = e.currentTarget.value
@@ -262,5 +289,16 @@ class FITSViewer extends Spine.Controller
     @scale = if @scale > @maxScale then @maxScale else @scale
     @scale = if @scale < @minScale then @minScale else @scale
     @drawScene()
-    
+  
+  
+  # Set histogram options when a new image is selected
+  @setHistogramOptions: (minimum, maximum) ->
+    options =
+      xaxis:
+        min: minimum
+        max: maximum
+      bars:
+        show: true
+    return options
+  
 module.exports = FITSViewer

@@ -1,4 +1,3 @@
-<iframe id="dataonwire" src="http://www.galaxyzoo.org.s3.amazonaws.com/subjects/raw/fitsframe.html" style="display: none;"></iframe>
 <div id="examine">
   <div class="content">
     <div class="content-block">
@@ -19,9 +18,10 @@
             <%- require("views/examine/#{ @subject.metadata.survey }")(@) %>
           </div>
         <% end %>
+        <button id="load-fits">Load FITS</button>
+        <div id="viewer-controls"></div>
+        <div id="histogram" style="width:340px;height:100px"></div>
       </div>
-      <button id="load-fits">Load FITS</button>
-      <div id="viewer-controls"></div>
     </div>
   </div>
 </div>

@@ -10,3 +10,4 @@ require 'spine/lib/route'
 
 window._ = require 'underscore/underscore'
 require 'lib/_.each_slice'
+require('lib/jquery.flot')
