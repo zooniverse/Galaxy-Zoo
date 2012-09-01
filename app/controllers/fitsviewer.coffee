@@ -250,7 +250,7 @@ class FITSViewer extends Spine.Controller
     
     @gl.uniform2f(offsetLocation, @xOffset, @yOffset)
     @gl.uniform1f(scaleLocation, @scale)
-    @gl.uniform2f(extremesLocation, @minimum, @maximum)
+    @gl.uniform2f(extremesLocation, @currentMin, @currentMax)
     
     @setRectangle(0, 0, @width, @height)
     @gl.drawArrays(@gl.TRIANGLES, 0, 6)  
@@ -260,16 +260,38 @@ class FITSViewer extends Spine.Controller
     
     # Cache minimum and maximum values for selected band
     dataunit = @images[@band].getDataUnit()
-    [@minimum, @maximum] = @getPercentiles(@band)
+    [@minimum, @maximum] = [@currentMin, @currentMax] = @getPercentiles(@band)
     
     # Select correct texture and draw
     address = @textures[@band]
     @gl.activeTexture(@gl[address])
     @drawScene()
     
-    # Plot histogram
-    @histogram = $.plot($("#histogram"), [{color: '#002332', data: @histograms[@band]}], FITSViewer.setHistogramOptions(@minimum, @maximum))
+    # Plot histogram and markers
+    @histogram = $.plot($("#plots .histogram"), [{color: '#002332', data: @histograms[@band]}], FITSViewer.setHistogramOptions(@minimum, @maximum))
     
+    # Set up slider
+    do =>
+      @slider = $(".slider")
+      plotWidth   = @histogram.width()
+      offsetLeft  = @histogram.getPlotOffset().left
+      
+      @slider.css('width', "#{plotWidth}px")
+      @slider.css('margin-left', "#{offsetLeft}px")
+      sliderOptions =
+        range: true
+        min: @minimum
+        max: @maximum
+        values: [@minimum, @maximum]
+        step: (@maximum - @minimum) / 1000
+        slide: (e, ui) =>
+          values = ui.values
+          [@currentMin, @currentMax] = values
+          @drawMarkers(values)
+          @drawScene()
+      
+      @slider.slider(sliderOptions)
+  
   selectStretch: (e) =>
     stretch = e.currentTarget.value
     @program = @programs[stretch]
@@ -288,7 +310,6 @@ class FITSViewer extends Spine.Controller
     @scale = if @scale < @minScale then @minScale else @scale
     @drawScene()
   
-  
   # Set histogram options when a new image is selected
   @setHistogramOptions: (minimum, maximum) ->
     options =
@@ -306,5 +327,40 @@ class FITSViewer extends Spine.Controller
   getPercentiles: (band) =>
     [mean, std]  = [@means[band], @stds[band]]
     return [mean - 10 * std, mean + 10 * std]
+  
+  # Draws markers over the histogram
+  drawMarkers: (values) =>
+    offsets = @histogram.getPlotOffset()
+    markerWidth = 0.002 * (@maximum - @minimum)
+    options =
+      grid:
+        borderWidth: 0
+        aboveData: true
+        margin:
+          left:   offsets.left
+          right:  offsets.right
+          top:    offsets.top
+          bottom: offsets.bottom
+        markings: [
+          color: 'rgba(193, 234, 0, 1)'
+          lineWidth: 0.5
+          xaxis:
+            from: values[0] - markerWidth - 3 * markerWidth
+            to:   values[0] + markerWidth - 3 * markerWidth
+        ,
+          color: 'rgba(193, 234, 0, 1)'
+          lineWidth: 0.5
+          xaxis:
+            from: values[1] - markerWidth - 3 * markerWidth
+            to:   values[1] + markerWidth - 3 * markerWidth
+        ]
+      xaxis:
+        min: @minimum
+        max: @maximum
+        show: false
+      yaxis:
+        show: false
+
+    @markers = $.plot($("#plots .markers"), [{color: '#002332', data: []}], options)
   
 module.exports = FITSViewer
