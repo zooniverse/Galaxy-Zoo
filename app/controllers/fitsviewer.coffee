@@ -243,11 +243,6 @@ class FITSViewer extends Spine.Controller
     # TODO: Try to call this only once
     $("#examine .subject img").hide()
     
-    # Get extremes
-    dataunit  = @images[@band].getDataUnit()
-    minimum   = dataunit.min
-    maximum   = dataunit.max
-    
     # Get and set program locations
     offsetLocation    = @gl.getUniformLocation(@program, 'u_offset')
     scaleLocation     = @gl.getUniformLocation(@program, 'u_scale')
@@ -255,7 +250,7 @@ class FITSViewer extends Spine.Controller
     
     @gl.uniform2f(offsetLocation, @xOffset, @yOffset)
     @gl.uniform1f(scaleLocation, @scale)
-    @gl.uniform2f(extremesLocation, minimum, maximum)
+    @gl.uniform2f(extremesLocation, @minimum, @maximum)
     
     @setRectangle(0, 0, @width, @height)
     @gl.drawArrays(@gl.TRIANGLES, 0, 6)  
@@ -263,14 +258,17 @@ class FITSViewer extends Spine.Controller
   selectBand: (e) =>
     @band = e.currentTarget.value
     
+    # Cache minimum and maximum values for selected band
+    dataunit = @images[@band].getDataUnit()
+    [@minimum, @maximum] = @getPercentiles(@band)
+    
     # Select correct texture and draw
     address = @textures[@band]
     @gl.activeTexture(@gl[address])
     @drawScene()
     
     # Plot histogram
-    console.log @histograms[@band]
-    @histogram = $.plot($("#histogram"), [{color: '#002332', data: @histograms[@band]}], FITSViewer.setHistogramOptions(minimum, maximum))
+    @histogram = $.plot($("#histogram"), [{color: '#002332', data: @histograms[@band]}], FITSViewer.setHistogramOptions(@minimum, @maximum))
     
   selectStretch: (e) =>
     stretch = e.currentTarget.value
@@ -297,8 +295,16 @@ class FITSViewer extends Spine.Controller
       xaxis:
         min: minimum
         max: maximum
-      bars:
+      lines:
         show: true
+        fill: true
+        fillColor: '#002332'
+        lineWidth: 1
+        
     return options
+  
+  getPercentiles: (band) =>
+    [mean, std]  = [@means[band], @stds[band]]
+    return [mean - 10 * std, mean + 10 * std]
   
 module.exports = FITSViewer
