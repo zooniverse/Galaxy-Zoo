@@ -2,7 +2,7 @@
 # Collection of functions that are embedded in an iframe on S3.  These functions provide a way to
 # circumvent cross-origin XHR commands.
 class DataOnWire
-  @validOrigins = ["http://0.0.0.0:9294"]
+  @validOrigins = ["http://0.0.0.0:9294", "http://www.galaxyzoo.org.s3-website-us-east-1.amazonaws.com/", "http://www.galaxyzoo.org/"]
   
   constructor: -> window.addEventListener("message", @receiveMessage, false)
   
@@ -30,6 +30,13 @@ class DataOnWire
   
   sendMessage: (msg) =>
     console.log 'sendMessage'
-    window.parent.postMessage(msg, DataOnWire.validOrigins[0])
+    for origin in DataOnWire.validOrigins
+      console.log "Attempting to post message to #{origin}"
+      try
+        window.parent.postMessage(msg, origin)
+        break
+      catch e
+        console.log e
+        continue
   
 @DataOnWire = DataOnWire

@@ -19,6 +19,10 @@ class Examine extends Spine.Controller
     @refresh()
     @render()
   
+  deactivate: ->
+    super
+    @viewer.teardown() if @viewer?
+  
   refresh: =>
     return unless @isActive() and @id
     fetcher = Subject.show @id
@@ -55,8 +59,8 @@ class Examine extends Spine.Controller
       alert('Upgrade your browser to use this feature.')
       return null
     
-    # # Deactive button
-    # $('#load-fits').attr("disabled", true)
+    # Deactive button
+    $('#load-fits').attr("disabled", true)
     
     # Initialize new controller for viewer
     bands     = @subject.metadata.bands

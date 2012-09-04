@@ -5,7 +5,7 @@
 
   DataOnWire = (function() {
 
-    DataOnWire.validOrigins = ["http://0.0.0.0:9294"];
+    DataOnWire.validOrigins = ["http://0.0.0.0:9294", "http://www.galaxyzoo.org.s3-website-us-east-1.amazonaws.com/", "http://www.galaxyzoo.org/"];
 
     function DataOnWire() {
       this.sendMessage = __bind(this.sendMessage, this);
@@ -45,8 +45,22 @@
     };
 
     DataOnWire.prototype.sendMessage = function(msg) {
+      var origin, _i, _len, _ref, _results;
       console.log('sendMessage');
-      return window.parent.postMessage(msg, DataOnWire.validOrigins[0]);
+      _ref = DataOnWire.validOrigins;
+      _results = [];
+      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+        origin = _ref[_i];
+        console.log("Attempting to post message to " + origin);
+        try {
+          window.parent.postMessage(msg, origin);
+          break;
+        } catch (e) {
+          console.log(e);
+          continue;
+        }
+      }
+      return _results;
     };
 
     return DataOnWire;

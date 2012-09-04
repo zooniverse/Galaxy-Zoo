@@ -32,7 +32,6 @@ class FITSViewer extends Spine.Controller
     
     # Setup UI
     @controls = $("#viewer-controls")
-    @controls.empty()
     @createMetadata()
     @createBandButtons()
     @createStretchButtons()
@@ -40,23 +39,31 @@ class FITSViewer extends Spine.Controller
     @setupWebGL()
   
   createMetadata: =>
-    subjectInfo = $("#examine .subject-info")      
-    subjectInfo.append("""
+    @subjectInfo = $("#examine .subject-info")      
+    @subjectInfo.append("""
       <div class='row'>
         <span class='key'>X, Y</span>
         <span class='value' id='xy'></span>
       </div>
     """)
-    subjectInfo.append("""
+    @subjectInfo.append("""
       <div class='row'>
         <span class='key'>Intensity</span>
         <span class='value' id='intensity'></span>
       </div>
     """)
     
+  destroyMetadata: =>
+    @subjectInfo.empty() if @subjectInfo
+    @subjectInfo = null
+  
   createBandButtons: =>
     for band in @bands
       @controls.append("<button id='band-#{band}' class='band' value='#{band}' disabled='disabled'>#{band}</button>")
+  
+  destroyBandButtons: =>
+    @controls.empty() if @controls
+    @controls = null
   
   createStretchButtons: =>
     @controls.append("<select id='stretch'>
@@ -67,6 +74,10 @@ class FITSViewer extends Spine.Controller
                         <option value='power'>Power</option>
                       </select>")
     @stretch = $("#stretch")
+  
+  destroyStretchButtons: =>
+    @controls.empty() if @controls
+    @stretch = null
   
   addImage: (band, arraybuffer) ->
     @images[band] = new FITS.File(arraybuffer)
@@ -197,7 +208,7 @@ class FITSViewer extends Spine.Controller
       
       # TODO: Write to screen
       $("#xy").html("#{x}, #{y}")
-      $("#intensity").html(@images[@band].getDataUnit().getPixel(x, y))
+      $("#intensity").html(@images[@band].getDataUnit().getPixel(x, y)) if @band
       
       return unless @drag
       
@@ -269,6 +280,7 @@ class FITSViewer extends Spine.Controller
     
     # Plot histogram and markers
     @histogram = $.plot($("#plots .histogram"), [{color: '#002332', data: @histograms[@band]}], FITSViewer.setHistogramOptions(@minimum, @maximum))
+    @drawMarkers([@minimum, @maximum])
     
     # Set up slider
     do =>
@@ -363,4 +375,45 @@ class FITSViewer extends Spine.Controller
 
     @markers = $.plot($("#plots .markers"), [{color: '#002332', data: []}], options)
   
+  teardown: =>
+    console.log 'teardown'
+    
+    if @slider?
+      @slider.destroy() if @slider.hasOwnProperty('destroy')
+    $("#plots .histogram").empty()
+    $("#plots .markers").empty()
+    
+    @destroyStretchButtons()
+    @destroyBandButtons()
+    @destroyMetadata()
+    
+    @container = null
+    
+    @stds = null
+    @means = null
+    @histograms = null
+    @images = null
+    
+    for band, texture of @texture
+      @gl.deleteTexture(texture)
+    
+    @textures = null
+    @textureCount = null
+    
+    if @programs?
+      @gl.deleteProgram(program) for program in @programs
+
+    @width = null
+    @height = null      
+    @gl = null
+    @ext = null
+    @vertexShader = null
+    @programs = null
+    @program = null
+    
+    # Remove the WebGL canvas
+    element = document.getElementById('webgl-fits')
+    element.parentNode.removeChild(element) if element
+    
+    
 module.exports = FITSViewer
