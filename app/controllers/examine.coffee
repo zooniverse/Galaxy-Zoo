@@ -5,7 +5,7 @@ FITSViewer = require 'controllers/fitsviewer'
 WebGL = require('lib/WebGL')
 
 class Examine extends Spine.Controller
-  @validDestination = "http://www.galaxyzoo.org.s3.amazonaws.com/"
+  @validDestination = "http://www.sdss.org.uk/dr9zoo/"
   
   events: 
     "click #load-fits": "requestFITS"
@@ -54,6 +54,13 @@ class Examine extends Spine.Controller
   requestFITS: =>
     console.log 'requestFITS'
     
+    # # Testing FITS Frame with Portsmouth
+    # window.addEventListener("message", @receiveFITS, false)
+    # msg =
+    #   location: '1237646588244590771'
+    #   bands: ['u', 'g', 'r', 'i', 'z']
+    # $("#dataonwire")[0].contentWindow.postMessage(msg, Examine.validDestination)
+    
     # First check browser version
     unless @checkBrowserFeatures()
       alert('Upgrade your browser to use this feature.')
@@ -65,6 +72,7 @@ class Examine extends Spine.Controller
     # Initialize new controller for viewer
     bands     = @subject.metadata.bands
     hubble_id = @subject.metadata.hubble_id # This should be more generic from Ouroboros.
+    
     @viewer = new FITSViewer({el: $('#examine'), bands: bands})
     
     for band in bands
@@ -77,5 +85,8 @@ class Examine extends Spine.Controller
         xhr.onload = (e) =>
           @viewer.addImage(band, xhr.response)
         xhr.send()
+  
+  # receiveFITS: (e) =>
+  #   console.log e
 
 module.exports = Examine

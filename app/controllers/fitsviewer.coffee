@@ -59,7 +59,8 @@ class FITSViewer extends Spine.Controller
   
   createBandButtons: =>
     for band in @bands
-      @controls.append("<button id='band-#{band}' class='band' value='#{band}' disabled='disabled'>#{band}</button>")
+      bandUpper = band.toUpperCase()
+      @controls.append("<button id='band-#{band}' class='band' value='#{band}' disabled='disabled'>#{bandUpper}</button>")
   
   destroyBandButtons: =>
     @controls.empty() if @controls
@@ -208,7 +209,8 @@ class FITSViewer extends Spine.Controller
       
       # TODO: Write to screen
       $("#xy").html("#{x}, #{y}")
-      $("#intensity").html(@images[@band].getDataUnit().getPixel(x, y)) if @band
+      if @band
+        $("#intensity").html(@images[@band].getDataUnit().getPixel(x, y).toFixed(5))
       
       return unless @drag
       
