@@ -1,5 +1,5 @@
 FITS  = require('fits')
-WebGL = require('lib/WebGL')
+WebGL = require('lib/web_gl')
 Workers = require('lib/workers')
 
 class FITSViewer extends Spine.Controller
