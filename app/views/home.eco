@@ -39,7 +39,7 @@
       </ul>
     </div>
     <div class="right">
-      <h1 class="heading">Recent Favourite Images</h1>
+      <h1 class="heading">Recent Images</h1>
       <div class="recents">
         <%- require('views/recents')(@recents) %>
       </div>
