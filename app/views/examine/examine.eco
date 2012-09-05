@@ -22,8 +22,8 @@
         <div id="viewer-controls"></div>
         <div class="slider" style="width:300px;"></div>
         <div id="plots">
-          <div class='markers' style="width:300px;height:200px"></div>
-          <div class='histogram' style="width:300px;height:200px"></div>
+          <div class="markers" style="width:300px;height:200px"></div>
+          <div class="histogram" style="width:300px;height:200px"></div>
         </div>
       </div>
     </div>
