@@ -2,13 +2,11 @@ Spine = require 'spine'
 Subject = require 'models/subject'
 Api = require 'zooniverse/lib/api'
 FITSViewer = require 'controllers/fitsviewer'
-WebGL = require('lib/WebGL')
+WebGL = require 'lib/WebGL'
 
 class Examine extends Spine.Controller
-  @validDestination = "http://www.galaxyzoo.org.s3.amazonaws.com/"
-  
   events: 
-    "click #load-fits": "requestFITS"
+    'click #load-fits': 'requestFITS'
   
   constructor: ->
     super
@@ -21,7 +19,7 @@ class Examine extends Spine.Controller
   
   deactivate: ->
     super
-    @viewer.teardown() if @viewer?
+    @viewer?.teardown()
   
   refresh: =>
     return unless @isActive() and @id
@@ -30,7 +28,6 @@ class Examine extends Spine.Controller
     fetcher.onSuccess @render
   
   render: =>
-    console.log @subject
     @html require('views/examine/examine')(@)
   
   info: (key, values...) =>
@@ -46,36 +43,26 @@ class Examine extends Spine.Controller
   
   checkBrowserFeatures: =>
     checkDataView = DataView?
-    checkWorker   = Worker?
-    checkWebGL    = WebGL.check()
-    
-    return (checkDataView and checkWorker and checkWebGL)
+    checkWorker = Worker?
+    checkWebGL = WebGL.check()
+    checkDataView and checkWorker and checkWebGL
   
   requestFITS: =>
-    console.log 'requestFITS'
+    return unless @checkBrowserFeatures()
+    $('#load-fits').attr 'disabled', true
     
-    # First check browser version
-    unless @checkBrowserFeatures()
-      alert('Upgrade your browser to use this feature.')
-      return null
-    
-    # Deactive button
-    $('#load-fits').attr("disabled", true)
-    
-    # Initialize new controller for viewer
-    bands     = @subject.metadata.bands
-    hubble_id = @subject.metadata.hubble_id # This should be more generic from Ouroboros.
-    @viewer = new FITSViewer({el: $('#examine'), bands: bands})
+    bands = @subject.metadata.bands
+    surveyId = @subject.surveyId()
+    @viewer = new FITSViewer el: $('#examine'), bands: bands
     
     for band in bands
-      do (band, hubble_id) =>
-        # CORS BABY!
-        url = "http://www.galaxyzoo.org.s3-website-us-east-1.amazonaws.com/subjects/raw/#{hubble_id}_#{band}.fits.fz"
+      do (band, surveyId) =>
+        url = "http://www.galaxyzoo.org.s3-website-us-east-1.amazonaws.com/subjects/raw/#{ surveyId }_#{ band }.fits.fz"
         xhr = new XMLHttpRequest()
-        xhr.open('GET', url)
+        xhr.open 'GET', url
         xhr.responseType = 'arraybuffer'
         xhr.onload = (e) =>
-          @viewer.addImage(band, xhr.response)
+          @viewer.addImage band, xhr.response
         xhr.send()
 
 module.exports = Examine

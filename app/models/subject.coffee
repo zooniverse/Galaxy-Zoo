@@ -46,6 +46,7 @@ class Subject extends BaseSubject
     img.src = @image()
   
   survey: -> @surveys[@metadata.survey]
+  surveyId: -> @metadata.hubble_id or @metadata.sdss_id
   tree: -> @survey().tree
   workflowId: -> @survey().workflowId
   image: -> @location.standard
