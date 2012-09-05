@@ -133,7 +133,6 @@ class FITSViewer extends Spine.Controller
     @ext    = @gl.getExtension('OES_texture_float')
     
     unless @ext
-      alert "No OES_texture_float"
       return null
     
     @vertexShader = WebGL.loadShader(@gl, WebGL.vertexShader, @gl.VERTEX_SHADER)
@@ -376,8 +375,6 @@ class FITSViewer extends Spine.Controller
     @markers = $.plot($("#plots .markers"), [{color: '#002332', data: []}], options)
   
   teardown: =>
-    console.log 'teardown'
-    
     if @slider?
       @slider.destroy() if @slider.hasOwnProperty('destroy')
     $("#plots .histogram").empty()
