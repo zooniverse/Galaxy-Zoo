@@ -42,14 +42,14 @@ class FITSViewer extends Spine.Controller
     @subjectInfo = $("#examine .subject-info")      
     @subjectInfo.append("""
       <div class='row'>
-        <span class='key'>X, Y</span>
-        <span class='value' id='xy'></span>
+        <span class='key'>X, Y:</span>
+        <span class='xy value'></span>
       </div>
     """)
     @subjectInfo.append("""
       <div class='row'>
-        <span class='key'>Intensity</span>
-        <span class='value' id='intensity'></span>
+        <span class='key'>Intensity:</span>
+        <span class='intensity value'></span>
       </div>
     """)
     
@@ -59,7 +59,8 @@ class FITSViewer extends Spine.Controller
   
   createBandButtons: =>
     for band in @bands
-      @controls.append("<button id='band-#{band}' class='band' value='#{band}' disabled='disabled'>#{band}</button>")
+      bandUpper = band.toUpperCase()
+      @controls.append("<button id='band-#{band}' class='band' value='#{band}' disabled='disabled'>#{bandUpper}</button>")
   
   destroyBandButtons: =>
     @controls.empty() if @controls
@@ -206,8 +207,9 @@ class FITSViewer extends Spine.Controller
       y = ((-1 * (@yOffset + 0.5)) + yDelta) + 0.5 << 0
       
       # TODO: Write to screen
-      $("#xy").html("#{x}, #{y}")
-      $("#intensity").html(@images[@band].getDataUnit().getPixel(x, y)) if @band
+      $(".subject-info .xy.value").html("#{x}, #{y}")
+      if @band
+        $(".subject-info .intensity.value").html(@images[@band].getDataUnit().getPixel(x, y).toFixed(5))
       
       return unless @drag
       

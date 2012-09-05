@@ -6,7 +6,7 @@ WebGL = require 'lib/WebGL'
 
 class Examine extends Spine.Controller
   events: 
-    'click #load-fits': 'requestFITS'
+    'click #load-fits': 'loadFits'
   
   constructor: ->
     super
@@ -47,10 +47,17 @@ class Examine extends Spine.Controller
     checkWebGL = WebGL.check()
     checkDataView and checkWorker and checkWebGL
   
-  requestFITS: =>
+  loadFits: =>
     return unless @checkBrowserFeatures()
+    if $('#dataonwire')[0]
+      @requestFITS()
+    else
+      fitsFrame = $('<iframe id="dataonwire" src="http://www.sdss.org.uk/dr9zoo/fitsframe.html" style="display: none;"></iframe>')
+      fitsFrame.on 'load', @requestFITS
+      $('body').append fitsFrame
+  
+  requestFITS: =>
     $('#load-fits').attr 'disabled', true
-    
     bands = @subject.metadata.bands
     surveyId = @subject.surveyId()
     @viewer = new FITSViewer el: $('#examine'), bands: bands
