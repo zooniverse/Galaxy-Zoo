@@ -55,7 +55,7 @@ WebGL =
             
             "float min = logarithm(u_extremes[0]);",
             "float max = logarithm(u_extremes[1]);",
-            "float pixel = logarithm(pixel_v[0]);",
+              "float pixel = logarithm(pixel_v[0]);",
             
             "pixel = (pixel - min) / (max - min);",
             
@@ -72,10 +72,13 @@ WebGL =
 
         "void main() {",
           "vec4 pixel_v = texture2D(u_tex, v_textureCoord);",
-        
-          "float min = sqrt(u_extremes[0]);",
-          "float max = sqrt(u_extremes[1]);",
-          "float pixel = (sqrt(pixel_v[0]) - min) / (max - min);",
+          
+          # Shift value by min to avoid negative numbers
+          "float min = u_extremes[0];",
+          "float max = u_extremes[1] - min;",
+          "float pixel = pixel_v[0] - min;",
+          
+          "pixel = sqrt(pixel_v[0] / max);",
         
           "gl_FragColor = vec4(pixel, pixel, pixel, 1.0);",
         "}"
