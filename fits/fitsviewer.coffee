@@ -414,5 +414,4 @@ class FITSViewer extends Spine.Controller
     element = document.getElementById('webgl-fits')
     element.parentNode.removeChild(element) if element
     
-    
 module.exports = FITSViewer

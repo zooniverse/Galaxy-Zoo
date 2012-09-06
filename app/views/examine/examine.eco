@@ -1,3 +1,6 @@
+<!-- <iframe id="dataonwire" src="http://www.sdss.org.uk/dr9zoo/fitsframe.html" style="display: none;"></iframe> -->
+<iframe id="dataonwire" src="http://ubret.s3.amazonaws.com/galaxyzoo3/fitsframe.html" style="display: none;"></iframe>
+
 <div id="examine">
   <div class="content">
     <div class="content-block">
@@ -20,14 +23,13 @@
             <%- require("views/examine/#{ @subject.metadata.survey }")(@) %>
           </div>
         <% end %>
-        
-        <!-- <button id="load-fits">Examine raw data</button>
+        <button id="load-fits">Examine raw FITS data</button>
         <div id="viewer-controls"></div>
         <div class="slider" style="width:300px;"></div>
         <div id="plots">
-          <div class="markers" style="width:300px;height:200px"></div>
-          <div class="histogram" style="width:300px;height:200px"></div>
-        </div> -->
+          <div class='markers' style="width:300px;height:200px"></div>
+          <div class='histogram' style="width:300px;height:200px"></div>
+        </div>
       </div>
     </div>
   </div>
