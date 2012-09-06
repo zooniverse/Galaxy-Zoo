@@ -30,7 +30,7 @@
         display: inline
         font-family: "Open Sans Condensed"
         font-weight: 300
-        margin: 0
+        margin: 2px 0 0 0
         width: 100px
       
       .buttons
@@ -65,9 +65,22 @@
         
         li.left
           icons()
+          position: relative
           float: left
           width: 30px
           height: 30px
+          margin: 0 10px 0 10px
+          
+          .label
+            position: absolute
+            bottom: -25px
+            left: -10px
+            width: 50px
+            text-align: center
+            font-family: "Open Sans"
+            font-size: 10px
+            font-weight: 700
+            color: $blue
         
         li.right
           float: right
