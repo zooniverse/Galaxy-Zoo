@@ -24,11 +24,8 @@ class Classify extends Spine.Controller
   
   constructor: ->
     super
-    @helpDialog = new Dialog
-      template: 'views/help'
-      quickHide: true
-      closeButton: true
     
+    $('.example-thumbnail').die('click').live 'click', @showExample
     Subject.bind 'fetched', @nextSubject
     User.bind 'sign-in', @render
     Subject.next()
@@ -64,6 +61,13 @@ class Classify extends Spine.Controller
     item.toggleClass 'active'
   
   help: (ev) ->
+    @helpDialog = new Dialog
+      template: 'views/help'
+      quickHide: true
+      closeButton: true
+      callback: -> @el().remove()
+    
+    @helpDialog.question = @classification.question
     @helpDialog.show()
     ev.preventDefault()
   
@@ -84,6 +88,17 @@ class Classify extends Spine.Controller
   toggleFavorite: (ev) ->
     @favoriteLink.toggleClass 'active'
     @classification.isFavorited = @favoriteLink.hasClass 'active'
+    ev.preventDefault()
+  
+  showExample: (ev) =>
+    dialog = new Dialog
+      template: 'views/example'
+      quickHide: true
+      closeButton: true
+    
+    dialog.example = $(ev.target).closest('.example-thumbnail').data 'example'
+    dialog.show()
+    dialog.el().find('.dialog').css 'height', @helpDialog.el().find('.dialog').height()
     ev.preventDefault()
   
   updateQuestion: ->

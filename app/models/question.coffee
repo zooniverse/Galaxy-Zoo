@@ -26,14 +26,15 @@ class Question extends Spine.Model
   
   examples: =>
     _({ }).tap (examples) =>
-      for key, answer of @answers
+      answers = $.extend { }, @answers, @checkboxes
+      for key, answer of answers
         _(answer.examples).times (i) =>
           examples[key] or= []
           examples[key].push "#{ @id }_#{ key }_#{ i }"
   
-  checkbox: (text, { icon: icon } = { icon: null }) ->
+  checkbox: (text, { icon: icon, examples: examples } = { icon: null, examples: 0 }) ->
     checkbox = true
-    @checkboxes["x-#{ _(@checkboxes).keys().length }"] = { checkbox, text, icon }
+    @checkboxes["x-#{ _(@checkboxes).keys().length }"] = { checkbox, text, icon, examples }
   
   nextQuestionFrom: (answer) ->
     text = @answers[answer]?.leadsTo or @leadsTo

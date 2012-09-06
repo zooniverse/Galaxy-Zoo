@@ -1,99 +1,59 @@
 .dialog
   .help
-    .example-thumbnail
-      display: block
-      background: url('images/examples.png') no-repeat
-      width: 100px
-      height: 100px
+    color: $dark-gray
+    font-family: 'Open Sans'
+    font-size: 12px
+    font-weight: 400
+    min-height: 200px
+    text-align: left
+    
+    .heading, .sub-heading
+      font-weight: 400
+      font-size: 24px
+      line-height: 40px
+      margin: 0 0 15px 0
+      padding: 0 0 0 25px
+      -webkit-box-shadow: 0px 1px 0px #D9D9D9, 0px 2px 0px #FFFFFF
+      -moz-box-shadow: 0px 1px 0px #D9D9D9, 0px 2px 0px #FFFFFF
+      box-shadow: 0px 1px 0px #D9D9D9, 0px 2px 0px #FFFFFF
+    
+    .sub-heading
+      font-size: 18px
+      line-height: 22px
+      margin: 18px 0
+      padding: 0 0 5px 0
+    
+    .text
+      margin: 0
+      padding: 0 0 0 25px
+    
+    .examples
+      padding: 10px 25px
       
-      &.candels-0_a-0_0 { background-position: -200px -600px }
-      &.candels-0_a-1_0 { background-position: -300px -700px }
-      &.candels-0_a-1_1 { background-position: -300px -500px }
-      &.candels-0_a-2_0 { background-position: -700px -200px }
-      &.candels-0_a-2_1 { background-position: -400px -600px }
-      &.candels-0_a-2_2 { background-position: -0px -800px }
-      &.candels-1_a-0_0 { background-position: -600px -700px }
-      &.candels-1_a-1_0 { background-position: -200px -300px }
-      &.candels-1_a-2_0 { background-position: -600px -100px }
-      &.candels-2_a-0_0 { background-position: -700px -700px }
-      &.candels-2_a-1_0 { background-position: -500px -900px }
-      &.candels-4_a-0_0 { background-position: -500px -500px }
-      &.candels-4_a-0_1 { background-position: -200px -700px }
-      &.candels-4_a-1_0 { background-position: -700px -600px }
-      &.candels-4_a-2_0 { background-position: -500px -0px }
-      &.candels-4_a-2_1 { background-position: -400px -800px }
-      &.candels-4_a-3_0 { background-position: -100px -0px }
-      &.candels-8_a-0_0 { background-position: -0px -500px }
-      &.candels-8_a-1_0 { background-position: -0px -400px }
-      &.candels-9_a-0_0 { background-position: -100px -300px }
-      &.candels-9_a-1_0 { background-position: -500px -200px }
-      &.candels-10_a-0_0 { background-position: -400px -400px }
-      &.candels-10_a-1_0 { background-position: -800px -600px }
-      &.candels-11_a-0_0 { background-position: -100px -900px }
-      &.candels-11_a-0_1 { background-position: -600px -600px }
-      &.candels-11_a-0_2 { background-position: -400px -900px }
-      &.candels-11_a-0_3 { background-position: -300px -200px }
-      &.candels-11_a-0_4 { background-position: -600px -400px }
-      &.candels-11_a-0_5 { background-position: -0px -700px }
-      &.candels-11_a-1_0 { background-position: -500px -700px }
-      &.candels-12_a-0_0 { background-position: -300px -800px }
-      &.candels-12_a-1_0 { background-position: -400px -200px }
-      &.candels-13_a-0_0 { background-position: -800px -200px }
-      &.candels-13_a-1_0 { background-position: -200px -100px }
-      &.candels-13_a-2_0 { background-position: -0px -300px }
-      &.candels-15_a-0_0 { background-position: -700px -800px }
-      &.candels-15_a-1_0 { background-position: -600px -500px }
-      &.candels-15_a-2_0 { background-position: -200px -0px }
-      &.candels-16_a-0_0 { background-position: -600px -300px }
-      &.candels-16_a-0_1 { background-position: -700px -900px }
-      &.candels-16_a-0_2 { background-position: -500px -800px }
-      &.candels-16_a-0_3 { background-position: -800px -700px }
-      &.candels-16_a-1_0 { background-position: -800px -500px }
-      &.candels-16_a-2_0 { background-position: -100px -200px }
-      &.candels-16_a-2_1 { background-position: -300px -300px }
-      &.candels-16_a-3_0 { background-position: -600px -0px }
-      &.sloan-0_a-0_0 { background-position: -200px -500px }
-      &.sloan-0_a-1_0 { background-position: -100px -100px }
-      &.sloan-0_a-1_1 { background-position: -300px -0px }
-      &.sloan-0_a-1_2 { background-position: -800px -0px }
-      &.sloan-0_a-2_0 { background-position: -200px -400px }
-      &.sloan-0_a-2_1 { background-position: -400px -700px }
-      &.sloan-1_a-0_0 { background-position: -700px -300px }
-      &.sloan-1_a-1_0 { background-position: -700px -0px }
-      &.sloan-1_a-1_1 { background-position: -800px -300px }
-      &.sloan-2_a-0_0 { background-position: -100px -800px }
-      &.sloan-2_a-0_1 { background-position: -400px -100px }
-      &.sloan-2_a-1_0 { background-position: -400px -500px }
-      &.sloan-2_a-1_1 { background-position: -100px -700px }
-      &.sloan-3_a-0_0 { background-position: -300px -600px }
-      &.sloan-3_a-0_1 { background-position: -500px -300px }
-      &.sloan-3_a-1_0 { background-position: -700px -100px }
-      &.sloan-6_a-0_0 { background-position: -800px -100px }
-      &.sloan-6_a-0_1 { background-position: -600px -900px }
-      &.sloan-6_a-1_0 { background-position: -500px -100px }
-      &.sloan-6_a-2_0 { background-position: -300px -100px }
-      &.sloan-6_a-2_1 { background-position: -500px -400px }
-      &.sloan-6_a-2_2 { background-position: -800px -800px }
-      &.sloan-6_a-3_0 { background-position: -200px -800px }
-      &.sloan-6_a-3_1 { background-position: -0px -0px }
-      &.sloan-6_a-4_0 { background-position: -400px -300px }
-      &.sloan-6_a-4_1 { background-position: -100px -600px }
-      &.sloan-6_a-4_2 { background-position: -300px -400px }
-      &.sloan-6_a-5_0 { background-position: -0px -200px }
-      &.sloan-6_a-5_1 { background-position: -200px -200px }
-      &.sloan-6_a-5_2 { background-position: -500px -600px }
-      &.sloan-6_a-5_3 { background-position: -600px -200px }
-      &.sloan-6_a-5_4 { background-position: -300px -900px }
-      &.sloan-6_a-5_5 { background-position: -200px -900px }
-      &.sloan-6_a-6_0 { background-position: -400px -0px }
-      &.sloan-6_a-6_1 { background-position: -700px -500px }
-      &.sloan-7_a-0_0 { background-position: -600px -800px }
-      &.sloan-7_a-1_0 { background-position: -800px -400px }
-      &.sloan-7_a-2_0 { background-position: -0px -100px }
-      &.sloan-8_a-0_0 { background-position: -100px -500px }
-      &.sloan-8_a-1_0 { background-position: -0px -1000px }
-      &.sloan-8_a-2_0 { background-position: -800px -900px }
-      &.sloan-9_a-0_0 { background-position: -0px -600px }
-      &.sloan-9_a-1_0 { background-position: -700px -400px }
-      &.sloan-9_a-2_0 { background-position: -0px -900px }
-      &.sloan-10_a-5_0 { background-position: -100px -400px }
+      .row
+        margin: 25px 0
+        
+        .example-answer
+          workflow-icons()
+          display: inline-block
+          position: relative
+          background-color: #000000
+          vertical-align: top
+          margin: 0 10px 0 0
+          
+          .label
+            position: absolute
+            bottom: -15px
+            line-height: 15px
+            width: 100px
+            text-align: center
+            font-weight: 700
+        
+        .example-images
+          display: inline-block
+          cursor: pointer
+          
+          .example-thumbnail
+            example-images()
+            display: inline-block
+            margin: 0 5px 0 0
