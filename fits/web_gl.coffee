@@ -122,10 +122,12 @@ WebGL =
         "void main() {",
           "vec4 pixel_v = texture2D(u_tex, v_textureCoord);",
 
-          "float min = pow(u_extremes[0], 2.0);",
-          "float max = pow(u_extremes[1], 2.0);",
-
-          "float pixel = (pow(pixel_v[0], 2.0) - min) / (max - min);",
+          # Shift value by min to avoid negative numbers
+          "float min = u_extremes[0];",
+          "float max = u_extremes[1] - min;",
+          "float pixel = pixel_v[0] - min;",
+          
+          "pixel = pow(pixel / max, 2.0);",
 
           "gl_FragColor = vec4(pixel, pixel, pixel, 1.0);",
         "}"

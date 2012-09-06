@@ -67,7 +67,7 @@ class FITSViewer extends Spine.Controller
     @controls = null
   
   createStretchButtons: =>
-    @controls.append("<select id='stretch'>
+    @controls.append("<select id='stretch' disabled='disabled'>
                         <option value='linear'>Linear</option>
                         <option value='logarithm'>Logarithm</option>
                         <option value='sqrt'>Square Root</option>
@@ -120,6 +120,7 @@ class FITSViewer extends Spine.Controller
       
       # Enable associated button
       $("#band-#{band}").removeAttr('disabled')
+      $("#stretch").removeAttr('disabled')
       
     ), false
     worker.postMessage(msg)
