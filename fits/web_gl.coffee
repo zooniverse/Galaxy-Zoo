@@ -46,12 +46,18 @@ WebGL =
         
         "varying vec2 v_textureCoord;",
 
+        "float logarithm(float value) {",
+            "return log(value / 0.05 + 1.0) / log(1.0 / 0.05 + 1.0);",
+        "}",
+
         "void main() {",
             "vec4 pixel_v = texture2D(u_tex, v_textureCoord);",
             
-            "float min = log(u_extremes[0]);",
-            "float max = log(u_extremes[1]);",
-            "float pixel = (log(pixel_v[0]) - min) / (max - min);",
+            "float min = logarithm(u_extremes[0]);",
+            "float max = logarithm(u_extremes[1]);",
+            "float pixel = logarithm(pixel_v[0]);",
+            
+            "pixel = (pixel - min) / (max - min);",
             
             "gl_FragColor = vec4(pixel, pixel, pixel, 1.0);",
         "}"
