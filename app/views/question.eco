@@ -1,4 +1,4 @@
-<div class="question">
+<div class="question" data-id="<%= @id %>">
   <p class="heading"><%= @title %></p>
   <p class="text"><%= @text %></p>
   

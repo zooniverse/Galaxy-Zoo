@@ -8,11 +8,20 @@
       <ul class="buttons">
         <li class="right"><a class="restart">Restart</a></li>
         <li class="right"><a class="help">Help</a></li>
-        <li class="left"><a title="<%= @subject.surveyTitle() %>" class="icon <%= @subject.metadata.survey %>">&nbsp;</a></li>
+        <li class="left">
+          <a title="<%= @subject.surveyTitle() %>" class="icon <%= @subject.metadata.survey %>">&nbsp;</a>
+          <span class="label"><%= @subject.surveyTitle() %></span>
+        </li>
         <% if require('zooniverse/lib/models/user').current : %>
-          <li class="left"><a title="Favorite" class="icon favorite" src="">&nbsp;</a></li>
+          <li class="left">
+            <a title="Favorite" class="icon favorite" src="">&nbsp;</a>
+            <span class="label">Favourite</span>
+          </li>
         <% end %>
-        <li class="left"><a title="Invert" class="icon invert" src="">&nbsp;</a></li>
+        <li class="left">
+          <a title="Invert" class="icon invert" src="">&nbsp;</a>
+          <span class="label">Invert</span>
+        </li>
       </ul>
     </div>
     

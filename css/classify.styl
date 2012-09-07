@@ -63,7 +63,7 @@
         display: inline
         font-family: "Open Sans Condensed"
         font-weight: 300
-        margin: 0
+        margin: 2px 0 0 0
         width: 100px
       
       .buttons
@@ -98,9 +98,22 @@
         
         li.left
           icons()
+          position: relative
           float: left
           width: 30px
           height: 30px
+          margin: 0 10px 0 10px
+          
+          .label
+            position: absolute
+            bottom: -25px
+            left: -10px
+            width: 50px
+            text-align: center
+            font-family: "Open Sans"
+            font-size: 10px
+            font-weight: 700
+            color: $blue
         
         li.right
           float: right
@@ -166,61 +179,10 @@
                 padding: 0px 3px
               
               a
+                workflow-icons()
                 display: block
                 position: relative
                 margin: 0 auto
-                background: url('images/workflow.png') no-repeat top left
-                width: 100px
-                height: 100px
-                
-                &.workflow-bulge_dominant { background-position: 0px 0px; }
-                &.workflow-bulge_obvious { background-position: 0px -100px; }
-                &.workflow-bulge_noticeable { background-position: 0px -200px; }
-                &.workflow-bulge_none { background-position: 0px -300px; }
-                &.workflow-clump_spiral { background-position: 0px -400px; }
-                &.workflow-clump_not-embedded { background-position: 0px -500px; }
-                &.workflow-clump_symmetrical { background-position: 0px -600px; }
-                &.workflow-clump_bright-center { background-position: 0px -700px; }
-                &.workflow-clump_one-brighter { background-position: 0px -800px; }
-                &.workflow-clump_cluster { background-position: 0px -900px; }
-                &.workflow-clump_chain { background-position: 0px -1000px; }
-                &.workflow-clump_line { background-position: 0px -1100px; }
-                &.workflow-clump_cant-tell { background-position: 0px -1200px; }
-                &.workflow-clump_4-plus { background-position: 0px -1300px; }
-                &.workflow-clump_4 { background-position: 0px -1400px; }
-                &.workflow-clump_3 { background-position: 0px -1500px; }
-                &.workflow-clump_2 { background-position: 0px -1600px; }
-                &.workflow-clump_1 { background-position: 0px -1700px; }
-                &.workflow-spiral_bar { background-position: 0px -1800px; }
-                &.workflow-smooth_bar { background-position: 0px -1900px; }
-                &.workflow-dustlane { background-position: 0px -2000px; }
-                &.workflow-irregular { background-position: 0px -2100px; }
-                &.workflow-feature { background-position: 0px -2200px; }
-                &.workflow-merger { background-position: 0px -2300px; }
-                &.workflow-merger_tidal { background-position: 0px -2400px; }
-                &.workflow-tidal-debris { background-position: 0px -2500px; }
-                &.workflow-other { background-position: 0px -2600px; }
-                &.workflow-lens { background-position: 0px -2700px; }
-                &.workflow-disturbed { background-position: 0px -2800px; }
-                &.workflow-no { background-position: 0px -2900px; }
-                &.workflow-yes { background-position: 0px -3000px; }
-                &.workflow-ring { background-position: 0px -3100px; }
-                &.workflow-star { background-position: 0px -3200px; }
-                &.workflow-edge_none { background-position: 0px -3300px; }
-                &.workflow-edge_boxy { background-position: 0px -3400px; }
-                &.workflow-edge_round { background-position: 0px -3500px; }
-                &.workflow-smooth_cigar { background-position: 0px -3600px; }
-                &.workflow-smooth_in-between { background-position: 0px -3700px; }
-                &.workflow-smooth_round { background-position: 0px -3800px; }
-                &.workflow-spiral_1 { background-position: 0px -3900px; }
-                &.workflow-spiral_2 { background-position: 0px -4000px; }
-                &.workflow-spiral_3 { background-position: 0px -4100px; }
-                &.workflow-spiral_4 { background-position: 0px -4200px; }
-                &.workflow-spiral_4-plus { background-position: 0px -4300px; }
-                &.workflow-spiral_cant-tell { background-position: 0px -4400px; }
-                &.workflow-spiral_loose { background-position: 0px -4500px; }
-                &.workflow-spiral_medium { background-position: 0px -4600px; }
-                &.workflow-spiral_tight { background-position: 0px -4700px; }
             
             &:hover
                 background-color: rgba(0, 60, 87, 0.7)

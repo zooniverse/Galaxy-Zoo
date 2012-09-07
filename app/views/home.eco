@@ -1,7 +1,7 @@
 <div id="home">
   <div class="headline">
     Few have witnessed what you're about to see
-    <p class="call-to-action">Experience a privileged glimpse of the distant universe, observed by the SDSS and Hubble  Telescope <a class="button" data-nav="#/classify" href="#/classify">Begin Classifying</a></p>
+    <p class="call-to-action">Experience a privileged glimpse of the distant universe, observed by the SDSS and Hubble Telescope</p>
   </div>
   <div class="slider">
     <div class="slide-element galaxy-zoo">
@@ -9,7 +9,7 @@
         <p class="header-blue" style="display: none">Featured Project</p>
         <p class="header-title">Hubble</p>
         <p class="description">To understand how galaxies formed we need your help to classify them according to their shapes. If you're quick, you may even be the first person to see the galaxies you're asked to classify.</p>
-        <a data-nav="#/classify" href="/#/classify" class="blue-button">Tutorial</a>
+        <a data-nav="#/classify" href="/#/classify" class="blue-button">Begin Classifying</a>
       </div>
     </div>
   </div>
@@ -39,7 +39,7 @@
       </ul>
     </div>
     <div class="right">
-      <h1 class="heading">Recent Favourite Images</h1>
+      <h1 class="heading">Recent Images</h1>
       <div class="recents">
         <%- require('views/recents')(@recents) %>
       </div>

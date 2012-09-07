@@ -2,20 +2,24 @@ DecisionTree = require 'lib/decision_tree'
 
 CandelsTree = new DecisionTree 'candels', ->
   @question 'Shape', 'Is the galaxy simply smooth and rounded, with no sign of a disk?', ->
-    @answer 'Smooth', leadsTo: 'How rounded is it?', icon: 'smooth_round'
-    @answer 'Features or disk', leadsTo: 'Does the galaxy have a mostly clumpy appearance?', icon: 'feature'
-    @answer 'Star or artifact', icon: 'star'
+    @help "The aim here is to divide featureless galaxies from all the rest. If you can see any interesting features at all, click &quot;features or disk.&quot; Just occasionally you might see something that isn't a galaxy at all - the long streak of a satellite, for example, or a image swamped by light from a bright star. If this happens, just click &quot;star or artifact.&quot;"
+    @answer 'Smooth', leadsTo: 'How rounded is it?', icon: 'smooth_round', examples: 1
+    @answer 'Features or disk', leadsTo: 'Does the galaxy have a mostly clumpy appearance?', icon: 'feature', examples: 2
+    @answer 'Star or artifact', icon: 'star', examples: 3
   
   @question 'Round', 'How rounded is it?', leadsTo: 'Is the galaxy currently merging or is there any sign of tidal debris?', ->
-    @answer 'Completely round', icon: 'smooth_round'
-    @answer 'In between', icon: 'smooth_in-between'
-    @answer 'Cigar shaped', icon: 'smooth_cigar'
+    @help "Not all galaxies are perfectly round - just look at the overall shape and put it in one of these three categories. If there's more than one galaxy in the field, remember always to concentrate on the one in the centre."
+    @answer 'Completely round', icon: 'smooth_round', examples: 1
+    @answer 'In between', icon: 'smooth_in-between', examples: 1
+    @answer 'Cigar shaped', icon: 'smooth_cigar', examples: 1
   
   @question 'Clumps', 'Does the galaxy have a mostly clumpy appearance?', ->
-    @answer 'Yes', leadsTo: 'How many clumps are there?', icon: 'yes'
-    @answer 'No', leadsTo: 'Could this be a disk viewed edge-on?', icon: 'no'
+    @help "Some galaxies are nothing but bright clumps. We don't mean those that have other features with a few small clusters of stars, but rather those that are made up mostly of bright clumps."
+    @answer 'Yes', leadsTo: 'How many clumps are there?', icon: 'yes', examples: 1
+    @answer 'No', leadsTo: 'Could this be a disk viewed edge-on?', icon: 'no', examples: 1
   
   @question 'Clumps', 'How many clumps are there?', leadsTo: 'Do the clumps appear in a straight line, a chain, or a cluster?', ->
+    @help "Count the clumps! If there are more than 4, than don't worry about it - just click &quot;more than 4.&quot;"
     @answer '1', leadsTo: 'Does the galaxy appear symmetrical?', icon: 'clump_1'
     @answer '2', leadsTo: 'Is there one clump which is clearly brighter than the others?', icon: 'clump_2'
     @answer '3', icon: 'clump_3'
@@ -24,49 +28,60 @@ CandelsTree = new DecisionTree 'candels', ->
     @answer "Can't tell", icon: 'clump_cant-tell'
   
   @question 'Clumps', 'Do the clumps appear in a straight line, a chain, or a cluster?', leadsTo: 'Is there one clump which is clearly brighter than the others?', ->
-    @answer 'Straight Line', icon: 'clump_line'
-    @answer 'Chain', icon: 'clump_chain'
-    @answer 'Cluster / Irregular', icon: 'clump_cluster'
-    @answer 'Spiral', icon: 'clump_spiral'
+    @help "Sometimes the clumps appear in a regular pattern - if so, then click the appropriate symbol."
+    @answer 'Straight Line', icon: 'clump_line', examples: 2
+    @answer 'Chain', icon: 'clump_chain', examples: 1
+    @answer 'Cluster / Irregular', icon: 'clump_cluster', examples: 2
+    @answer 'Spiral', icon: 'clump_spiral', examples: 1
   
   @question 'Clumps', 'Is there one clump which is clearly brighter than the others?', ->
+    @help "Sometimes one clump dominates the scene. If so, click yes, otherwise, no."
     @answer 'Yes', leadsTo: 'Is the brightest clump central to the galaxy?', icon: 'yes'
     @answer 'No', leadsTo: 'Does the galaxy appear symmetrical?', icon: 'no'
   
   @question 'Clumps', 'Is the brightest clump central to the galaxy?', ->
+    @help "For very clumpy galaxies it may be difficult to tell, but make your best guess whether that brightest clump lies at the centre of the system or not."
     @answer 'Yes', leadsTo: 'Does the galaxy appear symmetrical?', icon: 'yes'
     @answer 'No', leadsTo: 'Is the galaxy currently merging or is there any sign of tidal debris?', icon: 'no'
   
   @question 'Symmetry', 'Does the galaxy appear symmetrical?', leadsTo: 'Do the clumps appear to be embedded within a larger object?', ->
+    @help "Are both halves of the galaxy the same? Or is one side disrupted or different in some way?"
     @answer 'Yes', icon: 'yes'
     @answer 'No', icon: 'no'
   
   @question 'Clumps', 'Do the clumps appear to be embedded within a larger object?', leadsTo: 'Is the galaxy currently merging or is there any sign of tidal debris?', ->
-    @answer 'Yes', icon: 'yes'
-    @answer 'No', icon: 'no'
+    @help "Look carefully for faint background light surrounding the clumps - are they embedded in a visible galaxy?"
+    @answer 'Yes', icon: 'yes', examples: 1
+    @answer 'No', icon: 'no', examples: 1
   
   @question 'Disk', 'Could this be a disk viewed edge-on?', ->
-    @answer 'Yes', leadsTo: 'Does the galaxy have a bulge at its centre?', icon: 'yes'
-    @answer 'No', leadsTo: 'Is there a sign of a bar feature through the centre of the galaxy?', icon: 'no'
+    @help "Disk galaxies are very thin, and look different when viewed from the side. If the galaxy looks needle-like, perhaps with a bulge at the centre, then click &quot;yes,&quot; otherwise choose &quot;no.&quot;"
+    @answer 'Yes', leadsTo: 'Does the galaxy have a bulge at its centre?', icon: 'yes', examples: 1
+    @answer 'No', leadsTo: 'Is there any sign of a bar feature through the centre of the galaxy?', icon: 'no', examples: 1
   
   @question 'Bulge', 'Does the galaxy have a bulge at its centre?', leadsTo: 'Is the galaxy currently merging or is there any sign of tidal debris?', ->
-    @answer 'Yes', icon: 'yes'
-    @answer 'No', icon: 'no'
+    @help "Look at the centre of the galaxy - is there any sign of a bulge of stars sticking out above and below the otherwise smooth shape? If so, click yes."
+    @answer 'Yes', icon: 'yes', examples: 1
+    @answer 'No', icon: 'no', examples: 1
   
-  @question 'Bar', 'Is there a sign of a bar feature through the centre of the galaxy?', leadsTo: 'Is there any sign of a spiral arm pattern?', ->
-    @answer 'Bar', icon: 'yes'
-    @answer 'No bar', icon: 'no'
+  @question 'Bar', 'Is there any sign of a bar feature through the centre of the galaxy?', leadsTo: 'Is there any sign of a spiral arm pattern?', ->
+    @help "Sometimes galaxies have a prominent straight &quot;bar&quot; running through their centre, and that's what we're looking for here."
+    @answer 'Bar', icon: 'yes', examples: 6
+    @answer 'No bar', icon: 'no', examples: 1
   
   @question 'Spiral', 'Is there any sign of a spiral arm pattern?', ->
-    @answer 'Spiral', leadsTo: 'How tightly wound do the spiral arms appear?', icon: 'yes'
-    @answer 'No spiral', leadsTo: 'How prominent is the central bulge, compared with the rest of the galaxy?', icon: 'no'
+    @help "Look carefully for spiral arms - remember they may be embedded in the disk and not that easy to see."
+    @answer 'Spiral', leadsTo: 'How tightly wound do the spiral arms appear?', icon: 'yes', examples: 1
+    @answer 'No spiral', leadsTo: 'How prominent is the central bulge, compared with the rest of the galaxy?', icon: 'no', examples: 1
   
   @question 'Spiral', 'How tightly wound do the spiral arms appear?', leadsTo: 'How many spiral arms are there?', ->
-    @answer 'Tight', icon: 'spiral_tight'
-    @answer 'Medium', icon: 'spiral_medium'
-    @answer 'Loose', icon: 'spiral_loose'
+    @help "Astronomers classify galaxies by how tight their arms are - you might find it easiest to see closest to the centre."
+    @answer 'Tight', icon: 'spiral_tight', examples: 1
+    @answer 'Medium', icon: 'spiral_medium', examples: 1
+    @answer 'Loose', icon: 'spiral_loose', examples: 1
   
   @question 'Spiral', 'How many spiral arms are there?', leadsTo: 'How prominent is the central bulge, compared with the rest of the galaxy?', ->
+    @help "Some spiral galaxies are rather complicated, so don't be afraid to use the &quot;more than 4&quot; or &quot;can't tell&quot; buttons here."
     @answer '1', icon: 'spiral_1'
     @answer '2', icon: 'spiral_2'
     @answer '3', icon: 'spiral_3'
@@ -75,14 +90,16 @@ CandelsTree = new DecisionTree 'candels', ->
     @answer "Can't tell", icon: 'spiral_cant-tell'
   
   @question 'Bulge', 'How prominent is the central bulge, compared with the rest of the galaxy?', leadsTo: 'Is the galaxy currently merging or is there any sign of tidal debris?', ->
-    @answer 'No bulge', icon: 'bulge_none'
-    @answer 'Obvious', icon: 'bulge_obvious'
-    @answer 'Dominant', icon: 'bulge_dominant'
+    @help "It's not always easy to tell, but look at the centre of the galaxy for a round bulge of stars which may obscure any bar and the spiral arms in this central region."
+    @answer 'No bulge', icon: 'bulge_none', examples: 1
+    @answer 'Obvious', icon: 'bulge_obvious', examples: 1
+    @answer 'Dominant', icon: 'bulge_dominant', examples: 1
   
   @question 'Merger', 'Is the galaxy currently merging or is there any sign of tidal debris?', ->
-    @answer 'Merging', icon: 'merger'
-    @answer 'Tidal debris', icon: 'tidal-debris'
-    @answer 'Both', icon: 'merger_tidal'
-    @answer 'Neither', icon: 'no'
+    @help "Now you can look at the larger picture - if the galaxy is colliding with another, click &quot;merger.&quot; If there's no visible second system, but long streams of stars or gas are visible then click &quot;tidal debris.&quot; &quot;Both&quot; and &quot;Neither&quot; are your other options."
+    @answer 'Merging', icon: 'merger', examples: 4
+    @answer 'Tidal debris', icon: 'tidal-debris', examples: 1
+    @answer 'Both', icon: 'merger_tidal', examples: 2
+    @answer 'Neither', icon: 'no', examples: 1
 
 module.exports = CandelsTree

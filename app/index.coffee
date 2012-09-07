@@ -27,4 +27,13 @@ class App extends Spine.Controller
 
     Spine.Route.setup()
 
+preload = (image) ->
+  img = new Image
+  img.src = image
+
+$ ->
+  preload '/images/icons.png'
+  preload '/images/workflow.png'
+  preload '/images/examples.png'
+
 module.exports = App

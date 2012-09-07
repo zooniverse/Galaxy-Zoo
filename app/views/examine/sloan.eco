@@ -3,3 +3,14 @@
 <%- @info 'Right Ascension', @subject.coords[0], '&deg;' %>
 <%- @info 'Declination', @subject.coords[1], '&deg;' %>
 <%- @info 'Petrosian Radius', @subject.metadata.petrorad_r %>
+
+<div class="row">
+  <span class="blank"></span>
+</div>
+
+<div class="row">
+  <span class="key"></span>
+  <span class="value">
+    <a target="_blank" href="http://skyserver.sdss3.org/dr8/en/tools/explore/obj.asp?id=<%= @subject.metadata.sdss_id %>">View on SkyServer</a>
+  </span>
+</div>

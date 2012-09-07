@@ -9,6 +9,7 @@ class ProjectRecent extends Model
   
   @fetch: (count = 3) ->
     Api.get @url(per_page: count), (results) =>
+      @destroyAll()
       @create result for result in results
   
   subject: -> @subjects[0]
