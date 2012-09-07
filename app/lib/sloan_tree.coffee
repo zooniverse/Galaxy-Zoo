@@ -10,9 +10,9 @@ SloanTree = new DecisionTree 'sloan', ->
   @question 'Disk', 'Could this be a disk viewed edge-on?', ->
     @help "Disk galaxies are very thin, and look different when viewed from the side. If the galaxy looks needle-like, perhaps with a bulge at the centre, then click &quot;yes,&quot; otherwise choose &quot;no.&quot;"
     @answer 'Yes', leadsTo: 'Does the galaxy have a bulge at its center? If so, what shape?', icon: 'yes', examples: 1
-    @answer 'No', leadsTo: 'Is there a sign of a bar feature through the center of the galaxy?', icon: 'no', examples: 2
+    @answer 'No', leadsTo: 'Is there any sign of a bar feature through the center of the galaxy?', icon: 'no', examples: 2
   
-  @question 'Bar', 'Is there a sign of a bar feature through the center of the galaxy?', leadsTo: 'Is there any sign of a spiral arm pattern?', ->
+  @question 'Bar', 'Is there any sign of a bar feature through the center of the galaxy?', leadsTo: 'Is there any sign of a spiral arm pattern?', ->
     @help "Sometimes galaxies have a prominent straight &quot;bar&quot; running through their centre, and that's what we're looking for here."
     @answer 'Bar', icon: 'yes'
     @answer 'No bar', icon: 'no'

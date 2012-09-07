@@ -57,14 +57,14 @@ CandelsTree = new DecisionTree 'candels', ->
   @question 'Disk', 'Could this be a disk viewed edge-on?', ->
     @help "Disk galaxies are very thin, and look different when viewed from the side. If the galaxy looks needle-like, perhaps with a bulge at the centre, then click &quot;yes,&quot; otherwise choose &quot;no.&quot;"
     @answer 'Yes', leadsTo: 'Does the galaxy have a bulge at its centre?', icon: 'yes', examples: 1
-    @answer 'No', leadsTo: 'Is there a sign of a bar feature through the centre of the galaxy?', icon: 'no', examples: 1
+    @answer 'No', leadsTo: 'Is there any sign of a bar feature through the centre of the galaxy?', icon: 'no', examples: 1
   
   @question 'Bulge', 'Does the galaxy have a bulge at its centre?', leadsTo: 'Is the galaxy currently merging or is there any sign of tidal debris?', ->
     @help "Look at the centre of the galaxy - is there any sign of a bulge of stars sticking out above and below the otherwise smooth shape? If so, click yes."
     @answer 'Yes', icon: 'yes', examples: 1
     @answer 'No', icon: 'no', examples: 1
   
-  @question 'Bar', 'Is there a sign of a bar feature through the centre of the galaxy?', leadsTo: 'Is there any sign of a spiral arm pattern?', ->
+  @question 'Bar', 'Is there any sign of a bar feature through the centre of the galaxy?', leadsTo: 'Is there any sign of a spiral arm pattern?', ->
     @help "Sometimes galaxies have a prominent straight &quot;bar&quot; running through their centre, and that's what we're looking for here."
     @answer 'Bar', icon: 'yes', examples: 6
     @answer 'No bar', icon: 'no', examples: 1
