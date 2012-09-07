@@ -35,4 +35,21 @@
         min-width: $one-quarter
         background-position: center
         height: 76px
-        
+
+@media only screen and (max-device-width: 480px) 
+  #navigation
+    .logo
+      position:absolute
+      top: 10px
+      left: 10px
+      display:none
+      img
+        width: 300px  
+    ul
+      margin-top: -50px
+      li
+        margin: 0px
+        padding: 0px
+        width: 100px
+      .nav_papers, .nav_story, .nav_talk
+        display: none

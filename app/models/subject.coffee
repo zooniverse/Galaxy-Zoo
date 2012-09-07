@@ -32,10 +32,10 @@ class Subject extends BaseSubject
         @current = @first()
         @trigger 'fetched'
   
-  @fetch: ->
-    count = Config.subjectCache - @count()
-    _(super).tap =>
-      _(count - 1).times => super(1)
+  # @fetch: ->
+  #   count = Config.subjectCache - @count()
+  #   _(super).tap =>
+  #     _(count - 1).times => super(1)
   
   @show: (id) ->
     Api.get "/projects/galaxy_zoo/subjects/#{ id }"

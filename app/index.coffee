@@ -24,6 +24,7 @@ class App extends Spine.Controller
     @quizzes = new Quizzes
     
     @append @navigation.active(), @main
+
     Spine.Route.setup()
 
 module.exports = App

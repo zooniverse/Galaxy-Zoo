@@ -1,3 +1,6 @@
+//@media only screen and (max-device-width: 480px)  
+
+
 #science, #story, #papers, #team
   .content
     background-color: $light-gray
@@ -52,7 +55,7 @@
       
       .full
         padding: $vertical-padding $side-padding $vertical-padding $side-padding
-        
+
       .left
         padding: $vertical-padding ($middle-padding / 2) $vertical-padding $side-padding
         width: ($full-width * 0.60) - ($middle-padding / 2) - $side-padding
@@ -68,5 +71,12 @@
         
         p
           margin: 0px 0px 12px 0px
-        
-        
+
+@media only screen and (max-device-width: 480px) 
+  #science
+    .content
+      .content-block
+        .full
+          padding: 40px
+          .heading
+            content: "The Science behind the project"

@@ -14,6 +14,8 @@
 @import 'dialog'
 @import 'quiz'
 
+
+
 .stack > *
   display: none
   
@@ -39,3 +41,14 @@ body
 
 #main
   margin-bottom: 50px
+
+@media only screen and (max-device-width: 480px) 
+  body
+    width: 100%  
+    background: url("images/gz_headerimage.jpg") no-repeat scroll 24% 0 #000000
+    margin:0px
+    padding:0px
+    -webkit-tap-highlight-color: rgba(0,0,0,0)
+    #main
+      margin-top: -90px
+

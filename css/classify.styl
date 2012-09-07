@@ -1,3 +1,37 @@
+@media only screen and (max-device-width: 480px) 
+  body
+    #main
+      .active
+        #classify
+          border: none
+          padding: 0px
+          border: 0px
+          background-color: black
+          .galaxy
+            border: none
+            position: absolute
+            left: 0px
+            top: 3px 
+            width: 380px
+            height: 380px
+            padding: 0px
+            margin: 0px
+            img
+              padding: 0px 
+              margin: 0px
+              width: 380px
+              height: 380px
+          .tree
+            position: absolute
+            top: 400px
+            .top
+              display: none
+            .question
+              .buttons
+                border: none
+                .row 
+                  height: 20px
+
 #classify
   clearfix()
   position: relative
@@ -13,18 +47,17 @@
     
     img
       cursor: pointer
-      width: 424px
-      height: 424px
+      width: 20px
+      height: 20px
       float: left
   
   .tree
     float: left
     width: $one-half
     margin-top: $gutter-size
-    
     .top
       clearfix()
-      
+
       h1
         float: left
         display: inline
@@ -200,3 +233,4 @@
               
               .hover
                 color: $light-gray
+
