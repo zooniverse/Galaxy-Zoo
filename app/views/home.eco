@@ -7,7 +7,7 @@
     <div class="slide-element galaxy-zoo">
       <div class="left">
         <p class="header-blue" style="display: none">Featured Project</p>
-        <p class="header-title">Hubble</p>
+        <p class="header-title">Classify Galaxies</p>
         <p class="description">To understand how galaxies formed we need your help to classify them according to their shapes. If you're quick, you may even be the first person to see the galaxies you're asked to classify.</p>
         <a data-nav="#/classify" href="/#/classify" class="blue-button">Begin Classifying</a>
       </div>
