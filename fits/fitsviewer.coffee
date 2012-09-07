@@ -330,6 +330,13 @@ class FITSViewer extends Spine.Controller
       xaxis:
         min: minimum
         max: maximum
+        axisLabel: 'value',
+        axisLabelUseCanvas: false
+        axisLabelFontSizePixels: 12
+      yaxis:
+        axisLabel: 'count',
+        axisLabelUseCanvas: false
+        axisLabelFontSizePixels: 12
       lines:
         show: true
         fill: true
