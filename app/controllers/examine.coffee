@@ -1,8 +1,8 @@
 Spine = require 'spine'
 Subject = require 'models/subject'
 Api = require 'zooniverse/lib/api'
-# FITSViewer = require 'controllers/fitsviewer'
-# WebGL = require 'lib/web_gl'
+FITSViewer = require 'controllers/fitsviewer'
+WebGL = require('lib/WebGL')
 
 class Examine extends Spine.Controller
   events: 
@@ -56,11 +56,26 @@ class Examine extends Spine.Controller
       fitsFrame.on 'load', @requestFITS
       $('body').append fitsFrame
   
-  requestFITS: =>
-    $('#load-fits').attr 'disabled', true
-    bands = @subject.metadata.bands
-    surveyId = @subject.surveyId()
-    @viewer = new FITSViewer el: $('#examine'), bands: bands
+  sexagesimal: =>
+    [ra, dec] = @subject.coords
+    return [@ddmmss(ra), @ddmmss(dec)]
+  
+  ddmmss: (degree) =>
+    dd = Math.floor(degree)
+    mantissa = degree - dd
+    mmtmp = 60 * mantissa
+    mm = Math.floor(mmtmp)
+    mantissa = mmtmp - mm
+    ss = (60 * mantissa).toFixed(3)
+    
+    return "#{dd}&deg; #{mm}' #{ss}\""
+  
+  receiveFITS: (e) =>
+    if e.data.error?
+      alert("Sorry, these data are not yet available.")
+      window.removeEventListener("message", @receiveFITS, false)
+    else
+      @viewer.addImage(band, e.data.arraybuffer)
     
     for band in bands
       do (band, surveyId) =>
