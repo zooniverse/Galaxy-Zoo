@@ -5,7 +5,7 @@ SloanTree = new DecisionTree 'sloan', ->
     @help "The aim here is to divide featureless galaxies from all the rest. If you can see any interesting features at all, click &quot;features or disk.&quot; Just occasionally you might see something that isn't a galaxy at all - the long streak of a satellite, for example, or a image swamped by light from a bright star. If this happens, just click &quot;star or artifact.&quot;"
     @answer 'Smooth', leadsTo: 'How rounded is it?', icon: 'smooth_round', examples: 1
     @answer 'Features or disk', leadsTo: 'Could this be a disk viewed edge-on?', icon: 'feature', examples: 3
-    @answer 'Star or artifact', icon: 'star', examples: 2
+    @answer 'Star or artifact', leadsTo: 'Would you like to discuss this object?', icon: 'star', examples: 2
   
   @question 'Disk', 'Could this be a disk viewed edge-on?', ->
     @help "Disk galaxies are very thin, and look different when viewed from the side. If the galaxy looks needle-like, perhaps with a bulge at the centre, then click &quot;yes,&quot; otherwise choose &quot;no.&quot;"
@@ -32,7 +32,7 @@ SloanTree = new DecisionTree 'sloan', ->
   @question 'Odd', 'Is there anything odd?', ->
     @help "We're looking for signs that the galaxy is merging, is disturbed, or has other unusual features."
     @answer 'Yes', leadsTo: 'What are the odd features?', icon: 'yes'
-    @answer 'No', icon: 'no'
+    @answer 'No', leadsTo: 'Would you like to discuss this object?', icon: 'no'
   
   @question 'Odd', 'What are the odd features?', ->
     @checkbox 'Ring', icon: 'ring', examples: 2
@@ -42,7 +42,7 @@ SloanTree = new DecisionTree 'sloan', ->
     @checkbox 'Other', icon: 'other', examples: 3
     @checkbox 'Merger', icon: 'merger', examples: 6
     @checkbox 'Dust lane', icon: 'dustlane', examples: 2
-    @answer 'Done', icon: 'yes'
+    @answer 'Done', leadsTo: 'Would you like to discuss this object?', icon: 'yes'
   
   @question 'Round', 'How rounded is it?', leadsTo: 'Is there anything odd?', ->
     @answer 'Completely round', icon: 'smooth_round', examples: 1
@@ -67,5 +67,9 @@ SloanTree = new DecisionTree 'sloan', ->
     @answer '4', icon: 'spiral_4'
     @answer 'More than 4', icon: 'spiral_4-plus'
     @answer "Can't tell", icon: 'spiral_cant-tell', examples: 1
+  
+  @question 'Discuss', 'Would you like to discuss this object?', ->
+    @answer 'Yes', icon: 'yes', talk: true
+    @answer 'No', icon: 'no'
 
 module.exports = SloanTree

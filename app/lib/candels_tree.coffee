@@ -5,7 +5,7 @@ CandelsTree = new DecisionTree 'candels', ->
     @help "The aim here is to divide featureless galaxies from all the rest. If you can see any interesting features at all, click &quot;features or disk.&quot; Just occasionally you might see something that isn't a galaxy at all - the long streak of a satellite, for example, or a image swamped by light from a bright star. If this happens, just click &quot;star or artifact.&quot;"
     @answer 'Smooth', leadsTo: 'How rounded is it?', icon: 'smooth_round', examples: 1
     @answer 'Features or disk', leadsTo: 'Does the galaxy have a mostly clumpy appearance?', icon: 'feature', examples: 2
-    @answer 'Star or artifact', icon: 'star', examples: 3
+    @answer 'Star or artifact', leadsTo: 'Would you like to discuss this object?', icon: 'star', examples: 3
   
   @question 'Round', 'How rounded is it?', leadsTo: 'Is the galaxy currently merging or is there any sign of tidal debris?', ->
     @help "Not all galaxies are perfectly round - just look at the overall shape and put it in one of these three categories. If there's more than one galaxy in the field, remember always to concentrate on the one in the centre."
@@ -95,11 +95,15 @@ CandelsTree = new DecisionTree 'candels', ->
     @answer 'Obvious', icon: 'bulge_obvious', examples: 1
     @answer 'Dominant', icon: 'bulge_dominant', examples: 1
   
-  @question 'Merger', 'Is the galaxy currently merging or is there any sign of tidal debris?', ->
+  @question 'Merger', 'Is the galaxy currently merging or is there any sign of tidal debris?', leadsTo: 'Would you like to discuss this object?', ->
     @help "Now you can look at the larger picture - if the galaxy is colliding with another, click &quot;merger.&quot; If there's no visible second system, but long streams of stars or gas are visible then click &quot;tidal debris.&quot; &quot;Both&quot; and &quot;Neither&quot; are your other options."
     @answer 'Merging', icon: 'merger', examples: 4
     @answer 'Tidal debris', icon: 'tidal-debris', examples: 1
     @answer 'Both', icon: 'merger_tidal', examples: 2
     @answer 'Neither', icon: 'no', examples: 1
+  
+  @question 'Discuss', 'Would you like to discuss this object?', ->
+    @answer 'Yes', icon: 'yes', talk: true
+    @answer 'No', icon: 'no'
 
 module.exports = CandelsTree

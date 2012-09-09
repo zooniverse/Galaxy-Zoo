@@ -43,8 +43,16 @@ class Classify extends Spine.Controller
     @classification = new Classification subject_id: @subject.id
     @render()
   
-  answer: (ev) ->
-    id = $(ev.target).closest('.answer').data 'id'
+  answer: (ev) =>
+    answer = $(ev.target).closest '.answer'
+    id = answer.data 'id'
+    talk = answer.data 'talk'
+    
+    if talk
+      url = "http://talk.galaxyzoo.org/objects/#{ @subject.zooniverse_id }"
+      window.open url, '_blank'
+      window.focus()
+    
     checks = _ $('.buttons .active.checkbox')
     checkIds = checks.collect (check) -> $(check).data('id')
     
