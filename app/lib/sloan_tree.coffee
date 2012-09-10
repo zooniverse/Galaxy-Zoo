@@ -69,6 +69,7 @@ SloanTree = new DecisionTree 'sloan', ->
     @answer "Can't tell", icon: 'spiral_cant-tell', examples: 1
   
   @question 'Discuss', 'Would you like to discuss this object?', ->
+    @help "If you have any questions about this object, or think it may be interesting to others, or just have something to say, you can start a discussion on Talk by clicking &quot;Yes&quot;. Talk will open in a new window - just close it to come back to the classification page."
     @answer 'Yes', icon: 'yes', talk: true
     @answer 'No', icon: 'no'
 
