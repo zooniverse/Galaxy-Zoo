@@ -18,7 +18,11 @@
       <a href="#/papers" data-nav="/papers">Papers</a>
     </li>    
     <li>
-      <a href="http://talk.galaxyzoo.org" target="_blank">Talk</a>
+      <a href="http://talk.galaxyzoo.org" target="_blank">Discuss</a>
+      <ul class="menu">
+        <li><a href="http://talk.galaxyzoo.org">Talk</a></li>
+        <li><a href="http://www.galaxyzooforum.org">Forum</a></li>
+      </ul>
     </li>
     <li class="last">
       <a href="#/profile" data-nav="/profile">Profile</a>
