@@ -2,6 +2,7 @@
   "dependencies": [
     "underscore",
     "zooniverse",
+    "zooniverse/lib/google_analytics",
     "es5-shimify",
     "json2ify",
     "jqueryify",

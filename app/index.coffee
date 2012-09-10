@@ -7,6 +7,7 @@ Navigation = require 'controllers/navigation'
 Main = require 'controllers/main'
 Quizzes = require 'controllers/quizzes'
 TopBar = require 'zooniverse/lib/controllers/top_bar'
+googleAnalytics = require 'zooniverse/lib/google_analytics'
 
 class App extends Spine.Controller
   constructor: ->
@@ -34,5 +35,7 @@ $ ->
   preload '/images/icons.png'
   preload '/images/workflow.png'
   preload '/images/examples.png'
+
+googleAnalytics.init account: 'UA-1224199-9', domain: 'galaxyzoo.org'
 
 module.exports = App
