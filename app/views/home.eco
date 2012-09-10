@@ -33,7 +33,7 @@
     <div class="left">
       <h1 class="heading">Create Words With Real Galaxies</h1>
       <p class="description">Galaxy Zoo volunteers have discovered some amazing letter-shaped galaxies. To create your own phrases using these characters visit:</p>
-      <p><a href="http://writing.galaxyzoo.org" target="_blank" class="galaxify">Galaxy Writer</a></p>
+      <a href="http://writing.galaxyzoo.org" target="_blank" class="galaxify">Galaxy Writer</a>
     </div>
     <div class="right">
       <h1 class="heading">Recent Images</h1>
