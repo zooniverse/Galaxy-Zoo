@@ -3,11 +3,12 @@
   <p class="text"><%= @text %></p>
   
   <div class="buttons">
+    <% iOS = if navigator.userAgent.match(/(iPad|iPhone|iPod)/i) then 'iOS' else 'not-iOS' %>
     <% options = $.extend { }, @checkboxes, @answers %>
     <% for row in _(options).inGroupsOf(4) : %>
       <div class="row">
         <% for [id, answer] in row : %>
-          <div <%- 'data-talk="true" ' if answer.talk %>data-id="<%= id %>" class="<%= if answer.checkbox then 'checkbox' else 'answer' %>">
+          <div <%- 'data-talk="true" ' if answer.talk %>data-id="<%= id %>" class="<%= if answer.checkbox then 'checkbox' else 'answer' %> <%= iOS %>">
             <div class="icon">
               <a class="workflow-<%= answer.icon %>"></a>
               <div class="hover"><%= answer.text %></div>
