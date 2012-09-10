@@ -3,6 +3,7 @@
     "underscore",
     "zooniverse",
     "zooniverse/lib/google_analytics",
+    "zooniverse/lib/controllers/browser_check",
     "es5-shimify",
     "json2ify",
     "jqueryify",
