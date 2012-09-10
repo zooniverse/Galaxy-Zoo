@@ -55,7 +55,7 @@ CandelsTree = new DecisionTree 'candels', ->
     @answer 'No', icon: 'no', examples: 1
   
   @question 'Disk', 'Could this be a disk viewed edge-on?', ->
-    @help "Disk galaxies are very thin, and look different when viewed from the side. If the galaxy looks needle-like, perhaps with a bulge at the centre, then click &quot;yes,&quot; otherwise choose &quot;no.&quot;"
+    @help "Disc galaxies are very thin, so look different when viewed from the side. We're trying to find exactly edge-on galaxies with this question. If the galaxy looks needle-like, perhaps with a bulge at the centre, then click &quot;yes,&quot; otherwise choose &quot;no&quot; (even for galaxies almost edge-on)."
     @answer 'Yes', leadsTo: 'Does the galaxy have a bulge at its centre?', icon: 'yes', examples: 1
     @answer 'No', leadsTo: 'Is there any sign of a bar feature through the centre of the galaxy?', icon: 'no', examples: 1
   

@@ -8,7 +8,7 @@ SloanTree = new DecisionTree 'sloan', ->
     @answer 'Star or artifact', leadsTo: 'Would you like to discuss this object?', icon: 'star', examples: 2
   
   @question 'Disk', 'Could this be a disk viewed edge-on?', ->
-    @help "Disk galaxies are very thin, and look different when viewed from the side. If the galaxy looks needle-like, perhaps with a bulge at the centre, then click &quot;yes,&quot; otherwise choose &quot;no.&quot;"
+    @help "Disc galaxies are very thin, so look different when viewed from the side. We're trying to find exactly edge-on galaxies with this question. If the galaxy looks needle-like, perhaps with a bulge at the centre, then click &quot;yes,&quot; otherwise choose &quot;no&quot; (even for galaxies almost edge-on)."
     @answer 'Yes', leadsTo: 'Does the galaxy have a bulge at its center? If so, what shape?', icon: 'yes', examples: 1
     @answer 'No', leadsTo: 'Is there any sign of a bar feature through the center of the galaxy?', icon: 'no', examples: 2
   
