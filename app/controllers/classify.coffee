@@ -47,7 +47,7 @@ class Classify extends Spine.Controller
     unless User.current
       @classificationCount += 1
       
-      if @classificationCount is 3
+      if @classificationCount in [3, 9]
         @loginPrompt = new Dialog
           template: 'views/login_prompt'
           callback: -> @el().remove()
