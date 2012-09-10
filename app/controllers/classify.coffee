@@ -5,6 +5,7 @@ Dialog = require 'lib/dialog'
 Recent = require 'zooniverse/lib/models/recent'
 Favorite = require 'zooniverse/lib/models/favorite'
 User = require 'zooniverse/lib/models/user'
+LoginForm = require 'zooniverse/lib/controllers/login_form'
 
 class Classify extends Spine.Controller
   elements:
@@ -25,9 +26,13 @@ class Classify extends Spine.Controller
   constructor: ->
     super
     
+    @classificationCount = 0
+    
     $('.example-thumbnail').die('click').live 'click', @showExample
     Subject.bind 'fetched', @nextSubject
     User.bind 'sign-in', @render
+    User.bind 'sign-in', @hideLoginPrompt
+    Classification.bind 'classified', @loginPrompt
     Subject.next()
   
   active: ->
@@ -37,6 +42,23 @@ class Classify extends Spine.Controller
   render: =>
     return unless @subject and @isActive()
     @html require('views/classify')(@)
+  
+  loginPrompt: =>
+    unless User.current
+      @classificationCount += 1
+      
+      if @classificationCount is 3
+        @loginPrompt = new Dialog
+          template: 'views/login_prompt'
+          callback: -> @el().remove()
+        
+        @loginPrompt.show()
+        new LoginForm el: '.login-prompt .login'
+  
+  hideLoginPrompt: =>
+    if User.current and $('.login-prompt:visible')[0]
+      @loginPrompt.close()
+      @loginPrompt.el().remove()
   
   nextSubject: =>
     @subject = Subject.current
