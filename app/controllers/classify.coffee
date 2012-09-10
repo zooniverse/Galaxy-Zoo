@@ -34,6 +34,7 @@ class Classify extends Spine.Controller
     User.bind 'sign-in', @hideLoginPrompt
     Classification.bind 'classified', @loginPrompt
     Subject.next()
+    $('#zooniverse-top-bar-login .buttons button[name="signup"]').unbind('click').bind 'click', @signupPrompt
   
   active: ->
     super
@@ -54,6 +55,14 @@ class Classify extends Spine.Controller
         
         @loginPrompt.show()
         new LoginForm el: '.login-prompt .login'
+  
+  signupPrompt: (ev) =>
+    @loginPrompt = new Dialog
+      template: 'views/login_prompt'
+      callback: -> @el().remove()
+    
+    @loginPrompt.show()
+    new LoginForm el: '.login-prompt .login'
   
   hideLoginPrompt: =>
     if User.current and $('.login-prompt:visible')[0]
