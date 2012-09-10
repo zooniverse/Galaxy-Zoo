@@ -36,7 +36,7 @@ preload = (image) ->
 $ ->
   preload '/images/icons.png'
   preload '/images/workflow.png'
-  preload '/images/examples.png'
+  preload '/images/examples.jpg'
 
 googleAnalytics.init account: 'UA-1224199-9', domain: 'galaxyzoo.org'
 
