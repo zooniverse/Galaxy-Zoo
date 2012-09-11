@@ -34,8 +34,8 @@ class Subject extends BaseSubject
   
   @fetch: ->
     count = Config.subjectCache - @count()
-    _(super).tap =>
-      _(count - 1).times => super(1)
+    super.onSuccess =>
+      @fetch() if count > 1
   
   @show: (id) ->
     Api.get "/projects/galaxy_zoo/subjects/#{ id }"
