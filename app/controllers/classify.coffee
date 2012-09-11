@@ -88,11 +88,7 @@ class Classify extends Spine.Controller
     checks = _ $('.buttons .active.checkbox')
     checkIds = checks.collect (check) -> $(check).data('id')
     
-    if checkIds.length is 0
-      @classification.annotate id
-    else
-      @classification.annotate checkIds
-    
+    @classification.annotate id, checkIds
     @updateQuestion()
     ev.preventDefault()
   
