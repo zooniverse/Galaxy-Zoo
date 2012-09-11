@@ -58,11 +58,12 @@ class Classify extends Spine.Controller
   
   signupPrompt: (ev) =>
     @loginPrompt = new Dialog
-      template: 'views/login_prompt'
+      template: 'views/signup_prompt'
       callback: -> @el().remove()
     
     @loginPrompt.show()
-    new LoginForm el: '.login-prompt .login'
+    loginForm = new LoginForm el: '.login-prompt .login'
+    loginForm.signUp()
   
   hideLoginPrompt: =>
     if User.current and $('.login-prompt:visible')[0]
