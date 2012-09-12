@@ -1,3 +1,47 @@
-<div id="graph">
-  <svg></svg>
-</div>
+<div id="home">
+  <div id="box">
+    <div id="top_bar">
+      <h1>Navigator</h1>
+      <div id="link_buttons">
+        <a class="my_galaxies">Our Galaxies</a>
+        <a class="graph">Graph Data</a>
+      </div>
+      <h2>Construct a graph</h2>
+    </div>
+    <div id="graph_div">
+      <div id="graph_options">
+        <form id="graph_form">
+          <select id="xaxis">
+            <option>Select X-Axis</option>
+            <option value="redshift">Redshift</option>
+            <option value="color">Color</option>
+            <option value="apparent_brightness">Apparent Brightness</option>
+            <option value="energy_output">Energy Output</option>
+            <option value="apparent_size">Apparent Size</option>
+            <option value="absolute_brightness">Absolute Brightness</option>
+          </select>
+          <select id="yaxis">
+            <option>Select Y-Axis</option>
+            <option value="redshift">Redshift</option>
+            <option value="color">Color</option>
+            <option value="apparent_brightness">Apparent Brightness</option>
+            <option value="energy_output">Energy Output</option>
+            <option value="apparent_size">Apparent Size</option>
+            <option value="absolute_brightness">Absolute Brightness</option>
+          </select>
+          <select id="sample_size">
+            <option>Select Sample Size</option>
+            <option value="redshift">10 of Our Galaxies</option>
+            <option value="color">50 of Our Galaxies</option>
+            <option value="apparent_brightness">100 of Our Galaxies</option>
+            <option value="apparent_size">500 randomly selected Galaxies</option>
+            <option value="absolute_brightness">1000 randomly selected Galaxies</option>
+          </select>
+        </form>
+      </div>
+      <div id="graph">
+        <svg></svg>
+      </div>
+    </div>
+  </div>
+</div>    

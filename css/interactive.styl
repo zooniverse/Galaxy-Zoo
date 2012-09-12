@@ -1,18 +1,135 @@
 // Interactive
+$partridge = 65px
+$gutter = 20px
+
+#home 
+  padding 0px
+  margin 0px
+  font-family "Open Sans Condensed" 
 
 #box
+  width 12*$partridge + 11*$gutter
+  height 620px
+  padding-top 30px
+  margin 20px 0px 20px 0px
+  background white
+  color black
 
-// Our Galaxies
+#top_bar
+  width 10*$partridge + 9*$gutter
+  height 150px
+  border-bottom 1px solid #C0C0C0
+  margin 0px $partridge+$gutter
+  padding 0px
+#top_bar  h1
+    margin 0px
+    padding 0px
+    display inline
+    width 700px
+#top_bar  p
+    margin-top 20px
+#top_bar  h2
+    margin-top 70px
+    color $blue
+  
+#link_buttons 
+  display inline
+  float right
+  text-align right
+  width 300px
+  height 40px
+  margin-top 20px
+  a
+    color black
+    padding 2px 6px 3px
+    border 1px solid #C0C0C0
+    background $light-gray
+    border-radius 5px
+    -moz-border-radius 5px
+  a:hover
+    color $blue
 
-#galaxies
+.image_div
+  display inline
+  position relative
+  h2
+    display inline
+    position absolute
+    text-align center
+    width 5*$partridge + 4*$gutter
+    z-index 100
+    margin 20px 0px 20px 0px
+    padding 0px
+    color white
 
-#galaxies .galaxy
+.image_div p
+  display inline
+  position absolute
+  text-align center
+  width 4*$partridge + 3*$gutter
+  color white
+  z-index 100
+  margin 55px 0px 20px 40px
+  padding 0px
+
+.image_left
+  margin-left $partridge+$gutter
+  margin-right 7px
+
+.image_right
+  margin-right $partridge+$gutter
+  margin-left 0px
+
+.image_link img
+  position relative
+  background white
+  border-radius 5px
+  -moz-border-radius 5px
+  border 3px solid white
+.image_link:hover img
+  border 3px solid $blue
 
 
+// Welcome Page
+#welcome
+  margin-top 30px
 
+// My Galaxies  
+#my_galaxies
+  margin-top 30px
+  margin-left $partridge + $gutter
+  
+// Choose Investigation
+#choose_investigation
+  margin-top 30px
+  
 // Make Graphs
 
-#options
+#graph_div
+  margin-left $partridge + $gutter
+  margin-top 20px
 
-#graph svg
-	height 400px
+#graph_options
+  display inline
+  float left 
+  width 3*$partridge + 2*$gutter  
+  height 200px
+  margin-right $partridge
+
+#graph_form
+
+#graph_form select
+  width 3*$partridge + $gutter
+
+#graph
+  display inline
+  float left
+  width 6*$partridge + 7*$gutter
+  height 400px
+
+#graph svg  
+  display inline
+  width 6*$partridge + 7*$gutter
+  height 300px
+  border 1px solid #C0C0C0
+  background $light-gray

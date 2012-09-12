@@ -7,7 +7,10 @@ Examine = require 'controllers/examine'
 Papers = require 'controllers/papers'
 Story = require 'controllers/story'
 Team = require 'controllers/team'
-Interactive = require 'controllers/interactive'
+Interactive = require 'controllers/interactive/interactive'
+ChooseInvestigation = require 'controllers/interactive/choose_investigation'
+MyGalaxies = require 'controllers/interactive/my_galaxies'
+Graph = require 'controllers/interactive/graph'
 
 class Main extends Spine.Stack
   el: '#main'
@@ -22,6 +25,9 @@ class Main extends Spine.Stack
     story: Story
     team: Team
     interactive: Interactive
+    choose_investigation: ChooseInvestigation 
+    my_galaxies: MyGalaxies
+    graph: Graph
       
   default: 'home'
   
@@ -34,6 +40,9 @@ class Main extends Spine.Stack
     '/papers': 'papers'
     '/story': 'story'
     '/team': 'team'
-    '/interactive': 'interactive'
+    '/navigator': 'interactive'
+    '/navigator/choose_investigation': 'choose_investigation'
+    '/navigator/my_galaxies': 'my_galaxies'
+    '/navigator/graph': 'graph'
 
 module.exports = Main
