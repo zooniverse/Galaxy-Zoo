@@ -1,0 +1,33 @@
+<div id="home">
+  <div id="box">
+    <div id="top_bar">
+      <h1>Navigator</h1>
+      <div id="link_buttons">
+        <a class="my_galaxies">Our Galaxies</a>
+        <a class="graph">Graph Data</a>
+      </div>
+        <p>
+          Welcome to the Galaxy Zoo Navigator, where you can investigate the classifications 
+          you have made as part of a group. To get started you will need to sign in and select 
+          the group you'd like to work with, you can do this on the main top bar. If you get stuck, 
+          ask your group leader for help.
+        </p>
+    </div>
+    <div id="welcome">
+      <div class="image_div image_left">
+        <a class="classify_galaxies">
+          <h2>Classify Galaxies</h2>
+          <p>Visit the Galaxy Zoo website to classify galaxies as part a group.</p>
+        </a>
+        <a class="classify_galaxies image_link"><img src="images/step1.png"></a>        
+      </div>
+      <div class="image_div image_right">
+        <a class="choose_investigation">
+          <h2>Choose Investigation</h2>
+          <p>Begin investigating the galaxies you have classified as a group.</p>
+        </a>
+        <a class="choose_investigation image_link"><img src="images/step2.png"></a>
+      </div>     
+    </div>
+  </div>
+</div>
