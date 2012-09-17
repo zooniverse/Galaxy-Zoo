@@ -1,135 +1,179 @@
 // Interactive
 $partridge = 65px
 $gutter = 20px
+$condensed = "Open Sans Condensed" 
+$normal = "Open Sans" 
+$background = #E6EDF0
+$button-background = #C9C5C7
+$hover-button-background = #8D9191
+@font-face { font-family: open-dyslexic; src: url('OpenDyslexic-Regular.otf'); }
+@font-face { font-family: open-dyslexic-italic; src: url('OpenDyslexic-Italic.otf'); }
+$dx-normal = open-dyslexic
+$dx-condensed = open-dyslexic-italic
+$dx-background = #9DD2ED
+$dx-button-background = #E9F768
+$dx-hover-button-background = #F2864B
+
+h1, h2
+ font-family: $condensed
+ &.dx
+  font-family: $dx-condensed
+
+p
+ font-family: $normal 
+ &.dx
+  font-family: $dx-normal
 
 #home 
-  padding 0px
-  margin 0px
-  font-family "Open Sans Condensed" 
-
+  padding: 0px
+  margin: 0px
+  font-family: $normal
+  &.dx
+   font-family: $dx-normal
+  
 #box
-  width 12*$partridge + 11*$gutter
-  height 620px
-  padding-top 30px
-  margin 20px 0px 20px 0px
-  background white
-  color black
+  width: 12*$partridge + 11*$gutter
+  height: 620px
+  padding-top: 30px
+  margin: 20px 0px 20px 0px
+  background: $background
+  color: black
+  &.dx
+   background: $dx-background  
+
+#div-dx-change
+  margin: 220px $partridge+$gutter 20px $partridge+$gutter
+
 
 #top_bar
-  width 10*$partridge + 9*$gutter
-  height 150px
-  border-bottom 1px solid #C0C0C0
-  margin 0px $partridge+$gutter
-  padding 0px
+  width: 10*$partridge + 9*$gutter
+  height: 70px
+  margin: 0px $partridge+$gutter
+  padding: 0px
 #top_bar  h1
-    margin 0px
-    padding 0px
-    display inline
-    width 700px
+    margin: 0px
+    padding: 0px
+    display: inline
+    width: 700px
 #top_bar  p
-    margin-top 20px
+    margin-top: 20px
 #top_bar  h2
-    margin-top 70px
-    color $blue
+    margin-top: 70px
+    color: $blue
   
 #link_buttons 
-  display inline
-  float right
-  text-align right
-  width 300px
-  height 40px
-  margin-top 20px
+  display: inline
+  float: right
+  text-align: right
+  width: 300px
+  height: 30px
+  margin-top: 20px
   a
-    color black
-    padding 2px 6px 3px
-    border 1px solid #C0C0C0
-    background $light-gray
+    color: black
+    padding: 2px 6px 3px
+    border: 1px solid #C0C0C0
+    background $button-background
     border-radius 5px
     -moz-border-radius 5px
+    &.dx
+     background: $dx-button-background
   a:hover
-    color $blue
+    color: $blue
+    background: $hover-button-background
+    &.dx
+     background: $dx-hover-button-background    
+
+#heading_text
+  width: 10*$partridge + 9*$gutter
+  height: 90px
+  border-bottom: 1px solid #C0C0C0
+  margin: 0px $partridge+$gutter
+  padding: 0px
+
+.navigator_home h1
+  color: black
 
 .image_div
-  display inline
-  position relative
+  display: inline
+  position: relative
   h2
-    display inline
-    position absolute
-    text-align center
-    width 5*$partridge + 4*$gutter
-    z-index 100
-    margin 20px 0px 20px 0px
-    padding 0px
-    color white
+    display: inline
+    position: absolute
+    text-align: center
+    width: 3*$partridge
+    z-index: 100
+    margin: 20px 0px 20px 5px
+    padding: 0px
+    color: white
 
 .image_div p
-  display inline
-  position absolute
-  text-align center
-  width 4*$partridge + 3*$gutter
-  color white
-  z-index 100
-  margin 55px 0px 20px 40px
-  padding 0px
-
+  display: inline
+  position: absolute
+  text-align: center
+  width: 3*$partridge
+  color: black
+  z-index: 100
+  margin: 135px 0px 0px 5px
+  padding: 0px
+  
+  
 .image_left
-  margin-left $partridge+$gutter
-  margin-right 7px
+  margin-left: $partridge+$gutter
 
 .image_right
-  margin-right $partridge+$gutter
-  margin-left 0px
+  margin-right: $partridge+$gutter
 
 .image_link img
-  position relative
-  background white
-  border-radius 5px
-  -moz-border-radius 5px
-  border 3px solid white
+  position: relative
+  width: 3*$partridge + 5px
+  background: white
+  border-radius: 5px
+  -moz-border-radius: 5px
+  border: 3px solid white
 .image_link:hover img
-  border 3px solid $blue
+  border: 3px solid $blue
 
 
 // Welcome Page
 #welcome
-  margin-top 30px
+  margin-top: 30px
 
 // My Galaxies  
 #my_galaxies
-  margin-top 30px
-  margin-left $partridge + $gutter
+  margin-top: 30px
+  margin-left: $partridge + $gutter
   
 // Choose Investigation
 #choose_investigation
-  margin-top 30px
+  margin-top: 30px
   
 // Make Graphs
 
 #graph_div
-  margin-left $partridge + $gutter
-  margin-top 20px
+  margin-left: $partridge + $gutter
+  margin-top: 20px
 
 #graph_options
-  display inline
-  float left 
-  width 3*$partridge + 2*$gutter  
-  height 200px
-  margin-right $partridge
+  display: inline
+  float: left 
+  width: 3*$partridge + 2*$gutter  
+  height: 200px
+  margin-right: $partridge
 
 #graph_form
 
 #graph_form select
-  width 3*$partridge + $gutter
+  width: 3*$partridge + $gutter
 
 #graph
-  display inline
-  float left
-  width 6*$partridge + 7*$gutter
-  height 400px
+  display: inline
+  float: left
+  width: 6*$partridge + 7*$gutter
+  height: 400px
 
 #graph svg  
-  display inline
-  width 6*$partridge + 7*$gutter
-  height 300px
-  border 1px solid #C0C0C0
-  background $light-gray
+  display: inline
+  width: 6*$partridge + 7*$gutter
+  height: 300px
+  border: 1px solid #C0C0C0
+  background: $light-gray

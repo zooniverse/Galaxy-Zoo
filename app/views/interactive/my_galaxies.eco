@@ -1,13 +1,6 @@
-<div id="home">
-  <div id="box">
-    <div id="top_bar">
-      <h1>Navigator</h1>
-      <div id="link_buttons">
-        <a class="my_galaxies">Our Galaxies</a>
-        <a class="graph">Graph Data</a>
-      </div>
-      <h2>Our Galaxies</h2>
-    </div>
-    <div id="my_galaxies">Looking at our galaxies</div>
+<div id="main_body">
+  <div id="heading_text">  
+    <h2>Our Galaxies</h2>
   </div>
-</div>    
+  <div id="my_galaxies">Looking at our galaxies</div>
+</div> 
