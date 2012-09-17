@@ -1,109 +1,41 @@
 #examine
-  .content
-    background-color: $light-gray
-    color: $dark-gray
-    margin-top: 80px
+  h2
+    color: $blue
+    font-family: 'Open Sans'
+    font-weight: 700
+    font-size: 24px
+    margin: 0
+  
+  .subject-info
+    display: table
+    margin-top: 30px
+    font-family: "Open Sans"
+    font-size: 12px
+    font-weight: 400
     
-    .content-block
-      clearfix()
-      display: block
-      width: 100%
-      $vertical-padding = 30px
-      $middle-padding = 10px
-      $side-padding = 80px
+    .row
+      display: table-row
       
-      .heading
-        padding: 0 80px
-        margin: 0
-        font-family: 'Open Sans'
-        font-weight: 400
-        font-size: 28px
-        line-height: 60px
-        
-        -webkit-box-shadow: 0px 1px 0px #D9D9D9, 0px 2px 0px #FFFFFF
-        -moz-box-shadow: 0px 1px 0px #D9D9D9, 0px 2px 0px #FFFFFF
-        box-shadow: 0px 1px 0px #D9D9D9, 0px 2px 0px #FFFFFF
+      .blank
+        display: table-cell
+        height: 20px
       
-      .left, .right
-        font-family: "Open Sans"
-        font-weight: 400
-        font-size: 12px
-        line-height: 20px
-        float: left
-        
-        h2
-          color: $blue
-          font-family: 'Open Sans'
-          font-weight: 700
-          font-size: 24px
-          margin: 0
-          
-        .heading
-          font-family: "Open Sans Condensed"
-          font-weight: 300
-          font-size: 32px
-          line-height: 55px
-          padding-bottom: 4px
-        
-        .sub-heading
-          font-family: "Open Sans Condensed"
-          color: #23799C
-          margin: 0px
-        
-        .subject-info
-          display: table
-          margin-top: 30px
-          font-family: "Open Sans"
-          font-size: 12px
-          font-weight: 400
-          
-          .row
-            display: table-row
-            
-            .blank
-              display: table-cell
-              height: 20px
-            
-            .key
-              display: table-cell
-              padding-right: $middle-padding
-              text-align: right
-              font-weight: 700
-            
-            .value
-              display: table-cell
-              padding-left: $middle-padding
-              text-align: left
+      .key
+        display: table-cell
+        padding-right: 10px
+        text-align: right
+        font-weight: 700
       
-      .left
-        padding: $vertical-padding ($middle-padding / 2) $vertical-padding $side-padding
-        width: ($full-width * 0.60) - ($middle-padding / 2) - $side-padding
-        float: left
-        height: auto
-        min-height: 424px
-        
-        p
-          margin: 0px 0px 12px 0px
-          
-        .subject
-          height: auto
-          
-          img, canvas
-            position: absolute
-            border: 1px solid $light-blue
-        
-      .right
-        padding: $vertical-padding $side-padding $vertical-padding ($middle-padding / 2)
-        width: ($full-width * 0.39) - ($middle-padding / 2) - $side-padding
-        float: left
-        
-        p
-          margin: 0px 0px 12px 0px
-        
-        #plots
-          .histogram
-            position: absolute
-            z-index: 1
-          .markers
-            position: absolute
-            z-index: 2
+      .value
+        display: table-cell
+        padding-left: 10px
+        text-align: left
+  
+  #plots
+    .histogram
+      position: absolute
+      z-index: 1
+    
+    .markers
+      position: absolute
+      z-index: 2

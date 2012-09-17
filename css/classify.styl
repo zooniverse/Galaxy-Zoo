@@ -30,7 +30,7 @@
         display: inline
         font-family: "Open Sans Condensed"
         font-weight: 300
-        margin: 2px 0 0 0
+        margin: 6px 0 0 0
         width: 100px
       
       .buttons
@@ -151,11 +151,11 @@
                 position: relative
                 margin: 0 auto
             
-            &:hover
-                background-color: rgba(0, 60, 87, 0.7)
-                
-                .hover
-                  color: $light-gray
+            &.not-iOS:hover
+              background-color: rgba(0, 60, 87, 0.7)
+              
+              .hover
+                color: $light-gray
             
             &.active
               background-color: rgba(0, 60, 87, 1.0)

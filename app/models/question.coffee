@@ -21,8 +21,8 @@ class Question extends Spine.Model
   help: (text) ->
     @helpText = text
   
-  answer: (text, { leadsTo: leadsTo, icon: icon, examples: examples } = { leadsTo: null, icon: null, examples: 0 }) ->
-    @answers["a-#{ _(@answers).keys().length }"] = { text, leadsTo, icon, examples }
+  answer: (text, { leadsTo: leadsTo, icon: icon, examples: examples, talk: talk } = { leadsTo: null, icon: null, examples: 0, talk: false }) ->
+    @answers["a-#{ _(@answers).keys().length }"] = { text, leadsTo, icon, examples, talk }
   
   examples: =>
     _({ }).tap (examples) =>

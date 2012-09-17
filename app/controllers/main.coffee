@@ -7,6 +7,7 @@ Examine = require 'controllers/examine'
 Papers = require 'controllers/papers'
 Story = require 'controllers/story'
 Team = require 'controllers/team'
+Astronomers = require 'controllers/astronomers'
 
 class Main extends Spine.Stack
   el: '#main'
@@ -20,6 +21,7 @@ class Main extends Spine.Stack
     papers: Papers
     story: Story
     team: Team
+    astronomers: Astronomers
       
   default: 'home'
   
@@ -32,5 +34,6 @@ class Main extends Spine.Stack
     '/papers': 'papers'
     '/story': 'story'
     '/team': 'team'
+    '/astronomers': 'astronomers'
 
 module.exports = Main

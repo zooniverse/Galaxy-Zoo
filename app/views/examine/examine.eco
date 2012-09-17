@@ -1,9 +1,10 @@
 <div id="examine">
   <div class="content">
     <div class="content-block">
-      <h1 class="heading">Examine</h1>
       
       <div class="left">
+        <h1 class="heading">Examine</h1>
+        
         <div class="subject">
           <% if @subject : %>
             <img src="<%= @subject.image() %>" class="name">
@@ -12,6 +13,7 @@
       </div>
       
       <div class="right">
+        <h1 class="heading">&nbsp;</h1>
         <% if @subject : %>
           <h2><%= @subject.zooniverse_id.toUpperCase() %></h3>
           <div class="subject-info">

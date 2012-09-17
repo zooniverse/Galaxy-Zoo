@@ -20,7 +20,7 @@ class Subject extends BaseSubject
       tree: CandelsTree
   
   @url: (params) -> @withParams "/projects/galaxy_zoo/groups/#{ @randomSurveyId() }/subjects", params
-  @randomSurveyId: -> if Math.random() > 0.5 then @::surveys.sloan.id else @::surveys.candels.id
+  @randomSurveyId: -> if Math.random() > 0.166667 then @::surveys.sloan.id else @::surveys.candels.id
   
   @next: ->
     if @current
@@ -34,8 +34,8 @@ class Subject extends BaseSubject
   
   @fetch: ->
     count = Config.subjectCache - @count()
-    _(super).tap =>
-      _(count - 1).times => super(1)
+    super.onSuccess =>
+      @fetch() if count > 1
   
   @show: (id) ->
     Api.get "/projects/galaxy_zoo/subjects/#{ id }"

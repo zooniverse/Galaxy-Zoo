@@ -1,13 +1,13 @@
 <div id="home">
   <div class="headline">
     Few have witnessed what you're about to see
-    <p class="call-to-action">Experience a privileged glimpse of the distant universe, observed by the SDSS and Hubble Telescope</p>
+    <p class="call-to-action">Experience a privileged glimpse of the distant universe, observed by the Sloan Digital Sky Survey and Hubble Space Telescope</p>
   </div>
   <div class="slider">
     <div class="slide-element galaxy-zoo">
       <div class="left">
         <p class="header-blue" style="display: none">Featured Project</p>
-        <p class="header-title">Hubble</p>
+        <p class="header-title">Classify Galaxies</p>
         <p class="description">To understand how galaxies formed we need your help to classify them according to their shapes. If you're quick, you may even be the first person to see the galaxies you're asked to classify.</p>
         <a data-nav="#/classify" href="/#/classify" class="blue-button">Begin Classifying</a>
       </div>
@@ -31,12 +31,9 @@
   
   <div class="content-block">
     <div class="left">
-      <h1 class="heading">Trending Forum Discussions</h1>
-      <ul>
-        <li>Tenderloin jerky prosciutto tri-tip chuck leberkas pastrami <a href="#">13 new posts</a></li>
-        <li>Chicken chuck pork belly corned beef rump tongue <a href="#">8 new posts</a></li>
-        <li>Ground round chicken chuck beef fatback strip steak <a href="#">16 new posts</a></li>
-      </ul>
+      <h1 class="heading">Create Words With Real Galaxies</h1>
+      <p class="description">Galaxy Zoo volunteers have discovered some amazing letter-shaped galaxies. To create your own phrases using these characters visit:</p>
+      <a href="http://writing.galaxyzoo.org" target="_blank" class="galaxify">Galaxy Writer</a>
     </div>
     <div class="right">
       <h1 class="heading">Recent Images</h1>

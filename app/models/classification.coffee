@@ -13,9 +13,14 @@ class Classification extends Spine.Model
   subject: ->
     Subject.find @subject_id
   
-  annotate: (answerId) ->
+  annotate: (answerId, checks) ->
     annotation = { }
-    annotation[@question.id] = answerId
+    
+    if checks.length > 0
+      annotation[@question.id] = [answerId].concat checks
+    else
+      annotation[@question.id] = answerId
+    
     @annotations.push annotation
     @question = @question.nextQuestionFrom answerId
   
