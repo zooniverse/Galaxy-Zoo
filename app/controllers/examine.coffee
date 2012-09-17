@@ -1,8 +1,8 @@
 Spine = require 'spine'
 Subject = require 'models/subject'
 Api = require 'zooniverse/lib/api'
-FITSViewer = require 'controllers/fitsviewer'
-WebGL = require 'lib/web_gl'
+# FITSViewer = require 'controllers/fitsviewer'
+# WebGL = require 'lib/web_gl'
 
 class Examine extends Spine.Controller
   events: 

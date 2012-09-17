@@ -41,7 +41,16 @@ File.open('build/index.html', 'w'){ |f| f.puts index }
 
 working_directory = Dir.pwd
 Dir.chdir 'build'
-to_upload = Dir['**/*'].reject{ |path| File.directory? path }
+
+to_upload = []
+
+if ARGV[0] == 'quick'
+  %w(js css html).each{ |ext| to_upload << Dir["**/*.#{ ext }*"] }
+  to_upload.flatten!
+else
+  to_upload = Dir['**/*'].reject{ |path| File.directory? path }
+end
+
 to_upload.delete 'index.html'
 to_upload << 'index.html'
 total = to_upload.length
