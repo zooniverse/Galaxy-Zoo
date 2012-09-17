@@ -1,0 +1,9 @@
+<div class="login-prompt">
+  <div class="login">
+    
+  </div>
+  
+  <div class="buttons">
+    <button data-dialog="true" data-value="no">No, thanks</button>
+  </div>
+</div>

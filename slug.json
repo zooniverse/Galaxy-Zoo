@@ -2,6 +2,8 @@
   "dependencies": [
     "underscore",
     "zooniverse",
+    "zooniverse/lib/google_analytics",
+    "zooniverse/lib/controllers/browser_check",
     "es5-shimify",
     "json2ify",
     "jqueryify",
@@ -9,8 +11,7 @@
     "spine/lib/local",
     "spine/lib/ajax",
     "spine/lib/route",
-    "spine/lib/manager",
-    "fits"
+    "spine/lib/manager"
   ],
   "libs": [
     "node_modules/Zooniverse/vendor/base64.js"

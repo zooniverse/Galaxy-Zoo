@@ -2,3 +2,14 @@
 <%- @info 'Right Ascension', @subject.coords[0], '&deg;' %>
 <%- @info 'Declination', @subject.coords[1], '&deg;' %>
 <%- @info 'Magnitude', @subject.metadata.magnitude %>
+
+<div class="row">
+  <span class="blank"></span>
+</div>
+
+<div class="row">
+  <span class="key"></span>
+  <span class="value">
+    <a target="_blank" href="http://talk.galaxyzoo.org/objects/<%= @subject.zooniverse_id %>">Discuss this</a>
+  </span>
+</div>

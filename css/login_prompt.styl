@@ -1,0 +1,55 @@
+.login-prompt
+  h3
+    font-family: "Open Sans"
+    font-weight: 400
+    font-size: 20px
+    line-height: 40px
+    margin: 10px 0 0 0
+    padding: 10px 20px 0 20px
+    
+    -webkit-box-shadow: 0 1px 0 #D9D9D9, 0 2px 0 #FFFFFF
+    -moz-box-shadow: 0 1px 0 #D9D9D9, 0 2px 0 #FFFFFF
+    box-shadow: 0 1px 0 #D9D9D9, 0 2px 0 #FFFFFF
+    
+  .login
+    position: relative
+    width: $one-half
+    margin: 0 auto
+    padding: 10px 0
+    font-family: "Open Sans"
+    text-align: center
+    
+    .title
+      text-align: center
+    
+    label
+      display: block
+      margin: 15px 0
+      
+      &.privacy-policy
+        text-align: right
+        padding-right: $gutter-size
+        
+        input
+          width: auto
+      
+      span
+        display: inline-block
+        text-align: right
+        width: $one-quarter - $gutter-size
+        padding-right: $gutter-size
+      
+      input
+        width: $one-quarter - $gutter-size
+  
+  .buttons
+    text-align: left
+    width: 490px
+    margin: 0 auto
+  
+  button
+    standard-button()
+    font-size: 12px
+    line-height: 12px
+    margin: 10px 0
+    padding: 6px 15px

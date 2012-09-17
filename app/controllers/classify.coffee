@@ -5,6 +5,7 @@ Dialog = require 'lib/dialog'
 Recent = require 'zooniverse/lib/models/recent'
 Favorite = require 'zooniverse/lib/models/favorite'
 User = require 'zooniverse/lib/models/user'
+LoginForm = require 'zooniverse/lib/controllers/login_form'
 
 class Classify extends Spine.Controller
   elements:
@@ -25,10 +26,15 @@ class Classify extends Spine.Controller
   constructor: ->
     super
     
+    @classificationCount = 0
+    
     $('.example-thumbnail').die('click').live 'click', @showExample
     Subject.bind 'fetched', @nextSubject
     User.bind 'sign-in', @render
+    User.bind 'sign-in', @hideLoginPrompt
+    Classification.bind 'classified', @loginPrompt
     Subject.next()
+    $('#zooniverse-top-bar-login .buttons button[name="signup"]').unbind('click').bind 'click', @signupPrompt
   
   active: ->
     super
@@ -38,21 +44,51 @@ class Classify extends Spine.Controller
     return unless @subject and @isActive()
     @html require('views/classify')(@)
   
+  loginPrompt: =>
+    unless User.current
+      @classificationCount += 1
+      
+      if @classificationCount in [3, 9]
+        @loginPrompt = new Dialog
+          template: 'views/login_prompt'
+          callback: -> @el().remove()
+        
+        @loginPrompt.show()
+        new LoginForm el: '.login-prompt .login'
+  
+  signupPrompt: (ev) =>
+    @loginPrompt = new Dialog
+      template: 'views/signup_prompt'
+      callback: -> @el().remove()
+    
+    @loginPrompt.show()
+    loginForm = new LoginForm el: '.login-prompt .login'
+    loginForm.signUp()
+  
+  hideLoginPrompt: =>
+    if User.current and $('.login-prompt:visible')[0]
+      @loginPrompt.close()
+      @loginPrompt.el().remove()
+  
   nextSubject: =>
     @subject = Subject.current
     @classification = new Classification subject_id: @subject.id
     @render()
   
-  answer: (ev) ->
-    id = $(ev.target).closest('.answer').data 'id'
+  answer: (ev) =>
+    answer = $(ev.target).closest '.answer'
+    id = answer.data 'id'
+    talk = answer.data 'talk'
+    
+    if talk
+      url = "http://talk.galaxyzoo.org/objects/#{ @subject.zooniverse_id }"
+      window.open url, '_blank'
+      window.focus()
+    
     checks = _ $('.buttons .active.checkbox')
     checkIds = checks.collect (check) -> $(check).data('id')
     
-    if checkIds.length is 0
-      @classification.annotate id
-    else
-      @classification.annotate checkIds
-    
+    @classification.annotate id, checkIds
     @updateQuestion()
     ev.preventDefault()
   

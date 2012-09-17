@@ -1,4 +1,16 @@
+$tb-background = rgba(0,0,0,.75)
+$tb-text-color = #fff
+$tb-border-color-1 = #003249
+$tb-border-color-2 = #000
+$tb-button-bg = #0079af
+$tb-box-shadow = #000
+$tb-box-shadow-inset = #0097da
+$tb-button-text-shadow = #003a54
+$tb-bottom-border = rgba(0, 121, 175, .45)
+$tb-input-bg = rgba(27, 64, 92, 0.7)
+
 @import url('http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,400italic,700|Open+Sans+Condensed:700,300)')
+@import '../node_modules/zooniverse/css/browser_check'
 @import 'common'
 @import 'grid'
 @import 'nav'
@@ -7,8 +19,9 @@
 @import 'science'
 @import 'profile'
 @import 'examine'
-@import 'jquery-ui-1.8.21.custom'
+// @import 'jquery-ui-1.8.21.custom'
 @import 'help'
+@import 'login_prompt'
 
 @import 'nib'
 @import 'top_bar'
@@ -35,7 +48,7 @@ a, [data-nav]
 body
   background: url("images/gz_headerimage.jpg") no-repeat scroll 50% 0 #000000
   color: #efefef
-  margin: 0
+  margin: 0 0 50px 0
 
 #main
   margin-bottom: 50px

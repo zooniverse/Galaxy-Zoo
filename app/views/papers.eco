@@ -5,24 +5,35 @@
         <h1 class="heading">Published Papers</h1>
         <p>The efforts of the Galaxy Zoo community has resulted in fantastically rich dataset with which to do science. Below is a list of just some of the publications that have come about because of the classifications collected on Galaxy Zoo.</p>
         <ul class="papers">
+        
         <li>
-          Kaviraj S., et al, 2011, "Galaxy Zoo: Dust and molecular gas in early-type galaxies with prominent dust lanes", submitted to MNRAS, available here <a href="http://arxiv.org/abs/1107.5306">astro-ph</a> 
+        Skibba et al. 2012. Galaxy Zoo: the environmental dependence of bars and bulges in disc galaxies. MNRAS 423, 1485.
+        (available here <a href="http://arxiv.org/abs/1111.0969">astro-ph</a>)
+        </li>
+        
+        <li>
+        Kaviraj S., et al, 2011, "Galaxy Zoo: Dust and molecular gas in early-type galaxies with prominent dust lanes", MNRAS 423, 49.
+        (available here <a href="http://arxiv.org/abs/1107.5306">astro-ph</a>) 
         </li>  
 
         <li>
-          Shabala S., et al, 2011, "Galaxy Zoo: Dust lane early-type galaxies are tracers of recent, gas-rich minor mergers", submitted to MNRAS, available here <a href="http://arxiv.org/abs/1107.5310">astro-ph</a> 
+        Shabala S., et al, 2011, "Galaxy Zoo: Dust lane early-type galaxies are tracers of recent, gas-rich minor mergers", MNRAS 423, 49.
+        (available here <a href="http://arxiv.org/abs/1107.5310">astro-ph</a>) 
         </li>
 
         <li>
-        Hoyle et al., 2011, "Galaxy Zoo : Bar Lengths in Nearby Disk Galaxies", accepted by MNRAS, available here <a
-        href="http://arxiv.org/abs/1104.5394">astro-ph</a>
+        Hoyle et al., 2011, "Galaxy Zoo : Bar Lengths in Nearby Disk Galaxies", MNRAS 415, 3627.
+        (available here <ahref="http://arxiv.org/abs/1104.5394">astro-ph</a>)
         </li>
+        
         <li>
-        Smith A. M, et al., 2011, "Galaxy Zoo Supernovae", MNRAS, 412, 1309. (available here: <a href="http://arxiv.org/abs/1011.2199">astro-ph</a>)
+        Smith A. M, et al., 2011, "Galaxy Zoo Supernovae", MNRAS, 412, 1309.
+        (available here: <a href="http://arxiv.org/abs/1011.2199">astro-ph</a>)
         </li>
 
         <li>
-        Darg D. W., et al., 2010, "Galaxy Zoo: Multi-Mergers and the Millennium Simulation", accepted MNRAS. (available here: <a href="http://arxiv.org/abs/1012.4214">astro-ph</a>)
+        Darg D. W., et al., 2010, "Galaxy Zoo: Multi-Mergers and the Millennium Simulation", MNRAS 416 1745.
+        (available here: <a href="http://arxiv.org/abs/1012.4214">astro-ph</a>)
         </li>
 
         <li>
