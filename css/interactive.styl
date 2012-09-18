@@ -4,8 +4,8 @@ $gutter = 20px
 $condensed = "Open Sans Condensed" 
 $normal = "Open Sans" 
 $background = #E6EDF0
-$button-background = #C9C5C7
-$hover-button-background = #8D9191
+$button-background = #f4f4f4
+$hover-button-background = #dfdfdf
 @font-face { font-family: open-dyslexic; src: url('OpenDyslexic-Regular.otf'); }
 @font-face { font-family: open-dyslexic-italic; src: url('OpenDyslexic-Italic.otf'); }
 $dx-normal = open-dyslexic
@@ -14,10 +14,96 @@ $dx-background = #9DD2ED
 $dx-button-background = #E9F768
 $dx-hover-button-background = #F2864B
 
-h1, h2
- font-family: $condensed
- &.dx
-  font-family: $dx-condensed
+button-style($alignment)
+  display: inline
+  float: $alignment
+  height: 30px
+  text-align: right
+  a, li
+    display: inline-block
+    width: 98px
+    margin: 0 0 0 9px
+    padding: 3px 0
+    background $button-background
+    border: 1px solid #b2b2b2
+    border-radius 3px
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255,255,255,1)
+    color: black
+    font-size: 12px
+    text-align: center
+    text-shadow: 0 1px 0 #fcfcfc
+    &.dx
+      background: $dx-button-background
+    &:hover
+      color: $blue
+      background: $hover-button-background
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1), inset 0 1px 1px #d3d3d3
+      &.dx
+        background: $dx-hover-button-background    
+
+[data-page="interactive"]
+  .container
+    width: 830px
+    margin: 0 auto
+  h1, h2
+    font-family: $condensed
+    font-weight: 400
+    &.dx
+      font-family: $dx-condensed
+  h1
+    font-size: 48px
+
+  h2
+    &.section-header
+      position: relative
+      padding: 3px 0
+      border-bottom: 1px solid #d6d6d6
+      color: $blue
+      font-family: $normal
+      font-size: 14px
+      font-weight: 700
+      &:after
+        position: absolute
+        bottom: -2px
+        left: 0
+        width: 100%
+        height: 1px
+        border-bottom: 1px solid #f9f9f9
+        content: ''
+
+
+  #heading_text
+    height: auto
+
+  #link_buttons 
+    display: inline
+    float: right
+    width: 300px
+    height: 30px
+    margin-top: 20px
+    text-align: right
+    a
+      display: inline-block
+      width: 98px
+      margin: 0 0 0 9px
+      padding: 3px 0
+      background $button-background
+      border: 1px solid #b2b2b2
+      border-radius 3px
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255,255,255,1)
+      color: black
+      font-size: 12px
+      text-align: center
+      text-shadow: 0 1px 0 #fcfcfc
+      &.dx
+        background: $dx-button-background
+      &:hover
+        color: $blue
+        background: $hover-button-background
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1), inset 0 1px 1px #d3d3d3
+      &.dx
+        background: $dx-hover-button-background    
+
 
 p
  font-family: $normal 
@@ -48,7 +134,7 @@ p
 #top_bar
   width: 10*$partridge + 9*$gutter
   height: 70px
-  margin: 0px $partridge+$gutter
+  margin: 0 0 15px
   padding: 0px
 #top_bar  h1
     margin: 0px
@@ -61,33 +147,10 @@ p
     margin-top: 70px
     color: $blue
   
-#link_buttons 
-  display: inline
-  float: right
-  text-align: right
-  width: 300px
-  height: 30px
-  margin-top: 20px
-  a
-    color: black
-    padding: 2px 6px 3px
-    border: 1px solid #C0C0C0
-    background $button-background
-    border-radius 5px
-    -moz-border-radius 5px
-    &.dx
-     background: $dx-button-background
-  a:hover
-    color: $blue
-    background: $hover-button-background
-    &.dx
-     background: $dx-hover-button-background    
-
 #heading_text
   width: 10*$partridge + 9*$gutter
   height: 90px
   border-bottom: 1px solid #C0C0C0
-  margin: 0px $partridge+$gutter
   padding: 0px
 
 .navigator_home h1
@@ -116,13 +179,6 @@ p
   margin: 135px 0px 0px 5px
   padding: 0px
   
-  
-.image_left
-  margin-left: $partridge+$gutter
-
-.image_right
-  margin-right: $partridge+$gutter
-
 .image_link img
   position: relative
   width: 3*$partridge + 5px
@@ -136,12 +192,11 @@ p
 
 // Welcome Page
 #welcome
-  margin-top: 30px
+  margin: 30px -5px 0
 
 // My Galaxies  
 #my_galaxies
   margin-top: 30px
-  margin-left: $partridge + $gutter
   
 // Choose Investigation
 #choose_investigation
@@ -150,7 +205,6 @@ p
 // Make Graphs
 
 #graph_div
-  margin-left: $partridge + $gutter
   margin-top: 20px
 
 #graph_options
@@ -161,9 +215,49 @@ p
   margin-right: $partridge
 
 #graph_form
+  .controls
+    margin: 0
+    padding: 0
 
-#graph_form select
-  width: 3*$partridge + $gutter
+    label
+      display: block
+      padding: 3px 0
+      font-size: 13px
+      font-weight: 700
+
+    li
+      margin: 0 0 7px
+      list-style: none
+      &:before,&:after
+        content: ''
+        display: table
+      &:after
+        clear: both
+
+      &.buttons
+        ul
+          margin: 0
+          padding: 0
+          button-style(left)
+      &.separator
+        height: 0
+        margin: 7px 0
+        border-top: 1px solid #d6d6d6
+        border-bottom: 1px solid #f9f9f9
+
+    select
+      position: relative
+      -webkit-appearance: none
+      -webkit-border-radius: 0px
+      width: 3 * $partridge + $gutter
+      height: 26px
+      padding: 3px 10px
+      background: url("images/gz-select-arrow.png") no-repeat 95% center
+      border: 1px solid #b2b2b2
+      border-radius 3px
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255,255,255,1)
+      font-family: $normal
+      font-size: 12px
 
 #graph
   display: inline
@@ -174,6 +268,6 @@ p
 #graph svg  
   display: inline
   width: 6*$partridge + 7*$gutter
-  height: 300px
+  height: 330px
   border: 1px solid #C0C0C0
   background: $light-gray

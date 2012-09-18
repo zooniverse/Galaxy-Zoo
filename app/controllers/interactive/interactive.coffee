@@ -9,13 +9,17 @@ class Interactive extends Spine.Controller
     'click .my_galaxies': 'linkToMyGalaxies'
     'click .graph': 'linkToGraph'
     'click input#dx-change': 'addDX'
-    'click .galaxy_img': 'createBarChart'
+    #'click .galaxy_img': 'createBarChart'
+
+  elements:
+    '.navigator_home': 'navigatorHomeText'
 
   constructor: ->
     super
 
   linkToNavigatorHome: (ev) ->
     home = require('views/interactive/home')
+    @navigatorHomeText.html 'Choose Your Investigation'
     $('#main_body').replaceWith(home)
     ev.preventDefault()
     
@@ -24,6 +28,7 @@ class Interactive extends Spine.Controller
 
   linkToMyGalaxies: (ev) ->    
     my_gals = require('views/interactive/my_galaxies')
+    @navigatorHomeText.html 'My Galaxies'
     $('#main_body').replaceWith(my_gals)
     if $("#dx-change").hasClass('clicked')
       $('h2').addClass('dx')
@@ -31,6 +36,7 @@ class Interactive extends Spine.Controller
     
   linkToGraph: (ev) ->
     graph = require('views/interactive/graph')
+    @navigatorHomeText.html 'Graphing Galaxy Data'
     $('#main_body').replaceWith(graph)
     if $("#dx-change").hasClass('clicked')
       $('h2').addClass('dx')
@@ -59,7 +65,7 @@ class Interactive extends Spine.Controller
     chart = d3.select('galaxy_bar_chart').append("svg").attr("width", 420).attr("height", 20 * data.length)
     x = d3.scale.linear().domain([0, d3.max(data)]).range([0, 420])
     y = d3.scale.ordinal().domain(data).rangeBands([0, 120])
-    chart.selectAll("rect").data(data).enter().append("rect").attr("y", function(d, i) { return i * 20; }).attr("width", x).attr("height", 20)
+    #chart.selectAll("rect").data(data).enter().append("rect").attr("y", function(d, i) { return i * 20; }).attr("width", x).attr("height", 20)
 
 
 

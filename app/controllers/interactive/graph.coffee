@@ -16,12 +16,12 @@ class Graph extends Spine.Controller
   render: ->
     @html require('views/interactive/graph')(@)    
 
-  linkToMyGalaxies: (ev) ->
+  linkToMyGalaxies: (e) ->
     @navigate '/navigator/my_galaxies'
-    ev.preventDefault()
+    e.preventDefault()
 
-  linkToGraph: (ev) ->
+  linkToGraph: (e) ->
     @navigate '/navigator/graph'
-    ev.preventDefault()
+    e.preventDefault()
 
 module.exports = Graph
