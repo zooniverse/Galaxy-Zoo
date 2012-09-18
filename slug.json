@@ -1,5 +1,6 @@
 {
   "dependencies": [
+    "ubret",
     "underscore",
     "zooniverse",
     "zooniverse/lib/google_analytics",

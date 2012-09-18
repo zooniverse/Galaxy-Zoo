@@ -9,10 +9,8 @@
   },
   "scripts": {
     "pretest": "hem server --port 9290 & echo $! > ./hem.pid",
-    "test": "jasmine-phantom-node --port 9290"
-  },
-  "bin" : {
-    "compile-eco" : "./bin/compile-eco"
+    "test": "jasmine-phantom-node --port 9290",
+    "posttest": "kill `cat hem.pid`; rm hem.pid"
   },
   "dependencies": {
     "eco": "*",
@@ -27,6 +25,9 @@
     "clean-css": "0.6.0",
     "ubret" : "git+ssh://git@github.com:zooniverse/Ubret.git#3e40818af57e0d",
     "zooniverse": "git+ssh://git@github.com:zooniverse/Zooniverse.git#galaxy_zoo"
+    "zooniverse": "git+ssh://git@github.com:zooniverse/Zooniverse.git#HEAD",
+    "ubret" : "git+ssh://git@github.com:zooniverse/Ubret.git#HEAD",
+    "fits": "git://github.com/astrojs/fitsjs.git"
   },
   "devDependencies": {
     "jasmine-phantom-node": "git://github.com/edpaget/jasmine-phantom-node.git"
