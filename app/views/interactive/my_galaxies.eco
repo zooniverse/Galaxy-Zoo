@@ -2,5 +2,12 @@
   <div id="heading_text">  
     <h2>Our Galaxies</h2>
   </div>
-  <div id="my_galaxies">Looking at our galaxies</div>
+  <div id="my_galaxies">
+    <div class="galaxy_img_div">
+      <h1>Object Id</h1>
+      <a class="galaxy_img"><img src="images/galaxy_thumbnail.jpeg"></a> 
+    </div>
+    <div class="galaxy_bar_chart">
+    </div>
+  </div>
 </div> 
