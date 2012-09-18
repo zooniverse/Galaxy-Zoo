@@ -13,28 +13,28 @@ class Interactive extends Spine.Controller
     super
     @render()
     
-  render: ->
+  render: =>
     home = require('views/interactive/home')
     @html home
     
-  linkToNavigatorHome: (ev) ->
+  linkToNavigatorHome: (ev) =>
     home = require('views/interactive/home')
     @html home
     
-  linkToGalaxyZoo: (ev) ->
+  linkToGalaxyZoo: (ev) =>
     @navigate '/classify'
 
-  linkToMyGalaxies: (ev) ->    
+  linkToMyGalaxies: (ev) =>    
     my_gals = require('views/interactive/my_galaxies')
     $('#main_body').replaceWith(my_gals)
     ev.preventDefault()
     
-  linkToGraph: (ev) ->
+  linkToGraph: (ev) =>
     graph = require('views/interactive/graph')
     $('#main_body').replaceWith(graph)
     ev.preventDefault()      
 
-  addDX: ->
+  addDX: =>
     if $("#dx-change").hasClass('unclicked')
       $("#dx-change").removeClass('unclicked').addClass('clicked')
       $('div#home').addClass('dx')

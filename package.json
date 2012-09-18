@@ -21,7 +21,8 @@
     "underscore": "*",
     "spine": "~1.0.7",
     "clean-css": "0.6.0",
-    "zooniverse": "git+ssh://git@github.com:zooniverse/Zooniverse.git#240c59a3e",
+    "zooniverse": "git+ssh://git@github.com:zooniverse/Zooniverse.git#HEAD",
+    "ubret" : "git+ssh://git@github.com:zooniverse/Ubret.git#HEAD",
     "fits": "git://github.com/astrojs/fitsjs.git"
   },
   "devDependencies": {
