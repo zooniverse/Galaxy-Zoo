@@ -50,7 +50,7 @@ class Interactive extends Spine.Controller
       $('h1').removeClass('dx')
       $('h2').removeClass('dx')
       $('p').removeClass('dx')
-      $('#link_buttons a').removeClass('dx')      
+      $('#link_buttons a').removeClass('dx')
 
 
 module.exports = Interactive
