@@ -1,40 +1,24 @@
 Spine = require('spine')
 
 class Interactive extends Spine.Controller
-  el: require('views/interactive/interactive')() 
-
   events:
-    'click .navigator_home': 'linkToNavigatorHome'
-    'click .classify_galaxies': 'linkToGalaxyZoo'
-    'click .my_galaxies': 'linkToMyGalaxies'
-    'click .graph': 'linkToGraph'
     'click input#dx-change': 'addDX'
-    'click .galaxy_img': 'createBarChart'
 
   constructor: ->
     super
+    @render()
 
-  linkToNavigatorHome: (ev) ->
-    home = require('views/interactive/home')
-    $('#main_body').replaceWith(home)
-    ev.preventDefault()
-    
-  linkToGalaxyZoo: (ev) ->
-    @navigate '/classify'
+  template: require('views/interactive/interactive')
 
-  linkToMyGalaxies: (ev) ->    
-    my_gals = require('views/interactive/my_galaxies')
-    $('#main_body').replaceWith(my_gals)
-    if $("#dx-change").hasClass('clicked')
-      $('h2').addClass('dx')
-    ev.preventDefault()
-    
-  linkToGraph: (ev) ->
-    graph = require('views/interactive/graph')
-    $('#main_body').replaceWith(graph)
-    if $("#dx-change").hasClass('clicked')
-      $('h2').addClass('dx')
-    ev.preventDefault()      
+  render: =>
+    @html @template()
+
+  createBarChart: ->
+    data = [4, 8, 15, 16, 23, 42]
+    chart = d3.select('galaxy_bar_chart').append("svg").attr("width", 420).attr("height", 20 * data.length)
+    x = d3.scale.linear().domain([0, d3.max(data)]).range([0, 420])
+    y = d3.scale.ordinal().domain(data).rangeBands([0, 120])
+    chart.selectAll("rect").data(data).enter().append("rect").attr("y", (d, i) ->  i * 20 ).attr("width", x).attr("height", 20)
 
   addDX: ->
     if $("#dx-change").hasClass('unclicked')
@@ -53,14 +37,5 @@ class Interactive extends Spine.Controller
       $('h2').removeClass('dx')
       $('p').removeClass('dx')
       $('#link_buttons a').removeClass('dx')      
-
-  createBarChart: ->
-    data = [4, 8, 15, 16, 23, 42]
-    chart = d3.select('galaxy_bar_chart').append("svg").attr("width", 420).attr("height", 20 * data.length)
-    x = d3.scale.linear().domain([0, d3.max(data)]).range([0, 420])
-    y = d3.scale.ordinal().domain(data).rangeBands([0, 120])
-    chart.selectAll("rect").data(data).enter().append("rect").attr("y", function(d, i) { return i * 20; }).attr("width", x).attr("height", 20)
-
-
 
 module.exports = Interactive

@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "hem": "git://github.com/maccman/hem.git#517c97a3ce7",
+    "node-pubsub" : "*",
     "nib": "*",
     "es5-shimify": "~0.0.1",
     "json2ify": "~0.0.1",

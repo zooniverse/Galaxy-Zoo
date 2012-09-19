@@ -7,7 +7,7 @@ Examine = require 'controllers/examine'
 Papers = require 'controllers/papers'
 Story = require 'controllers/story'
 Team = require 'controllers/team'
-Interactive = require 'controllers/interactive/interactive'
+Interactive = require 'controllers/interactive'
 Astronomers = require 'controllers/astronomers'
 
 class Main extends Spine.Stack
