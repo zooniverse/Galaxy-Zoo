@@ -1,4 +1,5 @@
 <div id="main_body">
+  <a href="#/navigator"><h1>Galaxy Zoo Navigator</h1></a>
   <div id="heading_text">
     <p>
       Welcome to the Galaxy Zoo Navigator, where you can investigate the classifications 
@@ -8,33 +9,33 @@
     </p>
   </div>    
   <div id="welcome">
-    <div class="image_div">
-      <a class="classify_galaxies">
+    <div class="image_div image_left">
+      <a href="#/classify">
         <h2>Classify Galaxies</h2>
         <p>Visit the Galaxy Zoo website to classify galaxies as part your group.</p>
-      </a>
-      <a class="classify_galaxies image_link"><img src="images/step1.png"></a>        
+        <img src="images/step1.png">
+      </a>        
     </div>
     <div class="image_div">
-      <a class="my_galaxies">
+      <a href="#/navigator/my_galaxies">
         <h2>Our Galaxies</h2>
         <p>Investigate the galaxies you and your group have classified.</p>
+        <img src="images/step2.png">
       </a>
-      <a class="my_galaxies image_link"><img src="images/step2.png"></a>
     </div>
     <div class="image_div">
-      <a class="graph">
+      <a href="#/navigator/graph">
         <h2>Histogram</h2>
         <p>Investigate the characteristics of different galaxy types.</p>
-      </a>
-      <a class="graph image_link"><img src="images/step1.png"></a>        
+        <img src="images/step1.png">
+      </a>        
     </div>
-    <div class="image_div">
-      <a class="graph">
+    <div class="image_div image_right">
+      <a href="#/graph">
         <h2>Scatter Graph</h2>
-        <p>See how the characteristics of galaxies are related to each other.</p>
+        <p>Investigate the characteristics of different galaxy types.</p>
+        <img src="images/step2.png">
       </a>
-      <a class="graph image_link"><img src="images/step2.png"></a>
     </div>     
   </div>
 </div>
