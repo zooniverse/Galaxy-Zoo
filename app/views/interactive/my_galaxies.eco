@@ -1,7 +1,5 @@
 <div id="main_body">
-  <div id="heading_text">  
-    <h2>Our Galaxies</h2>
-  </div>
+  <h2>My Galaxies</h2>
   <div id="my_galaxies">
     <div class="galaxy_img_div">
       <h1>Object Id</h1>

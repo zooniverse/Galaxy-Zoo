@@ -1,36 +1,76 @@
-<div id="main_body">
-  <div id="heading_text">  
-    <h2>Construct a graph</h2>
-  </div>
+<div id="main_body"> 
+  <h2 class="section-header">Construct a graph</h2>
   <div id="graph_div">
     <div id="graph_options">
       <form id="graph_form">
-        <select id="xaxis">
-          <option>Select X-Axis</option>
-          <option value="redshift">Redshift</option>
-          <option value="color">Color</option>
-          <option value="apparent_brightness">Apparent Brightness</option>
-          <option value="energy_output">Energy Output</option>
-          <option value="apparent_size">Apparent Size</option>
-          <option value="absolute_brightness">Absolute Brightness</option>
-        </select>
-        <select id="yaxis">
-          <option>Select Y-Axis</option>
-          <option value="redshift">Redshift</option>
-          <option value="color">Color</option>
-          <option value="apparent_brightness">Apparent Brightness</option>
-          <option value="energy_output">Energy Output</option>
-          <option value="apparent_size">Apparent Size</option>
-          <option value="absolute_brightness">Absolute Brightness</option>
-        </select>
-        <select id="sample_size">
-          <option>Select Sample Size</option>
-          <option value="redshift">10 of Our Galaxies</option>
-          <option value="color">50 of Our Galaxies</option>
-          <option value="apparent_brightness">100 of Our Galaxies</option>
-          <option value="apparent_size">500 randomly selected Galaxies</option>
-          <option value="absolute_brightness">1000 randomly selected Galaxies</option>
-        </select>
+
+        <ul class="controls">
+
+          <li class="buttons">
+            <ul id="variable-control">
+              <li data-variables="one">One-Variable</li>
+              <li data-variables="two">Two-Variable</li>
+            </ul>
+          </li>
+
+          <li>
+            <label>I'd like to see how...</label>
+            <select id="xaxis">
+              <option>Choose x-axis variable</option>
+              <option value="redshift">Redshift</option>
+              <option value="color">Color</option>
+              <option value="apparent_brightness">Apparent Brightness</option>
+              <option value="energy_output">Energy Output</option>
+              <option value="apparent_size">Apparent Size</option>
+              <option value="absolute_brightness">Absolute Brightness</option>
+            </select>
+          </li>
+
+          <li>
+            <label>relates to...</label>
+            <select id="yaxis">
+              <option>Choose y-axis variable</option>
+              <option value="redshift">Redshift</option>
+              <option value="color">Color</option>
+              <option value="apparent_brightness">Apparent Brightness</option>
+              <option value="energy_output">Energy Output</option>
+              <option value="apparent_size">Apparent Size</option>
+              <option value="absolute_brightness">Absolute Brightness</option>
+            </select>
+          </li>
+
+          <li class="buttons">
+            <label>in the following galaxy type...</label>
+            <ul>
+              <li data-type="smooth">Smooth</li>
+              <li data-type="feature">Feature/Disk</li>
+            </ul>
+          </li>
+
+          <li class="separator"></li>
+
+          <li class="buttons">
+            <label>I'd like to use data from...</label>
+            <ul>
+              <li>All Galaxies</li>
+              <li>Our Galaxies</li>
+            </ul>
+          </li>
+
+          <li>
+            <label>with a sample size of...</label>
+            <select id="sample_size">
+              <option>Choose sample size</option>
+              <option value="redshift">10 of Our Galaxies</option>
+              <option value="color">50 of Our Galaxies</option>
+              <option value="apparent_brightness">100 of Our Galaxies</option>
+              <option value="apparent_size">500 randomly selected Galaxies</option>
+              <option value="absolute_brightness">1000 randomly selected Galaxies</option>
+            </select>
+
+          </li>
+        </ul>
+
       </form>
     </div>
     <div id="graph">
