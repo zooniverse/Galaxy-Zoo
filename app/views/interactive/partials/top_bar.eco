@@ -1,7 +1,7 @@
 <div id="top_bar">
   <a href="#/navigator/home"><h1>Navigator</h1></a>
   <div id="link_buttons">
-    <a href="#/navigator/my_galaxies">Our Galaxies</a>
-    <a href="#/navigator/graph">Graph Data</a>
+    <a href="#/navigator/my_galaxies" data-link="my_galaxies">Our Galaxies</a>
+    <a href="#/navigator/graph" data-link="graph">Graph Data</a>
   </div>
 </div>
