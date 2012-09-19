@@ -1,5 +1,6 @@
 {
   "dependencies": [
+    "node-pubsub",
     "ubret",
     "underscore",
     "zooniverse",

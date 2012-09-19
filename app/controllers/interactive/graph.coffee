@@ -1,10 +1,7 @@
 Spine = require('spine')
+Scatterplot = require('ubret/lib/controllers/Scatterplot')
 
 class Graph extends Spine.Controller
-
-  events:
-    'click .my_galaxies': 'linkToMyGalaxies'
-    'click .graph': 'linkToGraph'
 
   constructor: ->
     super
@@ -15,13 +12,5 @@ class Graph extends Spine.Controller
 
   render: ->
     @html require('views/interactive/graph')(@)    
-
-  linkToMyGalaxies: (e) ->
-    @navigate '/navigator/my_galaxies'
-    e.preventDefault()
-
-  linkToGraph: (e) ->
-    @navigate '/navigator/graph'
-    e.preventDefault()
 
 module.exports = Graph
