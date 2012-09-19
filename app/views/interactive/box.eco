@@ -1,13 +1,8 @@
 
 <section data-page="interactive">
   <div class="container">
-    <div id="top_bar">
-      <a href="#/navigator/home"><h1>Navigator</h1></a>
-      <div id="link_buttons">
-        <a href="#/navigator/my_galaxies">Our Galaxies</a>
-        <a href="#/navigator/graph">Graph Data</a>
-      </div>
-    </div>
+
+    <%- require('views/interactive/partials/top_bar')(@) %>
 
     <div id="navigator"></div>
 
