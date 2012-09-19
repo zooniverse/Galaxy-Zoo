@@ -1,5 +1,5 @@
 <div id="top_bar">
-  <a href="#/navigator"><h1>Navigator</h1></a>
+  <a href="#/navigator/home"><h1>Navigator</h1></a>
   <a href="#/navigator/my_galaxies">Our Galaxies</a>
   <a href="#/navigator/graph">Graph Data</a>
 </div>
