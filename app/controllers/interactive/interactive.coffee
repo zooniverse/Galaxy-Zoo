@@ -6,15 +6,14 @@ class Interactive extends Spine.Controller
 
   constructor: ->
     super
-
-  template: require('views/interactive/interactive')
+    @action_title = require('views/interactive/partials/intro_text')(@)
 
   active: ->
     super
     @render()
 
-  render: =>
-    @html @template()
+  render: ->
+    @html require('views/interactive/interactive')(@)
 
   addDX: ->
     if $("#dx-change").hasClass('unclicked')

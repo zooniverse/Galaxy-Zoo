@@ -43,6 +43,7 @@ button-style($alignment)
 
 [data-page="interactive"]
   background: $background
+  color: #3b3b3b
 
   .stack > *:not(.active)
     display: none
@@ -78,6 +79,7 @@ button-style($alignment)
 
   #heading_text
     position: relative
+    height: 72px
     border-bottom: 1px solid #d6d6d6
     &:after
       position: absolute
@@ -86,6 +88,15 @@ button-style($alignment)
       left: 0
       border-bottom: 1px solid #f9f9f9
       content: ''
+    h2
+      position: absolute
+      bottom: 8px
+      left: 0
+      margin: 0
+      color: $blue
+      font-family: $normal
+      font-size: 14px
+      font-weight: 700
 
   #top_bar
     position: relative
@@ -106,7 +117,7 @@ button-style($alignment)
         border: 1px solid #b2b2b2
         border-radius 3px
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255,255,255,1)
-        color: black
+        color: #3b3b3b
         font-size: 12px
         text-align: center
         text-shadow: 0 1px 0 #fcfcfc

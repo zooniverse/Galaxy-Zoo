@@ -14,12 +14,21 @@ class HistogramPage extends Spine.Controller
 
   constructor: ->
     super
-    @options = new Object
-    @render()
-    @histogram = new Histogram {el : '#histogram'}
 
   render: =>
     @html require('views/interactive/histogram')(@)
+
+  active: ->
+    super
+    @el.addClass 'active'
+    @options = new Object
+    @render()
+    @histogram = new Histogram {el : '#histogram'}
+    $('[data-link="graphs"]').addClass 'active'
+
+  deactivate: ->
+    @el.removeClass 'active'
+    $('[data-link="graphs"]').removeClass 'active'
 
   switchGraph: (e) =>
     e.preventDefault()

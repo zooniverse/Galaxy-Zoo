@@ -16,9 +16,17 @@ class ScatterplotPage extends Spine.Controller
 
   constructor: ->
     super
+
+  active: ->
+    super
+    $('[data-link="graphs"]').addClass 'active'
     @options = new Object
     @render()
     @scatterplot = new Scatterplot {el : '#scatterplot'}
+
+  deactivate: ->
+    @el.removeClass("active")
+    $('[data-link="graphs"]').removeClass 'active'
 
   render: =>
     @html require('views/interactive/scatterplot')(@)

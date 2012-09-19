@@ -1,12 +1,5 @@
+<%- require('views/interactive/partials/top_bar')(@) %>
 <div id="main_body">
-  <div id="heading_text">
-    <p>
-      Welcome to the Galaxy Zoo Navigator, where you can investigate the classifications 
-      you have made as part of a group. To get started you will need to sign in and select 
-      the group you'd like to work with, you can do this on the main top bar. If you get stuck, 
-      ask your group leader for help.
-    </p>
-  </div>    
   <div id="welcome">
     <div class="image_div">
       <a href="#/classify">

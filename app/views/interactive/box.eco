@@ -2,8 +2,6 @@
 <section data-page="interactive">
   <div class="container">
 
-    <%- require('views/interactive/partials/top_bar')(@) %>
-
     <div id="navigator"></div>
 
     <div id="div-dx-change">

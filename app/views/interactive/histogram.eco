@@ -1,3 +1,4 @@
+<%- require('views/interactive/partials/top_bar')(@) %>
 <h3>Construct Your Question</h3>
 
 <form class="graph-settings">
@@ -24,7 +25,7 @@
       <button name="features" type="button">Features/Disk</button>
     </div>
   </div>
-  
+  ≠
   <div class="sample-select">
     <h4>I'd like to use data from...</h4>
     <div class="samples">

@@ -1,3 +1,4 @@
+<%- require('views/interactive/partials/top_bar')(@) %>
 <h3>Construct Your Question</h3>
 
 <form class="graph-settings">
@@ -43,7 +44,7 @@
     <h4>with a sample size of...</h4>
     <select class="sample-size">
       <option value="10">10</option>
-      <option value="50">50</option>
+      <option value="50" selected="selected">50</option>
       <option value="100">100</option>
       <option value="500">500</option>
     </select>
