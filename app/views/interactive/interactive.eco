@@ -23,14 +23,14 @@
       </a>
     </div>
     <div class="image_div">
-      <a href="#/navigator/graph">
+      <a href="#/navigator/histogram">
         <h2>Histogram</h2>
         <p>Investigate the characteristics of different galaxy types.</p>
         <img src="images/step1.png">
       </a>        
     </div>
     <div class="image_div">
-      <a href="#/graph">
+      <a href="#/navigator/scatterplot">
         <h2>Scatter Graph</h2>
         <p>Investigate the characteristics of different galaxy types.</p>
         <img src="images/step2.png">

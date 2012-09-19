@@ -6,9 +6,12 @@ class Interactive extends Spine.Controller
 
   constructor: ->
     super
-    @render()
 
   template: require('views/interactive/interactive')
+
+  active: ->
+    super
+    @render()
 
   render: =>
     @html @template()
