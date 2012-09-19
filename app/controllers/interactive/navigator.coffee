@@ -16,7 +16,7 @@ class Navigator extends Spine.Stack
   default: 'home'
 
   routes: 
-    '/navigator' : 'home'
+    '/navigator/home' : 'home'
     '/navigator/scatterplot' : 'scatterplotPage'
     '/navigator/histogram'   : 'histogramPage'
     '/navigator/my_galaxies' : 'myGalaxies'

@@ -42,6 +42,11 @@ button-style($alignment)
         background: $dx-hover-button-background    
 
 [data-page="interactive"]
+  background: $background
+
+  .stack > *:not(.active)
+    display: none
+
   .container
     width: 830px
     margin: 0 auto
@@ -104,26 +109,43 @@ button-style($alignment)
       &.dx
         background: $dx-hover-button-background    
 
+  .image_div
+    display: inline
+    position: relative
+    h2
+      display: inline
+      position: absolute
+      text-align: center
+      width: 3*$partridge
+      z-index: 100
+      margin: 20px 0px 20px 5px
+      padding: 0px
+      color: white
+    a img
+      position: relative
+      width: 3*$partridge + 5px
+      background: white
+      border-radius: 5px
+      -moz-border-radius: 5px
+      border: 3px solid white
+    a:hover img
+      border: 3px solid $blue
+    p
+      display: inline
+      position: absolute
+      text-align: center
+      width: 3*$partridge
+      color: black
+      z-index: 100
+      margin: 135px 0px 0px 5px
+      padding: 0px
+    
+
 
 p
  font-family: $normal 
  &.dx
   font-family: $dx-normal
-
-#navigator-container
-  width: 1000px 
-  background: $background
-  font-family: $normal
-  font-size: 12px
-  &.dx
-   background: $dx-background  
-
-#navigator
-  height: 620px
-  padding-top: 30px
-  margin: 20px 0px 20px 0px
-  color: black
-   font-family: $dx-normal
 
 #div-dx-change
   margin: 220px $partridge+$gutter 20px $partridge+$gutter
@@ -159,38 +181,6 @@ p
 .navigator_home h1
   color: black
 
-.image_div
-  display: inline
-  position: relative
-  h2
-    display: inline
-    position: absolute
-    text-align: center
-    width: 3*$partridge
-    z-index: 100
-    margin: 20px 0px 20px 5px
-    padding: 0px
-    color: white
-
-.image_div p
-  display: inline
-  position: absolute
-  text-align: center
-  width: 3*$partridge
-  color: black
-  z-index: 100
-  margin: 135px 0px 0px 5px
-  padding: 0px
-  
-.image_div img
-  position: relative
-  width: 3*$partridge + 5px
-  background: white
-  border-radius: 5px
-  -moz-border-radius: 5px
-  border: 3px solid white
-.image_link:hover img
-  border: 3px solid $blue
 
 
 // Welcome Page
