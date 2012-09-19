@@ -1,0 +1,59 @@
+<h3>Construct Your Question</h3>
+
+<form class="graph-settings">
+  <div class="graph-select"> 
+    <button name="one-variable" type="button">One-Variable</button>
+    <button name="two-variable" type="button" class="pressed">Two-Variable</button>
+  </div>
+
+  <div class="variable-select">
+    <h4>I'd like to see how...</h4>
+    <select class='x-axis'>
+      <option>Choose x-axis variable</option>
+      <option value="redshift">Redshift</option>
+      <option value="redshift">Redshift</option>
+      <option value="redshift">Redshift</option>
+      <option value="redshift">Redshift</option>
+      <option value="redshift">Redshift</option>
+      <option value="redshift">Redshift</option>
+    </select>
+    <h4>relates to...</h4>
+    <select class='y-axis'>
+      <option>Choose y-axis variable</option>
+      <option value="redshift">Redshift</option>
+      <option value="redshift">Redshift</option>
+      <option value="redshift">Redshift</option>
+      <option value="redshift">Redshift</option>
+      <option value="redshift">Redshift</option>
+      <option value="redshift">Redshift</option>
+    </select>
+    <h4>in the following galaxy type...</h4>
+    <div class="galaxy-select">
+      <button name="smooth" type="button">Smooth</button>
+      <button name="features" type="button">Features/Disk</button>
+    </div>
+  </div>
+  
+  <div class="sample-select">
+    <h4>I'd like to use data from...</h4>
+    <div class="samples">
+      <button name="all" type="button">All Galaxies</button>
+      <button name="our" type="button">Our Galaxies</button>
+    </div>
+    <h4>with a sample size of...</h4>
+    <select class="sample-size">
+      <option value="10">10</option>
+      <option value="50">50</option>
+      <option value="100">100</option>
+      <option value="500">500</option>
+    </select>
+  </div>
+
+  <div class="submission">
+    <button name="submit" type="submit">Create Graph</button>
+    <button name="reset" type="reset">Reset</button>
+  </div>
+</form>
+
+<div id="scatterplot">
+</div>

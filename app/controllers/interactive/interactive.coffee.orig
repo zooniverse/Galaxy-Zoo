@@ -31,6 +31,9 @@ class Interactive extends Spine.Controller
       $('p').removeClass('dx')
       $('#link_buttons a').removeClass('dx')
 
+<<<<<<< HEAD
+ 
+=======
   createBarChart: ->
     data = [4, 8, 15, 16, 23, 42]
     chart = d3.select('galaxy_bar_chart').append("svg").attr("width", 420).attr("height", 20 * data.length)
@@ -40,5 +43,6 @@ class Interactive extends Spine.Controller
       i * 20
     ).attr("width", x).attr "height", 20
 
+>>>>>>> 94878e9eeb522248400c6e4133c3ea3750868ea1
 
 module.exports = Interactive
