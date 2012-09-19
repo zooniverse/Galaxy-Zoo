@@ -36,10 +36,7 @@ class ScatterplotPage extends Spine.Controller
     filter = new Function "item", "return item['type'] === #{@options.galaxyType}"
     @scatterplot.addFilter filter
 
-    fetcher = InteractiveSubject.fetch(@options.sample, parseInt(@sampleSize.val()))
-    fetcher.onSuccess =>
-      @scatterplot.data = InteractiveSubject.all()
-      @scatterplot.start()
+    @histogram.getDataSource("InteractiveSubject", {sample: @options.sample, limit: parseInt(@sampleSize.val()), user: false})
 
   setGalaxyType: (e) =>
     e.preventDefault()
