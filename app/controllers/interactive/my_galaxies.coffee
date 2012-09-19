@@ -12,6 +12,7 @@ class MyGalaxies extends Spine.Controller
 
   deactivate: ->
     $('[data-link="my_galaxies"]').removeClass 'active'
+    @el.removeClass("active")
 
   render: ->
     @html require('views/interactive/my_galaxies')(@)    
