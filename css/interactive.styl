@@ -76,38 +76,49 @@ button-style($alignment)
         border-bottom: 1px solid #f9f9f9
         content: ''
 
-
   #heading_text
     height: auto
 
-  #link_buttons 
-    display: inline
-    float: right
-    width: 300px
-    height: 30px
-    margin-top: 20px
-    text-align: right
+  #top_bar
+    position: relative
+    padding: 15px 0 0
+    font-family: $normal
+    #link_buttons
+      position: absolute
+      bottom: 0
+      right: 0
+      width: 300px
+      text-align: right
+      a
+        display: inline-block
+        width: 98px
+        margin: 0 0 0 9px
+        padding: 3px 0
+        background $button-background
+        border: 1px solid #b2b2b2
+        border-radius 3px
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255,255,255,1)
+        color: black
+        font-size: 12px
+        text-align: center
+        text-shadow: 0 1px 0 #fcfcfc
+        &.dx
+          background: $dx-button-background
+        &:hover
+          color: $blue
+          background: $hover-button-background
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1), inset 0 1px 1px #d3d3d3
+        &.dx
+          background: $dx-hover-button-background
     a
-      display: inline-block
-      width: 98px
-      margin: 0 0 0 9px
-      padding: 3px 0
-      background $button-background
-      border: 1px solid #b2b2b2
-      border-radius 3px
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255,255,255,1)
-      color: black
-      font-size: 12px
-      text-align: center
-      text-shadow: 0 1px 0 #fcfcfc
-      &.dx
-        background: $dx-button-background
-      &:hover
-        color: $blue
-        background: $hover-button-background
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1), inset 0 1px 1px #d3d3d3
-      &.dx
-        background: $dx-hover-button-background    
+     text-decoration: none
+
+    h1
+      position: absolute
+      bottom: -14px
+      left: 0
+      width: 50%
+      color: #171717
 
   .image_div
     display: inline
@@ -121,15 +132,18 @@ button-style($alignment)
       margin: 20px 0px 20px 5px
       padding: 0px
       color: white
-    a img
-      position: relative
-      width: 3*$partridge + 5px
-      background: white
-      border-radius: 5px
-      -moz-border-radius: 5px
-      border: 3px solid white
-    a:hover img
-      border: 3px solid $blue
+    a
+      text-decoration: none
+      &:hover img
+        border: 3px solid $blue
+      img
+        position: relative
+        width: 3*$partridge + 5px
+        background: white
+        border-radius: 5px
+        -moz-border-radius: 5px
+        border: 3px solid white
+
     p
       display: inline
       position: absolute
@@ -137,8 +151,8 @@ button-style($alignment)
       width: 3*$partridge
       color: black
       z-index: 100
-      margin: 135px 0px 0px 5px
-      padding: 0px
+      margin: 125px 0px 0px 5px
+      padding: 10px 0 0
     
 
 

@@ -3,8 +3,10 @@
   <div class="container">
     <div id="top_bar">
       <a href="#/navigator/home"><h1>Navigator</h1></a>
-      <a href="#/navigator/my_galaxies">Our Galaxies</a>
-      <a href="#/navigator/graph">Graph Data</a>
+      <div id="link_buttons">
+        <a href="#/navigator/my_galaxies">Our Galaxies</a>
+        <a href="#/navigator/graph">Graph Data</a>
+      </div>
     </div>
 
     <div id="navigator"></div>
