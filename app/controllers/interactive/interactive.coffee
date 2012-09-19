@@ -29,7 +29,7 @@ class Interactive extends Spine.Controller
       $('h1').removeClass('dx')
       $('h2').removeClass('dx')
       $('p').removeClass('dx')
-      $('#link_buttons a').removeClass('dx')      
+      $('#link_buttons a').removeClass('dx')
 
   createBarChart: ->
     data = [4, 8, 15, 16, 23, 42]
