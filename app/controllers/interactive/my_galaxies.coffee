@@ -8,6 +8,10 @@ class MyGalaxies extends Spine.Controller
   active: ->
     super
     @render()
+    $('[data-link="my_galaxies"]').addClass 'active'
+
+  deactivate: ->
+    $('[data-link="my_galaxies"]').removeClass 'active'
 
   render: ->
     @html require('views/interactive/my_galaxies')(@)    
