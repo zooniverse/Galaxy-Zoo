@@ -77,7 +77,15 @@ button-style($alignment)
         content: ''
 
   #heading_text
-    height: auto
+    position: relative
+    border-bottom: 1px solid #d6d6d6
+    &:after
+      position: absolute
+      width: 100%
+      bottom: -2px
+      left: 0
+      border-bottom: 1px solid #f9f9f9
+      content: ''
 
   #top_bar
     position: relative
@@ -104,12 +112,13 @@ button-style($alignment)
         text-shadow: 0 1px 0 #fcfcfc
         &.dx
           background: $dx-button-background
-        &:hover
+        &:hover, &.active
           color: $blue
           background: $hover-button-background
           box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1), inset 0 1px 1px #d3d3d3
         &.dx
           background: $dx-hover-button-background
+
     a
      text-decoration: none
 
@@ -185,17 +194,6 @@ p
   h2
     margin-top: 70px
     color: $blue
-  
-#heading_text
-  width: 10*$partridge + 9*$gutter
-  height: 90px
-  border-bottom: 1px solid #C0C0C0
-  padding: 0px
-
-.navigator_home h1
-  color: black
-
-
 
 // Welcome Page
 #welcome
