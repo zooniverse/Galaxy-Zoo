@@ -1,4 +1,5 @@
 <div id="main_body">
+  <a href="#/navigator"><h1>Galaxy Zoo Navigator</h1></a>
   <div id="heading_text">
     <p>
       Welcome to the Galaxy Zoo Navigator, where you can investigate the classifications 
@@ -30,7 +31,7 @@
       </a>        
     </div>
     <div class="image_div image_right">
-      <a href="#/navigator/graph">
+      <a href="#/graph">
         <h2>Scatter Graph</h2>
         <p>Investigate the characteristics of different galaxy types.</p>
         <img src="images/step2.png">

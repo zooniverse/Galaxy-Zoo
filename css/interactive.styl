@@ -110,16 +110,19 @@ p
  &.dx
   font-family: $dx-normal
 
-  
+#navigator-container
+  width: 1000px 
+  background: $background
+  font-family: $normal
+  font-size: 12px
+  &.dx
+   background: $dx-background  
+
 #navigator
-  width: 12*$partridge + 11*$gutter
   height: 620px
   padding-top: 30px
   margin: 20px 0px 20px 0px
-  background: $background
   color: black
-  &.dx
-   background: $dx-background  
    font-family: $dx-normal
 
 #div-dx-change
@@ -131,14 +134,19 @@ p
   height: 70px
   margin: 0 0 15px
   padding: 0px
-#top_bar  h1
+
+  a
+    text-decoration: none
+    color: black
+
+  h1
     margin: 0px
     padding: 0px
     display: inline
     width: 700px
-#top_bar  p
+  p
     margin-top: 20px
-#top_bar  h2
+  h2
     margin-top: 70px
     color: $blue
   
@@ -174,7 +182,7 @@ p
   margin: 135px 0px 0px 5px
   padding: 0px
   
-.image_link img
+.image_div img
   position: relative
   width: 3*$partridge + 5px
   background: white
