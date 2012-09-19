@@ -1,6 +1,5 @@
 Spine = require 'spine'
 Histogram = require 'ubret/lib/controllers/Histogram'
-InteractiveSubject = require 'ubret/lib/models/InteractiveSubject'
 
 class HistogramPage extends Spine.Controller 
   events: 
@@ -29,16 +28,12 @@ class HistogramPage extends Spine.Controller
   onSubmit: (e) =>
     e.preventDefault()
 
-    @histogram.xAxis = @xAxis.val()
-    @histogram.yAxis = @yAxis.val()
+    @histogram.variable = @xAxis.val()
 
     filter = new Function "item", "return item['type'] === #{@options.galaxyType}"
     @histogram.addFilter filter
 
-    fetcher = InteractiveSubject.fetch(@options.sample, parseInt(@sampleSize.val()))
-    fetcher.onSuccess =>
-      @histogram.data = InteractiveSubject.all()
-      @histogram.start()
+    @histogram.getDataSource("InteractiveSubject", {sample: @options.sample, limit: parseInt(@sampleSize.val()), user: false})
 
   setGalaxyType: (e) =>
     e.preventDefault()
