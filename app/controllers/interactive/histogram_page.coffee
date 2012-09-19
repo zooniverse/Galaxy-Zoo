@@ -17,28 +17,28 @@ class HistogramPage extends Spine.Controller
     super
     @options = new Object
     @render()
-    @scatterplot = new Scatterplot {el : #scatterplot}
+    @histogram = new Histogram {el : '#histogram'}
 
   render: =>
     @html require('views/interactive/histogram')(@)
 
   switchGraph: (e) =>
     e.preventDefault()
-    @navigate '/navigator/Scatterplot'
+    @navigate '/navigator/histogram'
 
   onSubmit: (e) =>
     e.preventDefault()
 
-    @scatterplot.xAxis = @xAxis.val()
-    @scatterplot.yAxis = @yAxis.val()
+    @histogram.xAxis = @xAxis.val()
+    @histogram.yAxis = @yAxis.val()
 
     filter = new Function "item", "return item['type'] === #{@options.galaxyType}"
-    @scatterplot.addFilter filter
+    @histogram.addFilter filter
 
     fetcher = InteractiveSubject.fetch(@options.sample, parseInt(@sampleSize.val()))
     fetcher.onSuccess =>
-      @scatterplot.data = InteractiveSubject.all()
-      @scatterplot.start()
+      @histogram.data = InteractiveSubject.all()
+      @histogram.start()
 
   setGalaxyType: (e) =>
     e.preventDefault()

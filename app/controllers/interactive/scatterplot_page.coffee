@@ -18,7 +18,7 @@ class ScatterplotPage extends Spine.Controller
     super
     @options = new Object
     @render()
-    @scatterplot = new Scatterplot {el : #scatterplot}
+    @scatterplot = new Scatterplot {el : '#scatterplot'}
 
   render: =>
     @html require('views/interactive/scatterplot')(@)
