@@ -184,6 +184,9 @@ button-style($alignment = 'right')
     .galaxy
       float: left
       width: 50%
+      font-size: 12px
+      .meta-data
+        overflow: hidden
       svg
         float: right
         width: 280px
@@ -194,11 +197,12 @@ button-style($alignment = 'right')
         .nv-bar
           rect
             fill: #1e7797
+            stroke: none
           text
             stroke: none
         .nv-y
           display: none
-          
+
 p
  font-family: $normal 
  &.dx
