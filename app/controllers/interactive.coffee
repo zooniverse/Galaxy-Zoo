@@ -9,7 +9,8 @@ class Interactive extends Spine.Controller
 
   active: =>
     super
-    @navigator = new Navigator
+    unless @navigator
+      @navigator = new Navigator
 
     
 module.exports = Interactive
