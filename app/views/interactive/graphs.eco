@@ -1,68 +1,77 @@
-      <form id="graph_form">
-        <ul class="controls">
 
-          <li class="buttons">
-            <div id="variable-control">
-              <button type="button" data-variables="one">One-Variable</button>
-              <button type="button" data-variables="two">Two-Variable</button>
-            </div>
-          </li>
+<form id="graph_form">
+  <div id="graph_area">
+    <ul class="controls">
 
-          <li>
-            <label>I'd like to see how...</label>
-            <select id="xaxis">
-              <option>Choose x-axis variable</option>
-              <option value="redshift">Redshift</option>
-              <option value="color">Color</option>
-              <option value="apparent_brightness">Apparent Brightness</option>
-              <option value="energy_output">Energy Output</option>
-              <option value="apparent_size">Apparent Size</option>
-              <option value="absolute_brightness">Absolute Brightness</option>
-            </select>
-          </li>
+      <li class="buttons">
+        <div id="setting-variable-control">
+          <button type="button" data-variables="histogram">One-Variable</button>
+          <button type="button" data-variables="scatterplot">Two-Variable</button>
+        </div>
+      </li>
 
-          <li>
-            <label>relates to...</label>
-            <select id="yaxis">
-              <option>Choose y-axis variable</option>
-              <option value="redshift">Redshift</option>
-              <option value="color">Color</option>
-              <option value="apparent_brightness">Apparent Brightness</option>
-              <option value="energy_output">Energy Output</option>
-              <option value="apparent_size">Apparent Size</option>
-              <option value="absolute_brightness">Absolute Brightness</option>
-            </select>
-          </li>
+      <li>
+        <label>I'd like to see how...</label>
+        <select id="xaxis" name="xAxis">
+          <option>Choose x-axis variable</option>
+          <option value="redshift">Redshift</option>
+          <option value="color">Color</option>
+          <option value="apparent_brightness">Apparent Brightness</option>
+          <option value="energy_output">Energy Output</option>
+          <option value="apparent_size">Apparent Size</option>
+          <option value="absolute_brightness">Absolute Brightness</option>
+        </select>
+      </li>
 
-          <li class="buttons">
-            <label>in the following galaxy type...</label>
-            <div>
-              <button type="button" data-type="smooth">Smooth</button>
-              <button type="button" data-type="feature">Feature/Disk</button>
-            </div>
-          </li>
+      <li>
+        <label>relates to...</label>
+        <select id="yaxis" name="yAxis">
+          <option>Choose y-axis variable</option>
+          <option value="redshift">Redshift</option>
+          <option value="color">Color</option>
+          <option value="apparent_brightness">Apparent Brightness</option>
+          <option value="energy_output">Energy Output</option>
+          <option value="apparent_size">Apparent Size</option>
+          <option value="absolute_brightness">Absolute Brightness</option>
+        </select>
+      </li>
 
-          <li class="separator"></li>
+      <li class="buttons">
+        <label>in the following galaxy type...</label>
+        <div id="setting-galaxy-type">
+          <button type="button" data-type="smooth">Smooth</button>
+          <button type="button" data-type="feature">Feature/Disk</button>
+        </div>
+      </li>
 
-          <li class="buttons">
-            <label>I'd like to use data from...</label>
-            <div>
-              <button type="button">All Galaxies</button>
-              <button type="button">Our Galaxies</button>
-            </div>
-          </li>
+      <li class="separator"></li>
 
-          <li>
-            <label>with a sample size of...</label>
-            <select id="sample_size">
-              <option>Choose sample size</option>
-              <option value="redshift">10 of Our Galaxies</option>
-              <option value="color">50 of Our Galaxies</option>
-              <option value="apparent_brightness">100 of Our Galaxies</option>
-              <option value="apparent_size">500 randomly selected Galaxies</option>
-              <option value="absolute_brightness">1000 randomly selected Galaxies</option>
-            </select>
+      <li class="buttons">
+        <label>I'd like to use data from...</label>
+        <div id="setting-data-source">
+          <button type="button" data-source="all">All Galaxies</button>
+          <button type="button" data-source="group">Our Galaxies</button>
+        </div>
+      </li>
 
-          </li>
-        </ul>
-      </form>
+      <li>
+        <label>with a sample size of...</label>
+        <select id="sample_size" name="sampleSize">
+          <option>Choose sample size</option>
+          <option value="10">10 of Our Galaxies</option>
+          <option value="50">50 of Our Galaxies</option>
+          <option value="100">100 of Our Galaxies</option>
+          <option value="500">500 randomly selected Galaxies</option>
+          <option value="1000">1000 randomly selected Galaxies</option>
+        </select>
+
+      </li>
+    </ul>
+    <div id="graph"><svg></svg></div>
+  </div>
+
+  <div id="actions">
+    <button type="submit">Create Graph</button>
+  </div>
+</form>
+

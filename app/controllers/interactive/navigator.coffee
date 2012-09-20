@@ -2,8 +2,6 @@ Spine = require 'spine'
 MyGalaxies = require 'controllers/interactive/my_galaxies'
 Home = require 'controllers/interactive/interactive'
 Graphs = require 'controllers/interactive/graphs'
-ScatterplotPage = require 'controllers/interactive/scatterplot_page'
-HistogramPage = require 'controllers/interactive/histogram_page'
 
 class Navigator extends Spine.Stack
   el: '#navigator'
@@ -11,8 +9,6 @@ class Navigator extends Spine.Stack
   controllers:
     myGalaxies: MyGalaxies
     graphs: Graphs
-    scatterplotPage: ScatterplotPage
-    histogramPage: HistogramPage
     home: Home
 
   default: 'home'

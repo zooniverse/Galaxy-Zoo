@@ -14,7 +14,14 @@ $dx-background = #9DD2ED
 $dx-button-background = #E9F768
 $dx-hover-button-background = #F2864B
 
-button-style($alignment)
+clearfix()
+  &:before,&:after
+    content: ''
+    display: table
+  &:after
+    clear: both
+
+button-style($alignment = 'right')
   display: inline
   float: $alignment
   height: 30px
@@ -23,7 +30,7 @@ button-style($alignment)
     display: inline-block
     width: 98px
     padding: 3px 0
-    background $button-background
+    background: $button-background
     border: 1px solid #b2b2b2
     border-radius 3px
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255,255,255,1)
@@ -34,14 +41,23 @@ button-style($alignment)
     text-shadow: 0 1px 0 #fcfcfc
     &.dx
       background: $dx-button-background
-    &:hover, &.pressed
+    &.pressed
       color: $blue
       background: $hover-button-background
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1), inset 0 1px 1px #d3d3d3
+      &:hover
+        background: $hover-button-background
+        border: 1px solid #b2b2b2
+
+    &:hover
+      background: lighten($button-background, 35%)
+      border: 1px solid darken(#b2b2b2, 35%)
+
     &.dx
       background: $dx-hover-button-background 
 
 [data-page="interactive"]
+  padding: 0 0 20px 0
   background: $background
   color: #3b3b3b
   font-family: $normal
@@ -110,27 +126,7 @@ button-style($alignment)
       right: 0
       width: 300px
       text-align: right
-      a
-        display: inline-block
-        width: 98px
-        margin: 0 0 0 9px
-        padding: 3px 0
-        background $button-background
-        border: 1px solid #b2b2b2
-        border-radius 3px
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255,255,255,1)
-        color: #3b3b3b
-        font-size: 12px
-        text-align: center
-        text-shadow: 0 1px 0 #fcfcfc
-        &.dx
-          background: $dx-button-background
-        &:hover, &.pressed
-          color: $blue
-          background: $hover-button-background
-          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1), inset 0 1px 1px #d3d3d3
-        &.dx
-          background: $dx-hover-button-background
+      button-style()
 
     a
      text-decoration: none
@@ -142,6 +138,12 @@ button-style($alignment)
       width: 50%
       color: #171717
 
+  #navigator
+    padding: 0 0 50px 0
+  // Welcome Page
+  #welcome
+    min-height: 215px
+    margin: 0 -5px 0
   .image_div
     display: inline
     position: relative
@@ -176,16 +178,13 @@ button-style($alignment)
       margin: 125px 0px 0px 5px
       padding: 10px 0 0
     
-
+  #navigator
+    clearfix()
 
 p
  font-family: $normal 
  &.dx
   font-family: $dx-normal
-
-#div-dx-change
-  margin: 220px $partridge+$gutter 20px $partridge+$gutter
-
 
 #top_bar
   width: 10*$partridge + 9*$gutter
@@ -208,25 +207,27 @@ p
     margin-top: 70px
     color: $blue
 
-// Welcome Page
-#welcome
-  margin: 0 -5px 0
-
-// Make Graphs
-
-#graph_div
-  margin-top: 20px
-
-#graph_options
-  display: inline
-  float: left 
-  width: 3*$partridge + 2*$gutter  
-  height: 200px
-  margin-right: $partridge
-
 #graph_form
+  #actions
+    clearfix()
+    margin: 20px 0 0 0
+    button[type="submit"]
+      width: 100%
+      background: #1e9ace
+      border: 1px solid #0b709c
+      border-radius 3px
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1), inset 0 1px 0 #21b1ed
+      color: #fff
+      cursor: pointer
+      font-size: 13px
+      font-weight: 700
+      line-height: 28px
+      text-shadow: 0 1px 0 #1576a3
+
   .controls
-    margin: 0
+    float: left
+    width: (3 * $partridge) + $gutter
+    margin: 0 $partridge 0 0
     padding: 0
 
     label
@@ -251,6 +252,8 @@ p
           button-style(left)
           button
             margin: 0 9px 0 0
+            &:last-child
+              margin: 0
       &.separator
         height: 0
         margin: 7px 0
@@ -268,18 +271,33 @@ p
       border: 1px solid #b2b2b2
       border-radius 3px
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255,255,255,1)
-      
       font-size: 12px
+
 
 #graph
   display: inline
   float: left
   width: 6*$partridge + 7*$gutter
-  height: 400px
-
-#graph svg  
-  display: inline
-  width: 6*$partridge + 7*$gutter
   height: 330px
-  border: 1px solid #C0C0C0
-  background: $light-gray
+  svg  
+    display: inline
+    width: 6*$partridge + 7*$gutter
+    height: 330px
+    padding: 10px
+    border: 1px solid #C0C0C0
+    background: $light-gray
+
+    .bar rect
+      fill: steelblue
+      shape-rendering: crispEdges
+      stroke: #000
+
+    .bar text
+      fill: #fff
+
+    .axis path, .axis line
+      shape-rendering: crispEdges;
+      stroke: #000
+      fill: none 
+      path
+      stroke-width: 1px
