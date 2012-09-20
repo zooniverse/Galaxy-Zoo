@@ -1,34 +1,29 @@
 Spine = require 'spine'
+Scatterplot = require 'ubret/lib/controllers/Scatterplot'
 Histogram = require 'ubret/lib/controllers/Histogram'
+InteractiveSubject = require 'ubret/lib/models/InteractiveSubject'
 
-class HistogramPage extends Spine.Controller 
-  events: 
-    submit: 'onSubmit'
-    'click button[name="two-variable"]' : 'switchGraph'
-    'click .galaxy-select button' : 'setGalaxyType'
-    'click .samples button' : 'setSample'
-
-  elements: 
-    'select.x-axis'      : 'xAxis'
-    'select.sample-size' : 'sampleSize'
+class Graphs extends Spine.Controller
 
   constructor: ->
     super
+    @headingText = $('#heading_text')
 
-  render: =>
-    @html require('views/interactive/graph')(@)
-
-  active: ->
+  active: =>
     super
-    @el.addClass 'active'
-    @options = new Object
     @render()
-    @histogram = new Histogram {el : '#histogram'}
-    $('[data-link="graphs"]').addClass 'active'
+    $('[data-link="graphs"]').addClass 'pressed'
+    @options = new Object
+    @headingText.html '<h2>Construct Your Question</h2>'
+    @scatterplot = new Scatterplot {el : '#scatterplot'}
 
   deactivate: ->
-    @el.removeClass 'active'
-    $('[data-link="graphs"]').removeClass 'active'
+    @el.removeClass("active")
+    @headingText.html @action_title
+    $('[data-link="graphs"]').removeClass 'pressed'
+
+  render: =>
+    @html require('views/interactive/graphs')(@)
 
   switchGraph: (e) =>
     e.preventDefault()
@@ -37,10 +32,11 @@ class HistogramPage extends Spine.Controller
   onSubmit: (e) =>
     e.preventDefault()
 
-    @histogram.variable = @xAxis.val()
+    @scatterplot.xAxis = @xAxis.val()
+    @scatterplot.yAxis = @yAxis.val()
 
     filter = new Function "item", "return item['type'] === #{@options.galaxyType}"
-    @histogram.addFilter filter
+    @scatterplot.addFilter filter
 
     @histogram.getDataSource("InteractiveSubject", {sample: @options.sample, limit: parseInt(@sampleSize.val()), user: false})
 
@@ -61,4 +57,4 @@ class HistogramPage extends Spine.Controller
     button.siblings().removeClass 'pressed'
    
 
-module.exports = HistogramPage 
+module.exports = Graphs

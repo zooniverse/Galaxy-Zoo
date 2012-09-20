@@ -1,5 +1,4 @@
 <%- require('views/interactive/partials/top_bar')(@) %>
-<h3>Construct Your Question</h3>
 
 <form class="graph-settings">
   <div class="graph-select"> 

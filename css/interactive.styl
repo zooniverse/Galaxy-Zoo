@@ -80,6 +80,7 @@ button-style($alignment)
   #heading_text
     position: relative
     height: 72px
+    margin: 0 0 20px
     border-bottom: 1px solid #d6d6d6
     &:after
       position: absolute
@@ -123,7 +124,7 @@ button-style($alignment)
         text-shadow: 0 1px 0 #fcfcfc
         &.dx
           background: $dx-button-background
-        &:hover, &.active
+        &:hover, &.pressed
           color: $blue
           background: $hover-button-background
           box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1), inset 0 1px 1px #d3d3d3
@@ -208,16 +209,8 @@ p
 
 // Welcome Page
 #welcome
-  margin: 30px -5px 0
+  margin: 0 -5px 0
 
-// My Galaxies  
-#my_galaxies
-  margin-top: 30px
-  
-// Choose Investigation
-#choose_investigation
-  margin-top: 30px
-  
 // Make Graphs
 
 #graph_div

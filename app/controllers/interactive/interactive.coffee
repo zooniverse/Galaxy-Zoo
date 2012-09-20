@@ -6,11 +6,13 @@ class Interactive extends Spine.Controller
 
   constructor: ->
     super
+    @headingText = $('#heading_text')
     @action_title = require('views/interactive/partials/intro_text')(@)
 
   active: ->
     super
     @render()
+    @headingText.html @action_title
 
   render: ->
     @html require('views/interactive/interactive')(@)
