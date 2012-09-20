@@ -2,10 +2,10 @@
         <ul class="controls">
 
           <li class="buttons">
-            <ul id="variable-control">
-              <li data-variables="one">One-Variable</li>
-              <li data-variables="two">Two-Variable</li>
-            </ul>
+            <div id="variable-control">
+              <button type="button" data-variables="one">One-Variable</button>
+              <button type="button" data-variables="two">Two-Variable</button>
+            </div>
           </li>
 
           <li>
@@ -36,20 +36,20 @@
 
           <li class="buttons">
             <label>in the following galaxy type...</label>
-            <ul>
-              <li data-type="smooth">Smooth</li>
-              <li data-type="feature">Feature/Disk</li>
-            </ul>
+            <div>
+              <button type="button" data-type="smooth">Smooth</button>
+              <button type="button" data-type="feature">Feature/Disk</button>
+            </div>
           </li>
 
           <li class="separator"></li>
 
           <li class="buttons">
             <label>I'd like to use data from...</label>
-            <ul>
-              <li>All Galaxies</li>
-              <li>Our Galaxies</li>
-            </ul>
+            <div>
+              <button type="button">All Galaxies</button>
+              <button type="button">Our Galaxies</button>
+            </div>
           </li>
 
           <li>
