@@ -88,8 +88,8 @@ class Graphs extends Spine.Controller
     @graph.channel = 'graph'
     @graph.getDataSource("SkyServerSubject", @options.sampleSize)
 
-    filter = new Function "item", "return item['type'] === #{@options.galaxyType}"
-    @graph.addFilter filter
+    # filter = new Function "item", "return item['type'] === #{@options.galaxyType}"
+    # @graph.addFilter filter
 
     # @histogram.getDataSource("InteractiveSubject", {sample: @options.sample, limit: parseInt(@sampleSize.val()), user: false})
 

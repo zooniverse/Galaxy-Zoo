@@ -140,6 +140,8 @@ button-style($alignment = 'right')
 
   #navigator
     padding: 0 0 50px 0
+    clearfix()
+
   // Welcome Page
   #welcome
     min-height: 215px
@@ -151,7 +153,7 @@ button-style($alignment = 'right')
       display: inline
       position: absolute
       text-align: center
-      width: 3*$partridge
+      width: 3 * $partridge
       z-index: 100
       margin: 20px 0px 20px 5px
       padding: 0px
@@ -172,15 +174,31 @@ button-style($alignment = 'right')
       display: inline
       position: absolute
       text-align: center
-      width: 3*$partridge
+      width: 3 * $partridge
       color: black
       z-index: 100
       margin: 125px 0px 0px 5px
       padding: 10px 0 0
-    
-  #navigator
-    clearfix()
 
+  #my_galaxies
+    .galaxy
+      float: left
+      width: 50%
+      svg
+        float: right
+        width: 280px
+        height: 150px
+        text
+          font-size: 12px
+          fill: #000
+        .nv-bar
+          rect
+            fill: #1e7797
+          text
+            stroke: none
+        .nv-y
+          display: none
+          
 p
  font-family: $normal 
  &.dx
@@ -206,6 +224,7 @@ p
   h2
     margin-top: 70px
     color: $blue
+
 
 #graph_form
   #actions

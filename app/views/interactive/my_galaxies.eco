@@ -1,4 +1,4 @@
-<div id="main_body">
+<!-- <div id="main_body">
   <div id="my_galaxies">
     <div class="galaxy_img_div">
       <h1>Object Id</h1>
@@ -7,4 +7,13 @@
     <div class="galaxy_bar_chart">
     </div>
   </div>
-</div> 
+</div>  -->
+<div id="my_galaxies">
+  <% for galaxy in @samples: %>
+    <div class="galaxy" data-id="<%- galaxy.classification_id %>">
+      <%- galaxy.classification_id %>
+      <%- galaxy.workflow_id %>
+      <svg></svg>
+    </div>
+  <% end %>
+</div>
