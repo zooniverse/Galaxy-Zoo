@@ -9,7 +9,7 @@ class Graphs extends Spine.Controller
     super
     @headingText = $('#heading_text')
 
-  active: =>
+  active: (params) =>
     super
     @render()
     $('[data-link="graphs"]').addClass 'pressed'

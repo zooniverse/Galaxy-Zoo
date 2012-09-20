@@ -18,10 +18,9 @@ class Navigator extends Spine.Stack
   default: 'home'
 
   routes: 
-    '/navigator/home'        : 'home'
-    '/navigator/graphs'      : 'graphs'
-    '/navigator/scatterplot' : 'graphs'
-    '/navigator/histogram'   : 'graphs'
-    '/navigator/my_galaxies' : 'myGalaxies'
+    '/navigator/home'               : 'home'
+    '/navigator/graphs/:graphType'  : 'graphs'
+    '/navigator/graphs'             : 'graphs'
+    '/navigator/my_galaxies'        : 'myGalaxies'
 
 module.exports = Navigator
