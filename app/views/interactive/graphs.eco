@@ -10,9 +10,9 @@
         </div>
       </li>
 
-      <li>
+      <li id="x-axis-item">
         <label>I'd like to see how...</label>
-        <select id="xaxis" name="xAxis">
+        <select id="x-axis" name="xAxis">
           <option>Choose x-axis variable</option>
           <option value="redshift">Redshift</option>
           <option value="color">Color</option>
@@ -23,9 +23,9 @@
         </select>
       </li>
 
-      <li>
+      <li id="y-axis-item">
         <label>relates to...</label>
-        <select id="yaxis" name="yAxis">
+        <select id="y-axis" name="yAxis">
           <option>Choose y-axis variable</option>
           <option value="redshift">Redshift</option>
           <option value="color">Color</option>
@@ -56,7 +56,7 @@
 
       <li>
         <label>with a sample size of...</label>
-        <select id="sample_size" name="sampleSize">
+        <select id="sample-size" name="sampleSize">
           <option>Choose sample size</option>
           <option value="10">10 of Our Galaxies</option>
           <option value="50">50 of Our Galaxies</option>

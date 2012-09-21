@@ -231,8 +231,9 @@ p
 
 
 #graph_form
-  #actions
+  #graph_area
     clearfix()
+  #actions
     margin: 20px 0 0 0
     button[type="submit"]
       width: 100%
@@ -279,8 +280,8 @@ p
               margin: 0
       &.separator
         height: 0
-        margin: 7px 0
-        border-top: 1px solid #d6d6d6
+        margin: 10px 0
+        border-top: 1px solid darken(#d6d6d6,11%)
         border-bottom: 1px solid #f9f9f9
 
     select
@@ -305,7 +306,7 @@ p
   svg  
     display: inline
     width: 6*$partridge + 7*$gutter
-    height: 330px
+    height: 310px
     padding: 10px
     border: 1px solid #C0C0C0
     background: $light-gray

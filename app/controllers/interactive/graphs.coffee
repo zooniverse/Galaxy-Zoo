@@ -6,11 +6,14 @@ InteractiveSubject = require 'ubret/lib/models/InteractiveSubject'
 
 class Graphs extends Spine.Controller
 
+  elements:
+    '#x-axis-item': 'xAxisItem'
+    '#y-axis-item': 'yAxisItem'
   events:
     'click #setting-variable-control button'  : 'setGraphType'
     'click #setting-galaxy-type button'       : 'setGalaxyType'
     'click #setting-data-source button'       : 'setGalaxyType'
-    'change #sample_size'                     : 'setSampleSize'
+    'change #sample-size'                     : 'setSampleSize'
     'click button[type="submit"]'             : 'onSubmit'
 
   constructor: ->
@@ -35,9 +38,12 @@ class Graphs extends Spine.Controller
         when "histogram"
           @options.graphType = 'histogram'
           @setPressed $('[data-variables="histogram"]')
+          @xAxisItem.find('label').html 'I\'d like to see...'
+          @yAxisItem.css 'opacity', 0
         when "scatterplot"
           @options.graphType = 'scatterplot'
           @setPressed $('[data-variables="scatterplot"]')
+          @yAxisItem.css 'opacity', 1
 
   deactivate: ->
     @el.removeClass("active")
@@ -57,6 +63,14 @@ class Graphs extends Spine.Controller
     button = $(e.currentTarget)
     @options.graphType = button.data('variables')
     @setPressed button
+
+    switch $(e.currentTarget).data('variables')
+      when "histogram"
+        @yAxisItem.css 'opacity', 0
+        @xAxisItem.find('label').html 'I\'d like to see...'
+      when "scatterplot"
+        @yAxisItem.css 'opacity', 1
+        @xAxisItem.find('label').html 'I\'d like to see how...'
 
   setGalaxyType: (e) =>
     button = $(e.currentTarget)
