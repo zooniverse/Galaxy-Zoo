@@ -17,7 +17,7 @@ class MyGalaxies extends Spine.Controller
     $('[data-link="my_galaxies"]').addClass 'pressed'
 
   deactivate: ->
-    @el.removeClass 'active'
+    super
     @headingText.html ''
     $('[data-link="my_galaxies"]').removeClass 'pressed'
 
@@ -60,6 +60,8 @@ class MyGalaxies extends Spine.Controller
       .showLegend(false)
       .showValues(true)
       .tooltips(false)
+
+    chart.multibar.valueFormat(d3.format(',.0f'))
 
     color = d3.scale.linear()
       .domain()

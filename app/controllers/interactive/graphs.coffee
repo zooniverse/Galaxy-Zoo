@@ -9,6 +9,7 @@ class Graphs extends Spine.Controller
   elements:
     '#x-axis-item': 'xAxisItem'
     '#y-axis-item': 'yAxisItem'
+
   events:
     'click #setting-variable-control button'  : 'setGraphType'
     'click #setting-galaxy-type button'       : 'setGalaxyType'
@@ -93,14 +94,12 @@ class Graphs extends Spine.Controller
 
     switch @options.graphType
       when "histogram"
-        @graph = new Histogram {el: '#graph'}
+        @graph = new Histogram {el: '#graph', width: 512, height: 310}
       when "scatterplot"
         @graph = new Scatterplot {el: '#graph'}
         @graph.xAxis = @options.xAxis
         @graph.yAxis = @options.yAxis
 
-    @graph.width = 512
-    @graph.height = 310
     @graph.channel = 'graph'
 
     filter = {}
