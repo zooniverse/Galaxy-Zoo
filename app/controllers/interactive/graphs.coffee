@@ -73,7 +73,10 @@ class Graphs extends Spine.Controller
 
   setGalaxyType: (e) =>
     button = $(e.currentTarget)
-    @options.galaxyType = button.data('type')
+    if button.hasClass 'pressed'
+      @options.galaxyType = null
+    else
+      @options.galaxyType = button.data('type')
     @setPressed button
 
   setDataSource: (e) =>
@@ -100,9 +103,10 @@ class Graphs extends Spine.Controller
     @graph.height = 310
     @graph.channel = 'graph'
 
+    filter = {}
     if @options.galaxyType
-      filter = new Function "item", "return item['type'] === #{@options.galaxyType}"
-      @graph.addFilter filter
+      filter.func = new Function "item", "return item['type'] === '#{@options.galaxyType}'"
+      @graph.filters.push filter
 
     @graph.getDataSource("SkyServerSubject", @options.sampleSize)
 
@@ -112,7 +116,7 @@ class Graphs extends Spine.Controller
   # Helper functions
   setPressed: (button) =>
     button.siblings().removeClass 'pressed'
-    button.addClass 'pressed'
+    button.toggleClass 'pressed'
    
 
 module.exports = Graphs
