@@ -12,7 +12,7 @@ class Graphs extends Spine.Controller
   events:
     'click #setting-variable-control button'  : 'setGraphType'
     'click #setting-galaxy-type button'       : 'setGalaxyType'
-    'click #setting-data-source button'       : 'setGalaxyType'
+    'click #setting-data-source button'       : 'setDataSource'
     'change #sample-size'                     : 'setSampleSize'
     'click button[type="submit"]'             : 'onSubmit'
 
@@ -49,7 +49,6 @@ class Graphs extends Spine.Controller
     @el.removeClass("active")
     @headingText.html @action_title
     $('[data-link="graphs"]').removeClass 'pressed'
-
 
 
   # Graph interface functions
@@ -100,10 +99,13 @@ class Graphs extends Spine.Controller
     @graph.width = 512
     @graph.height = 310
     @graph.channel = 'graph'
+
+    if @options.galaxyType
+      filter = new Function "item", "return item['type'] === #{@options.galaxyType}"
+      @graph.addFilter filter
+
     @graph.getDataSource("SkyServerSubject", @options.sampleSize)
 
-    # filter = new Function "item", "return item['type'] === #{@options.galaxyType}"
-    # @graph.addFilter filter
 
     # @histogram.getDataSource("InteractiveSubject", {sample: @options.sample, limit: parseInt(@sampleSize.val()), user: false})
 
