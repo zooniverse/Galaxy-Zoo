@@ -81,6 +81,7 @@ class FITSViewer extends Spine.Controller
     @stretch = null
   
   addImage: (band, arraybuffer) ->
+    console.log arraybuffer
     @images[band] = new FITS.File(arraybuffer)
     
     # Select the dataunit

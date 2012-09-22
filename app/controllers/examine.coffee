@@ -2,11 +2,13 @@ Spine = require 'spine'
 Subject = require 'models/subject'
 Api = require 'zooniverse/lib/api'
 FITSViewer = require 'controllers/fitsviewer'
-WebGL = require('lib/WebGL')
+WebGL = require('lib/web_gl')
 
 class Examine extends Spine.Controller
+  @validDestination = "http://www.sdss.org.uk/"
+  
   events: 
-    'click #load-fits': 'loadFits'
+    "click #load-fits": "requestFITS"
   
   constructor: ->
     super
@@ -41,20 +43,38 @@ class Examine extends Spine.Controller
       </div>
     """
   
+  # TODO: Move this into Zooniverse library
   checkBrowserFeatures: =>
     checkDataView = DataView?
     checkWorker = Worker?
     checkWebGL = WebGL.check()
     checkDataView and checkWorker and checkWebGL
   
-  loadFits: =>
-    return unless @checkBrowserFeatures()
-    if $('#dataonwire')[0]
-      @requestFITS()
-    else
-      fitsFrame = $('<iframe id="dataonwire" src="http://www.sdss.org.uk/dr9zoo/fitsframe.html" style="display: none;"></iframe>')
-      fitsFrame.on 'load', @requestFITS
-      $('body').append fitsFrame
+  requestFITS: =>
+    
+    # First check browser version
+    unless @checkBrowserFeatures()
+      alert('Upgrade your browser to use this feature.')
+      return null
+    
+    # Deactive button
+    $('#load-fits').attr("disabled", true)
+    console.log @subject
+    
+    id      = @subject.metadata.sdss_id or @subject.metadata.hubble_id
+    survey  = @subject.metadata.survey
+    
+    # Initialize viewer
+    @viewer = new FITSViewer({el: $('#examine'), bands: bands})
+    
+    # Request from Portsmouth
+    console.log 'requesting FITS from Portsmouth'
+    
+    window.addEventListener("message", @receiveFITS, false)
+    msg =
+      survey: survey
+      id: id
+    $("#dataonwire")[0].contentWindow.postMessage(msg, Examine.validDestination)
   
   sexagesimal: =>
     [ra, dec] = @subject.coords
@@ -75,16 +95,7 @@ class Examine extends Spine.Controller
       alert("Sorry, these data are not yet available.")
       window.removeEventListener("message", @receiveFITS, false)
     else
-      @viewer.addImage(band, e.data.arraybuffer)
-    
-    for band in bands
-      do (band, surveyId) =>
-        url = "http://www.galaxyzoo.org.s3-website-us-east-1.amazonaws.com/subjects/raw/#{ surveyId }_#{ band }.fits.fz"
-        xhr = new XMLHttpRequest()
-        xhr.open 'GET', url
-        xhr.responseType = 'arraybuffer'
-        xhr.onload = (e) =>
-          @viewer.addImage band, xhr.response
-        xhr.send()
+      data = e.data
+      @viewer.addImage(data.band, data.arraybuffer)
 
 module.exports = Examine
