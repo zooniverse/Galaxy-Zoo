@@ -40,11 +40,13 @@ class Graphs extends Spine.Controller
           @options.graphType = 'histogram'
           @setPressed $('[data-variables="histogram"]')
           @xAxisItem.find('label').html 'I\'d like to see...'
-          @yAxisItem.css 'opacity', 0
+          @yAxisItem.addClass 'unselectable'
+          @yAxisItem.find('select').attr 'disabled', 'disabled'
         when "scatterplot"
           @options.graphType = 'scatterplot'
           @setPressed $('[data-variables="scatterplot"]')
-          @yAxisItem.css 'opacity', 1
+          @yAxisItem.removeClass 'unselectable'
+          @yAxisItem.find('select').removeAttr 'disabled'
 
   deactivate: ->
     @el.removeClass("active")
@@ -66,11 +68,13 @@ class Graphs extends Spine.Controller
 
     switch $(e.currentTarget).data('variables')
       when "histogram"
-        @yAxisItem.css 'opacity', 0
         @xAxisItem.find('label').html 'I\'d like to see...'
+        @yAxisItem.addClass 'unselectable'
+        @yAxisItem.find('select').attr 'disabled', 'disabled'
       when "scatterplot"
-        @yAxisItem.css 'opacity', 1
         @xAxisItem.find('label').html 'I\'d like to see how...'
+        @yAxisItem.removeClass 'unselectable'
+        @yAxisItem.find('select').removeAttr 'disabled'
 
   setGalaxyType: (e) =>
     button = $(e.currentTarget)

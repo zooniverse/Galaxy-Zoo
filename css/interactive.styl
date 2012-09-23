@@ -147,8 +147,9 @@ button-style($alignment = 'right')
     min-height: 215px
     margin: 0 -5px 0
   .image_div
-    display: inline
     position: relative
+    float: left
+    margin: 0 4px 0 0
     h2
       display: inline
       position: absolute
@@ -291,6 +292,13 @@ p
         border-top: 1px solid darken(#d6d6d6,11%)
         border-bottom: 1px solid #f9f9f9
 
+      &.unselectable
+        color: #aaa
+        select
+          background: none no-repeat 95% center
+          border: 1px solid #bbb
+          color: #aaa
+
     select
       position: relative
       -webkit-appearance: none
@@ -303,6 +311,8 @@ p
       border-radius 3px
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255,255,255,1)
       font-size: 12px
+      transition: all 0.35s linear
+
 
 
 #graph
