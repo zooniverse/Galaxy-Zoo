@@ -15,9 +15,12 @@ class Graphs extends Spine.Controller
     'click #setting-data-source button'       : 'setDataSource'
     'change #sample-size'                     : 'setSampleSize'
     'click button[type="submit"]'             : 'onSubmit'
+<<<<<<< HEAD
+    'click button[name="screenshot"]'         : 'generateImageFromGraph'
+=======
     'change #x-axis'                          : 'setXAxis'
     'change #y-axis'                          : 'setYAxis'
-    'click button[name="screenshot"]'         : 'generateImageFromGraph'
+>>>>>>> af014e8397503c2afdf7694f4a67b9d728ea9fe4
 
   constructor: ->
     super
@@ -100,6 +103,8 @@ class Graphs extends Spine.Controller
     e.preventDefault()
     @el.find('svg').empty()
 
+    console.log @options.xAxis, @options.yAxis
+
     switch @options.graphType
       when "histogram"
         @graph = new Histogram {el: '#graph', width: 512, height: 310, variable: @options.xAxis}
@@ -130,16 +135,14 @@ class Graphs extends Spine.Controller
   setPressed: (button) =>
     button.siblings().removeClass 'pressed'
     button.toggleClass 'pressed'
+<<<<<<< HEAD
    
   serializeXmlNode: (xmlNode) ->
     if typeof window.XMLSerializer != "undefined"
       (new window.XMLSerializer()).serializeToString(xmlNode)
     else if typeof xmlNode.xml != "undefined"
       return xmlNode.xml
-      
-  # Helper functions
-  setPressed: (button) =>
-    button.siblings().removeClass 'pressed'
-    button.toggleClass 'pressed'
+=======
+>>>>>>> af014e8397503c2afdf7694f4a67b9d728ea9fe4
 
 module.exports = Graphs
