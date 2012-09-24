@@ -128,7 +128,7 @@ class Graphs extends Spine.Controller
         else
           $('#x-axis').removeClass 'error'
 
-        unless $('y-axis').val()
+        unless $('#y-axis').val()
           $('#y-axis').addClass 'error'
           return
         else

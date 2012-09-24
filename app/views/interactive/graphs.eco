@@ -26,7 +26,7 @@
       <li id="y-axis-item">
         <label>relates to...</label>
         <select id="y-axis" name="yAxis">
-          <option>Choose y-axis variable</option>
+          <option value="">Choose y-axis variable</option>
           <option value="redshift">Redshift</option>
           <option value="color">Color</option>
           <option value="apparent_brightness">Apparent Brightness</option>
