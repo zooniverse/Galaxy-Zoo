@@ -22,7 +22,7 @@
   border: 1px solid #ddd;
   z-index: 10000;
 
-  font-family: Arial;
+  font-family: 'Open Sans';
   font-size: 13px;
 
   transition: opacity 500ms linear;
@@ -93,11 +93,11 @@ svg {
 
 
 svg text {
-  font: normal 12px sans-serif;
+  font: normal 12px 'Open Sans';
 }
 
 svg .title {
- font: bold 14px Arial;
+ font: bold 14px 'Open Sans';
 }
 
 .nvd3 .nv-background {
@@ -167,6 +167,13 @@ svg .title {
 .nvd3 .nv-axis .nv-axisMaxMin text {
   font-weight: bold;
 }
+
+.nvd3 .x  .nv-axis .nv-axisMaxMin text,
+.nvd3 .x2 .nv-axis .nv-axisMaxMin text,
+.nvd3 .x3 .nv-axis .nv-axisMaxMin text {
+  text-anchor: middle
+}
+
 
 
 /**********
@@ -474,7 +481,7 @@ svg .title {
 *  Bullet
 */
 
-.nvd3.nv-bullet { font: 10px sans-serif; cursor: pointer; }
+.nvd3.nv-bullet { font: 10px 'Open Sans'; cursor: pointer; }
 .nvd3.nv-bullet rect { fill-opacity: .6; }
 .nvd3.nv-bullet rect:hover { fill-opacity: 1; }
 .nvd3.nv-bullet .nv-marker { stroke: #000; stroke-width: 2px; }

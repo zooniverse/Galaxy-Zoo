@@ -2,7 +2,6 @@ Spine = require 'spine'
 Sample = require 'lib/sample_interactive_data'
 Scatterplot = require 'ubret/lib/controllers/Scatterplot'
 Histogram = require 'ubret/lib/controllers/Histogram'
-InteractiveSubject = require 'ubret/lib/models/InteractiveSubject'
 
 class Graphs extends Spine.Controller
 
@@ -16,6 +15,8 @@ class Graphs extends Spine.Controller
     'click #setting-data-source button'       : 'setDataSource'
     'change #sample-size'                     : 'setSampleSize'
     'click button[type="submit"]'             : 'onSubmit'
+    'change #x-axis'                          : 'setXAxis'
+    'change #y-axis'                          : 'setYAxis'
     'click button[name="screenshot"]'         : 'generateImageFromGraph'
 
   constructor: ->
@@ -57,9 +58,11 @@ class Graphs extends Spine.Controller
 
   # Graph interface functions
   setXAxis: (e) =>
+    console.log $(e.currentTarget).val()
     @options.xAxis = $(e.currentTarget).val()
 
   setYAxis: (e) =>
+    console.log $(e.currentTarget).val()
     @options.yAxis = $(e.currentTarget).val()
 
   setGraphType: (e) =>
@@ -99,11 +102,9 @@ class Graphs extends Spine.Controller
 
     switch @options.graphType
       when "histogram"
-        @graph = new Histogram {el: '#graph', width: 512, height: 310}
+        @graph = new Histogram {el: '#graph', width: 512, height: 310, variable: @options.xAxis}
       when "scatterplot"
-        @graph = new Scatterplot {el: '#graph'}
-        @graph.xAxis = @options.xAxis
-        @graph.yAxis = @options.yAxis
+        @graph = new Scatterplot {el: '#graph', xAxisKey: @options.xAxis, yAxisKey: @options.yAxis}
 
     @graph.channel = 'graph'
 
@@ -112,30 +113,13 @@ class Graphs extends Spine.Controller
       filter.func = new Function "item", "return item['type'] === '#{@options.galaxyType}'"
       @graph.filters.push filter
 
-
-    @graph.getDataSource("SkyServerSubject", @options.sampleSize)
-
-
+    @graph.receiveData Sample.randomSample @options.sampleSize
+    # @graph.getDataSource("SkyServerSubject", @options.sampleSize)
     # @histogram.getDataSource("InteractiveSubject", {sample: @options.sample, limit: parseInt(@sampleSize.val()), user: false})
-
-  generateImageFromGraph: (e) =>
-    svg_string = @serializeXmlNode document.querySelector '#graph svg'
-    console.log svg_string
-    canvg 'canvas', svg_string
-    canvas = document.getElementById 'canvas'
-    img = canvas.toDataURL 'image/png'
-
-    window.open img
 
   # Helper functions
   setPressed: (button) =>
     button.siblings().removeClass 'pressed'
     button.toggleClass 'pressed'
-   
-  serializeXmlNode: (xmlNode) ->
-    if typeof window.XMLSerializer != "undefined"
-      (new window.XMLSerializer()).serializeToString(xmlNode)
-    else if typeof xmlNode.xml != "undefined"
-      return xmlNode.xml
 
 module.exports = Graphs
