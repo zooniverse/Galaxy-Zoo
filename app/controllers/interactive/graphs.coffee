@@ -33,11 +33,15 @@ class Graphs extends Spine.Controller
   active: (params) =>
     super
     @render()
-    $('[data-link="graphs"]').addClass 'pressed'
+    
+    @setPressed $('[data-link="graphs"]')
+    @setPressed $('[data-source="all"]')
+
     @options = new Object
     @headingText.html '<h2>Construct Your Question</h2>'
 
     @options.graphType = params.graphType or 'histogram'
+
 
     switch @options.graphType
       when "histogram"
@@ -88,7 +92,7 @@ class Graphs extends Spine.Controller
       @options.galaxyType = null
     else
       @options.galaxyType = button.data('type')
-    @setPressed button
+    @setPressed button, false
 
   setDataSource: (e) =>
     button = $(e.currentTarget)
@@ -98,8 +102,46 @@ class Graphs extends Spine.Controller
   setSampleSize: (e) =>
     @options.sampleSize = $(e.currentTarget).val()
 
+  generateImageFromGraph: (e) =>
+    svg_string = @serializeXmlNode document.querySelector '#graph svg'
+    canvg 'canvas', svg_string
+
+    canvas = document.getElementById 'canvas'
+    img = canvas.toDataURL 'image/png'
+    window.open img
+
   onSubmit: (e) =>
     e.preventDefault()
+
+    # Validation
+    switch @options.graphType
+      when 'histogram'
+        unless $('#x-axis').val()
+          $('#x-axis').addClass 'error'
+          return
+        else
+          $('#x-axis').removeClass 'error'
+      when 'scatterplot'
+        unless $('#x-axis').val()
+          $('#x-axis').addClass 'error'
+          return
+        else
+          $('#x-axis').removeClass 'error'
+
+        unless $('y-axis').val()
+          $('#y-axis').addClass 'error'
+          return
+        else
+          $('#y-axis').removeClass 'error'
+
+    unless @options.sampleSize
+      $('#sample-size').addClass 'error'
+      return
+    else
+      $('#sample-size').removeClass 'error'
+    # End validation
+
+    # Clear previous graph
     @el.find('svg').empty()
 
     switch @options.graphType
@@ -119,13 +161,6 @@ class Graphs extends Spine.Controller
     # @graph.getDataSource("SkyServerSubject", @options.sampleSize)
     # @histogram.getDataSource("InteractiveSubject", {sample: @options.sample, limit: parseInt(@sampleSize.val()), user: false})
 
-  generateImageFromGraph: (e) =>
-    svg_string = @serializeXmlNode document.querySelector '#graph svg'
-    canvg 'canvas', svg_string
-
-    canvas = document.getElementById 'canvas'
-    img = canvas.toDataURL 'image/png'
-    window.open img
 
   generateCSV: (e) =>
     headerString = (@createCSVHeader(@graph.filteredData[0]) + '\n').slice(1)
@@ -159,9 +194,19 @@ class Graphs extends Spine.Controller
     return line
 
   # Helper functions
-  setPressed: (button) =>
-    button.siblings().removeClass 'pressed'
-    button.toggleClass 'pressed'
+  setPressed: (button, force_selection = true) =>
+    # Check for case where no button is selected.
+    unless button.parent().find('button').hasClass 'pressed'
+      button.addClass 'pressed'
+      return
+
+    if button.hasClass 'pressed'
+      unless force_selection
+        button.siblings().removeClass 'pressed'
+        button.toggleClass 'pressed'
+    else 
+      button.siblings().removeClass 'pressed'
+      button.toggleClass 'pressed'
    
   serializeXmlNode: (xmlNode) ->
     if typeof window.XMLSerializer != "undefined"
@@ -169,9 +214,6 @@ class Graphs extends Spine.Controller
     else if typeof xmlNode.xml != "undefined"
       xmlNode.xml
 
-  # Helper functions
-  setPressed: (button) =>
-    button.siblings().removeClass 'pressed'
-    button.toggleClass 'pressed'
+
 
 module.exports = Graphs
