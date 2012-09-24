@@ -100,9 +100,7 @@ class Graphs extends Spine.Controller
       when "histogram"
         @graph = new Histogram {el: '#graph', width: 512, height: 310}
       when "scatterplot"
-        @graph = new Scatterplot {el: '#graph'}
-        @graph.xAxis = @options.xAxis
-        @graph.yAxis = @options.yAxis
+        @graph = new Scatterplot {el: '#graph', xAxisKey: @options.xAxis, yAxisKey: @options.yAxis}
 
     @graph.channel = 'graph'
 
