@@ -7,6 +7,7 @@ Examine = require 'controllers/examine'
 Papers = require 'controllers/papers'
 Story = require 'controllers/story'
 Team = require 'controllers/team'
+Interactive = require 'controllers/interactive'
 Astronomers = require 'controllers/astronomers'
 
 class Main extends Spine.Stack
@@ -21,6 +22,7 @@ class Main extends Spine.Stack
     papers: Papers
     story: Story
     team: Team
+    interactive: Interactive
     astronomers: Astronomers
       
   default: 'home'
@@ -34,6 +36,7 @@ class Main extends Spine.Stack
     '/papers': 'papers'
     '/story': 'story'
     '/team': 'team'
+    '/navigator': 'interactive'
     '/astronomers': 'astronomers'
 
 module.exports = Main

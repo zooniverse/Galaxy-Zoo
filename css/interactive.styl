@@ -1,0 +1,380 @@
+// Interactive
+$partridge = 65px
+$gutter = 20px
+$condensed = "Open Sans Condensed" 
+$normal = "Open Sans" 
+$background = #E6EDF0
+$button-background = #f4f4f4
+$hover-button-background = #dfdfdf
+@font-face { font-family: open-dyslexic; src: url('OpenDyslexic-Regular.otf'); }
+@font-face { font-family: open-dyslexic-italic; src: url('OpenDyslexic-Italic.otf'); }
+$dx-normal = open-dyslexic
+$dx-condensed = open-dyslexic-italic
+$dx-background = #9DD2ED
+$dx-button-background = #E9F768
+$dx-hover-button-background = #F2864B
+
+clearfix()
+  &:before,&:after
+    content: ''
+    display: table
+  &:after
+    clear: both
+
+button-style($alignment = 'right')
+  display: inline
+  float: $alignment
+  height: 30px
+  text-align: right
+  a, li, button
+    display: inline-block
+    width: 98px
+    padding: 3px 0
+    background: $button-background
+    border: 1px solid #b2b2b2
+    border-radius 3px
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255,255,255,1)
+    color: #3b3b3b
+    font-family: $normal
+    font-size: 12px
+    text-align: center
+    text-shadow: 0 1px 0 #fcfcfc
+    &.dx
+      background: $dx-button-background
+    &.pressed
+      color: $blue
+      background: $hover-button-background
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1), inset 0 1px 1px #d3d3d3
+      &:hover
+        background: $hover-button-background
+        border: 1px solid #b2b2b2
+
+    &:hover
+      background: lighten($button-background, 35%)
+      border: 1px solid darken(#b2b2b2, 35%)
+
+    &.dx
+      background: $dx-hover-button-background 
+
+[data-page="interactive"]
+  padding: 0 0 20px 0
+  background: $background
+  color: #3b3b3b
+  font-family: $normal
+
+  .stack > *:not(.active)
+    display: none
+
+  .container
+    width: 830px
+    margin: 0 auto
+  h1, h2
+    font-family: $condensed
+    font-weight: 400
+    &.dx
+      font-family: $dx-condensed
+  h1
+    font-size: 48px
+
+  h2
+    &.section-header
+      position: relative
+      padding: 3px 0
+      border-bottom: 1px solid #d6d6d6
+      color: $blue
+      font-family: $normal
+      font-size: 14px
+      font-weight: 700
+      &:after
+        position: absolute
+        bottom: -2px
+        left: 0
+        width: 100%
+        height: 1px
+        border-bottom: 1px solid #f9f9f9
+        content: ''
+
+  #heading_text
+    position: relative
+    height: 72px
+    margin: 0 0 20px
+    border-bottom: 1px solid #d6d6d6
+    &:after
+      position: absolute
+      width: 100%
+      bottom: -2px
+      left: 0
+      border-bottom: 1px solid #f9f9f9
+      content: ''
+    h2
+      position: absolute
+      bottom: 8px
+      left: 0
+      margin: 0
+      color: $blue
+      font-family: $normal
+      font-size: 14px
+      font-weight: 700
+
+  #top_bar
+    position: relative
+    padding: 15px 0 0
+    font-family: $normal
+    #link_buttons
+      position: absolute
+      bottom: 0
+      right: 0
+      width: 300px
+      text-align: right
+      button-style()
+
+    a
+     text-decoration: none
+
+    h1
+      position: absolute
+      bottom: -14px
+      left: 0
+      width: 50%
+      color: #171717
+
+  #navigator
+    padding: 0 0 50px 0
+    clearfix()
+
+  // Welcome Page
+  #welcome
+    min-height: 215px
+    margin: 0 -5px 0
+  .image_div
+    position: relative
+    float: left
+    margin: 0 4px 0 0
+    h2
+      display: inline
+      position: absolute
+      text-align: center
+      width: 3 * $partridge
+      z-index: 100
+      margin: 20px 0px 20px 5px
+      padding: 0px
+      color: white
+    a
+      text-decoration: none
+      &:hover img
+        border: 3px solid $blue
+      img
+        position: relative
+        width: 3*$partridge + 5px
+        background: white
+        border-radius: 5px
+        -moz-border-radius: 5px
+        border: 3px solid white
+
+    p
+      display: inline
+      position: absolute
+      text-align: center
+      width: 3 * $partridge
+      color: black
+      z-index: 100
+      margin: 125px 0px 0px 5px
+      padding: 10px 0 0
+
+  #my_galaxies
+    .galaxy
+      float: left
+      width: 50%
+      margin: 0 0 15px 0
+      font-size: 12px
+      .meta-data
+        overflow: hidden
+      svg
+        float: right
+        width: 265px
+        height: 150px
+        text
+          font-size: 12px
+          fill: #000
+        .nv-bar
+          rect
+            fill: #1e7797
+            stroke: none
+          text
+            stroke: none
+        .nv-y
+          visibility: hidden
+
+        .nv-x path
+          visibility: hidden
+
+        .nv-x line
+          visibility: hidden
+
+p
+ font-family: $normal 
+ &.dx
+  font-family: $dx-normal
+
+#top_bar
+  width: 10*$partridge + 9*$gutter
+  height: 70px
+  margin: 0 0 15px
+  padding: 0px
+
+  a
+    text-decoration: none
+    color: black
+
+  h1
+    margin: 0px
+    padding: 0px
+    display: inline
+    width: 700px
+  p
+    margin-top: 20px
+  h2
+    margin-top: 70px
+    color: $blue
+
+
+#graph_form
+  #graph_area
+    clearfix()
+    canvas
+      display: none
+  #actions
+    margin: 20px 0 0 0
+    .misc
+      float: right
+    button
+      background: #1e9ace
+      border: 1px solid #0b709c
+      border-radius 3px
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1), inset 0 1px 0 #21b1ed
+      color: #fff
+      cursor: pointer
+      font-size: 13px
+      font-weight: 700
+      line-height: 28px
+      text-shadow: 0 1px 0 #1576a3
+      &[type="submit"]
+        width: (3 * $partridge) + $gutter - 5px
+
+  .controls
+    float: left
+    width: (3 * $partridge) + $gutter
+    margin: 0 $partridge 0 0
+    padding: 0
+
+    label
+      display: block
+      padding: 3px 0
+      font-size: 13px
+      font-weight: 700
+
+    li
+      height: 55px
+      list-style: none
+      transition: all 0.35s linear
+      &:before,&:after
+        content: ''
+        display: table
+      &:after
+        clear: both
+
+      &:last-child
+        margin: 0
+
+      &.buttons
+        margin: 0
+        padding: 0
+        &.nolabel
+          height: 35px
+        div
+          button-style(left)
+          button
+            margin: 0 9px 0 0
+            &:last-child
+              margin: 0
+
+      &.separator
+        position: relative
+        height: 30px
+        &:before, &:after
+          position: absolute
+          content: ''
+          left: 0
+          width: 100%
+          height: 0
+        &:before
+          top: 15px
+          border-top: 1px solid darken(#d6d6d6,11%)
+        &:after
+          top: 16px
+          border-bottom: 1px solid #f9f9f9
+
+      &.unselectable
+        color: #aaa
+        select
+          background: none no-repeat 95% center
+          border: 1px solid #bbb
+          color: #aaa
+
+    select
+      position: relative
+      -webkit-appearance: none
+      -webkit-border-radius: 0px
+      width: 3 * $partridge + $gutter - 5px
+      height: 26px
+      padding: 3px 10px
+      background: url("images/gz-select-arrow.png") no-repeat 95% center
+      border: 1px solid #b2b2b2
+      border-radius 3px
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255,255,255,1)
+      font-size: 12px
+      transition: all 0.35s linear
+      &.error
+        border: 1px solid #d54d29
+        box-shadow: 0 0 8px rgba(255, 0, 0, 0.8)
+
+
+
+
+#graph
+  display: inline
+  float: right
+  width: 6*$partridge + 7*$gutter
+  height: 333px
+  border: 1px solid #C0C0C0
+  background: $light-gray
+  padding-left: 15px
+
+  h3
+    margin: 5px auto 0
+    font-size: 14px
+    text-align: center
+
+  svg  
+    display: inline
+    width: 6*$partridge + 7*$gutter
+    height: 310px
+
+    .bar rect
+      fill: steelblue
+      shape-rendering: crispEdges
+      stroke: $light-gray
+
+    .bar text
+      fill: #fff
+      font-family: 'Open Sans'
+
+    .axis path, .axis line
+      shape-rendering: crispEdges;
+      stroke: #000
+      fill: none 
+      path
+      stroke-width: 1px
+
+    text
+      font-family: 'Open Sans'

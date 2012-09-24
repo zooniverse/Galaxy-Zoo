@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "hem": "git://github.com/maccman/hem.git#517c97a3ce7",
+    "node-pubsub" : "*",
     "nib": "*",
     "es5-shimify": "~0.0.1",
     "json2ify": "~0.0.1",
@@ -21,7 +22,8 @@
     "underscore": "*",
     "spine": "~1.0.7",
     "clean-css": "0.6.0",
-    "zooniverse": "git+ssh://git@github.com:zooniverse/Zooniverse.git#240c59a3e",
+    "zooniverse": "git+ssh://git@github.com:zooniverse/Zooniverse.git#HEAD",
+    "ubret" : "git+ssh://git@github.com:zooniverse/Ubret.git#HEAD",
     "fits": "git://github.com/astrojs/fitsjs.git"
   },
   "devDependencies": {
