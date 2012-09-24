@@ -36,19 +36,20 @@ class Graphs extends Spine.Controller
     @options = new Object
     @headingText.html '<h2>Construct Your Question</h2>'
 
-    if params.graphType
-      switch params.graphType
-        when "histogram"
-          @options.graphType = 'histogram'
-          @setPressed $('[data-variables="histogram"]')
-          @xAxisItem.find('label').html 'I\'d like to see...'
-          @yAxisItem.addClass 'unselectable'
-          @yAxisItem.find('select').attr 'disabled', 'disabled'
-        when "scatterplot"
-          @options.graphType = 'scatterplot'
-          @setPressed $('[data-variables="scatterplot"]')
-          @yAxisItem.removeClass 'unselectable'
-          @yAxisItem.find('select').removeAttr 'disabled'
+    @options.graphType = params.graphType or 'histogram'
+
+    switch @options.graphType
+      when "histogram"
+        @options.graphType = 'histogram'
+        @setPressed $('[data-variables="histogram"]')
+        @xAxisItem.find('label').html 'I\'d like to see...'
+        @yAxisItem.addClass 'unselectable'
+        @yAxisItem.find('select').attr 'disabled', 'disabled'
+      when "scatterplot"
+        @options.graphType = 'scatterplot'
+        @setPressed $('[data-variables="scatterplot"]')
+        @yAxisItem.removeClass 'unselectable'
+        @yAxisItem.find('select').removeAttr 'disabled'
 
   deactivate: ->
     @el.removeClass("active")
@@ -120,7 +121,7 @@ class Graphs extends Spine.Controller
   generateImageFromGraph: (e) =>
     svg_string = @serializeXmlNode document.querySelector '#graph svg'
     canvg 'canvas', svg_string
-    
+
     canvas = document.getElementById 'canvas'
     img = canvas.toDataURL 'image/png'
     window.open img
