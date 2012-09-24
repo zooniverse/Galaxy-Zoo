@@ -63,6 +63,7 @@ class Examine extends Spine.Controller
     
     id      = @subject.metadata.sdss_id or @subject.metadata.hubble_id
     survey  = @subject.metadata.survey
+    bands   = if survey is 'sloan' then ['u', 'g', 'r', 'i', 'z'] else ['h', 'i', 'j']
     
     # Initialize viewer
     @viewer = new FITSViewer({el: $('#examine'), bands: bands})
@@ -96,6 +97,7 @@ class Examine extends Spine.Controller
       window.removeEventListener("message", @receiveFITS, false)
     else
       data = e.data
+      console.log data
       @viewer.addImage(data.band, data.arraybuffer)
 
 module.exports = Examine

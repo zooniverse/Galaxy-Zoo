@@ -1,4 +1,4 @@
-<iframe id="dataonwire" src="http://www.sdss.org.uk/dr9zoo/fitsframe.html" style="display: none;"></iframe>
+<iframe id="dataonwire" src="http://www.sdss.org.uk/fitsframe.html" style="display: none;"></iframe>
 <!-- <iframe id="dataonwire" src="http://ubret.s3.amazonaws.com/galaxyzoo3/fitsframe.html" style="display: none;"></iframe> -->
 
 <div id="examine">
