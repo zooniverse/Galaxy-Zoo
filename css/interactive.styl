@@ -245,8 +245,9 @@ p
       display: none
   #actions
     margin: 20px 0 0 0
-    button[type="submit"]
-      width: 100%
+    .misc
+      float: right
+    button
       background: #1e9ace
       border: 1px solid #0b709c
       border-radius 3px
@@ -257,6 +258,8 @@ p
       font-weight: 700
       line-height: 28px
       text-shadow: 0 1px 0 #1576a3
+      &[type="submit"]
+        width: (3 * $partridge) + $gutter - 5px
 
   .controls
     float: left

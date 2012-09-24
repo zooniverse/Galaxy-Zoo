@@ -73,8 +73,10 @@
 
   <div id="actions">
     <button type="submit">Create Graph</button>
-    <button type="button" name="screenshot">Take Snapshot</button>
-    <button type="button" name="download">Download Data</button>
+    <div class="misc">
+      <button type="button" name="screenshot">Take Snapshot</button>
+      <button type="button" name="download">Download Data</button>
+    </div>
   </div>
 </form>
 
