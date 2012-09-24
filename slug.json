@@ -19,5 +19,8 @@
     "node_modules/Zooniverse/vendor/base64.js",
     "node_modules/Ubret/vendor/d3.v2.js",
     "node_modules/Ubret/vendor/nv.d3.js"
+  ],
+  "paths": [
+    "./app"
   ]
 }

@@ -3,7 +3,7 @@
   <div id="graph_area">
     <ul class="controls">
 
-      <li class="buttons">
+      <li class="buttons nolabel">
         <div id="setting-variable-control">
           <button type="button" data-variables="histogram">One-Variable</button>
           <button type="button" data-variables="scatterplot">Two-Variable</button>

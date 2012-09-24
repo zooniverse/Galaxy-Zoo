@@ -111,6 +111,7 @@ class Graphs extends Spine.Controller
       filter.func = new Function "item", "return item['type'] === '#{@options.galaxyType}'"
       @graph.filters.push filter
 
+
     @graph.getDataSource("SkyServerSubject", @options.sampleSize)
 
 
