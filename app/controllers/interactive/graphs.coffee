@@ -115,21 +115,33 @@ class Graphs extends Spine.Controller
 
     # Validation
     switch @options.graphType
-      when "histogram"
-        xaxis_el = $('#x-axis')
-        unless xaxis_el.val()
-          xaxis_el.addClass 'error'
+      when 'histogram'
+        unless $('#x-axis').val()
+          $('#x-axis').addClass 'error'
           return
         else
-          xaxis_el.removeClass 'error'
+          $('#x-axis').removeClass 'error'
+      when 'scatterplot'
+        unless $('#x-axis').val()
+          $('#x-axis').addClass 'error'
+          return
+        else
+          $('#x-axis').removeClass 'error'
+
+        unless $('y-axis').val()
+          $('#y-axis').addClass 'error'
+          return
+        else
+          $('#y-axis').removeClass 'error'
 
     unless @options.sampleSize
       $('#sample-size').addClass 'error'
       return
     else
       $('#sample-size').removeClass 'error'
+    # End validation
 
-
+    # Clear previous graph
     @el.find('svg').empty()
 
     switch @options.graphType
