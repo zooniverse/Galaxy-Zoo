@@ -39,8 +39,8 @@ Sample =
       color: 0
       apparent_brightness: 0 
       energy_output: 0
-      absolute_size: 0
-      aboslute_brightness: 0
+      apparent_size: 0
+      absolute_brightness: 0
     
     random.group_classification[key] = 1
       
