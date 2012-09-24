@@ -16,6 +16,8 @@ class Graphs extends Spine.Controller
     'click #setting-data-source button'       : 'setDataSource'
     'change #sample-size'                     : 'setSampleSize'
     'click button[type="submit"]'             : 'onSubmit'
+    'change #x-axis'                          : 'setXAxis'
+    'change #y-axis'                          : 'setYAxis'
 
   constructor: ->
     super
@@ -56,9 +58,11 @@ class Graphs extends Spine.Controller
 
   # Graph interface functions
   setXAxis: (e) =>
+    console.log $(e.currentTarget).val()
     @options.xAxis = $(e.currentTarget).val()
 
   setYAxis: (e) =>
+    console.log $(e.currentTarget).val()
     @options.yAxis = $(e.currentTarget).val()
 
   setGraphType: (e) =>
@@ -96,9 +100,11 @@ class Graphs extends Spine.Controller
     e.preventDefault()
     @el.find('svg').empty()
 
+    console.log @options.xAxis, @options.yAxis
+
     switch @options.graphType
       when "histogram"
-        @graph = new Histogram {el: '#graph', width: 512, height: 310}
+        @graph = new Histogram {el: '#graph', width: 512, height: 310, variable: @options.xAxis}
       when "scatterplot"
         @graph = new Scatterplot {el: '#graph', xAxisKey: @options.xAxis, yAxisKey: @options.yAxis}
 
@@ -109,10 +115,7 @@ class Graphs extends Spine.Controller
       filter.func = new Function "item", "return item['type'] === '#{@options.galaxyType}'"
       @graph.filters.push filter
 
-
     @graph.getDataSource("SkyServerSubject", @options.sampleSize)
-
-
     # @histogram.getDataSource("InteractiveSubject", {sample: @options.sample, limit: parseInt(@sampleSize.val()), user: false})
 
   # Helper functions
