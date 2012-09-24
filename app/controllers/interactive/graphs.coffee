@@ -119,11 +119,10 @@ class Graphs extends Spine.Controller
 
   generateImageFromGraph: (e) =>
     svg_string = @serializeXmlNode document.querySelector '#graph svg'
-    console.log svg_string
     canvg 'canvas', svg_string
+    
     canvas = document.getElementById 'canvas'
     img = canvas.toDataURL 'image/png'
-
     window.open img
 
   # Helper functions
@@ -135,8 +134,8 @@ class Graphs extends Spine.Controller
     if typeof window.XMLSerializer != "undefined"
       (new window.XMLSerializer()).serializeToString(xmlNode)
     else if typeof xmlNode.xml != "undefined"
-      return xmlNode.xml
-      
+      xmlNode.xml
+
   # Helper functions
   setPressed: (button) =>
     button.siblings().removeClass 'pressed'
