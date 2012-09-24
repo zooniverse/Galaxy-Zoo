@@ -2,7 +2,6 @@ Spine = require 'spine'
 Sample = require 'lib/sample_interactive_data'
 Scatterplot = require 'ubret/lib/controllers/Scatterplot'
 Histogram = require 'ubret/lib/controllers/Histogram'
-InteractiveSubject = require 'ubret/lib/models/InteractiveSubject'
 
 class Graphs extends Spine.Controller
 
@@ -115,13 +114,13 @@ class Graphs extends Spine.Controller
       filter.func = new Function "item", "return item['type'] === '#{@options.galaxyType}'"
       @graph.filters.push filter
 
-    @graph.getDataSource("SkyServerSubject", @options.sampleSize)
+    @graph.receiveData Sample.randomSample @options.sampleSize
+    # @graph.getDataSource("SkyServerSubject", @options.sampleSize)
     # @histogram.getDataSource("InteractiveSubject", {sample: @options.sample, limit: parseInt(@sampleSize.val()), user: false})
 
   # Helper functions
   setPressed: (button) =>
     button.siblings().removeClass 'pressed'
     button.toggleClass 'pressed'
-   
 
 module.exports = Graphs

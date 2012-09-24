@@ -9,7 +9,9 @@ Sample =
       --i
     return result
   
-  createRandomCount: => return parseInt(Math.random() * 100)
+  createRandomCount: => parseInt(Math.random() * 100)
+
+  createRandomFloat: => Math.random() * 40
   
   randomSubject: ->
     
@@ -30,12 +32,24 @@ Sample =
         smooth_count: 0
         disk_count: 0
         other_count: 0
+
+     
+    metadata = 
+      redshift: 0 
+      color: 0
+      apparent_brightness: 0 
+      energy_output: 0
+      absolute_size: 0
+      aboslute_brightness: 0
     
     random.group_classification[key] = 1
       
     for type in types
       random.subject[type] = @createRandomCount()
     
+    for key, value of metadata
+      random[key] = @createRandomFloat()
+
     return random
     
   randomSample: (number) ->
