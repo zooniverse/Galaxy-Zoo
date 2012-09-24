@@ -128,12 +128,12 @@ class Graphs extends Spine.Controller
     window.open img
 
   generateCSV: (e) =>
-    headerString = @createCSVHeader(@graph.filteredData[0]) + '\n'
+    headerString = (@createCSVHeader(@graph.filteredData[0]) + '\n').slice(1)
     console.log headerString
     bodyString = @createCSVBody @graph.filteredData
     console.log bodyString
     csv = headerString + bodyString
-    window.location.href = "data:application/csv;charset=UTF-8," + encodeURIComponent(csv)
+    window.location.href = "data:text/csv;charset=UTF-8," + encodeURIComponent(csv)
       
   createCSVHeader: (datum, prefix='') =>
     header = new String
@@ -146,7 +146,7 @@ class Graphs extends Spine.Controller
 
   createCSVBody: (data) =>
     body = new Array
-    body.push @createCSVLine datum for datum in data
+    body.push (@createCSVLine(datum)).slice(1) for datum in data
     return body.join '\n'
 
   createCSVLine: (datum) =>
