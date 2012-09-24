@@ -32,11 +32,15 @@ class Graphs extends Spine.Controller
   active: (params) =>
     super
     @render()
-    $('[data-link="graphs"]').addClass 'pressed'
+    
+    @setPressed $('[data-link="graphs"]')
+    @setPressed $('[data-source="all"]')
+
     @options = new Object
     @headingText.html '<h2>Construct Your Question</h2>'
 
     @options.graphType = params.graphType or 'histogram'
+
 
     switch @options.graphType
       when "histogram"
@@ -87,7 +91,7 @@ class Graphs extends Spine.Controller
       @options.galaxyType = null
     else
       @options.galaxyType = button.data('type')
-    @setPressed button
+    @setPressed button, false
 
   setDataSource: (e) =>
     button = $(e.currentTarget)
@@ -96,6 +100,14 @@ class Graphs extends Spine.Controller
 
   setSampleSize: (e) =>
     @options.sampleSize = $(e.currentTarget).val()
+
+  generateImageFromGraph: (e) =>
+    svg_string = @serializeXmlNode document.querySelector '#graph svg'
+    canvg 'canvas', svg_string
+
+    canvas = document.getElementById 'canvas'
+    img = canvas.toDataURL 'image/png'
+    window.open img
 
   onSubmit: (e) =>
     e.preventDefault()
@@ -118,18 +130,21 @@ class Graphs extends Spine.Controller
     # @graph.getDataSource("SkyServerSubject", @options.sampleSize)
     # @histogram.getDataSource("InteractiveSubject", {sample: @options.sample, limit: parseInt(@sampleSize.val()), user: false})
 
-  generateImageFromGraph: (e) =>
-    svg_string = @serializeXmlNode document.querySelector '#graph svg'
-    canvg 'canvas', svg_string
-
-    canvas = document.getElementById 'canvas'
-    img = canvas.toDataURL 'image/png'
-    window.open img
 
   # Helper functions
-  setPressed: (button) =>
-    button.siblings().removeClass 'pressed'
-    button.toggleClass 'pressed'
+  setPressed: (button, force_selection = true) =>
+    # Check for case where no button is selected.
+    unless button.parent().find('button').hasClass 'pressed'
+      button.addClass 'pressed'
+      return
+
+    if button.hasClass 'pressed'
+      unless force_selection
+        button.siblings().removeClass 'pressed'
+        button.toggleClass 'pressed'
+    else 
+      button.siblings().removeClass 'pressed'
+      button.toggleClass 'pressed'
    
   serializeXmlNode: (xmlNode) ->
     if typeof window.XMLSerializer != "undefined"
@@ -137,9 +152,6 @@ class Graphs extends Spine.Controller
     else if typeof xmlNode.xml != "undefined"
       xmlNode.xml
 
-  # Helper functions
-  setPressed: (button) =>
-    button.siblings().removeClass 'pressed'
-    button.toggleClass 'pressed'
+
 
 module.exports = Graphs
