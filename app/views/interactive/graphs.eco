@@ -66,7 +66,10 @@
 
       </li>
     </ul>
-    <div id="graph"><svg></svg></div>
+    <div id="graph">
+      <h3 id="graph-title"></h3>
+      <svg></svg>
+    </div>
     <canvas id="canvas"></canvas>
   </div>
 

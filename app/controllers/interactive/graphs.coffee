@@ -2,12 +2,14 @@ Spine = require 'spine'
 Sample = require 'lib/sample_interactive_data'
 Scatterplot = require 'ubret/lib/controllers/Scatterplot'
 Histogram = require 'ubret/lib/controllers/Histogram'
+BaseController = require 'ubret/lib/controllers/BaseController'
 
-class Graphs extends Spine.Controller
+class Graphs extends BaseController
 
   elements:
-    '#x-axis-item': 'xAxisItem'
-    '#y-axis-item': 'yAxisItem'
+    '#x-axis-item'   : 'xAxisItem'
+    '#y-axis-item'   : 'yAxisItem'
+    'h3#graph-title' : 'graphTitle'
 
   events:
     'click #setting-variable-control button'  : 'setGraphType'
@@ -57,17 +59,27 @@ class Graphs extends Spine.Controller
         @yAxisItem.find('select').removeAttr 'disabled'
 
   deactivate: ->
+    super
     @el.removeClass("active")
     @headingText.html @action_title
     $('[data-link="graphs"]').removeClass 'pressed'
 
 
   # Graph interface functions
+  updateTitle: =>
+    switch @options.graphType
+      when 'histogram'
+        @graphTitle.text "Distribution of #{@prettyKey(@options.xAxis)}"
+      when 'scatterplot'
+        @graphTitle.text "#{@prettyKey(@options.xAxis)} vs. #{@prettyKey(@options.yAxis)}"
+
   setXAxis: (e) =>
     @options.xAxis = $(e.currentTarget).val()
+    @updateTitle()
 
   setYAxis: (e) =>
     @options.yAxis = $(e.currentTarget).val()
+    @updateTitle()
 
   setGraphType: (e) =>
     button = $(e.currentTarget)
