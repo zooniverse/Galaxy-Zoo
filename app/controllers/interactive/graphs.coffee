@@ -18,6 +18,7 @@ class Graphs extends Spine.Controller
     'change #x-axis'                          : 'setXAxis'
     'change #y-axis'                          : 'setYAxis'
     'click button[name="screenshot"]'         : 'generateImageFromGraph'
+    'click button[name="download"]'           : 'generateCSV'
 
   constructor: ->
     super
@@ -125,6 +126,37 @@ class Graphs extends Spine.Controller
     img = canvas.toDataURL 'image/png'
 
     window.open img
+
+  generateCSV: (e) =>
+    headerString = @createCSVHeader(@graph.filteredData[0]) + '\n'
+    console.log headerString
+    bodyString = @createCSVBody @graph.filteredData
+    console.log bodyString
+    csv = headerString + bodyString
+    window.location.href = "data:application/csv;charset=UTF-8," + encodeURIComponent(csv)
+      
+  createCSVHeader: (datum, prefix='') =>
+    header = new String
+    for key, value of datum
+      if typeof(value) is 'object'
+        header = header + @createCSVHeader value, "#{key}_"
+      else
+        header = header + "," + prefix + key
+    return header
+
+  createCSVBody: (data) =>
+    body = new Array
+    body.push @createCSVLine datum for datum in data
+    return body.join '\n'
+
+  createCSVLine: (datum) =>
+    line = new String
+    for key, value of datum
+      if typeof(value) is 'object'
+        line = line + @createCSVLine value
+      else
+        line = line + "," + value
+    return line
 
   # Helper functions
   setPressed: (button) =>
