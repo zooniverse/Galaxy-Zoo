@@ -112,6 +112,24 @@ class Graphs extends Spine.Controller
 
   onSubmit: (e) =>
     e.preventDefault()
+
+    # Validation
+    switch @options.graphType
+      when "histogram"
+        xaxis_el = $('#x-axis')
+        unless xaxis_el.val()
+          xaxis_el.addClass 'error'
+          return
+        else
+          xaxis_el.removeClass 'error'
+
+    unless @options.sampleSize
+      $('#sample-size').addClass 'error'
+      return
+    else
+      $('#sample-size').removeClass 'error'
+
+
     @el.find('svg').empty()
 
     switch @options.graphType
