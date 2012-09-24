@@ -16,6 +16,7 @@ class Graphs extends Spine.Controller
     'click #setting-data-source button'       : 'setDataSource'
     'change #sample-size'                     : 'setSampleSize'
     'click button[type="submit"]'             : 'onSubmit'
+    'click button[name="screenshot"]'         : 'generateImageFromGraph'
 
   constructor: ->
     super
@@ -117,10 +118,24 @@ class Graphs extends Spine.Controller
 
     # @histogram.getDataSource("InteractiveSubject", {sample: @options.sample, limit: parseInt(@sampleSize.val()), user: false})
 
+  generateImageFromGraph: (e) =>
+    svg_string = @serializeXmlNode document.querySelector '#graph svg'
+    console.log svg_string
+    canvg 'canvas', svg_string
+    canvas = document.getElementById 'canvas'
+    img = canvas.toDataURL 'image/png'
+
+    window.open img
+
   # Helper functions
   setPressed: (button) =>
     button.siblings().removeClass 'pressed'
     button.toggleClass 'pressed'
    
+  serializeXmlNode: (xmlNode) ->
+    if typeof window.XMLSerializer != "undefined"
+      (new window.XMLSerializer()).serializeToString(xmlNode)
+    else if typeof xmlNode.xml != "undefined"
+      return xmlNode.xml
 
 module.exports = Graphs

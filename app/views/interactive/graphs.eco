@@ -68,10 +68,12 @@
       </li>
     </ul>
     <div id="graph"><svg></svg></div>
+    <canvas id="canvas"></canvas>
   </div>
 
   <div id="actions">
     <button type="submit">Create Graph</button>
+    <button type="button" name="screenshot">Take Snapshot</button>
   </div>
 </form>
 
