@@ -70,13 +70,14 @@ class MyGalaxies extends Spine.Controller
         values: counts
       }]
 
-    d3.selectAll('.nv-bar text').attr('dy','0.35em')
 
     d3.select('[data-id="' + sample.classification_id + '"] svg')
       .datum(data)
       .transition().duration(500)
       .call(chart)
 
+    d3.selectAll('.nv-bar text').attr('dy','0.35em')
+    
     # Not the correct way.
     d3.select('[data-id="' + sample.classification_id + '"] svg .nv-bar:nth-child(' + (your_classification + 1) + ') rect').style('fill','#ff9c00')
       .call(chart)

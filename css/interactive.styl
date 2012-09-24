@@ -268,7 +268,7 @@ p
       font-weight: 700
 
     li
-      margin: 0 0 7px
+      height: 55px
       list-style: none
       transition: all 0.35s linear
       &:before,&:after
@@ -277,20 +277,36 @@ p
       &:after
         clear: both
 
+      &:last-child
+        margin: 0
+
       &.buttons
         margin: 0
         padding: 0
+        &.nolabel
+          height: 35px
         div
           button-style(left)
           button
             margin: 0 9px 0 0
             &:last-child
               margin: 0
+
       &.separator
-        height: 0
-        margin: 10px 0
-        border-top: 1px solid darken(#d6d6d6,11%)
-        border-bottom: 1px solid #f9f9f9
+        position: relative
+        height: 30px
+        &:before, &:after
+          position: absolute
+          content: ''
+          left: 0
+          width: 100%
+          height: 0
+        &:before
+          top: 15px
+          border-top: 1px solid darken(#d6d6d6,11%)
+        &:after
+          top: 16px
+          border-bottom: 1px solid #f9f9f9
 
       &.unselectable
         color: #aaa
@@ -317,9 +333,9 @@ p
 
 #graph
   display: inline
-  float: left
+  float: right
   width: 6*$partridge + 7*$gutter
-  height: 310px
+  height: 333px
   border: 1px solid #C0C0C0
   background: $light-gray
   padding-left: 15px
