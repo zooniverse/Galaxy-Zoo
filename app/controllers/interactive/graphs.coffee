@@ -64,11 +64,9 @@ class Graphs extends Spine.Controller
 
   # Graph interface functions
   setXAxis: (e) =>
-    console.log $(e.currentTarget).val()
     @options.xAxis = $(e.currentTarget).val()
 
   setYAxis: (e) =>
-    console.log $(e.currentTarget).val()
     @options.yAxis = $(e.currentTarget).val()
 
   setGraphType: (e) =>
@@ -128,7 +126,7 @@ class Graphs extends Spine.Controller
         else
           $('#x-axis').removeClass 'error'
 
-        unless $('y-axis').val()
+        unless $('#y-axis').val()
           $('#y-axis').addClass 'error'
           return
         else
@@ -159,7 +157,7 @@ class Graphs extends Spine.Controller
 
     @graph.receiveData Sample.randomSample @options.sampleSize
     # @graph.getDataSource("SkyServerSubject", @options.sampleSize)
-    # @histogram.getDataSource("InteractiveSubject", {sample: @options.sample, limit: parseInt(@sampleSize.val()), user: false})
+    # @graph.getDataSource("InteractiveSubject", {sample: @options.sample, limit: parseInt(@sampleSize.val()), user: false})
 
 
   generateCSV: (e) =>
