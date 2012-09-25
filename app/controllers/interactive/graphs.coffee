@@ -1,4 +1,3 @@
-Spine = require 'spine'
 Sample = require 'lib/sample_interactive_data'
 Scatterplot = require 'ubret/lib/controllers/Scatterplot'
 Histogram = require 'ubret/lib/controllers/Histogram'
@@ -7,9 +6,10 @@ BaseController = require 'ubret/lib/controllers/BaseController'
 class Graphs extends BaseController
 
   elements:
-    '#x-axis-item'   : 'xAxisItem'
-    '#y-axis-item'   : 'yAxisItem'
-    'h3#graph-title' : 'graphTitle'
+    '#x-axis-item'              : 'xAxisItem'
+    '#y-axis-item'              : 'yAxisItem'
+    'h3#graph-title'            : 'graphTitle'
+    'a[download="my_data.csv"]' : 'dataDownload'
 
   events:
     'click #setting-variable-control button'  : 'setGraphType'
@@ -20,7 +20,6 @@ class Graphs extends BaseController
     'change #x-axis'                          : 'setXAxis'
     'change #y-axis'                          : 'setYAxis'
     'click button[name="screenshot"]'         : 'generateImageFromGraph'
-    'click button[name="download"]'           : 'generateCSV'
 
   constructor: ->
     super
@@ -170,15 +169,14 @@ class Graphs extends BaseController
     @graph.receiveData Sample.randomSample @options.sampleSize
     # @graph.getDataSource("SkyServerSubject", @options.sampleSize)
     # @graph.getDataSource("InteractiveSubject", {sample: @options.sample, limit: parseInt(@sampleSize.val()), user: false})
+    
+    dataURI = "data:text/csv;charset=UTF-8," + encodeURIComponent(@generateCSV())
+    @dataDownload.attr 'href', dataURI
 
-
-  generateCSV: (e) =>
+  generateCSV: =>
     headerString = (@createCSVHeader(@graph.filteredData[0]) + '\n').slice(1)
-    console.log headerString
     bodyString = @createCSVBody @graph.filteredData
-    console.log bodyString
-    csv = headerString + bodyString
-    window.location.href = "data:text/csv;charset=UTF-8," + encodeURIComponent(csv)
+    return headerString + bodyString
       
   createCSVHeader: (datum, prefix='') =>
     header = new String
