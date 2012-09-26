@@ -157,7 +157,7 @@ class Graphs extends BaseController
       when "histogram"
         @graph = new Histogram {el: '#graph', width: 512, height: 310, variable: @options.xAxis}
       when "scatterplot"
-        @graph = new Scatterplot {el: '#graph', xAxisKey: @options.xAxis, yAxisKey: @options.yAxis}
+        @graph = new Scatterplot {el: '#graph', width: 512, height: 310, xAxisKey: @options.xAxis, yAxisKey: @options.yAxis}
 
     @graph.channel = 'graph'
 
