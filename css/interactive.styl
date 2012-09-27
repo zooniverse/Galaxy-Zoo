@@ -295,7 +295,8 @@ p
     li
       height: 55px
       list-style: none
-      transition: all 0.35s linear
+      transition: all 0.5s ease-in
+      opacity: 0
       &:before,&:after
         content: ''
         display: table
@@ -333,12 +334,8 @@ p
           top: 16px
           border-bottom: 1px solid #f9f9f9
 
-      &.unselectable
-        color: #aaa
-        select
-          background: none no-repeat 95% center
-          border: 1px solid #bbb
-          color: #aaa
+      &.show-control
+        opacity: 1
 
     select
       position: relative

@@ -2,14 +2,14 @@
   <div id="graph_area">
     <ul class="controls">
 
-      <li class="buttons nolabel">
+      <li class="buttons nolabel show-control">
         <div id="setting-variable-control">
           <button type="button" data-variables="histogram">One-Variable</button>
           <button type="button" data-variables="scatterplot">Two-Variable</button>
         </div>
       </li>
 
-      <li id="x-axis-item">
+      <li id="x-axis-item" class="show-control">
         <label>I'd like to see how...</label>
         <select id="x-axis" name="xAxis">
           <option value="">Choose x-axis variable</option>
@@ -35,7 +35,7 @@
         </select>
       </li>
 
-      <li class="buttons">
+      <li class="buttons" id="galaxy-types">
         <label>in the following galaxy type...</label>
         <div id="setting-galaxy-type">
           <button type="button" data-type="smooth">Smooth</button>

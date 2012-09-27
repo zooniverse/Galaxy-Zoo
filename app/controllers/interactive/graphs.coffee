@@ -10,6 +10,9 @@ class Graphs extends BaseController
     '#y-axis-item'              : 'yAxisItem'
     'h3#graph-title'            : 'graphTitle'
     'a[download="my_data.csv"]' : 'dataDownload'
+    '#galaxy-types'             : 'typeButtons'
+    '#galaxy-sets'              : 'setButtons'
+    '#sample-size'              : 'sizeSelect'
 
   events:
     'click #setting-variable-control button'  : 'setGraphType'
@@ -43,19 +46,14 @@ class Graphs extends BaseController
 
     @options.graphType = params.graphType or 'histogram'
 
-
     switch @options.graphType
       when "histogram"
         @options.graphType = 'histogram'
         @setPressed $('[data-variables="histogram"]')
         @xAxisItem.find('label').html 'I\'d like to see...'
-        @yAxisItem.addClass 'unselectable'
-        @yAxisItem.find('select').attr 'disabled', 'disabled'
       when "scatterplot"
         @options.graphType = 'scatterplot'
         @setPressed $('[data-variables="scatterplot"]')
-        @yAxisItem.removeClass 'unselectable'
-        @yAxisItem.find('select').removeAttr 'disabled'
 
   deactivate: ->
     super
@@ -63,22 +61,28 @@ class Graphs extends BaseController
     @headingText.html @action_title
     $('[data-link="graphs"]').removeClass 'pressed'
 
-
   # Graph interface functions
   updateTitle: =>
     switch @options.graphType
       when 'histogram'
         @graphTitle.text "Distribution of #{@prettyKey(@options.xAxis)}"
       when 'scatterplot'
+        @options.yAxis = '' if typeof(@options.yAxis) is 'undefined'
         @graphTitle.text "#{@prettyKey(@options.xAxis)} vs. #{@prettyKey(@options.yAxis)}"
 
   setXAxis: (e) =>
     @options.xAxis = $(e.currentTarget).val()
     @updateTitle()
 
+    if @options.graphType is 'scattplot'
+      @yAxisItem.toggleClass 'show-control' 
+    else
+      @typeButtons.toggleClass 'show-control'
+
   setYAxis: (e) =>
     @options.yAxis = $(e.currentTarget).val()
     @updateTitle()
+    @typeButtons.toggleClass 'show-control'
 
   setGraphType: (e) =>
     button = $(e.currentTarget)
@@ -88,12 +92,8 @@ class Graphs extends BaseController
     switch $(e.currentTarget).data('variables')
       when "histogram"
         @xAxisItem.find('label').html 'I\'d like to see...'
-        @yAxisItem.addClass 'unselectable'
-        @yAxisItem.find('select').attr 'disabled', 'disabled'
       when "scatterplot"
         @xAxisItem.find('label').html 'I\'d like to see how...'
-        @yAxisItem.removeClass 'unselectable'
-        @yAxisItem.find('select').removeAttr 'disabled'
 
   setGalaxyType: (e) =>
     button = $(e.currentTarget)
@@ -102,11 +102,14 @@ class Graphs extends BaseController
     else
       @options.galaxyType = button.data('type')
     @setPressed button, false
+    @setButtons.toggleClass 'show-control'
 
   setDataSource: (e) =>
     button = $(e.currentTarget)
     @options.dataSource = button.data('source')
     @setPressed button
+    @sizeSelect.toggleClass 'show-control'
+    @onSumbit(e)
 
   setSampleSize: (e) =>
     @options.sampleSize = $(e.currentTarget).val()
