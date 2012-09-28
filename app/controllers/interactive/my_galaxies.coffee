@@ -26,62 +26,92 @@ class MyGalaxies extends Spine.Controller
     for sample in @samples
       @generateChart sample
 
-  formatData: (data) ->
+  formatData: (sample) ->
     feature_counts = []
-    for key, value of data
-      switch key
-        when "smooth_count" then key = "Smooth"
-        when "disk_count" then key = "Disk"
-        when "other_count" then key = "Other"
-
-      feature_counts.push {
-          'label': key,
-          'value': value
-        }
-    feature_counts
-    
-
-  generateChart: (sample) ->
-    counts = @formatData sample.subject
-
+    nice_key = ''
     your_classification = key for key, value of sample.group_classification when value > 0
 
-    switch your_classification
-      when "smooth_count" then your_classification = 0
-      when "disk_count" then your_classification = 1
-      when "other_count" then your_classification = 2
+    for key, value of sample.subject
 
-    chart = nv.models.multiBarHorizontalChart()
-      .x (d) ->
-        d.label
-      .y (d) ->
-        d.value
-      .showControls(false)
-      .showLegend(false)
-      .showValues(true)
-      .tooltips(false)
+      switch key
+        when "smooth_count" then nice_key = "Smooth"
+        when "disk_count" then nice_key = "Disk"
+        when "other_count" then nice_key = "Other"
 
-    chart.multibar.valueFormat(d3.format(',.0f'))
+      if your_classification == key
+        selected = true
+      else
+        selected = false
 
-    color = d3.scale.linear()
-      .domain()
-    data = [{
+      feature_counts.push {
+          'key': key,
+          'label': nice_key,
+          'value': value,
+          'selected': selected
+        }
+
+    feature_counts
+
+  generateChart: (sample) ->
+    counts = @formatData sample
+
+    data = {
         key: 'Galaxy Features',
         values: counts
-      }]
+      }
 
+    chart = d3.select('[data-id="' + sample.classification_id + '"] svg')
+      .append('g')
+      .attr('width', 265)
+      .attr('height', 100)
 
-    d3.select('[data-id="' + sample.classification_id + '"] svg')
-      .datum(data)
+    x = d3.scale.linear()
+      .domain([0, d3.max(data.values, (d) -> d.value)])
+      .range([1, 150])
+
+    color = d3.scale.ordinal()
+      .range(['#1e7797', '#ff9c00'])
+
+    chart.selectAll('rect')
+      .data(data.values)
+      .enter().append('rect')
+      .attr('y', ((d,i) -> i * 22))
+      .attr('x', 55)
+      .attr('height', 20)
+      .style('fill', ((d, i) ->
+          if d.selected
+            '#ff9c00'
+          else
+            '#1e7797'
+        ))
+      .on("mouseover", ((d) ->
+          d3.select(@).classed('hovered', true)
+        ))
+      .on("mouseout", ((d) ->
+          d3.select(@).classed('hovered', false)
+        ))
       .transition().duration(500)
-      .call(chart)
+      .attr('width', ((d) -> x d.value))
 
-    d3.selectAll('.nv-bar text').attr('dy','0.35em')
-    
-    # Not the correct way.
-    d3.select('[data-id="' + sample.classification_id + '"] svg .nv-bar:nth-child(' + (your_classification + 1) + ') rect').style('fill','#ff9c00')
-      .call(chart)
 
-    nv.utils.windowResize(chart.update)
+    chart.selectAll('text.label')
+      .data(data.values).enter()
+      .append('text')
+      .attr('class','label')
+      .attr('y', ((d,i) -> i * 22))
+      .attr('x', 45)
+      .attr('dy', '1.3em')
+      .attr('text-anchor', 'end')
+      .text((d, i) -> d.label)
+
+    chart.selectAll('text.value')
+      .data(data.values).enter()
+      .append('text')
+      .attr('class','value')
+      .attr('y', ((d,i) -> i * 22))
+      .attr('x', ((d) -> x d.value))
+      .attr('dx', 59)
+      .attr('dy', '1.25em')
+      .text((d) -> d.value)
 
 module.exports = MyGalaxies

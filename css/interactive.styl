@@ -193,13 +193,15 @@ button-style($alignment = 'right')
         float: right
         width: 265px
         height: 150px
+        margin: 20px 0 0
         text
           font-size: 12px
           fill: #000
-        .nv-bar
+        g
           rect
-            fill: #1e7797
-            stroke: none
+            fill-opacity: 0.8
+            &.hovered
+              fill-opacity: 1
           text
             stroke: none
         .nv-y
