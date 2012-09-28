@@ -1,6 +1,7 @@
 Sample = require 'lib/sample_interactive_data'
 Scatterplot = require 'ubret/lib/controllers/Scatterplot'
 Histogram = require 'ubret/lib/controllers/Histogram'
+Graph = require 'ubret/lib/controllers/Graph'
 BaseController = require 'ubret/lib/controllers/BaseController'
 
 class Graphs extends BaseController
@@ -12,17 +13,17 @@ class Graphs extends BaseController
     'a[download="my_data.csv"]' : 'dataDownload'
     '#galaxy-types'             : 'typeButtons'
     '#galaxy-sets'              : 'setButtons'
-    '#sample-size'              : 'sizeSelect'
+    '#sample-sizes'             : 'sizeSelector'
 
   events:
     'click #setting-variable-control button'  : 'setGraphType'
     'click #setting-galaxy-type button'       : 'setGalaxyType'
     'click #setting-data-source button'       : 'setDataSource'
     'change #sample-size'                     : 'setSampleSize'
-    'click button[type="submit"]'             : 'onSubmit'
     'change #x-axis'                          : 'setXAxis'
     'change #y-axis'                          : 'setYAxis'
     'click button[name="screenshot"]'         : 'generateImageFromGraph'
+    'click button[name="reset"]'              : 'reset'
 
   constructor: ->
     super
@@ -39,81 +40,113 @@ class Graphs extends BaseController
     @render()
     
     @setPressed $('[data-link="graphs"]')
-    @setPressed $('[data-source="all"]')
+    @setPressed $('[data-source="group"]')
 
     @options = new Object
     @headingText.html '<h2>Construct Your Question</h2>'
 
     @options.graphType = params.graphType or 'histogram'
 
-    switch @options.graphType
-      when "histogram"
-        @options.graphType = 'histogram'
-        @setPressed $('[data-variables="histogram"]')
-        @xAxisItem.find('label').html 'I\'d like to see...'
-      when "scatterplot"
-        @options.graphType = 'scatterplot'
-        @setPressed $('[data-variables="scatterplot"]')
+    if @options.graphType == 'histogram'
+      @options.graphType = 'histogram'
+      @setPressed $('[data-variables="histogram"]')
+      @xAxisItem.find('label').html 'I\'d like to see...'
+      @graph = new Histogram { el: '#graph', channel: 'graph', height: 310, width: 512 } 
+    else
+      @options.graphType = 'scatterplot'
+      @setPressed $('[data-variables="scatterplot"]')
+      @graph = new Scatterplot { el: '#graph', channel: 'graph', height: 310, width: 512 } 
 
-  deactivate: ->
+  deactivate: =>
     super
     @el.removeClass("active")
     @headingText.html @action_title
     $('[data-link="graphs"]').removeClass 'pressed'
 
   # Graph interface functions
-  updateTitle: =>
-    switch @options.graphType
-      when 'histogram'
-        @graphTitle.text "Distribution of #{@prettyKey(@options.xAxis)}"
-      when 'scatterplot'
-        @options.yAxis = '' if typeof(@options.yAxis) is 'undefined'
-        @graphTitle.text "#{@prettyKey(@options.xAxis)} vs. #{@prettyKey(@options.yAxis)}"
+  setGraphType: (e) =>
+    button = $(e.currentTarget)
+    @options.graphType = button.data('variables')
+    @setPressed button
+    @el.find('svg').empty()
+    @graph = new Graph { el: '#graph', channel: 'graph', height: 512, width: 310 }
+
+    if $(e.currentTarget).data('variables') is 'histogram'
+      @xAxisItem.find('label').html 'I\'d like to see...'
+    else
+      @xAxisItem.find('label').html 'I\'d like to see how...'
 
   setXAxis: (e) =>
     @options.xAxis = $(e.currentTarget).val()
     @updateTitle()
 
-    if @options.graphType is 'scattplot'
-      @yAxisItem.toggleClass 'show-control' 
+    if @options.graphType is 'histogram'
+      @typeButtons.addClass 'show-control'
+      @graph.setVariable @options.xAxis
     else
-      @typeButtons.toggleClass 'show-control'
+      @yAxisItem.addClass 'show-control' 
+      @graph.setXVar @options.xAxis
 
   setYAxis: (e) =>
     @options.yAxis = $(e.currentTarget).val()
     @updateTitle()
-    @typeButtons.toggleClass 'show-control'
+    @typeButtons.addClass 'show-control'
 
-  setGraphType: (e) =>
-    button = $(e.currentTarget)
-    @options.graphType = button.data('variables')
-    @setPressed button
-
-    switch $(e.currentTarget).data('variables')
-      when "histogram"
-        @xAxisItem.find('label').html 'I\'d like to see...'
-      when "scatterplot"
-        @xAxisItem.find('label').html 'I\'d like to see how...'
+    @graph.setYVar
 
   setGalaxyType: (e) =>
     button = $(e.currentTarget)
     if button.hasClass 'pressed'
       @options.galaxyType = null
+      @graph.filters = new Array
     else
       @options.galaxyType = button.data('type')
+
+    if @options.galaxyType
+      filter = 
+        func: new Function("item", "return item['type'] === '#{@options.galaxyType}_count'")
+      @graph.filters.push filter
+
     @setPressed button, false
-    @setButtons.toggleClass 'show-control'
+    @setButtons.addClass 'show-control'
+    @sizeSelector.addClass 'show-control'
 
   setDataSource: (e) =>
     button = $(e.currentTarget)
     @options.dataSource = button.data('source')
+
+    if not (button.hasClass 'pressed')
+      @sizeSelector.find('option').toggle()  
+      @sizeSelector.find('option[value=""]').show()
     @setPressed button
-    @sizeSelect.toggleClass 'show-control'
-    @onSumbit(e)
 
   setSampleSize: (e) =>
     @options.sampleSize = $(e.currentTarget).val()
+    @graph.receiveData Sample.randomSample @options.sampleSize
 
+    dataURI = "data:text/csv;charset=UTF-8," + encodeURIComponent(@generateCSV())
+    @dataDownload.attr 'href', dataURI
+
+  reset: (e) =>
+    @el.find('svg').empty()
+    @graphTitle.text ''
+
+    @setButtons.removeClass 'show-control'
+    @sizeSelector.removeClass 'show-control'
+    @typeButtons.removeClass 'show-control'
+    @yAxisItem.removeClass 'show-control'
+
+    @setPressed $('[data-link="graphs"]')
+    @setPressed $('[data-source="group"]')
+
+    @typeButtons.find('.pressed').removeClass 'pressed'
+    @options = {graphType: @options.graphType}
+
+    @graph.data = new Array
+    @graph.filteredData = new Array
+    @graph.filters = new Array
+
+  # Image Generation
   generateImageFromGraph: (e) =>
     svg_string = @serializeXmlNode document.querySelector '#graph svg'
     canvg 'canvas', svg_string
@@ -122,60 +155,7 @@ class Graphs extends BaseController
     img = canvas.toDataURL 'image/png'
     window.open img
 
-  onSubmit: (e) =>
-    e.preventDefault()
-
-    # Validation
-    switch @options.graphType
-      when 'histogram'
-        unless $('#x-axis').val()
-          $('#x-axis').addClass 'error'
-          return
-        else
-          $('#x-axis').removeClass 'error'
-      when 'scatterplot'
-        unless $('#x-axis').val()
-          $('#x-axis').addClass 'error'
-          return
-        else
-          $('#x-axis').removeClass 'error'
-
-        unless $('#y-axis').val()
-          $('#y-axis').addClass 'error'
-          return
-        else
-          $('#y-axis').removeClass 'error'
-
-    unless @options.sampleSize
-      $('#sample-size').addClass 'error'
-      return
-    else
-      $('#sample-size').removeClass 'error'
-    # End validation
-
-    # Clear previous graph
-    @el.find('svg').empty()
-
-    switch @options.graphType
-      when "histogram"
-        @graph = new Histogram {el: '#graph', width: 512, height: 310, variable: @options.xAxis}
-      when "scatterplot"
-        @graph = new Scatterplot {el: '#graph', width: 512, height: 310, xAxisKey: @options.xAxis, yAxisKey: @options.yAxis}
-
-    @graph.channel = 'graph'
-
-    filter = {}
-    if @options.galaxyType
-      filter.func = new Function "item", "return item['type'] === '#{@options.galaxyType}'"
-      @graph.filters.push filter
-
-    @graph.receiveData Sample.randomSample @options.sampleSize
-    # @graph.getDataSource("SkyServerSubject", @options.sampleSize)
-    # @graph.getDataSource("InteractiveSubject", {sample: @options.sample, limit: parseInt(@sampleSize.val()), user: false})
-    
-    dataURI = "data:text/csv;charset=UTF-8," + encodeURIComponent(@generateCSV())
-    @dataDownload.attr 'href', dataURI
-
+  # CSV Generation
   generateCSV: =>
     headerString = (@createCSVHeader(@graph.filteredData[0]) + '\n').slice(1)
     bodyString = @createCSVBody @graph.filteredData
@@ -205,6 +185,13 @@ class Graphs extends BaseController
     return line
 
   # Helper functions
+  updateTitle: =>
+    if @options.graphType = 'histogram'
+      @graphTitle.text "Distribution of #{@prettyKey(@options.xAxis)}"
+    else
+      @options.yAxis = '' if typeof(@options.yAxis) is 'undefined'
+      @graphTitle.text "#{@prettyKey(@options.xAxis)} vs. #{@prettyKey(@options.yAxis)}"
+
   setPressed: (button, force_selection = true) =>
     # Check for case where no button is selected.
     unless button.parent().find('button').hasClass 'pressed'
@@ -224,7 +211,5 @@ class Graphs extends BaseController
       (new window.XMLSerializer()).serializeToString(xmlNode)
     else if typeof xmlNode.xml != "undefined"
       xmlNode.xml
-
-
 
 module.exports = Graphs

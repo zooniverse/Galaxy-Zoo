@@ -32,7 +32,6 @@ Sample =
         smooth_count: 0
         disk_count: 0
         other_count: 0
-
      
     metadata = 
       redshift: 0 
@@ -43,6 +42,7 @@ Sample =
       absolute_brightness: 0
     
     random.group_classification[key] = 1
+    random['type'] = key
       
     for type in types
       random.subject[type] = @createRandomCount()

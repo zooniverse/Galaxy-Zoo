@@ -45,23 +45,23 @@
 
       <li class="separator"></li>
 
-      <li class="buttons">
+      <li class="buttons" id="galaxy-sets">
         <label>I'd like to use data from...</label>
         <div id="setting-data-source">
-          <button type="button" data-source="all">All Galaxies</button>
           <button type="button" data-source="group">Our Galaxies</button>
+          <button type="button" data-source="all">All Galaxies</button>
         </div>
       </li>
 
-      <li>
+      <li id="sample-sizes">
         <label>with a sample size of...</label>
         <select id="sample-size" name="sampleSize">
           <option value="">Choose sample size</option>
           <option value="10">10 of Our Galaxies</option>
           <option value="50">50 of Our Galaxies</option>
           <option value="100">100 of Our Galaxies</option>
-          <option value="500">500 randomly selected Galaxies</option>
-          <option value="1000">1000 randomly selected Galaxies</option>
+          <option value="500" style="display: none">500 randomly selected Galaxies</option>
+          <option value="1000" style="display: none">1000 randomly selected Galaxies</option>
         </select>
 
       </li>
@@ -74,7 +74,7 @@
   </div>
 
   <div id="actions">
-    <button type="submit">Create Graph</button>
+    <button type="button" name="reset">Reset Graph</button>
     <div class="misc">
       <button type="button" name="screenshot">Take Snapshot</button>
       <div class="download-button">
