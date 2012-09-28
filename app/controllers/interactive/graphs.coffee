@@ -96,9 +96,10 @@ class Graphs extends BaseController
 
   setGalaxyType: (e) =>
     button = $(e.currentTarget)
+    @graph.filters = new Array
+
     if button.hasClass 'pressed'
       @options.galaxyType = null
-      @graph.filters = new Array
     else
       @options.galaxyType = button.data('type')
 
