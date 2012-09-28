@@ -1,7 +1,6 @@
 Sample = require 'lib/sample_interactive_data'
 Scatterplot = require 'ubret/lib/controllers/Scatterplot'
 Histogram = require 'ubret/lib/controllers/Histogram'
-Graph = require 'ubret/lib/controllers/Graph'
 BaseController = require 'ubret/lib/controllers/BaseController'
 
 class Graphs extends BaseController
@@ -47,13 +46,11 @@ class Graphs extends BaseController
 
     @options.graphType = params.graphType or 'histogram'
 
-    if @options.graphType == 'histogram'
-      @options.graphType = 'histogram'
+    if @options.graphType is 'histogram'
       @setPressed $('[data-variables="histogram"]')
       @xAxisItem.find('label').html 'I\'d like to see...'
       @graph = new Histogram { el: '#graph', channel: 'graph', height: 310, width: 512 } 
     else
-      @options.graphType = 'scatterplot'
       @setPressed $('[data-variables="scatterplot"]')
       @graph = new Scatterplot { el: '#graph', channel: 'graph', height: 310, width: 512 } 
 
@@ -67,14 +64,17 @@ class Graphs extends BaseController
   setGraphType: (e) =>
     button = $(e.currentTarget)
     @options.graphType = button.data('variables')
+
     @setPressed button
     @el.find('svg').empty()
-    @graph = new Graph { el: '#graph', channel: 'graph', height: 512, width: 310 }
+    @reset()
 
     if $(e.currentTarget).data('variables') is 'histogram'
       @xAxisItem.find('label').html 'I\'d like to see...'
+      @graph = new Histogram { el: '#graph', channel: 'graph', height: 310, width: 512 } 
     else
       @xAxisItem.find('label').html 'I\'d like to see how...'
+      @graph = new Scatterplot { el: '#graph', channel: 'graph', height: 310, width: 512 } 
 
   setXAxis: (e) =>
     @options.xAxis = $(e.currentTarget).val()
@@ -92,7 +92,7 @@ class Graphs extends BaseController
     @updateTitle()
     @typeButtons.addClass 'show-control'
 
-    @graph.setYVar
+    @graph.setYVar @options.yAxis
 
   setGalaxyType: (e) =>
     button = $(e.currentTarget)
@@ -187,7 +187,7 @@ class Graphs extends BaseController
 
   # Helper functions
   updateTitle: =>
-    if @options.graphType = 'histogram'
+    if @options.graphType is 'histogram'
       @graphTitle.text "Distribution of #{@prettyKey(@options.xAxis)}"
     else
       @options.yAxis = '' if typeof(@options.yAxis) is 'undefined'

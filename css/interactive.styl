@@ -279,7 +279,7 @@ p
       font-weight: 700
       line-height: 28px
       text-shadow: 0 1px 0 #1576a3
-      &[type="submit"]
+      &[name="reset"]
         width: (3 * $partridge) + $gutter - 5px
 
   .controls
@@ -367,6 +367,18 @@ p
   border: 1px solid #C0C0C0
   background: $light-gray
   padding-left: 15px
+
+  .tooltip
+    font-size: 10px
+    position: absolute
+    background: #cdcdcd
+    border-radius: 5px
+    box-shadow: 3px 3px 3px #000
+    opacity: .6
+
+    ul
+      list-style-type: none
+
 
   h3
     margin: 5px auto 0
