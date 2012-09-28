@@ -77,7 +77,6 @@ class MyGalaxies extends Spine.Controller
       .enter().append('rect')
       .attr('y', ((d,i) -> i * 22))
       .attr('x', 55)
-      .attr('width', ((d) -> x d.value))
       .attr('height', 20)
       .style('fill', ((d, i) ->
           if d.selected
@@ -91,6 +90,9 @@ class MyGalaxies extends Spine.Controller
       .on("mouseout", ((d) ->
           d3.select(@).classed('hovered', false)
         ))
+      .transition().duration(500)
+      .attr('width', ((d) -> x d.value))
+
 
     chart.selectAll('text.label')
       .data(data.values).enter()
