@@ -37,7 +37,7 @@
         <label>in the following galaxy type...</label>
         <div id="setting-galaxy-type">
           <button type="button" data-type="smooth">Smooth</button>
-          <button type="button" data-type="feature">Feature/Disk</button>
+          <button type="button" data-type="disk">Feature/Disk</button>
         </div>
       </li>
 
