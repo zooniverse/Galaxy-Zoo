@@ -128,23 +128,18 @@ class MyGalaxies extends Spine.Controller
     subject = _.find @samples, (sample) => sample.classification_id == galaxy_id
     data.push subject
 
-    console.log 'Galaxy ID: ', galaxy_id
-    console.log 'Data: ', data
-
     subject_viewer = new SubjectViewer({el: '.dialog-content'})
     subject_viewer.receiveData data
 
     $('.dialog-underlay').show()
-    $('body').css 'overflow', 'hidden'
-    $(window).unbind 'scroll'
+    $('.dialog footer').hide()
+    $('.dialog-closer').addClass 'close'
+    
+    $('.dialog-closer').click ->
+      $('.dialog-underlay').hide()
+      $('.dialog footer').show()
 
-    $('.dialog-underlay').click ->
-      $(@).hide()
-      $('body').css 'overflow', 'auto'
-      $(window).scroll ->
-        @$.scrollTop($(window).scrollTop).scrollLeft($(window).scrollLeft)
 
-    console.log 'Subject Viewer', subject_viewer
 
 
 

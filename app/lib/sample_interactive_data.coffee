@@ -33,7 +33,8 @@ Sample =
         disk_count: 0
         other_count: 0
       image:
-        src: 'http://www.placehold.it/350x350'
+        src: 'http://www.placehold.it/250x250'
+    
 
     metadata = 
       redshift: 0 
