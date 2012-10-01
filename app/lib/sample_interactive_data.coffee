@@ -32,7 +32,8 @@ Sample =
         smooth_count: 0
         disk_count: 0
         other_count: 0
-     
+    
+
     metadata = 
       redshift: 0 
       color: 0
@@ -40,6 +41,8 @@ Sample =
       energy_output: 0
       apparent_size: 0
       absolute_brightness: 0
+      image:
+        src: 'http://www.placehold.it/350x350'
     
     random.group_classification[key] = 1
     random['type'] = key

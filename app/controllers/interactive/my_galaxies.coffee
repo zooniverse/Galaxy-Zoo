@@ -1,7 +1,14 @@
 Spine = require('spine')
 Sample = require 'lib/sample_interactive_data'
+Dialog = require 'lib/dialog'
+
+SubjectViewer = require 'ubret/lib/controllers/SubjectViewer'
+BaseController = require 'ubret/lib/controllers/BaseController'
 
 class MyGalaxies extends Spine.Controller
+
+  events:
+    'click .subject': 'popupViewer'
 
   constructor: ->
     super
@@ -113,5 +120,26 @@ class MyGalaxies extends Spine.Controller
       .attr('dx', 59)
       .attr('dy', '1.25em')
       .text((d) -> d.value)
+
+  popupViewer: (e) ->
+    galaxy_id = $(e.currentTarget).parents('.galaxy').data('id')
+
+    data = []
+    subject = _.find @samples, (sample) => sample.classification_id == galaxy_id
+    data.push subject
+
+    console.log 'Galaxy ID: ', galaxy_id
+    console.log 'Data: ', data
+
+    subject_viewer = new SubjectViewer({el: '.dialog-content'})
+    subject_viewer.receiveData data
+
+    $('.dialog-underlay').show()
+    $('.dialog-underlay').click ->
+      $(@).hide()
+
+    console.log 'Subject Viewer', subject_viewer
+
+
 
 module.exports = MyGalaxies
