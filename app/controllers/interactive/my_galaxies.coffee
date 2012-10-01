@@ -135,8 +135,14 @@ class MyGalaxies extends Spine.Controller
     subject_viewer.receiveData data
 
     $('.dialog-underlay').show()
+    $('body').css 'overflow', 'hidden'
+    $(window).unbind 'scroll'
+
     $('.dialog-underlay').click ->
       $(@).hide()
+      $('body').css 'overflow', 'auto'
+      $(window).scroll ->
+        @$.scrollTop($(window).scrollTop).scrollLeft($(window).scrollLeft)
 
     console.log 'Subject Viewer', subject_viewer
 
