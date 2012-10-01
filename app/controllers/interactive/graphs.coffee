@@ -60,6 +60,15 @@ class Graphs extends BaseController
     @headingText.html @action_title
     $('[data-link="graphs"]').removeClass 'pressed'
 
+  setGraph: =>
+    if @options.graphType is 'histogram'
+      @xAxisItem.find('label').html 'I\'d like to see...'
+      @graph = new Histogram { el: '#graph', channel: 'graph', height: 310, width: 512 } 
+    else
+      @xAxisItem.find('label').html 'I\'d like to see how...'
+      @graph = new Scatterplot { el: '#graph', channel: 'graph', height: 310, width: 512 } 
+
+
   # Graph interface functions
   setGraphType: (e) =>
     button = $(e.currentTarget)
@@ -69,12 +78,9 @@ class Graphs extends BaseController
     @el.find('svg').empty()
     @reset()
 
-    if $(e.currentTarget).data('variables') is 'histogram'
-      @xAxisItem.find('label').html 'I\'d like to see...'
-      @graph = new Histogram { el: '#graph', channel: 'graph', height: 310, width: 512 } 
-    else
-      @xAxisItem.find('label').html 'I\'d like to see how...'
-      @graph = new Scatterplot { el: '#graph', channel: 'graph', height: 310, width: 512 } 
+    @setGraph()
+
+    console.log @graph
 
   setXAxis: (e) =>
     @options.xAxis = $(e.currentTarget).val()
@@ -143,12 +149,7 @@ class Graphs extends BaseController
     @setPressed $('[data-source="group"]')
     @setPressed $("[data-variables=\"#{@options.graphType}\"]")
 
-    if $(e.currentTarget).data('variables') is 'histogram'
-      @xAxisItem.find('label').html 'I\'d like to see...'
-
-    @graph.data = new Array
-    @graph.filteredData = new Array
-    @graph.filters = new Array
+    @setGraph()
 
   # Image Generation
   generateImageFromGraph: (e) =>
