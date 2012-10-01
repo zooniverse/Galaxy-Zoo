@@ -108,6 +108,13 @@ class Graphs extends BaseController
         func: new Function("item", "return item['type'] === '#{@options.galaxyType}_count'")
       @graph.filters.push filter
 
+    if @options.galaxyType is 'disk'
+      @graph.color = 'orange'
+    else
+      @graph.color = 'teal'
+
+    @graph.start()
+
     @setPressed button, false
     @setButtons.addClass 'show-control'
     @sizeSelector.addClass 'show-control'
@@ -129,19 +136,15 @@ class Graphs extends BaseController
     @dataDownload.attr 'href', dataURI
 
   reset: (e) =>
-    @el.find('svg').empty()
-    @graphTitle.text ''
-
-    @setButtons.removeClass 'show-control'
-    @sizeSelector.removeClass 'show-control'
-    @typeButtons.removeClass 'show-control'
-    @yAxisItem.removeClass 'show-control'
+    @render()
+    @options = {graphType: @options.graphType}
 
     @setPressed $('[data-link="graphs"]')
     @setPressed $('[data-source="group"]')
+    @setPressed $("[data-variables=\"#{@options.graphType}\"]")
 
-    @typeButtons.find('.pressed').removeClass 'pressed'
-    @options = {graphType: @options.graphType}
+    if $(e.currentTarget).data('variables') is 'histogram'
+      @xAxisItem.find('label').html 'I\'d like to see...'
 
     @graph.data = new Array
     @graph.filteredData = new Array

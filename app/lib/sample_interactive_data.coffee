@@ -34,7 +34,6 @@ Sample =
         other_count: 0
       image:
         src: 'http://www.placehold.it/350x350'
-    
 
     metadata = 
       redshift: 0 
