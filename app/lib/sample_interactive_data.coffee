@@ -32,7 +32,10 @@ Sample =
         smooth_count: 0
         disk_count: 0
         other_count: 0
-     
+      image:
+        src: 'http://www.placehold.it/350x350'
+    
+
     metadata = 
       redshift: 0 
       color: 0

@@ -13,7 +13,7 @@
     <div class="galaxy" data-id="<%- galaxy.classification_id %>">
       <h3><%- galaxy.classification_id %></h3>
       <div class="subject_box">
-        <img src="http://www.placehold.it/140x140">
+        <img src="http://www.placehold.it/140x140" class="subject">
         <svg></svg>
       </div>
     </div>
