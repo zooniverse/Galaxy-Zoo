@@ -133,7 +133,8 @@ class MyGalaxies extends Spine.Controller
 
     $('.dialog-underlay').show()
     $('.dialog footer').hide()
-
+    $('.dialog-closer').addClass 'close'
+    
     $('.dialog-closer').click ->
       $('.dialog-underlay').hide()
       $('.dialog footer').show()
