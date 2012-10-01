@@ -5,7 +5,6 @@ FITSViewer = require 'controllers/fitsviewer'
 WebGL = require('lib/web_gl')
 
 class Examine extends Spine.Controller
-  @validDestination = "http://www.sdss.org.uk/"
   
   events: 
     "click #load-fits": "requestFITS"
@@ -31,6 +30,8 @@ class Examine extends Spine.Controller
   
   render: =>
     @html require('views/examine/examine')(@)
+    if @checkBrowserFeatures()
+      $('#controls').html require('views/examine/fitsviewer')()
   
   info: (key, values...) =>
     value = values.shift()
@@ -47,15 +48,10 @@ class Examine extends Spine.Controller
   checkBrowserFeatures: =>
     checkDataView = DataView?
     checkWorker = Worker?
-    checkWebGL = WebGL.check()
+    checkWebGL = window.WebGLRenderingContext?
     checkDataView and checkWorker and checkWebGL
   
   requestFITS: =>
-    
-    # First check browser version
-    unless @checkBrowserFeatures()
-      alert('Upgrade your browser to use this feature.')
-      return null
     
     # Deactive button
     $('#load-fits').attr("disabled", true)
@@ -67,15 +63,7 @@ class Examine extends Spine.Controller
     
     # Initialize viewer
     @viewer = new FITSViewer({el: $('#examine'), bands: bands})
-    
-    # Request from Portsmouth
-    console.log 'requesting FITS from Portsmouth'
-    
-    window.addEventListener("message", @receiveFITS, false)
-    msg =
-      survey: survey
-      id: id
-    $("#dataonwire")[0].contentWindow.postMessage(msg, Examine.validDestination)
+    @viewer.requestFITS(survey, id)
   
   sexagesimal: =>
     [ra, dec] = @subject.coords
@@ -90,14 +78,5 @@ class Examine extends Spine.Controller
     ss = (60 * mantissa).toFixed(3)
     
     return "#{dd}&deg; #{mm}' #{ss}\""
-  
-  receiveFITS: (e) =>
-    if e.data.error?
-      alert("Sorry, these data are not yet available.")
-      window.removeEventListener("message", @receiveFITS, false)
-    else
-      data = e.data
-      console.log data
-      @viewer.addImage(data.band, data.arraybuffer)
 
 module.exports = Examine

@@ -3,6 +3,8 @@ WebGL = require('lib/web_gl')
 Workers = require('lib/workers')
 
 class FITSViewer extends Spine.Controller
+  @validDestination = "http://www.sdss.org.uk/"
+  
   @bins = 500
   @viewportWidth  = 424
   @viewportHeight = 424
@@ -38,6 +40,22 @@ class FITSViewer extends Spine.Controller
     
     @setupWebGL()
   
+  requestFITS: (survey, id) =>
+    console.log 'requesting FITS from Portsmouth'
+    window.addEventListener("message", @receiveFITS, false)
+    msg =
+      survey: survey
+      id: id
+    $("#dataonwire")[0].contentWindow.postMessage(msg, FITSViewer.validDestination)
+    
+  receiveFITS: (e) =>
+    if e.data.error?
+      alert("Sorry, these data are not yet available.")
+      window.removeEventListener("message", @receiveFITS, false)
+    else
+      data = e.data
+      @addImage(data.band, data.arraybuffer)
+      
   createMetadata: =>
     @subjectInfo = $("#examine .subject-info")      
     @subjectInfo.append("""
@@ -80,7 +98,7 @@ class FITSViewer extends Spine.Controller
     @controls.empty() if @controls
     @stretch = null
   
-  addImage: (band, arraybuffer) ->
+  addImage: (band, arraybuffer) =>
     @images[band] = new FITS.File(arraybuffer)
     
     # Select the dataunit
@@ -89,7 +107,6 @@ class FITSViewer extends Spine.Controller
     # Interpret the bytes and compute min and max
     # TODO: Ship off to inline worker
     dataunit.getFrame()
-    
     dataunit.getExtremes()
     
     @computeStatistics(band)
