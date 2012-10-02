@@ -4,15 +4,15 @@
 
       <li class="buttons nolabel show-control">
         <div id="setting-variable-control">
-          <button type="button" data-variables="histogram">One-Variable</button>
-          <button type="button" data-variables="scatterplot">Two-Variable</button>
+          <button type="button" data-variables="histogram">Histogram</button>
+          <button type="button" data-variables="scatterplot">Scatter Graph</button>
         </div>
       </li>
 
       <li id="x-axis-item" class="show-control">
         <label>I'd like to see how...</label>
         <select id="x-axis" name="xAxis">
-          <option value="">Choose x-axis variable</option>
+          <option value="">Choose the x-axis variable</option>
           <option value="redshift">Redshift</option>
           <option value="color">Color</option>
           <option value="apparent_brightness">Apparent Brightness</option>
@@ -25,7 +25,7 @@
       <li id="y-axis-item">
         <label>relates to...</label>
         <select id="y-axis" name="yAxis">
-          <option value="">Choose y-axis variable</option>
+          <option value="">Choose the y-axis variable</option>
           <option value="redshift">Redshift</option>
           <option value="color">Color</option>
           <option value="apparent_brightness">Apparent Brightness</option>
@@ -48,8 +48,8 @@
       <li class="buttons" id="galaxy-sets">
         <label>I'd like to use data from...</label>
         <div id="setting-data-source">
-          <button type="button" data-source="group">Our Galaxies</button>
-          <button type="button" data-source="all">All Galaxies</button>
+          <button type="button" data-source="group">My Group</button>
+          <button type="button" data-source="all">Galaxy Zoo</button>
         </div>
       </li>
 
@@ -57,11 +57,11 @@
         <label>with a sample size of...</label>
         <select id="sample-size" name="sampleSize">
           <option value="">Choose sample size</option>
-          <option value="10">10 of Our Galaxies</option>
-          <option value="50">50 of Our Galaxies</option>
-          <option value="100">100 of Our Galaxies</option>
-          <option value="500" style="display: none">500 randomly selected Galaxies</option>
-          <option value="1000" style="display: none">1000 randomly selected Galaxies</option>
+          <option value="10">10 galaxies</option>
+          <option value="50">50 galaxies</option>
+          <option value="100">100 galaxies</option>
+          <option value="500" style="display: none">500 randomly selected galaxies</option>
+          <option value="1000" style="display: none">1000 randomly selected galaxies</option>
         </select>
 
       </li>

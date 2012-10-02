@@ -42,8 +42,8 @@ class MyGalaxies extends Spine.Controller
 
       switch key
         when "smooth_count" then nice_key = "Smooth"
-        when "disk_count" then nice_key = "Disk"
-        when "other_count" then nice_key = "Other"
+        when "disk_count" then nice_key = "Features or disk"
+        when "other_count" then nice_key = "Star or artifact"
 
       if your_classification == key
         selected = true
@@ -74,7 +74,7 @@ class MyGalaxies extends Spine.Controller
 
     x = d3.scale.linear()
       .domain([0, d3.max(data.values, (d) -> d.value)])
-      .range([1, 150])
+      .range([1, 120])
 
     color = d3.scale.ordinal()
       .range(['#1e7797', '#ff9c00'])
@@ -83,7 +83,7 @@ class MyGalaxies extends Spine.Controller
       .data(data.values)
       .enter().append('rect')
       .attr('y', ((d,i) -> i * 22))
-      .attr('x', 55)
+      .attr('x', 85)
       .attr('height', 20)
       .style('fill', ((d, i) ->
           if d.selected
@@ -106,7 +106,8 @@ class MyGalaxies extends Spine.Controller
       .append('text')
       .attr('class','label')
       .attr('y', ((d,i) -> i * 22))
-      .attr('x', 45)
+      .attr('x', 35)
+      .attr('dx', 44)
       .attr('dy', '1.3em')
       .attr('text-anchor', 'end')
       .text((d, i) -> d.label)
@@ -117,7 +118,7 @@ class MyGalaxies extends Spine.Controller
       .attr('class','value')
       .attr('y', ((d,i) -> i * 22))
       .attr('x', ((d) -> x d.value))
-      .attr('dx', 59)
+      .attr('dx', 89)
       .attr('dy', '1.25em')
       .text((d) -> d.value)
 
