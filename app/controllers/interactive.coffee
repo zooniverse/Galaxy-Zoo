@@ -8,6 +8,7 @@ class Interactive extends Spine.Controller
   constructor: ->
     super
     UserGroup.bind 'create', @displayGroups
+    User.bind 'sign-in', @activeGroups
 
   active: =>
     super
@@ -16,8 +17,6 @@ class Interactive extends Spine.Controller
     unless @navigator
       @navigator = new Navigator
 
-  elements:
-
   activeGroups: =>
     if User.current
       for key, value of User.current.project.groups
@@ -25,7 +24,6 @@ class Interactive extends Spine.Controller
           UserGroup.fetch(key)
 
   displayGroups: (group) =>
-    
-
+    console.log group
     
 module.exports = Interactive

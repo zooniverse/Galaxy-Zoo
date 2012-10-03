@@ -120,11 +120,28 @@ button-style($alignment = 'right')
     position: relative
     padding: 15px 0 0
     font-family: $normal
+    #group-list
+      font-size: 12px
+      position: absolute
+      bottom: 7px 
+      right: 250px
+
+      a
+        padding: 0
+        margin: 0
+        padding-bottom: 10px
+        padding-right: 10px
+
+      a.show-group
+        font-size: 10px
+        padding-right: 5px
+
     #link_buttons
       position: absolute
       bottom: 0
       right: 0
-      width: 300px
+      width: 230px
+      border-left: 1px solid #d6d6d6
       text-align: right
       button-style()
 
@@ -241,6 +258,37 @@ p
     margin-top: 70px
     color: $blue
 
+#group-signup
+  input
+    display: block
+    height: 40px
+    font-family: "Open Sans"
+    font-size: 20px
+    width: 300px
+    margin-bottom: 20px
+
+  textarea
+    display: block
+    margin-bottom: 30px
+    font-family: "Open Sans"
+    font-size: 20px
+    height: 205px
+    width: 575px
+
+  button
+    display: block
+    background: none repeat scroll 0 0 #F4F4F4
+    border: 1px solid #B2B2B2
+    border-radius: 3px 3px 3px 3px
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1), 0 1px 0 #FFFFFF inset
+    color: #3B3B3B
+    display: inline-block
+    font-family: "Open Sans"
+    font-size: 12px
+    padding: 3px 0
+    text-align: center
+    text-shadow: 0 1px 0 #FCFCFC
+    width: 98px
 
 #graph_form
   #graph_area
