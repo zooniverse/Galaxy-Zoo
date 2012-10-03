@@ -2,6 +2,11 @@
   <div class="container">
     <div id="top_bar">
       <a href="#/navigator/home"><h1>Navigator</h1></a>
+      <div id="group-list">
+        <ul>
+          <li><a href="/#/navigator/create_group">Make a New Group</a></li>
+        </ul>
+      </div>
       <div id="link_buttons">
         <a href="#/navigator/my_galaxies" data-link="my_galaxies">My Galaxies</a>
         <a href="#/navigator/graphs" data-link="graphs">Graph Data</a>
