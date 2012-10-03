@@ -8,6 +8,7 @@ Papers = require 'controllers/papers'
 Story = require 'controllers/story'
 Team = require 'controllers/team'
 Astronomers = require 'controllers/astronomers'
+UserGroups = require 'controllers/user_groups'
 
 class Main extends Spine.Stack
   el: '#main'
@@ -22,7 +23,8 @@ class Main extends Spine.Stack
     story: Story
     team: Team
     astronomers: Astronomers
-      
+    user_groups: UserGroups
+    
   default: 'home'
   
   routes:
@@ -35,5 +37,6 @@ class Main extends Spine.Stack
     '/story': 'story'
     '/team': 'team'
     '/astronomers': 'astronomers'
+    '/user_groups/:id': 'user_groups'
 
 module.exports = Main
