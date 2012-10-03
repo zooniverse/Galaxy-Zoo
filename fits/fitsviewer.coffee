@@ -2,6 +2,9 @@ FITS  = require('fits')
 WebGL = require('lib/web_gl')
 Workers = require('lib/workers')
 
+# Troublesome
+# #/examine/AGZ00013gv
+
 class FITSViewer extends Spine.Controller
   @validDestination = "http://www.sdss.org.uk/"
   
@@ -24,6 +27,7 @@ class FITSViewer extends Spine.Controller
     @histograms = {}
     @means = {}
     @stds = {}
+    @upper = {}
     
     # Store band and texture location
     @textureCount = 0
@@ -135,7 +139,7 @@ class FITSViewer extends Spine.Controller
       @histograms[band] = data.histogram
       @means[band]      = data.mean
       @stds[band]       = data.std
-      
+      @upper[band]      = data.upper
       # Enable associated button
       $("#band-#{band}").removeAttr('disabled')
       $("#stretch").removeAttr('disabled')

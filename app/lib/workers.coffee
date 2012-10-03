@@ -7,7 +7,7 @@ Workers =
     "var computeHistogram;",
 
     "computeHistogram = function(min, max, bins, data) {",
-      "var arrayType, binSize, diff, flotHistogram, histogram, index, mean, numpixels, pixel, range, std, step, sum, values, _i, _j, _len, _len1;",
+      "var arrayType, binSize, diff, flotHistogram, histogram, index, mean, numpixels, pixel, range, std, step, sum, values, _i, _j, _len, _len1, upper, value, number;",
       "range = max - min;",
       "binSize = range / bins;",
       "numpixels = data.length;",
@@ -40,7 +40,21 @@ Workers =
         "sum += (diff * diff) * values[1];",
       "}",
       "std = Math.sqrt(sum / numpixels);",
-      "return [flotHistogram, mean, std];",
+      
+      "for (i = 0; i < flotHistogram.length; i += 1) {",
+        "values = flotHistogram[flotHistogram.length - i - 1];",
+        "if (values == null) {",
+          "continue;",
+        "}",
+        "value = values[0];",
+        "number = values[1];",
+        "upper = (sum - number * value) / sum;",
+        "if (upper <= 0.9975) {",
+          "break;",
+        "}",
+      "}",
+      
+      "return [flotHistogram, mean, std, upper];",
     "};",
     
     "self.addEventListener('message', (function (e) {",
@@ -50,7 +64,7 @@ Workers =
 
       "stats = computeHistogram(data.min, data.max, data.bins, data.data);",
       
-      "msg = {histogram: stats[0], mean: stats[1], std: stats[2], band: data.band};",
+      "msg = {histogram: stats[0], mean: stats[1], std: stats[2], band: data.band, upper: stats[3]};",
       "self.postMessage(msg);",
     "}), false);"
   ].join("\n")
