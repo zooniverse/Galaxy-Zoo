@@ -1,0 +1,32 @@
+<div id="main_body">
+  <div id="welcome">
+    <div class="image_div">
+      <a href="#/classify">
+        <h2>Classify Galaxies</h2>
+        <p>Visit the Galaxy Zoo website to classify galaxies as part your group.</p>
+        <img src="images/step1.png">
+      </a>        
+    </div>
+    <div class="image_div">
+      <a href="#/navigator/my_galaxies">
+        <h2>Our Galaxies</h2>
+        <p>Investigate the galaxies you and your group have classified.</p>
+        <img src="images/step2.png">
+      </a>
+    </div>
+    <div class="image_div">
+      <a href="#/navigator/graphs/histogram">
+        <h2>Histogram</h2>
+        <p>Investigate the characteristics of different galaxy types.</p>
+        <img src="images/step1.png">
+      </a>        
+    </div>
+    <div class="image_div">
+      <a href="#/navigator/graphs/scatterplot">
+        <h2>Scatter Graph</h2>
+        <p>Investigate the characteristics of different galaxy types.</p>
+        <img src="images/step2.png">
+      </a>
+    </div>     
+  </div>
+</div>
