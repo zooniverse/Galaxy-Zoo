@@ -34,6 +34,7 @@ class Classify extends Spine.Controller
     User.bind 'sign-in', @hideLoginPrompt
     Classification.bind 'classified', @loginPrompt
     Subject.next()
+    $('#zooniverse-top-bar-login .buttons button[name="signup"]').unbind('click').bind 'click', @signupPrompt
   
   active: ->
     super
@@ -54,6 +55,15 @@ class Classify extends Spine.Controller
         
         @loginPrompt.show()
         new LoginForm el: '.login-prompt .login'
+  
+  signupPrompt: (ev) =>
+    @loginPrompt = new Dialog
+      template: 'views/signup_prompt'
+      callback: -> @el().remove()
+    
+    @loginPrompt.show()
+    loginForm = new LoginForm el: '.login-prompt .login'
+    loginForm.signUp()
   
   hideLoginPrompt: =>
     if User.current and $('.login-prompt:visible')[0]
@@ -78,11 +88,7 @@ class Classify extends Spine.Controller
     checks = _ $('.buttons .active.checkbox')
     checkIds = checks.collect (check) -> $(check).data('id')
     
-    if checkIds.length is 0
-      @classification.annotate id
-    else
-      @classification.annotate checkIds
-    
+    @classification.annotate id, checkIds
     @updateQuestion()
     ev.preventDefault()
   
