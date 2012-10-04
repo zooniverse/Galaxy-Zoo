@@ -53,12 +53,100 @@ class FITSViewer extends Spine.Controller
     $("#dataonwire")[0].contentWindow.postMessage(msg, FITSViewer.validDestination)
     
   receiveFITS: (e) =>
+    # TODO: Error handling needs work.
     if e.data.error?
       alert("Sorry, these data are not yet available.")
       window.removeEventListener("message", @receiveFITS, false)
     else
       data = e.data
-      @addImage(data.band, data.arraybuffer)
+      
+      # Create a deferred object
+      dfd1 = new $.Deferred()
+      dfd2 = new $.Deferred()
+      p1 = dfd1.promise()
+      p2 = dfd2.promise()
+      
+      # Initialize the FITS object
+      p1 = p1.pipe (obj) =>        
+        band = obj.band
+        console.log 'Initializing FITS object for', band
+        @images[band] = new FITS.File(obj.arraybuffer)
+        
+        # Select the dataunit
+        dataunit = @images[band].getDataUnit()
+        
+        # Set up WebGL if is not yet initialized
+        unless @gl
+          @width = dataunit.width
+          @height = dataunit.height
+          @setupWebGL()
+        
+        # Interpret the bytes and compute min and max
+        # TODO: Ship off to inline worker
+        dataunit.getFrame()
+        dataunit.getExtremes()
+        
+        return [dataunit, band]
+       
+      # Compute statistics
+      p1 = p1.pipe ([dataunit, band]) =>
+       console.log 'Computing statistics ', dataunit
+
+       # Set up message to pass to worker
+       msg =
+         min: dataunit.min
+         max: dataunit.max
+         data: dataunit.data
+         bins: FITSViewer.bins
+         band: band
+
+       # Inline baby!!
+       blob = new Blob([Workers.Histogram], {type: 'text/javascript'})
+       blobUrl = window.URL.createObjectURL(blob)
+
+       worker = new Worker(blobUrl)
+       worker.addEventListener 'message', ((e) =>
+         data = e.data
+         band = data.band
+         @histograms[band] = data.histogram
+         @means[band]      = data.mean
+         @stds[band]       = data.std
+         @upper[band]      = data.upper
+         
+         # Enable associated button
+         $("#band-#{band}").removeAttr('disabled')
+         $("#stretch").removeAttr('disabled')
+         
+         dfd2.resolve({image: @images[band].getData(), band: band})
+         
+       ), false
+       worker.postMessage(msg)
+      
+      # Create texture
+      p2 = p2.pipe (obj) =>
+        band = obj.band
+        console.log 'Creating texture for', band, obj
+        address = "TEXTURE#{@textureCount}"
+        @gl.activeTexture(@gl[address])
+
+        texture = @gl.createTexture()
+        @gl.bindTexture(@gl.TEXTURE_2D, texture)
+        @gl.texParameteri(@gl.TEXTURE_2D, @gl.TEXTURE_WRAP_S, @gl.CLAMP_TO_EDGE)
+        @gl.texParameteri(@gl.TEXTURE_2D, @gl.TEXTURE_WRAP_T, @gl.CLAMP_TO_EDGE)
+        @gl.texParameteri(@gl.TEXTURE_2D, @gl.TEXTURE_MIN_FILTER, @gl.NEAREST)
+        @gl.texParameteri(@gl.TEXTURE_2D, @gl.TEXTURE_MAG_FILTER, @gl.NEAREST)
+        @gl.texImage2D(@gl.TEXTURE_2D, 0, @gl.LUMINANCE, @width, @height, 0, @gl.LUMINANCE, @gl.FLOAT, obj.image)
+        
+        @textures[band] = address
+        @textureCount += 1
+        return {band: band}
+
+      # Update interface
+      p2 = p2.pipe (obj) =>
+        console.log 'Updating interface for', obj.band
+        
+      # Start the show
+      dfd1.resolve(data)
       
   createMetadata: =>
     @subjectInfo = $("#examine .subject-info")      
@@ -102,57 +190,12 @@ class FITSViewer extends Spine.Controller
     @controls.empty() if @controls
     @stretch = null
   
-  addImage: (band, arraybuffer) =>
-    @images[band] = new FITS.File(arraybuffer)
-    
-    # Select the dataunit
-    dataunit = @images[band].getDataUnit()
-    
-    # Interpret the bytes and compute min and max
-    # TODO: Ship off to inline worker
-    dataunit.getFrame()
-    dataunit.getExtremes()
-    
-    @computeStatistics(band)
-    @addTexture(band, dataunit.data)
-    
-  # Compute histogram using inline worker
-  computeStatistics: (band) ->
-    dataunit = @images[band].getDataUnit()
-    
-    # Set up message to pass to worker
-    msg =
-      min: dataunit.min
-      max: dataunit.max
-      data: dataunit.data
-      bins: FITSViewer.bins
-      band: band
-    
-    # Inline baby!!
-    blob = new Blob([Workers.Histogram])
-    blobUrl = window.URL.createObjectURL(blob)
-    
-    worker = new Worker(blobUrl)
-    worker.addEventListener 'message', ((e) =>
-      data = e.data
-      band = data.band
-      @histograms[band] = data.histogram
-      @means[band]      = data.mean
-      @stds[band]       = data.std
-      @upper[band]      = data.upper
-      # Enable associated button
-      $("#band-#{band}").removeAttr('disabled')
-      $("#stretch").removeAttr('disabled')
-      
-    ), false
-    worker.postMessage(msg)
-  
   # Sets up everything except for textures
   setupWebGL: =>
+    console.log 'setupWebGL'
     
     # TODO: Set this dynamically
-    [@width, @height] = [424, 424]
-    @canvas = WebGL.setupCanvas(@container, @width, @height)
+    @canvas = WebGL.setupCanvas(@container, FITSViewer.viewportWidth, FITSViewer.viewportHeight)
     @gl     = WebGL.create3DContext(@canvas)
     @ext    = @gl.getExtension('OES_texture_float')
     
