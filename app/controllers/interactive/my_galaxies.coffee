@@ -1,9 +1,11 @@
 Spine = require('spine')
 Sample = require 'lib/sample_interactive_data'
 Dialog = require 'lib/dialog'
+User = require 'zooniverse/lib/models/user'
 
 SubjectViewer = require 'ubret/lib/controllers/SubjectViewer'
 BaseController = require 'ubret/lib/controllers/BaseController'
+InteractiveSubject = require 'ubret/lib/models/InteractiveSubject'
 
 class MyGalaxies extends Spine.Controller
 
@@ -15,11 +17,19 @@ class MyGalaxies extends Spine.Controller
     @headingText = $('#heading_text')
     @action_title = '<h2>My Galaxies</h2>'
 
-    @samples = Sample.randomSample 10
+    User.bind 'sign-in', =>
+      if User.current.user_group_id
+        InteractiveSubject.fetch({limit: 10, user: true}).onSuccess =>
+          @samples = InteractiveSubject.lastFetch
 
   active: ->
     super
-    @render()
+    if User.current.user_group_id and typeof(@sample) is 'undefined'
+      InteractiveSubject.fetch({limit: 10, user: true}).onSuccess =>
+        @samples = InteractiveSubject.lastFetch
+        @render()
+    else
+      @render()
     @headingText.html @action_title
     $('[data-link="my_galaxies"]').addClass 'pressed'
 
@@ -36,15 +46,16 @@ class MyGalaxies extends Spine.Controller
   formatData: (sample) ->
     feature_counts = []
     nice_key = ''
-    your_classification = key for key, value of sample.group_classification when value > 0
+    your_classification = sample.classification
 
-    for key, value of sample.subject
+    for key, value of sample.counters
 
       switch key
-        when "smooth_count" then nice_key = "Smooth"
-        when "disk_count" then nice_key = "Features or disk"
-        when "other_count" then nice_key = "Star or artifact"
+        when "smooth" then nice_key = "Smooth"
+        when "feature" then nice_key = "Features or disk"
+        when "star" then nice_key = "Star or artifact"
 
+      console.log key, your_classification
       if your_classification == key
         selected = true
       else
@@ -56,7 +67,7 @@ class MyGalaxies extends Spine.Controller
           'value': value,
           'selected': selected
         }
-
+    console.log feature_counts
     feature_counts
 
   generateChart: (sample) ->
@@ -139,9 +150,5 @@ class MyGalaxies extends Spine.Controller
     $('.dialog-closer').click ->
       $('.dialog-underlay').hide()
       $('.dialog footer').show()
-
-
-
-
 
 module.exports = MyGalaxies

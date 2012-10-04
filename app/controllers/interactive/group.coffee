@@ -29,7 +29,7 @@ class Group extends Spine.Controller
   setParticipate: (e) =>
     e.preventDefault()
     UserGroup.participate @groupId
-    @navigate '/classify'
+    @navigate '/navigator/home'
 
   redirectHome: (e) =>
     e?.preventDefault?()
@@ -37,12 +37,9 @@ class Group extends Spine.Controller
     @navigate '/navigator/home'
 
   groupStats: (group) =>
-    console.log group
     if (@groupId is group.id) and (User.current.id is group.owner.id)
       stats = new Object
-      console.log user for key, user of group.users
       stats[user.name] = user.classification_count for key, user of group.users
-      console.log stats
       @append require('views/interactive/stats')({stats})
     group.destroy()
       
