@@ -1,0 +1,21 @@
+<!-- <div id="main_body">
+  <div id="my_galaxies">
+    <div class="galaxy_img_div">
+      <h1>Object Id</h1>
+      <a class="galaxy_img"><img src="images/galaxy_thumbnail.jpeg"></a> 
+    </div>
+    <div class="galaxy_bar_chart">
+    </div>
+  </div>
+</div>  -->
+<div id="my_galaxies">
+  <% for galaxy in @samples: %>
+    <div class="galaxy" data-id="<%- galaxy.classification_id %>">
+      <h3><%- galaxy.classification_id %></h3>
+      <div class="subject_box">
+        <img src="<%- galaxy.image %>" height="140" width="140" class="subject" />
+        <svg></svg>
+      </div>
+    </div>
+  <% end %>
+</div>

@@ -13,6 +13,10 @@ class UserGroup extends Model
     Api.post "/user_groups/#{ @currentId }/join", (json) =>
       @current = UserGroup.create json
   
+  @stop: =>
+    Api.post "/user_groups/0/participate", (json) =>
+      @current.destroy()
+  
   @participate: (id) =>
     Api.post "/user_groups/#{ id }/participate", (json) =>
       @currentId = id
@@ -21,5 +25,22 @@ class UserGroup extends Model
   @fetchCurrent: =>
     if User.current and User.current.user_group_id
       @participate User.current.user_group_id
+  
+  @fetch: (id) =>
+    Api.get "/user_groups/#{ id }", (json) =>
+      UserGroup.create json
+  
+  @newGroup: (name) =>
+    json =
+      user_group:
+        name: name
+    
+    Api.post "/user_groups", json, (json) =>
+      @current = UserGroup.create json
+  
+  @inviteUsers: (id, emails) =>
+    json =
+      user_emails: emails
+    Api.post "/user_groups/#{ id }/invite", json
 
 module.exports = UserGroup

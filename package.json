@@ -9,11 +9,11 @@
   },
   "scripts": {
     "pretest": "hem server --port 9290 & echo $! > ./hem.pid",
-    "test": "jasmine-phantom-node --port 9290",
-    "posttest": "kill `cat hem.pid`; rm hem.pid"
+    "test": "jasmine-phantom-node --port 9290"
   },
   "dependencies": {
     "hem": "git://github.com/maccman/hem.git#517c97a3ce7",
+    "node-pubsub" : "*",
     "nib": "*",
     "es5-shimify": "~0.0.1",
     "json2ify": "~0.0.1",
@@ -21,6 +21,7 @@
     "underscore": "*",
     "spine": "~1.0.7",
     "clean-css": "0.6.0",
+    "ubret" : "git+ssh://git@github.com:zooniverse/Ubret.git#dc31a71f43",
     "zooniverse": "git+ssh://git@github.com:zooniverse/Zooniverse.git#galaxy_zoo",
     "fits": "git://github.com/astrojs/fitsjs.git"
   },

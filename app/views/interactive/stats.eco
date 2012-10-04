@@ -1,0 +1,5 @@
+<ul class="stats">
+  <% for name, count of @stats: %>
+    <li><span class="name"><%- name %></span><span class="count"><%- count %></span></li>
+  <% end %>
+</ul>
