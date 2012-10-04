@@ -7,23 +7,22 @@ class Interactive extends Spine.Controller
 
   constructor: ->
     super
-    UserGroup.bind 'create', @displayGroups
     User.bind 'sign-in', @activeGroups
 
   active: =>
     super
-    @activeGroups()
     @html require('views/interactive/box')(@)
     unless @navigator
       @navigator = new Navigator
 
   activeGroups: =>
+    @groups = new Array
     if User.current
-      for key, value of User.current.project.groups
-        if key isnt '50251c3b516bcb6ecb000001' or key isnt '50251c3b516bcb6ecb000002'
-          UserGroup.fetch(key)
+      displayGroup group for group in User.current.user_groups
 
-  displayGroups: (group) =>
-    console.log group
+
+
+  displayGroup: (group) =>
+    @groupsList.append
     
 module.exports = Interactive

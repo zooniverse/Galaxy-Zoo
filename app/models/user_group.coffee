@@ -5,7 +5,7 @@ class UserGroup extends Spine.Model
   @configure 'created_at', 'name', 'owner', 'projects', 'users'
 
   @fetch: (id) =>
-    fetcher = Api.get "projects/galaxy_zoo/user_groups/#{ id }", @createGroup
+    fetcher = Api.get "/user_groups/#{ id }", @createGroup
     fetcher
 
   @createGroup: (result) =>
@@ -21,13 +21,13 @@ class UserGroup extends Spine.Model
       user_group: 
         name: name
 
-    sender = Api.post "/user_groups", json, (response) -> console.log response
+    sender = Api.post "/user_groups", json, @createGroup
     sender
 
   @inviteUsers: (id, emails) =>
     json = 
       user_emails: emails
-    sender = Api.post "/user_groups/#{ id }/invite", json, (response) -> console.log response
+    sender = Api.post "/user_groups/#{ id }/invite", json
     sender
 
 module.exports = UserGroup    
