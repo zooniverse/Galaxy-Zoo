@@ -125,6 +125,28 @@ button-style($alignment = 'right')
       position: absolute
       bottom: 7px 
       right: 250px
+      width: 140px
+
+      span
+          width: 140px
+
+      ul.groups-dropdown
+        display: none
+        position: absolute
+        list-style: none
+        width: 140px
+        padding: 0
+        margin: 0
+        background: $background
+
+        li
+          padding: 2px
+          margin-top: -1px
+          padding-left: 0
+          width: 140px
+
+        &.show-dropdown
+          display: block
 
       a
         padding: 0
@@ -476,4 +498,32 @@ p
     margin: 0 0 0 10px
   ul
     margin-left: 270px
+
+ul.stats
+  list-style: none
+  height: 150px
+  margin: 0
+  padding: 0
+
+  li
+    float: left
+    width: 25%
+    margin: 0
+    padding: 0
+    padding-right: 60px
+    border-right: 1px solid #d6d6d6
+    &:after
+      position: absolute
+      right: -2px
+      top: 0
+      height: 100%
+      width: 1px
+      border-right: 1px solid #f9f9f9
+      content: ''
+
+    .name
+      padding-right: 80px
+
+.participate p
+  text-align: center
 

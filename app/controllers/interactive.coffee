@@ -7,22 +7,46 @@ class Interactive extends Spine.Controller
 
   constructor: ->
     super
-    User.bind 'sign-in', @activeGroups
+    @groupsList = new Array
+    User.bind 'sign-in', @activeGroups unless User.current
+    UserGroup.bind 'create', @setGroup
+    UserGroup.bind 'destory', @reset
 
   active: =>
     super
     @html require('views/interactive/box')(@)
+    @activeGroups()
     unless @navigator
       @navigator = new Navigator
 
+  elements:
+    'ul.groups-dropdown' : 'groupsDropdown'
+    'span.current-group' : 'currentGroup'
+
+  events: 
+    'click a.show-groups' : 'showGroups'
+
   activeGroups: =>
-    @groups = new Array
     if User.current
-      displayGroup group for group in User.current.user_groups
+      for group in User.current.user_groups
+        listItem = """<li class="user-group"><a href="/#/navigator/group/#{group.id}">#{group.name}</a></li>"""
+        @groupsList.push listItem
+      @appendGroups()
 
+  setGroup: (group) =>
+    @currentGroup.html """<a href="/#/navigator/group/#{group.id}">#{group.name}</a>"""    
+    @groupsList.push '<li><a href="/#/navigator/create_group">Make a New Group</a></li>'
+    @appendGroups()
 
+  showGroups: (e) =>
+    e.preventDefault()
+    @groupsDropdown.toggleClass "show-dropdown"
 
-  displayGroup: (group) =>
-    @groupsList.append
+  appendGroups: =>
+    @groupsDropdown.html @groupsList.join('\n')
+
+  reset: =>
+    @currentGroup.html '<a href="/#/navigator/create_group">Make a New Group</a>'
+    @activeGroups()
     
 module.exports = Interactive

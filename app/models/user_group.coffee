@@ -1,35 +1,47 @@
-Spine = require 'spine'
+Model = require 'zooniverse/lib/models/model'
+User = require 'zooniverse/lib/models/user'
 Api = require 'zooniverse/lib/api'
 
-class UserGroup extends Spine.Model
-  @configure 'created_at', 'name', 'owner', 'projects', 'users'
+class UserGroup extends Model
+  @configure 'UserGroup', 'name', 'owner', 'projects', 'users', 'user_ids', 'created_at', 'updated_at'
+  
+  @list: ->
+    return unless User.current
+    Api.get '/user_groups'
+  
+  @join: =>
+    Api.post "/user_groups/#{ @currentId }/join", (json) =>
+      @current = UserGroup.create json
+
+  @stop: =>
+    Api.post "/user_groups/0/participate", (json) =>
+      @current.destory()
+  
+  @participate: (id) =>
+    Api.post "/user_groups/#{ id }/participate", (json) =>
+      @currentId = id
+      @current = UserGroup.create json
+  
+  @fetchCurrent: =>
+    if User.current and User.current.user_group_id
+      @participate User.current.user_group_id
 
   @fetch: (id) =>
-    fetcher = Api.get "/user_groups/#{ id }", @createGroup
-    fetcher
-
-  @createGroup: (result) =>
-    UserGroup.create
-      created_at: result.created_at
-      name: result.name
-      owner: result.owner
-      projects: result.projects
-      users: result.users
+    Api.get "/user_groups/#{ id }", (json) =>
+      UserGroup.create json
 
   @newGroup: (name) =>
     json = 
       user_group: 
         name: name
-
-    sender = Api.post "/user_groups", json, @createGroup
-    sender
+    Api.post "/user_groups", json, (json) =>
+      @current = UserGroup.create json
+    
 
   @inviteUsers: (id, emails) =>
     json = 
       user_emails: emails
-    sender = Api.post "/user_groups/#{ id }/invite", json
-    sender
+    Api.post "/user_groups/#{ id }/invite", json
+   
 
 module.exports = UserGroup    
-
-    
