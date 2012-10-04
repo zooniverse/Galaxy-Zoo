@@ -27,7 +27,7 @@ class FITSViewer extends Spine.Controller
     @histograms = {}
     @means = {}
     @stds = {}
-    @upper = {}
+    @peakLevel = {}
     
     # Store band and texture location
     @textureCount = 0
@@ -41,8 +41,6 @@ class FITSViewer extends Spine.Controller
     @createMetadata()
     @createBandButtons()
     @createStretchButtons()
-    
-    @setupWebGL()
   
   requestFITS: (survey, id) =>
     console.log 'requesting FITS from Portsmouth'
@@ -76,7 +74,7 @@ class FITSViewer extends Spine.Controller
         dataunit = @images[band].getDataUnit()
         
         # Set up WebGL if is not yet initialized
-        unless @gl
+        unless @gl?
           @width = dataunit.width
           @height = dataunit.height
           @setupWebGL()
@@ -111,7 +109,7 @@ class FITSViewer extends Spine.Controller
          @histograms[band] = data.histogram
          @means[band]      = data.mean
          @stds[band]       = data.std
-         @upper[band]      = data.upper
+         @peakLevel[band]      = data.upper
          
          # Enable associated button
          $("#band-#{band}").removeAttr('disabled')
@@ -135,15 +133,12 @@ class FITSViewer extends Spine.Controller
         @gl.texParameteri(@gl.TEXTURE_2D, @gl.TEXTURE_WRAP_T, @gl.CLAMP_TO_EDGE)
         @gl.texParameteri(@gl.TEXTURE_2D, @gl.TEXTURE_MIN_FILTER, @gl.NEAREST)
         @gl.texParameteri(@gl.TEXTURE_2D, @gl.TEXTURE_MAG_FILTER, @gl.NEAREST)
+        console.log @width, @height
         @gl.texImage2D(@gl.TEXTURE_2D, 0, @gl.LUMINANCE, @width, @height, 0, @gl.LUMINANCE, @gl.FLOAT, obj.image)
         
         @textures[band] = address
         @textureCount += 1
         return {band: band}
-
-      # Update interface
-      p2 = p2.pipe (obj) =>
-        console.log 'Updating interface for', obj.band
         
       # Start the show
       dfd1.resolve(data)
@@ -194,7 +189,6 @@ class FITSViewer extends Spine.Controller
   setupWebGL: =>
     console.log 'setupWebGL'
     
-    # TODO: Set this dynamically
     @canvas = WebGL.setupCanvas(@container, FITSViewer.viewportWidth, FITSViewer.viewportHeight)
     @gl     = WebGL.create3DContext(@canvas)
     @ext    = @gl.getExtension('OES_texture_float')
@@ -296,21 +290,6 @@ class FITSViewer extends Spine.Controller
     # Listen for the mouse wheel
     @canvas.addEventListener('mousewheel', @wheelHandler, false)
     @canvas.addEventListener('DOMMouseScroll', @wheelHandler, false)
-  
-  addTexture: (band, data) =>
-    address = "TEXTURE#{@textureCount}"
-    @gl.activeTexture(@gl[address])
-    
-    texture = @gl.createTexture()
-    @gl.bindTexture(@gl.TEXTURE_2D, texture)
-    @gl.texParameteri(@gl.TEXTURE_2D, @gl.TEXTURE_WRAP_S, @gl.CLAMP_TO_EDGE)
-    @gl.texParameteri(@gl.TEXTURE_2D, @gl.TEXTURE_WRAP_T, @gl.CLAMP_TO_EDGE)
-    @gl.texParameteri(@gl.TEXTURE_2D, @gl.TEXTURE_MIN_FILTER, @gl.NEAREST)
-    @gl.texParameteri(@gl.TEXTURE_2D, @gl.TEXTURE_MAG_FILTER, @gl.NEAREST)
-    @gl.texImage2D(@gl.TEXTURE_2D, 0, @gl.LUMINANCE, @width, @height, 0, @gl.LUMINANCE, @gl.FLOAT, data)
-    
-    @textures[band] = address
-    @textureCount += 1
     
   setRectangle: (x, y, width, height) =>
     [x1, x2] = [x, x + width]
@@ -342,6 +321,11 @@ class FITSViewer extends Spine.Controller
     
     # Select correct texture and draw
     address = @textures[@band]
+    
+    # Send peak level to GPU
+    peakLevelLocation = @gl.getUniformLocation(@program, 'u_peakLevel')
+    @gl.uniform1f(peakLevelLocation, @peakLevel[@band])
+    
     @gl.activeTexture(@gl[address])
     @drawScene()
     
