@@ -27,7 +27,7 @@ class Interactive extends Spine.Controller
     'click a.show-groups' : 'showGroups'
 
   activeGroups: =>
-    if User.current and User.current.user_groups
+    if User.current.user_groups
       for group in User.current.user_groups
         listItem = """<li class="user-group"><a href="/#/navigator/group/#{group.id}">#{group.name}</a></li>"""
         @groupsList.push listItem
