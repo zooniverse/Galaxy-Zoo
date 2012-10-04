@@ -1,0 +1,6 @@
+<div class="participate">
+  <p>Would you like to classify as part of <%- @groupName %>?
+  <button type="button" name="yes">Yes</button>
+  <button type="button" name="no">No</button>
+  </p>
+</div>
