@@ -40,6 +40,7 @@ class MyGalaxies extends Spine.Controller
 
   render: ->
     @html require('views/interactive/my_galaxies')(@)
+    console.log @samples
     for sample in @samples
       @generateChart sample
 
@@ -55,7 +56,6 @@ class MyGalaxies extends Spine.Controller
         when "feature" then nice_key = "Features or disk"
         when "star" then nice_key = "Star or artifact"
 
-      console.log key, your_classification
       if your_classification == key
         selected = true
       else
@@ -67,7 +67,6 @@ class MyGalaxies extends Spine.Controller
           'value': value,
           'selected': selected
         }
-    console.log feature_counts
     feature_counts
 
   generateChart: (sample) ->
@@ -78,7 +77,9 @@ class MyGalaxies extends Spine.Controller
         values: counts
       }
 
-    chart = d3.select('[data-id="' + sample.classification_id + '"] svg')
+    console.log data
+
+    chart = d3.select('[data-id="' + sample.zooniverse_id+ '"] svg')
       .append('g')
       .attr('width', 265)
       .attr('height', 100)
@@ -117,7 +118,7 @@ class MyGalaxies extends Spine.Controller
       .append('text')
       .attr('class','label')
       .attr('y', ((d,i) -> i * 22))
-      .attr('x', 35)
+      .attr('x', 80)
       .attr('dx', 44)
       .attr('dy', '1.3em')
       .attr('text-anchor', 'end')

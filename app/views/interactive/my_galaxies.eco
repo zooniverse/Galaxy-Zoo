@@ -10,7 +10,7 @@
 </div>  -->
 <div id="my_galaxies">
   <% for galaxy in @samples: %>
-    <div class="galaxy" data-id="<%- galaxy.classification_id %>">
+    <div class="galaxy" data-id="<%- galaxy.zooniverse_id %>">
       <h3><%- galaxy.classification_id %></h3>
       <div class="subject_box">
         <img src="<%- galaxy.image %>" height="140" width="140" class="subject" />
