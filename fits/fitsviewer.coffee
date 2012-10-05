@@ -193,6 +193,8 @@ class FITSViewer extends Spine.Controller
     @gl     = WebGL.create3DContext(@canvas)
     @ext    = @gl.getExtension('OES_texture_float')
     
+    $('#webgl-fits').hide()
+    
     unless @ext
       return null
     
@@ -235,7 +237,7 @@ class FITSViewer extends Spine.Controller
     @xOldOffset = @xOffset
     @yOldOffset = @yOffset
     @scale = 2 / @width
-    @minScale = 1 / (FITSViewer.viewportWidth * FITSViewer.viewportWidth)
+    @minScale = @width / (FITSViewer.viewportWidth * FITSViewer.viewportWidth)
     @maxScale = 2
     @drag = false
     
@@ -268,8 +270,9 @@ class FITSViewer extends Spine.Controller
       
       # TODO: Write to screen
       $(".subject-info .xy.value").html("#{x}, #{y}")
-      if @band
-        $(".subject-info .intensity.value").html(@images[@band].getDataUnit().getPixel(x, y).toFixed(5))
+      pixel = @images[@band].getDataUnit().getPixel(x, y)
+      if @band and pixel?
+        $(".subject-info .intensity.value").html(pixel.toFixed(5))
       
       return unless @drag
       
@@ -313,11 +316,15 @@ class FITSViewer extends Spine.Controller
     @gl.drawArrays(@gl.TRIANGLES, 0, 6)  
   
   selectBand: (e) =>
+    $('#webgl-fits').show()
     @band = e.currentTarget.value
     
     # Cache minimum and maximum values for selected band
     dataunit = @images[@band].getDataUnit()
-    [@minimum, @maximum] = [@currentMin, @currentMax] = @getPercentiles(@band)
+    
+    [@minimum, @maximum] = [@currentMin, @currentMax] = [dataunit.min, dataunit.max]
+    
+    [@minimum, @maximum] = [@currentMin, @currentMax] = [@computePercentile(@histograms[@band], 0.0025), @computePercentile(@histograms[@band], 0.9975)]
     
     # Select correct texture and draw
     address = @textures[@band]
@@ -394,9 +401,21 @@ class FITSViewer extends Spine.Controller
         
     return options
   
-  getPercentiles: (band) =>
-    [mean, std]  = [@means[band], @stds[band]]
-    return [mean - 10 * std, mean + 10 * std]
+  computePercentile: (histogram, percentile) =>
+    # Format of histogram array s [ [bin, count] ]
+    
+    sum = running = p = 0
+    for values in histogram
+      if values?
+        [bin, count] = values
+        sum += (@minimum + bin) * count
+    
+    for values in histogram
+      if values?
+        [bin, count] = values
+        running += (@minimum + bin) * count
+        p = running / sum
+        return bin if p > percentile
   
   # Draws markers over the histogram
   drawMarkers: (values) =>
