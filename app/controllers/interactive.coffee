@@ -9,15 +9,14 @@ class Interactive extends Spine.Controller
     super
     @groupsList = new Array
     User.bind 'sign-in', @activeGroups unless User.current
-    UserGroup.bind 'create', @setGroup
-    UserGroup.bind 'destory', @reset
+    UserGroup.bind 'participate', @setGroup
+    UserGroup.bind 'stop', @reset
 
   active: =>
     super
-    console.log @navigator
     unless @navigator
       @html require('views/interactive/box')(@)
-      @activeGroups()
+      @appendGroups()
       @navigator = new Navigator
 
   elements:
@@ -28,16 +27,20 @@ class Interactive extends Spine.Controller
     'click a.show-groups' : 'showGroups'
 
   activeGroups: =>
+    if typeof(@currentGroupId) is 'undefined'
+      @currentGroupId = User.current?.user_group_id
     if User.current and User.current.user_groups
-      for group in User.current.user_groups
-        listItem = """<li class="user-group"><a href="/#/navigator/group/#{group.id}">#{group.name}</a></li>"""
+      @groupsList = new Array
+      for group in User.current.user_groups when group.id isnt @currentGroupId
+        listItem = """<li class="user-group"><a href="/#/navigator/group/#{group.id}">#{@formatGroupName(group.name)}</a></li>"""
         @groupsList.push listItem
-      @appendGroups()
+      @groupsList.push '<li><a href="/#/navigator/create_group">Make a New Group</a></li>'
+    @appendGroups()
 
   setGroup: (group) =>
-    @currentGroup.html """<a href="/#/navigator/group/#{group.id}">#{group.name}</a>"""    
-    @groupsList.push '<li><a href="/#/navigator/create_group">Make a New Group</a></li>'
-    @appendGroups()
+    @currentGroupId = group.id
+    @currentGroup.html """<a href="/#/navigator/group/#{group.id}">#{@formatGroupName(group.name)}</a>"""    
+    @activeGroups()
 
   showGroups: (e) =>
     e.preventDefault()
@@ -49,5 +52,11 @@ class Interactive extends Spine.Controller
   reset: =>
     @currentGroup.html '<a href="/#/navigator/create_group">Make a New Group</a>'
     @activeGroups()
+
+  formatGroupName: (name) =>
+    groupName = name.slice(0, 17)
+    groupName = groupName + '...' if groupName isnt name
+    return groupName
+
     
 module.exports = Interactive

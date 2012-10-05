@@ -1,6 +1,6 @@
 Spine = require('spine')
 Sample = require 'lib/sample_interactive_data'
-Dialog = require 'lib/dialog'
+Dialog = require 'zooniverse/lib/dialog'
 User = require 'zooniverse/lib/models/user'
 
 SubjectViewer = require 'ubret/lib/controllers/SubjectViewer'
@@ -10,7 +10,7 @@ InteractiveSubject = require 'ubret/lib/models/InteractiveSubject'
 class MyGalaxies extends Spine.Controller
 
   events:
-    'click .subject': 'popupViewer'
+    'click .galaxy': 'popupViewer'
 
   constructor: ->
     super
@@ -131,22 +131,18 @@ class MyGalaxies extends Spine.Controller
       .attr('dy', '1.25em')
       .text((d) -> d.value)
 
-  popupViewer: (e) ->
-    galaxy_id = $(e.currentTarget).parents('.galaxy').data('id')
+  popupViewer: (e) =>
+    galaxy_id = $(e.currentTarget).data('id')
 
     data = []
-    subject = _.find @samples, (sample) => sample.classification_id == galaxy_id
+    subject = _.find @samples, (sample) => 
+      sample.zooniverse_id == galaxy_id
     data.push subject
+
+    d = new Dialog
+    d.open()
 
     subject_viewer = new SubjectViewer({el: '.dialog-content'})
     subject_viewer.receiveData data
-
-    $('.dialog-underlay').show()
-    $('.dialog footer').hide()
-    $('.dialog-closer').addClass 'close'
-    
-    $('.dialog-closer').click ->
-      $('.dialog-underlay').hide()
-      $('.dialog footer').show()
 
 module.exports = MyGalaxies

@@ -16,8 +16,7 @@
           <option value="redshift">Redshift</option>
           <option value="color">Color</option>
           <option value="apparent_brightness">Apparent Brightness</option>
-          <option value="energy_output">Energy Output</option>
-          <option value="apparent_size">Apparent Size</option>
+          <option value="absolute_size">Aboslute Size</option>
           <option value="absolute_brightness">Absolute Brightness</option>
         </select>
       </li>
@@ -29,8 +28,7 @@
           <option value="redshift">Redshift</option>
           <option value="color">Color</option>
           <option value="apparent_brightness">Apparent Brightness</option>
-          <option value="energy_output">Energy Output</option>
-          <option value="apparent_size">Apparent Size</option>
+          <option value="absolute_size">Aboslute Size</option>
           <option value="absolute_brightness">Absolute Brightness</option>
         </select>
       </li>
@@ -39,7 +37,7 @@
         <label>in the following galaxy type...</label>
         <div id="setting-galaxy-type">
           <button type="button" data-type="smooth">Smooth</button>
-          <button type="button" data-type="disk">Feature/Disk</button>
+          <button type="button" data-type="feature">Feature/Disk</button>
         </div>
       </li>
 
@@ -60,8 +58,8 @@
           <option value="10">10 galaxies</option>
           <option value="50">50 galaxies</option>
           <option value="100">100 galaxies</option>
+          <option value="250" style="display: none">250 randomly selected galaxies</option>
           <option value="500" style="display: none">500 randomly selected galaxies</option>
-          <option value="1000" style="display: none">1000 randomly selected galaxies</option>
         </select>
 
       </li>
