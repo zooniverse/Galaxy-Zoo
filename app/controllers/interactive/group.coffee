@@ -20,7 +20,7 @@ class Group extends Spine.Controller
     @headingText.html "<h2>#{@groupName}</h2>"
     @html require('views/interactive/participate')(@)
 
-    if @groupId is UserGroup.current.id
+    if @groupId and @groupId is UserGroup.current?.id
       @group = UserGroup.current
       @groupStats()
     else
