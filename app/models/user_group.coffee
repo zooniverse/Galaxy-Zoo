@@ -16,7 +16,7 @@ class UserGroup extends Model
   @stop: =>
     Api.post "/user_groups/0/participate", (json) =>
       UserGroup.trigger 'stop', @current.id
-      @current.destory()
+      @current.destroy()
   
   @participate: (id) =>
     Api.post "/user_groups/#{ id }/participate", (json) =>
