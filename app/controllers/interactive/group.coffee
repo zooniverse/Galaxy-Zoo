@@ -6,21 +6,30 @@ class Group extends Spine.Controller
   constructor: ->
     super
     @headingText = $("#heading_text")
-    UserGroup.bind 'create', @groupStats
+    UserGroup.bind 'create', (group) =>
+      @group = group
+      @groupStats()
 
   active: (params) =>
     super
     unless User.current
       return
     @groupId = params.id
-
-    UserGroup.fetch(@groupId)
-    @groupName = (_.find User.current.user_groups, (group) =>
-      group.id = @groupId).name
-
+    @groupName = (_.find(User.current.user_groups, (group) =>
+      group.id is @groupId)).name
     @headingText.html "<h2>#{@groupName}</h2>"
-
     @html require('views/interactive/participate')(@)
+
+    if @groupId is UserGroup.current.id
+      @group = UserGroup.current
+      @groupStats()
+    else
+      UserGroup.fetch(@groupId)
+
+  deactivate: =>
+    super
+    if @group
+      @group.destroy() unless User.current?.user_group_id is @group.id
 
   events: 
     'click button[name="yes"]' : 'setParticipate'
@@ -36,11 +45,12 @@ class Group extends Spine.Controller
     UserGroup.stop()
     @navigate '/navigator/home'
 
-  groupStats: (group) =>
-    if (@groupId is group.id) and (User.current.id is group.owner.id)
+  groupStats: =>
+    if (@groupId is @group.id) and (User.current.id is @group.owner.id)
       stats = new Object
-      stats[user.name] = user.classification_count for key, user of group.users
+      stats[user.name] = user.classification_count for key, user of @group.users
       @append require('views/interactive/stats')({stats})
-    group.destroy()
+    else
+      @group.destroy()
       
 module.exports = Group

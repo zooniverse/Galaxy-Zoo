@@ -68,7 +68,6 @@ class Graphs extends BaseController
       @xAxisItem.find('label').html 'I\'d like to see how...'
       @graph = new Scatterplot { el: '#graph', channel: 'graph', height: 310, width: 512 } 
 
-
   # Graph interface functions
   setGraphType: (e) =>
     button = $(e.currentTarget)
@@ -109,10 +108,10 @@ class Graphs extends BaseController
 
     if @options.galaxyType
       filter = 
-        func: new Function("item", "return item['type'] === '#{@options.galaxyType}_count'")
+        func: new Function("item", "return item['classification'] === '#{@options.galaxyType}'")
       @graph.filters.push filter
 
-    if @options.galaxyType is 'disk'
+    if @options.galaxyType is 'feature'
       @graph.color = 'orange'
     else
       @graph.color = 'teal'
@@ -139,7 +138,7 @@ class Graphs extends BaseController
     limit = @options.sampleSize
     @graph.getDataSource 'InteractiveSubject', {random: isRandom, limit: limit}
 
-    @graph.bind 'data-recieved', =>
+    @graph.bind 'data-received', =>
       dataURI = "data:text/csv;charset=UTF-8," + encodeURIComponent(@generateCSV())
       @dataDownload.attr 'href', dataURI
 

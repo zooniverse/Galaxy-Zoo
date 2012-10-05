@@ -15,12 +15,14 @@ class UserGroup extends Model
 
   @stop: =>
     Api.post "/user_groups/0/participate", (json) =>
+      UserGroup.trigger 'stop', @current.id
       @current.destory()
   
   @participate: (id) =>
     Api.post "/user_groups/#{ id }/participate", (json) =>
       @currentId = id
       @current = UserGroup.create json
+      UserGroup.trigger 'participate', @current
   
   @fetchCurrent: =>
     if User.current and User.current.user_group_id
