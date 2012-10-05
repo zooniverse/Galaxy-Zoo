@@ -40,7 +40,6 @@ class MyGalaxies extends Spine.Controller
 
   render: ->
     @html require('views/interactive/my_galaxies')(@)
-    console.log @samples
     for sample in @samples
       @generateChart sample
 
@@ -76,8 +75,6 @@ class MyGalaxies extends Spine.Controller
         key: 'Galaxy Features',
         values: counts
       }
-
-    console.log data
 
     chart = d3.select('[data-id="' + sample.zooniverse_id+ '"] svg')
       .append('g')
