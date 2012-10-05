@@ -80,8 +80,6 @@ class Graphs extends BaseController
 
     @setGraph()
 
-    console.log @graph
-
   setXAxis: (e) =>
     @options.xAxis = $(e.currentTarget).val()
     @updateTitle()
@@ -136,10 +134,14 @@ class Graphs extends BaseController
 
   setSampleSize: (e) =>
     @options.sampleSize = $(e.currentTarget).val()
-    @graph.receiveData Sample.randomSample @options.sampleSize
 
-    dataURI = "data:text/csv;charset=UTF-8," + encodeURIComponent(@generateCSV())
-    @dataDownload.attr 'href', dataURI
+    isRandom = (@options.dataSource is 'all')
+    limit = @options.sampleSize
+    @graph.getDataSource 'InteractiveSubject', {random: isRandom, limit: limit}
+
+    @graph.bind 'data-recieved', =>
+      dataURI = "data:text/csv;charset=UTF-8," + encodeURIComponent(@generateCSV())
+      @dataDownload.attr 'href', dataURI
 
   reset: (e) =>
     @render()

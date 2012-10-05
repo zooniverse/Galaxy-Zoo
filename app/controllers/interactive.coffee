@@ -14,9 +14,10 @@ class Interactive extends Spine.Controller
 
   active: =>
     super
-    @html require('views/interactive/box')(@)
-    @activeGroups()
+    console.log @navigator
     unless @navigator
+      @html require('views/interactive/box')(@)
+      @activeGroups()
       @navigator = new Navigator
 
   elements:
@@ -27,7 +28,7 @@ class Interactive extends Spine.Controller
     'click a.show-groups' : 'showGroups'
 
   activeGroups: =>
-    if User.current
+    if User.current and User.current.user_groups
       for group in User.current.user_groups
         listItem = """<li class="user-group"><a href="/#/navigator/group/#{group.id}">#{group.name}</a></li>"""
         @groupsList.push listItem
