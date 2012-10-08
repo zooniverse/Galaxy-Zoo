@@ -18,6 +18,8 @@ class Interactive extends Spine.Controller
       @html require('views/interactive/box')(@)
       @appendGroups()
       @navigator = new Navigator
+      if @group
+        @setGroup @group
 
   elements:
     'ul.groups-dropdown' : 'groupsDropdown'
@@ -27,18 +29,16 @@ class Interactive extends Spine.Controller
     'click a.show-groups' : 'showGroups'
 
   activeGroups: =>
-    if typeof(@currentGroupId) is 'undefined'
-      @currentGroupId = User.current?.user_group_id
     if User.current and User.current.user_groups
       @groupsList = new Array
-      for group in User.current.user_groups when group.id isnt @currentGroupId
+      for group in User.current.user_groups when group.id isnt @group?.id
         listItem = """<li class="user-group"><a href="/#/navigator/group/#{group.id}">#{@formatGroupName(group.name)}</a></li>"""
         @groupsList.push listItem
       @groupsList.push '<li><a href="/#/navigator/create_group">Make a New Group</a></li>'
     @appendGroups()
 
   setGroup: (group) =>
-    @currentGroupId = group.id
+    @group = group
     @currentGroup.html """<a href="/#/navigator/group/#{group.id}">#{@formatGroupName(group.name)}</a>"""    
     @activeGroups()
 
