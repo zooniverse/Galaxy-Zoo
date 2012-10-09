@@ -31,9 +31,9 @@
   
   <div class="content-block">
     <div class="left">
-      <h1 class="heading">Create Words With Real Galaxies</h1>
-      <p class="description">Galaxy Zoo volunteers have discovered some amazing letter-shaped galaxies. To create your own phrases using these characters visit:</p>
-      <a href="http://writing.galaxyzoo.org" target="_blank" class="galaxify">Galaxy Writer</a>
+      <h1 class="heading">Galaxy Zoo in the Classroom</h1>
+      <p class="description">Are you an educator? Would you like to use Galaxy Zoo with a group of students? The <a href="http://www.galaxyzoo.org/#/navigator">Navigator</a> is an interactive tool that allows groups to classify galaxies together and then investigate galaxy characteristics. <a href="http://www.zooteach.org/zoo/galaxy_zoo">Zoo Teach</a> is where educators can share lessons, resources and that compliment the citizen science projects that are part of the Zooniverse.</p>
+      <a data-nav="#/navigator" href="/#/navigator" class="galaxify">Navigator</a>
     </div>
     <div class="right">
       <h1 class="heading">Recent Images</h1>
