@@ -1,4 +1,6 @@
 Spine = require('spine')
+User = require 'zooniverse/lib/models/user'
+LoginForm = require 'zooniverse/lib/controllers/login_form'
 
 class Interactive extends Spine.Controller
   events:
@@ -7,13 +9,18 @@ class Interactive extends Spine.Controller
   constructor: ->
     super
     @action_title = require('views/interactive/partials/intro_text')(@)
+    User.bind 'sign-in', @render
 
   active: ->
     super
     @render()
 
-  render: ->
-    @html require('views/interactive/interactive')(@)
+  render: =>
+    if User.current
+      @html require('views/interactive/interactive')(@)
+    else
+      @html require('views/login')()
+      new LoginForm el: '#login'
 
   addDX: ->
     if $("#dx-change").hasClass('unclicked')
