@@ -43,6 +43,19 @@ class UserGroup extends Model
   @inviteUsers: (id, emails) =>
     json =
       user_emails: emails
-    Api.post "/user_groups/#{ id }/invite", json
+    Api.post "/user_groups/#{ id }/invite", json, (result) =>
+      @trigger 'invited', result
+
+  @leave: (id) =>
+    Api.post "/user_groups/#{ id }/leave", (result) =>
+      @trigger 'leave-group', result
+      if @current?.id is id
+        @current.destory()
+
+  @delete: (id) =>
+    Api.delete "/user_groups/#{ id }", (result) =>
+      @trigger 'destory-group', result
+      if @current?.id is id
+        @current.destroy()
 
 module.exports = UserGroup

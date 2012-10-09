@@ -3,9 +3,8 @@
     <div id="top_bar">
       <a href="#/navigator/home"><h1>Navigator</h1></a>
       <div id="group-list">
-        <span class="current-group"><a href="/#/navigator/create_group">Make a New Group</a></span><a class="show-groups" href="#">&#9660;</a>
-        <ul class="groups-dropdown">
-        </ul>
+        <select class="groups-dropdown">
+        </select>
       </div>
       <div id="link_buttons">
         <a href="#/navigator/my_galaxies" data-link="my_galaxies">My Galaxies</a>

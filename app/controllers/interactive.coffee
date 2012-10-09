@@ -22,24 +22,24 @@ class Interactive extends Spine.Controller
         @setGroup @group
 
   elements:
-    'ul.groups-dropdown' : 'groupsDropdown'
-    'span.current-group' : 'currentGroup'
+    'select.groups-dropdown' : 'groupsDropdown'
 
   events: 
     'click a.show-groups' : 'showGroups'
+    'change select.groups-dropdown' : 'goToGroup'
 
   activeGroups: =>
     if User.current and User.current.user_groups
-      @groupsList = new Array
+      @groupsList = ['<option val="">Select Group</option>']
       for group in User.current.user_groups when group.id isnt @group?.id
-        listItem = """<li class="user-group"><a href="/#/navigator/group/#{group.id}">#{@formatGroupName(group.name)}</a></li>"""
+        listItem = """<option value="#{group.id}">#{@formatGroupName(group.name)}</option>"""
         @groupsList.push listItem
-      @groupsList.push '<li><a href="/#/navigator/create_group">Make a New Group</a></li>'
+      @groupsList.push '<option value="group">Make a New Group</option>'
     @appendGroups()
 
   setGroup: (group) =>
     @group = group
-    @currentGroup.html """<a href="/#/navigator/group/#{group.id}">#{@formatGroupName(group.name)}</a>"""    
+    @groupsDropdown.val group.id
     @activeGroups()
 
   showGroups: (e) =>
@@ -50,11 +50,18 @@ class Interactive extends Spine.Controller
     @groupsDropdown.html @groupsList.join('\n')
 
   reset: =>
-    @currentGroup.html '<a href="/#/navigator/create_group">Make a New Group</a>'
+    @currentGroup.html 'Select Group'
     @activeGroups()
 
+  goToGroup: (e) =>
+    groupId = @el.find(e.currentTarget).val()
+    if groupId is 'group'
+      @navigate '/navigator/group/'
+    else if groupId isnt ''
+      @navigate "/navigator/group/#{groupId}"
+
   formatGroupName: (name) =>
-    groupName = name.slice(0, 17)
+    groupName = name.slice(0, 25)
     groupName = groupName + '...' if groupName isnt name
     return groupName
 

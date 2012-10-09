@@ -1,6 +1,20 @@
 <div class="participate">
-  <p>Would you like to classify as part of <%- @groupName %>?
-  <button type="button" name="yes">Yes</button>
-  <button type="button" name="no">No</button>
-  </p>
+  <div class="stats">
+    <h2>Statistics</h2>
+    <ul class="stats">
+    </ul>
+  </div>
+  <h2>Invitations</h2>
+  <form id="group-signup">
+    <input name="name" placeholder="Enter Group Name" type="text" />
+    <textarea name="emails" placeholder="Invite users by entering their emails seperated with a comma (e.g. ed@example.com, cs@example.com, whyte@example.com)"></textarea>
+    <button type="submit" name="submit">Send Invites</button>
+  </form>
+  <div class="participation">
+    <h2>Participation</h2>
+    <button type="button" name="yes">Classify in Group</button>
+    <button type="button" name="no">Stop Classifying in Group</button>
+    <button type="button" name="leave">Leave Group</button>
+    <button type="button" name="destroy">Delete Group</button>
+  </div>
 </div>

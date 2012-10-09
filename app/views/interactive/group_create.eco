@@ -1,5 +1,0 @@
-<form id="group-signup">
-  <input name="name" placeholder="Enter Group Name" type="text" />
-  <textarea name="emails" placeholder="Enter group member's emails seperated with a comma (e.g. ed@example.com, cs@example.com, whyte@example.com)"></textarea>
-  <button type="submit" name="submit">Send Invites</button>
-</form>
