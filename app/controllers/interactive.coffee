@@ -2,13 +2,14 @@ Spine = require('spine')
 Navigator = require 'controllers/interactive/navigator'
 User = require 'zooniverse/lib/models/user'
 UserGroup = require 'models/user_group'
+LoginForm = require 'zooniverse/lib/controllers/login_form'
 
 class Interactive extends Spine.Controller
 
   constructor: ->
     super
     @groupsList = new Array
-    User.bind 'sign-in', @activeGroups unless User.current
+    User.bind 'sign-in', @activeGroups
     UserGroup.bind 'participate', @setGroup
     UserGroup.bind 'stop', @reset
     UserGroup.bind 'create', @addGroup
@@ -17,11 +18,14 @@ class Interactive extends Spine.Controller
   active: =>
     super
     unless @navigator
-      @html require('views/interactive/box')(@)
+      @render()
       @appendGroups()
       @navigator = new Navigator
       if @group
         @setGroup @group
+
+  render: =>
+    @html require('views/interactive/box')(@)
 
   elements:
     'select.groups-dropdown' : 'groupsDropdown'
