@@ -56,7 +56,6 @@ class UserGroup extends Model
   @delete: (id) =>
     req = Api.delete "/user_groups/#{ id }"
     req.always =>
-      console.log 'here'
       @trigger 'destroy-group', id
       if @current?.id is id
         @current.destroy()
