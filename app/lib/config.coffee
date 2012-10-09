@@ -14,7 +14,7 @@ Config =
       workflowId: '502a701e516bcb0001000002'
   
   development:
-    apiHost: 'https://api.zooniverse.org'
+    apiHost: 'https://localhost:3000'
     surveys:
       candels:
         id: '50251c3b516bcb6ecb000001'

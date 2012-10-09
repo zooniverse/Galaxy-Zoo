@@ -1,6 +1,6 @@
 Spine = require('spine')
 Sample = require 'lib/sample_interactive_data'
-Dialog = require 'zooniverse/lib/dialog'
+Dialog = require 'lib/dialog'
 User = require 'zooniverse/lib/models/user'
 
 SubjectViewer = require 'ubret/lib/controllers/SubjectViewer'
@@ -140,10 +140,11 @@ class MyGalaxies extends Spine.Controller
       sample.zooniverse_id == galaxy_id
     data.push subject
 
-    d = new Dialog
-    d.open()
+    d = new Dialog { template: 'views/interactive/dialog', closeButton: true, quickHide: true }
 
-    subject_viewer = new SubjectViewer({el: '.dialog-content'})
+    d.show()
+
+    subject_viewer = new SubjectViewer({el: '.subject-viewer'})
     subject_viewer.receiveData data
 
 module.exports = MyGalaxies
