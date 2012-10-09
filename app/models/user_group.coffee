@@ -54,8 +54,10 @@ class UserGroup extends Model
         @current.destory()
 
   @delete: (id) =>
-    Api.delete "/user_groups/#{ id }", (result) =>
-      @trigger 'destory-group', result
+    req = Api.delete "/user_groups/#{ id }"
+    req.always =>
+      console.log 'here'
+      @trigger 'destroy-group', id
       if @current?.id is id
         @current.destroy()
 

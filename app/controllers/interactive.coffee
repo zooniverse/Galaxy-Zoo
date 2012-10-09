@@ -11,7 +11,8 @@ class Interactive extends Spine.Controller
     User.bind 'sign-in', @activeGroups unless User.current
     UserGroup.bind 'participate', @setGroup
     UserGroup.bind 'stop', @reset
-    UserGroup.bind 'created', @addGroup
+    UserGroup.bind 'create', @addGroup
+    UserGroup.bind 'destroy-group', @removeGroup
 
   active: =>
     super
@@ -43,9 +44,15 @@ class Interactive extends Spine.Controller
     @activeGroups()
 
   addGroup: (group) =>
-    groupObj = { id: group.id, name: group.name }
-    if (_.indexOf(group, groupObj)) is -1
-      User.current.user_groups.push groupObj
+    item = _.find(User.current?.user_groups, (user_group) -> group.id is user_group.id)
+    unless item
+      User.current.user_groups.push { id: group.id, name: group.name }
+    @activeGroups()
+
+  removeGroup: (id) =>
+    item = _.find(User.current.user_groups, (group) -> group.id is id)
+    index = _.indexOf(User.current.user_groups, item)
+    User.current.user_groups.splice(index, 1)
     @activeGroups()
 
   appendGroups: =>
