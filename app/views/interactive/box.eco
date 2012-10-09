@@ -17,7 +17,7 @@
     <div id="navigator"></div>
 
     <div id="div-dx-change">
-      easy read: <input type="checkbox" value="dx-change" id="dx-change" class="unclicked"/>
+<!--      easy read: <input type="checkbox" value="dx-change" id="dx-change" class="unclicked"/> -->
     </div>
   </div>
 </section>
