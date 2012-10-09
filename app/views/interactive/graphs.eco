@@ -16,7 +16,7 @@
           <option value="redshift">Redshift</option>
           <option value="color">Color</option>
           <option value="apparent_brightness">Apparent Brightness</option>
-          <option value="absolute_size">Aboslute Size</option>
+          <option value="absolute_size">Absolute Size</option>
           <option value="absolute_brightness">Absolute Brightness</option>
         </select>
       </li>
@@ -28,7 +28,7 @@
           <option value="redshift">Redshift</option>
           <option value="color">Color</option>
           <option value="apparent_brightness">Apparent Brightness</option>
-          <option value="absolute_size">Aboslute Size</option>
+          <option value="absolute_size">Absolute Size</option>
           <option value="absolute_brightness">Absolute Brightness</option>
         </select>
       </li>

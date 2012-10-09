@@ -26,35 +26,19 @@ button-style($alignment = 'right')
   float: $alignment
   height: 30px
   text-align: right
+
   a, li, button
+    standard-button()
     display: inline-block
     width: 98px
-    padding: 3px 0
-    background: $button-background
-    border: 1px solid #b2b2b2
-    border-radius 3px
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255,255,255,1)
-    color: #3b3b3b
-    font-family: $normal
+    padding: 9px 0
     font-size: 12px
     text-align: center
     text-shadow: 0 1px 0 #fcfcfc
-    &.dx
-      background: $dx-button-background
+
     &.pressed
-      color: $blue
-      background: $hover-button-background
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1), inset 0 1px 1px #d3d3d3
-      &:hover
-        background: $hover-button-background
-        border: 1px solid #b2b2b2
-
-    &:hover
-      background: lighten($button-background, 35%)
-      border: 1px solid darken(#b2b2b2, 35%)
-
-    &.dx
-      background: $dx-hover-button-background 
+      background: #d2d2d2
+      box-shadow: 0 0.125ex 0.25ex rgba(#070E17, 0.5) inset
 
 [data-page="interactive"]
   padding: 0 0 20px 0
@@ -123,29 +107,23 @@ button-style($alignment = 'right')
     #group-list
       font-size: 12px
       position: absolute
-      bottom: 7px 
-      right: 220px
+      bottom: 0
+      right: 280px
       width: 180px
 
-      ul.groups-dropdown
-        display: none
-        position: absolute
-        list-style: none
-        width: 180px
-        padding: 0
-        margin: 0
-        background: $background
-        opacity: .93
-        z-index: 999
-
-        li
-          padding: 2px
-          margin-top: -1px
-          padding-left: 0
-          width: 140px
-
-        &.show-dropdown
-          display: block
+      select
+        position: relative
+        -webkit-appearance: none
+        -webkit-border-radius: 0px
+        width: 3 * $partridge + $gutter - 5px
+        height: 26px
+        padding: 3px 10px
+        background: url("images/gz-select-arrow.png") no-repeat 95% center
+        border: 1px solid #b2b2b2
+        border-radius 3px
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255,255,255,1)
+        font-size: 12px
+        transition: all 0.35s linear
 
       a
         padding: 0
@@ -279,37 +257,6 @@ p
     margin-top: 70px
     color: $blue
 
-#group-signup
-  input
-    display: block
-    height: 40px
-    font-family: "Open Sans"
-    font-size: 20px
-    width: 300px
-    margin-bottom: 20px
-
-  textarea
-    display: block
-    margin-bottom: 30px
-    font-family: "Open Sans"
-    font-size: 20px
-    height: 205px
-    width: 575px
-
-  button
-    display: block
-    background: none repeat scroll 0 0 #F4F4F4
-    border: 1px solid #B2B2B2
-    border-radius: 3px 3px 3px 3px
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1), 0 1px 0 #FFFFFF inset
-    color: #3B3B3B
-    display: inline-block
-    font-family: "Open Sans"
-    font-size: 12px
-    padding: 3px 0
-    text-align: center
-    text-shadow: 0 1px 0 #FCFCFC
-    width: 98px
 
 #graph_form
   #graph_area
@@ -427,9 +374,6 @@ p
         border: 1px solid #d54d29
         box-shadow: 0 0 8px rgba(255, 0, 0, 0.8)
 
-
-
-
 #graph
   display: inline
   float: right
@@ -488,60 +432,104 @@ p
       font-family: 'Open Sans'
       font-size: 12px
 
-// .dialog
-//   font-family: 'Open Sans'
-//   font-size: 12px
-//   text-align: left
-//   width: 550px
-//   
-//   img
-//     margin: 20px
-//     margin-top: 0
-//     max-width: 250px
-//     max-height: 250px
-//     float: left
-//   ul
-//     list-style: none
-//     position: relative
-//     top: 10px
-//     li
-//       padding: 5px
-// 
-//   button.dialog-button
-//     display: none
-
-ul.stats
-  list-style: none
-  height: 150px
-  margin: 0
-  padding: 0
-
-  li
+.subject-viewer
+  font-family: 'Open Sans'
+  font-size: 12px
+  text-align: left
+  width: 550px
+  img
+    margin: 20px
+    margin-top: 0
+    max-width: 250px
+    max-height: 250px
     float: left
-    width: 25%
+  ul
+    list-style: none
+    position: relative
+    top: 10px
+    li
+      padding: 5px
+
+  button.dialog-button
+    display: none
+
+
+.participate
+  
+  button[name="destroy"]
+    display: none
+
+  button[name="no"]
+    display: none
+
+  button
+    standard-button()
+    font-size: 12px
+    margin: 10px 0
+    padding: 6px 15px
+    line-height: 12px
+
+  .statistics
+    display: none
+
+  ul.stats
+    list-style: none
     margin: 0
     padding: 0
-    padding-right: 40px
-    border-right: 1px solid #d6d6d6
-    &:after
-      position: absolute
-      right: -2px
-      top: 0
-      height: 100%
-      width: 1px
-      border-right: 1px solid #f9f9f9
-      content: ''
+    margin-bottom: 20px
+    display: inline-block
 
-    &:nth-child(3n+2)
-      padding-left: 20px  
+    li
+      float: left
+      font-weight: 700
+      width: 190px
+      margin: 0
+      padding: 0
+      border-right: 1px solid #d6d6d6
+      height: 23px
+      &:after
+        position: absolute
+        right: -2px
+        top: 0
+        height: 23px
+        width: 1px
+        border-right: 1px solid #f9f9f9
+        content: ''
 
-    &:nth-child(3n+3)
-      border: 0
-      padding-left: 20px
+      &:nth-child(3n+1)
+        padding-right: 60px
 
-    .name
-      padding-right: 80px
+      &:nth-child(3n+2)
+        padding-left: 45px  
+        padding-right: 70px
 
-.participate p
-  text-align: center
+      &:nth-child(3n+3)
+        border: 0
+        padding-left: 50px
 
+      .count
+        text-align: right
+        float: right
+
+
+  #group-signup
+    display: none
+
+    p
+      display: none
+
+    input
+      display: none
+      height: 40px
+      font-family: "Open Sans"
+      font-size: 20px
+      width: 300px
+      margin-bottom: 20px
+
+    textarea
+      display: block
+      margin-bottom: 30px
+      font-family: "Open Sans"
+      font-size: 20px
+      height: 205px
+      width: 575px

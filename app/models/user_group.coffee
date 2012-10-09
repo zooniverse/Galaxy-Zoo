@@ -14,7 +14,8 @@ class UserGroup extends Model
       @current = UserGroup.create json
   
   @stop: =>
-    Api.post "/user_groups/0/participate", (json) =>
+    req = Api.post "/user_groups/0/participate"
+    req.always =>
       UserGroup.trigger 'stop', @current.id
       @current.destroy()
   
@@ -43,6 +44,21 @@ class UserGroup extends Model
   @inviteUsers: (id, emails) =>
     json =
       user_emails: emails
-    Api.post "/user_groups/#{ id }/invite", json
+    Api.post "/user_groups/#{ id }/invite", json, (result) =>
+      @trigger 'invited', result
+
+  @leave: (id) =>
+    Api.post "/user_groups/#{ id }/leave", (result) =>
+      @trigger 'leave-group', result
+      if @current?.id is id
+        @current.destory()
+
+  @delete: (id) =>
+    req = Api.delete "/user_groups/#{ id }"
+    req.always =>
+      console.log 'here'
+      @trigger 'destroy-group', id
+      if @current?.id is id
+        @current.destroy()
 
 module.exports = UserGroup

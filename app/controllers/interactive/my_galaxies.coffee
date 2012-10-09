@@ -1,6 +1,6 @@
 Spine = require('spine')
 Sample = require 'lib/sample_interactive_data'
-Dialog = require 'zooniverse/lib/dialog'
+Dialog = require 'lib/dialog'
 User = require 'zooniverse/lib/models/user'
 
 SubjectViewer = require 'ubret/lib/controllers/SubjectViewer'
@@ -18,13 +18,13 @@ class MyGalaxies extends Spine.Controller
     @action_title = '<h2>My Galaxies</h2>'
 
     User.bind 'sign-in', =>
-      if User.current.user_group_id
+      if User.current?.user_group_id
         InteractiveSubject.fetch({limit: 10, user: true}).onSuccess =>
           @samples = InteractiveSubject.lastFetch
 
   active: ->
     super
-    if User.current.user_group_id and typeof(@sample) is 'undefined'
+    if (typeof(User.current.user_group_id) is 'undefined') and (typeof(@sample) is 'undefined')
       InteractiveSubject.fetch({limit: 10, user: true}).onSuccess =>
         @samples = InteractiveSubject.lastFetch
         @render()
@@ -40,8 +40,9 @@ class MyGalaxies extends Spine.Controller
 
   render: ->
     @html require('views/interactive/my_galaxies')(@)
-    for sample in @samples
-      @generateChart sample
+    if @samples
+      for sample in @samples
+        @generateChart sample
 
   formatData: (sample) ->
     feature_counts = []
@@ -139,10 +140,11 @@ class MyGalaxies extends Spine.Controller
       sample.zooniverse_id == galaxy_id
     data.push subject
 
-    d = new Dialog
-    d.open()
+    d = new Dialog { template: 'views/interactive/dialog', closeButton: true, quickHide: true }
 
-    subject_viewer = new SubjectViewer({el: '.dialog-content'})
+    d.show()
+
+    subject_viewer = new SubjectViewer({el: '.subject-viewer'})
     subject_viewer.receiveData data
 
 module.exports = MyGalaxies
