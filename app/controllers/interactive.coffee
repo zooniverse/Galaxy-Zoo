@@ -52,6 +52,8 @@ class Interactive extends Spine.Controller
     @activeGroups()
 
   addGroup: (group) =>
+    if typeof(User.current.user_groups) is 'undefined'
+      User.current['user_groups'] = new Array
     item = _.find(User.current?.user_groups, (user_group) -> group.id is user_group.id)
     unless item
       User.current.user_groups.push { id: group.id, name: group.name }
