@@ -9,6 +9,7 @@ class Interactive extends Spine.Controller
   constructor: ->
     super
     @groupsList = new Array
+    User.bind 'sign-in', @active
     User.bind 'sign-in', @activeGroups
     UserGroup.bind 'participate', @setGroup
     UserGroup.bind 'stop', @reset
@@ -17,15 +18,20 @@ class Interactive extends Spine.Controller
 
   active: =>
     super
-    unless @navigator
+    if typeof(@navigator) is 'undefined' and User.current
       @render()
       @appendGroups()
       @navigator = new Navigator
       if @group
         @setGroup @group
+    else
+      @navigator = undefined
+      @html require('views/login')()
+      new LoginForm el: '#login'
 
   render: =>
-    @html require('views/interactive/box')(@)
+    if User.current
+      @html require('views/interactive/box')(@)
 
   elements:
     'select.groups-dropdown' : 'groupsDropdown'
@@ -34,13 +40,12 @@ class Interactive extends Spine.Controller
     'change select.groups-dropdown' : 'goToGroup'
 
   activeGroups: =>
+    @groupsList = ['<option val="">Select Group</option>']
     if User.current and User.current.user_groups
-      @groupsList = ['<option val="">Select Group</option>']
-      if User.current.user_groups
-        for group in User.current.user_groups
-          listItem = """<option value="#{group.id}">#{@formatGroupName(group.name)}</option>"""
-          @groupsList.push listItem
-      @groupsList.push '<option value="group">Make a New Group</option>'
+      for group in User.current.user_groups
+        listItem = """<option value="#{group.id}">#{@formatGroupName(group.name)}</option>"""
+        @groupsList.push listItem
+    @groupsList.push '<option value="group">Make a New Group</option>'
     @appendGroups()
 
   setGroup: (group) =>

@@ -18,11 +18,7 @@ class Interactive extends Spine.Controller
     @headingText.html @action_title
 
   render: =>
-    if User.current
-      @html require('views/interactive/interactive')(@)
-    else
-      @html require('views/login')()
-      new LoginForm el: '#login'
+    @html require('views/interactive/interactive')(@)
 
   addDX: ->
     if $("#dx-change").hasClass('unclicked')
