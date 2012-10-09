@@ -10,6 +10,7 @@ Team = require 'controllers/team'
 Interactive = require 'controllers/interactive'
 Astronomers = require 'controllers/astronomers'
 UserGroups = require 'controllers/user_groups'
+Quizzer = require 'controllers/quizzer'
 
 class Main extends Spine.Stack
   el: '#main'
@@ -26,6 +27,7 @@ class Main extends Spine.Stack
     interactive: Interactive
     astronomers: Astronomers
     user_groups: UserGroups
+    quizzer: Quizzer
     
   default: 'home'
   
@@ -41,5 +43,6 @@ class Main extends Spine.Stack
     '/navigator': 'interactive'
     '/astronomers': 'astronomers'
     '/user_groups/:id': 'user_groups'
+    '/quiz': 'quizzer'
 
 module.exports = Main
