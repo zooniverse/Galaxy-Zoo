@@ -24,7 +24,7 @@ class MyGalaxies extends Spine.Controller
 
   active: ->
     super
-    if User.current.user_group_id and typeof(@sample) is 'undefined'
+    if (typeof(User.current.user_group_id) is 'undefined') and (typeof(@sample) is 'undefined')
       InteractiveSubject.fetch({limit: 10, user: true}).onSuccess =>
         @samples = InteractiveSubject.lastFetch
         @render()
@@ -40,8 +40,9 @@ class MyGalaxies extends Spine.Controller
 
   render: ->
     @html require('views/interactive/my_galaxies')(@)
-    for sample in @samples
-      @generateChart sample
+    if @samples
+      for sample in @samples
+        @generateChart sample
 
   formatData: (sample) ->
     feature_counts = []

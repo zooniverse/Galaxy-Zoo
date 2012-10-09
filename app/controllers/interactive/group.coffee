@@ -16,12 +16,10 @@ class Group extends Spine.Controller
         @usersInvited.show()
 
     UserGroup.bind 'participate', =>
-      console.log 'here'
       @participateButton.hide()
       @stopParticipateButton.show()
 
     UserGroup.bind 'stop', =>
-      console.log 'here'
       @participateButton.show()
       @stopParticipateButton.hide()
 
@@ -30,14 +28,10 @@ class Group extends Spine.Controller
     @render()
     @groupId = null
     @groupName = null
-    console.log params
     if params.id isnt ''
       unless User.current
         return
       @groupId = params.id
-      @groupName = (_.find(User.current.user_groups, (group) =>
-        group.id is @groupId)).name
-      @headingText.html "<h2>#{@groupName}</h2>"
 
       if @groupId and @groupId is UserGroup.current?.id
         @displayElements(UserGroup.current)
@@ -60,12 +54,19 @@ class Group extends Spine.Controller
 
   displayElements: (group) =>
     @group = group
+    @headingText.html "<h2>#{@group.name}</h2>"
+
+    if @groupId is null
+      @navigate "/navigator/group/#{ @group.id }"
     if @group.owner.id is User.current?.id
       @leaveGroupButton.hide()
       @destroyGroupButton.show()
       @groupStats()
       @signUpForm.show()
       @statistics.show()
+      @usersInvited.hide()
+      @groupNameBox.hide()
+      @participation.show()
     if @group.id is User.current?.user_group_id
       @participateButton.hide()
       @stopParticipateButton.show()
