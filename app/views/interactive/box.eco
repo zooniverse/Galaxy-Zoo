@@ -1,0 +1,23 @@
+<section data-page="interactive">
+  <div class="container">
+    <div id="top_bar">
+      <a href="#/navigator/home"><h1>Navigator</h1></a>
+      <div id="group-list">
+        <select class="groups-dropdown">
+        </select>
+      </div>
+      <div id="link_buttons">
+        <a href="#/navigator/my_galaxies" data-link="my_galaxies">My Galaxies</a>
+        <a href="#/navigator/graphs" data-link="graphs">Graph Data</a>
+      </div>
+    </div>
+
+    <div id="heading_text"></div>
+
+    <div id="navigator"></div>
+
+    <div id="div-dx-change">
+<!--      easy read: <input type="checkbox" value="dx-change" id="dx-change" class="unclicked"/> -->
+    </div>
+  </div>
+</section>

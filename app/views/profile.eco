@@ -60,6 +60,13 @@
             </div>
           </div>
         </div>
+        
+        <% if @user().zooniverse_id > 1050000 : %>
+          <div class="gz_3_galaxies">
+            <h3 class="sub-heading">Galaxy Zoo: Hubble</h3>
+            <span class="caption">If you're looking for your old galaxies from Galaxy Zoo Hubble, then you can <a href="http://hubble.galaxyzoo.org/my_galaxies" target="_blank">find them here</a>.</span>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>

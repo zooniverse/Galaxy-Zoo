@@ -1,0 +1,84 @@
+<form id="graph_form">
+  <div id="graph_area">
+    <ul class="controls">
+
+      <li class="buttons nolabel show-control">
+        <div id="setting-variable-control">
+          <button type="button" data-variables="histogram">Histogram</button>
+          <button type="button" data-variables="scatterplot">Scatter Graph</button>
+        </div>
+      </li>
+
+      <li id="x-axis-item" class="show-control">
+        <label>I'd like to see how...</label>
+        <select id="x-axis" name="xAxis">
+          <option value="">Choose the x-axis variable</option>
+          <option value="redshift">Redshift</option>
+          <option value="color">Color</option>
+          <option value="apparent_brightness">Apparent Brightness</option>
+          <option value="absolute_size">Absolute Size</option>
+          <option value="absolute_brightness">Absolute Brightness</option>
+        </select>
+      </li>
+
+      <li id="y-axis-item">
+        <label>relates to...</label>
+        <select id="y-axis" name="yAxis">
+          <option value="">Choose the y-axis variable</option>
+          <option value="redshift">Redshift</option>
+          <option value="color">Color</option>
+          <option value="apparent_brightness">Apparent Brightness</option>
+          <option value="absolute_size">Absolute Size</option>
+          <option value="absolute_brightness">Absolute Brightness</option>
+        </select>
+      </li>
+
+      <li class="buttons" id="galaxy-types">
+        <label>in the following galaxy type...</label>
+        <div id="setting-galaxy-type">
+          <button type="button" data-type="smooth">Smooth</button>
+          <button type="button" data-type="feature">Feature/Disk</button>
+        </div>
+      </li>
+
+      <li class="separator"></li>
+
+      <li class="buttons" id="galaxy-sets">
+        <label>I'd like to use data from...</label>
+        <div id="setting-data-source">
+          <button type="button" data-source="group">My Group</button>
+          <button type="button" data-source="all">Galaxy Zoo</button>
+        </div>
+      </li>
+
+      <li id="sample-sizes">
+        <label>with a sample size of...</label>
+        <select id="sample-size" name="sampleSize">
+          <option value="">Choose sample size</option>
+          <option value="10">10 galaxies</option>
+          <option value="50">50 galaxies</option>
+          <option value="100">100 galaxies</option>
+          <option value="250" style="display: none">250 randomly selected galaxies</option>
+          <option value="500" style="display: none">500 randomly selected galaxies</option>
+        </select>
+
+      </li>
+    </ul>
+    <div id="graph">
+      <h3 id="graph-title"></h3>
+      <svg></svg>
+    </div>
+    <canvas id="canvas"></canvas>
+  </div>
+
+  <div id="actions">
+    <button type="button" name="reset">Reset Graph</button>
+    <div class="misc">
+      <button type="button" name="screenshot">Take Snapshot</button>
+      <div class="download-button">
+        <a href="" download="my_data.csv" target="_blank">Download Data</a>
+      </div>
+    </div>
+  </div>
+</form>
+

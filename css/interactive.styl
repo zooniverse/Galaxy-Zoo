@@ -1,0 +1,535 @@
+// Interactive
+$partridge = 65px
+$gutter = 20px
+$condensed = "Open Sans Condensed" 
+$normal = "Open Sans" 
+$background = #E6EDF0
+$button-background = #f4f4f4
+$hover-button-background = #dfdfdf
+@font-face { font-family: open-dyslexic; src: url('OpenDyslexic-Regular.otf'); }
+@font-face { font-family: open-dyslexic-italic; src: url('OpenDyslexic-Italic.otf'); }
+$dx-normal = open-dyslexic
+$dx-condensed = open-dyslexic-italic
+$dx-background = #9DD2ED
+$dx-button-background = #E9F768
+$dx-hover-button-background = #F2864B
+
+clearfix()
+  &:before,&:after
+    content: ''
+    display: table
+  &:after
+    clear: both
+
+button-style($alignment = 'right')
+  display: inline
+  float: $alignment
+  height: 30px
+  text-align: right
+
+  a, li, button
+    standard-button()
+    display: inline-block
+    width: 98px
+    padding: 9px 0
+    font-size: 12px
+    text-align: center
+    text-shadow: 0 1px 0 #fcfcfc
+
+    &.pressed
+      background: #d2d2d2
+      box-shadow: 0 0.125ex 0.25ex rgba(#070E17, 0.5) inset
+
+[data-page="interactive"]
+  padding: 0 0 20px 0
+  background: $background
+  color: #3b3b3b
+  font-family: $normal
+
+  .stack > *:not(.active)
+    display: none
+
+  .container
+    width: 830px
+    margin: 0 auto
+  h1, h2
+    font-family: $condensed
+    font-weight: 400
+    &.dx
+      font-family: $dx-condensed
+  h1
+    font-size: 48px
+
+  h2
+    &.section-header
+      position: relative
+      padding: 3px 0
+      border-bottom: 1px solid #d6d6d6
+      color: $blue
+      font-family: $normal
+      font-size: 14px
+      font-weight: 700
+      &:after
+        position: absolute
+        bottom: -2px
+        left: 0
+        width: 100%
+        height: 1px
+        border-bottom: 1px solid #f9f9f9
+        content: ''
+
+  #heading_text
+    position: relative
+    height: 72px
+    margin: 0 0 20px
+    border-bottom: 1px solid #d6d6d6
+    &:after
+      position: absolute
+      width: 100%
+      bottom: -2px
+      left: 0
+      border-bottom: 1px solid #f9f9f9
+      content: ''
+    h2
+      position: absolute
+      bottom: 8px
+      left: 0
+      margin: 0
+      color: $blue
+      font-family: $normal
+      font-size: 14px
+      font-weight: 700
+
+  #top_bar
+    position: relative
+    padding: 15px 0 0
+    font-family: $normal
+    #group-list
+      font-size: 12px
+      position: absolute
+      bottom: 0
+      right: 280px
+      width: 180px
+
+      select
+        position: relative
+        -webkit-appearance: none
+        -webkit-border-radius: 0px
+        width: 3 * $partridge + $gutter - 5px
+        height: 26px
+        padding: 3px 10px
+        background: url("images/gz-select-arrow.png") no-repeat 95% center
+        border: 1px solid #b2b2b2
+        border-radius 3px
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255,255,255,1)
+        font-size: 12px
+        transition: all 0.35s linear
+
+      a
+        padding: 0
+        margin: 0
+        padding-bottom: 10px
+        padding-right: 10px
+
+      a.show-group
+        font-size: 10px
+        padding-right: 5px
+
+    #link_buttons
+      position: absolute
+      bottom: 0
+      right: 0
+      width: 230px
+      border-left: 1px solid #d6d6d6
+      text-align: right
+      button-style()
+
+    a
+     text-decoration: none
+
+    h1
+      position: absolute
+      bottom: -14px
+      left: 0
+      width: 50%
+      color: #171717
+
+  #navigator
+    padding: 0 0 50px 0
+    clearfix()
+
+  // Welcome Page
+  #welcome
+    min-height: 215px
+    margin: 0 -5px 0
+  .image_div
+    position: relative
+    float: left
+    margin: 0 4px 0 0
+    h2
+      display: inline
+      position: absolute
+      text-align: center
+      width: 3 * $partridge
+      z-index: 100
+      margin: 20px 0px 20px 5px
+      padding: 0px
+      color: white
+    a
+      text-decoration: none
+      &:hover img
+        border: 3px solid $blue
+      img
+        position: relative
+        width: 3*$partridge + 5px
+        background: white
+        border-radius: 5px
+        -moz-border-radius: 5px
+        border: 3px solid white
+
+    p
+      display: inline
+      position: absolute
+      text-align: center
+      width: 3 * $partridge
+      color: black
+      z-index: 100
+      margin: 125px 0px 0px 5px
+      padding: 10px 0 0
+
+  #my_galaxies
+    .galaxy
+      float: left
+      width: 50%
+      margin: 0 0 15px 0
+      font-size: 12px
+      .meta-data
+        overflow: hidden
+      svg
+        float: right
+        width: 265px
+        height: 150px
+        margin: 20px 0 0
+        text
+          font-size: 10px
+          fill: #000
+        g
+          rect
+            fill-opacity: 0.8
+            &.hovered
+              fill-opacity: 1
+          text
+            stroke: none
+          .value
+            font-size: 12px
+        .nv-y
+          visibility: hidden
+
+        .nv-x path
+          visibility: hidden
+
+        .nv-x line
+          visibility: hidden
+
+p
+ font-family: $normal 
+ &.dx
+  font-family: $dx-normal
+
+#top_bar
+  width: 10*$partridge + 9*$gutter
+  height: 70px
+  margin: 0 0 15px
+  padding: 0px
+
+  a
+    text-decoration: none
+    color: black
+
+  h1
+    margin: 0px
+    padding: 0px
+    display: inline
+    width: 700px
+  p
+    margin-top: 20px
+  h2
+    margin-top: 70px
+    color: $blue
+
+
+#graph_form
+  #graph_area
+    clearfix()
+    canvas
+      display: none
+  #actions
+    margin: 20px 0 0 0
+    .misc
+      float: right
+
+      .download-button
+        background: #1e9ace
+        border: 1px solid #0b709c
+        border-radius 3px
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1), inset 0 1px 0 #21b1ed
+        padding-left: 6px
+        padding-right: 6px
+        padding-top: 1px
+        padding-bottom: 1px
+        display: inline-block
+
+        a
+          color: #fff
+          text-decoration: none
+          font-size: 13px
+          font-weight: 700
+          line-height: 28px
+
+    button
+      background: #1e9ace
+      border: 1px solid #0b709c
+      border-radius 3px
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1), inset 0 1px 0 #21b1ed
+      color: #fff
+      cursor: pointer
+      font-size: 13px
+      font-weight: 700
+      line-height: 28px
+      text-shadow: 0 1px 0 #1576a3
+      &[name="reset"]
+        width: (3 * $partridge) + $gutter - 5px
+
+  .controls
+    float: left
+    width: (3 * $partridge) + $gutter
+    margin: 0 $partridge 0 0
+    padding: 0
+
+    label
+      display: block
+      padding: 3px 0
+      font-size: 13px
+      font-weight: 700
+
+    li
+      height: 55px
+      list-style: none
+      transition: all 0.5s ease-in
+      opacity: 0
+      &:before,&:after
+        content: ''
+        display: table
+      &:after
+        clear: both
+
+      &:last-child
+        margin: 0
+
+      &.buttons
+        margin: 0
+        padding: 0
+        &.nolabel
+          height: 35px
+        div
+          button-style(left)
+          button
+            margin: 0 9px 0 0
+            &:last-child
+              margin: 0
+
+      &.separator
+        position: relative
+        height: 30px
+        &:before, &:after
+          position: absolute
+          content: ''
+          left: 0
+          width: 100%
+          height: 0
+        &:before
+          top: 15px
+          border-top: 1px solid darken(#d6d6d6,11%)
+        &:after
+          top: 16px
+          border-bottom: 1px solid #f9f9f9
+
+      &.show-control
+        opacity: 1
+
+    select
+      position: relative
+      -webkit-appearance: none
+      -webkit-border-radius: 0px
+      width: 3 * $partridge + $gutter - 5px
+      height: 26px
+      padding: 3px 10px
+      background: url("images/gz-select-arrow.png") no-repeat 95% center
+      border: 1px solid #b2b2b2
+      border-radius 3px
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255,255,255,1)
+      font-size: 12px
+      transition: all 0.35s linear
+      &.error
+        border: 1px solid #d54d29
+        box-shadow: 0 0 8px rgba(255, 0, 0, 0.8)
+
+#graph
+  display: inline
+  float: right
+  width: 6*$partridge + 7*$gutter
+  height: 333px
+  border: 1px solid #C0C0C0
+  background: $light-gray
+  padding-left: 15px
+
+  .tooltip
+    font-size: 10px
+    position: absolute
+    background: #cdcdcd
+    border-radius: 5px
+    box-shadow: 3px 3px 3px #000
+    opacity: .6
+
+    ul
+      list-style-type: none
+      margin: 0
+      padding: 5px
+
+
+  h3
+    margin: 5px auto 0
+    font-size: 14px
+    text-align: center
+
+  svg  
+    display: inline
+    width: 6*$partridge + 7*$gutter
+    height: 310px
+
+    .bar rect
+      shape-rendering: crispEdges
+
+    .bar text
+      fill: $light-gray
+      font-family: 'Open Sans'
+      font-size: 12px
+
+    .point circle
+      shape-rednering: crispEdges 
+
+    .point circle:hover
+      fill: red
+    
+    .axis path, .axis line
+      shape-rendering: crispEdges;
+      stroke: #000
+      fill: none 
+      path
+      stroke-width: 1px
+
+    text
+      font-family: 'Open Sans'
+      font-size: 12px
+
+.subject-viewer
+  font-family: 'Open Sans'
+  font-size: 12px
+  text-align: left
+  width: 550px
+  img
+    margin: 20px
+    margin-top: 0
+    max-width: 250px
+    max-height: 250px
+    float: left
+  ul
+    list-style: none
+    position: relative
+    top: 10px
+    li
+      padding: 5px
+
+  button.dialog-button
+    display: none
+
+
+.participate
+  
+  button[name="destroy"]
+    display: none
+
+  button[name="no"]
+    display: none
+
+  button
+    standard-button()
+    font-size: 12px
+    margin: 10px 0
+    padding: 6px 15px
+    line-height: 12px
+
+  .statistics
+    display: none
+
+  ul.stats
+    list-style: none
+    margin: 0
+    padding: 0
+    margin-bottom: 20px
+    display: inline-block
+
+    li
+      float: left
+      font-weight: 700
+      width: 190px
+      margin: 0
+      padding: 0
+      border-right: 1px solid #d6d6d6
+      height: 23px
+      &:after
+        position: absolute
+        right: -2px
+        top: 0
+        height: 23px
+        width: 1px
+        border-right: 1px solid #f9f9f9
+        content: ''
+
+      &:nth-child(3n+1)
+        padding-right: 60px
+
+      &:nth-child(3n+2)
+        padding-left: 45px  
+        padding-right: 70px
+
+      &:nth-child(3n+3)
+        border: 0
+        padding-left: 50px
+
+      .count
+        text-align: right
+        float: right
+
+
+  #group-signup
+    display: none
+
+    p
+      display: none
+
+    input
+      display: none
+      height: 40px
+      font-family: "Open Sans"
+      font-size: 20px
+      width: 300px
+      margin-bottom: 20px
+
+    textarea
+      display: block
+      margin-bottom: 30px
+      font-family: "Open Sans"
+      font-size: 20px
+      height: 205px
+      width: 575px
