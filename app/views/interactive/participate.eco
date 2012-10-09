@@ -4,11 +4,12 @@
     <ul class="stats">
     </ul>
   </div>
-  <h2>Invitations</h2>
   <form id="group-signup">
+    <h2>Invitations</h2>
     <input name="name" placeholder="Enter Group Name" type="text" />
     <textarea name="emails" placeholder="Invite users by entering their emails seperated with a comma (e.g. ed@example.com, cs@example.com, whyte@example.com)"></textarea>
     <button type="submit" name="submit">Send Invites</button>
+    <p>Users Invited</p>
   </form>
   <div class="participation">
     <h2>Participation</h2>

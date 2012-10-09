@@ -18,7 +18,7 @@ class MyGalaxies extends Spine.Controller
     @action_title = '<h2>My Galaxies</h2>'
 
     User.bind 'sign-in', =>
-      if User.current.user_group_id
+      if User.current?.user_group_id
         InteractiveSubject.fetch({limit: 10, user: true}).onSuccess =>
           @samples = InteractiveSubject.lastFetch
 

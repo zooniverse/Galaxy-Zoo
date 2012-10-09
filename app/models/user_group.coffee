@@ -14,7 +14,8 @@ class UserGroup extends Model
       @current = UserGroup.create json
   
   @stop: =>
-    Api.post "/user_groups/0/participate", (json) =>
+    req = Api.post "/user_groups/0/participate"
+    req.always =>
       UserGroup.trigger 'stop', @current.id
       @current.destroy()
   

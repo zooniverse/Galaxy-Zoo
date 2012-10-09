@@ -11,6 +11,7 @@ class Interactive extends Spine.Controller
     User.bind 'sign-in', @activeGroups unless User.current
     UserGroup.bind 'participate', @setGroup
     UserGroup.bind 'stop', @reset
+    UserGroup.bind 'created', @addGroup
 
   active: =>
     super
@@ -25,13 +26,12 @@ class Interactive extends Spine.Controller
     'select.groups-dropdown' : 'groupsDropdown'
 
   events: 
-    'click a.show-groups' : 'showGroups'
     'change select.groups-dropdown' : 'goToGroup'
 
   activeGroups: =>
     if User.current and User.current.user_groups
       @groupsList = ['<option val="">Select Group</option>']
-      for group in User.current.user_groups when group.id isnt @group?.id
+      for group in User.current.user_groups
         listItem = """<option value="#{group.id}">#{@formatGroupName(group.name)}</option>"""
         @groupsList.push listItem
       @groupsList.push '<option value="group">Make a New Group</option>'
@@ -42,22 +42,24 @@ class Interactive extends Spine.Controller
     @groupsDropdown.val group.id
     @activeGroups()
 
-  showGroups: (e) =>
-    e.preventDefault()
-    @groupsDropdown.toggleClass "show-dropdown"
+  addGroup: (group) =>
+    groupObj = { id: group.id, name: group.name }
+    if (_.indexOf(group, groupObj)) is -1
+      User.current.user_groups.push groupObj
+    @activeGroups()
 
   appendGroups: =>
     @groupsDropdown.html @groupsList.join('\n')
 
   reset: =>
-    @currentGroup.html 'Select Group'
+    @groupsDropdown.val 'Select Group'
     @activeGroups()
 
   goToGroup: (e) =>
     groupId = @el.find(e.currentTarget).val()
     if groupId is 'group'
       @navigate '/navigator/group/'
-    else if groupId isnt ''
+    else if groupId isnt 'Select Group'
       @navigate "/navigator/group/#{groupId}"
 
   formatGroupName: (name) =>
