@@ -25,24 +25,18 @@ WebGL =
         
         "uniform sampler2D u_tex;",
         "uniform vec2 u_extremes;",
-        "uniform float u_peakLevel;",
         
         "varying vec2 v_textureCoord;",
-        
-        "float scale(float value) {",
-          "return u_peakLevel * value / 10.0;",
-        "}",
         
         "void main() {",
             "vec4 pixel_v = texture2D(u_tex, v_textureCoord);",
             
-            "float min = scale(u_extremes[0]);",
-            "float max = scale(u_extremes[1]);",
+            "float min = u_extremes[0];",
+            "float max = u_extremes[1];",
             
-            "float pixel = scale(pixel_v[0]);",
-            "float final = (pixel - min) / (max - min);",
+            "float pixel = (pixel_v[0] - min) / (max - min);",
             
-            "gl_FragColor = vec4(final, final, final, 1.0);",
+            "gl_FragColor = vec4(pixel, pixel, pixel, 1.0);",
         "}"
       ].join("\n")
       logarithm: [

@@ -8,7 +8,7 @@ Workers = require('lib/workers')
 class FITSViewer extends Spine.Controller
   @validDestination = "http://www.sdss.org.uk/"
   
-  @bins = 500
+  @bins = 10000
   @viewportWidth  = 424
   @viewportHeight = 424
   
@@ -26,8 +26,7 @@ class FITSViewer extends Spine.Controller
     @images = {}
     @histograms = {}
     @means = {}
-    @stds = {}
-    @peakLevel = {}
+    @percentiles = {}
     
     # Store band and texture location
     @textureCount = 0
@@ -97,19 +96,22 @@ class FITSViewer extends Spine.Controller
          data: dataunit.data
          bins: FITSViewer.bins
          band: band
-
+       
        # Inline baby!!
-       blob = new Blob([Workers.Histogram], {type: 'text/javascript'})
+       # Have to do some crazy stuff in order to write the workers in CoffeeScript
+       reg = /function \(\) \{([\s\S.]*)\}/
+       worker = Workers.Histogram.toString()
+       worker = worker.match(reg)[1].replace('return self.addEventListener', 'self.addEventListener')
+       blob = new Blob([worker], {type: 'text/javascript'})
        blobUrl = window.URL.createObjectURL(blob)
 
        worker = new Worker(blobUrl)
        worker.addEventListener 'message', ((e) =>
          data = e.data
          band = data.band
-         @histograms[band] = data.histogram
-         @means[band]      = data.mean
-         @stds[band]       = data.std
-         @peakLevel[band]      = data.upper
+         @histograms[band]  = data.histogram
+         @means[band]       = data.mean
+         @percentiles[band] = [data.lower, data.upper]
          
          # Enable associated button
          $("#band-#{band}").removeAttr('disabled')
@@ -123,6 +125,11 @@ class FITSViewer extends Spine.Controller
       # Create texture
       p2 = p2.pipe (obj) =>
         band = obj.band
+        image = obj.image
+        min = @images[band].getDataUnit().min
+        for value, index in image
+          image[index] = min if isNaN(value)
+        
         console.log 'Creating texture for', band, obj
         address = "TEXTURE#{@textureCount}"
         @gl.activeTexture(@gl[address])
@@ -134,7 +141,7 @@ class FITSViewer extends Spine.Controller
         @gl.texParameteri(@gl.TEXTURE_2D, @gl.TEXTURE_MIN_FILTER, @gl.NEAREST)
         @gl.texParameteri(@gl.TEXTURE_2D, @gl.TEXTURE_MAG_FILTER, @gl.NEAREST)
         console.log @width, @height
-        @gl.texImage2D(@gl.TEXTURE_2D, 0, @gl.LUMINANCE, @width, @height, 0, @gl.LUMINANCE, @gl.FLOAT, obj.image)
+        @gl.texImage2D(@gl.TEXTURE_2D, 0, @gl.LUMINANCE, @width, @height, 0, @gl.LUMINANCE, @gl.FLOAT, image)
         
         @textures[band] = address
         @textureCount += 1
@@ -322,16 +329,11 @@ class FITSViewer extends Spine.Controller
     # Cache minimum and maximum values for selected band
     dataunit = @images[@band].getDataUnit()
     
-    [@minimum, @maximum] = [@currentMin, @currentMax] = [dataunit.min, dataunit.max]
-    
-    [@minimum, @maximum] = [@currentMin, @currentMax] = [@computePercentile(@histograms[@band], 0.0025), @computePercentile(@histograms[@band], 0.9975)]
+    # [@minimum, @maximum] = [@currentMin, @currentMax] = [dataunit.min, dataunit.max]
+    [@minimum, @maximum] = [@currentMin, @currentMax] = @percentiles[@band]
     
     # Select correct texture and draw
     address = @textures[@band]
-    
-    # Send peak level to GPU
-    peakLevelLocation = @gl.getUniformLocation(@program, 'u_peakLevel')
-    @gl.uniform1f(peakLevelLocation, @peakLevel[@band])
     
     @gl.activeTexture(@gl[address])
     @drawScene()
@@ -400,22 +402,6 @@ class FITSViewer extends Spine.Controller
         lineWidth: 1
         
     return options
-  
-  computePercentile: (histogram, percentile) =>
-    # Format of histogram array s [ [bin, count] ]
-    
-    sum = running = p = 0
-    for values in histogram
-      if values?
-        [bin, count] = values
-        sum += (@minimum + bin) * count
-    
-    for values in histogram
-      if values?
-        [bin, count] = values
-        running += (@minimum + bin) * count
-        p = running / sum
-        return bin if p > percentile
   
   # Draws markers over the histogram
   drawMarkers: (values) =>

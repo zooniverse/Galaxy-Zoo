@@ -1,9 +1,71 @@
 # Code to generate inline web workers for MW Viewer
 
 Workers =
-  
+  Histogram: =>
+    computeStatistics = (min, max, bins, data) =>
+      range = max - min
+      binSize = range / bins
+      numPixels = data.length
+      numNaNs = 0
+      sum = 0
+      
+      # Initialize array
+      histogram = new Array(bins + 1)
+      for value, index in histogram
+        step = binSize * index
+        histogram[index] = [step, 0]
+      
+      for value, index in data
+        if isNaN(value)
+          numNaNs += 1
+          continue
+        sum += value
+        index = Math.floor(((value - min) / range) * bins)
+        histogram[index][1] += 1
+      
+      mean = sum / (numPixels - numNaNs)
+      
+      # Compute percentiles
+      [lower, upper] = [0.0025, 0.9975]
+      running = 0
+      l = histogram.length      
+      while l--
+        [value, count] = histogram[l]
+        running += (value * count)
+        percentile = (sum - running) / sum
+        if percentile < upper
+          upper = value
+          break
+          
+      running = 0
+      l = length = histogram.length
+      while l--
+        index = length - l - 1
+        [value, count] = histogram[index]
+        running += (value * count)
+        percentile = running / sum
+        if percentile > lower
+          lower = value
+          break
+      
+      return [histogram, mean, lower, upper]
+      
+    self.addEventListener "message", ((e) ->
+      data = e.data
+      [histogram, mean, lower, upper] = computeStatistics(data.min, data.max, data.bins, data.data)
+      msg =
+        histogram: histogram
+        mean: mean
+        lower: lower
+        upper: upper
+        band: data.band
+
+      self.postMessage(msg)
+    ), false
+    
   # TODO: Variables should be shortened manually.  Any JS compressor won't minify this.
-  Histogram: [
+  HistogramOld: [
+    
     "var computeHistogram;",
 
     "computeHistogram = function(min, max, bins, data) {",
@@ -41,20 +103,7 @@ Workers =
       "}",
       "std = Math.sqrt(sum / numpixels);",
       
-      "for (i = 0; i < flotHistogram.length; i += 1) {",
-        "values = flotHistogram[flotHistogram.length - i - 1];",
-        "if (values == null) {",
-          "continue;",
-        "}",
-        "value = values[0];",
-        "number = values[1];",
-        "upper = (sum - number * value) / sum;",
-        "if (upper <= 0.9975) {",
-          "break;",
-        "}",
-      "}",
-      
-      "return [flotHistogram, mean, std, upper];",
+      "return [flotHistogram, mean, std];",
     "};",
     
     "self.addEventListener('message', (function (e) {",
@@ -64,7 +113,7 @@ Workers =
 
       "stats = computeHistogram(data.min, data.max, data.bins, data.data);",
       
-      "msg = {histogram: stats[0], mean: stats[1], std: stats[2], band: data.band, upper: stats[3]};",
+      "msg = {histogram: stats[0], mean: stats[1], std: stats[2], band: data.band};",
       "self.postMessage(msg);",
     "}), false);"
   ].join("\n")
