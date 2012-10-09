@@ -9,7 +9,7 @@ class Interactive extends Spine.Controller
   constructor: ->
     super
     @groupsList = new Array
-    User.bind 'sign-in', @active
+    User.bind 'sign-in', @render
     User.bind 'sign-in', @activeGroups
     UserGroup.bind 'participate', @setGroup
     UserGroup.bind 'stop', @reset
@@ -18,9 +18,11 @@ class Interactive extends Spine.Controller
 
   active: =>
     super
+
+  render: =>
     if typeof(@navigator) is 'undefined' and User.current
-      @render()
       @appendGroups()
+      @html require('views/interactive/box')(@)
       @navigator = new Navigator
       if @group
         @setGroup @group
@@ -28,10 +30,6 @@ class Interactive extends Spine.Controller
       @navigator = undefined
       @html require('views/login')()
       new LoginForm el: '#login'
-
-  render: =>
-    if User.current
-      @html require('views/interactive/box')(@)
 
   elements:
     'select.groups-dropdown' : 'groupsDropdown'
