@@ -24,7 +24,7 @@ class MyGalaxies extends Spine.Controller
 
   active: ->
     super
-    if (typeof(User.current.user_group_id) is 'undefined') and (typeof(@sample) is 'undefined')
+    if User.current.user_group_id and typeof(@sample) is 'undefined'
       InteractiveSubject.fetch({limit: 10, user: true}).onSuccess =>
         @samples = InteractiveSubject.lastFetch
         @render()

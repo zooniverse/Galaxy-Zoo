@@ -36,9 +36,10 @@ class Interactive extends Spine.Controller
   activeGroups: =>
     if User.current and User.current.user_groups
       @groupsList = ['<option val="">Select Group</option>']
-      for group in User.current.user_groups
-        listItem = """<option value="#{group.id}">#{@formatGroupName(group.name)}</option>"""
-        @groupsList.push listItem
+      if User.current.user_groups
+        for group in User.current.user_groups
+          listItem = """<option value="#{group.id}">#{@formatGroupName(group.name)}</option>"""
+          @groupsList.push listItem
       @groupsList.push '<option value="group">Make a New Group</option>'
     @appendGroups()
 
