@@ -102,6 +102,8 @@ class Group extends Spine.Controller
     @navigate '/navigator/home'
 
   destroyGroup: (e) =>
+    answer = confirm 'Are you sure?\nThere is no undo.'
+    return unless answer
     e.preventDefault()
     UserGroup.delete @groupId
     groupObj = { id: @group.id, name: @group.name }
