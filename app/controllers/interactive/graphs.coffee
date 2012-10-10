@@ -59,7 +59,7 @@ class Graphs extends BaseController
       @graph = new Histogram { el: '#graph', channel: 'graph', height: 310, width: 512 } 
     else
       @setPressed $('[data-variables="scatterplot"]')
-      @graph = new Scatterplot { el: '#graph', channel: 'graph', height: 310, width: 512 } 
+      @graph = new Scatterplot { el: '#graph', channel: 'graph', height: 310, width: 512, margin: { left: 50, top: 20, bottom: 40 } }
 
   setGraph: =>
     if @graphType is 'histogram'
@@ -67,7 +67,7 @@ class Graphs extends BaseController
       @graph = new Histogram { el: '#graph', channel: 'graph', height: 310, width: 512 } 
     else
       @xAxisItem.find('label').html 'I\'d like to see how...'
-      @graph = new Scatterplot { el: '#graph', channel: 'graph', height: 310, width: 512 } 
+      @graph = new Scatterplot { el: '#graph', channel: 'graph', height: 310, width: 512, margin: { left: 50, top: 20, bottom: 40 } } 
 
   # Graph interface functions
   setGraphType: (e) =>
