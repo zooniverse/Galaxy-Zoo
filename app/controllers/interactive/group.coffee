@@ -90,6 +90,7 @@ class Group extends Spine.Controller
     e.preventDefault()
     UserGroup.participate @groupId
     User.current['user_group_id'] = @groupId
+    @navigate '/classify'
 
   redirectHome: (e) =>
     e.preventDefault()
