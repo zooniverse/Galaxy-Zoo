@@ -40,8 +40,6 @@ class Graphs extends BaseController
     @options = new Object
     @headingText.html '<h2>Construct Your Question</h2>'
 
-    console.log @graphType
-
     if @graphType is 'histogram'
       @setPressed $('[data-variables="histogram"]')
       @xAxisItem.find('label').html 'I\'d like to see...'
