@@ -16,6 +16,10 @@ class Interactive extends Spine.Controller
     UserGroup.bind 'create', @addGroup
     UserGroup.bind 'destroy-group', @removeGroup
 
+  active: =>
+    super
+    @render() unless typeof(@navigator) is 'undefined'
+
   render: =>
     return unless @isActive()
     if typeof(@navigator) is 'undefined' and User.current
