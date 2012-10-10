@@ -21,7 +21,7 @@ class Interactive extends Spine.Controller
 
   active: (params) =>
     super
-    @page = params.page
+    @page = params.page or 'home'
     @options = params.options
     @render()
 
