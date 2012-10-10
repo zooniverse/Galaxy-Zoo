@@ -28,6 +28,8 @@ class Group extends Spine.Controller
     if @groupId
       if @groupId and @groupId is UserGroup.current?.id
         @displayElements(UserGroup.current)
+      else if UserGroup.exists @groupId
+        @displayElements(UserGroup.find @groupId)
       else
         UserGroup.fetch(@groupId)
     else
@@ -40,10 +42,9 @@ class Group extends Spine.Controller
   displayElements: (group) =>
     @group = group
     @headingText.html "<h2>#{@group.name}</h2>"
-
     if @groupId is null
       @navigate "/navigator/group/#{ @group.id }"
-    if @group.owner.id is User.current?.id
+    if @group.owner.id is User.current.id
       @leaveGroupButton.hide()
       @destroyGroupButton.show()
       @groupStats()
@@ -57,7 +58,7 @@ class Group extends Spine.Controller
       @stopParticipateButton.show()
 
   elements:
-    'div.stats' : 'statistics'
+    'div.statistics' : 'statistics'
     'div.participation' : 'participation'
     'ul.stats' : 'statsView'
     'form#group-signup' : 'signUpForm'

@@ -39,7 +39,6 @@ class Interactive extends Spine.Controller
       new LoginForm el: '#login'
 
   renderSubView: =>
-    console.log @page, @options
     if @page is 'home'
       @view = new Home { el: '#navigator' }
     if @page is 'my_galaxies'

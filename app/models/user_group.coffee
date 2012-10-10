@@ -49,7 +49,7 @@ class UserGroup extends Model
 
   @leave: (id) =>
     Api.post "/user_groups/#{ id }/leave", (result) =>
-      @trigger 'leave-group', result
+      @trigger 'destroy-group', result
       if @current?.id is id
         @current.destory()
 
