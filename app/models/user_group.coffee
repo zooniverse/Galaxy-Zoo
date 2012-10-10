@@ -10,18 +10,18 @@ class UserGroup extends Model
     Api.get '/user_groups'
   
   @join: =>
-    Api.post "/user_groups/#{ @currentId }/join", (json) =>
+    Api.getJSON "/user_groups/#{ @currentId }/join", (json) =>
       @current = UserGroup.create json
       @trigger 'participate', @current
   
   @stop: =>
-    req = Api.post "/user_groups/0/participate"
+    req = Api.getJSON "/user_groups/0/participate"
     req.always =>
       UserGroup.trigger 'stop', @current.id
       @current.destroy()
   
   @participate: (id) =>
-    Api.post "/user_groups/#{ id }/participate", (json) =>
+    Api.getJSON "/user_groups/#{ id }/participate", (json) =>
       @currentId = id
       @current = UserGroup.create json
       UserGroup.trigger 'participate', @current
@@ -49,7 +49,7 @@ class UserGroup extends Model
       @trigger 'invited', result
 
   @leave: (id) =>
-    Api.post "/user_groups/#{ id }/leave", (result) =>
+    Api.getJSON "/user_groups/#{ id }/leave", (result) =>
       @trigger 'destroy-group', result
       if @current?.id is id
         @current.destory()
