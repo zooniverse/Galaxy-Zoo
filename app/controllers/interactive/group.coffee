@@ -26,10 +26,9 @@ class Group extends Spine.Controller
   render: =>
     @html require('views/interactive/participate')(@)
     if @groupId
-      if @groupId and @groupId is UserGroup.current?.id
-        @displayElements(UserGroup.current)
-      else if UserGroup.exists @groupId
-        @displayElements(UserGroup.find @groupId)
+      if UserGroup.exists @groupId
+        UserGroup.destroy(@groupId)
+        UserGroup.fetch(@groupId)
       else
         UserGroup.fetch(@groupId)
     else

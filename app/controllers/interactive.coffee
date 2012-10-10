@@ -68,8 +68,8 @@ class Interactive extends Spine.Controller
 
   setGroup: (group) =>
     @group = group
-    @groupsDropdown.val group.id
     @activeGroups()
+    @groupsDropdown.val @group.id
 
   addGroup: (group) =>
     if typeof(User.current.user_groups) is 'undefined'

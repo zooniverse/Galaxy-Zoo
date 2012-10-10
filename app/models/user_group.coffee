@@ -12,6 +12,7 @@ class UserGroup extends Model
   @join: =>
     Api.post "/user_groups/#{ @currentId }/join", (json) =>
       @current = UserGroup.create json
+      @trigger 'participate', @current
   
   @stop: =>
     req = Api.post "/user_groups/0/participate"
