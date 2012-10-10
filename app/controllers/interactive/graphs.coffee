@@ -24,6 +24,19 @@ class Graphs extends BaseController
     'click button[name="screenshot"]'         : 'generateImageFromGraph'
     'click button[name="reset"]'              : 'reset'
 
+  groupGalaxySizes: [
+    '<option value="">Choose sample size</option>',
+    '<option value="10">10 galaxies</option>',
+    '<option value="50">50 galaxies</option>',
+    '<option value="100">100 galaxies</option>'
+  ]
+
+  allGalaxySizes: [            
+    '<option value="">Choose sample size</option>',
+    '<option value="250">250 randomly selected galaxies</option>',
+    '<option value="500">500 randomly selected galaxies</option>'
+  ]
+
   constructor: ->
     super
     @headingText = $('#heading_text')
@@ -114,9 +127,10 @@ class Graphs extends BaseController
     button = $(e.currentTarget)
     @options.dataSource = button.data('source')
 
-    if not (button.hasClass 'pressed')
-      @sizeSelector.find('option').toggle()  
-      @sizeSelector.find('option[value=""]').show()
+    if @options.dataSource is 'group'
+      @sizeSelector.find('select').html @groupGalaxySizes.join('\n')
+    else
+      @sizeSelector.find('select').html @allGalaxySizes.join('\n')
     @setPressed button
 
   setSampleSize: (e) =>
