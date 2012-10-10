@@ -1,8 +1,11 @@
 Spine = require('spine')
-Navigator = require 'controllers/interactive/navigator'
 User = require 'zooniverse/lib/models/user'
 UserGroup = require 'models/user_group'
 LoginForm = require 'zooniverse/lib/controllers/login_form'
+Home = require 'controllers/interactive/interactive'
+MyGalaxies = require 'controllers/interactive/my_galaxies'
+Group = require 'controllers/interactive/group'
+Graph = require 'controllers/interactive/graphs'
 
 class Interactive extends Spine.Controller
 
@@ -16,22 +19,38 @@ class Interactive extends Spine.Controller
     UserGroup.bind 'create', @addGroup
     UserGroup.bind 'destroy-group', @removeGroup
 
-  active: =>
+  active: (params) =>
     super
-    @render() unless typeof(@navigator) is 'undefined'
+    @page = params.page
+    @options = params.options
+    @render()
 
   render: =>
     return unless @isActive()
-    if typeof(@navigator) is 'undefined' and User.current
-      @appendGroups()
+    @view.release() if @currentView
+    if User.current
       @html require('views/interactive/box')(@)
-      @navigator = new Navigator
+      @appendGroups()
       if @group
         @setGroup @group
+      @renderSubView()
     else
-      @navigator = undefined
       @html require('views/login')()
       new LoginForm el: '#login'
+
+  renderSubView: =>
+    console.log @page, @options
+    if @page is 'home'
+      @view = new Home { el: '#navigator' }
+    if @page is 'my_galaxies'
+      @view = new MyGalaxies { el: '#navigator' }
+    if @page is 'graphs'
+      graph = @options or 'histogram'
+      @view = new Graph { el: '#navigator', graphType: graph }
+    if @page is 'group'
+      id = @options or null
+      @view = new Group { el: '#navigator', groupId: id }
+    @view.render()
 
   elements:
     'select.groups-dropdown' : 'groupsDropdown'
@@ -43,7 +62,7 @@ class Interactive extends Spine.Controller
     @groupsList = ['<option val="">Select Group</option>']
     if User.current and User.current.user_groups
       for group in User.current.user_groups
-        listItem = """<option value="#{group.id}">#{@formatGroupName(group.name)}</option>"""
+        listItem = """<option value="#{group.id}">#{@formatGroupName(group.name, group.id)}</option>"""
         @groupsList.push listItem
     @groupsList.push '<option value="group">Make a New Group</option>'
     @appendGroups()
@@ -81,9 +100,10 @@ class Interactive extends Spine.Controller
     else if groupId isnt 'Select Group'
       @navigate "/navigator/group/#{groupId}"
 
-  formatGroupName: (name) =>
+  formatGroupName: (name, id) =>
     groupName = name.slice(0, 25)
     groupName = groupName + '...' if groupName isnt name
+    groupName = '*' + groupName if id is @group?.id
     return groupName
 
     

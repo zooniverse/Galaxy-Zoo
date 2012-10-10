@@ -22,27 +22,16 @@ class MyGalaxies extends Spine.Controller
         InteractiveSubject.fetch({limit: 10, user: true}).onSuccess =>
           @samples = InteractiveSubject.lastFetch
 
-  active: ->
-    super
+
+  render: =>
     if User.current.user_group_id and typeof(@sample) is 'undefined'
       InteractiveSubject.fetch({limit: 10, user: true}).onSuccess =>
         @samples = InteractiveSubject.lastFetch
-        @render()
-    else
-      @render()
+        @html require('views/interactive/my_galaxies')(@)
+        for sample in @samples
+          @generateChart sample
     @headingText.html @action_title
     $('[data-link="my_galaxies"]').addClass 'pressed'
-
-  deactivate: ->
-    super
-    @headingText.html ''
-    $('[data-link="my_galaxies"]').removeClass 'pressed'
-
-  render: ->
-    @html require('views/interactive/my_galaxies')(@)
-    if @samples
-      for sample in @samples
-        @generateChart sample
 
   formatData: (sample) ->
     feature_counts = []

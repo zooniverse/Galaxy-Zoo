@@ -31,22 +31,18 @@ class Graphs extends BaseController
     @options = new Object
 
   render: =>
+    $('[data-link="my_galaxies"]').removeClass 'pressed'
     @html require('views/interactive/graphs')(@)
 
-  # Routing callbacks
-  active: (params) =>
-    super
-    @render()
-    
     @setPressed $('[data-link="graphs"]')
     @setPressed $('[data-source="group"]')
 
     @options = new Object
     @headingText.html '<h2>Construct Your Question</h2>'
 
-    @options.graphType = params.graphType or 'histogram'
+    console.log @graphType
 
-    if @options.graphType is 'histogram'
+    if @graphType is 'histogram'
       @setPressed $('[data-variables="histogram"]')
       @xAxisItem.find('label').html 'I\'d like to see...'
       @graph = new Histogram { el: '#graph', channel: 'graph', height: 310, width: 512 } 
@@ -54,14 +50,8 @@ class Graphs extends BaseController
       @setPressed $('[data-variables="scatterplot"]')
       @graph = new Scatterplot { el: '#graph', channel: 'graph', height: 310, width: 512 } 
 
-  deactivate: =>
-    super
-    @el.removeClass("active")
-    @headingText.html @action_title
-    $('[data-link="graphs"]').removeClass 'pressed'
-
   setGraph: =>
-    if @options.graphType is 'histogram'
+    if @graphType is 'histogram'
       @xAxisItem.find('label').html 'I\'d like to see...'
       @graph = new Histogram { el: '#graph', channel: 'graph', height: 310, width: 512 } 
     else
@@ -71,7 +61,7 @@ class Graphs extends BaseController
   # Graph interface functions
   setGraphType: (e) =>
     button = $(e.currentTarget)
-    @options.graphType = button.data('variables')
+    @graphType = button.data('variables')
 
     @setPressed button
     @el.find('svg').empty()
@@ -83,7 +73,7 @@ class Graphs extends BaseController
     @options.xAxis = $(e.currentTarget).val()
     @updateTitle()
 
-    if @options.graphType is 'histogram'
+    if @graphType is 'histogram'
       @typeButtons.addClass 'show-control'
       @graph.setVariable @options.xAxis
     else
@@ -144,11 +134,11 @@ class Graphs extends BaseController
 
   reset: (e) =>
     @render()
-    @options = {graphType: @options.graphType}
+    @options = new Object
 
     @setPressed $('[data-link="graphs"]')
     @setPressed $('[data-source="group"]')
-    @setPressed $("[data-variables=\"#{@options.graphType}\"]")
+    @setPressed $("[data-variables=\"#{@graphType}\"]")
 
     @setGraph()
 
@@ -192,7 +182,7 @@ class Graphs extends BaseController
 
   # Helper functions
   updateTitle: =>
-    if @options.graphType is 'histogram'
+    if @graphType is 'histogram'
       @graphTitle.text "Distribution of #{@prettyKey(@options.xAxis)}"
     else
       @options.yAxis = '' if typeof(@options.yAxis) is 'undefined'

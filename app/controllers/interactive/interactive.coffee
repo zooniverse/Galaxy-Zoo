@@ -12,12 +12,8 @@ class Interactive extends Spine.Controller
     @action_title = require('views/interactive/partials/intro_text')(@)
     User.bind 'sign-in', @render
 
-  active: ->
-    super
-    @render()
-    @headingText.html @action_title
-
   render: =>
+    @headingText.html @action_title
     @html require('views/interactive/interactive')(@)
 
   addDX: ->

@@ -23,16 +23,9 @@ class Group extends Spine.Controller
       @participateButton.show()
       @stopParticipateButton.hide()
 
-  active: (params) =>
-    super
-    @render()
-    @groupId = null
-    @groupName = null
-    if params.id isnt ''
-      unless User.current
-        return
-      @groupId = params.id
-
+  render: =>
+    @html require('views/interactive/participate')(@)
+    if @groupId
       if @groupId and @groupId is UserGroup.current?.id
         @displayElements(UserGroup.current)
       else
@@ -43,14 +36,6 @@ class Group extends Spine.Controller
       @groupNameBox.show()
       @participation.hide()
       @statistics.hide()
-
-  deactivate: =>
-    super
-    if @group
-      @group.destroy() unless UserGroup.current?.id is @group.id
-
-  render: =>
-    @html require('views/interactive/participate')(@)
 
   displayElements: (group) =>
     @group = group
