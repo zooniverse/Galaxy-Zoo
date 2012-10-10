@@ -33,6 +33,8 @@ class Interactive extends Spine.Controller
       @appendGroups()
       if @group
         @setGroup @group
+      else
+        @linkButtons.hide()
       @renderSubView()
     else
       @html require('views/login')()
@@ -53,9 +55,10 @@ class Interactive extends Spine.Controller
 
   elements:
     'select.groups-dropdown' : 'groupsDropdown'
+    '#link_buttons' : 'linkButtons'
 
   events: 
-    'change select.groups-dropdown' : 'goToGroup'
+    'click select.groups-dropdown option' : 'goToGroup'
 
   activeGroups: =>
     @groupsList = ['<option val="">Select Group</option>']
@@ -90,6 +93,7 @@ class Interactive extends Spine.Controller
 
   reset: =>
     @groupsDropdown.val 'Select Group'
+    @linkButtons.hide()
     @activeGroups()
 
   goToGroup: (e) =>

@@ -1,4 +1,5 @@
 <div id="my_galaxies">
+<% if @samples.length > 0: %>
   <% for galaxy in @samples: %>
     <div class="galaxy" data-id="<%- galaxy.zooniverse_id %>">
       <h3><%- galaxy.zooniverse_id%></h3>
@@ -8,4 +9,7 @@
       </div>
     </div>
   <% end %>
+<% else: %>
+  <h3 style="text-align:center">You need to classify galaxies first!</h3>
+<% end %>
 </div>

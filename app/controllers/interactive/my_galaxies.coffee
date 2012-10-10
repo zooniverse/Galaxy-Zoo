@@ -25,7 +25,8 @@ class MyGalaxies extends Spine.Controller
 
   render: =>
     if User.current.user_group_id
-      InteractiveSubject.fetch({limit: 10, user: true}).onSuccess =>
+      fetcher = InteractiveSubject.fetch({limit: 10, user: true})
+      fetcher.onSuccess =>
         @samples = InteractiveSubject.lastFetch
         @html require('views/interactive/my_galaxies')(@)
         for sample in @samples
