@@ -7,21 +7,21 @@ class UserGroup extends Model
   
   @list: ->
     return unless User.current
-    Api.get '/user_groups'
+    Api.getJSON '/user_groups'
   
   @join: =>
-    Api.post "/user_groups/#{ @currentId }/join", (json) =>
+    Api.getJSON "/user_groups/#{ @currentId }/join", (json) =>
       @current = UserGroup.create json
       @trigger 'participate', @current
   
   @stop: =>
-    req = Api.post "/user_groups/0/participate"
+    req = Api.getJSON "/user_groups/0/participate"
     req.always =>
       UserGroup.trigger 'stop', @current.id
       @current.destroy()
   
   @participate: (id) =>
-    Api.post "/user_groups/#{ id }/participate", (json) =>
+    Api.getJSON "/user_groups/#{ id }/participate", (json) =>
       @currentId = id
       @current = UserGroup.create json
       UserGroup.trigger 'participate', @current
@@ -31,7 +31,7 @@ class UserGroup extends Model
       @participate User.current.user_group_id
   
   @fetch: (id) =>
-    Api.get "/user_groups/#{ id }", (json) =>
+    Api.getJSON "/user_groups/#{ id }", (json) =>
       UserGroup.create json
   
   @newGroup: (name) =>
@@ -39,23 +39,23 @@ class UserGroup extends Model
       user_group:
         name: name
     
-    Api.post "/user_groups", json, (json) =>
+    Api.getJSON "/user_groups/create", json, (json) =>
       @current = UserGroup.create json
   
   @inviteUsers: (id, emails) =>
     json =
       user_emails: emails
-    Api.post "/user_groups/#{ id }/invite", json, (result) =>
+    Api.getJSON "/user_groups/#{ id }/invite", json, (result) =>
       @trigger 'invited', result
 
   @leave: (id) =>
-    Api.post "/user_groups/#{ id }/leave", (result) =>
+    Api.getJSON "/user_groups/#{ id }/leave", (result) =>
       @trigger 'destroy-group', result
       if @current?.id is id
         @current.destory()
 
   @delete: (id) =>
-    req = Api.delete "/user_groups/#{ id }"
+    req = Api.getJSON "/user_groups/#{ id }/destroy"
     req.always =>
       @trigger 'destroy-group', id
       if @current?.id is id
