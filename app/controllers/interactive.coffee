@@ -16,10 +16,8 @@ class Interactive extends Spine.Controller
     UserGroup.bind 'create', @addGroup
     UserGroup.bind 'destroy-group', @removeGroup
 
-  active: =>
-    super
-
   render: =>
+    return unless @isActive()
     if typeof(@navigator) is 'undefined' and User.current
       @appendGroups()
       @html require('views/interactive/box')(@)
