@@ -43,7 +43,7 @@ Config =
 
 env = if window.jasmine
   'test'
-else if window.location.port > 1024
+else if window.location.port > 1024 and window.location.port is 9000
   'development'
 else
   'production'

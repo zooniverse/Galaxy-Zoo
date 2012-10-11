@@ -93,6 +93,7 @@ class Interactive extends Spine.Controller
     @groupsDropdown.html @groupsList.join('\n')
 
   reset: =>
+    delete @group
     @groupsDropdown.val 'Select Group'
     @linkButtons.hide()
     @activeGroups()

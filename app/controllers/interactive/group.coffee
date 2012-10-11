@@ -41,14 +41,13 @@ class Group extends Spine.Controller
   displayElements: (group) =>
     @group = group
     @headingText.html "<h2>#{@group.name}</h2>"
+    @groupStats()
     if @groupId is null
       @navigate "/navigator/group/#{ @group.id }"
     if @group.owner.id is User.current.id
       @leaveGroupButton.hide()
       @destroyGroupButton.show()
-      @groupStats()
       @signUpForm.show()
-      @statistics.show()
       @usersInvited.hide()
       @groupNameBox.hide()
       @participation.show()
@@ -78,12 +77,18 @@ class Group extends Spine.Controller
     submit: 'onSubmit'
 
   groupStats: =>
+    items = new Array
     if (@groupId is @group.id) and (User.current.id is @group.owner.id)
-      items = new Array
       for key, user of @group.users
-        count = if user.state is 'active' then user.classification_count else user.state
-        items.push """<li id="#{user.id}"><span class="name">#{user.name}</span><span class="count">#{count}</span></li>"""
-      @statsView.append items.join('\n')
+        items.push @statListItem user
+    else
+      user = _.find(@group.users, (user) -> user.id is User.current.id)
+      items.push @statListItem user
+    @statsView.append items.join('\n')
+
+  statListItem: (user) ->
+    count = if user.state is 'active' then user.classification_count else user.state
+    """<li id="#{user.id}"><span class="name">#{user.name}</span><span class="count">#{count}</span></li>"""
 
   setParticipate: (e) =>
     e.preventDefault()

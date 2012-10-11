@@ -107,7 +107,6 @@ class MyGalaxies extends Spine.Controller
       .attr('class','label')
       .attr('y', ((d,i) -> i * 22))
       .attr('x', 80)
-      .attr('dx', 44)
       .attr('dy', '1.3em')
       .attr('text-anchor', 'end')
       .text((d, i) -> d.label)
