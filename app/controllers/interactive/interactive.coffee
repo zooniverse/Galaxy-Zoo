@@ -1,10 +1,12 @@
 Spine = require('spine')
 User = require 'zooniverse/lib/models/user'
+UserGroup = require 'models/user_group'
 LoginForm = require 'zooniverse/lib/controllers/login_form'
 
 class Interactive extends Spine.Controller
   events:
     'click input#dx-change': 'addDX'
+    'click a.check-participate' : 'linkCheck'
 
   constructor: ->
     super
@@ -42,6 +44,13 @@ class Interactive extends Spine.Controller
     chart.selectAll("rect").data(data).enter().append("rect").attr("y", (d, i) ->
       i * 20
     ).attr("width", x).attr "height", 20
+
+  linkCheck: (e) =>
+    if UserGroup.current
+      return
+    else
+      e.preventDefault()
+      alert('Select a Group or Create One from the dropdown menu to see your group classifications!')
 
 
 module.exports = Interactive

@@ -8,21 +8,21 @@
       </a>        
     </div>
     <div class="image_div">
-      <a href="#/navigator/my_galaxies">
+      <a href="#/navigator/my_galaxies" class="check-participate">
         <h2>My Galaxies</h2>
         <p>Investigate the galaxies you and your group have classified.</p>
         <img src="images/ourgalaxies.png">
       </a>
     </div>
     <div class="image_div">
-      <a href="#/navigator/graphs/histogram">
+      <a href="#/navigator/graphs/histogram" class="check-participate">
         <h2>Histogram</h2>
         <p>Investigate the characteristics of different galaxy types.</p>
         <img src="images/histogram.png">
       </a>        
     </div>
     <div class="image_div">
-      <a href="#/navigator/graphs/scatterplot">
+      <a href="#/navigator/graphs/scatterplot" class="check-participate">
         <h2>Scatter Graph</h2>
         <p>Investigate the characteristics of different galaxy types.</p>
         <img src="images/scattergraph.png">
