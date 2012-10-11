@@ -7,7 +7,7 @@ class UserGroup extends Model
   
   @list: ->
     return unless User.current
-    Api.get '/user_groups'
+    Api.getJSON '/user_groups'
   
   @join: =>
     Api.getJSON "/user_groups/#{ @currentId }/join", (json) =>
@@ -31,7 +31,7 @@ class UserGroup extends Model
       @participate User.current.user_group_id
   
   @fetch: (id) =>
-    Api.get "/user_groups/#{ id }", (json) =>
+    Api.getJSON "/user_groups/#{ id }", (json) =>
       UserGroup.create json
   
   @newGroup: (name) =>
@@ -39,13 +39,13 @@ class UserGroup extends Model
       user_group:
         name: name
     
-    Api.post "/user_groups", json, (json) =>
+    Api.getJSON "/user_groups/create", json, (json) =>
       @current = UserGroup.create json
   
   @inviteUsers: (id, emails) =>
     json =
       user_emails: emails
-    Api.post "/user_groups/#{ id }/invite", json, (result) =>
+    Api.getJSON "/user_groups/#{ id }/invite", json, (result) =>
       @trigger 'invited', result
 
   @leave: (id) =>
@@ -55,7 +55,7 @@ class UserGroup extends Model
         @current.destory()
 
   @delete: (id) =>
-    req = Api.delete "/user_groups/#{ id }"
+    req = Api.getJSON "/user_groups/#{ id }/destroy"
     req.always =>
       @trigger 'destroy-group', id
       if @current?.id is id
