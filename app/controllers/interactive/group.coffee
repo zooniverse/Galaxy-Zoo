@@ -37,6 +37,7 @@ class Group extends Spine.Controller
       @groupNameBox.show()
       @participation.hide()
       @statistics.hide()
+      @talkLabel.show()
 
   displayElements: (group) =>
     @group = group
@@ -69,6 +70,7 @@ class Group extends Spine.Controller
     'button[name="yes"]' : 'participateButton'
     'button[name="no"]' : 'stopParticipateButton'
     'input[name="talk-flag"]' : 'talkFlag'
+    'label.talk-flag' : 'talkLabel'
 
   events: 
     'click button[name="yes"]' : 'setParticipate'
@@ -122,7 +124,7 @@ class Group extends Spine.Controller
     @submitButton.attr 'disabled', 'disabled'
     name = @groupNameBox.val()
     emails = @emails.val()
-    talkFlag = @talkFlag.val()
+    talkFlag = @talkFlag.val() is 'talk'
 
     if emails.search(", ") isnt -1
       emails = emails.split ', '
