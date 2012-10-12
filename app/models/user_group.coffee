@@ -3,7 +3,7 @@ User = require 'zooniverse/lib/models/user'
 Api = require 'zooniverse/lib/api'
 
 class UserGroup extends Model
-  @configure 'UserGroup', 'name', 'owner', 'projects', 'users', 'user_ids', 'created_at', 'updated_at'
+  @configure 'UserGroup', 'name', 'owner', 'projects', 'users', 'user_ids', 'created_at', 'updated_at', 'talk_flag'
   
   @list: ->
     return unless User.current
@@ -34,11 +34,11 @@ class UserGroup extends Model
     Api.getJSON "/user_groups/#{ id }", (json) =>
       UserGroup.create json
   
-  @newGroup: (name) =>
+  @newGroup: (name, talkFlag) =>
     json =
       user_group:
         name: name
-    
+        talk_flag: talkFlag
     Api.getJSON "/user_groups/create", json, (json) =>
       @current = UserGroup.create json
   

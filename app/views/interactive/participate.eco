@@ -7,6 +7,7 @@
   <form id="group-signup">
     <h2>Invitations</h2>
     <input name="name" placeholder="Enter Group Name" type="text" />
+    <label>Disable Talk for this Group: <input name="talk-flag" type="checkbox" /></label>
     <textarea name="emails" placeholder="Invite users by entering their emails seperated with a comma (e.g. ed@example.com, cs@example.com, whyte@example.com)"></textarea>
     <button type="submit" name="submit">Send Invites</button>
     <p>Users Invited</p>
