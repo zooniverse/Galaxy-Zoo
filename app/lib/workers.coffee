@@ -25,27 +25,32 @@ Workers =
       
       mean = sum / (numPixels - numNaNs)
       
+      # Recompute sum to be offset by min
+      sum = 0
+      sorted = [] # Push to JS array to use the default sort
+      for value in data
+        value -= min
+        sum += value
+        sorted.push value
+      sorted = sorted.sort()
+      
       # Compute percentiles
-      [lower, upper] = [0.0025, 0.9975]
+      [lower, upper] = [0.25, 0.75]
+      
       running = 0
-      l = histogram.length      
-      while l--
-        [value, count] = histogram[l]
-        running += (value * count)
-        percentile = (sum - running) / sum
-        if percentile < upper
-          upper = value
-          break
-          
-      running = 0
-      l = length = histogram.length
-      while l--
-        index = length - l - 1
-        [value, count] = histogram[index]
-        running += (value * count)
+      for value, index in sorted
+        running += value
         percentile = running / sum
         if percentile > lower
-          lower = value
+          lower = sorted[index - 1] + min
+          break
+      
+      running = 0
+      for value, index in sorted
+        running += value
+        percentile = running / sum
+        if percentile > upper
+          upper = sorted[index - 1] + min
           break
       
       return [histogram, mean, lower, upper]

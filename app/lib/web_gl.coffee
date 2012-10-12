@@ -54,11 +54,17 @@ WebGL =
         "void main() {",
             "vec4 pixel_v = texture2D(u_tex, v_textureCoord);",
             
-            "float min = logarithm(u_extremes[0]);",
-            "float max = logarithm(u_extremes[1]);",
-              "float pixel = logarithm(pixel_v[0]);",
+            "float min = u_extremes[0];",
+            "float max = u_extremes[1];",
             
-            "pixel = (pixel - min) / (max - min);",
+            "max = max - min;",
+            
+            "float minScaled = logarithm(0.0);",
+            "float max = logarithm(max);",
+            "float pixel = pixel_v[0] - min;",
+            "pixel = logarithm(pixel);",
+            
+            "pixel = (pixel - minScaled) / (max - minScaled);",
             
             "gl_FragColor = vec4(pixel, pixel, pixel, 1.0);",
         "}"
@@ -201,7 +207,7 @@ WebGL =
     
     # Create a canvas within the container with specified width and height
     canvas = document.createElement('canvas')
-    canvas.setAttribute('id', 'webgl-fits')
+    canvas.setAttribute('class', 'webgl-fits')
     canvas.setAttribute('width', width)
     canvas.setAttribute('height', height)
     

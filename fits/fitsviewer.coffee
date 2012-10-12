@@ -99,6 +99,7 @@ class FITSViewer extends Spine.Controller
        
        # Inline baby!!
        # Have to do some crazy stuff in order to write the workers in CoffeeScript
+       # TODO: This is probably not going to work for minified JS
        reg = /function \(\) \{([\s\S.]*)\}/
        worker = Workers.Histogram.toString()
        worker = worker.match(reg)[1].replace('return self.addEventListener', 'self.addEventListener')
@@ -126,11 +127,7 @@ class FITSViewer extends Spine.Controller
       p2 = p2.pipe (obj) =>
         band = obj.band
         image = obj.image
-        min = @images[band].getDataUnit().min
-        for value, index in image
-          image[index] = min if isNaN(value)
-        
-        console.log 'Creating texture for', band, obj
+        console.log 'Creating texture for', band
         address = "TEXTURE#{@textureCount}"
         @gl.activeTexture(@gl[address])
 
@@ -323,11 +320,13 @@ class FITSViewer extends Spine.Controller
     @gl.drawArrays(@gl.TRIANGLES, 0, 6)  
   
   selectBand: (e) =>
-    $('#webgl-fits').show()
+    $('.webgl-fits').show()
     @band = e.currentTarget.value
     
     # Cache minimum and maximum values for selected band
     dataunit = @images[@band].getDataUnit()
+    percentiles = @percentiles[@band]
+    console.log percentiles
     
     # [@minimum, @maximum] = [@currentMin, @currentMax] = [dataunit.min, dataunit.max]
     [@minimum, @maximum] = [@currentMin, @currentMax] = @percentiles[@band]
