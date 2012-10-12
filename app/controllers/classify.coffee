@@ -5,6 +5,7 @@ Dialog = require 'lib/dialog'
 Recent = require 'zooniverse/lib/models/recent'
 Favorite = require 'zooniverse/lib/models/favorite'
 User = require 'zooniverse/lib/models/user'
+UserGroup = require 'models/user_group'
 LoginForm = require 'zooniverse/lib/controllers/login_form'
 
 class Classify extends Spine.Controller
@@ -32,6 +33,7 @@ class Classify extends Spine.Controller
     Subject.bind 'fetched', @nextSubject
     User.bind 'sign-in', @render
     User.bind 'sign-in', @hideLoginPrompt
+    UserGroup.bind 'participate', @render
     Classification.bind 'classified', @loginPrompt
     Subject.next()
     $('#zooniverse-top-bar-login .buttons button[name="signup"]').unbind('click').bind 'click', @signupPrompt

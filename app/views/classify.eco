@@ -14,8 +14,8 @@
         </li>
         <% if require('models/user_group').current : %>
           <li class="left">
-            <a title="Group" class="icon group" src="">&nbsp;</a>
-            <span class="label">Group</span>
+            <a href="/#/navigator/my_galaxies" title="Group" class="icon group" src="">&nbsp;</a>
+            <span class="label group">Group</span>
           </li>
         <% end %>
         <% if require('zooniverse/lib/models/user').current : %>
