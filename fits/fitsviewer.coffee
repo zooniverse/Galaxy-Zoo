@@ -272,7 +272,6 @@ class FITSViewer extends Spine.Controller
       x = ((-1 * (@xOffset + 0.5)) + xDelta) + 0.5 << 0
       y = ((-1 * (@yOffset + 0.5)) + yDelta) + 0.5 << 0
       
-      # TODO: Write to screen
       $(".subject-info .xy.value").html("#{x}, #{y}")
       pixel = @images[@band].getDataUnit().getPixel(x, y)
       if @band and pixel?
@@ -326,9 +325,7 @@ class FITSViewer extends Spine.Controller
     # Cache minimum and maximum values for selected band
     dataunit = @images[@band].getDataUnit()
     percentiles = @percentiles[@band]
-    console.log percentiles
     
-    # [@minimum, @maximum] = [@currentMin, @currentMax] = [dataunit.min, dataunit.max]
     [@minimum, @maximum] = [@currentMin, @currentMax] = @percentiles[@band]
     
     # Select correct texture and draw
@@ -354,7 +351,7 @@ class FITSViewer extends Spine.Controller
         min: @minimum
         max: @maximum
         values: [@minimum, @maximum]
-        step: (@maximum - @minimum) / 1000
+        step: (@maximum - @minimum) / FITSViewer.bins
         slide: (e, ui) =>
           values = ui.values
           [@currentMin, @currentMax] = values
@@ -434,8 +431,7 @@ class FITSViewer extends Spine.Controller
         show: false
       yaxis:
         show: false
-
-    @markers = $.plot($("#plots .markers"), [{color: '#002332', data: []}], options)
+    @markers = $.plot($('#plots .markers'), [{color: '#002332', data: []}], options)
   
   teardown: =>
     if @slider?

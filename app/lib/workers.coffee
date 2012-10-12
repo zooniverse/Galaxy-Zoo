@@ -35,7 +35,7 @@ Workers =
       sorted = sorted.sort()
       
       # Compute percentiles
-      [lower, upper] = [0.25, 0.75]
+      [lower, upper] = [0.25, 0.98]
       
       running = 0
       for value, index in sorted

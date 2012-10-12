@@ -60,7 +60,7 @@ WebGL =
             "max = max - min;",
             
             "float minScaled = logarithm(0.0);",
-            "float max = logarithm(max);",
+            "max = logarithm(max);",
             "float pixel = pixel_v[0] - min;",
             "pixel = logarithm(pixel);",
             
@@ -86,7 +86,7 @@ WebGL =
           "float pixel = pixel_v[0] - min;",
           
           "pixel = sqrt(pixel_v[0] / max);",
-        
+          
           "gl_FragColor = vec4(pixel, pixel, pixel, 1.0);",
         "}"
       ].join("\n")
@@ -208,6 +208,7 @@ WebGL =
     # Create a canvas within the container with specified width and height
     canvas = document.createElement('canvas')
     canvas.setAttribute('class', 'webgl-fits')
+    canvas.setAttribute('hidden', 'hidden')
     canvas.setAttribute('width', width)
     canvas.setAttribute('height', height)
     
