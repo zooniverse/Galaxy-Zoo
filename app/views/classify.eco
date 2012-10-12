@@ -12,6 +12,12 @@
           <a title="<%= @subject.surveyTitle() %>" class="icon <%= @subject.metadata.survey %>">&nbsp;</a>
           <span class="label"><%= @subject.surveyTitle() %></span>
         </li>
+        <% if require('models/user_group').current : %>
+          <li class="left">
+            <a title="Group" class="icon group" src="">&nbsp;</a>
+            <span class="label">Group</span>
+          </li>
+        <% end %>
         <% if require('zooniverse/lib/models/user').current : %>
           <li class="left">
             <a title="Favorite" class="icon favorite" src="">&nbsp;</a>
