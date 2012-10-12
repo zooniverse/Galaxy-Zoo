@@ -172,10 +172,11 @@ class Graphs extends BaseController
   createCSVHeader: (datum, prefix='') =>
     header = new String
     for key, value of datum
-      if typeof(value) is 'object'
-        header = header + @createCSVHeader value, "#{key}_"
-      else
-        header = header + "," + prefix + key
+      unless typeof(value) is 'function'
+        if typeof(value) is 'object'
+          header = header + @createCSVHeader value, "#{key}_"
+        else
+          header = header + "," + prefix + key
     return header
 
   createCSVBody: (data) =>
@@ -186,10 +187,11 @@ class Graphs extends BaseController
   createCSVLine: (datum) =>
     line = new String
     for key, value of datum
-      if typeof(value) is 'object'
-        line = line + @createCSVLine value
-      else
-        line = line + "," + value
+      unless typeof(value) is 'function'
+        if typeof(value) is 'object'
+          line = line + @createCSVLine value
+        else
+          line = line + "," + value
     return line
 
   # Helper functions
