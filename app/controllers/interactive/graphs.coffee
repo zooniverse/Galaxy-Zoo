@@ -100,17 +100,27 @@ class Graphs extends BaseController
 
   setGalaxyType: (e) =>
     button = $(e.currentTarget)
+    @setPressed button, false, true
+    siblingButton = button.siblings()
+
     @graph.filters = new Array
+    @graph.removeSelectionFilter()
 
-    if button.hasClass 'pressed'
+    if button.hasClass('pressed') and siblingButton.hasClass('pressed')
+      @options.galaxyType = 'both'
+    else if (not button.hasClass('pressed')) and (not siblingButton.hasClass('pressed'))
       @options.galaxyType = null
-    else
+    else if button.hasClass('pressed')
       @options.galaxyType = button.data('type')
+    else
+      @options.galaxyType = siblingButton.data('type')
 
-    if @options.galaxyType
+    if @options.galaxyType and @options.galaxyType isnt 'both'
       filter = 
         func: new Function("item", "return item['classification'] === '#{@options.galaxyType}'")
       @graph.filters.push filter
+    else if @options.galaxyType is 'both'
+      @graph.selectionFilter = (item) -> item['classification'] is 'feature'
 
     if @options.galaxyType is 'feature'
       @graph.color = 'orange'
@@ -119,7 +129,6 @@ class Graphs extends BaseController
 
     @graph.start()
 
-    @setPressed button, false
     @setButtons.addClass 'show-control'
     @sizeSelector.addClass 'show-control'
 
@@ -202,8 +211,12 @@ class Graphs extends BaseController
       @options.yAxis = '' if typeof(@options.yAxis) is 'undefined'
       @graphTitle.text "#{@prettyKey(@options.xAxis)} vs. #{@prettyKey(@options.yAxis)}"
 
-  setPressed: (button, force_selection = true) =>
+  setPressed: (button, force_selection = true, dual_selection = false) ->
     # Check for case where no button is selected.
+    if dual_selection 
+      button.toggleClass 'pressed'
+      return
+
     unless button.parent().find('button').hasClass 'pressed'
       button.addClass 'pressed'
       return
