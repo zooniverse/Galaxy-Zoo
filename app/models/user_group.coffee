@@ -3,7 +3,7 @@ User = require 'zooniverse/lib/models/user'
 Api = require 'zooniverse/lib/api'
 
 class UserGroup extends Model
-  @configure 'UserGroup', 'name', 'owner', 'projects', 'users', 'user_ids', 'created_at', 'updated_at', 'talk_flag'
+  @configure 'UserGroup', 'name', 'owner', 'projects', 'users', 'user_ids', 'created_at', 'updated_at', 'metadata'
   
   @list: ->
     return unless User.current
@@ -18,7 +18,7 @@ class UserGroup extends Model
     req = Api.getJSON "/user_groups/0/participate"
     req.always =>
       UserGroup.trigger 'stop', @current.id
-      @current.destroy()
+      delete @current
   
   @participate: (id) =>
     Api.getJSON "/user_groups/#{ id }/participate", (json) =>
