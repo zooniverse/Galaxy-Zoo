@@ -50,6 +50,9 @@ class FITSViewer extends Spine.Controller
     $("#dataonwire")[0].contentWindow.postMessage(msg, FITSViewer.validDestination)
     
   receiveFITS: (e) =>
+    if e.origin is 'https://api.zooniverse.org'
+      return null
+      
     # TODO: Error handling needs work.
     if e.data.error?
       alert("Sorry, these data are not yet available.")
@@ -118,7 +121,7 @@ class FITSViewer extends Spine.Controller
          $("#band-#{band}").removeAttr('disabled')
          $("#stretch").removeAttr('disabled')
          
-         dfd2.resolve({image: @images[band].getData(), band: band})
+         dfd2.resolve({image: @images[band], band: band})
          
        ), false
        worker.postMessage(msg)
@@ -127,7 +130,8 @@ class FITSViewer extends Spine.Controller
       p2 = p2.pipe (obj) =>
         band = obj.band
         image = obj.image
-        console.log 'Creating texture for', band
+        dataunit = image.getDataUnit()
+        console.log 'Creating texture for', band, dataunit.width, dataunit.height
         address = "TEXTURE#{@textureCount}"
         @gl.activeTexture(@gl[address])
 
@@ -137,8 +141,7 @@ class FITSViewer extends Spine.Controller
         @gl.texParameteri(@gl.TEXTURE_2D, @gl.TEXTURE_WRAP_T, @gl.CLAMP_TO_EDGE)
         @gl.texParameteri(@gl.TEXTURE_2D, @gl.TEXTURE_MIN_FILTER, @gl.NEAREST)
         @gl.texParameteri(@gl.TEXTURE_2D, @gl.TEXTURE_MAG_FILTER, @gl.NEAREST)
-        console.log @width, @height
-        @gl.texImage2D(@gl.TEXTURE_2D, 0, @gl.LUMINANCE, @width, @height, 0, @gl.LUMINANCE, @gl.FLOAT, image)
+        @gl.texImage2D(@gl.TEXTURE_2D, 0, @gl.LUMINANCE, dataunit.width, dataunit.height, 0, @gl.LUMINANCE, @gl.FLOAT, dataunit.data)
         
         @textures[band] = address
         @textureCount += 1
@@ -170,6 +173,7 @@ class FITSViewer extends Spine.Controller
     for band in @bands
       bandUpper = band.toUpperCase()
       @controls.append("<button id='band-#{band}' class='band' value='#{band}' disabled='disabled'>#{bandUpper}</button>")
+    @controls.append("<button id='band-color' class='band' value='color'>Color</button>")
   
   destroyBandButtons: =>
     @controls.empty() if @controls
@@ -187,7 +191,6 @@ class FITSViewer extends Spine.Controller
   
   destroyStretchButtons: =>
     @controls.empty() if @controls
-    @stretch = null
   
   # Sets up everything except for textures
   setupWebGL: =>
@@ -266,6 +269,8 @@ class FITSViewer extends Spine.Controller
       @drawScene()
     
     @canvas.onmousemove = (e) =>
+      return unless @band?
+      
       xDelta = -1 * (@canvas.width / 2 - e.offsetX) / @canvas.width / @scale * 2.0
       yDelta = (@canvas.height / 2 - e.offsetY) / @canvas.height / @scale * 2.0
       
@@ -274,7 +279,7 @@ class FITSViewer extends Spine.Controller
       
       $(".subject-info .xy.value").html("#{x}, #{y}")
       pixel = @images[@band].getDataUnit().getPixel(x, y)
-      if @band and pixel?
+      if pixel?
         $(".subject-info .intensity.value").html(pixel.toFixed(5))
       
       return unless @drag
@@ -321,6 +326,13 @@ class FITSViewer extends Spine.Controller
   selectBand: (e) =>
     $('.webgl-fits').show()
     @band = e.currentTarget.value
+    
+    if @band is 'color'
+      $('.subject .name').show()
+      @band = null
+      $(".subject-info .xy.value").empty()
+      $(".subject-info .intensity.value").empty()
+      return null
     
     # Cache minimum and maximum values for selected band
     dataunit = @images[@band].getDataUnit()
@@ -443,18 +455,18 @@ class FITSViewer extends Spine.Controller
     @destroyBandButtons()
     @destroyMetadata()
     
-    @container = null
+    window.removeEventListener("message", @receiveFITS, false)
     
-    @stds = null
-    @means = null
-    @histograms = null
-    @images = null
+    @stds = {}
+    @means = {}
+    @histograms = {}
+    @images = {}
     
     for band, texture of @texture
       @gl.deleteTexture(texture)
     
-    @textures = null
-    @textureCount = null
+    @textures = {}
+    @textureCount = 0
     
     if @programs?
       @gl.deleteProgram(program) for program in @programs
