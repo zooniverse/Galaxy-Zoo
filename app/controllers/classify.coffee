@@ -44,7 +44,6 @@ class Classify extends Spine.Controller
   
   render: =>
     return unless @subject and @isActive()
-    console.log UserGroup.current
     @html require('views/classify')(@)
   
   loginPrompt: =>
