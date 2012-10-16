@@ -18,6 +18,9 @@ class Question extends Spine.Model
     hash.answerWith?.apply @
     super
   
+  isTalk: =>
+    @id in ['candels-17', 'sloan-11']
+  
   help: (text) ->
     @helpText = text
   

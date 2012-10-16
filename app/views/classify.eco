@@ -1,3 +1,4 @@
+<% UserGroup = require 'models/user_group' %>
 <div id="classify">
   <div class="galaxy">
     <img src="<%= @subject.image() %>" />
@@ -12,9 +13,9 @@
           <a title="<%= @subject.surveyTitle() %>" class="icon <%= @subject.metadata.survey %>">&nbsp;</a>
           <span class="label"><%= @subject.surveyTitle() %></span>
         </li>
-        <% if require('models/user_group').current : %>
+        <% if UserGroup.current : %>
           <li class="left">
-            <a href="/#/navigator/my_galaxies" title="Group" class="icon group" src="">&nbsp;</a>
+            <a href="/#/navigator/group/<%= UserGroup.current.id %>" title="Group" class="icon group" src="">&nbsp;</a>
             <span class="label group">Group</span>
           </li>
         <% end %>
