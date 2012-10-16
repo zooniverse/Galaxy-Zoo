@@ -34,12 +34,12 @@ class UserGroup extends Model
     Api.getJSON "/user_groups/#{ id }", (json) =>
       UserGroup.create json
   
-  @newGroup: (name, talkFlag) =>
+  @newGroup: (name, hideTalk) =>
     json =
       user_group:
         name: name
         metadata:
-          hide_talk: talkFlag
+          hide_talk: hideTalk
     
     Api.getJSON "/user_groups/create", json, (json) =>
       @current = UserGroup.create json
