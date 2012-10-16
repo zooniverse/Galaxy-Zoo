@@ -28,6 +28,7 @@
     "zooniverse": "git+ssh://git@github.com:zooniverse/Zooniverse.git#HEAD",
     "ubret" : "git+ssh://git@github.com:zooniverse/Ubret.git#HEAD",
     "fits": "git://github.com/astrojs/fitsjs.git"
+    "zooniverse": "git+ssh://git@github.com:zooniverse/Zooniverse.git#galaxy_zoo"
   },
   "devDependencies": {
     "jasmine-phantom-node": "git://github.com/edpaget/jasmine-phantom-node.git"
