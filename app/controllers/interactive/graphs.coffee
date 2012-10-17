@@ -57,16 +57,15 @@ class Graphs extends BaseController
 
     if @graphType is 'histogram'
       @setPressed $('[data-variables="histogram"]')
-      @xAxisItem.find('label').html 'I\'d like to see...'
-      @graph = new Histogram { el: '#graph', channel: 'graph', height: 310, width: 512 } 
     else
       @setPressed $('[data-variables="scatterplot"]')
-      @graph = new Scatterplot { el: '#graph', channel: 'graph', height: 310, width: 512, margin: { left: 50, top: 20, bottom: 40 } }
+
+    @setGraph()
 
   setGraph: =>
     if @graphType is 'histogram'
       @xAxisItem.find('label').html 'I\'d like to see...'
-      @graph = new Histogram { el: '#graph', channel: 'graph', height: 310, width: 512 } 
+      @graph = new Histogram { el: '#graph', channel: 'graph', height: 310, width: 512 , margin: { left: 50, top: 20, bottom: 40 }, yLabel: "Number of Galaxies" }  
     else
       @xAxisItem.find('label').html 'I\'d like to see how...'
       @graph = new Scatterplot { el: '#graph', channel: 'graph', height: 310, width: 512, margin: { left: 50, top: 20, bottom: 40 } } 
