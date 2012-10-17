@@ -15,7 +15,7 @@ Sample = require 'lib/sample_interactive_data'
 class App extends Spine.Controller
   constructor: ->
     super
-    
+   
     Api.init host: Config.apiHost
     @topBar = new TopBar
       el: '.zooniverse-top-bar'

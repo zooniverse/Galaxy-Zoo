@@ -13,6 +13,7 @@ class Graphs extends BaseController
     '#galaxy-types'             : 'typeButtons'
     '#galaxy-sets'              : 'setButtons'
     '#sample-sizes'             : 'sizeSelector'
+    'span.number-of-galaxies'  : 'noOfGalaxies'
 
   events:
     'click #setting-variable-control button'  : 'setGraphType'
@@ -26,15 +27,16 @@ class Graphs extends BaseController
 
   groupGalaxySizes: [
     '<option value="">Choose sample size</option>',
-    '<option value="10">10 galaxies</option>',
-    '<option value="50">50 galaxies</option>',
-    '<option value="100">100 galaxies</option>'
+    '<option value="10">Small Sample of Galaxies</option>',
+    '<option value="50">Medium Sample of Galaxies</option>',
+    '<option value="100">Large Sample of Galaxies</option>'
   ]
 
   allGalaxySizes: [            
     '<option value="">Choose sample size</option>',
-    '<option value="250">250 randomly selected galaxies</option>',
-    '<option value="500">500 randomly selected galaxies</option>'
+    '<option value="100">Small Random Sample of Galaxies</option>',
+    '<option value="250">Medium Random Sample of Galaxies</option>',
+    '<option value="500">Large Random Sample of Galaxies</option>'
   ]
 
   constructor: ->
@@ -152,6 +154,7 @@ class Graphs extends BaseController
     @graph.bind 'data-received', =>
       dataURI = "data:text/csv;charset=UTF-8," + encodeURIComponent(@generateCSV())
       @dataDownload.attr 'href', dataURI
+      @noOfGalaxies.text @graph.filteredData.length
 
   reset: (e) =>
     @render()
