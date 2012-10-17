@@ -10,7 +10,7 @@
     <div class="image_div">
       <a href="#/navigator/my_galaxies" class="check-participate">
         <h2>My Galaxies</h2>
-        <p>Investigate the galaxies you and your group have classified.</p>
+        <p>Compare your classification choices with those made by other volunteers.</p>
         <img src="images/ourgalaxies.png">
       </a>
     </div>
@@ -24,7 +24,7 @@
     <div class="image_div">
       <a href="#/navigator/graphs/scatterplot" class="check-participate">
         <h2>Scatter Graph</h2>
-        <p>Investigate the characteristics of different galaxy types.</p>
+        <p>Compare the characteristics of different galaxy types.</p>
         <img src="images/scattergraph.png">
       </a>
     </div>     
