@@ -31,7 +31,7 @@ class Interactive extends Spine.Controller
     if User.current
       @html require('views/interactive/box')(@)
       @appendGroups()
-      if @group or User.current.user_group_id
+      if @group 
         @setGroup @group
       else
         @linkButtons.hide()
@@ -54,26 +54,29 @@ class Interactive extends Spine.Controller
     @view.render()
 
   elements:
-    'select.groups-dropdown' : 'groupsDropdown'
+    'ul.selection-dropdown' : 'groupsDropdown'
     '#link_buttons' : 'linkButtons'
+    'a.current-selection' : 'currentSelection'
 
   events: 
-    'click select.groups-dropdown option' : 'goToGroup'
-    'change select.groups-dropdown' : 'goToGroup'
+    'click ul.selection-dropdown a' : 'toggleDropdown'
+    'click a.open-dropdown' : 'toggleDropdown'
 
   activeGroups: =>
-    @groupsList = ['<option val="">Select Group</option>']
+    @groupsList = new Array
     if User.current and User.current.user_groups
-      for group in User.current.user_groups
-        listItem = """<option value="#{group.id}">#{@formatGroupName(group.name, group.id)}</option>"""
+      for group in User.current.user_groups when @group?.id isnt group.id
+        listItem = """<li><a href="/#/navigator/group/#{group.id}">#{@formatGroupName(group.name, group.id)}</a></li>"""
         @groupsList.push listItem
-    @groupsList.push '<option value="group">Make a New Group</option>'
+    @groupsList.push '<li><a href="/#/navigator/group/">Make a New Group</a></li>'
     @appendGroups()
 
   setGroup: (group) =>
     @group = group
+    @currentSelection.text @formatGroupName(group.name, group.id)
+    @currentSelection.attr 'href', "/#/group/#{group.id}"
+    @linkButtons.show()
     @activeGroups()
-    @groupsDropdown.val @group?.id or User.current.user_group_id
 
   addGroup: (group) =>
     if typeof(User.current.user_groups) is 'undefined'
@@ -94,22 +97,18 @@ class Interactive extends Spine.Controller
 
   reset: =>
     delete @group
-    @groupsDropdown.val 'Select Group'
+    @currentSelection.text 'Select Group'
+    @currentSelection.removeAttr 'href'
     @linkButtons.hide()
     @activeGroups()
-
-  goToGroup: (e) =>
-    groupId = @el.find(e.currentTarget).val()
-    if groupId is 'group'
-      @navigate '/navigator/group/'
-    else if groupId isnt 'Select Group'
-      @navigate "/navigator/group/#{groupId}"
 
   formatGroupName: (name, id) =>
     groupName = name.slice(0, 25)
     groupName = groupName + '...' if groupName isnt name
-    groupName = '*' + groupName if id is @group?.id
     return groupName
+
+  toggleDropdown: =>
+    @groupsDropdown.toggleClass 'show-dropdown'
 
     
 module.exports = Interactive
