@@ -1,4 +1,7 @@
 <div id="my_galaxies">
+  <div id="my_galaxies_key">
+    <p id="rectangle">My choice</p>
+  <div>
 <% if @samples.length > 0: %>
   <% for galaxy in @samples: %>
     <div class="galaxy" data-id="<%- galaxy.zooniverse_id %>">
