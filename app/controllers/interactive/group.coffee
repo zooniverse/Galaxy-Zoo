@@ -69,7 +69,7 @@ class Group extends Spine.Controller
     'button[name="destroy"]' : 'destroyGroupButton'
     'button[name="yes"]' : 'participateButton'
     'button[name="no"]' : 'stopParticipateButton'
-    'input[name="talk-flag"]' : 'talkFlag'
+    'input[name="talk-flag"]' : 'hideTalk'
     'label.talk-flag' : 'talkLabel'
 
   events: 
@@ -124,7 +124,7 @@ class Group extends Spine.Controller
     @submitButton.attr 'disabled', 'disabled'
     name = @groupNameBox.val()
     emails = @emails.val()
-    talkFlag = @talkFlag.val() is 'talk'
+    hideTalk = @hideTalk.is ':checked'
 
     if emails.search(", ") isnt -1
       emails = emails.split ', '
@@ -134,7 +134,7 @@ class Group extends Spine.Controller
     if @groupId
       UserGroup.inviteUsers @groupId, emails
     else
-      newGroup = UserGroup.newGroup name, talkFlag
+      newGroup = UserGroup.newGroup name, hideTalk
       newGroup.onSuccess (result) ->
         UserGroup.inviteUsers result.id, emails
       

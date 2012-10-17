@@ -44,7 +44,6 @@ class Classify extends Spine.Controller
   
   render: =>
     return unless @subject and @isActive()
-    console.log UserGroup.current
     @html require('views/classify')(@)
   
   loginPrompt: =>
@@ -141,11 +140,17 @@ class Classify extends Spine.Controller
     ev.preventDefault()
   
   updateQuestion: ->
-    if @classification.question and not ((@classification.question['title'] is 'Discuss') and UserGroup.current?.metadata.talk_flag)
-      @question.html require('views/question')(@classification.question)
-    else
+    if @atEnd() or @talkHidden()
       @classification.send()
-      @finish() # should be a interrupt page for favoriting, info, talk, etc
+      @finish()
+    else
+      @question.html require('views/question')(@classification.question)
+  
+  talkHidden: ->
+    @classification.question.isTalk() and UserGroup.current?.metadata.hide_talk
+  
+  atEnd: ->
+    !@classification.question
   
   finish: ->
     Subject.next()
