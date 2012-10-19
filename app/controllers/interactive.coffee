@@ -74,7 +74,7 @@ class Interactive extends Spine.Controller
   setGroup: (group) =>
     @group = group
     @currentSelection.text @formatGroupName(group.name, group.id)
-    @currentSelection.attr 'href', "/#/group/#{group.id}"
+    @currentSelection.attr 'href', "/#/navigator/group/#{group.id}"
     @linkButtons.show()
     @activeGroups()
 
