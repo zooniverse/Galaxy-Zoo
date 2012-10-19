@@ -15,6 +15,7 @@ class Graphs extends BaseController
     '#sample-sizes'             : 'sizeSelector'
     'span.number-of-galaxies'   : 'noOfGalaxies'
     'button[name="reset"]'      : 'resetButton'
+    '#loading-animation'        : 'loading'
 
   events:
     'click #setting-variable-control button'  : 'setGraphType'
@@ -149,9 +150,11 @@ class Graphs extends BaseController
 
     isRandom = (@options.dataSource is 'all')
     limit = @options.sampleSize
+    @loading.show()
     @graph.getDataSource 'InteractiveSubject', {random: isRandom, limit: limit}
 
     @graph.bind 'data-received', =>
+      @loading.hide()
       dataURI = "data:text/csv;charset=UTF-8," + encodeURIComponent(@generateCSV())
       @resetButton.removeAttr 'disabled'
       @dataDownload.attr 'href', dataURI
