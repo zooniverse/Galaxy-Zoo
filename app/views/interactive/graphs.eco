@@ -69,7 +69,7 @@
   </div>
 
   <div id="actions">
-    <button type="button" name="reset">Reset Graph</button>
+    <button disabled="disabled" type="button" name="reset">Reset Graph</button>
     <div class="legend">
       <p># of Galaxies: <span class='number-of-galaxies'></span></p>
       <ul>

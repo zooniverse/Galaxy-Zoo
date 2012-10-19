@@ -13,7 +13,8 @@ class Graphs extends BaseController
     '#galaxy-types'             : 'typeButtons'
     '#galaxy-sets'              : 'setButtons'
     '#sample-sizes'             : 'sizeSelector'
-    'span.number-of-galaxies'  : 'noOfGalaxies'
+    'span.number-of-galaxies'   : 'noOfGalaxies'
+    'button[name="reset"]'      : 'resetButton'
 
   events:
     'click #setting-variable-control button'  : 'setGraphType'
@@ -152,6 +153,7 @@ class Graphs extends BaseController
 
     @graph.bind 'data-received', =>
       dataURI = "data:text/csv;charset=UTF-8," + encodeURIComponent(@generateCSV())
+      @resetButton.removeAttr 'disabled'
       @dataDownload.attr 'href', dataURI
       @noOfGalaxies.text @graph.filteredData.length
 
