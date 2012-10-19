@@ -296,6 +296,45 @@ p
       display: none
   #actions
     margin: 20px 0 0 0
+
+    .legend
+      position: absolute 
+      top: 758px 
+      left: 453px 
+      border: 1px solid #C0C0C0
+      display: inline-block
+      font-size: 12px
+
+      ul
+        margin: 0px
+        padding: 0
+        display: inline
+        list-style-position: inside
+
+      li#teal
+        color: teal
+
+      li#orange
+        color: orange
+
+      li
+        float: right
+        padding: 7px 10px 6px 5px
+        border-right: 1px solid #C0C0C0
+
+      li p
+        color: black
+        padding: 0
+        margin: 0
+        float: none
+
+      p
+        padding: 7px 10px 6px 5px
+        margin: 0
+        float: right
+        display: inline
+        color: black
+
     .misc
       float: right
 
@@ -414,41 +453,6 @@ p
   background: $light-gray
   padding-left: 15px
 
-  .legend
-    position: relative
-    top: 10px
-    left: 380px
-    border: 1px solid #C0C0C0
-    display: inline-block
-    font-size: 12px
-
-    ul
-      margin: 0px
-      padding: 5px
-      padding-left: 20px
-      padding-bottom: 0
-
-    li#teal
-      color: teal
-
-    li#orange
-      color: orange
-
-    li
-      padding: 0
-      margin: 0
-
-    li p
-      color: black
-      padding: 0
-      margin: 0
-
-    p
-      padding: 0
-      margin: 0
-      padding-bottom: 5px
-      text-align: center
-
   .tooltip
     font-size: 10px
     position: absolute
@@ -470,8 +474,6 @@ p
 
   svg  
     display: inline
-    position: relative
-    bottom: 65px
     width: 6*$partridge + 7*$gutter
     height: 310px
 

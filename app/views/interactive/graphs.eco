@@ -55,21 +55,14 @@
         <label>with a sample size of...</label>
         <select id="sample-size" name="sampleSize">
           <option value="">Choose sample size</option>
-          <option value="10">10 galaxies</option>
-          <option value="50">50 galaxies</option>
-          <option value="100">100 galaxies</option>
+          <option value="10">Small Sample of Galaxies</option>
+          <option value="50">Medium Sample of Galaxies</option>
+          <option value="100">Large Sample of Galaxies</option>
         </select>
       </li>
     </ul>
     <div id="graph">
       <h3 id="graph-title"></h3>
-      <div class="legend">
-        <ul>
-          <li id="teal"><p>Smooth Galaxies</p></li>
-          <li id="orange"><p>Featured Galaxies</p></li>
-        </ul>
-        <p># of Galaxies: <span class='number-of-galaxies'></span></p>
-      </div>
       <svg></svg>
     </div>
     <canvas id="canvas"></canvas>
@@ -77,6 +70,13 @@
 
   <div id="actions">
     <button type="button" name="reset">Reset Graph</button>
+    <div class="legend">
+      <p># of Galaxies: <span class='number-of-galaxies'></span></p>
+      <ul>
+        <li id="teal"><p>Smooth</p></li>
+        <li id="orange"><p>Featured/Disk</p></li>
+      </ul>
+    </div>
     <div class="misc">
       <button type="button" name="screenshot">Take Snapshot</button>
       <div class="download-button">
