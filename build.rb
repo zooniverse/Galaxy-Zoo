@@ -52,7 +52,6 @@ else
 end
 
 to_upload.delete 'index.html'
-to_upload << 'index.html'
 total = to_upload.length
 
 to_upload.each.with_index do |file, index|
@@ -74,6 +73,8 @@ to_upload.each.with_index do |file, index|
   puts "#{ '%2d' % (index + 1) } / #{ '%2d' % total }: Uploading #{ file } as #{ content_type }"
   bucket.objects[file].write file: file, acl: :public_read, content_type: content_type
 end
+
+bucket.objects['index.html'].write file: 'index.html', acl: :public_read, content_type: 'text/html', cache_control: 'no-cache, must-revalidate'
 
 Dir.chdir working_directory
 `rm -rf build`
