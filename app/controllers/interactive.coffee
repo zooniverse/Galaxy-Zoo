@@ -28,6 +28,7 @@ class Interactive extends Spine.Controller
         MyGalaxies = require 'controllers/interactive/my_galaxies'
         Group = require 'controllers/interactive/group'
         Graph = require 'controllers/interactive/graphs'
+        @navigatorLoaded = true
         @initPage(params)
     else
       @initPage(params)
@@ -115,7 +116,7 @@ class Interactive extends Spine.Controller
     @activeGroups()
 
   formatGroupName: (name, id) =>
-    groupName = name.slice(0, 25)
+    groupName = name.slice(0, 20)
     groupName = groupName + '...' if groupName isnt name
     return groupName
 
