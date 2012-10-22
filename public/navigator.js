@@ -24140,7 +24140,7 @@ module.exports = jQuery;}, "underscore/underscore": function(exports, require, m
   }).call(__obj);
   __obj.safe = __objSafe, __obj.escape = __escape;
   return __out.join('');
-}}, "controllers/graphs": function(exports, require, module) {(function() {
+}}, "controllers/interactive/graphs": function(exports, require, module) {(function() {
   var BaseController, Graphs, Histogram, Sample, Scatterplot,
     __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; },
     __hasProp = {}.hasOwnProperty,
@@ -24488,7 +24488,7 @@ module.exports = jQuery;}, "underscore/underscore": function(exports, require, m
   module.exports = Graphs;
 
 }).call(this);
-}, "controllers/group": function(exports, require, module) {(function() {
+}, "controllers/interactive/group": function(exports, require, module) {(function() {
   var Group, Spine, User, UserGroup,
     __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; },
     __hasProp = {}.hasOwnProperty,
@@ -24698,7 +24698,7 @@ module.exports = jQuery;}, "underscore/underscore": function(exports, require, m
   module.exports = Group;
 
 }).call(this);
-}, "controllers/interactive": function(exports, require, module) {(function() {
+}, "controllers/interactive/interactive": function(exports, require, module) {(function() {
   var Interactive, LoginForm, Spine, User, UserGroup,
     __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; },
     __hasProp = {}.hasOwnProperty,
@@ -24783,7 +24783,7 @@ module.exports = jQuery;}, "underscore/underscore": function(exports, require, m
   module.exports = Interactive;
 
 }).call(this);
-}, "controllers/my_galaxies": function(exports, require, module) {(function() {
+}, "controllers/interactive/my_galaxies": function(exports, require, module) {(function() {
   var BaseController, Dialog, InteractiveSubject, MyGalaxies, Sample, Spine, SubjectViewer, User,
     __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; },
     __hasProp = {}.hasOwnProperty,
@@ -24962,7 +24962,7 @@ module.exports = jQuery;}, "underscore/underscore": function(exports, require, m
   module.exports = MyGalaxies;
 
 }).call(this);
-}, "views/box": function(exports, require, module) {module.exports = function(__obj) {
+}, "views/interactive/box": function(exports, require, module) {module.exports = function(__obj) {
   if (!__obj) __obj = {};
   var __out = [], __capture = function(callback) {
     var out = __out, result;
@@ -25009,7 +25009,7 @@ module.exports = jQuery;}, "underscore/underscore": function(exports, require, m
   }).call(__obj);
   __obj.safe = __objSafe, __obj.escape = __escape;
   return __out.join('');
-}}, "views/dialog": function(exports, require, module) {module.exports = function(__obj) {
+}}, "views/interactive/dialog": function(exports, require, module) {module.exports = function(__obj) {
   if (!__obj) __obj = {};
   var __out = [], __capture = function(callback) {
     var out = __out, result;
@@ -25056,65 +25056,7 @@ module.exports = jQuery;}, "underscore/underscore": function(exports, require, m
   }).call(__obj);
   __obj.safe = __objSafe, __obj.escape = __escape;
   return __out.join('');
-}}, "views/galaxy": function(exports, require, module) {module.exports = function(values){ 
-  var $  = jQuery, result = $();
-  values = $.makeArray(values);
-  
-  for(var i=0; i < values.length; i++) {
-    var value = values[i];
-    var elem  = $((function(__obj) {
-  if (!__obj) __obj = {};
-  var __out = [], __capture = function(callback) {
-    var out = __out, result;
-    __out = [];
-    callback.call(this);
-    result = __out.join('');
-    __out = out;
-    return __safe(result);
-  }, __sanitize = function(value) {
-    if (value && value.ecoSafe) {
-      return value;
-    } else if (typeof value !== 'undefined' && value != null) {
-      return __escape(value);
-    } else {
-      return '';
-    }
-  }, __safe, __objSafe = __obj.safe, __escape = __obj.escape;
-  __safe = __obj.safe = function(value) {
-    if (value && value.ecoSafe) {
-      return value;
-    } else {
-      if (!(typeof value !== 'undefined' && value != null)) value = '';
-      var result = new String(value);
-      result.ecoSafe = true;
-      return result;
-    }
-  };
-  if (!__escape) {
-    __escape = __obj.escape = function(value) {
-      return ('' + value)
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;');
-    };
-  }
-  (function() {
-    (function() {
-    
-      __out.push('<div class="galaxy"></div>');
-    
-    }).call(this);
-    
-  }).call(__obj);
-  __obj.safe = __objSafe, __obj.escape = __escape;
-  return __out.join('');
-})(value));
-    elem.data('item', value);
-    $.merge(result, elem);
-  }
-  return result;
-};}, "views/graphs": function(exports, require, module) {module.exports = function(__obj) {
+}}, "views/interactive/graphs": function(exports, require, module) {module.exports = function(__obj) {
   if (!__obj) __obj = {};
   var __out = [], __capture = function(callback) {
     var out = __out, result;
@@ -25161,7 +25103,7 @@ module.exports = jQuery;}, "underscore/underscore": function(exports, require, m
   }).call(__obj);
   __obj.safe = __objSafe, __obj.escape = __escape;
   return __out.join('');
-}}, "views/histogram": function(exports, require, module) {module.exports = function(__obj) {
+}}, "views/interactive/histogram": function(exports, require, module) {module.exports = function(__obj) {
   if (!__obj) __obj = {};
   var __out = [], __capture = function(callback) {
     var out = __out, result;
@@ -25210,7 +25152,7 @@ module.exports = jQuery;}, "underscore/underscore": function(exports, require, m
   }).call(__obj);
   __obj.safe = __objSafe, __obj.escape = __escape;
   return __out.join('');
-}}, "views/interactive": function(exports, require, module) {module.exports = function(__obj) {
+}}, "views/interactive/interactive": function(exports, require, module) {module.exports = function(__obj) {
   if (!__obj) __obj = {};
   var __out = [], __capture = function(callback) {
     var out = __out, result;
@@ -25257,7 +25199,7 @@ module.exports = jQuery;}, "underscore/underscore": function(exports, require, m
   }).call(__obj);
   __obj.safe = __objSafe, __obj.escape = __escape;
   return __out.join('');
-}}, "views/my_galaxies": function(exports, require, module) {module.exports = function(__obj) {
+}}, "views/interactive/my_galaxies": function(exports, require, module) {module.exports = function(__obj) {
   if (!__obj) __obj = {};
   var __out = [], __capture = function(callback) {
     var out = __out, result;
@@ -25325,7 +25267,7 @@ module.exports = jQuery;}, "underscore/underscore": function(exports, require, m
   }).call(__obj);
   __obj.safe = __objSafe, __obj.escape = __escape;
   return __out.join('');
-}}, "views/partials/intro_text": function(exports, require, module) {module.exports = function(__obj) {
+}}, "views/interactive/partials/intro_text": function(exports, require, module) {module.exports = function(__obj) {
   if (!__obj) __obj = {};
   var __out = [], __capture = function(callback) {
     var out = __out, result;
@@ -25372,7 +25314,7 @@ module.exports = jQuery;}, "underscore/underscore": function(exports, require, m
   }).call(__obj);
   __obj.safe = __objSafe, __obj.escape = __escape;
   return __out.join('');
-}}, "views/participate": function(exports, require, module) {module.exports = function(__obj) {
+}}, "views/interactive/participate": function(exports, require, module) {module.exports = function(__obj) {
   if (!__obj) __obj = {};
   var __out = [], __capture = function(callback) {
     var out = __out, result;
@@ -25419,7 +25361,7 @@ module.exports = jQuery;}, "underscore/underscore": function(exports, require, m
   }).call(__obj);
   __obj.safe = __objSafe, __obj.escape = __escape;
   return __out.join('');
-}}, "views/scatterplot": function(exports, require, module) {module.exports = function(__obj) {
+}}, "views/interactive/scatterplot": function(exports, require, module) {module.exports = function(__obj) {
   if (!__obj) __obj = {};
   var __out = [], __capture = function(callback) {
     var out = __out, result;
@@ -25468,7 +25410,7 @@ module.exports = jQuery;}, "underscore/underscore": function(exports, require, m
   }).call(__obj);
   __obj.safe = __objSafe, __obj.escape = __escape;
   return __out.join('');
-}}, "views/subjectviewer": function(exports, require, module) {module.exports = function(__obj) {
+}}, "views/interactive/subjectviewer": function(exports, require, module) {module.exports = function(__obj) {
   if (!__obj) __obj = {};
   var __out = [], __capture = function(callback) {
     var out = __out, result;
