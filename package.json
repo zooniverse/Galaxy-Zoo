@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "eco": "*",
-    "hem": "git://github.com/maccman/hem.git#517c97a3ce7",
+    "hem": "git://github.com/edpaget/hem.git#83617d1a4e",
     "node-pubsub" : "*",
     "nib": "*",
     "es5-shimify": "~0.0.1",
