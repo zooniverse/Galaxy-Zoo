@@ -2,7 +2,13 @@ fs = require 'fs'
 {spawn} = require 'child_process'
 Hem = require 'hem'
 
-task 'build:navigator', 'Build navigator module from interactive/', ->
+buildHem = (uglify) ->
   hem = new Hem()
-  source = hem.hemPackage().compile()
+  source = hem.hemPackage().compile(uglify)
   fs.writeFileSync(__dirname + '/../public/navigator.js', source)
+
+task 'build:navigator:debug', 'Build navigator module from interactive/ don\'t uglify', ->
+  buildHem(false)
+
+task 'build:navigator', 'Build navigator module from interactive/ uglify', ->
+  buildHem(true)

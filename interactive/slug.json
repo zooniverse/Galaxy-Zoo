@@ -3,6 +3,20 @@
     "node-pubsub",
     "ubret"
   ],
+  "excludedDependencies" : [
+    "underscore",
+    "zooniverse",
+    "zooniverse/lib/google_analytics",
+    "zooniverse/lib/controllers/browser_check",
+    "es5-shimify",
+    "json2ify",
+    "jqueryify",
+    "spine",
+    "spine/lib/local",
+    "spine/lib/ajax",
+    "spine/lib/route",
+    "spine/lib/manager"
+  ],
   "libs": [
     "../node_modules/Ubret/vendor/d3.v2.js",
     "../vendor/rgbcolor.js",
