@@ -1,0 +1,11 @@
+{
+  "dependencies": [
+    "node-pubsub",
+    "ubret"
+  ],
+  "libs": [
+    "../node_modules/Ubret/vendor/d3.v2.js",
+    "../vendor/rgbcolor.js",
+    "../vendor/canvg.js"
+  ]
+}
