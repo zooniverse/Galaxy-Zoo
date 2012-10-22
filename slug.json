@@ -1,7 +1,5 @@
 {
   "dependencies": [
-    "node-pubsub",
-    "ubret",
     "underscore",
     "zooniverse",
     "zooniverse/lib/google_analytics",
@@ -16,9 +14,6 @@
     "spine/lib/manager"
   ],
   "libs": [
-    "node_modules/Zooniverse/vendor/base64.js",
-    "node_modules/Ubret/vendor/d3.v2.js",
-    "vendor/rgbcolor.js",
-    "vendor/canvg.js"
+    "node_modules/Zooniverse/vendor/base64.js"
   ]
 }

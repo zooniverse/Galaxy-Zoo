@@ -1,0 +1,39 @@
+#!/usr/bin/env node
+
+var eco = require('eco');
+var fs = require('fs');
+
+var inputFolder = '/../' + process.argv[2];
+var outFolder = '/../' + process.argv[3];
+
+fs.readdir(__dirname + inputFolder, function(err, files) {
+  if (err) {
+    console.log(err);
+    throw err;
+  }
+  
+  files.forEach(function(file) {
+    fs.readFile(__dirname + inputFolder + file, function(err, data) {
+      if (err) {
+        console.log(err);
+        throw err;
+      }
+      
+      var template = eco.precompile(data.toString());
+
+      filename = file.substr(file.lastIndexOf('/') + 1);
+      filename = filename.replace(/\.(.+)/, '.js');
+
+      templateFile = "module.exports = " + template.toString();
+
+      filepath = __dirname + outFolder + filename;
+
+      fs.writeFile(filepath, templateFile, function(err) {
+        if (err) {
+          console.log(err);
+          throw err;
+        }
+      });
+    });
+  });
+});

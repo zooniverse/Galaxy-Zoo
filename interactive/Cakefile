@@ -1,0 +1,8 @@
+fs = require 'fs'
+{spawn} = require 'child_process'
+Hem = require 'hem'
+
+task 'build:navigator', 'Build navigator module from interactive/', ->
+  hem = new Hem()
+  source = hem.hemPackage().compile()
+  fs.writeFileSync(__dirname + '/../public/navigator.js', source)

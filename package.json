@@ -11,7 +11,11 @@
     "pretest": "hem server --port 9290 & echo $! > ./hem.pid",
     "test": "jasmine-phantom-node --port 9290"
   },
+  "bin" : {
+    "compile-eco" : "./bin/compile-eco"
+  },
   "dependencies": {
+    "eco": "*",
     "hem": "git://github.com/maccman/hem.git#517c97a3ce7",
     "node-pubsub" : "*",
     "nib": "*",
