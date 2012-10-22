@@ -2,10 +2,10 @@ Spine = require('spine')
 User = require 'zooniverse/lib/models/user'
 UserGroup = require 'models/user_group'
 LoginForm = require 'zooniverse/lib/controllers/login_form'
-Home = require 'controllers/interactive/interactive'
-MyGalaxies = require 'controllers/interactive/my_galaxies'
-Group = require 'controllers/interactive/group'
-Graph = require 'controllers/interactive/graphs'
+Home = ->
+MyGalaxies = ->
+Group = ->
+Graph = ->
 
 class Interactive extends Spine.Controller
 
@@ -22,6 +22,17 @@ class Interactive extends Spine.Controller
 
   active: (params) =>
     super
+    unless @navigatorLoaded
+      $.getScript '/navigator.js', =>
+        Home = require 'controllers/interactive/interactive'
+        MyGalaxies = require 'controllers/interactive/my_galaxies'
+        Group = require 'controllers/interactive/group'
+        Graph = require 'controllers/interactive/graphs'
+        @initPage(params)
+    else
+      @initPage(params)
+
+  initPage: (params) =>
     @page = params.page or 'home'
     @options = params.options
     @render()
