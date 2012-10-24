@@ -14,6 +14,7 @@ class Interactive extends Spine.Controller
     @groupsList = new Array
     User.bind 'sign-in', @render
     User.bind 'sign-in', @activeGroups
+    User.bind 'sign-in', @checkCurrentGroup
     UserGroup.bind 'participate', @setGroup
     UserGroup.bind 'stop', @reset
     UserGroup.bind 'create', @addGroup
@@ -110,5 +111,12 @@ class Interactive extends Spine.Controller
   toggleDropdown: =>
     @groupsDropdown.toggleClass 'show-dropdown'
 
+  checkCurrentGroup: =>
+    console.log 'here'
+    if User.current?.user_group_id is UserGroup.current?.id
+      return
+    else
+      delete @group
+      delete UserGroup.current
     
 module.exports = Interactive
