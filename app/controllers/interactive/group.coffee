@@ -105,6 +105,8 @@ class Group extends Spine.Controller
     delete User.current.user_group_id
 
   leaveGroup: (e) =>
+    answer = confirm 'Are you sure?\nThe Group Leader must re-invite you if you wish to rejoin'
+    return unless answer
     e.preventDefault()
     UserGroup.leave @groupId
     @navigate '/navigator/home'
