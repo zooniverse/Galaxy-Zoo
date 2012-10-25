@@ -13,8 +13,8 @@ Config =
       invitationId: '502bfa73516bcb3c600003e9'
       workflowId: '502a701e516bcb0001000002'
   
-  development:
-    apiHost: 'https://dev.zooniverse.org'
+  developmentLocal:
+    apiHost: 'http://localhost:3000'
     surveys:
       candels:
         id: '50251c3b516bcb6ecb000001'
@@ -27,6 +27,20 @@ Config =
       invitationId: '502bfa73516bcb3c600003e9'
       workflowId: '502a701e516bcb0001000002'
   
+  developmentRemote:
+    apiHost: 'https://dev.zooniverse.org'
+    surveys:
+      candels:
+        id: '50251c3b516bcb6ecb000001'
+        workflowId: '50251c3b516bcb6ecb000001'
+      sloan:
+        id: '50251c3b516bcb6ecb000002'
+        workflowId: '50251c3b516bcb6ecb000002'
+    subjectCache: 5
+    quiz:
+      invitationId: '502bfa73516bcb3c600003e9'
+      workflowId: '502a701e516bcb0001000002'
+
   production:
     apiHost: 'https://api.zooniverse.org'
     surveys:
@@ -43,8 +57,10 @@ Config =
 
 env = if window.jasmine
   'test'
-else if (window.location.port > 1024) and (window.location.port isnt '9000')
-  'development'
+else if window.location.port > 1024 
+  'developmentLocal'
+else if window.location.port is '9000'
+  'developmentRemote'
 else
   'production'
 
