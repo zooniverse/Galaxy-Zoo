@@ -28,6 +28,7 @@
     "zooniverse": "git+ssh://git@github.com:zooniverse/Zooniverse.git#HEAD",
     "ubret" : "git+ssh://git@github.com:zooniverse/Ubret.git#HEAD",
     "fits": "git://github.com/astrojs/fitsjs.git"
+    "ubret" : "git+ssh://git@github.com:zooniverse/Ubret.git#3e40818af57e0d",
     "zooniverse": "git+ssh://git@github.com:zooniverse/Zooniverse.git#galaxy_zoo"
   },
   "devDependencies": {
