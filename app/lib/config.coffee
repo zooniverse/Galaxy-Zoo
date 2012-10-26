@@ -57,10 +57,10 @@ Config =
 
 env = if window.jasmine
   'test'
-else if window.location.port > 1024 
-  'developmentLocal'
 else if window.location.port is '9000'
   'developmentRemote'
+else if window.location.port > 1024 
+  'developmentLocal'
 else
   'production'
 

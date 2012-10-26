@@ -147,7 +147,7 @@ class Classify extends Spine.Controller
       @question.html require('views/question')(@classification.question)
   
   talkHidden: ->
-    @classification.question.isTalk() and UserGroup.current?.metadata.hide_talk
+    @classification.question.isTalk() and UserGroup.current?.metadata?.hide_talk
   
   atEnd: ->
     !@classification.question
