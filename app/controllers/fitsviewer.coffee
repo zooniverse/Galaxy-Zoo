@@ -42,7 +42,6 @@ class FITSViewer extends Spine.Controller
     @createStretchButtons()
   
   requestFITS: (survey, id) =>
-    console.log 'requesting FITS from Portsmouth'
     window.addEventListener("message", @receiveFITS, false)
     msg =
       survey: survey
@@ -69,7 +68,6 @@ class FITSViewer extends Spine.Controller
       # Initialize the FITS object
       p1 = p1.pipe (obj) =>        
         band = obj.band
-        console.log 'Initializing FITS object for', band
         @images[band] = new FITS.File(obj.arraybuffer)
         
         # Select the dataunit
@@ -90,7 +88,6 @@ class FITSViewer extends Spine.Controller
        
       # Compute statistics
       p1 = p1.pipe ([dataunit, band]) =>
-       console.log 'Computing statistics ', dataunit
 
        # Set up message to pass to worker
        msg =
@@ -131,7 +128,6 @@ class FITSViewer extends Spine.Controller
         band = obj.band
         image = obj.image
         dataunit = image.getDataUnit()
-        console.log 'Creating texture for', band, dataunit.width, dataunit.height
         address = "TEXTURE#{@textureCount}"
         @gl.activeTexture(@gl[address])
 
@@ -194,7 +190,6 @@ class FITSViewer extends Spine.Controller
   
   # Sets up everything except for textures
   setupWebGL: =>
-    console.log 'setupWebGL'
     
     @canvas = WebGL.setupCanvas(@container, FITSViewer.viewportWidth, FITSViewer.viewportHeight)
     @gl     = WebGL.create3DContext(@canvas)
