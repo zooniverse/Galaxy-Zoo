@@ -71,6 +71,7 @@ class Examine extends Spine.Controller
         require 'lib/_.each_slice'
         require('lib/jquery.flot')
         require('lib/jquery.flot.axislabels')
+        require('lib/jquery-ui-1.9.1.custom')
         @fitsLoaded = true
         @initializeFitsViewer()
    
