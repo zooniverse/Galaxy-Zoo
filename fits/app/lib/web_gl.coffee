@@ -33,6 +33,7 @@ WebGL =
             
             "float min = u_extremes[0];",
             "float max = u_extremes[1];",
+            
             "float pixel = (pixel_v[0] - min) / (max - min);",
             
             "gl_FragColor = vec4(pixel, pixel, pixel, 1.0);",
@@ -46,12 +47,24 @@ WebGL =
         
         "varying vec2 v_textureCoord;",
 
+        "float logarithm(float value) {",
+            "return log(value / 0.05 + 1.0) / log(1.0 / 0.05 + 1.0);",
+        "}",
+
         "void main() {",
             "vec4 pixel_v = texture2D(u_tex, v_textureCoord);",
             
-            "float min = log(u_extremes[0]);",
-            "float max = log(u_extremes[1]);",
-            "float pixel = (log(pixel_v[0]) - min) / (max - min);",
+            "float min = u_extremes[0];",
+            "float max = u_extremes[1];",
+            
+            "max = max - min;",
+            
+            "float minScaled = logarithm(0.0);",
+            "max = logarithm(max);",
+            "float pixel = pixel_v[0] - min;",
+            "pixel = logarithm(pixel);",
+            
+            "pixel = (pixel - minScaled) / (max - minScaled);",
             
             "gl_FragColor = vec4(pixel, pixel, pixel, 1.0);",
         "}"
@@ -66,11 +79,14 @@ WebGL =
 
         "void main() {",
           "vec4 pixel_v = texture2D(u_tex, v_textureCoord);",
-        
-          "float min = sqrt(u_extremes[0]);",
-          "float max = sqrt(u_extremes[1]);",
-          "float pixel = (sqrt(pixel_v[0]) - min) / (max - min);",
-        
+          
+          # Shift value by min to avoid negative numbers
+          "float min = u_extremes[0];",
+          "float max = u_extremes[1] - min;",
+          "float pixel = pixel_v[0] - min;",
+          
+          "pixel = sqrt(pixel_v[0] / max);",
+          
           "gl_FragColor = vec4(pixel, pixel, pixel, 1.0);",
         "}"
       ].join("\n")
@@ -85,14 +101,18 @@ WebGL =
         "float arcsinh(float value) {",
             "return log(value + sqrt(1.0 + value * value));",
         "}",
+        
+        "float scaledArcsinh(float value) {",
+            "return arcsinh(value / -0.033) / arcsinh(1.0 / -0.033);",
+        "}",
 
         "void main() {",
           "vec4 pixel_v = texture2D(u_tex, v_textureCoord);",
           
-          "float min = arcsinh(u_extremes[0]);",
-          "float max = arcsinh(u_extremes[1]);",
-          "float value = arcsinh(pixel_v[0]);",
-
+          "float min = scaledArcsinh(u_extremes[0]);",
+          "float max = scaledArcsinh(u_extremes[1]);",
+          "float value = scaledArcsinh(pixel_v[0]);",
+          
           "float pixel = (value - min) / (max - min);",
 
           "gl_FragColor = vec4(pixel, pixel, pixel, 1.0);",
@@ -109,10 +129,12 @@ WebGL =
         "void main() {",
           "vec4 pixel_v = texture2D(u_tex, v_textureCoord);",
 
-          "float min = pow(u_extremes[0], 2.0);",
-          "float max = pow(u_extremes[1], 2.0);",
-
-          "float pixel = (pow(pixel_v[0], 2.0) - min) / (max - min);",
+          # Shift value by min to avoid negative numbers
+          "float min = u_extremes[0];",
+          "float max = u_extremes[1] - min;",
+          "float pixel = pixel_v[0] - min;",
+          
+          "pixel = pow(pixel / max, 2.0);",
 
           "gl_FragColor = vec4(pixel, pixel, pixel, 1.0);",
         "}"
@@ -185,7 +207,8 @@ WebGL =
     
     # Create a canvas within the container with specified width and height
     canvas = document.createElement('canvas')
-    canvas.setAttribute('id', 'webgl-fits')
+    canvas.setAttribute('class', 'webgl-fits')
+    canvas.setAttribute('hidden', 'hidden')
     canvas.setAttribute('width', width)
     canvas.setAttribute('height', height)
     

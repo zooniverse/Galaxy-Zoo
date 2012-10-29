@@ -1,4 +1,3 @@
-Sample = require 'lib/sample_interactive_data'
 Scatterplot = require 'ubret/lib/controllers/Scatterplot'
 Histogram = require 'ubret/lib/controllers/Histogram'
 BaseController = require 'ubret/lib/controllers/BaseController'

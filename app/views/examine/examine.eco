@@ -1,3 +1,4 @@
+<iframe id="dataonwire" src="http://www.sdss.org.uk/fitsframe.html" style="display: none;"></iframe>
 <div id="examine">
   <div class="content">
     <div class="content-block">
@@ -20,14 +21,7 @@
             <%- require("views/examine/#{ @subject.metadata.survey }")(@) %>
           </div>
         <% end %>
-        
-        <!-- <button id="load-fits">Examine raw data</button>
-        <div id="viewer-controls"></div>
-        <div class="slider" style="width:300px;"></div>
-        <div id="plots">
-          <div class="markers" style="width:300px;height:200px"></div>
-          <div class="histogram" style="width:300px;height:200px"></div>
-        </div> -->
+        <div id="controls"></div>
       </div>
     </div>
   </div>
