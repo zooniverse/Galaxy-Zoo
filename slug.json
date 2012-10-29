@@ -13,8 +13,7 @@
     "spine/lib/local",
     "spine/lib/ajax",
     "spine/lib/route",
-    "spine/lib/manager",
-    "fits"
+    "spine/lib/manager"
   ],
   "libs": [
     "node_modules/Zooniverse/vendor/base64.js",

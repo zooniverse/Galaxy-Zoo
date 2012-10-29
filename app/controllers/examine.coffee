@@ -1,8 +1,7 @@
 Spine = require 'spine'
 Subject = require 'models/subject'
 Api = require 'zooniverse/lib/api'
-FITSViewer = require 'controllers/fitsviewer'
-WebGL = require('lib/web_gl')
+FITSViewer = ->
 
 class Examine extends Spine.Controller
   
@@ -11,6 +10,7 @@ class Examine extends Spine.Controller
   
   constructor: ->
     super
+    @fitsLoaded = false
   
   active: (params) ->
     super
@@ -49,21 +49,39 @@ class Examine extends Spine.Controller
     checkDataView = DataView?
     checkWorker = Worker?
     checkWebGL = window.WebGLRenderingContext?
+    if checkWebGl
+      canvas = document.createElement('canvas')
+      context = canvas.getContext('webgl')
+      checkWebGl = context?
+    else
+      checkWebGl = false
     checkDataView and checkWorker and checkWebGL
   
   requestFITS: =>
     
     # Deactive button
     $('#load-fits').attr("disabled", true)
-    console.log @subject
+
+    if @fitsLoaded
+      @initializeFitsViewer()
+    else
+      $.getScript '/fits.js', =>
+        FITSViewer = require 'controllers/fitsviewer'
+        console.log FITSViewer
+        require 'lib/_.each_slice'
+        require('lib/jquery.flot')
+        require('lib/jquery.flot.axislabels')
+        @fitsLoaded = true
+        @initializeFitsViewer()
+   
+   initializeFitsViewer: =>
+      id      = @subject.metadata.sdss_id or @subject.metadata.hubble_id
+      survey  = @subject.metadata.survey
+      bands   = if survey is 'sloan' then ['u', 'g', 'r', 'i', 'z'] else ['h', 'i', 'j']
     
-    id      = @subject.metadata.sdss_id or @subject.metadata.hubble_id
-    survey  = @subject.metadata.survey
-    bands   = if survey is 'sloan' then ['u', 'g', 'r', 'i', 'z'] else ['h', 'i', 'j']
-    
-    # Initialize viewer
-    @viewer = new FITSViewer({el: $('#examine'), bands: bands})
-    @viewer.requestFITS(survey, id)
+      # Initialize viewer
+      @viewer = new FITSViewer({el: $('#examine'), bands: bands})
+      @viewer.requestFITS(survey, id)
   
   sexagesimal: =>
     [ra, dec] = @subject.coords

@@ -1,0 +1,20 @@
+{
+  "dependencies": [
+    "fits"
+  ],
+  "excludedDependencies": [
+    "underscore",
+    "zooniverse",
+    "zooniverse/lib/google_analytics",
+    "zooniverse/lib/controllers/browser_check",
+    "es5-shimify",
+    "json2ify",
+    "jqueryify",
+    "spine",
+    "spine/lib/local",
+    "spine/lib/ajax",
+    "spine/lib/route",
+    "spine/lib/manager"
+  ]
+}
+    
