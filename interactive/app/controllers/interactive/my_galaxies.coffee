@@ -1,5 +1,4 @@
 Spine = require('spine')
-Sample = require 'lib/sample_interactive_data'
 Dialog = require 'lib/dialog'
 User = require 'zooniverse/lib/models/user'
 

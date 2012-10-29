@@ -456,6 +456,7 @@ p
   border: 1px solid #C0C0C0
   background: $light-gray
   padding-left: 15px
+  position: relative
 
   .tooltip
     font-size: 10px
@@ -476,10 +477,16 @@ p
     font-size: 14px
     text-align: center
 
+  #loading-animation
+    text-align: center
+    display: none
+    position: absolute
+    z-index: 999
+    top: 120px
+    left: 230px
+
   svg  
     display: inline
-    position: relative
-    bottom: 65px
     width: 6*$partridge + 7*$gutter
     height: 310px
 

@@ -66,12 +66,17 @@ class Interactive extends Spine.Controller
       @view = new Group { el: '#navigator', groupId: id }
     @view.render()
 
-  elements:
-    'select.groups-dropdown' : 'groupsDropdown'
 
-  events: 
-    'click a.show-groups' : 'showGroups'
-    'change select.groups-dropdown' : 'goToGroup'
+  elements:
+    'ul.selection-dropdown' : 'groupsDropdown'
+    '#link_buttons' : 'linkButtons'
+    'a.current-selection' : 'currentSelection'
+
+  events:
+    'click ul.selection-dropdown a' : 'toggleDropdown'
+    'click a.open-dropdown' : 'toggleDropdown'
+
+
 
   activeGroups: =>
     @groupsList = new Array
