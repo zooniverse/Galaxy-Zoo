@@ -65,7 +65,12 @@ class Examine extends Spine.Controller
     if @fitsLoaded
       @initializeFitsViewer()
     else
-      $.getScript '/fits.js', =>
+      fetcher = $.ajax
+        url: '/fits.js'
+        dataType: 'script'
+        cache: true
+      
+      fetcher.done =>
         FITSViewer = require 'controllers/fitsviewer'
         require('lib/jquery.flot')
         require('lib/jquery.flot.axislabels')

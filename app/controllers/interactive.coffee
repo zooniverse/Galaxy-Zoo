@@ -23,7 +23,12 @@ class Interactive extends Spine.Controller
   active: (params) =>
     super
     unless @navigatorLoaded
-      $.getScript '/navigator.js', =>
+      fetcher = $.ajax
+        url: '/navigator.js'
+        dataType: 'script'
+        cache: true
+      
+      fetcher.done =>
         Home = require 'controllers/interactive/interactive'
         MyGalaxies = require 'controllers/interactive/my_galaxies'
         Group = require 'controllers/interactive/group'
