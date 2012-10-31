@@ -1,15 +1,16 @@
 Spine = require 'spine'
 Subject = require 'models/subject'
 Api = require 'zooniverse/lib/api'
-# FITSViewer = require 'controllers/fitsviewer'
-# WebGL = require 'lib/web_gl'
+FITSViewer = ->
 
 class Examine extends Spine.Controller
+  
   events: 
-    'click #load-fits': 'loadFits'
+    "click #load-fits": "requestFITS"
   
   constructor: ->
     super
+    @fitsLoaded = false
   
   active: (params) ->
     super
@@ -29,6 +30,8 @@ class Examine extends Spine.Controller
   
   render: =>
     @html require('views/examine/examine')(@)
+    if @checkBrowserFeatures()
+      $('#controls').html require('views/examine/fitsviewer')()
   
   info: (key, values...) =>
     value = values.shift()
@@ -41,35 +44,58 @@ class Examine extends Spine.Controller
       </div>
     """
   
+  # TODO: Move this into Zooniverse library
   checkBrowserFeatures: =>
     checkDataView = DataView?
     checkWorker = Worker?
-    checkWebGL = WebGL.check()
+    checkWebGL = window.WebGLRenderingContext?
+    if checkWebGl
+      canvas = document.createElement('canvas')
+      context = canvas.getContext('webgl')
+      checkWebGl = context?
+    else
+      checkWebGl = false
     checkDataView and checkWorker and checkWebGL
   
-  loadFits: =>
-    return unless @checkBrowserFeatures()
-    if $('#dataonwire')[0]
-      @requestFITS()
-    else
-      fitsFrame = $('<iframe id="dataonwire" src="http://www.sdss.org.uk/dr9zoo/fitsframe.html" style="display: none;"></iframe>')
-      fitsFrame.on 'load', @requestFITS
-      $('body').append fitsFrame
-  
   requestFITS: =>
-    $('#load-fits').attr 'disabled', true
-    bands = @subject.metadata.bands
-    surveyId = @subject.surveyId()
-    @viewer = new FITSViewer el: $('#examine'), bands: bands
     
-    for band in bands
-      do (band, surveyId) =>
-        url = "http://www.galaxyzoo.org.s3-website-us-east-1.amazonaws.com/subjects/raw/#{ surveyId }_#{ band }.fits.fz"
-        xhr = new XMLHttpRequest()
-        xhr.open 'GET', url
-        xhr.responseType = 'arraybuffer'
-        xhr.onload = (e) =>
-          @viewer.addImage band, xhr.response
-        xhr.send()
+    # Deactive button
+    $('#load-fits').attr("disabled", true)
+
+    if @fitsLoaded
+      @initializeFitsViewer()
+    else
+      $.getScript '/fits.js', =>
+        FITSViewer = require 'controllers/fitsviewer'
+        console.log FITSViewer
+        require 'lib/_.each_slice'
+        require('lib/jquery.flot')
+        require('lib/jquery.flot.axislabels')
+        require('lib/jquery-ui-1.9.1.custom')
+        @fitsLoaded = true
+        @initializeFitsViewer()
+   
+   initializeFitsViewer: =>
+      id      = @subject.metadata.sdss_id or @subject.metadata.hubble_id
+      survey  = @subject.metadata.survey
+      bands   = if survey is 'sloan' then ['u', 'g', 'r', 'i', 'z'] else ['h', 'i', 'j']
+    
+      # Initialize viewer
+      @viewer = new FITSViewer({el: $('#examine'), bands: bands})
+      @viewer.requestFITS(survey, id)
+  
+  sexagesimal: =>
+    [ra, dec] = @subject.coords
+    return [@ddmmss(ra), @ddmmss(dec)]
+  
+  ddmmss: (degree) =>
+    dd = Math.floor(degree)
+    mantissa = degree - dd
+    mmtmp = 60 * mantissa
+    mm = Math.floor(mmtmp)
+    mantissa = mmtmp - mm
+    ss = (60 * mantissa).toFixed(3)
+    
+    return "#{dd}&deg; #{mm}' #{ss}\""
 
 module.exports = Examine

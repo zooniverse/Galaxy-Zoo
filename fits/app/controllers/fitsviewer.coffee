@@ -2,8 +2,13 @@ FITS  = require('fits')
 WebGL = require('lib/web_gl')
 Workers = require('lib/workers')
 
+# Troublesome
+# #/examine/AGZ00013gv
+
 class FITSViewer extends Spine.Controller
-  @bins = 500
+  @validDestination = "http://www.sdss.org.uk/"
+  
+  @bins = 10000
   @viewportWidth  = 424
   @viewportHeight = 424
   
@@ -21,7 +26,7 @@ class FITSViewer extends Spine.Controller
     @images = {}
     @histograms = {}
     @means = {}
-    @stds = {}
+    @percentiles = {}
     
     # Store band and texture location
     @textureCount = 0
@@ -35,9 +40,112 @@ class FITSViewer extends Spine.Controller
     @createMetadata()
     @createBandButtons()
     @createStretchButtons()
-    
-    @setupWebGL()
   
+  requestFITS: (survey, id) =>
+    window.addEventListener("message", @receiveFITS, false)
+    msg =
+      survey: survey
+      id: id
+    $("#dataonwire")[0].contentWindow.postMessage(msg, FITSViewer.validDestination)
+    
+  receiveFITS: (e) =>
+    if e.origin is 'https://api.zooniverse.org'
+      return null
+      
+    # TODO: Error handling needs work.
+    if e.data.error?
+      alert("Sorry, these data are not yet available.")
+      window.removeEventListener("message", @receiveFITS, false)
+    else
+      data = e.data
+      
+      # Create a deferred object
+      dfd1 = new $.Deferred()
+      dfd2 = new $.Deferred()
+      p1 = dfd1.promise()
+      p2 = dfd2.promise()
+      
+      # Initialize the FITS object
+      p1 = p1.pipe (obj) =>        
+        band = obj.band
+        @images[band] = new FITS.File(obj.arraybuffer)
+        
+        # Select the dataunit
+        dataunit = @images[band].getDataUnit()
+        
+        # Set up WebGL if is not yet initialized
+        unless @gl?
+          @width = dataunit.width
+          @height = dataunit.height
+          @setupWebGL()
+        
+        # Interpret the bytes and compute min and max
+        # TODO: Ship off to inline worker
+        dataunit.getFrame()
+        dataunit.getExtremes()
+        
+        return [dataunit, band]
+       
+      # Compute statistics
+      p1 = p1.pipe ([dataunit, band]) =>
+
+       # Set up message to pass to worker
+       msg =
+         min: dataunit.min
+         max: dataunit.max
+         data: dataunit.data
+         bins: FITSViewer.bins
+         band: band
+       
+       # Inline baby!!
+       # Have to do some crazy stuff in order to write the workers in CoffeeScript
+       # TODO: This is probably not going to work for minified JS
+       reg = /function \(\) \{([\s\S.]*)\}/
+       worker = Workers.Histogram.toString()
+       worker = worker.match(reg)[1].replace('return self.addEventListener', 'self.addEventListener')
+       blob = new Blob([worker], {type: 'text/javascript'})
+       blobUrl = window.URL.createObjectURL(blob)
+
+       worker = new Worker(blobUrl)
+       worker.addEventListener 'message', ((e) =>
+         data = e.data
+         band = data.band
+         @histograms[band]  = data.histogram
+         @means[band]       = data.mean
+         @percentiles[band] = [data.lower, data.upper]
+         
+         # Enable associated button
+         $("#band-#{band}").removeAttr('disabled')
+         $("#stretch").removeAttr('disabled')
+         
+         dfd2.resolve({image: @images[band], band: band})
+         
+       ), false
+       worker.postMessage(msg)
+      
+      # Create texture
+      p2 = p2.pipe (obj) =>
+        band = obj.band
+        image = obj.image
+        dataunit = image.getDataUnit()
+        address = "TEXTURE#{@textureCount}"
+        @gl.activeTexture(@gl[address])
+
+        texture = @gl.createTexture()
+        @gl.bindTexture(@gl.TEXTURE_2D, texture)
+        @gl.texParameteri(@gl.TEXTURE_2D, @gl.TEXTURE_WRAP_S, @gl.CLAMP_TO_EDGE)
+        @gl.texParameteri(@gl.TEXTURE_2D, @gl.TEXTURE_WRAP_T, @gl.CLAMP_TO_EDGE)
+        @gl.texParameteri(@gl.TEXTURE_2D, @gl.TEXTURE_MIN_FILTER, @gl.NEAREST)
+        @gl.texParameteri(@gl.TEXTURE_2D, @gl.TEXTURE_MAG_FILTER, @gl.NEAREST)
+        @gl.texImage2D(@gl.TEXTURE_2D, 0, @gl.LUMINANCE, dataunit.width, dataunit.height, 0, @gl.LUMINANCE, @gl.FLOAT, dataunit.data)
+        
+        @textures[band] = address
+        @textureCount += 1
+        return {band: band}
+        
+      # Start the show
+      dfd1.resolve(data)
+      
   createMetadata: =>
     @subjectInfo = $("#examine .subject-info")      
     @subjectInfo.append("""
@@ -61,13 +169,14 @@ class FITSViewer extends Spine.Controller
     for band in @bands
       bandUpper = band.toUpperCase()
       @controls.append("<button id='band-#{band}' class='band' value='#{band}' disabled='disabled'>#{bandUpper}</button>")
+    @controls.append("<button id='band-color' class='band' value='color'>Color</button>")
   
   destroyBandButtons: =>
     @controls.empty() if @controls
     @controls = null
   
   createStretchButtons: =>
-    @controls.append("<select id='stretch'>
+    @controls.append("<select id='stretch' disabled='disabled'>
                         <option value='linear'>Linear</option>
                         <option value='logarithm'>Logarithm</option>
                         <option value='sqrt'>Square Root</option>
@@ -78,60 +187,15 @@ class FITSViewer extends Spine.Controller
   
   destroyStretchButtons: =>
     @controls.empty() if @controls
-    @stretch = null
-  
-  addImage: (band, arraybuffer) ->
-    @images[band] = new FITS.File(arraybuffer)
-    
-    # Select the dataunit
-    dataunit = @images[band].getDataUnit()
-    
-    # Interpret the bytes and compute min and max
-    # TODO: Ship off to inline worker
-    dataunit.getFrame()
-    dataunit.getExtremes()
-    
-    @computeStatistics(band)
-    @addTexture(band, dataunit.data)
-    
-  # Compute histogram using inline worker
-  computeStatistics: (band) ->
-    dataunit = @images[band].getDataUnit()
-    
-    # Set up message to pass to worker
-    msg =
-      min: dataunit.min
-      max: dataunit.max
-      data: dataunit.data
-      bins: FITSViewer.bins
-      band: band
-    
-    # Inline baby!!
-    blob = new Blob([Workers.Histogram])
-    blobUrl = window.URL.createObjectURL(blob)
-    
-    worker = new Worker(blobUrl)
-    worker.addEventListener 'message', ((e) =>
-      data = e.data
-      band = data.band
-      @histograms[band] = data.histogram
-      @means[band]      = data.mean
-      @stds[band]       = data.std
-      
-      # Enable associated button
-      $("#band-#{band}").removeAttr('disabled')
-      
-    ), false
-    worker.postMessage(msg)
   
   # Sets up everything except for textures
   setupWebGL: =>
     
-    # TODO: Set this dynamically
-    [@width, @height] = [424, 424]
-    @canvas = WebGL.setupCanvas(@container, @width, @height)
+    @canvas = WebGL.setupCanvas(@container, FITSViewer.viewportWidth, FITSViewer.viewportHeight)
     @gl     = WebGL.create3DContext(@canvas)
     @ext    = @gl.getExtension('OES_texture_float')
+    
+    $('#webgl-fits').hide()
     
     unless @ext
       return null
@@ -175,7 +239,7 @@ class FITSViewer extends Spine.Controller
     @xOldOffset = @xOffset
     @yOldOffset = @yOffset
     @scale = 2 / @width
-    @minScale = 1 / (FITSViewer.viewportWidth * FITSViewer.viewportWidth)
+    @minScale = @width / (FITSViewer.viewportWidth * FITSViewer.viewportWidth)
     @maxScale = 2
     @drag = false
     
@@ -200,16 +264,18 @@ class FITSViewer extends Spine.Controller
       @drawScene()
     
     @canvas.onmousemove = (e) =>
+      return unless @band?
+      
       xDelta = -1 * (@canvas.width / 2 - e.offsetX) / @canvas.width / @scale * 2.0
       yDelta = (@canvas.height / 2 - e.offsetY) / @canvas.height / @scale * 2.0
       
       x = ((-1 * (@xOffset + 0.5)) + xDelta) + 0.5 << 0
       y = ((-1 * (@yOffset + 0.5)) + yDelta) + 0.5 << 0
       
-      # TODO: Write to screen
       $(".subject-info .xy.value").html("#{x}, #{y}")
-      if @band
-        $(".subject-info .intensity.value").html(@images[@band].getDataUnit().getPixel(x, y).toFixed(5))
+      pixel = @images[@band].getDataUnit().getPixel(x, y)
+      if pixel?
+        $(".subject-info .intensity.value").html(pixel.toFixed(5))
       
       return unless @drag
       
@@ -230,21 +296,6 @@ class FITSViewer extends Spine.Controller
     # Listen for the mouse wheel
     @canvas.addEventListener('mousewheel', @wheelHandler, false)
     @canvas.addEventListener('DOMMouseScroll', @wheelHandler, false)
-  
-  addTexture: (band, data) =>
-    address = "TEXTURE#{@textureCount}"
-    @gl.activeTexture(@gl[address])
-    
-    texture = @gl.createTexture()
-    @gl.bindTexture(@gl.TEXTURE_2D, texture)
-    @gl.texParameteri(@gl.TEXTURE_2D, @gl.TEXTURE_WRAP_S, @gl.CLAMP_TO_EDGE)
-    @gl.texParameteri(@gl.TEXTURE_2D, @gl.TEXTURE_WRAP_T, @gl.CLAMP_TO_EDGE)
-    @gl.texParameteri(@gl.TEXTURE_2D, @gl.TEXTURE_MIN_FILTER, @gl.NEAREST)
-    @gl.texParameteri(@gl.TEXTURE_2D, @gl.TEXTURE_MAG_FILTER, @gl.NEAREST)
-    @gl.texImage2D(@gl.TEXTURE_2D, 0, @gl.LUMINANCE, @width, @height, 0, @gl.LUMINANCE, @gl.FLOAT, data)
-    
-    @textures[band] = address
-    @textureCount += 1
     
   setRectangle: (x, y, width, height) =>
     [x1, x2] = [x, x + width]
@@ -268,14 +319,25 @@ class FITSViewer extends Spine.Controller
     @gl.drawArrays(@gl.TRIANGLES, 0, 6)  
   
   selectBand: (e) =>
+    $('.webgl-fits').show()
     @band = e.currentTarget.value
+    
+    if @band is 'color'
+      $('.subject .name').show()
+      @band = null
+      $(".subject-info .xy.value").empty()
+      $(".subject-info .intensity.value").empty()
+      return null
     
     # Cache minimum and maximum values for selected band
     dataunit = @images[@band].getDataUnit()
-    [@minimum, @maximum] = [@currentMin, @currentMax] = @getPercentiles(@band)
+    percentiles = @percentiles[@band]
+    
+    [@minimum, @maximum] = [@currentMin, @currentMax] = @percentiles[@band]
     
     # Select correct texture and draw
     address = @textures[@band]
+    
     @gl.activeTexture(@gl[address])
     @drawScene()
     
@@ -296,7 +358,7 @@ class FITSViewer extends Spine.Controller
         min: @minimum
         max: @maximum
         values: [@minimum, @maximum]
-        step: (@maximum - @minimum) / 1000
+        step: (@maximum - @minimum) / FITSViewer.bins
         slide: (e, ui) =>
           values = ui.values
           [@currentMin, @currentMax] = values
@@ -329,6 +391,13 @@ class FITSViewer extends Spine.Controller
       xaxis:
         min: minimum
         max: maximum
+        axisLabel: 'value',
+        axisLabelUseCanvas: false
+        axisLabelFontSizePixels: 12
+      yaxis:
+        axisLabel: 'count',
+        axisLabelUseCanvas: false
+        axisLabelFontSizePixels: 12
       lines:
         show: true
         fill: true
@@ -336,10 +405,6 @@ class FITSViewer extends Spine.Controller
         lineWidth: 1
         
     return options
-  
-  getPercentiles: (band) =>
-    [mean, std]  = [@means[band], @stds[band]]
-    return [mean - 10 * std, mean + 10 * std]
   
   # Draws markers over the histogram
   drawMarkers: (values) =>
@@ -373,8 +438,7 @@ class FITSViewer extends Spine.Controller
         show: false
       yaxis:
         show: false
-
-    @markers = $.plot($("#plots .markers"), [{color: '#002332', data: []}], options)
+    @markers = $.plot($('#plots .markers'), [{color: '#002332', data: []}], options)
   
   teardown: =>
     if @slider?
@@ -386,18 +450,18 @@ class FITSViewer extends Spine.Controller
     @destroyBandButtons()
     @destroyMetadata()
     
-    @container = null
+    window.removeEventListener("message", @receiveFITS, false)
     
-    @stds = null
-    @means = null
-    @histograms = null
-    @images = null
+    @stds = {}
+    @means = {}
+    @histograms = {}
+    @images = {}
     
     for band, texture of @texture
       @gl.deleteTexture(texture)
     
-    @textures = null
-    @textureCount = null
+    @textures = {}
+    @textureCount = 0
     
     if @programs?
       @gl.deleteProgram(program) for program in @programs

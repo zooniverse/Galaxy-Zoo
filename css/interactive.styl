@@ -447,9 +447,6 @@ p
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255,255,255,1)
       font-size: 12px
       transition: all 0.35s linear
-      &.error
-        border: 1px solid #d54d29
-        box-shadow: 0 0 8px rgba(255, 0, 0, 0.8)
 
 #graph
   display: inline
@@ -459,12 +456,7 @@ p
   border: 1px solid #C0C0C0
   background: $light-gray
   padding-left: 15px
-
-  #loading-animation
-    display: none
-    position: absolute;
-    left: 700px;
-    top: 500px;
+  position: relative
 
   .tooltip
     font-size: 10px
@@ -484,6 +476,14 @@ p
     margin: 5px auto 0
     font-size: 14px
     text-align: center
+
+  #loading-animation
+    text-align: center
+    display: none
+    position: absolute
+    z-index: 999
+    top: 120px
+    left: 230px
 
   svg  
     display: inline

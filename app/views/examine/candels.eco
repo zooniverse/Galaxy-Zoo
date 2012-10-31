@@ -10,6 +10,13 @@
 <div class="row">
   <span class="key"></span>
   <span class="value">
+    <a target="_blank" href="http://ned.ipac.caltech.edu/cgi-bin/nph-objsearch?search_type=Near+Position+Search&RA=<%= @subject.coords[0] %>&DEC=<%= @subject.coords[1]%>&SR=0.0166666667">Search NED</a>
+  </span>
+</div>
+
+<div class="row">
+  <span class="key"></span>
+  <span class="value">
     <a target="_blank" href="http://talk.galaxyzoo.org/objects/<%= @subject.zooniverse_id %>">Discuss this</a>
   </span>
 </div>

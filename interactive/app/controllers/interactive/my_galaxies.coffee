@@ -21,27 +21,17 @@ class MyGalaxies extends Spine.Controller
         InteractiveSubject.fetch({limit: 10, user: true}).onSuccess =>
           @samples = InteractiveSubject.lastFetch
 
-  active: ->
-    super
-    if (typeof(User.current.user_group_id) is 'undefined') and (typeof(@sample) is 'undefined')
-      InteractiveSubject.fetch({limit: 10, user: true}).onSuccess =>
+
+  render: =>
+    if User.current.user_group_id
+      fetcher = InteractiveSubject.fetch({limit: 10, user: true})
+      fetcher.onSuccess =>
         @samples = InteractiveSubject.lastFetch
-        @render()
-    else
-      @render()
+        @html require('views/interactive/my_galaxies')(@)
+        for sample in @samples
+          @generateChart sample
     @headingText.html @action_title
     $('[data-link="my_galaxies"]').addClass 'pressed'
-
-  deactivate: ->
-    super
-    @headingText.html ''
-    $('[data-link="my_galaxies"]').removeClass 'pressed'
-
-  render: ->
-    @html require('views/interactive/my_galaxies')(@)
-    if @samples
-      for sample in @samples
-        @generateChart sample
 
   formatData: (sample) ->
     feature_counts = []
@@ -116,7 +106,6 @@ class MyGalaxies extends Spine.Controller
       .attr('class','label')
       .attr('y', ((d,i) -> i * 22))
       .attr('x', 80)
-      .attr('dx', 44)
       .attr('dy', '1.3em')
       .attr('text-anchor', 'end')
       .text((d, i) -> d.label)

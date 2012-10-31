@@ -1,4 +1,4 @@
-/*! Javascript plotting library for jQuery, v. 0.7.
+/*! Javascript plotting library for jQuery, version 0.8 alpha.
  *
  * Released under the MIT license by IOLA, December 2007.
  *
@@ -51,7 +51,8 @@
                     position: "ne", // position of default legend container within plot
                     margin: 5, // distance from grid edge to default legend container within plot
                     backgroundColor: null, // null means auto-detect
-                    backgroundOpacity: 0.85 // set to 0 to avoid background
+                    backgroundOpacity: 0.85, // set to 0 to avoid background
+                    sorted: null    // default to no legend sorting
                 },
                 xaxis: {
                     show: null, // null = auto-detect, true = always, false = never
@@ -114,7 +115,8 @@
                         align: "left", // "left", "right", or "center"
                         horizontal: false
                     },
-                    shadowSize: 3
+                    shadowSize: 3,
+                    highlightColor: null
                 },
                 grid: {
                     show: true,
@@ -289,6 +291,8 @@
                 $.extend(true, options.series.bars, options.bars);
             if (options.shadowSize != null)
                 options.series.shadowSize = options.shadowSize;
+            if (options.highlightColor != null)
+                options.series.highlightColor = options.highlightColor;
 
             // save options on axes for future reference
             for (i = 0; i < options.xaxes.length; ++i)
@@ -415,55 +419,59 @@
         }
 
         function fillInSeriesOptions() {
-            var i;
-            
-            // collect what we already got of colors
-            var neededColors = series.length,
-                usedColors = [],
-                assignedColors = [];
+
+            var neededColors = series.length, maxIndex = 0, i;
+
+            // Subtract the number of series that already have fixed
+            // colors from the number we need to generate.
+
             for (i = 0; i < series.length; ++i) {
                 var sc = series[i].color;
                 if (sc != null) {
-                    --neededColors;
-                    if (typeof sc == "number")
-                        assignedColors.push(sc);
-                    else
-                        usedColors.push($.color.parse(series[i].color));
-                }
-            }
-            
-            // we might need to generate more colors if higher indices
-            // are assigned
-            for (i = 0; i < assignedColors.length; ++i) {
-                neededColors = Math.max(neededColors, assignedColors[i] + 1);
-            }
-
-            // produce colors as needed
-            var colors = [], variation = 0;
-            i = 0;
-            while (colors.length < neededColors) {
-                var c;
-                if (options.colors.length == i) // check degenerate case
-                    c = $.color.make(100, 100, 100);
-                else
-                    c = $.color.parse(options.colors[i]);
-
-                // vary color if needed
-                var sign = variation % 2 == 1 ? -1 : 1;
-                c.scale('rgb', 1 + sign * Math.ceil(variation / 2) * 0.2);
-
-                // FIXME: if we're getting to close to something else,
-                // we should probably skip this one
-                colors.push(c);
-                
-                ++i;
-                if (i >= options.colors.length) {
-                    i = 0;
-                    ++variation;
+                    neededColors--;
+                    if (typeof sc == "number" && sc > maxIndex) {
+                        maxIndex = sc;
+                    }
                 }
             }
 
-            // fill in the options
+            // If any of the user colors are numeric indexes, then we
+            // need to generate at least as many as the highest index.
+
+            if (maxIndex > neededColors) {
+                neededColors = maxIndex + 1;
+            }
+
+            // Generate the needed colors, based on the option colors
+
+            var c, colors = [], colorPool = options.colors,
+                colorPoolSize = colorPool.length, variation = 0;
+
+            for (i = 0; i < neededColors; i++) {
+
+                c = $.color.parse(colorPool[i % colorPoolSize] || "#666");
+
+                // Each time we exhaust the colors in the pool we adjust
+                // a scaling factor used to produce more variations on
+                // those colors. The factor alternates negative/positive
+                // to produce lighter/darker colors.
+
+                // Reset the variation after every few cycles, or else
+                // it will end up producing only white or black colors.
+
+                if (i % colorPoolSize == 0 && i) {
+                    if (variation >= 0) {
+                        if (variation < 0.5) {
+                            variation = -variation - 0.2;
+                        } else variation = 0;
+                    } else variation = -variation;
+                }
+
+                colors[i] = c.scale('rgb', 1 + variation);
+            }
+
+            // Finalize the series options, filling in their colors
+
             var colori = 0, s;
             for (i = 0; i < series.length; ++i) {
                 s = series[i];
@@ -707,22 +715,59 @@
             });
         }
 
+        //////////////////////////////////////////////////////////////////////////////////
+        // Returns the display's ratio between physical and device-independent pixels.
+        //
+        // This is the ratio between the width that the browser advertises and the number
+        // of pixels actually available in that space.  The iPhone 4, for example, has a
+        // device-independent width of 320px, but its screen is actually 640px wide.  It
+        // therefore has a pixel ratio of 2, while most normal devices have a ratio of 1.
+
+        function getPixelRatio(cctx) {
+            if (window.devicePixelRatio > 1 &&
+                (cctx.webkitBackingStorePixelRatio === undefined ||
+                 cctx.webkitBackingStorePixelRatio < 2))
+                return window.devicePixelRatio;
+
+            return 1;
+        }
+
         function makeCanvas(skipPositioning, cls) {
+
             var c = document.createElement('canvas');
             c.className = cls;
-            c.width = canvasWidth;
-            c.height = canvasHeight;
-                    
+
             if (!skipPositioning)
                 $(c).css({ position: 'absolute', left: 0, top: 0 });
-                
+
             $(c).appendTo(placeholder);
-                
+
             if (!c.getContext) // excanvas hack
                 c = window.G_vmlCanvasManager.initElement(c);
 
-            // used for resetting in case we get replotted
-            c.getContext("2d").save();
+            var cctx = c.getContext("2d");            
+
+            // Increase the canvas density based on the display's pixel ratio; basically
+            // giving the canvas more pixels without increasing the size of its element,
+            // to take advantage of the fact that retina displays have that many more
+            // pixels than they actually use for page & element widths.
+
+            var pixelRatio = getPixelRatio(cctx);
+
+            c.width = canvasWidth * pixelRatio;
+            c.height = canvasHeight * pixelRatio;
+            c.style.width = canvasWidth + "px";
+            c.style.height = canvasHeight + "px";
+
+            // Save the context so we can reset in case we get replotted
+
+            cctx.save();
+
+            // Scale the coordinate space to match the display density; so even though we
+            // may have twice as many pixels, we still want lines and other drawing to
+            // appear at the same size; the extra pixels will just make them crisper.
+
+            cctx.scale(pixelRatio, pixelRatio);
             
             return c;
         }
@@ -736,21 +781,35 @@
         }
 
         function resizeCanvas(c) {
-            // resizing should reset the state (excanvas seems to be
-            // buggy though)
-            if (c.width != canvasWidth)
-                c.width = canvasWidth;
 
-            if (c.height != canvasHeight)
-                c.height = canvasHeight;
+            var cctx = c.getContext("2d");            
+
+            // Handle pixel ratios > 1 for retina displays, as explained in makeCanvas
+
+            var pixelRatio = getPixelRatio(cctx);
+
+            // Resizing should reset the state (excanvas seems to be buggy though)
+
+            if (c.style.width != canvasWidth) {
+                c.width = canvasWidth * pixelRatio;
+                c.style.width = canvasWidth + "px";
+            }
+
+            if (c.style.height != canvasHeight) {
+                c.height = canvasHeight * pixelRatio;
+                c.style.height = canvasHeight + "px";
+            }
 
             // so try to get back to the initial state (even if it's
             // gone now, this should be safe according to the spec)
-            var cctx = c.getContext("2d");
             cctx.restore();
 
             // and save again
             cctx.save();
+
+            // Apply scaling for retina displays, as explained in makeCanvas
+
+            cctx.scale(pixelRatio, pixelRatio);
         }
         
         function setupCanvases() {
@@ -886,7 +945,7 @@
                 // accept various kinds of newlines, including HTML ones
                 // (you can actually split directly on regexps in Javascript,
                 // but IE is unfortunately broken)
-                var lines = t.label.replace(/<br ?\/?>|\r\n|\r/g, "\n").split("\n");
+                var lines = (t.label + "").replace(/<br ?\/?>|\r\n|\r/g, "\n").split("\n");
                 for (var j = 0; j < lines.length; ++j) {
                     var line = { text: lines[j] },
                         m = ctx.measureText(line.text);
@@ -1167,10 +1226,18 @@
 
             axis.delta = (axis.max - axis.min) / noTicks;
 
-            // special modes are handled by plug-ins, e.g. "time". The default
-            // is base-10 numbers.
-            if (!opts.mode) {
-                // pretty rounding of base-10 numbers
+            // Time mode was moved to a plug-in in 0.8, but since so many people use this
+            // we'll add an especially friendly make sure they remembered to include it.
+
+            if (opts.mode == "time" && !axis.tickGenerator) {
+                throw new Error("Time mode requires the flot.time plugin.");
+            }
+
+            // Flot supports base-10 axes; any other mode else is handled by a plug-in,
+            // like flot.time.js.
+
+            if (!axis.tickGenerator) {
+
                 var maxDec = opts.tickDecimals;
                 var dec = -Math.floor(Math.log(axis.delta) / Math.LN10);
                 if (maxDec != null && dec > maxDec)
@@ -1179,7 +1246,7 @@
                 var magn = Math.pow(10, -dec);
                 var norm = axis.delta / magn; // norm is between 1.0 and 10.0
                 var size;
-                
+
                 if (norm < 1.5)
                     size = 1;
                 else if (norm < 3) {
@@ -1192,11 +1259,10 @@
                 }
                 else if (norm < 7.5)
                     size = 5;
-                else
-                    size = 10;
+                else size = 10;
 
                 size *= magn;
-                
+
                 if (opts.minTickSize != null && size < opts.minTickSize)
                     size = opts.minTickSize;
 
@@ -1204,10 +1270,7 @@
                 axis.tickSize = opts.tickSize || size;
 
                 axis.tickGenerator = function (axis) {
-                    var ticks = [];
-
-                    // spew out all possible ticks
-                    var start = floorInBase(axis.min, axis.tickSize),
+                    var ticks = [], start = floorInBase(axis.min, axis.tickSize),
                         i = 0, v = Number.NaN, prev;
                     do {
                         prev = v;
@@ -1219,7 +1282,8 @@
                 };
 
                 axis.tickFormatter = function (v, axis) {
-                    return v.toFixed(axis.tickDecimals);
+                    var factor = Math.pow(10, axis.tickDecimals);
+                    return "" + Math.round(v * factor) / factor;
                 };
             }
 
@@ -2101,21 +2165,53 @@
             c.normalize();
             return c.toString();
         }
-        
+
         function insertLegend() {
+
             placeholder.find(".legend").remove();
 
             if (!options.legend.show)
                 return;
-            
-            var fragments = [], rowStarted = false,
+
+            var fragments = [], entries = [], rowStarted = false,
                 lf = options.legend.labelFormatter, s, label;
+
+            // Build a list of legend entries, with each having a label and a color
+
             for (var i = 0; i < series.length; ++i) {
                 s = series[i];
-                label = s.label;
-                if (!label)
-                    continue;
-                
+                if (s.label) {
+                    label = lf ? lf(s.label, s) : s.label;
+                    if (label) {
+                        entries.push({
+                            label: label,
+                            color: s.color
+                        });
+                    }
+                }
+            }
+
+            // Sort the legend using either the default or a custom comparator
+
+            if (options.legend.sorted) {
+                if ($.isFunction(options.legend.sorted)) {
+                    entries.sort(options.legend.sorted);
+                } else {
+                    var ascending = options.legend.sorted != "descending";
+                    entries.sort(function(a, b) {
+                        return a.label == b.label ? 0 : (
+                            (a.label < b.label) != ascending ? 1 : -1   // Logical XOR
+                        );
+                    });
+                }
+            }
+
+            // Generate markup for the list of entries, in their final order
+
+            for (var i = 0; i < entries.length; ++i) {
+
+                entry = entries[i];
+
                 if (i % options.legend.noColumns == 0) {
                     if (rowStarted)
                         fragments.push('</tr>');
@@ -2123,16 +2219,15 @@
                     rowStarted = true;
                 }
 
-                if (lf)
-                    label = lf(label, s);
-                
                 fragments.push(
-                    '<td class="legendColorBox"><div style="border:1px solid ' + options.legend.labelBoxBorderColor + ';padding:1px"><div style="width:4px;height:0;border:5px solid ' + s.color + ';overflow:hidden"></div></div></td>' +
-                    '<td class="legendLabel">' + label + '</td>');
+                    '<td class="legendColorBox"><div style="border:1px solid ' + options.legend.labelBoxBorderColor + ';padding:1px"><div style="width:4px;height:0;border:5px solid ' + entry.color + ';overflow:hidden"></div></div></td>' +
+                    '<td class="legendLabel">' + entry.label + '</td>'
+                );
             }
+
             if (rowStarted)
                 fragments.push('</tr>');
-            
+
             if (fragments.length == 0)
                 return;
 
@@ -2407,13 +2502,14 @@
         function drawPointHighlight(series, point) {
             var x = point[0], y = point[1],
                 axisx = series.xaxis, axisy = series.yaxis;
+                highlightColor = (typeof series.highlightColor === "string") ? series.highlightColor : $.color.parse(series.color).scale('a', 0.5).toString();
             
             if (x < axisx.min || x > axisx.max || y < axisy.min || y > axisy.max)
                 return;
             
             var pointRadius = series.points.radius + series.points.lineWidth / 2;
             octx.lineWidth = pointRadius;
-            octx.strokeStyle = $.color.parse(series.color).scale('a', 0.5).toString();
+            octx.strokeStyle = highlightColor;
             var radius = 1.5 * pointRadius,
                 x = axisx.p2c(x),
                 y = axisy.p2c(y);
@@ -2428,10 +2524,13 @@
         }
 
         function drawBarHighlight(series, point) {
+            var highlightColor = (typeof series.highlightColor === "string") ? series.highlightColor : $.color.parse(series.color).scale('a', 0.5).toString(),
+                fillStyle = highlightColor,
+                barLeft = series.bars.align == "left" ? 0 : -series.bars.barWidth/2;
+                
             octx.lineWidth = series.bars.lineWidth;
-            octx.strokeStyle = $.color.parse(series.color).scale('a', 0.5).toString();
-            var fillStyle = $.color.parse(series.color).scale('a', 0.5).toString();
-            var barLeft = series.bars.align == "left" ? 0 : -series.bars.barWidth/2;
+            octx.strokeStyle = highlightColor;
+            
             drawBar(point[0], point[1], point[2] || 0, barLeft, barLeft + series.bars.barWidth,
                     0, function () { return fillStyle; }, series.xaxis, series.yaxis, octx, series.bars.horizontal, series.bars.lineWidth);
         }
