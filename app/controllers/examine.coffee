@@ -67,8 +67,6 @@ class Examine extends Spine.Controller
     else
       $.getScript '/fits.js', =>
         FITSViewer = require 'controllers/fitsviewer'
-        console.log FITSViewer
-        require 'lib/_.each_slice'
         require('lib/jquery.flot')
         require('lib/jquery.flot.axislabels')
         require('lib/jquery-ui-1.9.1.custom')

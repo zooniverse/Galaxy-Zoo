@@ -5,3 +5,9 @@ build
 pre_build_public
 build_public
 hem.pid
+public/fits.js
+public/fits_workers.js
+public/navigator.js
+public/application.js
+public/application.css
+

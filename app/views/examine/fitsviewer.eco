@@ -1,4 +1,4 @@
-<button id="load-fits">Examine raw FITS data</button>
+<button id="load-fits" style="width: 110px">Examine raw FITS data</button>
 <div id="viewer-controls"></div>
 <div class="slider" style="width:300px;"></div>
 <div id="plots">

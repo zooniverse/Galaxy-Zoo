@@ -50,7 +50,7 @@ class Interactive extends Spine.Controller
       return
     else
       e.preventDefault()
-      alert('Select a Group or Create One from the dropdown menu to see your group classifications!')
+      alert('Select a group or create one from the dropdown menu to see your group classifications')
 
 
 module.exports = Interactive

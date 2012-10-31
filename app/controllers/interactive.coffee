@@ -127,7 +127,6 @@ class Interactive extends Spine.Controller
     @groupsDropdown.toggleClass 'show-dropdown'
 
   checkCurrentGroup: =>
-    console.log 'here'
     if User.current?.user_group_id is UserGroup.current?.id
       return
     else

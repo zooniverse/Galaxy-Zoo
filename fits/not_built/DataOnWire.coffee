@@ -51,12 +51,12 @@ class DataOnWire
       directory = @getHubblePath(id)
       bands = ['h', 'i', 'j']
     
-    console.log directory, bands
+    # console.log directory, bands
     
     for band in bands
       do (band, directory) =>
         url = "#{directory}_#{band}.fits.fz"
-        console.log url
+        # console.log url
         
         xhr = new XMLHttpRequest()
         xhr.open('GET', url)
@@ -76,7 +76,7 @@ class DataOnWire
         xhr.send()
   
   sendMessage: (msg) =>
-    console.log "Attempting to post message to #{@origin}"
+    # console.log "Attempting to post message to #{@origin}"
     window.parent.postMessage(msg, @origin)
   
 @DataOnWire = DataOnWire

@@ -53,14 +53,14 @@
         directory = this.getHubblePath(id);
         bands = ['h', 'i', 'j'];
       }
-      console.log(directory, bands);
+      // console.log(directory, bands);
       _results = [];
       for (_i = 0, _len = bands.length; _i < _len; _i++) {
         band = bands[_i];
         _results.push((function(band, directory) {
           var url, xhr;
           url = "" + directory + "_" + band + ".fits.fz";
-          console.log(url);
+          // console.log(url);
           xhr = new XMLHttpRequest();
           xhr.open('GET', url);
           xhr.responseType = 'arraybuffer';
@@ -85,7 +85,7 @@
     };
 
     DataOnWire.prototype.sendMessage = function(msg) {
-      console.log("Attempting to post message to " + this.origin);
+      // console.log("Attempting to post message to " + this.origin);
       return window.parent.postMessage(msg, this.origin);
     };
 

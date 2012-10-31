@@ -198,7 +198,7 @@ WebGL =
   # TODO: This function is not working ...
   check: ->
     unless window.WebGLRenderingContext
-      alert('Sorry, you need a WebGL enabled browser to use this application')
+      # alert('Sorry, you need a WebGL enabled browser to use this application')
       return false
     return true
   

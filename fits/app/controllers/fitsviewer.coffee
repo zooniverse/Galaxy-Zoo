@@ -1,6 +1,5 @@
 FITS  = require('fits')
 WebGL = require('lib/web_gl')
-Workers = require('lib/workers')
 
 # Troublesome
 # #/examine/AGZ00013gv
@@ -54,7 +53,6 @@ class FITSViewer extends Spine.Controller
       
     # TODO: Error handling needs work.
     if e.data.error?
-      alert("Sorry, these data are not yet available.")
       window.removeEventListener("message", @receiveFITS, false)
     else
       data = e.data
@@ -88,40 +86,30 @@ class FITSViewer extends Spine.Controller
        
       # Compute statistics
       p1 = p1.pipe ([dataunit, band]) =>
-
-       # Set up message to pass to worker
-       msg =
-         min: dataunit.min
-         max: dataunit.max
-         data: dataunit.data
-         bins: FITSViewer.bins
-         band: band
-       
-       # Inline baby!!
-       # Have to do some crazy stuff in order to write the workers in CoffeeScript
-       # TODO: This is probably not going to work for minified JS
-       reg = /function \(\) \{([\s\S.]*)\}/
-       worker = Workers.Histogram.toString()
-       worker = worker.match(reg)[1].replace('return self.addEventListener', 'self.addEventListener')
-       blob = new Blob([worker], {type: 'text/javascript'})
-       blobUrl = window.URL.createObjectURL(blob)
-
-       worker = new Worker(blobUrl)
-       worker.addEventListener 'message', ((e) =>
-         data = e.data
-         band = data.band
-         @histograms[band]  = data.histogram
-         @means[band]       = data.mean
-         @percentiles[band] = [data.lower, data.upper]
-         
-         # Enable associated button
-         $("#band-#{band}").removeAttr('disabled')
-         $("#stretch").removeAttr('disabled')
-         
-         dfd2.resolve({image: @images[band], band: band})
-         
-       ), false
-       worker.postMessage(msg)
+        # Set up message to pass to worker
+        msg =
+          min: dataunit.min
+          max: dataunit.max
+          data: dataunit.data
+          bins: FITSViewer.bins
+          band: band
+        
+        worker = new Worker('/fits_workers.js')
+        worker.addEventListener 'message', ((e) =>
+          data = e.data
+          band = data.band
+          @histograms[band]  = data.histogram
+          @means[band]       = data.mean
+          @percentiles[band] = [data.lower, data.upper]
+          
+          # Enable associated button
+          $("#band-#{band}").removeAttr('disabled')
+          $("#stretch").removeAttr('disabled')
+          
+          dfd2.resolve({image: @images[band], band: band})
+          
+        ), false
+        worker.postMessage(msg)
       
       # Create texture
       p2 = p2.pipe (obj) =>

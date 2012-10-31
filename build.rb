@@ -11,8 +11,12 @@ cp -R public pre_build_public
 cp -RL public build_public
 rm -rf public
 mv build_public public
-echo 'Building...'
+echo 'Building application...'
 hem build
+echo 'Building fits...'
+./fits/build.rb
+echo 'Building navigator...'
+./interactive/build.rb
 mv public build
 mv pre_build_public public
 BASH
@@ -25,9 +29,14 @@ echo 'Compressing...'
 timestamp=#{ timestamp }
 
 mv build/application.js "build/application-$timestamp.js"
+mv build/fits.js "build/fits-$timestamp.js"
+mv build/navigator.js "build/navigator-$timestamp.js"
+
 ./node_modules/clean-css/bin/cleancss build/application.css -o "build/application-$timestamp.css"
 rm build/application.css
 gzip -9 -c "build/application-$timestamp.js" > "build/application-$timestamp.js.gz"
+gzip -9 -c "build/fits-$timestamp.js" > "build/fits-$timestamp.js.gz"
+gzip -9 -c "build/navigator-$timestamp.js" > "build/navigator-$timestamp.js.gz"
 gzip -9 -c "build/application-$timestamp.css" > "build/application-$timestamp.css.gz"
 BASH
 
@@ -38,6 +47,11 @@ index = File.read 'build/index.html'
 index.gsub! 'application.js', "application-#{ timestamp }.js"
 index.gsub! 'application.css', "application-#{ timestamp }.css"
 File.open('build/index.html', 'w'){ |f| f.puts index }
+
+app_js = File.read "build/application-#{ timestamp }.js"
+app_js.gsub! 'fits.js', "fits-#{ timestamp }.js"
+app_js.gsub! 'navigator.js', "navigator-#{ timestamp }.js"
+File.open("build/application-#{ timestamp }.js", 'w'){ |f| f.puts app_js }
 
 working_directory = Dir.pwd
 Dir.chdir 'build'
