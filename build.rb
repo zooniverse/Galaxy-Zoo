@@ -53,7 +53,7 @@ app_js.gsub! 'fits.js', "fits-#{ timestamp }.js"
 app_js.gsub! 'navigator.js', "navigator-#{ timestamp }.js"
 File.open("build/application-#{ timestamp }.js", 'w'){ |f| f.puts app_js }
 
-working_directory = Dir.pwd
+working_directory = File.expand_path Dir.pwd
 Dir.chdir 'build'
 
 to_upload = []
