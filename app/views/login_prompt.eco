@@ -1,11 +1,11 @@
 <div class="login-prompt">
-  <h3>Login or create an account to receive credit for your work</h3>
+  <h3><%- I18n.t 'login_prompt.title' %></h3>
   
   <div class="login">
     
   </div>
   
   <div class="buttons">
-    <button data-dialog="true" data-value="no">No, thanks</button>
+    <button data-dialog="true" data-value="no"><%- I18n.t 'login_prompt.decline' %></button>
   </div>
 </div>

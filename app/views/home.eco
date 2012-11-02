@@ -1,42 +1,37 @@
 <div id="home">
   <div class="headline">
-    Few have witnessed what you're about to see
-    <p class="call-to-action">Experience a privileged glimpse of the distant universe, observed by the Sloan Digital Sky Survey and Hubble Space Telescope</p>
+    <%- I18n.t 'home.headline' %>
+    <p class="call-to-action"><%- I18n.t 'home.call_to_action' %></p>
   </div>
   <div class="slider">
     <div class="slide-element galaxy-zoo">
       <div class="left">
-        <p class="header-blue" style="display: none">Featured Project</p>
-        <p class="header-title">Classify Galaxies</p>
-        <p class="description">To understand how galaxies formed we need your help to classify them according to their shapes. If you're quick, you may even be the first person to see the galaxies you're asked to classify.</p>
-        <a data-nav="#/classify" href="/#/classify" class="blue-button">Begin Classifying</a>
+        <p class="header-title"><%- I18n.t 'home.galaxy_zoo.title' %></p>
+        <p class="description"><%- I18n.t 'home.galaxy_zoo.description' %></p>
+        <a data-nav="#/classify" href="/#/classify" class="blue-button"><%- I18n.t 'home.galaxy_zoo.classify' %></a>
       </div>
     </div>
   </div>
   
   <div class="content-block">
     <div class="left">
-      <h1 class="heading">How Do Galaxies Form?</h1>
-      <p class="description">
-        Roughly one hundred billion galaxies are scattered throughout our observable Universe, each a glorious system that might contain billions of stars. Many are remarkably beautiful, and the aim of Galaxy Zoo is to study them, assisting astronomers in attempting to understand how the galaxies we see around us formed, and what their stories can tell us about the past, present and future of our Universe as a whole. <a data-nav="#/science" href="#/science">more</a>
-      </p>
+      <h1 class="heading"><%- I18n.t 'home.galaxy_formation.title' %></h1>
+      <p class="description"><%- I18n.t 'home.galaxy_formation.body' %></p>
     </div>
     <div class="right">
-      <h1 class="heading">History of Galaxy Zoo</h1>
-      <p class="description">
-        The launch of this new version of Galaxy Zoo, the 4th, comes just a few weeks after the site’s 5th birthday. It all started back in July 2007, with a data set made up of a million galaxies imaged by the Sloan Digital Sky Survey, who still provide some of the images in the site today. With so many galaxies, we'd assumed it would take years for visitors to the site to work through them all, but within 24 hours of launch we were stunned to be receiving almost 70,000 classifications an hour. In the end, more than 50 million classifications were received by the project during its first year, contributed by more than 150,000 people. <a data-nav="#/story" href="#/story">more</a>
-      </p>
+      <h1 class="heading"><%- I18n.t 'home.history.title' %></h1>
+      <p class="description"><%- I18n.t 'home.history.body' %></p>
     </div>
   </div>
   
   <div class="content-block">
     <div class="left">
-      <h1 class="heading">Galaxy Zoo in the Classroom</h1>
-      <p class="description">Are you an educator? Would you like to use Galaxy Zoo with a group of students? The <a href="http://www.galaxyzoo.org/#/navigator/home">Navigator</a> is an interactive tool that allows groups to classify galaxies together and then investigate galaxy characteristics. <a href="http://www.zooteach.org/zoo/galaxy_zoo">Zoo Teach</a> is where educators can share lessons, resources and that compliment the citizen science projects that are part of the Zooniverse.</p>
-      <a data-nav="#/navigator/home" href="/#/navigator/home" class="galaxify">Navigator</a>
+      <h1 class="heading"><%- I18n.t 'home.classroom.title' %></h1>
+      <p class="description"><%- I18n.t 'home.classroom.body' %></p>
+      <a data-nav="#/navigator/home" href="/#/navigator/home" class="galaxify"><%- I18n.t 'home.classroom.navigator' %></a>
     </div>
     <div class="right">
-      <h1 class="heading">Recent Images</h1>
+      <h1 class="heading"><%- I18n.t 'home.recent_images.title' %></h1>
       <div class="recents">
         <%- require('views/recents')(@recents) %>
       </div>

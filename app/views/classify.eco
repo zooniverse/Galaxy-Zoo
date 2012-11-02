@@ -5,29 +5,29 @@
   </div>
   <div class="tree">
     <div class="top">
-      <h1 class="heading">Classify</h1>
+      <h1 class="heading"><%- I18n.t 'classify.heading' %></h1>
       <ul class="buttons">
-        <li class="right"><a class="restart">Restart</a></li>
-        <li class="right"><a class="help">Help</a></li>
+        <li class="right"><a class="restart"><%- I18n.t 'classify.restart' %></a></li>
+        <li class="right"><a class="help"><%- I18n.t 'classify.help' %></a></li>
         <li class="left">
-          <a title="<%= @subject.surveyTitle() %>" class="icon <%= @subject.metadata.survey %>">&nbsp;</a>
-          <span class="label"><%= @subject.surveyTitle() %></span>
+          <a title="<%- I18n.t 'classify', @subject.metadata.survey %>" class="icon <%= @subject.metadata.survey %>">&nbsp;</a>
+          <span class="label"><%- I18n.t 'classify', @subject.metadata.survey %></span>
         </li>
         <% if UserGroup.current : %>
           <li class="left">
-            <a href="/#/navigator/group/<%= UserGroup.current.id %>" title="Group" class="icon group" src="">&nbsp;</a>
-            <span class="label group">Group</span>
+            <a href="/#/navigator/group/<%= UserGroup.current.id %>" title="<%- I18n.t 'classify.group' %>" class="icon group" src="">&nbsp;</a>
+            <span class="label group"><%- I18n.t 'classify.group' %></span>
           </li>
         <% end %>
         <% if require('zooniverse/lib/models/user').current : %>
           <li class="left">
-            <a title="Favorite" class="icon favorite" src="">&nbsp;</a>
-            <span class="label">Favourite</span>
+            <a title="<%- I18n.t 'classify.favorite' %>" class="icon favorite" src="">&nbsp;</a>
+            <span class="label"><%- I18n.t 'classify.favorite' %></span>
           </li>
         <% end %>
         <li class="left">
           <a title="Invert" class="icon invert" src="">&nbsp;</a>
-          <span class="label">Invert</span>
+          <span class="label"><%- I18n.t 'classify.invert' %></span>
         </li>
       </ul>
     </div>

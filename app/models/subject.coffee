@@ -51,9 +51,5 @@ class Subject extends BaseSubject
   workflowId: -> @survey().workflowId
   image: -> @location.standard
   thumbnail: -> @location.thumbnail
-  surveyTitle: ->
-    switch @metadata.survey
-      when 'sloan' then 'SDSS'
-      when 'candels' then 'Hubble'
 
 module.exports = Subject

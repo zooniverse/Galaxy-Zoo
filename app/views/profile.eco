@@ -2,12 +2,12 @@
   <div class="content">
     <div class="content-block">
       
-      <h1 class="heading">Hey there, <%= @user().name %>!</h1>
+      <h1 class="heading"><%= @user().name %></h1>
       
       <div class="left">
         <h3 class="sub-heading">
-          <a data-show="favorites" class="<%- "inactive " if @showing == 'recents' %>favorites-link">Favourites</a>
-          <a data-show="recents" class="<%- "inactive " if @showing == 'favorites' %>recents-link">Recents</a>
+          <a data-show="favorites" class="<%- "inactive " if @showing == 'recents' %>favorites-link"><%- I18n.t 'profile.favorites' %></a>
+          <a data-show="recents" class="<%- "inactive " if @showing == 'favorites' %>recents-link"><%- I18n.t 'profile.recents' %></a>
         </h3>
         
         <div class="thumbnails">
@@ -15,11 +15,11 @@
             <div class="item" data-id="<%= item.id %>">
               <div class="thumb"><img src="<%- item.subjects.location.thumbnail %>" height="140" width="140" /></div>
               <% if @showing is 'favorites' : %>
-                <a title="Remove this favorite" class="inactive hover-button remove">&times;</a>
+                <a title="<%- I18n.t 'profile.remove_favorite' %>" class="inactive hover-button remove">&times;</a>
               <% else if item.favorited : %>
-                <a title="Remove this favorite" class="active hover-button favorite">&hearts;</a>
+                <a title="<%- I18n.t 'profile.remove_favorite' %>" class="active hover-button favorite">&hearts;</a>
               <% else : %>
-                <a title="Favorite this" class="inactive hover-button favorite">&hearts;</a>
+                <a title="<%- I18n.t 'profile.favorite_this' %>" class="inactive hover-button favorite">&hearts;</a>
               <% end %>
             </div>
           <% end %>
@@ -28,33 +28,33 @@
       
       <div class="right">
         <div class="classifications">
-          <h3 class="sub-heading">Classifications</h3>
+          <h3 class="sub-heading"><%- I18n.t 'profile.classifications' %></h3>
           <div class="classification-counts">
             <div class="hubble">
               <span class="count"><%= @surveyCount 'candels' %></span>
-              Hubble
-              <span class="caption">Hubble Classications</span>
+              <%- I18n.t 'profile.hubble' %>
+              <span class="caption"><%- I18n.t 'profile.hubble_classifications' %></span>
             </div>
             
             <div class="sdss">
               <span class="count"><%= @surveyCount 'sloan' %></span>
-              SDSS
-              <span class="caption">SDSS Classifications</span>
+              <%- I18n.t 'profile.sdss' %>
+              <span class="caption"><%- I18n.t 'profile.sdss_classifications' %></span>
             </div>
           </div>
         </div>
         
         <div class="quizzes">
-          <h3 class="sub-heading">Quizzes</h3>
+          <h3 class="sub-heading"><%- I18n.t 'profile.quizzes' %></h3>
           <div class="classification-counts">
             <div class="quizzes">
               <span class="count"><%= @quizCount() %></span>
-              <%= if @quizCount() is 1 then 'Quiz' else 'Quizzes' %>
-              <span class="caption">Quizzes Taken</span>
+              <%= if @quizCount() is 1 then I18n.t('profile.quiz') else I18n.t('profile.quizzes') %>
+              <span class="caption"><%- I18n.t 'profile.quizzes_taken' %></span>
               
               <% if @quizCount() < 6 : %>
                 <button class="take-a-quiz">
-                  Take a quiz now
+                  <%- I18n.t 'profile.take_a_quiz' %>
                 </button>
               <% end %>
             </div>
@@ -63,8 +63,8 @@
         
         <% if @user().zooniverse_id < 1050000 : %>
           <div class="gz_3_galaxies">
-            <h3 class="sub-heading">Galaxy Zoo: Hubble</h3>
-            <span class="caption">If you're looking for your old galaxies from Galaxy Zoo Hubble, then you can <a href="http://hubble.galaxyzoo.org/my_galaxies" target="_blank">find them here</a>.</span>
+            <h3 class="sub-heading"><%- I18n.t 'profile.galaxy_zoo_hubble' %></h3>
+            <span class="caption"><%- I18n.t 'profile.galaxy_zoo_hubble_link' %></span>
           </div>
         <% end %>
       </div>

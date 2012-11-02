@@ -2,160 +2,73 @@
   <div class="content">
     <div class="content-block">
       <div class="full">
-      <h1 class="heading">The Galaxy Zoo Team</h1>
-        <h3 class="sub-heading">Science Team</h3>
-        <p><span class="person">Steven Bamford</span> - Astronomer, University of Nottingham<br />
-        Works on figuring out what makes galaxies look the way they do: how they formed and why they change as they get older and move to new cosmic locations.  When not busy working on science or doing his bit to help run the Zooniverse, he is usually to be found entertaining his two young children or sailing a boat,</p>
-        <p><span class="person">Chris Lintott</span> - Astronomer, University of Oxford<br />
-        Between Galaxy Zoo, co-presenting the BBC's Sky at Night program and writing for <a href="http://www.chrislintott.net">www.chrislintott.net</a> and elsewhere, Chris usually wishes he had more time to sleep.</p>
-        <p><span class="person">Kevin Schawinski</span> - Astronomer, <a href="http://www.astro.ethz.ch" target="_blank">ETH Zurich</a><br />
-        Works on the formation and evolution of galaxies and their supermassive black holes. Usually trying to get more sleep. And coffee.</p>
-        <p><span class="person">Edd Edmondson</span> - Astronomer, University of Portsmouth<br />
-        Zookeeper, aiding in accessing Sloan data, and general helper-outer.</p>
-        <p><span class="person">Bill Keel</span> - Astronomer, <a href="http://astronomy.ua.edu/keel" target="_blank">University of Alabama</a><br />
-        Author of 'The Road to Galaxy Formation' and 'The Sky at Einstein's Feet'. With research interests in galaxy formation and evolution, dust content of galaxies, and active galactic nuclei, he couldn't stay away when Galaxy Zoo got started.</p>
-        <p><span class="person">Ramin Skibba</span> - Astronomer, UC San Diego<br />
-        Leading the use of marked correlation functions to analyse the Galaxy Zoo morphologies.</p>
-        <p><span class="person">Carie Cardamone</span> - Astronomer, <a href="https://sites.google.com/a/brown.edu/ccardamone/" target="_blank">Brown University</a><br />
-        An educator and astronomer, studying the Zoo's green peas, interested in understanding why galaxies grow they way they do. She's very enthusiastic about engaging the broader public in scientific research and the nature of science.</p>
-        <p><span class="person">Kyle Willett</span>, University of Minnesota<br />
-        Works on environments of galaxies with active black holes, assembling the final catalogs for Galaxy Zoo 2, and new tools for the Zooniverse sites. Probably runs more than is healthy.</p>
-        <p><span class="person">Meg Urry</span> - Physicist, Yale University<br />
-        Works on supermassive black holes (growth history, unification, relativistic jets, blazars) and their interplay with galaxies. In her spare time, she writes for CNN.com and works to increase the participation of women and minorities in science.</p>
-        <p><span class="person">Bob Nichol</span> - Cosmologist, University of Portsmouth<br />
-        An astronomer, astrophysicist and cosmologist with interests in computer science and statistics. A senior member (or 'Builder') of the Sloan Digital Sky Survey, the most ambitious digital survey of the sky ever undertaken. A long suffering supporter of Manchester City, suffering no more.</p>
-        <p><span class="person">Lucy Fortson</span> - Astrophysicist, University of Minnesota<br />
-        Interested in galaxy evolution, black holes and the jets of material beaming from the centers of active galactic nuclei. Started
-        the Zooniverse effort at the Adler Planetarium, now bringing the light to the University of Minnesota. On the odd weekend, when
-        she's not preparing lecture or writing grants, Lucy can be found hanging out with her husband and son at one of Minneapolis' fine dining establishments.</p>
-        <p><span class="person">Karen Masters</span> - Astronomer, University of Portsmouth<br />
-        Interested in spiral galaxies of all kinds, red has always been her favourite colour. She's working to disentangle the 'true' red spirals, from those that are reddened because we see them edge on, and along the way learn about interstellar dust, and the nature of red spirals themselves. Bars also a speciality.</p>
-        <p><span class="person">Tom Melvin</span> - Astronomer, University of Portsmouth<br />
-        A PhD student currently studying the formation and evolution of bars in disk galaxies.</p>
-        <p><span class="person">Alex Szalay</span> - Cosmologist, Johns Hopkins University
-        One of the creators of the SDSS SkyServer, and currently involved in building the Virtual Observatory. Plays some music in his 'spare' time.</p>
-        <p><span class="person">Daniel Thomas </span>- Astronomer, University of Portsmouth<br />
-        Interested in galaxies of any shape, age, colour and habitat in the universe. When he's not sunbathing, his research focuses on the stars in galaxies and what they tell us about galaxy formation and evolution.</p>
-        <p><span class="person">Boris H&auml;u&szlig;ler</span> - Astronomer, University of Nottingham<br />
-        An expert on analysing Hubble Space Telescope images and automatic morphology methods.</p>
-        <p><span class="person">Ben Hoyle</span> - Astronomer, University of Portsmouth<br />
-        Currently developing exciting connections between Google Sky and Galaxy Zoo. Also working on using the lensing of distant quasars to learn about the properties of nearby Galaxy Zoo galaxies.</p>
-        <p><span class="person">Sugata Kaviraj</span> - Astronomer, University of Oxford<br />
-        Studying the Galaxy Zoo mergers.</p>
-        <p><span class="person">Jordan Raddick</span> - Science Education and Outreach Coordinator, Johns Hopkins University<br />
-        A science writer and educator, creator of the science projects on the SDSS SkyServer web site, and an avid science fiction reader and writer. Jordan wishes he could visit galaxies in their natural habitat.</p>
-        <p><span class="person">Ivy Wong</span> - Astronomer, CSIRO</p>
+      <h1 class="heading"><%- I18n.t 'team.title' %></h1>
+        <h3 class="sub-heading"><%- I18n.t 'team.science.title' %></h3>
+        <p><%- I18n.t 'team.science.bamford' %></p>
+        <p><%- I18n.t 'team.science.lintott' %></p>
+        <p><%- I18n.t 'team.science.schawinski' %></p>
+        <p><%- I18n.t 'team.science.edmondson' %></p>
+        <p><%- I18n.t 'team.science.keel' %></p>
+        <p><%- I18n.t 'team.science.skibba' %></p>
+        <p><%- I18n.t 'team.science.cardamone' %></p>
+        <p><%- I18n.t 'team.science.willet' %></p>
+        <p><%- I18n.t 'team.science.urry' %></p>
+        <p><%- I18n.t 'team.science.nichol' %></p>
+        <p><%- I18n.t 'team.science.fortson' %></p>
+        <p><%- I18n.t 'team.science.masters' %></p>
+        <p><%- I18n.t 'team.science.melvin' %></p>
+        <p><%- I18n.t 'team.science.szalay' %></p>
+        <p><%- I18n.t 'team.science.thomas' %></p>
+        <p><%- I18n.t 'team.science.haussler' %></p>
+        <p><%- I18n.t 'team.science.hoyle' %></p>
+        <p><%- I18n.t 'team.science.kaviraj' %></p>
+        <p><%- I18n.t 'team.science.raddick' %></p>
+        <p><%- I18n.t 'team.science.wong' %></p>
         
-        <h3 class="sub-heading">Zooniverse Development Team</h3>
-        <p><span class="person">Amit Kapadia</span><br />
-        Amit Kapadia develops astronomical web applications. He is a citizen science developer for the crowd-sourcing based platform Zooniverse. New to the world of JavaScript he spends his days dreaming of conducting in-browser analyses on astronomical data sets. On occasion he flexes his modest sway to advocate for more modern solutions to data access in astronomy. He believes the scientific world needs to speak more closely with the tech world, and constantly strives to learn more from the latter. Amit is often found at the Adler Planetarium in Chicago.
-        </p>
+        <h3 class="sub-heading"><%- I18n.t 'team.dev.title' %></h3>
+        <p><%- I18n.t 'team.dev.kapadia' %></p>
+        <p><%- I18n.t 'team.dev.carstensen' %></p>
+        <p><%- I18n.t 'team.dev.miller' %></p>
+        <p><%- I18n.t 'team.dev.paget' %></p>
+        <p><%- I18n.t 'team.dev.parrish' %></p>
+        <p><%- I18n.t 'team.dev.simpson' %></p>
+        <p><%- I18n.t 'team.dev.smith' %></p>
+        <p><%- I18n.t 'team.dev.whyte' %></p>
         
-        <p><span class="person">Brian Carstensen</span><br />
-        Brian is a web developer working on the Zooniverse family of projects at the Adler Planearium. Brian has a degree in graphic design from Columbia College in Chicago, and worked in that field for a number of years before finding a niche in web development.
-        </p>
+        <h3 class="sub-heading"><%- I18n.t 'team.czech.title' %></h3>
+        <p><%- I18n.t 'team.czech.vykouril' %></p>
+        <p><%- I18n.t 'team.czech.moudra' %></p>
+        <p><%- I18n.t 'team.czech.hresil' %></p>
+        <p><%- I18n.t 'team.czech.miksovsky' %></p>
         
-        <p><span class="person">David Miller</span><br />
-        As a visual communicator, David is passionate about tellings stories through clear, clean, and effective design. Before joining the Zooniverse team as Visual Designer, David worked for The Raindance Film Festival, the News 21 Initiative's Apart From War, Syracuse Magazine, and as a freelance designer for his small business, Miller Visual. David is a graduate of the S.I. Newhouse School of Public Communications at Syracuse University, where he studied Visual & Interactive Communications.</p>
+        <h3 class="sub-heading"><%- I18n.t 'team.french.title' %></h3>
+        <p><%- I18n.t 'team.french.marco' %></p>
         
-        <p><span class="person">Ed Paget</span><br />
-        Ed somehow went from studying Film at Northwestern University to joining the Zooniverse team as a software developer. Along the way, he picked up a little programming. In his spare time, he enjoys photography, chess, fencing, and growing his beard.
-        </p>
+        <h3 class="sub-heading"><%- I18n.t 'team.german.title' %></h3>
+        <p><%- I18n.t 'team.german.poessel' %></p>
+        <p><%- I18n.t 'team.german.leifke' %></p>
         
-        <p><span class="person">Michael Parrish</span><br />
-        Michael has a degree in Computer Science and has been working with The Zooniverse for the past three years as a Software Developer. Aside from web development; new technologies, science, AI, reptiles, and coffee tend to occupy his attention.
-        </p>
+        <h3 class="sub-heading"><%- I18n.t 'team.polish.title' %></h3>
+        <p><%- I18n.t 'team.polish.biernacki' %></p>
+        <p><%- I18n.t 'team.polish.czart' %></p>
+        <p><%- I18n.t 'team.polish.czernik' %></p>
+        <p><%- I18n.t 'team.polish.kolodziej' %></p>
+        <p><%- I18n.t 'team.polish.kotarba' %></p>
+        <p><%- I18n.t 'team.polish.majcher' %></p>
+        <p><%- I18n.t 'team.polish.mankiewicz' %></p>
+        <p><%- I18n.t 'team.polish.ogloza' %></p>
+        <p><%- I18n.t 'team.polish.pomierny' %></p>
+        <p><%- I18n.t 'team.polish.skowron' %></p>
         
-        <p><span class="person">Robert Simpson</span><br />
-        Zooniverse Researcher and developer at Oxford University. PI of the <a href="http://www.milkywayproject.org/" target="_blank">Milky Way Project</a>.
-        </p>
-        
-        <p><span class="person">Arfon Smith</span><br />
-        As an undergraduate, Arfon studied Chemistry at the University of Sheffield before completing his Ph.D. in Astrochemistry at The University of Nottingham in 2006. He worked as a senior developer at the Wellcome Trust Sanger Institute (Human Genome Project) in Cambridge before joining the Galaxy Zoo team in Oxford. Over the past 3 years he has been responsible for leading the development of a platform for citizen science called Zooniverse. In August of 2011 he took up the position of Director of Citizen Science at the Adler Planetarium where he continues to lead the software and infrastructure development for the Zooniverse.
-        </p>
-        
-        <p><span class="person">Laura Whyte</span><br />
-        Having spent her PhD trying to get computers to classify galaxies, Laura know only to well the true value of the contribution to science made by the Galaxy Zoo volunteers. Since leaving astronomy she has retrained as a Maths teacher and picked up a few programming skills. It was with great delight she joined the team at the Zooniverse, developing online education and research tools, allowing her to use bits and pieces of all the skills she's picked up over the last decade.
-        </p>
-        
-        <h3 class="sub-heading">Galaxy Zoo Czech Support Team</h3>
-        <p><span class="person>Dušan Vykouřil</span><br />
-        Initiator, and coordinator Czech Galaxy Zoo. He thinks that line of the universe is never-ending. He like pushes the limits of the unknown.</p>
-        <p><span class="person">Míla Moudrá</span><br />
-        Main Czech Galaxy Zoo translator. Student from Prague, Czech republic, and amateur astronomer, especially deep-sky objects (i.e. galaxies, among others) visual observer. Interested in protection of environment and small rodents :-)</p>
-        <p><span class="person">Petr Hřešil</span><br />
-        Czech Galaxy Zoo co-translator. He has always been fascinated by the sky and the universe but he got trapped into the IT world and fell into the clutches of the Internet. Fan of Distributed computing, lover of sci-fi which allows him to set out "Where No One Has Gone Before".</p>
-        <p><span class="person">Jaroslav Mikšovský</span><br />
-        Czech Galaxy Zoo corrector. Pensioner still economically active.</p>
-        
-        <h3 class="sub-heading">Galaxy Zoo France Support Team</h3>
-        <p><span class="person">Olivier Marco</span> - Observatoire de Paris</p>
-        
-        
-        <h3 class="sub-heading">Galaxy Zoo Germany Support Team</h3>
-        <p><span class="person">Markus Poessel</span> - Center for Astronomy Education and Outreach, Heidelberg<br />
-        German Galaxy Zoo co-translator. Managing scientist of the Center for Astronomy Education and Outreach in Heidelberg, whose galaxy-shaped building has a disk, is not clumpy, can be viewed edge-on, has two spiral arms that are medium-tightly wound, and an obvious bulge. (And please tell him if you notice anything odd.).</p>
-        <p><span class="person">Carolin Leifke</span> - Center for Astronomy Education and Outreach, Heidelberg<br />
-        German Galaxy Zoo co-translator. Observes flares on active stars with X-ray satellites and the VLT, and galaxies of all kind with her 16-inch Dobsonian. Has now turned her passion for astronomy education and outreach into a profession.</p>
-        
-        <h3 class="sub-heading">Galaxy Zoo Poland Support Team</h3>
-        <p><span class="person">Paweł Biernacki</span><br />
-        Student of astronomy at Wrocław University, enthusiast of the Sun, addicted to sci-fi books; upbeaten optimist and fan of soccer.</p>
-        
-        <p><span class="person">Krzysztof Czart</span><br />
-        An astronomer and PhD student in a city where Nicolaus Copernicus was born, investigating the biggest stars in galaxies (those from Earth, too). In a spare time, he is a journalist as editor-in-chief of the Polish Astronomy Portal.</p>
-        
-        <p><span class="person">Tomasz Czernik</span><br />
-        Loves astronomy and photography. The youngest team member.</p>
-         
-        <p><span class="person">Mirek Kołodziej</span><br />
-        Galaxy Zoo translator, lover of the sky, IT student in secoundary school in Niepolomice, in spare time bard, he tried to bend a spoon with willpower.</p>
-        
-        <p><span class="person">Marta Kotarba</span><br />
-        Marta has worked on the Polish version of Galaxy Zoo 2. Normally she spends her time setting puzzles, photographing and trying to study astronomy at Jagiellonian University.</p>
-        
-        <p><span class="person">Ariel Majcher</span><br />
-        An astronomer and astrophotographer, likes watching sky through a telescope. This is the reason that he dreams about removal from Poland to Malta at least (along with the temperature in winter).</p>
-        
-        <p><span class="person">Lech Mankiewicz</span><br />
-        Hunts for fast optical transients in the sky. Coordinator of the 'Pi of the sky' robotic telescope project and father of Agnieszka. In his spare time coordinates the EU-HOU project.</p>
-        
-        <p><span class="person">Waldemar Ogloza</span><br />
-        An astronomer from Pedagogical University of Kracow, variable star observer. He devotes his spare time to astronomical education and sailing.</p>
-        
-        <p><span class="person">Jan Pomierny</span><br />
-        Founder and team leader of the Polish Astronomy Portal. Philosophy and classical music enthusiast who rests in mountains.</p>
-        
-        <p><span class="person">Tomasz Skowron</span><br />
-        Astronomy amateur and educator. Daily teacher of physics and astronomy in secondary school in Szczecin.</p>
-        
-        <h3 class="sub-heading">Retired members of the Galaxy Zoo Team</h3>
-        
-        <p><span class="person">Dan Andreescu</span><br />
-        Consultant by day, programmer and seeker of knowledge and fun by night. Avid basketball player and rookie surfer on the weekends.</p>
-        
-        <p><span class="person">Kate Land</span><br />
-        Added some much-missed glamour to the world of Theoretical Cosmology. Once could not sleep at night for thoughts about the early Universe, but slept during seminars instead. Now lured away by the bright lights of the City.</p>
-        
-        <p><span class="person">Jan VandenBerg</span><br />
-        Ringleader of the IT support circus in the JHU Physics & Astronomy department.</p>
-        
-        <p><span class="person">Alainna Wonders</span><br />
-        Tightrope walker therein.
-        </p>
-        
-        <p><span class="person">Danny Locksmith</span> - Volunteer Programmer<br />
-        Responsible for wrestling the Galaxy Zoo 2 beta site into existence.
-        </p>
-        
-        <p><span class="person">Phil Murray</span> - Web Designer, Artist and Managing Director of Fingerprint Digital Media
-        Responsible for the visual design of the Galaxy Zoo web site. Designer of <a href="http://www.banguniverse.com" target="_blank">www.banguniverse.com</a> for Brian May, Patrick Moore and Chris Lintott. A keen musician and lapsed tennis and soccer player.</p>
-        
-        <p><span class="person">Anze Slosar</span> - Cosmologist, Berkeley Center for Cosmological Physics<br />
-        A theoretical physicist, who has has never sat behind a telescope, likes to drink good beer and wishes he were richer.</p>
-        
-        <p><span class="person">Daniel Darg</span> - Astronomer, University of Oxford<br />
-        Working on measuring the number and properties of galaxy mergers identified in Galaxy Zoo.</p>
+        <h3 class="sub-heading"><%- I18n.t 'team.retired.title' %></h3>
+        <p><%- I18n.t 'team.retired.andreescu' %></p>
+        <p><%- I18n.t 'team.retired.land' %></p>
+        <p><%- I18n.t 'team.retired.vandenberg' %></p>
+        <p><%- I18n.t 'team.retired.wonders' %></p>
+        <p><%- I18n.t 'team.retired.locksmith' %></p>
+        <p><%- I18n.t 'team.retired.murray' %></p>
+        <p><%- I18n.t 'team.retired.slosar' %></p>
+        <p><%- I18n.t 'team.retired.darg' %></p>
       </div>
     </div>
   </div>

@@ -1,11 +1,11 @@
 <div class="help">
-  <h1 class="heading">Help</h1>
+  <h1 class="heading"><%- I18n.t 'help.title' %></h1>
   <p class="text"><%- @question.helpText %></p>
   <div class="examples">
     <% questionExamples = @question.examples() %>
     
     <% if _(questionExamples).keys().length > 0 : %>
-      <h3 class="sub-heading">Examples</h3>
+      <h3 class="sub-heading"><%- I18n.t 'help.examples' %></h3>
     <% end %>
     
     <% for key, examples of questionExamples : %>

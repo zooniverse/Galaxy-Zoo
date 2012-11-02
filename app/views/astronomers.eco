@@ -2,31 +2,26 @@
   <div class="content">
     <div class="content-block">
       <div class="full">
-        <h1 class="heading">Galaxy Zoo for Astronomers</h1>
-        <p>This page aims to give background to the scientific motivation behind the project for a more technical audience.</p>
-        <p>You may be looking for data - public Galaxy Zoo data is available in a range of formats <a href=http://data.galaxyzoo.org>here</a>.</p>
-        <p>Alternatively, you can browse a list of papers published by the team <a href=/#/papers>here</a>.</p>
+        <h1 class="heading"><%- I18n.t 'astronomers.heading' %></h1>
+        <p><%- I18n.t 'astronomers.explanation.goals' %></p>
+        <p><%- I18n.t 'astronomers.explanation.data' %></p>
+        <p><%- I18n.t 'astronomers.explanation.papers'%></p>
         
-        <h3>Why is galaxy morphology important?</h3>
-        <p>To first order, the morphology of a galaxy is a tracer of the orbital dynamics of the stars in it, but it also carries an imprint of the processes driving star formation and nuclear activity in galaxies. Visual morphology produces classifications which are strongly correlated with other, physical parameters. To give a single example, the presence of multiple nuclei and extended tidal features indicates that the dominant mechanism driving star formation is an ongoing merger. Equally, the absence of such features implies that the evolution of the galaxy may be being driven by internal ('secular') processes. </p>
+        <h3><%- I18n.t 'astronomers.morphology.heading' %></h3>
+        <p><%- I18n.t 'astronomers.morphology.body' %></p>
+        <p><%- I18n.t 'astronomers.morphology.reference' %></p>
         
-        <p>Traditionally morphology has been derived either by visual inspection of galaxy images (e.g. <a href="http://adsabs.harvard.edu/abs/1926ApJ....64..321H" target="_blank">Hubble 1926</a>, <a href="http://heasarc.nasa.gov/W3Browse/all/rc3.html" target="_blank">de Vaucouleurs 1991</a>, and more recently e.g. <a href="http://arxiv.org/abs/1001.2401" target="_blank">Nair and Abraham 2010</a> or via morphological parameters, such as Concentration, Asymmetry, Clumpiness, M20, the Gini coefficient, etc (e.g. <a href="http://arxiv.org/abs/astro-ph/0303065" target="_blank">Conselice 2003</a>, <a href="http://adsabs.harvard.edu/abs/2008ApJ...672..177L" target="_blank">Lotz et al. 2008</a>. Strictly speaking, these parameters are morphological 'proxies', each with its own attendant biases, which are typically checked and calibrated against visual inspection. A visual approach is generally more resistant to changing signal-to-noise and resolution in images (e.g. Lisker 2008), making it an ideal method for determining galaxy morphology. Nevertheless, morphological parameters have been valuable for classifying large survey-scale datasets, for which visual inspection by individuals (or small groups of researchers) can be prohibitively time-consuming.</p>
+        <h3><%- I18n.t 'astronomers.classification.heading' %></h3>
+        <p><%- I18n.t 'astronomers.classification.body' %></p>
         
-        <h3>Classifications of large survey datasets using Galaxy Zoo</h3>
-        <p>Galaxy Zoo (<a href="http://arxiv.org/abs/0804.4483" target="_blank">Lintott et al. 2008</a>, <a href="http://arxiv.org/abs/1007.3265" target="_blank">2011</a>) pioneered a novel method for performing large-scale visual classifications of survey datasets. Using more than half a million members of the general public, the project has classified – via direct visual inspection - the entire Sloan Digital Sky Survey spectroscopic sample and all existing Hubble Space Telescope surveys (around 1.5 million galaxies in total). With more than 40 classifications per object, Galaxy Zoo provides both a visual classification and an associated uncertainty (which is challenging to estimate if there are only a few human classifiers). The classifications themselves have been demonstrated to be of comparable accuracy to those derived by expert astronomers (see Lintott et al. 2008).</p>
+        <h3><%- I18n.t 'astronomers.highlights.heading' %></h3>
+        <p><%- I18n.t 'astronomers.highlights.body' %></p>
         
-        <h3>Galaxy Zoo science highlights</h3>
-        <p>The Galaxy Zoo science programme has contributed to a diverse set of topics, largely focused on the nearby and intermediate-redshift Universe. Some recent highlights include the largest studies of galaxy mergers (<a href="http://arxiv.org/abs/0903.4937">Darg et al. 2010</a>), tidal dwarf galaxies (<a href="http://arxiv.org/abs/1108.4410">Kaviraj et al. 2012</a>), dust lanes in early-type galaxies (<a href="http://arxiv.org/abs/1107.5306">Kaviraj et al. 2012</a>) and bars in disc galaxies (<a href="http://arxiv.org/abs/1003.0449">Masters et al. 2011</a>, <a href="http://arxiv.org/abs/1205.5271">2012</a>) in the nearby Universe to date. One of the unique aspects of Galaxy Zoo over automated morphological measurements is the possibility of serendipitous discoveries (often aided by volunteer led discussion on the <a href="http://www.galaxyzooforum.org">Galaxy Zoo Forum</a>). These have included the discovery of 'green peas' (a class of compact extremely star-forming galaxies in the local Universe; <a href="http://arxiv.org/abs/0907.4155">Cardamone et al. 2009</a>) and perhaps most famously "Hanny's Voorwerp" (<a href="http://arxiv.org/abs/0906.5304">Lintott et al. 2009</a>) along with a survey of similar AGN-ionised gas clouds (<a href="http://arxiv.org/abs/1110.6921">Keel et al. 2012</a>). The availability of a large sample of galaxies with both color and morphological information has led to the important realisation that color, not morphology, is most strongly correlated with environment (<a href="http://arxiv.org/abs/0805.2612">Bamford et al. 2009</a>; <a href="http://arxiv.org/abs/0811.3970">Skibba et al. 2009</a>), leading to intriguing subclasses of galaxies like red spiral galaxies (<a href="http://arxiv.org/abs/0910.4113">Masters et al. 2010</a>) and blue ellipticals (<a href="http://arxiv.org/abs/0903.3415">Schawinski et al. 2009</a>).</p>
-
-        <h3>Galaxy Zoo Relaunched</h3>
-        
-        <p>The current site incorporates new images from SDSS DR8 (the Southern Galactic cap area), increasing the sample size of galaxies in the local universe by 40%. It also, for the first time, incorporates images from CANDELS, the largest HST Treasury Program. This survey is designed to take advantage of the advent of HST's Wide Field Camera 3 (WFC3) is rapidly opening up a new window into galaxies at z > 1 – the first 50% of the lifetime of the Universe. Previous HST imaging at these epochs has largely sampled the rest-frame ultraviolet, since the available survey instruments (e.g. ACS) have operated in the optical wavelengths. However, the near-infrared capabilities of the WFC3 (a factor of 20 better than NICMOS) are providing us with unprecedented rest-frame optical data of galaxies at z > 1. </p>
-        
-        <p>CANDELS is using the WFC3 near-infrared filters to image 800 arcmin<sup>2</sup> in established HST legacy fields (e.g. GOODS, COSMOS). The near-infrared WFC3 images are particularly important because morphological analysis is best performed in rest-frame optical wavelengths, which trace the underlying stellar population of the galaxy rather than just the UV-bright star-forming regions. </p>
-        
-        <p>The combination of the SDSS and CANDELS Galaxy Zoo samples will offer a formidable tool for answering significant open questions that demand a morphological analysis. For example, at what epochs was the Hubble sequence established? How and when were the primordial spheroids formed? What was the relative role of major mergers and secular processes in driving star formation and black hole growth in the early Universe?</p>
-        
-        <p>The purpose of the Galaxy Zoo project is to answer such questions, prepare the ground for morphological work using future instruments like the JWST and produce samples of morphologically selected high-redshift galaxies for follow-up using instruments like the extremely large telescopes and ALMA.</p>
+        <h3><%- I18n.t 'astronomers.relaunched.heading' %></h3>
+        <p><%- I18n.t 'astronomers.relaunched.sdss' %></p>
+        <p><%- I18n.t 'astronomers.relaunched.candels' %></p>
+        <p><%- I18n.t 'astronomers.relaunched.combination' %></p>
+        <p><%- I18n.t 'astronomers.relaunched.conclusion' %></p>
       </div>
     </div>
   </div>

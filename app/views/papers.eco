@@ -2,137 +2,35 @@
   <div class="content">
     <div class="content-block">
       <div class="full">
-        <h1 class="heading">Published Papers</h1>
-        <p>The efforts of the Galaxy Zoo community has resulted in fantastically rich dataset with which to do science. Below is a list of just some of the publications that have come about because of the classifications collected on Galaxy Zoo.</p>
+        <h1 class="heading"><%- I18n.t 'papers.title' %></h1>
+        <p><%- I18n.t 'papers.description' %></p>
         <ul class="papers">
-        
-        <li>
-        Skibba et al. 2012. Galaxy Zoo: the environmental dependence of bars and bulges in disc galaxies. MNRAS 423, 1485.
-        (available here <a href="http://arxiv.org/abs/1111.0969">astro-ph</a>)
-        </li>
-        
-        <li>
-        Kaviraj S., et al, 2011, "Galaxy Zoo: Dust and molecular gas in early-type galaxies with prominent dust lanes", MNRAS 423, 49.
-        (available here <a href="http://arxiv.org/abs/1107.5306">astro-ph</a>) 
-        </li>  
-
-        <li>
-        Shabala S., et al, 2011, "Galaxy Zoo: Dust lane early-type galaxies are tracers of recent, gas-rich minor mergers", MNRAS 423, 49.
-        (available here <a href="http://arxiv.org/abs/1107.5310">astro-ph</a>) 
-        </li>
-
-        <li>
-        Hoyle et al., 2011, "Galaxy Zoo : Bar Lengths in Nearby Disk Galaxies", MNRAS 415, 3627.
-        (available here <ahref="http://arxiv.org/abs/1104.5394">astro-ph</a>)
-        </li>
-        
-        <li>
-        Smith A. M, et al., 2011, "Galaxy Zoo Supernovae", MNRAS, 412, 1309.
-        (available here: <a href="http://arxiv.org/abs/1011.2199">astro-ph</a>)
-        </li>
-
-        <li>
-        Darg D. W., et al., 2010, "Galaxy Zoo: Multi-Mergers and the Millennium Simulation", MNRAS 416 1745.
-        (available here: <a href="http://arxiv.org/abs/1012.4214">astro-ph</a>)
-        </li>
-
-        <li>
-        Schawinski K., et al., 2010, "The Sudden Death of the Nearest Quasar", ApJ 724, 30 (available here: <a href="http://arxiv.org/pdf/1011.0427v1">astro-ph</a>)
-        </li>
-
-        <li>
-        Masters K., et al., 2011, "Galaxy Zoo: bars in disk galaxies", accepted by MNRAS, 411, 2026. (available here: <a href="http://arxiv.org/abs/1003.0449">astro-ph</a>/<a href="http://ukads.nottingham.ac.uk/abs/2010arXiv1003.0449M">UKADS</a>)
-        </li>
-        <li>
-        Lintott C., et al., 2011, "Galaxy Zoo 1 : Data Release of
-        Morphological Classifications for nearly 900,000 galaxies", MNRAS, 410 166. 
-        (available here: <a href="http://arxiv.org/abs/1007.3265">astro-ph</a>/<a href="http://adsabs.harvard.edu/abs/2010arXiv1007.3265L">ADS</a>)
-        </li>
-        <li>
-        Masters K., et al., 2010, "Galaxy Zoo: passive red spirals", MNRAS,
-        405, 783. 
-        (available here: <a href="http://arxiv.org/abs/0910.4113">astro-ph</a>/<a href="http://adsabs.harvard.edu/abs/2010MNRAS.tmp..487M">ADS</a>)
-        </li>
-        <li>
-        Masters K., et al., 2010, "Galaxy Zoo: dust in spiral galaxies",
-        MNRAS, 404, 792. 
-        (available here: <a href="http://arxiv.org/abs/1001.1744">astro-ph</a>/<a href="http://adsabs.harvard.edu/abs/2010MNRAS.tmp..459M">ADS</a>)
-        </li>
-        <li>
-        Schawinski K., et al., 2010, "Galaxy Zoo: The Fundamentally Different Co-Evolution of Supermassive Black Holes and Their Early- and Late-Type Host Galaxies", ApJ, 711, 284. 
-        (available here: <a href="http://arxiv.org/abs/1001.3141">astro-ph</a>/<a href="http://adsabs.harvard.edu/abs/2010ApJ...711..284S">ADS</a>)
-        </li>	
-        <li>
-        Jimenez R., et al., 2010, "Galaxy Zoo: a correlation between the
-        coherence of galaxy spin chirality and star formation efficiency",
-        MNRAS, 404, 975. 
-        (available here: <a href="http://arxiv.org/abs/0906.0994">astro-ph</a>/<a href="http://adsabs.harvard.edu/abs/2010MNRAS.tmp..262J">ADS</a>)
-        </li>
-        <li>
-        Banerji M., et al., 2010 "Galaxy Zoo: Reproducing galaxy morphologies
-        via machine learning", MNRAS, 406, 342.
-        (available here: <a href="http://arxiv.org/abs/0908.2033">astro-ph</a>/<a href="http://adsabs.harvard.edu/abs/2009arXiv0908.2033B">ADS</a>)
-        </li>
-        <li>
-        Raddick J.M., et al., 2010, "Galaxy Zoo: Exploring the Motivations of
-        Citizen Science Volunteers", Astronomy Education Review, 9 (1), 010103.
-        (available
-        here: <a href="http://dx.doi.org/10.3847/AER2009036">AER</a>/<a href="http://arxiv.org/abs/0909.2925">arXiv</a>)
-        </li>
-        <li>
-        Darg D., et al., 2009, "Galaxy Zoo: The properties of merging galaxies
-        in the nearby Universe - local environments, colours, masses,
-        star-formation rates and AGN activity", MNRAS, 401, 1552. 
-        (available here: <a href="http://arxiv.org/abs/0903.5057">astro-ph</a>/<a href="http://adsabs.harvard.edu/abs/2010MNRAS.401.1552D">ADS</a>)
-        </li>	
-        <li>
-        Darg D., et al., 2009, "Galaxy Zoo: the fraction of merging galaxies
-        in the SDSS and their morphologies", MNRAS, 401, 1043.
-        (available here: <a href="http://arxiv.org/abs/0903.4937">astro-ph</a>/<a href="http://adsabs.harvard.edu/abs/2010MNRAS.401.1043D">ADS</a>)
-        </li>
-        <li>
-        Cardamone C., et al., 2009, "Galaxy Zoo Green Peas: Discovery of A Class of Compact Extremely Star-Forming Galaxies", MNRAS, 399, 1191.
-        (available here: <a href="http://arxiv.org/abs/0907.4155">astro-ph</a>/<a href="http://adsabs.harvard.edu/abs/2009MNRAS.399.1191C">ADS</a>)
-        </li>	
-        <li>
-        Lintott C.J., et al., 2009, "Galaxy Zoo: 'Hanny's Voorwerp', a quasar light echo?", MNRAS, 399, 129.
-        (available here: <a href="http://arxiv.org/abs/0906.5304">astro-ph</a>/<a href="http://adsabs.harvard.edu/abs/2009MNRAS.399..129L">ADS</a>)
-        </li>	
-        <li>
-        Skibba R.A., et al., 2009, "Galaxy Zoo: disentangling the environmental dependence of morphology and colour", MNRAS, 399, 966.
-        (available here: <a href="http://arxiv.org/abs/0811.3970">astro-ph</a>/<a href="http://adsabs.harvard.edu/abs/2009MNRAS.399..966S">ADS</a>)
-        </li>	
-        <li>
-        Schawinski K., et al., 2009, "Galaxy Zoo : A sample of blue early-type galaxies at low redshift", MNRAS, 396, 818.
-        (available here: <a href="http://arxiv.org/abs/0903.3415">astro-ph</a>/<a href="http://adsabs.harvard.edu/abs/2009MNRAS.396..818S">ADS</a>)
-        </li>	
-        <li>
-        Slosar A., et al., 2008,
-        "Galaxy Zoo: Chiral correlation function of galaxy spins",
-        MNRAS, 392, 1225.
-        (available here: <a href="http://uk.arxiv.org/abs/0809.0717">astro-ph</a>/<a href="http://adsabs.harvard.edu/abs/2009MNRAS.392.1225S">ADS</a>)
-        </li>
-        <li>
-        Bamford S.P., et al., 2009,
-        "Galaxy Zoo: the dependence of morphology and colour on environment", MNRAS, 393, 1324.
-        (available here: <a href="http://uk.arxiv.org/abs/0805.2612">astro-ph</a>/<a href="http://adsabs.harvard.edu/abs/2009MNRAS.393.1324B">ADS</a>)
-        </li>
-        <li>
-        Lintott C.J., et al., 2008,
-        "Galaxy Zoo: Morphologies derived from visual inspection of galaxies
-        from the Sloan Digital Sky Survey",
-        MNRAS, 389, 1179.
-        (available here: <a href="http://uk.arxiv.org/abs/0804.4483">astro-ph</a>/<a href="http://adsabs.harvard.edu/abs/2008MNRAS.389.1179L">ADS</a>)
-        </li>
-        <li>
-        Land K., et al., 2008,
-        "Galaxy Zoo: The large-scale spin statistics of spiral galaxies in the
-        Sloan Digital Sky Survey",
-        MNRAS, 388, 1686.
-        (available here: <a href="http://uk.arxiv.org/abs/0803.3247">astro-ph</a>/<a href="http://adsabs.harvard.edu/abs/2008MNRAS.388.1686L">ADS</a>)
-        </li>
+          <li>Skibba et al. 2012. Galaxy Zoo: the environmental dependence of bars and bulges in disc galaxies. MNRAS 423, 1485. (<%- I18n.t 'papers.available' %> <a href="http://arxiv.org/abs/1111.0969">astro-ph</a>)</li>
+          <li>Kaviraj S., et al, 2011, "Galaxy Zoo: Dust and molecular gas in early-type galaxies with prominent dust lanes", MNRAS 423, 49. (<%- I18n.t 'papers.available' %> <a href="http://arxiv.org/abs/1107.5306">astro-ph</a>)</li>
+          <li>Shabala S., et al, 2011, "Galaxy Zoo: Dust lane early-type galaxies are tracers of recent, gas-rich minor mergers", MNRAS 423, 49. (<%- I18n.t 'papers.available' %> <a href="http://arxiv.org/abs/1107.5310">astro-ph</a>)</li>
+          <li>Hoyle et al., 2011, "Galaxy Zoo : Bar Lengths in Nearby Disk Galaxies", MNRAS 415, 3627. (<%- I18n.t 'papers.available' %> <a href="http://arxiv.org/abs/1104.5394">astro-ph</a>)</li>
+          <li>Smith A. M, et al., 2011, "Galaxy Zoo Supernovae", MNRAS, 412, 1309. (<%- I18n.t 'papers.available' %>: <a href="http://arxiv.org/abs/1011.2199">astro-ph</a>)</li>
+          <li>Darg D. W., et al., 2010, "Galaxy Zoo: Multi-Mergers and the Millennium Simulation", MNRAS 416 1745. (<%- I18n.t 'papers.available' %>: <a href="http://arxiv.org/abs/1012.4214">astro-ph</a>)</li>
+          <li>Schawinski K., et al., 2010, "The Sudden Death of the Nearest Quasar", ApJ 724, 30. (<%- I18n.t 'papers.available' %>: <a href="http://arxiv.org/pdf/1011.0427v1">astro-ph</a>)</li>
+          <li>Masters K., et al., 2011, "Galaxy Zoo: bars in disk galaxies", accepted by MNRAS, 411, 2026. (<%- I18n.t 'papers.available' %>: <a href="http://arxiv.org/abs/1003.0449">astro-ph</a>/<a href="http://ukads.nottingham.ac.uk/abs/2010arXiv1003.0449M">UKADS</a>)</li>
+          <li>Lintott C., et al., 2011, "Galaxy Zoo 1 : Data Release of Morphological Classifications for nearly 900,000 galaxies", MNRAS, 410 166. (<%- I18n.t 'papers.available' %>: <a href="http://arxiv.org/abs/1007.3265">astro-ph</a>/<a href="http://adsabs.harvard.edu/abs/2010arXiv1007.3265L">ADS</a>)</li>
+          <li>Masters K., et al., 2010, "Galaxy Zoo: passive red spirals", MNRAS, 405, 783. (<%- I18n.t 'papers.available' %>: <a href="http://arxiv.org/abs/0910.4113">astro-ph</a>/<a href="http://adsabs.harvard.edu/abs/2010MNRAS.tmp..487M">ADS</a>)</li>
+          <li>Masters K., et al., 2010, "Galaxy Zoo: dust in spiral galaxies", MNRAS, 404, 792. (<%- I18n.t 'papers.available' %>: <a href="http://arxiv.org/abs/1001.1744">astro-ph</a>/<a href="http://adsabs.harvard.edu/abs/2010MNRAS.tmp..459M">ADS</a>)</li>
+          <li>Schawinski K., et al., 2010, "Galaxy Zoo: The Fundamentally Different Co-Evolution of Supermassive Black Holes and Their Early- and Late-Type Host Galaxies", ApJ, 711, 284. (<%- I18n.t 'papers.available' %>: <a href="http://arxiv.org/abs/1001.3141">astro-ph</a>/<a href="http://adsabs.harvard.edu/abs/2010ApJ...711..284S">ADS</a>)</li>
+          <li>Jimenez R., et al., 2010, "Galaxy Zoo: a correlation between the coherence of galaxy spin chirality and star formation efficiency", MNRAS, 404, 975. (<%- I18n.t 'papers.available' %>: <a href="http://arxiv.org/abs/0906.0994">astro-ph</a>/<a href="http://adsabs.harvard.edu/abs/2010MNRAS.tmp..262J">ADS</a>)</li>
+          <li>Banerji M., et al., 2010 "Galaxy Zoo: Reproducing galaxy morphologies via machine learning", MNRAS, 406, 342. (<%- I18n.t 'papers.available' %>: <a href="http://arxiv.org/abs/0908.2033">astro-ph</a>/<a href="http://adsabs.harvard.edu/abs/2009arXiv0908.2033B">ADS</a>)</li>
+          <li>Raddick J.M., et al., 2010, "Galaxy Zoo: Exploring the Motivations of Citizen Science Volunteers", Astronomy Education Review, 9 (1), 010103. (<%- I18n.t 'papers.available' %>: <a href="http://dx.doi.org/10.3847/AER2009036">AER</a>/<a href="http://arxiv.org/abs/0909.2925">arXiv</a>)</li>
+          <li>Darg D., et al., 2009, "Galaxy Zoo: The properties of merging galaxies in the nearby Universe - local environments, colours, masses, star-formation rates and AGN activity", MNRAS, 401, 1552. (<%- I18n.t 'papers.available' %>: <a href="http://arxiv.org/abs/0903.5057">astro-ph</a>/<a href="http://adsabs.harvard.edu/abs/2010MNRAS.401.1552D">ADS</a>)</li>
+          <li>Darg D., et al., 2009, "Galaxy Zoo: the fraction of merging galaxies in the SDSS and their morphologies", MNRAS, 401, 1043. (<%- I18n.t 'papers.available' %>: <a href="http://arxiv.org/abs/0903.4937">astro-ph</a>/<a href="http://adsabs.harvard.edu/abs/2010MNRAS.401.1043D">ADS</a>)</li>
+          <li>Cardamone C., et al., 2009, "Galaxy Zoo Green Peas: Discovery of A Class of Compact Extremely Star-Forming Galaxies", MNRAS, 399, 1191. (<%- I18n.t 'papers.available' %>: <a href="http://arxiv.org/abs/0907.4155">astro-ph</a>/<a href="http://adsabs.harvard.edu/abs/2009MNRAS.399.1191C">ADS</a>)</li>
+          <li>Lintott C.J., et al., 2009, "Galaxy Zoo: 'Hanny's Voorwerp', a quasar light echo?", MNRAS, 399, 129. (<%- I18n.t 'papers.available' %>: <a href="http://arxiv.org/abs/0906.5304">astro-ph</a>/<a href="http://adsabs.harvard.edu/abs/2009MNRAS.399..129L">ADS</a>)</li>
+          <li>Skibba R.A., et al., 2009, "Galaxy Zoo: disentangling the environmental dependence of morphology and colour", MNRAS, 399, 966. (<%- I18n.t 'papers.available' %>: <a href="http://arxiv.org/abs/0811.3970">astro-ph</a>/<a href="http://adsabs.harvard.edu/abs/2009MNRAS.399..966S">ADS</a>)</li>
+          <li>Schawinski K., et al., 2009, "Galaxy Zoo : A sample of blue early-type galaxies at low redshift", MNRAS, 396, 818. (<%- I18n.t 'papers.available' %>: <a href="http://arxiv.org/abs/0903.3415">astro-ph</a>/<a href="http://adsabs.harvard.edu/abs/2009MNRAS.396..818S">ADS</a>)</li>
+          <li>Slosar A., et al., 2008, "Galaxy Zoo: Chiral correlation function of galaxy spins", MNRAS, 392, 1225. (<%- I18n.t 'papers.available' %>: <a href="http://uk.arxiv.org/abs/0809.0717">astro-ph</a>/<a href="http://adsabs.harvard.edu/abs/2009MNRAS.392.1225S">ADS</a>)</li>
+          <li>Bamford S.P., et al., 2009, "Galaxy Zoo: the dependence of morphology and colour on environment", MNRAS, 393, 1324. (<%- I18n.t 'papers.available' %>: <a href="http://uk.arxiv.org/abs/0805.2612">astro-ph</a>/<a href="http://adsabs.harvard.edu/abs/2009MNRAS.393.1324B">ADS</a>)</li>
+          <li>Lintott C.J., et al., 2008, "Galaxy Zoo: Morphologies derived from visual inspection of galaxies from the Sloan Digital Sky Survey", MNRAS, 389, 1179. (<%- I18n.t 'papers.available' %>: <a href="http://uk.arxiv.org/abs/0804.4483">astro-ph</a>/<a href="http://adsabs.harvard.edu/abs/2008MNRAS.389.1179L">ADS</a>)</li>
+          <li>Land K., et al., 2008, "Galaxy Zoo: The large-scale spin statistics of spiral galaxies in the Sloan Digital Sky Survey", MNRAS, 388, 1686. (<%- I18n.t 'papers.available' %>: <a href="http://uk.arxiv.org/abs/0803.3247">astro-ph</a>/<a href="http://adsabs.harvard.edu/abs/2008MNRAS.388.1686L">ADS</a>)</li>
         </ul>
-        
       </div>
     </div>
   </div>

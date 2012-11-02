@@ -4,6 +4,6 @@
   </div>
   
   <div class="buttons">
-    <button data-dialog="true" data-value="no">No, thanks</button>
+    <button data-dialog="true" data-value="no"><%- I18n.t 'login_prompt.decline' %></button>
   </div>
 </div>
