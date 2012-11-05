@@ -89,7 +89,7 @@ class Interactive extends Spine.Controller
       for group in User.current.user_groups when @group?.id isnt group.id
         listItem = """<li><a href="/#/navigator/group/#{group.id}">#{@formatGroupName(group.name, group.id)}</a></li>"""
         @groupsList.push listItem
-    @groupsList.push '<li><a href="/#/navigator/group/">Make a New Group</a></li>'
+    @groupsList.push """<li><a href="/#/navigator/group/">#{ I18n.t('navigator.groups.make') }</a></li>"""
     @appendGroups()
 
   setGroup: (group) =>
@@ -118,7 +118,7 @@ class Interactive extends Spine.Controller
 
   reset: =>
     delete @group
-    @currentSelection.text 'Select Group'
+    @currentSelection.text I18n.t('navigator.groups.select')
     @currentSelection.removeAttr 'href'
     @linkButtons.hide()
     @activeGroups()

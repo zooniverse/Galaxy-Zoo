@@ -300,6 +300,7 @@ module.exports =
     
     groups:
       select: 'Select Group'
+      make: 'Make a New Group'
       create: 'Create New Group'
       classify: 'Classify Galaxies'
       group_classify: 'Classify in Group'
