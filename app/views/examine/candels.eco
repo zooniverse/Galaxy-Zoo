@@ -1,7 +1,7 @@
-<%- @info 'Survey', 'Hubble' %>
-<%- @info 'Right Ascension', @subject.coords[0], '&deg;' %>
-<%- @info 'Declination', @subject.coords[1], '&deg;' %>
-<%- @info 'Magnitude', @subject.metadata.magnitude %>
+<%- @info I18n.t('examine.survey'), I18n.t('examine.hubble') %>
+<%- @info I18n.t('examine.right_ascension'), @subject.coords[0], '&deg;' %>
+<%- @info I18n.t('examine.declination'), @subject.coords[1], '&deg;' %>
+<%- @info I18n.t('examine.magnitude'), @subject.metadata.magnitude %>
 
 <div class="row">
   <span class="blank"></span>
@@ -10,13 +10,13 @@
 <div class="row">
   <span class="key"></span>
   <span class="value">
-    <a target="_blank" href="http://ned.ipac.caltech.edu/cgi-bin/nph-objsearch?search_type=Near+Position+Search&RA=<%= @subject.coords[0] %>&DEC=<%= @subject.coords[1]%>&SR=0.0166666667">Search NED</a>
+    <a target="_blank" href="http://ned.ipac.caltech.edu/cgi-bin/nph-objsearch?search_type=Near+Position+Search&RA=<%= @subject.coords[0] %>&DEC=<%= @subject.coords[1]%>&SR=0.0166666667"><%- I18n.t 'examine.ned_link' %></a>
   </span>
 </div>
 
 <div class="row">
   <span class="key"></span>
   <span class="value">
-    <a target="_blank" href="http://talk.galaxyzoo.org/objects/<%= @subject.zooniverse_id %>">Discuss this</a>
+    <a target="_blank" href="http://talk.galaxyzoo.org/objects/<%= @subject.zooniverse_id %>"><%- I18n.t 'examine.discuss' %></a>
   </span>
 </div>

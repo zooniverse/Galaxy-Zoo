@@ -4,7 +4,7 @@
     <div class="content-block">
       
       <div class="left">
-        <h1 class="heading">Examine</h1>
+        <h1 class="heading"><%- I18n.t 'examine.title' %></h1>
         
         <div class="subject">
           <% if @subject : %>

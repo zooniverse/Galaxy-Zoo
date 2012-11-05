@@ -14,7 +14,7 @@ class MyGalaxies extends Spine.Controller
   constructor: ->
     super
     @headingText = $('#heading_text')
-    @action_title = '<h2>My Galaxies</h2>'
+    @action_title = "<h2>#{ I18n.t('navigator.my_galaxies') }</h2>"
 
     User.bind 'sign-in', =>
       if User.current?.user_group_id
@@ -39,11 +39,7 @@ class MyGalaxies extends Spine.Controller
     your_classification = sample.classification
 
     for key, value of sample.counters
-
-      switch key
-        when "smooth" then nice_key = "Smooth"
-        when "feature" then nice_key = "Features or disk"
-        when "star" then nice_key = "Star or artifact"
+      nice_key = I18n.t 'navigator', key
 
       if your_classification == key
         selected = true

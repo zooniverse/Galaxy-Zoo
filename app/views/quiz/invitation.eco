@@ -1,27 +1,27 @@
 <div class="quiz-invitation">
-  <h1>Galaxy Zoo needs your help!</h1>
-  <p class="sub-title">We are doing research to better understand what Galaxy Zoo volunteers think about the universe.</p>
+  <h1><%- I18n.t 'quiz.help' %></h1>
+  <p class="sub-title"><%- I18n.t 'quiz.research' %></p>
   
   <div class="content-block">
     <div class="left">
-      <p class="bold">If you agree to help you will be given short surveys that contain 6 multiple choice questions, which you can answer at your own pace. The first survey is available immediately after you agree to participate.<br />A question might be:</p>
+      <p class="bold"><%- I18n.t 'quiz.example.prompt' %></p>
       
-      <p class="question">Hubble's observation that galaxies farther away from us are moving faster led to which conclusion?</p>
+      <p class="question"><%- I18n.t 'quiz.example.question' %></p>
       <ul class="answers">
-        <li class="bold">The universe is expanding</li>
-        <li class="bold">The universe is contracting</li>
-        <li class="bold">We are located at the center of the universe</li>
-        <li class="bold">Our galaxy repels other galaxies</li>
+        <li class="bold"><%- I18n.t 'quiz.example.answer_a' %></li>
+        <li class="bold"><%- I18n.t 'quiz.example.answer_b' %></li>
+        <li class="bold"><%- I18n.t 'quiz.example.answer_c' %></li>
+        <li class="bold"><%- I18n.t 'quiz.example.answer_d' %></li>
       </ul>
     </div>
     
     <div class="right">
-      <p class="bold reward">As a reward, each time you complete a set of questions you will be entered in a raffle to win a <strong>$20 Amazon Gift Certificate</strong>.</p>
-      <p class="call">Would you like to participate?</p>
+      <p class="bold reward"><%- I18n.t 'quiz.reward' %></p>
+      <p class="call"><%- I18n.t 'quiz.participate' %></p>
       <div class="buttons">
-        <button data-dialog="true" data-value="yes">Yes!</button>
-        <button data-dialog="true" data-value="no">No, thanks</button>
-        <button data-dialog="true" data-value="later">Ask later</button>
+        <button data-dialog="true" data-value="yes"><%- I18n.t 'quiz.yes' %></button>
+        <button data-dialog="true" data-value="no"><%- I18n.t 'quiz.no_thanks' %></button>
+        <button data-dialog="true" data-value="later"><%- I18n.t 'quiz.ask_later' %></button>
       </div>
     </div>
   </div>

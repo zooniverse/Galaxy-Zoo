@@ -217,3 +217,146 @@ module.exports =
       murray: '<span class="person">Phil Murray</span> - Web Designer, Artist and Managing Director of Fingerprint Digital Media Responsible for the visual design of the Galaxy Zoo web site. Designer of <a href="http://www.banguniverse.com" target="_blank">www.banguniverse.com</a> for Brian May, Patrick Moore and Chris Lintott. A keen musician and lapsed tennis and soccer player.'
       slosar: '<span class="person">Anze Slosar</span> - Cosmologist, Berkeley Center for Cosmological Physics<br />A theoretical physicist, who has has never sat behind a telescope, likes to drink good beer and wishes he were richer.'
       darg: '<span class="person">Daniel Darg</span> - Astronomer, University of Oxford<br />Working on measuring the number and properties of galaxy mergers identified in Galaxy Zoo.'
+  
+  
+  examine:
+    title: 'Examine'
+    survey: 'Survey'
+    right_ascension: 'Right Ascension'
+    declination: 'Declination'
+    magnitude: 'Magnitude'
+    ned_link: 'Search NED'
+    discuss: 'Discuss this'
+    hubble: 'Hubble'
+    sdss: 'SDSS'
+    sdss_id: 'SDSS ObjectId'
+    petro_rad: 'Petrosian Radius'
+    skyserver_link: 'View on SkyServer'
+  
+  
+  fits:
+    view: 'View raw data in different wavelengths'
+    x_y: 'X, Y'
+    intensity: 'Intensity'
+    color: 'Color'
+    linear: 'Linear'
+    logarithm: 'Logarithm'
+    square_root: 'Square Root'
+    arcsinh: 'Arcsinh'
+    power: 'Power'
+  
+  
+  quiz:
+    thanks: 'Thanks!'
+    help: 'Galaxy Zoo needs your help!'
+    research: 'We are doing research to better understand what Galaxy Zoo volunteers think about the universe.'
+    helping: 'You are helping us better understand what Galaxy Zoo volunteers think about the universe.'
+    gift: 'You have been entered into a raffle to win a <strong>$20 Amazon Gift Certificate</strong>.'
+    reward: 'As a reward, each time you complete a set of questions you will be entered in a raffle to win a <strong>$20 Amazon Gift Certificate</strong>.'
+    now_or_later: 'You can take another quiz now, or later by visiting your profile.'
+    start_next: 'When would you like to take the next set of questions?'
+    reminder: 'You have previously agreed to be asked a set of 5&ndash;6 short questions once every week.'
+    ready: 'Are you ready?'
+    now: 'Now'
+    later: 'Later'
+    complete: 'You have completed all the quizzes!'
+    okay: 'Okay'
+    participate: 'Would you like to participate?'
+    yes: 'Yes!'
+    no_thanks: 'No, thanks'
+    ask_later: 'Ask later'
+    never_again: 'Never ask again'
+    
+    example:
+      prompt: 'If you agree to help you will be given short surveys that contain 6 multiple choice questions, which you can answer at your own pace. The first survey is available immediately after you agree to participate.<br />A question might be:'
+      question: "Hubble's observation that galaxies farther away from us are moving faster led to which conclusion?"
+      answer_a: 'The universe is expanding'
+      answer_b: 'The universe is contracting'
+      answer_c: 'We are located at the center of the universe'
+      answer_d: 'Our galaxy repels other galaxies'
+  
+  
+  navigator:
+    title: 'Navigator'
+    construct: 'Construct Your Question'
+    my_galaxies: 'My Galaxies'
+    graph: 'Graph Data'
+    loading: 'Loading...'
+    reset: 'Reset Graph'
+    snapshot: 'Take Snapshot'
+    download: 'Download Data'
+    n_galaxies: '# of Galaxies'
+    smooth: 'Smooth'
+    feature: 'Features or disk'
+    star: 'Star or artifact'
+    redshift: 'Redshift'
+    color: 'Color'
+    apparent_brightness: 'Apparent Brightness'
+    absolute_radius: 'Absolute Radius'
+    absolute_brightness: 'Absolute Brightness'
+    no_results: 'You need to classify galaxies first'
+    intro: "Welcome to the Galaxy Zoo Navigator, where you can investigate the galaxy classifications you have made as part of a group. To get started you will need to select the group you'd like to work with."
+    credit: 'The Navigator is based upon work supported by the National Science Foundation under Grants No. 1041419 and 0941610. Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.'
+    
+    groups:
+      select: 'Select Group'
+      create: 'Create New Group'
+      classify: 'Classify Galaxies'
+      group_classify: 'Classify in Group'
+      stop_classify: 'Stop Classifying in Group'
+      leave: 'Leave Group'
+      destroy_group: 'Delete Group'
+      classify_desc: 'Visit the Galaxy Zoo website to classify galaxies as part your group.'
+      stats: 'Statistics'
+      invitations: 'Invitations'
+      enter_name: 'Enter Group Name'
+      enter_emails: 'Invite users by entering their emails seperated with a comma (e.g. ed@example.com, cs@example.com, whyte@example.com)'
+      send_invites: 'Send Invites'
+      disable_talk: 'Disable Talk for this Group'
+      invited_users: 'Users Invited'
+      participation: 'Participation'
+      compare: 'Compare your classification choices with those made by other volunteers.'
+      confirm_leave: 'Are you sure?\nThe Group Leader must re-invite you if you wish to rejoin'
+      confirm_destroy: 'Are you sure?\nThere is no undo.'
+      ensure_selected: 'Select a group or create one from the dropdown menu to see your group classifications'
+    
+    sample:
+      label: 'with a sample size of...'
+      choose: 'Choose sample size'
+      small: 'Small Sample of Galaxies'
+      random_small: 'Small Random Sample of Galaxies'
+      medium: 'Medium Sample of Galaxies'
+      random_medium: 'Medium Random Sample of Galaxies'
+      large: 'Large Sample of Galaxies'
+      random_large: 'Large Random Sample of Galaxies'
+    
+    galaxy_type:
+      label: 'in the following galaxy type...'
+      smooth: 'Smooth'
+      feature: 'Feature/Disk'
+    
+    source:
+      label: "I'd like to use data from..."
+      my_group: 'My Group'
+      galaxy_zoo: 'Galaxy Zoo'
+      my_choice: 'My choice'
+    
+    histogram:
+      title: 'Histogram'
+      description: 'Investigate the characteristics of different galaxy types.'
+      label: "'I'd like to see...'"
+      y_label: 'Number of Galaxies'
+      distribution: 'Distribution of'
+      distributed: 'is distributed across...'
+      one_var: 'One-Variable'
+      two_var: 'Two-Variable'
+      create: 'Create Graph'
+    
+    scatterplot:
+      title: 'Scatter Graph'
+      description: 'Compare the characteristics of different galaxy types.'
+      label: "I'd like to see how..."
+      vs: 'vs.'
+      relation: 'relates to...'
+      choose_x: 'Choose the x-axis variable'
+      choose_y: 'Choose the y-axis variable'

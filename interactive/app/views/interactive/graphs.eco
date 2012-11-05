@@ -4,84 +4,84 @@
 
       <li class="buttons nolabel show-control">
         <div id="setting-variable-control">
-          <button type="button" data-variables="histogram">Histogram</button>
-          <button type="button" data-variables="scatterplot">Scatter Graph</button>
+          <button type="button" data-variables="histogram"><%- I18n.t 'navigator.histogram.title' %></button>
+          <button type="button" data-variables="scatterplot"><%- I18n.t 'navigator.scatterplot.title' %></button>
         </div>
       </li>
 
       <li id="x-axis-item" class="show-control">
-        <label>I'd like to see how...</label>
+        <label><%- I18n.t 'navigator.scatterplot.label' %></label>
         <select id="x-axis" name="xAxis">
-          <option value="">Choose the x-axis variable</option>
-          <option value="redshift">Redshift</option>
-          <option value="color">Color</option>
-          <option value="apparent_brightness">Apparent Brightness</option>
-          <option value="absolute_radius">Absolute Radius</option>
-          <option value="absolute_brightness">Absolute Brightness</option>
+          <option value=""><%- I18n.t 'navigator.scatterplot.choose_x' %></option>
+          <option value="redshift"><%- I18n.t 'navigator.redshift' %></option>
+          <option value="color"><%- I18n.t 'navigator.color' %></option>
+          <option value="apparent_brightness"><%- I18n.t 'navigator.apparent_brightness' %></option>
+          <option value="absolute_radius"><%- I18n.t 'navigator.absolute_radius' %></option>
+          <option value="absolute_brightness"><%- I18n.t 'navigator.absolute_brightness' %></option>
         </select>
       </li>
 
       <li id="y-axis-item">
-        <label>relates to...</label>
+        <label><%- I18n.t 'navigator.scatterplot.relation' %></label>
         <select id="y-axis" name="yAxis">
-          <option value="">Choose the y-axis variable</option>
-          <option value="redshift">Redshift</option>
-          <option value="color">Color</option>
-          <option value="apparent_brightness">Apparent Brightness</option>
-          <option value="absolute_radius">Absolute Radius</option>
-          <option value="absolute_brightness">Absolute Brightness</option>
+          <option value=""><%- I18n.t 'navigator.scatterplot.choose_y' %></option>
+          <option value="redshift"><%- I18n.t 'navigator.redshift' %></option>
+          <option value="color"><%- I18n.t 'navigator.color' %></option>
+          <option value="apparent_brightness"><%- I18n.t 'navigator.apparent_brightness' %></option>
+          <option value="absolute_radius"><%- I18n.t 'navigator.absolute_radius' %></option>
+          <option value="absolute_brightness"><%- I18n.t 'navigator.absolute_brightness' %></option>
         </select>
       </li>
 
       <li class="buttons" id="galaxy-types">
-        <label>in the following galaxy type...</label>
+        <label><%- I18n.t 'navigator.galaxy_type.label' %></label>
         <div id="setting-galaxy-type">
-          <button type="button" data-type="smooth">Smooth</button>
-          <button type="button" data-type="feature">Feature/Disk</button>
+          <button type="button" data-type="smooth"><%- I18n.t 'navigator.galaxy_type.smooth' %></button>
+          <button type="button" data-type="feature"><%- I18n.t 'navigator.galaxy_type.feature' %></button>
         </div>
       </li>
 
       <li class="separator"></li>
 
       <li class="buttons" id="galaxy-sets">
-        <label>I'd like to use data from...</label>
+        <label><%- I18n.t 'navigator.source.label' %></label>
         <div id="setting-data-source">
-          <button type="button" data-source="group">My Group</button>
-          <button type="button" data-source="all">Galaxy Zoo</button>
+          <button type="button" data-source="group"><%- I18n.t 'navigator.source.my_group' %></button>
+          <button type="button" data-source="all"><%- I18n.t 'navigator.source.galaxy_zoo' %></button>
         </div>
       </li>
 
       <li id="sample-sizes">
-        <label>with a sample size of...</label>
+        <label><%- I18n.t 'navigator.sample.label' %></label>
         <select id="sample-size" name="sampleSize">
-          <option value="">Choose sample size</option>
-          <option value="10">Small Sample of Galaxies</option>
-          <option value="50">Medium Sample of Galaxies</option>
-          <option value="100">Large Sample of Galaxies</option>
+          <option value=""><%- I18n.t 'navigator.sample.choose' %></option>
+          <option value="10"><%- I18n.t 'navigator.sample.small' %></option>
+          <option value="50"><%- I18n.t 'navigator.sample.medium' %></option>
+          <option value="100"><%- I18n.t 'navigator.sample.large' %></option>
         </select>
       </li>
     </ul>
     <div id="graph">
       <h3 id="graph-title"></h3>
-      <div id="loading-animation"><h2>Loading...</h2></div>
+      <div id="loading-animation"><h2><%- I18n.t 'navigator.loadings' %></h2></div>
       <svg></svg>
     </div>
     <canvas id="canvas"></canvas>
   </div>
 
   <div id="actions">
-    <button disabled="disabled" type="button" name="reset">Reset Graph</button>
+    <button disabled="disabled" type="button" name="reset"><%- I18n.t 'navigator.reset' %></button>
     <div class="legend">
-      <p># of Galaxies: <span class='number-of-galaxies'></span></p>
+      <p><%- I18n.t 'navigator.n_galaxies' %>: <span class='number-of-galaxies'></span></p>
       <ul>
-        <li id="teal"><p>Smooth</p></li>
-        <li id="orange"><p>Featured/Disk</p></li>
+        <li id="teal"><p><%- I18n.t 'navigator.galaxy_type.smooth' %></p></li>
+        <li id="orange"><p><%- I18n.t 'navigator.galaxy_type.feature' %></p></li>
       </ul>
     </div>
     <div class="misc">
-      <button type="button" name="screenshot">Take Snapshot</button>
+      <button type="button" name="screenshot"><%- I18n.t 'navigator.snapshot' %></button>
       <div class="download-button">
-        <a href="" download="my_data.csv" target="_blank">Download Data</a>
+        <a href="" download="my_data.csv" target="_blank"><%- I18n.t 'navigator.download' %></a>
       </div>
     </div>
   </div>

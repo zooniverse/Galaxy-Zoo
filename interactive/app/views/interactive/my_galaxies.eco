@@ -1,6 +1,6 @@
 <div id="my_galaxies">
   <div id="my_galaxies_key">
-    <p id="rectangle">My choice</p>
+    <p id="rectangle"><%- I18n.t 'navigator.source.my_choice' %></p>
   <div>
 <% if @samples.length > 0: %>
   <% for galaxy in @samples: %>
@@ -13,6 +13,6 @@
     </div>
   <% end %>
 <% else: %>
-  <h3 style="text-align:center">You need to classify galaxies first!</h3>
+  <h3 style="text-align:center"><%- I18n.t 'navigator.no_results' %></h3>
 <% end %>
 </div>

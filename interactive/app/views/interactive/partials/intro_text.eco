@@ -1,3 +1,1 @@
-<p>Welcome to the Galaxy Zoo Navigator, where you can investigate the galaxy classifications 
-      you have made as part of a group. To get started you will need to select 
-      the group you'd like to work with.</p>
+<p><%- I18n.t 'navigator.intro' %></p>

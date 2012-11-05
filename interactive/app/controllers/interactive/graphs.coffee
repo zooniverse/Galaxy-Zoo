@@ -27,17 +27,17 @@ class Graphs extends BaseController
     'click button[name="reset"]'              : 'reset'
 
   groupGalaxySizes: [
-    '<option value="">Choose sample size</option>',
-    '<option value="10">Small Sample of Galaxies</option>',
-    '<option value="50">Medium Sample of Galaxies</option>',
-    '<option value="100">Large Sample of Galaxies</option>'
+    """<option value="">#{ I18n.t('navigator.sample.choose') }</option>""",
+    """<option value="10">#{ I18n.t('navigator.sample.small') }</option>""",
+    """<option value="50">#{ I18n.t('navigator.sample.medium') }</option>""",
+    """<option value="100">#{ I18n.t('navigator.sample.large') }</option>"""
   ]
 
-  allGalaxySizes: [            
-    '<option value="">Choose sample size</option>',
-    '<option value="100">Small Random Sample of Galaxies</option>',
-    '<option value="250">Medium Random Sample of Galaxies</option>',
-    '<option value="500">Large Random Sample of Galaxies</option>'
+  allGalaxySizes: [
+    """<option value="">#{ I18n.t('navigator.sample.choose') }</option>""",
+    """<option value="100">#{ I18n.t('navigator.sample.random_small') }</option>""",
+    """<option value="250">#{ I18n.t('navigator.sample.random_medium') }</option>""",
+    """<option value="500">#{ I18n.t('navigator.sample.random_large') }</option>"""
   ]
 
   constructor: ->
@@ -54,7 +54,7 @@ class Graphs extends BaseController
     @setPressed $('[data-source="group"]')
 
     @options = new Object
-    @headingText.html '<h2>Construct Your Question</h2>'
+    @headingText.html "<h2>#{ I18n.t('navigator.construct') }</h2>"
 
     if @graphType is 'histogram'
       @setPressed $('[data-variables="histogram"]')
@@ -65,11 +65,11 @@ class Graphs extends BaseController
 
   setGraph: =>
     if @graphType is 'histogram'
-      @xAxisItem.find('label').html 'I\'d like to see...'
-      @graph = new Histogram { el: '#graph', channel: 'graph', height: 310, width: 512 , margin: { left: 50, top: 20, bottom: 40 }, yLabel: "Number of Galaxies" }  
+      @xAxisItem.find('label').html I18n.t('navigator.histogram.label')
+      @graph = new Histogram { el: '#graph', channel: 'graph', height: 310, width: 512 , margin: { left: 50, top: 20, bottom: 40 }, yLabel: I18n.t('navigator.histogram.y_label') }
     else
-      @xAxisItem.find('label').html 'I\'d like to see how...'
-      @graph = new Scatterplot { el: '#graph', channel: 'graph', height: 310, width: 512, margin: { left: 50, top: 20, bottom: 40 } } 
+      @xAxisItem.find('label').html I18n.t('navigator.scatterplot.label')
+      @graph = new Scatterplot { el: '#graph', channel: 'graph', height: 310, width: 512, margin: { left: 50, top: 20, bottom: 40 } }
 
   # Graph interface functions
   setGraphType: (e) =>
@@ -212,10 +212,10 @@ class Graphs extends BaseController
   # Helper functions
   updateTitle: =>
     if @graphType is 'histogram'
-      @graphTitle.text "Distribution of #{@prettyKey(@options.xAxis)}"
+      @graphTitle.text "#{ I18n.t('navigator.histogram.distribution') } #{@prettyKey(@options.xAxis)}"
     else
       @options.yAxis = '' if typeof(@options.yAxis) is 'undefined'
-      @graphTitle.text "#{@prettyKey(@options.xAxis)} vs. #{@prettyKey(@options.yAxis)}"
+      @graphTitle.text "#{@prettyKey(@options.xAxis)} #{ I18n.t('navigator.scatterplot.vs') } #{@prettyKey(@options.yAxis)}"
 
   setPressed: (button, force_selection = true, dual_selection = false) ->
     # Check for case where no button is selected.

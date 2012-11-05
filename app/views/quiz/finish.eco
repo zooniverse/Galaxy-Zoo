@@ -1,28 +1,28 @@
 <% Quiz = require('models/quiz') %>
 
 <div class="quiz-invitation finish">
-  <h1>Thanks!</h1>
-  <p class="sub-title">You are helping us better understand what Galaxy Zoo volunteers think about the universe.</p>
+  <h1><%- I18n.t 'quiz.thanks' %></h1>
+  <p class="sub-title"><%- I18n.t 'quiz.helping' %></p>
   
   <div class="content-block">
     <div class="left">
-      <p class="bold reward" style="margin-bottom: 25px">You have been entered into a raffle to win a <strong>$20 Amazon Gift Certificate</strong>.</p>
+      <p class="bold reward" style="margin-bottom: 25px"><%- I18n.t 'quiz.gift' %></p>
       <% if Quiz.classificationCount < 6 : %>
-        <p class="bold">You can take another quiz now, or later by visiting your profile.</p>
+        <p class="bold"><%- I18n.t 'quiz.now_or_later' %></p>
       <% end %>
     </div>
     
     <div class="right">
       <% if Quiz.classificationCount < 6 : %>
-        <p class="call">When would you like to take the next set of questions?</p>
+        <p class="call"><%- I18n.t 'quiz.start_next' %></p>
         <div class="buttons">
-          <button data-dialog="true" data-value="now">Now</button>
-          <button data-dialog="true" data-value="later">Later</button>
+          <button data-dialog="true" data-value="now"><%- I18n.t 'quiz.now' %></button>
+          <button data-dialog="true" data-value="later"><%- I18n.t 'quiz.later' %></button>
         </div>
       <% else : %>
-        <p class="call">You have completed all the quizzes!</p>
+        <p class="call"><%- I18n.t 'quiz.complete' %></p>
         <div class="buttons">
-          <button data-dialog="true" data-value="done">Okay</button>
+          <button data-dialog="true" data-value="done"><%- I18n.t 'quiz.okay' %></button>
         </div>
       <% end %>
     </div>

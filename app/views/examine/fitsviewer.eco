@@ -1,4 +1,4 @@
-<button id="load-fits" style="width: 110px">View raw data in different wavelengths</button>
+<button id="load-fits" style="width: 110px"><%- I18n.t 'fits.view' %></button>
 <div id="viewer-controls"></div>
 <div class="slider" style="width:300px;"></div>
 <div id="plots">

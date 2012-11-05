@@ -3,36 +3,35 @@
 
 <form class="graph-settings">
   <div class="graph-select"> 
-    <button name="one-variable" type="button" class="pressed">One-Variable</button>
-    <button name="two-variable" type="button">Two-Variable</button>
+    <button name="one-variable" type="button" class="pressed"><%- I18n.t 'navigator.histogram.one_var' %></button>
+    <button name="two-variable" type="button"><%- I18n.t 'navigator.histogram.two_var' %></button>
   </div>
 
   <div class="variable-select">
-    <h4>I'd like to see how...</h4>
+    <h4><%- I18n.t 'navigator.scatterplot.label' %></h4>
     <select class='x-axis'>
-      <option>Choose x-axis variable</option>
-      <option value="redshift">Redshift</option>
-      <option value="redshift">Redshift</option>
-      <option value="redshift">Redshift</option>
-      <option value="redshift">Redshift</option>
-      <option value="redshift">Redshift</option>
-      <option value="redshift">Redshift</option>
+      <option><%- I18n.t 'navigator.scatterplot.choose_x' %></option>
+      <option value="redshift"><%- I18n.t 'navigator.redshift' %></option>
+      <option value="color"><%- I18n.t 'navigator.color' %></option>
+      <option value="apparent_brightness"><%- I18n.t 'navigator.apparent_brightness' %></option>
+      <option value="absolute_radius"><%- I18n.t 'navigator.absolute_radius' %></option>
+      <option value="absolute_brightness"><%- I18n.t 'navigator.absolute_brightness' %></option>
     </select>
 
-    <h4>is distributed across ...</h4>
+    <h4><%- I18n.t 'navigator.histogram.distributed' %></h4>
     <div class="galaxy-select">
-      <button name="smooth" type="button">Smooth</button>
-      <button name="features" type="button">Features/Disk</button>
+      <button name="smooth" type="button"><%- I18n.t 'navigator.galaxy_type.smooth' %></button>
+      <button name="features" type="button"><%- I18n.t 'navigator.galaxy_type.feature' %></button>
     </div>
   </div>
   ≠
   <div class="sample-select">
-    <h4>I'd like to use data from...</h4>
+    <h4><%- I18n.t 'navigator.source.label' %></h4>
     <div class="samples">
-      <button name="all" type="button">All Galaxies</button>
-      <button name="our" type="button">Our Galaxies</button>
+      <button name="all" type="button"><%- I18n.t 'navigator.source.my_group' %></button>
+      <button name="our" type="button"><%- I18n.t 'navigator.source.galaxy_zoo' %></button>
     </div>
-    <h4>with a sample size of...</h4>
+    <h4><%- I18n.t 'navigator.sample.label' %></h4>
     <select class="sample-size">
       <option value="10">10</option>
       <option value="50">50</option>
@@ -42,8 +41,8 @@
   </div>
 
   <div class="submission">
-    <button name="submit" type="submit">Create Graph</button>
-    <button name="reset" type="reset">Reset</button>
+    <button name="submit" type="submit"><%- I18n.t 'navigator.histogram.create' %></button>
+    <button name="reset" type="reset"><%- I18n.t 'navigator.reset' %></button>
   </div>
 </form>
 

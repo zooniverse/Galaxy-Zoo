@@ -1,14 +1,14 @@
 <section data-page="interactive">
   <div class="container">
     <div id="top_bar">
-      <a href="#/navigator/home"><h1>Navigator</h1></a>
+      <a href="#/navigator/home"><h1><%- I18n.t 'navigator.title' %></h1></a>
       <div id="group-list">
-        <span><a class="current-selection">Select Group</a><a class="open-dropdown">&#9660;</a></span>
+        <span><a class="current-selection"><%- I18n.t 'navigator.select' %></a><a class="open-dropdown">&#9660;</a></span>
         <ul class="selection-dropdown"></ul>
       </div>
       <div id="link_buttons">
-        <a href="#/navigator/my_galaxies" data-link="my_galaxies">My Galaxies</a>
-        <a href="#/navigator/graphs" data-link="graphs">Graph Data</a>
+        <a href="#/navigator/my_galaxies" data-link="my_galaxies"><%- I18n.t 'navigator.my_galaxies' %></a>
+        <a href="#/navigator/graphs" data-link="graphs"><%- I18n.t 'navigator.graph' %></a>
       </div>
     </div>
 
@@ -18,7 +18,7 @@
 
     <div id="div-dx-change">
 <!--      easy read: <input type="checkbox" value="dx-change" id="dx-change" class="unclicked"/> -->
-    <p id="disclaimer">The Navigator is based upon work supported by the National Science Foundation under Grants No. 1041419 and 0941610. Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.</p>
+    <p id="disclaimer"><%- I18n.t 'navigator.credit' %></p>
     </div>
   </div>
 </section>

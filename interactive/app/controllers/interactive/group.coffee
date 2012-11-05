@@ -32,7 +32,7 @@ class Group extends Spine.Controller
       else
         UserGroup.fetch(@groupId)
     else
-      @headingText.html '<h2>Create New Group</h2>'
+      @headingText.html "<h2>#{ I18n.t('navigator.groups.create') }</h2>"
       @signUpForm.show()
       @groupNameBox.show()
       @participation.hide()
@@ -105,14 +105,14 @@ class Group extends Spine.Controller
     delete User.current.user_group_id
 
   leaveGroup: (e) =>
-    answer = confirm 'Are you sure?\nThe Group Leader must re-invite you if you wish to rejoin'
+    answer = confirm I18n.t('navigator.groups.confirm_leave')
     return unless answer
     e.preventDefault()
     UserGroup.leave @groupId
     @navigate '/navigator/home'
 
   destroyGroup: (e) =>
-    answer = confirm 'Are you sure?\nThere is no undo.'
+    answer = confirm I18n.t('navigator.groups.confirm_destroy')
     return unless answer
     e.preventDefault()
     UserGroup.delete @groupId

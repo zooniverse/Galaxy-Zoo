@@ -1,22 +1,22 @@
 <div class="participate">
   <div class="statistics">
-    <h2>Statistics</h2>
+    <h2><%- I18n.t 'navigator.groups.stats' %></h2>
     <ul class="stats">
     </ul>
   </div>
   <form id="group-signup">
-    <h2>Invitations</h2>
-    <input name="name" placeholder="Enter Group Name" type="text" />
-    <label class="talk-flag">Disable Talk for this Group: <input value="talk" name="talk-flag" type="checkbox" /></label>
-    <textarea name="emails" placeholder="Invite users by entering their emails seperated with a comma (e.g. ed@example.com, cs@example.com, whyte@example.com)"></textarea>
-    <button type="submit" name="submit">Send Invites</button>
-    <p>Users Invited</p>
+    <h2><%- I18n.t 'navigator.groups.invitations' %></h2>
+    <input name="name" placeholder="<%- I18n.t 'navigator.groups.enter_name' %>" type="text" />
+    <label class="talk-flag"><%- I18n.t 'navigator.groups.disable_talk' %>: <input value="talk" name="talk-flag" type="checkbox" /></label>
+    <textarea name="emails" placeholder="<%- I18n.t 'navigator.groups.enter_emails' %>"></textarea>
+    <button type="submit" name="submit"><%- I18n.t 'navigator.groups.send_invites' %></button>
+    <p><%- I18n.t 'navigator.groups.invited_users' %></p>
   </form>
   <div class="participation">
-    <h2>Participation</h2>
-    <button type="button" name="yes">Classify in Group</button>
-    <button type="button" name="no">Stop Classifying in Group</button>
-    <button type="button" name="leave">Leave Group</button>
-    <button type="button" name="destroy">Delete Group</button>
+    <h2><%- I18n.t 'navigator.groups.participation' %></h2>
+    <button type="button" name="yes"><%- I18n.t 'navigator.groups.group_classify' %></button>
+    <button type="button" name="no"><%- I18n.t 'navigator.groups.stop_classify' %></button>
+    <button type="button" name="leave"><%- I18n.t 'navigator.groups.leave' %></button>
+    <button type="button" name="destroy"><%- I18n.t 'navigator.groups.destroy' %></button>
   </div>
 </div>

@@ -2,31 +2,31 @@
   <div id="welcome">
     <div class="image_div">
       <a href="#/classify">
-        <h2>Classify Galaxies</h2>
-        <p>Visit the Galaxy Zoo website to classify galaxies as part your group.</p>
+        <h2><%- I18n.t 'navigator.groups.classify' %></h2>
+        <p><%- I18n.t 'navigator.group.classify_desc' %></p>
         <img src="images/classify.png">
-      </a>        
+      </a>
     </div>
     <div class="image_div">
       <a href="#/navigator/my_galaxies" class="check-participate">
-        <h2>My Galaxies</h2>
-        <p>Compare your classification choices with those made by other volunteers.</p>
+        <h2><%- I18n.t 'navigator.my_galaxies' %></h2>
+        <p><%- I18n.t 'navigator.groups.compare' %></p>
         <img src="images/ourgalaxies.png">
       </a>
     </div>
     <div class="image_div">
       <a href="#/navigator/graphs/histogram" class="check-participate">
-        <h2>Histogram</h2>
-        <p>Investigate the characteristics of different galaxy types.</p>
+        <h2><%- I18n.t 'navigator.histogram.title' %></h2>
+        <p><%- I18n.t 'navigator.histogram.description' %></p>
         <img src="images/histogram.png">
-      </a>        
+      </a>
     </div>
     <div class="image_div">
       <a href="#/navigator/graphs/scatterplot" class="check-participate">
-        <h2>Scatter Graph</h2>
-        <p>Compare the characteristics of different galaxy types.</p>
+        <h2><%- I18n.t 'navigator.scatterplot.title' %></h2>
+        <p><%- I18n.t 'navigator.scatterplot.description' %></p>
         <img src="images/scattergraph.png">
       </a>
-    </div>     
+    </div>
   </div>
 </div>

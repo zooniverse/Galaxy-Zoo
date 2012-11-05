@@ -138,13 +138,13 @@ class FITSViewer extends Spine.Controller
     @subjectInfo = $("#examine .subject-info")      
     @subjectInfo.append("""
       <div class='row'>
-        <span class='key'>X, Y:</span>
+        <span class='key'>#{ I18n.t 'fits.x_y' }:</span>
         <span class='xy value'></span>
       </div>
     """)
     @subjectInfo.append("""
       <div class='row'>
-        <span class='key'>Intensity:</span>
+        <span class='key'>#{ I18n.t 'fits.intensity' }:</span>
         <span class='intensity value'></span>
       </div>
     """)
@@ -157,7 +157,7 @@ class FITSViewer extends Spine.Controller
     for band in @bands
       bandUpper = band.toUpperCase()
       @controls.append("<button id='band-#{band}' class='band' value='#{band}' disabled='disabled'>#{bandUpper}</button>")
-    @controls.append("<button id='band-color' class='band' value='color'>Color</button>")
+    @controls.append("<button id='band-color' class='band' value='color'>#{ I18n.t('fits.color') }</button>")
   
   destroyBandButtons: =>
     @controls.empty() if @controls
@@ -165,11 +165,11 @@ class FITSViewer extends Spine.Controller
   
   createStretchButtons: =>
     @controls.append("<select id='stretch' disabled='disabled'>
-                        <option value='linear'>Linear</option>
-                        <option value='logarithm'>Logarithm</option>
-                        <option value='sqrt'>Square Root</option>
-                        <option value='arcsinh'>Arcsinh</option>
-                        <option value='power'>Power</option>
+                        <option value='linear'>#{ I18n.t('fits.linear') }</option>
+                        <option value='logarithm'>#{ I18n.t('fits.logarithm') }</option>
+                        <option value='sqrt'>#{ I18n.t('fits.square_root') }</option>
+                        <option value='arcsinh'>#{ I18n.t('fits.arcsinh') }</option>
+                        <option value='power'>#{ I18n.t('Power') }</option>
                       </select>")
     @stretch = $("#stretch")
   
