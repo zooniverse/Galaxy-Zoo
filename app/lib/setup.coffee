@@ -1,8 +1,3 @@
-require 'json2ify'
-require 'es5-shimify'
-window.I18n = require 'lib/i18n'
-require 'jqueryify'
-
 require 'spine'
 require 'spine/lib/local'
 require 'spine/lib/ajax'

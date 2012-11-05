@@ -13,11 +13,26 @@
     <div id="main"></div>
     
     <script type="text/javascript" charset="utf-8">
+      var json2ify = require('json2ify');
+      var e5 = require('es5-shimify');
+      window.I18n = require('lib/i18n');
       var jQuery = require('jqueryify');
+      
       jQuery(function() {
-        var App = require('index');
-        new App({ el: $('body') });
-      });
+        var lang = require('lib/params').lang
+        
+        if(lang && lang != 'en') {
+          jQuery.getJSON('locales/' + lang + '.json', function(json) {
+            I18n.current = json;
+            var App = require('index');
+            new App({ el: $('body') });
+          });
+        }
+        else {
+          var App = require('index');
+          new App({ el: $('body') });
+        }
+      })
     </script>
   </body>
 </html>
