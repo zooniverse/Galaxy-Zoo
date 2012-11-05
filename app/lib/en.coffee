@@ -305,7 +305,7 @@ module.exports =
       group_classify: 'Classify in Group'
       stop_classify: 'Stop Classifying in Group'
       leave: 'Leave Group'
-      destroy_group: 'Delete Group'
+      destroy: 'Delete Group'
       classify_desc: 'Visit the Galaxy Zoo website to classify galaxies as part your group.'
       stats: 'Statistics'
       invitations: 'Invitations'

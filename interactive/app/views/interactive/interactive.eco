@@ -3,7 +3,7 @@
     <div class="image_div">
       <a href="#/classify">
         <h2><%- I18n.t 'navigator.groups.classify' %></h2>
-        <p><%- I18n.t 'navigator.group.classify_desc' %></p>
+        <p><%- I18n.t 'navigator.groups.classify_desc' %></p>
         <img src="images/classify.png">
       </a>
     </div>
