@@ -1,4 +1,48 @@
 module.exports =
+  zooniverse:
+    browser_check:
+      wont_work: "This site probably won't work until you update your browser."
+      recommended: 'We recommend using <a href="http://www.mozilla.org/firefox/" target="_blank">Mozilla Firefox</a> or <a href="http://www.google.com/chrome" target="_blank">Google Chrome</a>.'
+      ie: '''If you use <a href="http://www.microsoft.com/windows/internet-explorer/" target="_blank">Microsoft Internet Explorer</a>, make sure you're running the latest version.'''
+      chrome_frame: '''If you can't install the latest Internet Explorer, try <a href="http://google.com/chromeframe" target="_blank">Chrome Frame</a>!'''
+      dismiss: 'Dismiss'
+    
+    login:
+      username: 'Username'
+      password: 'Password'
+      login: 'Login'
+      forgot_password: 'Forgot Password?'
+    
+    sign_in:
+      title: 'Sign in with your Zooniverse account'
+      sign_up: "Don't have an account? Create one!"
+      button: 'Sign in'
+      progress: 'Signing in...'
+    
+    sign_up:
+      title: 'Sign up for a new Zooniverse account'
+      confirmation: 'Password (confirm)'
+      password_match: 'Password must match confirmation'
+      sign_in: 'Already have an account? Sign in!'
+      email: 'Email address'
+      privacy: 'I agree to the <a href="https://www.zooniverse.org/privacy" target="_blank">privacy policy</a>'
+      button: 'Sign up'
+      progress: 'Creating account and signing in...'
+    
+    sign_out:
+      current: 'Currently logged in as <strong class="current"></strong>.'
+      button: 'Sign Out'
+      progress: 'Signing out...'
+    
+    top_bar:
+      title: '<span id="app-name"></span> is a <a href="https://www.zooniverse.org">Zooniverse</a> project.'
+      description: 'The Zooniverse is a collection of web-based Citizen Science projects that use the efforts and abilities of volunteers to help reseachers deal with the flood of data that confronts them.'
+      greeting: 'Hi, <strong>{user}</strong>. Welcome to {appName}!'
+      projects:
+        title: 'Our Projects'
+        list: 'We currently have 12 projects on subjects ranging from <a href="https://www.zooniverse.org/#space">astronomy</a>, to <a href="https://www.zooniverse.org/#climate">climatology</a>, to <a href="https://www.zooniverse.org/#nature">biology</a>, to <a href="https://www.zooniverse.org/#humanities">humanities</a>.'
+  
+  
   questions:
     'sloan-0':
       text: "Is the galaxy simply smooth and rounded, with no sign of a disk?"
