@@ -8,7 +8,7 @@ Subject = require 'zooniverse/lib/models/subject'
 QuizQuestion = require 'models/quiz_question'
 
 class Quiz extends Subject
-  @configure 'Quiz', 'metadata'
+  @configure 'Quiz', 'metadata', 'setIndex'
   projectName: 'galaxy_zoo_quiz'
   
   @workflowUrl: (params) -> @withParams "/projects/galaxy_zoo_quiz/workflows/#{ Config.quiz.workflowId }/classifications", params
@@ -40,10 +40,16 @@ class Quiz extends Subject
       @current = @find quiz.id
       @current.show opts
   
-  constructor: ->
+  constructor: (hash) ->
     super
     Quiz.classificationCount or= 0
-    @questions or= _(@metadata.questions).collect (question) -> new QuizQuestion(question)
+    @setIndex or= hash.index
+    
+    unless @questions
+      @questions = []
+      for question, index in @metadata.questions
+        @questions.push new QuizQuestion(question, @setIndex, index)
+    
     @results = []
     @index = 0
   

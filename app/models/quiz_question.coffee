@@ -1,8 +1,13 @@
 class QuizQuestion
-  constructor: (hash) ->
+  constructor: (hash, quizIndex, questionIndex) ->
     @text = hash.question.text
+    @text = I18n.t 'quiz_questions', "set_#{ quizIndex }", "question_#{ questionIndex }", 'text'
     @image = hash.question.image
-    @answers = hash.answers
+    @answers = []
+    
+    for answer, index in hash.answers
+      answer.text = I18n.t 'quiz_questions', "set_#{ quizIndex }", "question_#{ questionIndex }", "answer_#{ index }"
+      @answers.push answer
   
   answerLetters: =>
     start = 97

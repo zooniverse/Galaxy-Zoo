@@ -273,6 +273,261 @@ module.exports =
         'a-0': 'Yes'
         'a-1': 'No'
   
+  quiz_questions:
+    set_1:
+      question_0:
+        text: 'Where are elliptical galaxies more common?'
+        answer_0: 'inside clusters of galaxies'
+        answer_1: 'outside clusters of galaxies'
+        answer_2: 'they are equally prevalent everywhere'
+      
+      question_1:
+        text: 'Star A is a red main sequence star and Star B is a blue main sequence star. Which will have a longer lifetime?'
+        answer_0: 'Star A'
+        answer_1: 'Star B'
+        answer_2: 'They will have the same lifetime.'
+        answer_3: 'There is insufficient information to determine this.'
+      
+      question_2:
+        text: 'How does the Sun produce the energy that heats our planet?'
+        answer_0: 'The gases inside our Sun are burning and producing energy.'
+        answer_1: 'Atoms are combined into heavier atoms, giving off energy.'
+        answer_2: 'Gas inside the Sun heats up when compressed, giving off energy.'
+        answer_3: 'Atoms are broken apart into lighter atoms, giving off energy.'
+        answer_4: 'The core of the Sun has radioactive atoms that decay, giving off energy.'
+      
+      question_3:
+        text: 'The diagram represents three different waves of light emitted at the same time by the Sun. Which wave will arrive first at a satellite orbiting just above Earth’s atmosphere?'
+        answer_0: 'Wave 1'
+        answer_1: 'Wave 2'
+        answer_2: 'Wave 3'
+        answer_3: 'All three waves arrive at the same time.'
+      
+      question_4:
+        text: 'A galaxy that appears to have very few bright, blue stars, likely:'
+        answer_0: 'never had blue stars in the galaxy.'
+        answer_1: 'had more blue stars long ago that are no longer present.'
+        answer_2: 'has been around long enough for the blue stars to have evolved into red main sequence stars.'
+        answer_3: 'never contained enough gas to have blue stars develop.'
+    
+    set_2:
+      question_0:
+        text: 'Which is true of Doppler shifted light from galaxies and stars?'
+        answer_0: 'If their light is redshifted, that means the objects are moving towards you.'
+        answer_1: 'If their light is blueshifted, that means the objects are close to you.'
+        answer_2: 'If their light is redshifted, that means the objects are moving quickly.'
+        answer_3: 'If their light is blueshifted, that means the objects will appear blue.'
+        answer_4: 'None of the above is true.'
+      
+      question_1:
+        text: 'A main sequence star with a long lifetime will be ______ than a main sequence star with a short lifetime.'
+        answer_0: 'bluer'
+        answer_1: 'emitting light at shorter wavelengths'
+        answer_2: 'larger'
+        answer_3: 'more luminous'
+        answer_4: 'less massive'
+      
+      question_2:
+        text: 'The three spectral curves shown in the graphs illustrate the energy output versus wavelength for three Stars A, B, and C. Which of the stars has the highest temperature?'
+        answer_0: 'Star A'
+        answer_1: 'Star B'
+        answer_2: 'Star C'
+        answer_3: 'All three stars have the same temperature.'
+        answer_4: 'There is insufficient information to determine this.'
+      
+      question_3:
+        text: 'Which of the following correctly lists objects from largest to smallest?'
+        answer_0: 'Star, Solar System, Globular Cluster, Galaxy, Local Group'
+        answer_1: 'Globular Cluster, Local Group, Galaxy, Star, Solar System'
+        answer_2: 'Galaxy, Local Group, Solar System, Globular Cluster, Star'
+        answer_3: 'Local Group, Galaxy, Globular Cluster, Solar System, Star'
+      
+      question_4:
+        text: 'Which of the following components of an elliptical galaxy has the most mass?'
+        answer_0: 'Stars'
+        answer_1: 'Gas and Dust'
+        answer_2: 'Dark Matter'
+        answer_3: 'There is insufficient information to determine this.'
+      
+      question_5:
+        text: 'How many of the four galaxies shown could be a Spiral Galaxy?'
+        answer_0: 'One'
+        answer_1: 'Two'
+        answer_2: 'Three'
+        answer_3: 'Four'
+        answer_4: 'There is insufficient information to determine this.'
+    
+    set_3:
+      question_0:
+        text: 'Which of the following has the most energy?'
+        answer_0: 'x-rays'
+        answer_1: 'ultraviolet light'
+        answer_2: 'gamma rays'
+        answer_3: 'They all have the same energy.'
+      
+      question_1:
+        text: 'Which of the following is true of all main sequence stars that appear red to us on Earth:'
+        answer_0: 'They are hotter than blue main sequence stars.'
+        answer_1: 'They will live longer than very bright main sequence stars.'
+        answer_2: 'They are moving toward Earth.'
+        answer_3: 'They are moving away from Earth.'
+      
+      question_2:
+        text: 'Answer the following question using the image, which represents the Milky Way Galaxy.  Approximately how far is it from the white circle to the center of the Milky Way Galaxy?'
+        answer_0: '1,000 light years'
+        answer_1: '10,000 light years'
+        answer_2: '25,000 light years'
+        answer_3: '100,000 light years'
+      
+      question_3:
+        text: 'The idea of dark matter is provided to explain which one of the following?'
+        answer_0: 'The location and shape of the arms in the disk of spiral galaxies.'
+        answer_1: 'The location of the maximum in the distribution of globular clusters of stars in the halo of the galaxy.'
+        answer_2: 'The nearly uniform rotation speeds of objects in the Milky Way Galaxy.'
+        answer_3: 'That a spiral density wave moves through the disk of spiral galaxies triggering star formation.'
+      
+      question_4:
+        text: 'Why are the arms of spiral galaxies blue?'
+        answer_0: 'The arms are usually moving toward us, so they are Doppler shifted to blue wavelengths.'
+        answer_1: 'The gas and dust in the arms filter out all but the blue light from stars in the arms.'
+        answer_2: 'Active star formation is occurring in the spiral arms.'
+        answer_3: 'Most of the stars of the disk are in the arms of the galaxy and their light makes it appear blue.'
+      
+      question_5:
+        text: "In each figure, two pairs of rocky asteroids are shown along with their masses (m), and the distance (d) between each pair of asteroids. Which of the following correctly describes how the gravitational force exerted BY Asteroid A on its 'partner' asteroid compares to the gravitational force exerted BY Asteroid B on its 'partner' asteroid."
+        answer_0: 'The force of A on its partner is greater than the force of B on its partner.'
+        answer_1: 'The force of B on its partner is greater than the force of A on its partner.'
+        answer_2: 'The force of A on its partner is equal to the force of B on its partner.'
+    
+    set_4:
+      question_0:
+        text: 'Which of the following has the highest speed?'
+        answer_0: 'x-rays'
+        answer_1: 'ultraviolet light'
+        answer_2: 'gamma rays'
+        answer_3: 'They all have the same speed.'
+      
+      question_1:
+        text: 'Which of the following determines most characteristics and future events of a star’s existence?'
+        answer_0: 'surface temperature'
+        answer_1: 'size (diameter)'
+        answer_2: 'color'
+        answer_3: 'composition (type of atoms)'
+        answer_4: 'mass'
+      
+      question_2:
+        text: 'Here are possible plots of how fast objects orbit the center of our galaxy versus their distance from the center. Which one graph best represents how objects actually move in our galaxy?'
+        answer_0: 'Graph A'
+        answer_1: 'Graph B'
+        answer_2: 'Graph C'
+        answer_3: 'Graph D'
+        answer_4: 'Graph E'
+        answer_5: 'Graph F'
+      
+      question_3:
+        text: 'Star A is a red main sequence star and Star B is a blue main sequence star. If both stars appear to be the same brightness, which one is closer to Earth?'
+        answer_0: 'Star A'
+        answer_1: 'Star B'
+        answer_2: 'They are the same distance from Earth.'
+        answer_3: 'There is insufficient information to determine this.'
+      
+      question_4:
+        text: 'In how many of the four galaxies shown do we observe regions containing cool gas & dust clouds?'
+        answer_0: 'One'
+        answer_1: 'Two'
+        answer_2: 'Three'
+        answer_3: 'Four'
+        answer_4: 'There is insufficient information to determine this.'
+      
+      question_5:
+        text: 'In this picture the Earth-Moon system is shown (not to scale) along with three possible positions (A-C) for a spacecraft traveling from Earth to the Moon. Note that Position B is exactly halfway between Earth and the Moon. In what direction would the net (total) force of gravity on the spacecraft point if it were located at Position B?'
+        answer_0: 'toward the Moon'
+        answer_1: 'toward Earth'
+        answer_2: 'Since the spacecraft is exactly halfway between Earth and the Moon, the gravitational force by Earth on the spacecraft is equal to the gravitational force on the spacecraft by the Moon, so the net (total) force would be zero and not point in either direction.'
+    
+    set_5:
+      question_0:
+        text: 'Which of the following is not a form of light?'
+        answer_0: 'radio waves'
+        answer_1: 'microwaves'
+        answer_2: 'x-rays'
+        answer_3: 'All of the above are a form of light.'
+        answer_4: 'None of the above is a form of light.'
+      
+      question_1:
+        text: 'A collision of two spiral galaxies produces'
+        answer_0: 'a spiral galaxy.'
+        answer_1: 'an elliptical galaxy.'
+        answer_2: 'either a spiral or elliptical galaxy.'
+        answer_3: 'No galaxy will remain.'
+      
+      question_2:
+        text: 'Which of the following components of a spiral galaxy has the most mass?'
+        answer_0: 'Stars'
+        answer_1: 'Gas and Dust'
+        answer_2: 'Dark Matter'
+        answer_3: 'There is insufficient information to determine this.'
+      
+      question_3:
+        text: 'Answer the following question using the image, which represents the Milky Way Galaxy. Approximately how large is the diameter of the white dot?'
+        answer_0: '1,000 light years'
+        answer_1: '10,000 light years'
+        answer_2: '50,000 light years'
+        answer_3: '100,000 light years'
+      
+      question_4:
+        text: 'Consider the information given below about three main sequence Stars A, B, and C. Star A will be a main sequence star for a total of 15 billion years. Star B gives off the same amount of light as the Sun. Star C is red. Which of the following is a true statement about these stars?'
+        answer_0: 'Star A has the greatest mass.'
+        answer_1: 'Star B has the greatest mass.'
+        answer_2: 'Star C has the greatest mass.'
+        answer_3: 'Stars A, B and C all have approximately the same mass.'
+        answer_4: 'There is insufficient information to determine this.'
+      
+      question_5:
+        text: 'Assume the two galaxies shown have the same total number of stars. Which of these two galaxies most likely has the fewest bright blue stars?'
+        answer_0: 'Galaxy A'
+        answer_1: 'Galaxy B'
+        answer_2: 'They have the same number of bright blue stars.'
+        answer_3: 'There is insufficient information to determine this.'
+    
+    set_6:
+      question_0:
+        text: 'Star A is hotter than Star B. Star B gives off much more light than Star A. Which star is larger?'
+        answer_0: 'Star A'
+        answer_1: 'Star B'
+        answer_2: 'They are the same size.'
+        answer_3: 'There is insufficient information to determine this.'
+      
+      question_1:
+        text: 'Star F is a red main sequence star and Star G is a blue main sequence star. Which star has a higher temperature?'
+        answer_0: 'Star F'
+        answer_1: 'Star G'
+        answer_2: 'They have the same temperature.'
+        answer_3: 'There is insufficient information to determine this.'
+      
+      question_2:
+        text: 'A collision of two elliptical galaxies produces'
+        answer_0: 'a spiral galaxy.'
+        answer_1: 'an elliptical galaxy.'
+        answer_2: 'either a spiral or elliptical galaxy.'
+        answer_3: 'No galaxy will remain.'
+      
+      question_3:
+        text: 'Use the graph to answer the following question. Which of the following is the correct ranking for the size of Objects A-C, from largest to smallest?'
+        answer_0: 'A > C = B'
+        answer_1: 'B = C > A'
+        answer_2: 'A = C > B'
+        answer_3: 'A > C > B'
+        answer_4: 'B > C = A'
+      
+      question_4:
+        text: 'Which diagram best describes the net (total) force of gravity on each of the three galaxies shown? Note that: Galaxy C has much more mass than Galaxy A and B  (which have equal mass). The arrows indicate the direction of the net (total) force of gravity exerted on each galaxy but not the strength'
+        answer_0: ''
+        answer_1: ''
+        answer_2: ''
+        answer_3: ''
+        answer_4: ''
+  
   
   astronomers:
     heading: 'Galaxy Zoo for Astronomers'
