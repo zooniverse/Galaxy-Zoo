@@ -308,7 +308,7 @@ module.exports =
     restart: 'Restart'
     help: 'Help'
     sloan: 'SDSS'
-    hubble: 'Hubble'
+    candels: 'Hubble'
     group: 'Group'
     favorite: 'Favourite'
     invert: 'Invert'
