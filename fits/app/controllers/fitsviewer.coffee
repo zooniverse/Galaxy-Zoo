@@ -155,8 +155,8 @@ class FITSViewer extends Spine.Controller
   
   createBandButtons: =>
     for band in @bands
-      bandUpper = band.toUpperCase()
-      @controls.append("<button id='band-#{band}' class='band' value='#{band}' disabled='disabled'>#{bandUpper}</button>")
+      bandLower = band.toLowerCase()
+      @controls.append("<button id='band-#{band}' class='band' value='#{band}' disabled='disabled'>#{bandLower}</button>")
     @controls.append("<button id='band-color' class='band' value='color'>#{ I18n.t('fits.color') }</button>")
   
   destroyBandButtons: =>
