@@ -134,6 +134,9 @@ class Graphs extends BaseController
     @setButtons.addClass 'show-control'
     @sizeSelector.addClass 'show-control'
 
+    unless @options.galaxyType
+      @$('.point').hide()
+
   setDataSource: (e) =>
     button = $(e.currentTarget)
     @options.dataSource = button.data('source')
@@ -146,6 +149,9 @@ class Graphs extends BaseController
 
   setSampleSize: (e) =>
     @options.sampleSize = $(e.currentTarget).val()
+
+    unless @options.galaxyType 
+      @$('.point').hide()
 
     isRandom = (@options.dataSource is 'all')
     limit = @options.sampleSize
