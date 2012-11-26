@@ -25,6 +25,7 @@ class Graphs extends BaseController
     'change #y-axis'                          : 'setYAxis'
     'click button[name="screenshot"]'         : 'generateImageFromGraph'
     'click button[name="reset"]'              : 'reset'
+    'click button[name="download"]'           : 'downloadData'
 
   groupGalaxySizes: [
     """<option value="">#{ I18n.t('navigator.sample.choose') }</option>""",
@@ -160,9 +161,7 @@ class Graphs extends BaseController
 
     @graph.bind 'data-received', =>
       @loading.hide()
-      dataURI = "data:text/csv;charset=UTF-8," + encodeURIComponent(@generateCSV())
       @resetButton.removeAttr 'disabled'
-      @dataDownload.attr 'href', dataURI
       @noOfGalaxies.text @graph.filteredData.length
 
   reset: (e) =>
@@ -184,36 +183,19 @@ class Graphs extends BaseController
     img = canvas.toDataURL 'image/png'
     window.open img
 
-  # CSV Generation
-  generateCSV: =>
-    headerString = (@createCSVHeader(@graph.filteredData[0]) + '\n').slice(1)
-    bodyString = @createCSVBody @graph.filteredData
-    return headerString + bodyString
-      
-  createCSVHeader: (datum, prefix='') =>
-    header = new String
-    for key, value of datum
-      unless typeof(value) is 'function'
-        if typeof(value) is 'object'
-          header = header + @createCSVHeader value, "#{key}_"
-        else
-          header = header + "," + prefix + key
-    return header
-
-  createCSVBody: (data) =>
-    body = new Array
-    body.push (@createCSVLine(datum)).slice(1) for datum in data
-    return body.join '\n'
-
-  createCSVLine: (datum) =>
-    line = new String
-    for key, value of datum
-      unless typeof(value) is 'function'
-        if typeof(value) is 'object'
-          line = line + @createCSVLine value
-        else
-          line = line + "," + value
-    return line
+  # New CSV Generation
+  downloadData: =>
+    $.ajax
+      type: 'POST'
+      data: JSON.stringify(@graph.filteredData)
+      url: 'https://jcvd.herokuapp.com/to-csv'
+      crossDomain: true
+      dataType: 'json'
+      contentType: 'application/json'
+      success: @downloadIframe
+        
+  downloadIframe: (data) =>
+    $("body").append("""<iframe src="https://jcvd.herokuapp.com/to-csv/#{data.data_url}" style="display: none;"></iframe>""");
 
   # Helper functions
   updateTitle: =>

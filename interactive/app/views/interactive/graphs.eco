@@ -80,9 +80,7 @@
     </div>
     <div class="misc">
       <button type="button" name="screenshot"><%- I18n.t 'navigator.snapshot' %></button>
-      <div class="download-button">
-        <a href="" download="my_data.csv" target="_blank"><%- I18n.t 'navigator.download' %></a>
-      </div>
+      <button type="button" name="download" ><%- I18n.t 'navigator.download' %></button>
     </div>
   </div>
 </form>
