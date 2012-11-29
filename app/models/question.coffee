@@ -1,7 +1,7 @@
 Spine = require 'spine'
 
 class Question extends Spine.Model
-  @configure 'Question', 'tree', 'answers', 'checkboxes', 'leadsTo'
+  @configure 'Question', 'tree', 'answers', 'checkboxes', 'leadsTo', 'helpText'
   
   @findByTreeAndText: (tree, text) ->
     @select (q) -> q.tree is tree and q.text is text
@@ -24,8 +24,7 @@ class Question extends Spine.Model
     @id in ['candels-17', 'sloan-11']
   
   help: (text) ->
-    text = I18n.t 'questions', @id, 'help'
-    @helpText = text
+    @helpText = I18n.t 'questions', @id, 'help'
   
   answer: (text, { leadsTo: leadsTo, icon: icon, examples: examples, talk: talk } = { leadsTo: null, icon: null, examples: 0, talk: false }) ->
     id = "a-#{ _(@answers).keys().length }"
