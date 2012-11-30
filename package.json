@@ -22,7 +22,7 @@
     "underscore": "*",
     "spine": "~1.0.7",
     "clean-css": "0.6.0",
-    "uglify-js": "*",
+    "uglify-js": "1.3.4",
     "fits": "git://github.com/astrojs/fitsjs.git#d4f052cd6d",
     "ubret" : "git+ssh://git@github.com:zooniverse/Ubret.git#3e40818af57e0d",
     "zooniverse": "git+ssh://git@github.com:zooniverse/Zooniverse.git#galaxy_zoo"
