@@ -1,4 +1,3 @@
-FITS  = require('fits')
 WebGL = require('lib/web_gl')
 
 # Troublesome
@@ -66,7 +65,7 @@ class FITSViewer extends Spine.Controller
       # Initialize the FITS object
       p1 = p1.pipe (obj) =>        
         band = obj.band
-        @images[band] = new FITS.File(obj.arraybuffer)
+        @images[band] = new astro.FITS.File(obj.arraybuffer)
         
         # Select the dataunit
         dataunit = @images[band].getDataUnit()

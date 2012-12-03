@@ -58,7 +58,6 @@ class Examine extends Spine.Controller
     checkDataView and checkWorker and checkWebGL
   
   requestFITS: =>
-    
     # Deactive button
     $('#load-fits').attr("disabled", true)
 

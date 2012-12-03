@@ -1,11 +1,7 @@
 #!/usr/bin/env ruby
 
 working_directory = File.expand_path Dir.pwd
-fits_lib_dir = File.expand_path File.join(File.dirname(__FILE__), '../node_modules/fits')
 fits_app_dir = File.expand_path File.dirname(__FILE__)
-
-Dir.chdir fits_lib_dir
-`coffee --compile --output lib/ src/`
 
 Dir.chdir fits_app_dir
 `../node_modules/hem/bin/hem build`

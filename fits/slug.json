@@ -1,7 +1,4 @@
 {
-  "dependencies": [
-    "fits"
-  ],
   "excludedDependencies": [
     "underscore",
     "zooniverse",
@@ -15,6 +12,8 @@
     "spine/lib/ajax",
     "spine/lib/route",
     "spine/lib/manager"
+  ],
+  "libs": [
+    "../vendor/fits.js"
   ]
 }
-    
