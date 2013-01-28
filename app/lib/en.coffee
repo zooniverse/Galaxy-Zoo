@@ -894,6 +894,8 @@ module.exports =
       confirm_leave: 'Are you sure?\nThe Group Leader must re-invite you if you wish to rejoin'
       confirm_destroy: 'Are you sure?\nThere is no undo.'
       ensure_selected: 'Select a group or create one from the dropdown menu to see your group classifications'
+      group_url: 'Share this url to join group: '
+
     
     sample:
       label: 'with a sample size of...'

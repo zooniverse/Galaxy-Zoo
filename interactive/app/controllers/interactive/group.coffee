@@ -52,6 +52,10 @@ class Group extends Spine.Controller
       @usersInvited.hide()
       @groupNameBox.hide()
       @participation.show()
+      url = "http://galaxyzoo.org/#/user_groups/#{group.unique_name}"
+      @groupUrlHref.attr 'href', url
+      @groupUrlHref.html url
+      @groupUrl.show()
     if @group.id is User.current?.user_group_id
       @participateButton.hide()
       @stopParticipateButton.show()
@@ -71,6 +75,8 @@ class Group extends Spine.Controller
     'button[name="no"]' : 'stopParticipateButton'
     'input[name="talk-flag"]' : 'hideTalk'
     'label.talk-flag' : 'talkLabel'
+    'p.group-url' : 'groupUrl'
+    'a.group-url-href' : 'groupUrlHref'
 
   events: 
     'click button[name="yes"]' : 'setParticipate'

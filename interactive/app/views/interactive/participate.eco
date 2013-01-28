@@ -10,6 +10,7 @@
     <label class="talk-flag"><%- I18n.t 'navigator.groups.disable_talk' %>: <input value="talk" name="talk-flag" type="checkbox" /></label>
     <textarea name="emails" placeholder="<%- I18n.t 'navigator.groups.enter_emails' %>"></textarea>
     <button type="submit" name="submit"><%- I18n.t 'navigator.groups.send_invites' %></button>
+    <p class="group-url"><%- I18n.t 'navigator.groups.group_url' %> <a class="group-url-href" href=""></a></p>
     <p><%- I18n.t 'navigator.groups.invited_users' %></p>
   </form>
   <div class="participation">
