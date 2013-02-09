@@ -17,6 +17,9 @@
 
 
 
+
+
+
 .stack > *
   display: none
   
@@ -43,13 +46,27 @@ body
 #main
   margin-bottom: 50px
 
+
 @media only screen and (max-device-width: 480px) 
-  body
-    width: 100%  
-    background: url("images/gz_headerimage.jpg") no-repeat scroll 24% 0 #000000
+  
+  html, body
+    width: 320px
+    height: 100%
+    background: #00111A
     margin:0px
     padding:0px
     -webkit-tap-highlight-color: rgba(0,0,0,0)
+    -webkit-touch-callout: none;
+
+    -webkit-overflow-scrolling: touch
+    -webkit-user-select: none; /* Disable selection/Copy of UIWebView */
+    overflow-x: hidden
+    overflow-y: scroll
     #main
-      margin-top: -90px
+      width:100%
+      height:100%
+    
+
+
+
 

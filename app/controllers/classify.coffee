@@ -14,13 +14,13 @@ class Classify extends Spine.Controller
     '.top .buttons .favorite': 'favoriteLink'
   
   events:
-    'click #classify .galaxy img': 'toggleInverted'
-    'click .tree .answer': 'answer'
-    'click .tree .checkbox': 'checkBox'
-    'click .top .buttons .help': 'help'
-    'click .top .buttons .restart': 'restart'
-    'click .top .buttons .invert': 'toggleInverted'
-    'click .top .buttons .favorite': 'toggleFavorite'
+    'tap #classify .galaxy img': 'toggleInverted'
+    'tap .tree .answer': 'answer'
+    'tap .tree .checkbox': 'checkBox'
+    'tap .top .buttons .help': 'help'
+    'tap .top .buttons .restart': 'restart'
+    'tap .top .buttons .invert': 'toggleInverted'
+    'tap .top .buttons .favorite': 'toggleFavorite'
   
   constructor: ->
     super
@@ -29,7 +29,8 @@ class Classify extends Spine.Controller
     Subject.bind 'fetched', @nextSubject
     User.bind 'sign-in', @render
     Subject.next()
-  
+    @render()
+
   active: ->
     super
     @render()
@@ -44,7 +45,9 @@ class Classify extends Spine.Controller
     @render()
   
   answer: (ev) ->
+    console.log("trigger answer")
     id = $(ev.target).closest('.answer').data 'id'
+    console.log("id is #{id}")
     checks = _ $('.buttons .active.checkbox')
     checkIds = checks.collect (check) -> $(check).data('id')
     

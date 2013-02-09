@@ -3,35 +3,54 @@
     #main
       .active
         #classify
+          border: 1px solid red
           border: none
           padding: 0px
           border: 0px
+          margin: 0px
+          width: 100%
+          min-height: 480px
           background-color: black
           .galaxy
             border: none
-            position: absolute
-            left: 0px
-            top: 3px 
-            width: 380px
-            height: 380px
+            display: block
+            float: none
+            width: 100%
+            height: auto
             padding: 0px
             margin: 0px
             img
               padding: 0px 
               margin: 0px
-              width: 380px
-              height: 380px
+              width: 100%
+              height: auto
           .tree
-            position: absolute
-            top: 400px
+            display: block
+            float : none
+            width: 100%
             .top
               display: none
             .question
-              .buttons
-                border: none
-                .row 
-                  height: 20px
-
+              color: white
+              width: 100%
+              backgorund-color: black
+              display: block
+              position: relative
+              top:0px
+              left: 0px
+              min-height: 360px
+              p.heading
+                display: none
+              p
+                text-align: center
+                margin: 0px
+                padding: 0px
+              div.buttons
+                border: none 
+                width: 100%
+                margin:0px
+                padding: 0px
+                
 #classify
   clearfix()
   position: relative
@@ -183,13 +202,7 @@
                 display: block
                 position: relative
                 margin: 0 auto
-            
-            &:hover
-                background-color: rgba(0, 60, 87, 0.7)
-                
-                .hover
-                  color: $light-gray
-            
+           
             &.active
               background-color: rgba(0, 60, 87, 1.0)
               

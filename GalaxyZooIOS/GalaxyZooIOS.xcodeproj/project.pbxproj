@@ -31,9 +31,6 @@
 		B9EBCF4815EFE20800B49303 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B9EBCF4615EFE20800B49303 /* Localizable.strings */; };
 		B9EBCF4C15EFE20800B49303 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B9EBCF4A15EFE20800B49303 /* Localizable.strings */; };
 		B9EBCF5015EFE20800B49303 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B9EBCF4E15EFE20800B49303 /* Localizable.strings */; };
-		B9EBCF5315EFE20800B49303 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B9EBCF5215EFE20800B49303 /* icon.png */; };
-		B9EBCF5515EFE20800B49303 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9EBCF5415EFE20800B49303 /* icon@2x.png */; };
-		B9EBCF5715EFE20800B49303 /* icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = B9EBCF5615EFE20800B49303 /* icon-72.png */; };
 		B9EBCF5A15EFE20800B49303 /* Default~iphone2.png in Resources */ = {isa = PBXBuildFile; fileRef = B9EBCF5915EFE20800B49303 /* Default~iphone2.png */; };
 		B9EBCF5C15EFE20800B49303 /* Default@2x~iphone2.png in Resources */ = {isa = PBXBuildFile; fileRef = B9EBCF5B15EFE20800B49303 /* Default@2x~iphone2.png */; };
 		B9EBCF5E15EFE20800B49303 /* Capture.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B9EBCF5D15EFE20800B49303 /* Capture.bundle */; };
@@ -42,6 +39,10 @@
 		B9EBCF6715EFE20800B49303 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9EBCF6615EFE20800B49303 /* MainViewController.m */; };
 		B9EBCF6915EFE20800B49303 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B9EBCF6815EFE20800B49303 /* MainViewController.xib */; };
 		B9EBCF7315EFE37100B49303 /* www in Resources */ = {isa = PBXBuildFile; fileRef = B9EBCF7215EFE37100B49303 /* www */; };
+		B9F8BF8B15FE988600B1C4B4 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B9F8BF8915FE988600B1C4B4 /* icon.png */; };
+		B9F8BF8C15FE988600B1C4B4 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9F8BF8A15FE988600B1C4B4 /* icon@2x.png */; };
+		B9F8BF8F15FE989900B1C4B4 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B9F8BF8E15FE989900B1C4B4 /* icon.png */; };
+		B9F8BF9115FE989E00B1C4B4 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9F8BF9015FE989E00B1C4B4 /* icon@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,9 +73,6 @@
 		B9EBCF4715EFE20800B49303 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = Resources/es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B9EBCF4B15EFE20800B49303 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = Resources/de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B9EBCF4F15EFE20800B49303 /* se */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = se; path = Resources/se.lproj/Localizable.strings; sourceTree = "<group>"; };
-		B9EBCF5215EFE20800B49303 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = Resources/icons/icon.png; sourceTree = "<group>"; };
-		B9EBCF5415EFE20800B49303 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon@2x.png"; path = "Resources/icons/icon@2x.png"; sourceTree = "<group>"; };
-		B9EBCF5615EFE20800B49303 /* icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-72.png"; path = "Resources/icons/icon-72.png"; sourceTree = "<group>"; };
 		B9EBCF5915EFE20800B49303 /* Default~iphone2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default~iphone2.png"; path = "Resources/splash/Default~iphone2.png"; sourceTree = "<group>"; };
 		B9EBCF5B15EFE20800B49303 /* Default@2x~iphone2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x~iphone2.png"; path = "Resources/splash/Default@2x~iphone2.png"; sourceTree = "<group>"; };
 		B9EBCF5D15EFE20800B49303 /* Capture.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Capture.bundle; path = Resources/Capture.bundle; sourceTree = "<group>"; };
@@ -87,6 +85,10 @@
 		B9EBCF6B15EFE20800B49303 /* README */ = {isa = PBXFileReference; lastKnownFileType = text; name = README; path = Plugins/README; sourceTree = "<group>"; };
 		B9EBCF6C15EFE20800B49303 /* verify.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = verify.sh; sourceTree = "<group>"; };
 		B9EBCF7215EFE37100B49303 /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; path = www; sourceTree = "<group>"; };
+		B9F8BF8915FE988600B1C4B4 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		B9F8BF8A15FE988600B1C4B4 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
+		B9F8BF8E15FE989900B1C4B4 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		B9F8BF9015FE989E00B1C4B4 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,8 @@
 		B9EBCF0915EFE20800B49303 = {
 			isa = PBXGroup;
 			children = (
+				B9F8BF9015FE989E00B1C4B4 /* icon@2x.png */,
+				B9F8BF8E15FE989900B1C4B4 /* icon.png */,
 				B943712215F9546100AFA721 /* Default-Portrait@2x~ipad.png */,
 				B943712015F9545A00AFA721 /* Default-Portrait~ipad.png */,
 				B9EBCF7215EFE37100B49303 /* www */,
@@ -236,9 +240,8 @@
 		B9EBCF5115EFE20800B49303 /* icons */ = {
 			isa = PBXGroup;
 			children = (
-				B9EBCF5215EFE20800B49303 /* icon.png */,
-				B9EBCF5415EFE20800B49303 /* icon@2x.png */,
-				B9EBCF5615EFE20800B49303 /* icon-72.png */,
+				B9F8BF8915FE988600B1C4B4 /* icon.png */,
+				B9F8BF8A15FE988600B1C4B4 /* icon@2x.png */,
 			);
 			name = icons;
 			sourceTree = "<group>";
@@ -335,9 +338,6 @@
 				B9EBCF4815EFE20800B49303 /* Localizable.strings in Resources */,
 				B9EBCF4C15EFE20800B49303 /* Localizable.strings in Resources */,
 				B9EBCF5015EFE20800B49303 /* Localizable.strings in Resources */,
-				B9EBCF5315EFE20800B49303 /* icon.png in Resources */,
-				B9EBCF5515EFE20800B49303 /* icon@2x.png in Resources */,
-				B9EBCF5715EFE20800B49303 /* icon-72.png in Resources */,
 				B9EBCF5A15EFE20800B49303 /* Default~iphone2.png in Resources */,
 				B9EBCF5C15EFE20800B49303 /* Default@2x~iphone2.png in Resources */,
 				B9EBCF5E15EFE20800B49303 /* Capture.bundle in Resources */,
@@ -348,6 +348,10 @@
 				B943712315F9546100AFA721 /* Default-Portrait@2x~ipad.png in Resources */,
 				B943712515F954C900AFA721 /* Default~iphone.png in Resources */,
 				B943712715F954D000AFA721 /* Default@2x~iphone.png in Resources */,
+				B9F8BF8B15FE988600B1C4B4 /* icon.png in Resources */,
+				B9F8BF8C15FE988600B1C4B4 /* icon@2x.png in Resources */,
+				B9F8BF8F15FE989900B1C4B4 /* icon.png in Resources */,
+				B9F8BF9115FE989E00B1C4B4 /* icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,13 +441,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = (
-					armv6,
-					"$(ARCHS_STANDARD_32_BIT)",
-				);
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Stuart Lynn (BK379YULXE)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Stuart Lynn (BK379YULXE)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -453,11 +455,13 @@
 					"$(inherited)",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
+				PROVISIONING_PROFILE = "DA7A2078-2E69-493B-9F17-7533C76F16A4";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "DA7A2078-2E69-493B-9F17-7533C76F16A4";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -466,20 +470,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = (
-					armv6,
-					"$(ARCHS_STANDARD_32_BIT)",
-				);
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Stuart Lynn (BK379YULXE)";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "DA7A2078-2E69-493B-9F17-7533C76F16A4";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -499,7 +501,8 @@
 					"CORDOVA_FRAMEWORK=1",
 				);
 				INFOPLIST_FILE = "GalaxyZooIOS/GalaxyZooIOS-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"-weak_framework",
 					UIKit,
@@ -510,7 +513,8 @@
 					"-weak-lSystem",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
+				VALID_ARCHS = "armv6 armv7";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -529,7 +533,8 @@
 					"CORDOVA_FRAMEWORK=1",
 				);
 				INFOPLIST_FILE = "GalaxyZooIOS/GalaxyZooIOS-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"-weak_framework",
 					UIKit,
@@ -540,8 +545,9 @@
 					"-weak-lSystem",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "armv6 armv7";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

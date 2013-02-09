@@ -8,7 +8,7 @@ class FITSViewer extends Spine.Controller
   @viewportHeight = 424
   
   events:
-    "click .band": "selectBand"
+    "tap .band": "selectBand"
     "change #stretch": "selectStretch"
   
   constructor: ->

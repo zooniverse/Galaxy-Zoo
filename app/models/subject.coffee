@@ -26,16 +26,16 @@ class Subject extends BaseSubject
     if @current
       @current.destroy()
       @current = @first()
-      @fetch() if @count() is 1
+      @fetch(20) if @count() < 5
     else
-      @fetch().onSuccess =>
+      @fetch(20).onSuccess =>
         @current = @first()
         @trigger 'fetched'
   
-  # @fetch: ->
-  #   count = Config.subjectCache - @count()
-  #   _(super).tap =>
-  #     _(count - 1).times => super(1)
+  @fetch: ->
+    count = Config.subjectCache - @count()
+    _(super).tap =>
+      _(count - 1).times => super(1)
   
   @show: (id) ->
     Api.get "/projects/galaxy_zoo/subjects/#{ id }"

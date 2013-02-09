@@ -5,7 +5,7 @@
 	<key>UIWebViewBounce</key>
 	<false/>
 	<key>TopActivityIndicator</key>
-	<string>gray</string>
+	<string>black</string>
 	<key>EnableLocation</key>
 	<false/>
 	<key>EnableViewportScale</key>
@@ -26,8 +26,6 @@
 	</array>
 	<key>Plugins</key>
 	<dict>
-		<key>org.apache.cordova.WebInspector</key>
-		<string>CDVWebInspector</string>
 		<key>Logger</key>
 		<string>CDVLogger</string>
 		<key>Compass</key>

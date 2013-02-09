@@ -1,3 +1,4 @@
+
 require 'lib/setup'
 
 Config = require 'lib/config'
@@ -7,11 +8,14 @@ Navigation = require 'controllers/navigation'
 Main = require 'controllers/main'
 Quizzes = require 'controllers/quizzes'
 TopBar = require 'zooniverse/lib/controllers/top_bar'
+FastClick = require 'lib/fastclick'
 
 class App extends Spine.Controller
   constructor: ->
     super
     
+    # new FastClick(document.body)
+
     Api.init host: Config.apiHost
     @topBar = new TopBar
       el: '.zooniverse-top-bar'
@@ -24,8 +28,13 @@ class App extends Spine.Controller
     @quizzes = new Quizzes
     
     @append @navigation.active(), @main
-
+    # $("body").on 'touchend', =>
+    #   if $("body").scrollTop() < 20
+    #     $("body").animate({scrollTop: 0}, 200)
+    #   else if $("body").scrollTop() > 20 and $("body").scrollTop() < 40
+    #     $("body").animate({scrollTop:40}, 200)
     Spine.Route.setup()
+    
 
 preload = (image) ->
   img = new Image

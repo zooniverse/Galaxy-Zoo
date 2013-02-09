@@ -1,14 +1,56 @@
+@media only screen and (max-device-width: 480px) 
+  body
+    #main
+      div.active
+        #examine
+          width: 100%
+          .content
+            width: 100%
+            .content-block
+              width: 100%
+              div.left
+                width: 100%
+                padding: 0px
+                display: block
+                text-align:center
+                div.subject
+                  text-align: center
+                  img
+                    width: 300px
+                   
+                  
+              .right
+                display: block
+                padding: 0px 
+                margin: 0px
+                .heading
+                  display:none
+                a
+                  display: none
+
+
 #examine
+  width: 100%
+  text-align: center
+  padding: 0px 
+  margin: 0px
+  h1 
+    padding: 0px 
+    margin: 0px
+    color: purple
   h2
     color: $blue
     font-family: 'Open Sans'
     font-weight: 700
     font-size: 24px
-    margin: 0
+    margin: 0px
+    padding: 0px
   
   .subject-info
     display: table
-    margin-top: 30px
+    margin: 0px
+    padding: 0px
+    margin-top: 5px
     font-family: "Open Sans"
     font-size: 12px
     font-weight: 400
@@ -22,21 +64,16 @@
       
       .key
         display: table-cell
-        padding-right: 10px
-        text-align: right
+        
         font-weight: 700
       
       .value
         display: table-cell
-        padding-left: 10px
-        text-align: left
-  
+      
   .subject
     height: auto
     
-    img, canvas
-      position: absolute
-      border: 1px solid $light-blue
+   
   
   #plots
     .histogram

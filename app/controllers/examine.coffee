@@ -6,7 +6,7 @@ WebGL = require 'lib/web_gl'
 
 class Examine extends Spine.Controller
   events: 
-    'click #load-fits': 'loadFits'
+    'touchend #load-fits': 'loadFits'
   
   constructor: ->
     super

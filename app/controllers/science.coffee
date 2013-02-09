@@ -3,11 +3,11 @@ Spine = require 'spine'
 class Science extends Spine.Controller
   constructor: ->
     super
-  
+    @render()  
+
   active: ->
     super
-    @render()
-  
+    
   render: ->
     @html require('views/science')(@)
 

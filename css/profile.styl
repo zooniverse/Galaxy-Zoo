@@ -1,19 +1,37 @@
 @media only screen and (max-device-width: 480px) 
-  #profile
-    .content 
+  .active 
+    width: 100%
+    #profile 
       margin:0px
-      #login
-        width: 300px
-        .sign-in
-          width: 280px
-        form
-          width: 290px
-        label
-          width: 290px
-          margin-left: 0px
-        .sign-up
-          margin-left: -200px
-          width: 200px
+      padding: 0px
+      width: 100%
+      height: auto
+      .content 
+        margin: 0px
+        width: 100%
+        height: auto
+        #login
+          width: 100%
+          height: auto
+          .sign-in
+           width: 100%
+            height: auto
+          form
+            width: 290px
+          label
+            width: 100px
+            margin-left: 0px
+            span
+              width: 100px
+          .sign-up
+            margin-left: -200px
+            width: 200px
+        .content-block
+          .right
+            display: none 
+          .left
+            float: none 
+            width: 100%
 #profile
   .content
     background-color: $light-gray

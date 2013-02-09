@@ -2,18 +2,27 @@ Spine = require 'spine'
 
 class Navigation extends Spine.Controller
   el: 'html'
+
+  elements:
+    '[data-nav]' : 'navItem'
+  
   events:
-    'click [data-nav]': 'navTo'
+    'tap [data-nav]': 'navTo'
   
   constructor: ->
     super
   
+    Spine.Route.bind 'change', =>
+      $('html, body').css { "scrollTop" : "400px" }#, 800)
+
+  
   navTo: (ev) ->
+    $("ul li").removeClass('active')
+    $(ev.currentTarget).addClass('active')
     path = $(ev.target).closest('[data-nav]').data 'nav'
     ev.preventDefault()
     @navigate path
-    $('html,body').animate { scrollTop: $('#main').offset().top }, 'fast'
-  
+ 
   active: ->
     super
     @render()

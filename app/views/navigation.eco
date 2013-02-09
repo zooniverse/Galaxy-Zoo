@@ -1,27 +1,30 @@
 <nav>
   <ul>
-    <li class='nav_classify' >
-      <a href="#/classify" data-nav="/classify">Classify</a>
+    <li data-nav="/" class='nav_home ' >
+      <a href="#" ><img src='images/home.png'></img></a>
     </li>
-    <li class='nav_science'>
-      <a href="#/science" data-nav="/science">Science</a>
+    <li data-nav="/classify" class='nav_classify nav_first' >
+      <a href="#" >Classify</a>
     </li>
-    <li class='nav_story'>
-      <a href="#/story" data-nav="/story">Story</a>
+    <li class='nav_science' data-nav="/science">
+      <a href="#" >Science</a>
+    </li>
+    <li class='nav_story' data-nav="/story">
+      <a href="#" >Story</a>
     </li>
     <li class="logo">
-      <a href="#/" data-nav="/">
+      <a href="#" data-nav="/">
         <img src="images/gz_logo.png" alt="Galaxy Zoo" />
       </a>
     </li>
-    <li class='nav_papers'>
-      <a href="#/papers" data-nav="/papers">Papers</a>
+    <li class='nav_papers' data-nav="/papers">
+      <a href="#" >Papers</a>
     </li>    
     <li class='nav_talk'>
       <a href="http://talk.galaxyzoo.org" target="_blank">Talk</a>
     </li>
-    <li class="last nav_profile">
-      <a href="#/profile" data-nav="/profile">Profile</a>
+    <li class="last nav_profile" data-nav="/profile">
+      <a href="#" >Profile</a>
     </li>
   </ul>
 </nav>

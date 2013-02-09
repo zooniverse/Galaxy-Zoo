@@ -22,7 +22,8 @@
     "spine": "~1.0.7",
     "clean-css": "0.6.0",
     "zooniverse": "git+ssh://git@github.com:zooniverse/Zooniverse.git#847643fe",
-    "fits": "git://github.com/astrojs/fitsjs.git"
+    "fits": "git://github.com/astrojs/fitsjs.git",
+    "fastclick": "*"
   },
   "devDependencies": {
     "jasmine-phantom-node": "git://github.com/edpaget/jasmine-phantom-node.git"

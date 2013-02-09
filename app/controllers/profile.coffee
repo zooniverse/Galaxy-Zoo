@@ -8,13 +8,13 @@ Quiz = require 'models/quiz'
 
 class Profile extends Spine.Controller
   events:
-    'click .favorites-link' : 'switch'
-    'click .recents-link': 'switch'
-    'click .item img': 'examine'
-    'click .item .inactive.remove': 'removeFavorite'
-    'click .item .active.favorite': 'removeFavorite'
-    'click .item .inactive.favorite': 'addFavorite'
-    'click .quizzes .take-a-quiz': 'takeQuiz'
+    'tap .favorites-link' : 'switch'
+    'tap .recents-link': 'switch'
+    'tap .item img': 'examine'
+    'tap .item .inactive.remove': 'removeFavorite'
+    'tap .item .active.favorite': 'removeFavorite'
+    'tap .item .inactive.favorite': 'addFavorite'
+    'tap .quizzes .take-a-quiz': 'takeQuiz'
   
   elements:
     '.favorites-link' : 'favoritesLink'

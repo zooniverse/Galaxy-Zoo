@@ -4,7 +4,7 @@
   
   <div class="buttons">
     <% options = $.extend { }, @checkboxes, @answers %>
-    <% for row in _(options).inGroupsOf(4) : %>
+    <% for row in _(options).inGroupsOf(3) : %>
       <div class="row">
         <% for [id, answer] in row : %>
           <div data-id="<%= id %>" class="<%= if answer.checkbox then 'checkbox' else 'answer' %>">
