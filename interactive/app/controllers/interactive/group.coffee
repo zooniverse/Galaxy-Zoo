@@ -33,6 +33,7 @@ class Group extends Spine.Controller
         UserGroup.fetch(@groupId)
     else
       @headingText.html "<h2>#{ I18n.t('navigator.groups.create') }</h2>"
+      @submitButton.text I18n.t('navigator.groups.create_button')
       @signUpForm.show()
       @groupNameBox.show()
       @participation.hide()

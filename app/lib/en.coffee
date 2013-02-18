@@ -895,6 +895,7 @@ module.exports =
       confirm_destroy: 'Are you sure?\nThere is no undo.'
       ensure_selected: 'Select a group or create one from the dropdown menu to see your group classifications'
       group_url: 'Share this url to join group: '
+      create_button: 'Create Group'
 
     
     sample:
