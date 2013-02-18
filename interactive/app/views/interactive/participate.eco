@@ -1,4 +1,10 @@
 <div class="participate">
+  <div class="participation">
+    <button type="button" name="yes"><%- I18n.t 'navigator.groups.group_classify' %></button>
+    <button type="button" name="no"><%- I18n.t 'navigator.groups.stop_classify' %></button>
+    <button type="button" name="leave"><%- I18n.t 'navigator.groups.leave' %></button>
+    <button type="button" name="destroy"><%- I18n.t 'navigator.groups.destroy' %></button>
+  </div>
   <div class="statistics">
     <h2><%- I18n.t 'navigator.groups.stats' %></h2>
     <ul class="stats">
@@ -13,11 +19,4 @@
     <p class="group-url"><%- I18n.t 'navigator.groups.group_url' %> <a class="group-url-href" href=""></a></p>
     <p><%- I18n.t 'navigator.groups.invited_users' %></p>
   </form>
-  <div class="participation">
-    <h2><%- I18n.t 'navigator.groups.participation' %></h2>
-    <button type="button" name="yes"><%- I18n.t 'navigator.groups.group_classify' %></button>
-    <button type="button" name="no"><%- I18n.t 'navigator.groups.stop_classify' %></button>
-    <button type="button" name="leave"><%- I18n.t 'navigator.groups.leave' %></button>
-    <button type="button" name="destroy"><%- I18n.t 'navigator.groups.destroy' %></button>
-  </div>
 </div>

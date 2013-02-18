@@ -882,7 +882,7 @@ module.exports =
       leave: 'Leave Group'
       destroy: 'Delete Group'
       classify_desc: 'Visit the Galaxy Zoo website to classify galaxies as part your group.'
-      stats: 'Statistics'
+      stats: 'Group Info'
       invitations: 'Invitations'
       enter_name: 'Enter Group Name'
       enter_emails: 'Invite users by entering their emails seperated with a comma (e.g. ed@example.com, cs@example.com, whyte@example.com)'
