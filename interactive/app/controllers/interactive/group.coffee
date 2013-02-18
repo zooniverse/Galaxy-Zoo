@@ -134,16 +134,22 @@ class Group extends Spine.Controller
     emails = @emails.val()
     hideTalk = @hideTalk.is ':checked'
 
-    if emails.search(", ") isnt -1
-      emails = emails.split ', '
-    else
-      emails = emails.split ','
+    unless emails is ""
+      if emails.search(", ") isnt -1
+        emails = emails.split ', '
+      else
+        emails = emails.split ','
+      console.log emails
 
-    if @groupId
-      UserGroup.inviteUsers @groupId, emails
+      if @groupId
+        UserGroup.inviteUsers @groupId, emails unless _.isEmpty emails
+      else
+        newGroup = UserGroup.newGroup name, hideTalk
+        newGroup.onSuccess (result) ->
+          UserGroup.inviteUsers result.id, emails unless _.isEmpty emails
+    else if not @groupId
+      UserGroup.newGroup name, hidetalk
     else
-      newGroup = UserGroup.newGroup name, hideTalk
-      newGroup.onSuccess (result) ->
-        UserGroup.inviteUsers result.id, emails
+      @submitButton.removeAttr 'disabled'
       
 module.exports = Group
