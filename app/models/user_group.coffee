@@ -10,7 +10,9 @@ class UserGroup extends Model
     Api.getJSON '/user_groups'
   
   @join: =>
-    Api.getJSON "/user_groups/#{ @currentId }/join", (json) =>
+    url = "/user_groups/0/join?unique_name=#{ @groupName }" 
+    console.log url
+    Api.getJSON url, (json) =>
       @current = UserGroup.create json
       @trigger 'participate', @current
   

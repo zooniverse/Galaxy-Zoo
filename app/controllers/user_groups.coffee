@@ -14,14 +14,14 @@ class UserGroups extends Spine.Controller
   
   active: (params) ->
     super
-    UserGroup.currentId = params.id
+    UserGroup.groupName = params.id
     @render()
   
   render: =>
     return unless @isActive()
     
     if User.current and Quiz.user
-      return unless UserGroup.currentId
+      return unless UserGroup.groupName
       fetcher = UserGroup.join()
       fetcher.onSuccess => @navigate '/classify'
     else
