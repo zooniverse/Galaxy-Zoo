@@ -10,9 +10,7 @@ class UserGroup extends Model
     Api.getJSON '/user_groups'
   
   @join: =>
-    url = "/user_groups/0/join?unique_name=#{ @groupName }" 
-    console.log url
-    Api.getJSON url, (json) =>
+    Api.getJSON "/user_groups/#{@currentId}/join", (json) =>
       @current = UserGroup.create json
       @trigger 'participate', @current
   
@@ -36,13 +34,11 @@ class UserGroup extends Model
     Api.getJSON "/user_groups/#{ id }", (json) =>
       UserGroup.create json
   
-  @newGroup: (name, hideTalk) =>
+  @newGroup: (name, metadata) =>
     json =
       user_group:
         name: name
-        metadata:
-          hide_talk: hideTalk
-          open: true
+        metadata: metadata
     
     Api.getJSON "/user_groups/create", json, (json) =>
       @current = UserGroup.create json

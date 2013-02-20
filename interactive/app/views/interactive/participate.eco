@@ -10,10 +10,28 @@
     <ul class="stats">
     </ul>
   </div>
-  <form id="group-signup">
-    <h2><%- I18n.t 'navigator.groups.invitations' %></h2>
+  <form id="group-create">
+    <h2><%- I18n.t 'navigator.groups.signup' %></h2>
     <input name="name" placeholder="<%- I18n.t 'navigator.groups.enter_name' %>" type="text" />
     <label class="talk-flag"><%- I18n.t 'navigator.groups.disable_talk' %>: <input value="talk" name="talk-flag" type="checkbox" /></label>
+    <div id="classroom"><label><%- I18n.t 'navigator.groups.classroom' %>: </label>
+      <input value="yes" name="classroom" type="radio"><%- I18n.t 'navigator.affirmative' %></input>
+      <input name="classroom" type="radio" value="no"><%- I18n.t 'navigator.negative' %></input></div>
+    <div id="classroom-followup"><label><%- I18n.t 'navigator.groups.classroom_followup' %>:</label>
+      <label class="checkbox"><input name="elementary" type="checkbox" /><%- I18n.t 'navigator.groups.elementary' %> </label>
+      <label class="checkbox"><input name="middle" type="checkbox" /><%- I18n.t 'navigator.groups.middle' %></label>
+      <label class="checkbox"><input name="secondary" type="checkbox" /><%- I18n.t 'navigator.groups.secondary' %></label>
+      <label class="checkbox"><input name="college" type="checkbox" /><%- I18n.t 'navigator.groups.college' %></label>
+      <label class="checkbox"><input name="other" type="checkbox" /><%- I18n.t 'navigator.groups.other' %></label>
+        <input class="elaborate" name="elaborate-class" placeholder="<%- I18n.t 'navigator.groups.elaborate' %>" type="text" /></div>
+    <label id="classroom-followup-open"><%- I18n.t 'navigator.groups.classroom_followup_open' %>: <textarea name="followup"></textarea></label>
+    <div id="no-classroom-followup"><label><%- I18n.t 'navigator.groups.no_classroom' %>:</label>
+      <label class="checkbox"><input name="alone" type="checkbox" /><%- I18n.t 'navigator.groups.alone' %></label>
+      <label class="checkbox"><input name="group" type="checkbox" /><%- I18n.t 'navigator.groups.group' %></label>
+        <input class="elaborate" name="elaborate-no-class" placeholder="<%- I18n.t 'navigator.groups.elaborate' %>" type="text" /></div>
+  </form>
+  <form id="group-invite">
+    <h2><%- I18n.t 'navigator.groups.invitations' %></h2>
     <textarea name="emails" placeholder="<%- I18n.t 'navigator.groups.enter_emails' %>"></textarea>
     <button type="submit" name="submit"><%- I18n.t 'navigator.groups.send_invites' %></button>
     <p class="group-url"><%- I18n.t 'navigator.groups.group_url' %> <a class="group-url-href" href=""></a></p>

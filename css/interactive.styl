@@ -602,13 +602,21 @@ p
         float: right
 
 
-  #group-signup
+  #group-invite, #group-create
     display: none
 
-    label
+    label.talk-flag
       padding-left: 30px
-      display: none
+      display: inline
 
+    div
+      padding-bottom: 20px
+
+    #classroom label
+      display: inline
+
+    label
+      display: block 
       input
         position: relative
         bottom: 2px
@@ -617,12 +625,16 @@ p
       display: none
 
     input[type="text"]
-      display: none
       height: 40px
       font-family: "Open Sans"
       font-size: 20px
       width: 300px
       margin-bottom: 20px
+
+      &.elaborate
+        margin-left: 10px
+        height: 20px
+        font-size: 12px
 
     textarea
       display: block
@@ -635,8 +647,3 @@ p
 #disclaimer
   font-size: 8px
   font-color: #909090 
-
-
-
-
-      

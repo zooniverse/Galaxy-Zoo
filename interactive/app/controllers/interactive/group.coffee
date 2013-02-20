@@ -35,7 +35,10 @@ class Group extends Spine.Controller
       @headingText.html "<h2>#{ I18n.t('navigator.groups.create') }</h2>"
       @submitButton.text I18n.t('navigator.groups.create_button')
       @signUpForm.show()
-      @groupNameBox.show()
+      @inviteForm.show()
+      @classFollowupQuestion.hide()
+      @classFollowupQuestionOpen.hide()
+      @noClassroom.hide()
       @participation.hide()
       @statistics.hide()
       @talkLabel.show()
@@ -49,9 +52,9 @@ class Group extends Spine.Controller
     if @group.owner.id is User.current.id
       @leaveGroupButton.hide()
       @destroyGroupButton.show()
-      @signUpForm.show()
+      @inviteForm.show()
       @usersInvited.hide()
-      @groupNameBox.hide()
+      @signUpForm.hide()
       @participation.show()
       url = "http://galaxyzoo.org/#/user_groups/#{group.unique_name}"
       @groupUrlHref.attr 'href', url
@@ -62,11 +65,16 @@ class Group extends Spine.Controller
       @stopParticipateButton.show()
 
   elements:
+    'div#classroom' : 'classroomQuestion'
+    'div#classroom-followup' : 'classFollowupQuestion'
+    'label#classroom-followup-open' : 'classFollowupQuestionOpen'
+    'div#no-classroom-followup' : 'noClassroom'
     'div.statistics' : 'statistics'
     'div.participation' : 'participation'
     'ul.stats' : 'statsView'
-    'form#group-signup' : 'signUpForm'
-    '#group-signup p' : 'usersInvited'
+    'form#group-create' : 'signUpForm'
+    'form#group-invite' : 'inviteForm'
+    '#group-invite p' : 'usersInvited'
     'input[name="name"]' : 'groupNameBox'
     'textarea[name="emails"]' : 'emails'
     'button[name="submit"]' : 'submitButton'
@@ -84,6 +92,7 @@ class Group extends Spine.Controller
     'click button[name="no"]'  : 'redirectHome'
     'click button[name="leave"]' : 'leaveGroup'
     'click button[name="destroy"]' : 'destroyGroup'
+    'click input[name="classroom"]' : 'followupQuestion'
     submit: 'onSubmit'
 
   groupStats: =>
@@ -128,28 +137,55 @@ class Group extends Spine.Controller
     delete User.current.user_groups[index]
     @navigate '/navigator/home'
 
+  followupQuestion: (e) =>
+    @classroomAnswer = e.currentTarget.value 
+    if @classroomAnswer is 'yes'
+      @classFollowupQuestion.show()
+      @classFollowupQuestionOpen.show()
+      @noClassroom.hide()
+    else
+      @noClassroom.show()
+      @classFollowupQuestion.hide()
+      @classFollowupQuestionOpen.hide()
+
+  getSurveyAnswers: =>
+    answers =
+      hide_talk: @hideTalk.is ':checked'
+      classroom: @classroomAnswer
+      open: true
+
+    if @classroomAnswer is 'yes'
+      for school in ['elementary', 'middle', 'secondary', 'college', 'other']
+        answers[school] = @$("""input[name="#{school}"]""").is ':checked'
+      answers.other_elaborate = @$('input[name="elaborate-class"]').val() if answers.other is true
+      answers.usage = @$('textarea[name="followup"]').val()
+    else
+      answers.individual = @$('input[name="alone"]').is ':checked'
+      answers.group = @$('input[name="group"]').is ':checked'
+      answers.group_elaborate = @$('input[name="elaborate-no-class"]').val() if answers.group is true
+    answers
+
   onSubmit: (e) =>
     e.preventDefault()
     @submitButton.attr 'disabled', 'disabled'
     name = @groupNameBox.val()
     emails = @emails.val()
-    hideTalk = @hideTalk.is ':checked'
+    metadata = @getSurveyAnswers()
 
     unless emails is ""
       if emails.search(", ") isnt -1
         emails = emails.split ', '
       else
         emails = emails.split ','
-      console.log emails
 
       if @groupId
         UserGroup.inviteUsers @groupId, emails unless _.isEmpty emails
       else
-        newGroup = UserGroup.newGroup name, hideTalk
+        newGroup = UserGroup.newGroup name, metadata
         newGroup.onSuccess (result) ->
           UserGroup.inviteUsers result.id, emails unless _.isEmpty emails
     else if not @groupId
-      UserGroup.newGroup name, hidetalk
+      UserGroup.newGroup name, metadata
     else
       @submitButton.removeAttr 'disabled'
       

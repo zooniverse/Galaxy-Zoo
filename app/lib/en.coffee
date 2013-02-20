@@ -851,6 +851,8 @@ module.exports =
   
   
   navigator:
+    affirmative: 'Yes'
+    negative: 'No'
     title: 'Navigator'
     construct: 'Construct Your Question'
     my_galaxies: 'My Galaxies'
@@ -873,6 +875,7 @@ module.exports =
     credit: 'The Navigator is based upon work supported by the National Science Foundation under Grants No. 1041419 and 0941610. Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.'
     
     groups:
+      signup: 'Create New Group'
       select: 'Select Group'
       make: 'Make a New Group'
       create: 'Create New Group'
@@ -896,6 +899,19 @@ module.exports =
       ensure_selected: 'Select a group or create one from the dropdown menu to see your group classifications'
       group_url: 'Share this url to join group: '
       create_button: 'Create Group'
+      classroom: "Are you planning to use the Navigator tool in a classroom setting?"
+      classroom_followup: "What age are your students?"
+      elementary: "Elementary/Primary"
+      middle: "Middle School/Jr. High"
+      secondary: "High School/Secondary"
+      college: "College/University"
+      other: "Other"
+      elaborate: "Please Elaborate"
+      classroom_followup_open: "How do you plan to use the Navigator in your teaching"
+      no_classroom: "How do you plan to use the Navigator tool?"
+      alone: "As an individual"
+      group: "As a group"
+
 
     
     sample:
