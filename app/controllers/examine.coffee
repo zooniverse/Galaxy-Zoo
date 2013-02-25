@@ -5,8 +5,9 @@ FITSViewer = ->
 
 class Examine extends Spine.Controller
   
-  events: 
+  events:
     "click #load-fits": "requestFITS"
+  
   
   constructor: ->
     super
@@ -71,20 +72,19 @@ class Examine extends Spine.Controller
       
       fetcher.done =>
         FITSViewer = require 'controllers/fitsviewer'
-        require('lib/jquery.flot')
-        require('lib/jquery.flot.axislabels')
-        require('lib/jquery-ui-1.9.1.custom')
+        # require('lib/jquery.flot')
+        # require('lib/jquery.flot.axislabels')
+        # require('lib/jquery-ui-1.9.1.custom')
         @fitsLoaded = true
         @initializeFitsViewer()
    
-   initializeFitsViewer: =>
-      id      = @subject.metadata.sdss_id or @subject.metadata.hubble_id
-      survey  = @subject.metadata.survey
-      bands   = if survey is 'sloan' then ['u', 'g', 'r', 'i', 'z'] else ['h', 'i', 'j']
-    
-      # Initialize viewer
-      @viewer = new FITSViewer({el: $('#examine'), bands: bands})
-      @viewer.requestFITS(survey, id)
+  initializeFitsViewer: =>
+    id      = @subject.metadata.sdss_id or @subject.metadata.hubble_id
+    survey  = @subject.metadata.survey
+    bands   = if survey is 'sloan' then ['u', 'g', 'r', 'i', 'z'] else ['h', 'i', 'j']
+
+    # Initialize viewer
+    @viewer = new FITSViewer({el: $('#examine'), bands: bands, survey: survey, survey_id: id})
   
   sexagesimal: =>
     [ra, dec] = @subject.coords

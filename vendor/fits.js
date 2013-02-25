@@ -13,7 +13,7 @@
 
   FITS = {};
 
-  FITS.version = '0.2.1';
+  FITS.version = '0.3.8';
 
   this.astro.FITS = FITS;
 
@@ -81,10 +81,28 @@
 
     __extends(DataUnit, _super);
 
-    function DataUnit(view, header) {
+    DataUnit.swapEndian = {
+      B: function(value) {
+        return value;
+      },
+      I: function(value) {
+        return (value << 8) | (value >> 8);
+      },
+      J: function(value) {
+        return ((value & 0xFF) << 24) | ((value & 0xFF00) << 8) | ((value >> 8) & 0xFF00) | ((value >> 24) & 0xFF);
+      }
+    };
+
+    DataUnit.swapEndian[8] = DataUnit.swapEndian['B'];
+
+    DataUnit.swapEndian[16] = DataUnit.swapEndian['I'];
+
+    DataUnit.swapEndian[32] = DataUnit.swapEndian['J'];
+
+    function DataUnit(header, view, offset) {
       this.view = view;
-      this.begin = this.current = view.tell();
-      this.length = void 0;
+      this.offset = offset;
+      this.begin = this.offset;
     }
 
     return DataUnit;
@@ -111,7 +129,7 @@
         return false;
       }
     },
-    Functions: {
+    VerifyFns: {
       SIMPLE: function() {
         var args, value;
         args = 1 <= arguments.length ? __slice.call(arguments, 0) : [];
@@ -121,13 +139,12 @@
         return this.verifyBoolean(value);
       },
       XTENSION: function() {
-        var args, value;
+        var args;
         args = 1 <= arguments.length ? __slice.call(arguments, 0) : [];
-        value = arguments[0];
         this.extension = true;
-        this.extensionType = value;
+        this.extensionType = arguments[0];
         this.verifyOrder("XTENSION", 0);
-        return value;
+        return this.extensionType;
       },
       BITPIX: function() {
         var args, key, value;
@@ -135,7 +152,7 @@
         key = "BITPIX";
         value = parseInt(arguments[0]);
         this.verifyOrder(key, 1);
-        if (value !== 8 && value !== 16 && value !== 32 && value !== 64 && value !== (-32) && value !== (-64)) {
+        if (value !== 8 && value !== 16 && value !== 32 && value !== (-32)) {
           throw "" + key + " value " + value + " is not permitted";
         }
         return value;
@@ -165,7 +182,7 @@
         args = 1 <= arguments.length ? __slice.call(arguments, 0) : [];
         key = "PCOUNT";
         value = parseInt(arguments[0]);
-        order = 1 + 1 + 1 + this["NAXIS"];
+        order = 1 + 1 + 1 + this.get("NAXIS");
         this.verifyOrder(key, order);
         if (this.isExtension()) {
           if ((_ref = this.extensionType) === "IMAGE" || _ref === "TABLE") {
@@ -182,7 +199,7 @@
         args = 1 <= arguments.length ? __slice.call(arguments, 0) : [];
         key = "GCOUNT";
         value = parseInt(arguments[0]);
-        order = 1 + 1 + 1 + this["NAXIS"] + 1;
+        order = 1 + 1 + 1 + this.get("NAXIS") + 1;
         this.verifyOrder(key, order);
         if (this.isExtension()) {
           if ((_ref = this.extensionType) === "IMAGE" || _ref === "TABLE" || _ref === "BINTABLE") {
@@ -195,12 +212,11 @@
         return value;
       },
       EXTEND: function() {
-        var args, key, value;
+        var args, value;
         args = 1 <= arguments.length ? __slice.call(arguments, 0) : [];
-        key = "EXTEND";
         value = arguments[0];
         if (!this.isPrimary()) {
-          throw "" + key + " must only appear in the primary header";
+          throw "EXTEND must only appear in the primary header";
         }
         return this.verifyBoolean(value);
       },
@@ -215,12 +231,11 @@
         return parseFloat(arguments[0]);
       },
       BLANK: function() {
-        var args, key, value;
+        var args, value;
         args = 1 <= arguments.length ? __slice.call(arguments, 0) : [];
-        key = "BLANK";
         value = arguments[0];
-        if (!(this["BIXPIX"] > 0)) {
-          throw "" + key + " is not to be used for BITPIX = " + this['BITPIX'];
+        if (!(this.get("BIXPIX") > 0)) {
+          throw "BLANK is not to be used for BITPIX = " + (this.get('BITPIX'));
         }
         return parseInt(value);
       },
@@ -235,85 +250,70 @@
         return parseFloat(arguments[0]);
       },
       EXTVER: function() {
-        var args, key, value;
+        var args;
         args = 1 <= arguments.length ? __slice.call(arguments, 0) : [];
-        key = "EXTVER";
-        value = arguments[0];
-        value = parseInt(value);
-        return value;
+        return parseInt(arguments[0]);
       },
       EXTLEVEL: function() {
-        var args, key, value;
+        var args;
         args = 1 <= arguments.length ? __slice.call(arguments, 0) : [];
-        key = "EXTLEVEL";
-        value = arguments[0];
-        value = parseInt(value);
-        return value;
+        return parseInt(arguments[0]);
       },
       TFIELDS: function() {
-        var args, key, value;
+        var args, value;
         args = 1 <= arguments.length ? __slice.call(arguments, 0) : [];
-        key = "TFIELDS";
-        value = arguments[0];
-        value = parseInt(value);
-        this.verifyBetween(key, value, 0, 999);
+        value = parseInt(arguments[0]);
+        this.verifyBetween("TFIELDS", value, 0, 999);
         return value;
       },
       TBCOL: function() {
-        var args, index, key, value;
+        var args, index, value;
         args = 1 <= arguments.length ? __slice.call(arguments, 0) : [];
-        key = "TBCOL";
         value = arguments[0];
         index = arguments[2];
-        this.verifyBetween(key, index, 0, this["TFIELDS"]);
+        this.verifyBetween("TBCOL", index, 0, this.get("TFIELDS"));
         return value;
       },
       ZIMAGE: function() {
-        var args, key, value;
+        var args;
         args = 1 <= arguments.length ? __slice.call(arguments, 0) : [];
-        key = "ZIMAGE";
-        value = arguments[0];
-        return this.verifyBoolean(value);
+        return this.verifyBoolean(arguments[0]);
       },
       ZCMPTYPE: function() {
-        var args, key, value;
+        var args, value;
         args = 1 <= arguments.length ? __slice.call(arguments, 0) : [];
-        key = "ZCMPTYPE";
         value = arguments[0];
         if (value !== 'GZIP_1' && value !== 'RICE_1' && value !== 'PLIO_1' && value !== 'HCOMPRESS_1') {
-          throw "" + key + " value " + value + " is not permitted";
+          throw "ZCMPTYPE value " + value + " is not permitted";
         }
-        if (value !== 'RICE_1' && value !== 'GZIP_1') {
+        if (value !== 'RICE_1') {
           throw "Compress type " + value + " is not yet implement";
         }
         return value;
       },
       ZBITPIX: function() {
-        var args, key, value;
+        var args, value;
         args = 1 <= arguments.length ? __slice.call(arguments, 0) : [];
-        key = "ZBITPIX";
         value = parseInt(arguments[0]);
         if (value !== 8 && value !== 16 && value !== 32 && value !== 64 && value !== (-32) && value !== (-64)) {
-          throw "" + key + " value " + value + " is not permitted";
+          throw "ZBITPIX value " + value + " is not permitted";
         }
         return value;
       },
       ZNAXIS: function() {
-        var args, array, key, value;
+        var args, array, value;
         args = 1 <= arguments.length ? __slice.call(arguments, 0) : [];
-        key = "ZNAXIS";
         value = parseInt(arguments[0]);
         array = arguments[1];
         value = value;
         if (!array) {
-          this.verifyBetween(key, value, 0, 999);
+          this.verifyBetween("ZNAXIS", value, 0, 999);
         }
         return value;
       },
       ZTILE: function() {
-        var args, key;
+        var args;
         args = 1 <= arguments.length ? __slice.call(arguments, 0) : [];
-        key = "ZTILE";
         return parseInt(arguments[0]);
       },
       ZSIMPLE: function() {
@@ -326,15 +326,13 @@
         }
       },
       ZPCOUNT: function() {
-        var args, key;
+        var args;
         args = 1 <= arguments.length ? __slice.call(arguments, 0) : [];
-        key = "ZPCOUNT";
         return parseInt(arguments[0]);
       },
       ZGCOUNT: function() {
-        var args, key;
+        var args;
         args = 1 <= arguments.length ? __slice.call(arguments, 0) : [];
-        key = "ZGCOUNT";
         return parseInt(arguments[0]);
       }
     }
@@ -346,158 +344,110 @@
 
     __extends(Header, _super);
 
-    Header.keywordPattern = /^([A-Z0-9_-]+)\s*=\s*(.*)/;
-
-    Header.nonStringPattern = /([^\/]*)\s*\/*(.*)/;
-
-    Header.stringPattern = /'(.*)'\s*\/*(.*)/;
-
-    Header.arrayPattern = /([A-Za-z]+)(\d+)/;
-
     Header.include(HeaderVerify);
 
-    function Header() {
-      this.init = __bind(this.init, this);
+    Header.prototype.arrayPattern = /(\D+)(\d+)/;
 
+    Header.prototype.maxLines = 600;
+
+    function Header(block) {
       var method, name, _ref;
       this.primary = false;
       this.extension = false;
       this.verifyCard = {};
-      _ref = this.Functions;
+      _ref = this.VerifyFns;
       for (name in _ref) {
         method = _ref[name];
         this.verifyCard[name] = this.proxy(method);
       }
       this.cards = {};
+      this.cards["COMMENT"] = [];
+      this.cards["HISTORY"] = [];
       this.cardIndex = 0;
+      this.readBlock(block);
     }
 
     Header.prototype.get = function(key) {
       if (this.contains(key)) {
-        return this.cards[key];
+        return this.cards[key].value;
       } else {
-        return console.warn("Header does not contain the key " + key);
-      }
-    };
-
-    Header.prototype.getIndex = function(key) {
-      if (this.contains(key)) {
-        return this.cards[key][0];
-      } else {
-        return console.warn("Header does not contain the key " + key);
-      }
-    };
-
-    Header.prototype.getComment = function(key) {
-      if (this.contains(key)) {
-        if (this.cards[key][2] != null) {
-          return this.cards[key][2];
-        } else {
-          return console.warn("" + key + " does not contain a comment");
-        }
-      } else {
-        return console.warn("Header does not contain the key " + key);
-      }
-    };
-
-    Header.prototype.getComments = function() {
-      if (this.contains('COMMENT')) {
-        return this.cards['COMMENT'];
-      } else {
-        return console.warn("Header does not contain any COMMENT fields");
-      }
-    };
-
-    Header.prototype.getHistory = function() {
-      if (this.contains('HISTORY')) {
-        return this.cards['HISTORY'];
-      } else {
-        return console.warn("Header does not contain any HISTORY fields");
+        return null;
       }
     };
 
     Header.prototype.set = function(key, value, comment) {
-      this.cards[key] = comment ? [this.cardIndex, value, comment] : [this.cardIndex, value];
+      comment = comment || '';
+      this.cards[key] = {
+        index: this.cardIndex,
+        value: value,
+        comment: comment
+      };
       return this.cardIndex += 1;
     };
 
-    Header.prototype.setComment = function(comment) {
-      if (!this.contains("COMMENT")) {
-        this.cards["COMMENT"] = [];
-        this.cardIndex += 1;
-      }
-      return this.cards["COMMENT"].push(comment);
+    Header.prototype.contains = function(key) {
+      return this.cards.hasOwnProperty(key);
     };
 
-    Header.prototype.setHistory = function(history) {
-      if (!this.contains("HISTORY")) {
-        this.cards["HISTORY"] = [];
-        this.cardIndex += 1;
-      }
-      return this.cards["HISTORY"].push(history);
-    };
-
-    Header.prototype.contains = function(keyword) {
-      return this.cards.hasOwnProperty(keyword);
-    };
-
-    Header.prototype.readCard = function(line) {
-      var array, comment, index, key, keyToVerify, match, value, _ref, _ref1, _ref2, _ref3, _ref4;
-      match = line.match(Header.keywordPattern);
-      if (match == null) {
+    Header.prototype.readLine = function(l) {
+      var blank, comment, firstByte, indicator, key, value, _ref;
+      key = l.slice(0, 8).trim();
+      blank = key === '';
+      if (blank) {
         return;
       }
-      _ref = match.slice(1), key = _ref[0], value = _ref[1];
-      if (key === "COMMENT" || key === "HISTORY") {
-        match[1] = value.trim();
-      } else if (value[0] === "'") {
-        match = value.match(Header.stringPattern);
-        match[1] = match[1].trim();
+      indicator = l.slice(8, 10);
+      value = l.slice(10);
+      if (indicator !== "= ") {
+        if (key === 'COMMENT' || key === 'HISTORY') {
+          this.cards[key].push(value.trim());
+        }
+        return;
+      }
+      _ref = value.split(' /'), value = _ref[0], comment = _ref[1];
+      value = value.trim();
+      firstByte = value[0];
+      if (firstByte === "'") {
+        value = value.slice(1, -1).trim();
       } else {
-        match = value.match(Header.nonStringPattern);
-        match[1] = (_ref1 = match[1][0]) === "T" || _ref1 === "F" ? match[1].trim() : parseFloat(match[1]);
+        if (value !== 'T' && value !== 'F') {
+          value = parseFloat(value);
+        }
       }
-      match[2] = match[2].trim();
-      _ref2 = match.slice(1), value = _ref2[0], comment = _ref2[1];
-      keyToVerify = key;
-      _ref3 = [false, void 0], array = _ref3[0], index = _ref3[1];
-      match = key.match(Header.arrayPattern);
-      if (match != null) {
-        keyToVerify = match[1];
-        _ref4 = [true, match[2]], array = _ref4[0], index = _ref4[1];
-      }
-      if (this.verifyCard.hasOwnProperty(keyToVerify)) {
-        value = this.verifyCard[keyToVerify](value, array, index);
-      }
-      switch (key) {
-        case "COMMENT":
-          return this.setComment(value);
-        case "HISTORY":
-          return this.setHistory(value);
-        default:
-          this.set(key, value, comment);
-          return this.__defineGetter__(key, function() {
-            return this.cards[key][1];
-          });
-      }
+      value = this.validate(key, value);
+      return this.set(key, value, comment);
     };
 
-    Header.prototype.init = function(block) {
-      var i, line, lineWidth, maxNumLines, numLines, _i, _ref, _results;
+    Header.prototype.validate = function(key, value) {
+      var baseKey, index, isArray, match, _ref;
+      index = null;
+      baseKey = key;
+      isArray = this.arrayPattern.test(key);
+      if (isArray) {
+        match = this.arrayPattern.exec(key);
+        _ref = match.slice(1), baseKey = _ref[0], index = _ref[1];
+      }
+      if (baseKey in this.verifyCard) {
+        value = this.verifyCard[baseKey](value, isArray, index);
+      }
+      return value;
+    };
+
+    Header.prototype.readBlock = function(block) {
+      var i, line, lineWidth, nLines, _i, _ref, _results;
       lineWidth = 80;
-      numLines = block.length / lineWidth;
-      maxNumLines = 600;
-      numLines = numLines < maxNumLines ? numLines : maxNumLines;
+      nLines = block.length / lineWidth;
+      nLines = nLines < this.maxLines ? nLines : this.maxLines;
       _results = [];
-      for (i = _i = 0, _ref = numLines - 1; 0 <= _ref ? _i <= _ref : _i >= _ref; i = 0 <= _ref ? ++_i : --_i) {
+      for (i = _i = 0, _ref = nLines - 1; 0 <= _ref ? _i <= _ref : _i >= _ref; i = 0 <= _ref ? ++_i : --_i) {
         line = block.slice(i * lineWidth, (i + 1) * lineWidth);
-        _results.push(this.readCard(line));
+        _results.push(this.readLine(line));
       }
       return _results;
     };
 
     Header.prototype.hasDataUnit = function() {
-      if (this["NAXIS"] === 0) {
+      if (this.get("NAXIS") === 0) {
         return false;
       } else {
         return true;
@@ -519,17 +469,14 @@
   this.astro.FITS.Header = Header;
 
   ImageUtils = {
-    initArray: function(arrayType) {
-      return this.data = new arrayType(this.width * this.height);
-    },
-    getExtremes: function() {
+    getExtent: function(arr) {
       var index, max, min, value, _ref, _ref1;
       if ((this.min != null) && (this.max != null)) {
         return [this.min, this.max];
       }
-      index = this.data.length;
+      index = arr.length;
       while (index--) {
-        value = this.data[index];
+        value = arr[index];
         if (isNaN(value)) {
           continue;
         }
@@ -537,7 +484,7 @@
         break;
       }
       while (index--) {
-        value = this.data[index];
+        value = arr[index];
         if (isNaN(value)) {
           continue;
         }
@@ -551,8 +498,8 @@
       _ref1 = [min, max], this.min = _ref1[0], this.max = _ref1[1];
       return [this.min, this.max];
     },
-    getPixel: function(x, y) {
-      return this.data[y * this.width + x];
+    getPixel: function(arr, x, y) {
+      return arr[y * this.width + x];
     }
   };
 
@@ -564,113 +511,146 @@
 
     Image.include(ImageUtils);
 
-    function Image(view, header) {
-      var bitpix, i, naxis, _i,
-        _this = this;
+    function Image(header, view, offset) {
+      var i, naxis, _i;
       Image.__super__.constructor.apply(this, arguments);
-      naxis = header["NAXIS"];
-      bitpix = header["BITPIX"];
+      naxis = header.get("NAXIS");
+      this.bitpix = header.get("BITPIX");
       this.naxis = [];
       for (i = _i = 1; 1 <= naxis ? _i <= naxis : _i >= naxis; i = 1 <= naxis ? ++_i : --_i) {
-        this.naxis.push(header["NAXIS" + i]);
+        this.naxis.push(header.get("NAXIS" + i));
       }
-      this.width = header["NAXIS1"];
-      this.height = header["NAXIS2"] || 1;
-      this.rowByteSize = this.width * Math.abs(bitpix) / 8;
-      this.totalRowsRead = 0;
+      this.width = header.get("NAXIS1");
+      this.height = header.get("NAXIS2") || 1;
+      this.bzero = header.get("BZERO") || 0;
+      this.bscale = header.get("BSCALE") || 1;
+      this.bytes = Math.abs(this.bitpix) / 8;
       this.length = this.naxis.reduce(function(a, b) {
         return a * b;
-      }) * Math.abs(bitpix) / 8;
-      this.data = void 0;
+      }) * Math.abs(this.bitpix) / 8;
       this.frame = 0;
-      switch (bitpix) {
-        case 8:
-          this.arrayType = Uint8Array;
-          this.accessor = function() {
-            return _this.view.getUint8();
-          };
-          break;
-        case 16:
-          this.arrayType = Int16Array;
-          this.accessor = function() {
-            return _this.view.getInt16();
-          };
-          break;
-        case 32:
-          this.arrayType = Int32Array;
-          this.accessor = function() {
-            return _this.view.getInt32();
-          };
-          break;
-        case 64:
-          this.arrayType = Int32Array;
-          console.warn("Something funky happens here when dealing with 64 bit integers.  Be wary!!!");
-          this.accessor = function() {
-            var factor, highByte, lowByte, mod, value;
-            highByte = Math.abs(_this.view.getInt32());
-            lowByte = Math.abs(_this.view.getInt32());
-            mod = highByte % 10;
-            factor = mod ? -1 : 1;
-            highByte -= mod;
-            value = factor * ((highByte << 32) | lowByte);
-            return value;
-          };
-          break;
-        case -32:
-          this.arrayType = Float32Array;
-          this.accessor = function() {
-            return _this.view.getFloat32();
-          };
-          break;
-        case -64:
-          this.arrayType = Float64Array;
-          this.accessor = function() {
-            return _this.view.getFloat64();
-          };
-          break;
-        default:
-          throw "FITS keyword BITPIX does not conform to one of the following set values [8, 16, 32, 64, -32, -64]";
-      }
     }
 
-    Image.prototype.getRow = function() {
-      var i, _i, _ref;
-      this.current = this.begin + this.totalRowsRead * this.rowByteSize;
-      this.view.seek(this.current);
-      for (i = _i = 0, _ref = this.width - 1; 0 <= _ref ? _i <= _ref : _i >= _ref; i = 0 <= _ref ? ++_i : --_i) {
-        this.data[this.width * this.rowsRead + i] = this.accessor();
+    Image._getFrame = function(buffer, width, height, offset, frame, bytes, bitpix, bzero, bscale) {
+      var arr, chunk, dataType, i, nPixels, start, swapEndian, value;
+      nPixels = i = width * height;
+      start = offset + (frame * nPixels * bytes);
+      chunk = buffer.slice(start, start + nPixels * bytes);
+      dataType = Math.abs(bitpix);
+      if (bitpix > 0) {
+        switch (bitpix) {
+          case 8:
+            arr = new Uint8Array(chunk);
+            arr = new Uint16Array(arr);
+            swapEndian = function(value) {
+              return value;
+            };
+            break;
+          case 16:
+            arr = new Uint16Array(chunk);
+            swapEndian = function(value) {
+              return (value << 8) | (value >> 8);
+            };
+            break;
+          case 32:
+            arr = new Int32Array(chunk);
+            swapEndian = function(value) {
+              return ((value & 0xFF) << 24) | ((value & 0xFF00) << 8) | ((value >> 8) & 0xFF00) | ((value >> 24) & 0xFF);
+            };
+        }
+        while (nPixels--) {
+          value = arr[nPixels];
+          value = swapEndian(value);
+          arr[nPixels] = bzero + bscale * value + 0.5;
+        }
+      } else {
+        arr = new Uint32Array(chunk);
+        swapEndian = function(value) {
+          return ((value & 0xFF) << 24) | ((value & 0xFF00) << 8) | ((value >> 8) & 0xFF00) | ((value >> 24) & 0xFF);
+        };
+        while (i--) {
+          value = arr[i];
+          arr[i] = swapEndian(value);
+        }
+        arr = new Float32Array(chunk);
+        while (nPixels--) {
+          arr[nPixels] = bzero + bscale * arr[nPixels];
+        }
       }
-      this.rowsRead += 1;
-      return this.totalRowsRead += 1;
+      return arr;
+    };
+
+    Image.prototype.getFrameAsync = function(frame, callback, opts) {
+      var URL, blobGetFrame, blobOnMessage, fn1, fn2, mime, msg, onmessage, urlGetFrame, urlOnMessage, worker;
+      this.frame = frame != null ? frame : this.frame;
+      if (opts == null) {
+        opts = void 0;
+      }
+      onmessage = function(e) {
+        var arr, bitpix, bscale, buffer, bytes, bzero, data, height, offset, url, width;
+        data = e.data;
+        buffer = data.buffer;
+        width = data.width;
+        height = data.height;
+        offset = data.offset;
+        frame = data.frame;
+        bytes = data.bytes;
+        bitpix = data.bitpix;
+        bzero = data.bzero;
+        bscale = data.bscale;
+        url = data.url;
+        importScripts(url);
+        arr = _getFrame(buffer, width, height, offset, frame, bytes, bitpix, bzero, bscale);
+        return postMessage(arr);
+      };
+      fn1 = onmessage.toString().split('').reverse().join('').replace(' nruter', '');
+      fn1 = fn1.split('').reverse().join('');
+      fn1 = "onmessage = " + fn1;
+      fn2 = Image._getFrame.toString();
+      fn2 = fn2.replace('function', 'function _getFrame');
+      mime = "application/javascript";
+      blobOnMessage = new Blob([fn1], {
+        type: mime
+      });
+      blobGetFrame = new Blob([fn2], {
+        type: mime
+      });
+      URL = window.URL || window.webkitURL || window.MozURLProperty;
+      urlOnMessage = URL.createObjectURL(blobOnMessage);
+      urlGetFrame = URL.createObjectURL(blobGetFrame);
+      worker = new Worker(urlOnMessage);
+      worker.onmessage = function(e) {
+        var arr;
+        arr = e.data;
+        if (callback != null) {
+          callback.call(this, arr, opts);
+        }
+        URL.revokeObjectURL(urlOnMessage);
+        URL.revokeObjectURL(urlGetFrame);
+        return worker.terminate();
+      };
+      msg = {};
+      msg.buffer = this.view.buffer;
+      msg.width = this.width;
+      msg.height = this.height;
+      msg.offset = this.offset;
+      msg.frame = this.frame;
+      msg.bytes = this.bytes;
+      msg.bitpix = this.bitpix;
+      msg.bzero = this.bzero;
+      msg.bscale = this.bscale;
+      msg.url = urlGetFrame;
+      return worker.postMessage(msg);
     };
 
     Image.prototype.getFrame = function(frame) {
-      var height;
+      var arr;
       this.frame = frame != null ? frame : this.frame;
-      if (this.data == null) {
-        this.initArray(this.arrayType);
+      arr = Image._getFrame(this.view.buffer, this.width, this.height, this.offset, this.frame, this.bytes, this.bitpix, this.bzero, this.bscale);
+      if (this.isDataCube()) {
+        this.frame += 1;
       }
-      this.totalRowsRead = this.width * this.frame;
-      this.rowsRead = 0;
-      height = this.height;
-      while (height--) {
-        this.getRow();
-      }
-      this.frame += 1;
-      return this.data;
-    };
-
-    Image.prototype.seek = function(frame) {
-      if (frame == null) {
-        frame = 0;
-      }
-      if (this.naxis.length === 2) {
-        this.totalRowsRead = 0;
-        return this.frame = 0;
-      } else {
-        this.totalRowsRead = this.height * frame;
-        return this.frame = this.height / this.totalRowsRead - 1;
-      }
+      return arr;
     };
 
     Image.prototype.isDataCube = function() {
@@ -691,64 +671,104 @@
 
     __extends(Tabular, _super);
 
-    Tabular.dataAccessors = {
-      L: function(view) {
-        if (view.getInt8() === 84) {
-          return true;
-        } else {
-          return false;
-        }
+    Tabular.prototype.typedArray = {
+      B: Uint8Array,
+      I: Uint16Array,
+      J: Int32Array,
+      E: Float32Array,
+      D: Float64Array,
+      1: Uint8Array,
+      2: Uint16Array,
+      4: Int32Array
+    };
+
+    Tabular.prototype.dataAccessors = {
+      L: function(view, offset) {
+        var val, x;
+        x = view.getInt8(offset);
+        offset += 1;
+        val = x === 84 ? true : false;
+        return [val, offset];
       },
-      X: function(view) {
-        throw "Data type not yet implemented";
+      B: function(view, offset) {
+        var val;
+        val = view.getUint8(offset);
+        offset += 1;
+        return [val, offset];
       },
-      B: function(view) {
-        return view.getUint8();
+      I: function(view, offset) {
+        var val;
+        val = view.getInt16(offset);
+        offset += 2;
+        return [val, offset];
       },
-      I: function(view) {
-        return view.getInt16();
+      J: function(view, offset) {
+        var val;
+        val = view.getInt32(offset);
+        offset += 4;
+        return [val, offset];
       },
-      J: function(view) {
-        return view.getInt32();
-      },
-      K: function(view) {
-        var factor, highByte, lowByte, mod, value;
-        highByte = Math.abs(view.getInt32());
-        lowByte = Math.abs(view.getInt32());
+      K: function(view, offset) {
+        var factor, highByte, lowByte, mod, val;
+        highByte = Math.abs(view.getInt32(offset));
+        offset += 4;
+        lowByte = Math.abs(view.getInt32(offset));
+        offset += 4;
         mod = highByte % 10;
         factor = mod ? -1 : 1;
         highByte -= mod;
-        value = factor * ((highByte << 32) | lowByte);
-        console.warn("Something funky happens here when dealing with 64 bit integers.  Be wary!!!");
-        return value;
+        console.warn("Precision for 64 bit integers may be incorrect.");
+        val = factor * ((highByte << 32) | lowByte);
+        return [val, offset];
       },
-      A: function(view) {
-        return view.getChar();
+      A: function(view, offset) {
+        var val;
+        val = view.getChar(offset);
+        offset += 1;
+        return [val, offset];
       },
-      E: function(view) {
-        return view.getFloat32();
+      E: function(view, offset) {
+        var val;
+        val = view.getFloat32(offset);
+        offset += 4;
+        return [val, offset];
       },
-      D: function(view) {
-        return view.getFloat64();
+      D: function(view, offset) {
+        var val;
+        val = view.getFloat64(offset);
+        offset += 8;
+        return [val, offset];
       },
-      C: function(view) {
-        return [view.getFloat32(), view.getFloat32()];
+      C: function(view, offset) {
+        var val, val1, val2;
+        val1 = view.getFloat32(offset);
+        offset += 4;
+        val2 = view.getFloat32(offset);
+        offset += 4;
+        val = [val1, val2];
+        return [val, offset];
       },
-      M: function(view) {
-        return [view.getFloat64(), view.getFloat64()];
+      M: function(view, offset) {
+        var val, val1, val2;
+        val1 = view.getFloat64(offset);
+        offset += 8;
+        val2 = view.getFloat64(offset);
+        offset += 8;
+        val = [val1, val2];
+        return [val, offset];
       }
     };
 
-    function Tabular(view, header) {
-      this.getRow = __bind(this.getRow, this);
+    function Tabular(header, view, offset) {
       Tabular.__super__.constructor.apply(this, arguments);
-      this.rowByteSize = header["NAXIS1"];
-      this.rows = header["NAXIS2"];
-      this.cols = header["TFIELDS"];
-      this.length = this.tableLength = this.rowByteSize * this.rows;
+      this.rowByteSize = header.get("NAXIS1");
+      this.rows = header.get("NAXIS2");
+      this.cols = header.get("TFIELDS");
+      this.length = this.rowByteSize * this.rows;
       this.rowsRead = 0;
       this.columns = this.getColumnNames(header);
       this.accessors = [];
+      this.header = header;
     }
 
     Tabular.prototype.getRow = function(row) {
@@ -759,8 +779,7 @@
       if (row != null) {
         this.rowsRead = row;
       }
-      this.current = this.begin + this.rowsRead * this.rowByteSize;
-      this.view.seek(this.current);
+      this.offset = this.begin + this.rowsRead * this.rowByteSize;
       row = {};
       _ref = this.accessors;
       for (index = _i = 0, _len = _ref.length; _i < _len; index = ++_i) {
@@ -779,7 +798,7 @@
         if (!header.contains(key)) {
           return null;
         }
-        columnNames.push(header[key]);
+        columnNames.push(header.get(key));
       }
       return columnNames;
     };
@@ -794,9 +813,7 @@
 
     __extends(Table, _super);
 
-    Table.formPattern = /([AIFED])(\d+)\.*(\d+)*/;
-
-    Table.dataAccessors = {
+    Table.prototype.dataAccessors = {
       A: function(value) {
         return value.trim();
       },
@@ -814,47 +831,49 @@
       }
     };
 
-    function Table(view, header) {
+    function Table(header, view, offset) {
       this.getRow = __bind(this.getRow, this);
-
-      var form, i, match, _fn, _i, _ref,
-        _this = this;
       Table.__super__.constructor.apply(this, arguments);
-      _fn = function() {
-        var accessor, dataType, decimals, length, _ref1;
-        _ref1 = match.slice(1), dataType = _ref1[0], length = _ref1[1], decimals = _ref1[2];
-        accessor = function(value) {
-          return Table.dataAccessors[dataType](value);
-        };
-        return _this.accessors.push(accessor);
-      };
-      for (i = _i = 1, _ref = this.cols; 1 <= _ref ? _i <= _ref : _i >= _ref; i = 1 <= _ref ? ++_i : --_i) {
-        form = header["TFORM" + i];
-        match = form.match(Table.formPattern);
-        _fn();
-      }
+      this.setAccessors(header);
     }
 
+    Table.prototype.setAccessors = function(header) {
+      var descriptor, form, i, match, pattern, type, _i, _ref, _results,
+        _this = this;
+      pattern = /([AIFED])(\d+)\.*(\d+)*/;
+      _results = [];
+      for (i = _i = 1, _ref = this.cols; 1 <= _ref ? _i <= _ref : _i >= _ref; i = 1 <= _ref ? ++_i : --_i) {
+        form = header.get("TFORM" + i);
+        type = header.get("TTYPE" + i);
+        match = pattern.exec(form);
+        descriptor = match[1];
+        _results.push((function(descriptor) {
+          var accessor;
+          accessor = function(value) {
+            return _this.dataAccessors[descriptor](value);
+          };
+          return _this.accessors.push(accessor);
+        })(descriptor));
+      }
+      return _results;
+    };
+
     Table.prototype.getRow = function(row) {
-      var i, index, line, value, _i, _j, _len, _ref;
+      var index, line, value, _i, _len;
       if (row == null) {
         row = null;
       }
       if (row != null) {
         this.rowsRead = row;
       }
-      this.current = this.begin + this.rowsRead * this.rowByteSize;
-      this.view.seek(this.current);
-      line = "";
-      for (i = _i = 1, _ref = this.rowByteSize; 1 <= _ref ? _i <= _ref : _i >= _ref; i = 1 <= _ref ? ++_i : --_i) {
-        line += this.view.getChar();
-      }
-      line = line.trim().split(/\s+/);
+      this.offset = this.begin + this.rowsRead * this.rowByteSize;
+      line = this.view.getString(this.offset, this.rowByteSize).trim().split(/\s+/);
       row = {};
-      for (index = _j = 0, _len = line.length; _j < _len; index = ++_j) {
+      for (index = _i = 0, _len = line.length; _i < _len; index = ++_i) {
         value = line[index];
         row[this.columns[index]] = this.accessors[index](value);
       }
+      this.offset += this.rowByteSize;
       this.rowsRead += 1;
       return row;
     };
@@ -869,104 +888,170 @@
 
     __extends(BinaryTable, _super);
 
-    BinaryTable.dataTypePattern = /(\d*)([L|X|B|I|J|K|A|E|D|C|M])/;
-
-    BinaryTable.arrayDescriptorPattern = /[0,1]*P([L|X|B|I|J|K|A|E|D|C|M])\((\d*)\)/;
-
-    function BinaryTable(view, header) {
-      var dataType, i, keyword, length, match, value, _i, _ref, _ref1,
-        _this = this;
+    function BinaryTable(header, view, offset) {
+      var tblCols;
       BinaryTable.__super__.constructor.apply(this, arguments);
+      this.tableLength = this.length;
+      this.columnNames = {};
+      tblCols = this.getTableColumns(header);
+      this.setAccessors(tblCols, view);
+    }
+
+    BinaryTable.prototype.getTableColumns = function(header) {
+      var form, i, obj, parameters, type, _i, _ref;
+      parameters = [];
       for (i = _i = 1, _ref = this.cols; 1 <= _ref ? _i <= _ref : _i >= _ref; i = 1 <= _ref ? ++_i : --_i) {
-        keyword = "TFORM" + i;
-        value = header[keyword];
-        match = value.match(BinaryTable.arrayDescriptorPattern);
-        if (match != null) {
-          (function() {
-            var accessor, dataType;
-            dataType = match[1];
-            accessor = function() {
-              var data, length, offset, _j;
-              length = _this.view.getInt32();
-              offset = _this.view.getInt32();
-              _this.current = _this.view.tell();
-              _this.view.seek(_this.begin + _this.tableLength + offset);
-              data = [];
-              for (i = _j = 1; 1 <= length ? _j <= length : _j >= length; i = 1 <= length ? ++_j : --_j) {
-                data.push(BinaryTable.dataAccessors[dataType](_this.view));
-              }
-              _this.view.seek(_this.current);
-              return data;
-            };
-            return _this.accessors.push(accessor);
-          })();
+        obj = {};
+        form = header.get("TFORM" + i);
+        type = header.get("TTYPE" + i);
+        obj[form] = type;
+        parameters.push(obj);
+        this.columnNames[type] = i - 1;
+      }
+      return parameters;
+    };
+
+    BinaryTable.prototype.toBits = function(byte) {
+      var arr, i;
+      arr = [];
+      i = 128;
+      while (i >= 1) {
+        arr.push((byte & i ? 1 : 0));
+        i /= 2;
+      }
+      return arr;
+    };
+
+    BinaryTable.prototype.getFromHeap = function(descriptor) {
+      var arr, chunk, heapOffset, i, length, offset;
+      length = this.view.getInt32(this.offset);
+      this.offset += 4;
+      offset = this.view.getInt32(this.offset);
+      this.offset += 4;
+      heapOffset = this.begin + this.tableLength + offset;
+      chunk = this.view.buffer.slice(heapOffset, heapOffset + length);
+      arr = new this.typedArray[descriptor](chunk);
+      i = arr.length;
+      while (i--) {
+        arr[i] = this.constructor.swapEndian[descriptor](arr[i]);
+      }
+      return arr;
+    };
+
+    BinaryTable.prototype.setAccessors = function(tblCols, view) {
+      var column, count, descriptor, form, i, isArray, match, pattern, type, _i, _len, _results,
+        _this = this;
+      pattern = /(\d*)([P|Q]*)([L|X|B|I|J|K|A|E|D|C|M]{1})/;
+      _results = [];
+      for (i = _i = 0, _len = tblCols.length; _i < _len; i = ++_i) {
+        column = tblCols[i];
+        form = Object.keys(column)[0];
+        type = column[form];
+        match = pattern.exec(form);
+        count = parseInt(match[1]) || 1;
+        isArray = match[2];
+        descriptor = match[3];
+        if (isArray) {
+          switch (type) {
+            case "COMPRESSED_DATA":
+              _results.push((function(descriptor, count) {
+                var accessor;
+                accessor = function() {
+                  var arr, pixels;
+                  arr = _this.getFromHeap(descriptor);
+                  pixels = new _this.typedArray[_this.params["BYTEPIX"]](_this.ztile[0]);
+                  Decompress.Rice(arr, _this.params["BLOCKSIZE"], _this.params["BYTEPIX"], pixels, _this.ztile[0], Decompress.RiceSetup);
+                  return pixels;
+                };
+                return _this.accessors.push(accessor);
+              })(descriptor, count));
+              break;
+            case "GZIP_COMPRESSED_DATA":
+              _results.push((function(descriptor, count) {
+                var accessor;
+                accessor = function() {
+                  var arr;
+                  arr = new Float32Array(_this.width);
+                  i = arr.length;
+                  while (i--) {
+                    arr[i] = NaN;
+                  }
+                  return arr;
+                };
+                return _this.accessors.push(accessor);
+              })(descriptor, count));
+              break;
+            default:
+              _results.push((function(descriptor, count) {
+                var accessor;
+                accessor = function() {
+                  return _this.getFromHeap(descriptor);
+                };
+                return _this.accessors.push(accessor);
+              })(descriptor, count));
+          }
         } else {
-          match = value.match(BinaryTable.dataTypePattern);
-          _ref1 = match.slice(1), length = _ref1[0], dataType = _ref1[1];
-          length = length ? parseInt(length) : 0;
-          if (length === 0 || length === 1) {
-            (function(dataType) {
+          if (count === 1) {
+            _results.push((function(descriptor, count) {
               var accessor;
               accessor = function() {
-                var data;
-                data = BinaryTable.dataAccessors[dataType](_this.view);
-                return data;
+                var value, _ref;
+                _ref = _this.dataAccessors[descriptor](view, _this.offset), value = _ref[0], _this.offset = _ref[1];
+                return value;
               };
               return _this.accessors.push(accessor);
-            })(dataType);
+            })(descriptor, count));
           } else {
-            (function(dataType, length) {
-              var accessor, numBytes;
-              if (dataType === 'X') {
-                numBytes = Math.log(length) / Math.log(2);
+            if (descriptor === 'X') {
+              _results.push((function(descriptor, count) {
+                var accessor, nBytes;
+                nBytes = Math.log(count) / Math.log(2);
                 accessor = function() {
-                  var bit, bitarray, byte, byte2bits, data, _j, _k, _len;
-                  byte2bits = function(byte) {
-                    var bitarray;
-                    bitarray = [];
-                    i = 128;
-                    while (i >= 1) {
-                      bitarray.push((byte & i ? 1 : 0));
-                      i /= 2;
-                    }
-                    return bitarray;
-                  };
-                  data = [];
-                  for (i = _j = 1; 1 <= numBytes ? _j <= numBytes : _j >= numBytes; i = 1 <= numBytes ? ++_j : --_j) {
-                    byte = _this.view.getUint8();
-                    bitarray = byte2bits(byte);
-                    for (_k = 0, _len = bitarray.length; _k < _len; _k++) {
-                      bit = bitarray[_k];
-                      data.push(bit);
-                    }
+                  var arr, bits, byte, bytes, chunk, _j, _len1;
+                  chunk = view.buffer.slice(_this.offset, _this.offset + nBytes);
+                  bytes = new Uint8Array(chunk);
+                  bits = [];
+                  for (_j = 0, _len1 = bytes.length; _j < _len1; _j++) {
+                    byte = bytes[_j];
+                    arr = _this.toBits(byte);
+                    bits = bits.concat(arr);
                   }
-                  return data.slice(0, +(length - 1) + 1 || 9e9);
+                  _this.offset += nBytes;
+                  return bits.slice(0, +(count - 1) + 1 || 9e9);
                 };
-              } else if (dataType === 'A') {
+                return _this.accessors.push(accessor);
+              })(descriptor, count));
+            } else if (descriptor === 'A') {
+              _results.push((function(descriptor, count) {
+                var accessor;
                 accessor = function() {
-                  var data, _j;
-                  data = '';
-                  for (i = _j = 1; 1 <= length ? _j <= length : _j >= length; i = 1 <= length ? ++_j : --_j) {
-                    data += BinaryTable.dataAccessors[dataType](_this.view);
-                  }
-                  return data.trim();
+                  var str;
+                  str = view.getString(_this.offset, count);
+                  _this.offset += count;
+                  return str.trim();
                 };
-              } else {
+                return _this.accessors.push(accessor);
+              })(descriptor, count));
+            } else {
+              _results.push((function(descriptor, count) {
+                var accessor;
                 accessor = function() {
-                  var data, _j;
+                  var data, value, _ref;
                   data = [];
-                  for (i = _j = 1; 1 <= length ? _j <= length : _j >= length; i = 1 <= length ? ++_j : --_j) {
-                    data.push(BinaryTable.dataAccessors[dataType](_this.view));
+                  while (count--) {
+                    _ref = _this.dataAccessors[descriptor](view, _this.offset), value = _ref[0], _this.offset = _ref[1];
+                    data.push(value);
                   }
                   return data;
                 };
-              }
-              return _this.accessors.push(accessor);
-            })(dataType, length);
+                return _this.accessors.push(accessor);
+              })(descriptor, count));
+            }
           }
         }
       }
-    }
+      return _results;
+    };
 
     return BinaryTable;
 
@@ -975,10 +1060,55 @@
   this.astro.FITS.BinaryTable = BinaryTable;
 
   Decompress = {
-    Rice: function(array, arrayLen, blocksize, bytepix, pixels, nx) {
+    RiceSetup: {
+      1: function(array) {
+        var fsbits, fsmax, lastpix, pointer;
+        pointer = 0;
+        fsbits = 3;
+        fsmax = 6;
+        lastpix = array[pointer];
+        pointer += 1;
+        return [fsbits, fsmax, lastpix, pointer];
+      },
+      2: function(array) {
+        var bytevalue, fsbits, fsmax, lastpix, pointer;
+        pointer = 0;
+        fsbits = 4;
+        fsmax = 14;
+        lastpix = 0;
+        bytevalue = array[pointer];
+        pointer += 1;
+        lastpix = lastpix | (bytevalue << 8);
+        bytevalue = array[pointer];
+        pointer += 1;
+        lastpix = lastpix | bytevalue;
+        return [fsbits, fsmax, lastpix, pointer];
+      },
+      4: function(array) {
+        var bytevalue, fsbits, fsmax, lastpix, pointer;
+        pointer = 0;
+        fsbits = 5;
+        fsmax = 25;
+        lastpix = 0;
+        bytevalue = array[pointer];
+        pointer += 1;
+        lastpix = lastpix | (bytevalue << 24);
+        bytevalue = array[pointer];
+        pointer += 1;
+        lastpix = lastpix | (bytevalue << 16);
+        bytevalue = array[pointer];
+        pointer += 1;
+        lastpix = lastpix | (bytevalue << 8);
+        bytevalue = array[pointer];
+        pointer += 1;
+        lastpix = lastpix | bytevalue;
+        return [fsbits, fsmax, lastpix, pointer];
+      }
+    },
+    Rice: function(array, blocksize, bytepix, pixels, nx, setup) {
       var b, bbits, diff, fs, fsbits, fsmax, i, imax, k, lastpix, nbits, nonzeroCount, nzero, pointer, _ref, _ref1;
       bbits = 1 << fsbits;
-      _ref = this.RiceSetup[bytepix](array), fsbits = _ref[0], fsmax = _ref[1], lastpix = _ref[2], pointer = _ref[3];
+      _ref = setup[bytepix](array), fsbits = _ref[0], fsmax = _ref[1], lastpix = _ref[2], pointer = _ref[3];
       nonzeroCount = new Uint8Array(256);
       nzero = 8;
       _ref1 = [128, 255], k = _ref1[0], i = _ref1[1];
@@ -1071,60 +1201,6 @@
         }
       }
       return pixels;
-    },
-    RiceSetup: {
-      1: function(array) {
-        var fsbits, fsmax, lastpix, pointer;
-        pointer = 0;
-        fsbits = 3;
-        fsmax = 6;
-        lastpix = array[pointer];
-        pointer += 1;
-        return [fsbits, fsmax, lastpix, pointer];
-      },
-      2: function(array) {
-        var bytevalue, fsbits, fsmax, lastpix, pointer;
-        pointer = 0;
-        fsbits = 4;
-        fsmax = 14;
-        lastpix = 0;
-        bytevalue = array[pointer];
-        pointer += 1;
-        lastpix = lastpix | (bytevalue << 8);
-        bytevalue = array[pointer];
-        pointer += 1;
-        lastpix = lastpix | bytevalue;
-        return [fsbits, fsmax, lastpix, pointer];
-      },
-      4: function(array) {
-        var bytevalue, fsbits, fsmax, lastpix, pointer;
-        pointer = 0;
-        fsbits = 5;
-        fsmax = 25;
-        lastpix = 0;
-        bytevalue = array[pointer];
-        pointer += 1;
-        lastpix = lastpix | (bytevalue << 24);
-        bytevalue = array[pointer];
-        pointer += 1;
-        lastpix = lastpix | (bytevalue << 16);
-        bytevalue = array[pointer];
-        pointer += 1;
-        lastpix = lastpix | (bytevalue << 8);
-        bytevalue = array[pointer];
-        pointer += 1;
-        lastpix = lastpix | bytevalue;
-        return [fsbits, fsmax, lastpix, pointer];
-      }
-    },
-    gzip: function(array) {
-      throw "Not yet implemented";
-    },
-    plio: function(array, length) {
-      throw "Not yet implemented";
-    },
-    hcompress: function(array, length) {
-      throw "Not yet implemented";
     }
   };
 
@@ -1134,43 +1210,27 @@
 
     __extends(CompressedImage, _super);
 
-    CompressedImage.dataTypePattern = /(\d*)([L|X|B|I|J|K|A|E|D|C|M])/;
-
-    CompressedImage.arrayDescriptorPattern = /[0,1]*P([L|X|B|I|J|K|A|E|D|C|M])\((\d*)\)/;
-
     CompressedImage.include(ImageUtils);
 
     CompressedImage.extend(Decompress);
 
-    CompressedImage.typedArray = {
-      B: Uint8Array,
-      I: Int16Array,
-      J: Int32Array,
-      E: Float32Array,
-      D: Float64Array,
-      1: Uint8Array,
-      2: Uint8Array,
-      4: Int16Array,
-      8: Int32Array
-    };
-
-    function CompressedImage(view, header) {
+    function CompressedImage(header, view, offset) {
       var i, key, value, ztile, _i, _ref;
       CompressedImage.__super__.constructor.apply(this, arguments);
-      this.length += header["PCOUNT"];
-      this.zcmptype = header["ZCMPTYPE"];
-      this.zbitpix = header["ZBITPIX"];
-      this.znaxis = header["ZNAXIS"];
-      this.zblank = CompressedImage.setValue(header, "ZBLANK", void 0);
-      this.blank = CompressedImage.setValue(header, "BLANK", void 0);
+      this.length += header.get("PCOUNT");
+      this.zcmptype = header.get("ZCMPTYPE");
+      this.zbitpix = header.get("ZBITPIX");
+      this.znaxis = header.get("ZNAXIS");
+      this.zblank = this.getValue(header, "ZBLANK", void 0);
+      this.blank = this.getValue(header, "BLANK", void 0);
       this.ztile = [];
       for (i = _i = 1, _ref = this.znaxis; 1 <= _ref ? _i <= _ref : _i >= _ref; i = 1 <= _ref ? ++_i : --_i) {
-        ztile = header.contains("ZTILE" + i) ? header["ZTILE" + i] : i === 1 ? header["ZNAXIS1"] : 1;
+        ztile = header.contains("ZTILE" + i) ? header.get("ZTILE" + i) : i === 1 ? header.get("ZNAXIS1") : 1;
         this.ztile.push(ztile);
       }
-      this.width = header["ZNAXIS1"];
-      this.height = header["ZNAXIS2"] || 1;
-      this.algorithmParameters = {};
+      this.width = header.get("ZNAXIS1");
+      this.height = header.get("ZNAXIS2") || 1;
+      this.params = {};
       i = 1;
       while (true) {
         key = "ZNAME" + i;
@@ -1178,186 +1238,71 @@
           break;
         }
         value = "ZVAL" + i;
-        this.algorithmParameters[header[key]] = header[value];
+        this.params[header.get(key)] = header.get(value);
         i += 1;
       }
       if (this.zcmptype === 'RICE_1') {
         this.setRiceDefaults();
       }
-      this.zmaskcmp = CompressedImage.setValue(header, "ZMASKCMP", void 0);
-      this.zquantiz = CompressedImage.setValue(header, "ZQUANTIZ", "LINEAR_SCALING");
-      this.bzero = CompressedImage.setValue(header, "BZERO", 0);
-      this.bscale = CompressedImage.setValue(header, "BSCALE", 1);
-      this.defineColumnAccessors(header);
-      this.defineGetRow();
+      this.zmaskcmp = this.getValue(header, "ZMASKCMP", void 0);
+      this.zquantiz = this.getValue(header, "ZQUANTIZ", "LINEAR_SCALING");
+      this.bzero = this.getValue(header, "BZERO", 0);
+      this.bscale = this.getValue(header, "BSCALE", 1);
+      this.tableColumns = this.getTableColumns(header);
+      this.setAccessors(this.tableColumns, view);
+      this.defGetRow();
     }
 
-    CompressedImage.prototype.defineColumnAccessors = function(header) {
-      var accessor, dataType, i, length, match, ttype, value, _i, _ref, _ref1, _results,
-        _this = this;
-      this.columnNames = {};
-      _results = [];
-      for (i = _i = 1, _ref = this.cols; 1 <= _ref ? _i <= _ref : _i >= _ref; i = 1 <= _ref ? ++_i : --_i) {
-        value = header["TFORM" + i];
-        match = value.match(CompressedImage.arrayDescriptorPattern);
-        ttype = header["TTYPE" + i].toUpperCase();
-        this.columnNames[ttype] = i - 1;
-        accessor = null;
-        if (match != null) {
-          dataType = match[1];
-          switch (ttype) {
-            case "COMPRESSED_DATA":
-              (function(dataType) {
-                return accessor = function() {
-                  var data, pixels;
-                  data = _this._accessor(dataType);
-                  if (data == null) {
-                    return new Float32Array(_this.ztile[0]);
-                  }
-                  pixels = new CompressedImage.typedArray[_this.algorithmParameters["BYTEPIX"]](_this.ztile[0]);
-                  CompressedImage.Rice(data, length, _this.algorithmParameters["BLOCKSIZE"], _this.algorithmParameters["BYTEPIX"], pixels, _this.ztile[0]);
-                  return pixels;
-                };
-              })(dataType);
-              break;
-            case "UNCOMPRESSED_DATA":
-              (function(dataType) {
-                return accessor = _this._accessor(dataType);
-              })(dataType);
-              break;
-            case "GZIP_COMPRESSED_DATA":
-              (function(dataType) {
-                return accessor = function() {
-                  var data, index, item, _j, _len;
-                  data = _this._accessor(dataType);
-                  if (data != null) {
-                    data = new Float32Array(_this.width);
-                    for (index = _j = 0, _len = data.length; _j < _len; index = ++_j) {
-                      item = data[index];
-                      data[index] = NaN;
-                    }
-                    return data;
-                  } else {
-                    return null;
-                  }
-                };
-              })(dataType);
-              break;
-            default:
-              (function(dataType) {
-                return accessor = _this._accessor(dataType);
-              })(dataType);
-          }
-        } else {
-          match = value.match(CompressedImage.dataTypePattern);
-          _ref1 = match.slice(1), length = _ref1[0], dataType = _ref1[1];
-          length = length != null ? parseInt(length) : 0;
-          if (length === 0 || length === 1) {
-            (function(dataType) {
-              return accessor = function() {
-                return CompressedImage.dataAccessors[dataType](_this.view);
-              };
-            })(dataType);
-          } else {
-            (function(length, dataType) {
-              return accessor = function() {
-                var data, _j, _ref2;
-                data = new CompressedImage.typedArray[dataType](length);
-                for (i = _j = 0, _ref2 = length - 1; 0 <= _ref2 ? _j <= _ref2 : _j >= _ref2; i = 0 <= _ref2 ? ++_j : --_j) {
-                  data[i] = CompressedImage.dataAccessors[dataType](_this.view);
-                }
-                return data;
-              };
-            })(length, dataType);
-          }
-        }
-        _results.push(this.accessors.push(accessor));
-      }
-      return _results;
-    };
-
-    CompressedImage.prototype.defineGetRow = function() {
-      var hasBlanks;
-      this.totalRowsRead = 0;
-      hasBlanks = (this.zblank != null) || (this.blank != null) || this.columnNames.hasOwnProperty("ZBLANK");
-      return this.getRow = hasBlanks ? this.getRowHasBlanks : this.getRowNoBlanks;
-    };
-
-    CompressedImage.prototype.setRiceDefaults = function() {
-      if (!this.algorithmParameters.hasOwnProperty("BLOCKSIZE")) {
-        this.algorithmParameters["BLOCKSIZE"] = 32;
-      }
-      if (!this.algorithmParameters.hasOwnProperty("BYTEPIX")) {
-        return this.algorithmParameters["BYTEPIX"] = 4;
-      }
-    };
-
-    CompressedImage.setValue = function(header, key, defaultValue) {
+    CompressedImage.prototype.getValue = function(header, key, defaultValue) {
       if (header.contains(key)) {
-        return header[key];
+        return header.get(key);
       } else {
         return defaultValue;
       }
     };
 
-    CompressedImage.prototype.getRowHasBlanks = function() {
-      var blank, data, index, location, scale, value, zero, _i, _len, _ref;
-      _ref = this._getRow(), data = _ref[0], blank = _ref[1], scale = _ref[2], zero = _ref[3];
+    CompressedImage.prototype.setRiceDefaults = function() {
+      if (!("BLOCKSIZE" in this.params)) {
+        this.params["BLOCKSIZE"] = 32;
+      }
+      if (!("BYTEPIX" in this.params)) {
+        return this.params["BYTEPIX"] = 4;
+      }
+    };
+
+    CompressedImage.prototype.defGetRow = function() {
+      var hasBlanks;
+      hasBlanks = (this.zblank != null) || (this.blank != null) || this.columnNames.hasOwnProperty("ZBLANK");
+      return this.getRow = hasBlanks ? this.getRowHasBlanks : this.getRowNoBlanks;
+    };
+
+    CompressedImage.prototype.getRowHasBlanks = function(arr) {
+      var blank, data, i, index, offset, scale, value, zero, _i, _len, _ref;
+      _ref = this.getTableRow(), data = _ref[0], blank = _ref[1], scale = _ref[2], zero = _ref[3];
+      offset = this.rowsRead * this.width;
       for (index = _i = 0, _len = data.length; _i < _len; index = ++_i) {
         value = data[index];
-        location = this.totalRowsRead * this.width + index;
-        this.data[location] = value === blank ? NaN : zero + scale * value;
+        i = offset + index;
+        arr[i] = value === blank ? NaN : zero + scale * value;
       }
-      this.rowsRead += 1;
-      return this.totalRowsRead += 1;
+      return this.rowsRead += 1;
     };
 
-    CompressedImage.prototype.getRowNoBlanks = function() {
-      var blank, data, index, location, scale, value, zero, _i, _len, _ref;
-      _ref = this._getRow(), data = _ref[0], blank = _ref[1], scale = _ref[2], zero = _ref[3];
+    CompressedImage.prototype.getRowNoBlanks = function(arr) {
+      var blank, data, i, index, offset, scale, value, zero, _i, _len, _ref;
+      _ref = this.getTableRow(), data = _ref[0], blank = _ref[1], scale = _ref[2], zero = _ref[3];
+      offset = this.rowsRead * this.width;
       for (index = _i = 0, _len = data.length; _i < _len; index = ++_i) {
         value = data[index];
-        location = this.totalRowsRead * this.width + index;
-        this.data[location] = zero + scale * value;
+        i = offset + index;
+        arr[i] = zero + scale * value;
       }
-      this.rowsRead += 1;
-      return this.totalRowsRead += 1;
+      return this.rowsRead += 1;
     };
 
-    CompressedImage.prototype.getFrame = function() {
-      var height;
-      if (this.data == null) {
-        this.initArray(Float32Array);
-      }
-      this.totalRowsRead = 0;
-      this.rowsRead = 0;
-      height = this.height;
-      while (height--) {
-        this.getRow();
-      }
-      return this.data;
-    };
-
-    CompressedImage.prototype._accessor = function(dataType) {
-      var data, i, length, offset, _i, _ref, _ref1;
-      _ref = [this.view.getInt32(), this.view.getInt32()], length = _ref[0], offset = _ref[1];
-      if (length === 0) {
-        return null;
-      }
-      data = new CompressedImage.typedArray[dataType](length);
-      this.current = this.view.tell();
-      this.view.seek(this.begin + this.tableLength + offset);
-      for (i = _i = 0, _ref1 = length - 1; 0 <= _ref1 ? _i <= _ref1 : _i >= _ref1; i = 0 <= _ref1 ? ++_i : --_i) {
-        data[i] = CompressedImage.dataAccessors[dataType](this.view);
-      }
-      this.view.seek(this.current);
-      return data;
-    };
-
-    CompressedImage.prototype._getRow = function() {
+    CompressedImage.prototype.getTableRow = function() {
       var accessor, blank, data, row, scale, zero, _i, _len, _ref;
-      this.current = this.begin + this.totalRowsRead * this.rowByteSize;
-      this.view.seek(this.current);
+      this.offset = this.begin + this.rowsRead * this.rowByteSize;
       row = [];
       _ref = this.accessors;
       for (_i = 0, _len = _ref.length; _i < _len; _i++) {
@@ -1371,19 +1316,437 @@
       return [data, blank, scale, zero];
     };
 
-    CompressedImage.subtractiveDither1 = function() {
-      throw "Not yet implemented";
-    };
-
-    CompressedImage.linearScaling = function() {
-      throw "Not yet implemented";
+    CompressedImage.prototype.getFrame = function() {
+      var arr, height;
+      arr = new Float32Array(this.width * this.height);
+      this.rowsRead = 0;
+      height = this.height;
+      while (height--) {
+        this.getRow(arr);
+      }
+      return arr;
     };
 
     return CompressedImage;
 
-  })(Tabular);
+  })(BinaryTable);
 
   this.astro.FITS.CompressedImage = CompressedImage;
+
+  CompressedImage = this.astro.FITS.CompressedImage;
+
+  CompressedImage.prototype.getFrameAsync = function(frame, callback, opts) {
+    var URL, blobOnMessage, blobRice, data, fn1, fn2, mime, onmessage, urlOnMessage, urlRice, worker;
+    this.frame = frame != null ? frame : this.frame;
+    if (opts == null) {
+      opts = void 0;
+    }
+    onmessage = function(e) {
+      var RiceSetup, accessors, arr, bitpix, blank, bscale, buffer, bzero, columnNames, data, dataAccessors, defGetRow, getFrame, getFromHeap, getRow, getRowHasBlanks, getRowNoBlanks, getTableRow, height, offset, params, rowByteSize, rowsRead, setAccessors, swapEndian, tableColumns, tableLength, typedArray, urlRice, view, width, zblank, ztile;
+      data = e.data;
+      tableLength = data.tableLength;
+      tableColumns = data.tableColumns;
+      columnNames = data.columnNames;
+      params = data.params;
+      ztile = data.ztile;
+      rowByteSize = data.rowByteSize;
+      zblank = data.zblank;
+      bscale = data.bscale;
+      bzero = data.bzero;
+      width = data.width;
+      height = data.height;
+      blank = data.blank;
+      bitpix = data.bitpix;
+      buffer = data.buffer;
+      urlRice = data.urlRice;
+      dataAccessors = {
+        L: function(view, offset) {
+          var val, x;
+          x = view.getInt8(offset);
+          offset += 1;
+          val = x === 84 ? true : false;
+          return [val, offset];
+        },
+        B: function(view, offset) {
+          var val;
+          val = view.getUint8(offset);
+          offset += 1;
+          return [val, offset];
+        },
+        I: function(view, offset) {
+          var val;
+          val = view.getInt16(offset);
+          offset += 2;
+          return [val, offset];
+        },
+        J: function(view, offset) {
+          var val;
+          val = view.getInt32(offset);
+          offset += 4;
+          return [val, offset];
+        },
+        K: function(view, offset) {
+          var factor, highByte, lowByte, mod, val;
+          highByte = Math.abs(view.getInt32(offset));
+          offset += 4;
+          lowByte = Math.abs(view.getInt32(offset));
+          offset += 4;
+          mod = highByte % 10;
+          factor = mod ? -1 : 1;
+          highByte -= mod;
+          console.warn("Precision for 64 bit integers may be incorrect.");
+          val = factor * ((highByte << 32) | lowByte);
+          return [val, offset];
+        },
+        A: function(view, offset) {
+          var val;
+          val = view.getChar(offset);
+          offset += 1;
+          return [val, offset];
+        },
+        E: function(view, offset) {
+          var val;
+          val = view.getFloat32(offset);
+          offset += 4;
+          return [val, offset];
+        },
+        D: function(view, offset) {
+          var val;
+          val = view.getFloat64(offset);
+          offset += 8;
+          return [val, offset];
+        },
+        C: function(view, offset) {
+          var val, val1, val2;
+          val1 = view.getFloat32(offset);
+          offset += 4;
+          val2 = view.getFloat32(offset);
+          offset += 4;
+          val = [val1, val2];
+          return [val, offset];
+        },
+        M: function(view, offset) {
+          var val, val1, val2;
+          val1 = view.getFloat64(offset);
+          offset += 8;
+          val2 = view.getFloat64(offset);
+          offset += 8;
+          val = [val1, val2];
+          return [val, offset];
+        }
+      };
+      RiceSetup = {
+        1: function(array) {
+          var fsbits, fsmax, lastpix, pointer;
+          pointer = 0;
+          fsbits = 3;
+          fsmax = 6;
+          lastpix = array[pointer];
+          pointer += 1;
+          return [fsbits, fsmax, lastpix, pointer];
+        },
+        2: function(array) {
+          var bytevalue, fsbits, fsmax, lastpix, pointer;
+          pointer = 0;
+          fsbits = 4;
+          fsmax = 14;
+          lastpix = 0;
+          bytevalue = array[pointer];
+          pointer += 1;
+          lastpix = lastpix | (bytevalue << 8);
+          bytevalue = array[pointer];
+          pointer += 1;
+          lastpix = lastpix | bytevalue;
+          return [fsbits, fsmax, lastpix, pointer];
+        },
+        4: function(array) {
+          var bytevalue, fsbits, fsmax, lastpix, pointer;
+          pointer = 0;
+          fsbits = 5;
+          fsmax = 25;
+          lastpix = 0;
+          bytevalue = array[pointer];
+          pointer += 1;
+          lastpix = lastpix | (bytevalue << 24);
+          bytevalue = array[pointer];
+          pointer += 1;
+          lastpix = lastpix | (bytevalue << 16);
+          bytevalue = array[pointer];
+          pointer += 1;
+          lastpix = lastpix | (bytevalue << 8);
+          bytevalue = array[pointer];
+          pointer += 1;
+          lastpix = lastpix | bytevalue;
+          return [fsbits, fsmax, lastpix, pointer];
+        }
+      };
+      importScripts(urlRice);
+      typedArray = {
+        B: Uint8Array,
+        I: Uint16Array,
+        J: Int32Array,
+        E: Float32Array,
+        D: Float64Array,
+        1: Uint8Array,
+        2: Uint16Array,
+        4: Int32Array
+      };
+      offset = 0;
+      rowsRead = 0;
+      accessors = [];
+      view = new DataView(buffer);
+      switch (Math.abs(bitpix)) {
+        case 16:
+          swapEndian = function(value) {
+            return (value << 8) | (value >> 8);
+          };
+          break;
+        case 32:
+          swapEndian = function(value) {
+            return ((value & 0xFF) << 24) | ((value & 0xFF00) << 8) | ((value >> 8) & 0xFF00) | ((value >> 24) & 0xFF);
+          };
+          break;
+        default:
+          swapEndian = function(value) {
+            return value;
+          };
+      }
+      getFromHeap = function(descriptor) {
+        var arr, chunk, chunkOffset, heapOffset, i, length;
+        length = view.getInt32(offset);
+        offset += 4;
+        heapOffset = view.getInt32(offset);
+        offset += 4;
+        chunkOffset = tableLength + heapOffset;
+        chunk = view.buffer.slice(chunkOffset, chunkOffset + length);
+        arr = new typedArray[descriptor](chunk);
+        i = arr.length;
+        while (i--) {
+          arr[i] = swapEndian(arr[i]);
+        }
+        return arr;
+      };
+      setAccessors = function() {
+        var column, count, descriptor, form, i, isArray, match, pattern, type, _i, _len, _results,
+          _this = this;
+        pattern = /(\d*)([P|Q]*)([L|X|B|I|J|K|A|E|D|C|M]{1})/;
+        _results = [];
+        for (i = _i = 0, _len = tableColumns.length; _i < _len; i = ++_i) {
+          column = tableColumns[i];
+          form = Object.keys(column)[0];
+          type = column[form];
+          match = pattern.exec(form);
+          count = parseInt(match[1]) || 1;
+          isArray = match[2];
+          descriptor = match[3];
+          if (isArray) {
+            switch (type) {
+              case "COMPRESSED_DATA":
+                _results.push((function(descriptor, count) {
+                  var accessor;
+                  accessor = function() {
+                    var arr, pixels;
+                    arr = getFromHeap(descriptor);
+                    pixels = new typedArray[params["BYTEPIX"]](ztile[0]);
+                    Rice(arr, params["BLOCKSIZE"], params["BYTEPIX"], pixels, ztile[0], RiceSetup);
+                    return pixels;
+                  };
+                  return accessors.push(accessor);
+                })(descriptor, count));
+                break;
+              case "GZIP_COMPRESSED_DATA":
+                _results.push((function(descriptor, count) {
+                  var accessor;
+                  accessor = function() {
+                    var arr;
+                    arr = new Float32Array(width);
+                    i = arr.length;
+                    while (i--) {
+                      arr[i] = NaN;
+                    }
+                    return arr;
+                  };
+                  return accessors.push(accessor);
+                })(descriptor, count));
+                break;
+              default:
+                _results.push((function(descriptor, count) {
+                  var accessor;
+                  accessor = function() {
+                    return getFromHeap(descriptor);
+                  };
+                  return accessors.push(accessor);
+                })(descriptor, count));
+            }
+          } else {
+            if (count === 1) {
+              _results.push((function(descriptor, count) {
+                var accessor;
+                accessor = function() {
+                  var value, _ref;
+                  _ref = dataAccessors[descriptor](view, offset), value = _ref[0], offset = _ref[1];
+                  return value;
+                };
+                return accessors.push(accessor);
+              })(descriptor, count));
+            } else {
+              if (descriptor === 'X') {
+                _results.push((function(descriptor, count) {
+                  var accessor, nBytes;
+                  nBytes = Math.log(count) / Math.log(2);
+                  accessor = function() {
+                    var arr, bits, byte, bytes, chunk, _j, _len1;
+                    chunk = view.buffer.slice(offset, offset + nBytes);
+                    bytes = new Uint8Array(chunk);
+                    bits = [];
+                    for (_j = 0, _len1 = bytes.length; _j < _len1; _j++) {
+                      byte = bytes[_j];
+                      arr = _this.toBits(byte);
+                      bits = bits.concat(arr);
+                    }
+                    offset += nBytes;
+                    return bits.slice(0, +(count - 1) + 1 || 9e9);
+                  };
+                  return accessors.push(accessor);
+                })(descriptor, count));
+              } else if (descriptor === 'A') {
+                _results.push((function(descriptor, count) {
+                  var accessor;
+                  accessor = function() {
+                    var str;
+                    str = view.getString(offset, count);
+                    _this.offset += count;
+                    return str.trim();
+                  };
+                  return accessors.push(accessor);
+                })(descriptor, count));
+              } else {
+                _results.push((function(descriptor, count) {
+                  var accessor;
+                  accessor = function() {
+                    var value, _ref;
+                    data = [];
+                    while (count--) {
+                      _ref = dataAccessors[descriptor](view, offset), value = _ref[0], offset = _ref[1];
+                      data.push(value);
+                    }
+                    return data;
+                  };
+                  return accessors.push(accessor);
+                })(descriptor, count));
+              }
+            }
+          }
+        }
+        return _results;
+      };
+      getTableRow = function() {
+        var accessor, row, scale, zero, _i, _len;
+        offset = rowsRead * rowByteSize;
+        row = [];
+        for (_i = 0, _len = accessors.length; _i < _len; _i++) {
+          accessor = accessors[_i];
+          row.push(accessor());
+        }
+        data = row[columnNames["COMPRESSED_DATA"]] || row[columnNames["UNCOMPRESSED_DATA"]] || row[columnNames["GZIP_COMPRESSED_DATA"]];
+        blank = row[columnNames["ZBLANK"]] || zblank;
+        scale = row[columnNames["ZSCALE"]] || bscale;
+        zero = row[columnNames["ZZERO"]] || bzero;
+        return [data, blank, scale, zero];
+      };
+      getRowHasBlanks = function(arr) {
+        var i, index, scale, value, zero, _i, _len, _ref;
+        _ref = getTableRow(), data = _ref[0], blank = _ref[1], scale = _ref[2], zero = _ref[3];
+        offset = rowsRead * width;
+        for (index = _i = 0, _len = data.length; _i < _len; index = ++_i) {
+          value = data[index];
+          i = offset + index;
+          arr[i] = value === blank ? NaN : zero + scale * value;
+        }
+        return rowsRead += 1;
+      };
+      getRowNoBlanks = function(arr) {
+        var i, index, scale, value, zero, _i, _len, _ref;
+        _ref = getTableRow(), data = _ref[0], blank = _ref[1], scale = _ref[2], zero = _ref[3];
+        offset = rowsRead * width;
+        for (index = _i = 0, _len = data.length; _i < _len; index = ++_i) {
+          value = data[index];
+          i = offset + index;
+          arr[i] = zero + scale * value;
+        }
+        return rowsRead += 1;
+      };
+      defGetRow = function() {
+        var hasBlanks;
+        hasBlanks = (zblank != null) || (blank != null) || columnNames.hasOwnProperty("ZBLANK");
+        if (hasBlanks) {
+          return getRowHasBlanks;
+        } else {
+          return getRowNoBlanks;
+        }
+      };
+      getFrame = function() {
+        var arr;
+        arr = new Float32Array(width * height);
+        rowsRead = 0;
+        while (height--) {
+          getRow(arr);
+        }
+        return arr;
+      };
+      setAccessors(tableColumns, view);
+      getRow = defGetRow();
+      arr = getFrame();
+      data = {
+        offset: offset,
+        arr: arr
+      };
+      return postMessage(data);
+    };
+    fn1 = onmessage.toString().split('').reverse().join('').replace(' nruter', '');
+    fn1 = fn1.split('').reverse().join('');
+    fn1 = "onmessage = " + fn1;
+    fn2 = this.constructor.Rice.toString();
+    fn2 = fn2.replace('function', 'function Rice');
+    fn2 = fn2.replace('Decompress.', '');
+    mime = "application/javascript";
+    blobOnMessage = new Blob([fn1], {
+      type: mime
+    });
+    blobRice = new Blob([fn2], {
+      type: mime
+    });
+    URL = window.URL || window.webkitURL || window.MozURLProperty;
+    urlOnMessage = URL.createObjectURL(blobOnMessage);
+    urlRice = URL.createObjectURL(blobRice);
+    worker = new Worker(urlOnMessage);
+    worker.onmessage = function(e) {
+      var arr;
+      arr = e.data.arr;
+      if (callback != null) {
+        callback.call(this, arr, opts);
+      }
+      URL.revokeObjectURL(urlOnMessage);
+      return worker.terminate();
+    };
+    data = {
+      buffer: this.view.buffer.slice(this.begin, this.begin + this.length),
+      tableLength: this.tableLength,
+      tableColumns: this.tableColumns,
+      columnNames: this.columnNames,
+      params: this.params,
+      ztile: this.ztile,
+      rowByteSize: this.rowByteSize,
+      zblank: this.zblank,
+      bscale: this.bscale,
+      bzero: this.bzero,
+      width: this.width,
+      height: this.height,
+      blank: this.blank,
+      urlRice: urlRice
+    };
+    return worker.postMessage(data);
+  };
 
   HDU = (function() {
 
@@ -1401,7 +1764,7 @@
     };
 
     HDU.prototype.getCard = function(key) {
-      return this.header[key];
+      return this.header.get(key);
     };
 
     return HDU;
@@ -1412,172 +1775,92 @@
 
   File = (function() {
 
-    File.LINEWIDTH = 80;
+    File.prototype.LINEWIDTH = 80;
 
-    File.BLOCKLENGTH = 2880;
+    File.prototype.BLOCKLENGTH = 2880;
 
-    File.getType = function(obj) {
-      return Object.prototype.toString.call(obj).slice(8, -1).toLowerCase();
-    };
-
-    function File(buffer) {
-      var name;
-      name = File.getType(buffer);
-      switch (name) {
-        case 'arraybuffer':
-          this.initFromBuffer(buffer);
-          break;
-        case 'object':
-          this.initFromObject(buffer);
-          break;
-        default:
-          throw 'fitsjs cannot initialize object';
+    function File(arg, callback, opts) {
+      var xhr,
+        _this = this;
+      if (opts == null) {
+        opts = void 0;
+      }
+      this.constructor.extendDataView(this.view);
+      this.hdus = [];
+      this.offset = 0;
+      if (typeof arg === 'string') {
+        xhr = new XMLHttpRequest();
+        xhr.open('GET', arg);
+        xhr.responseType = 'arraybuffer';
+        xhr.onload = function() {
+          return _this.initBuffer(xhr.response, callback, opts);
+        };
+        xhr.send();
+      } else {
+        this.initBuffer(arg);
       }
     }
 
-    File.excessBytes = function(length) {
-      return (File.BLOCKLENGTH - (length % File.BLOCKLENGTH)) % File.BLOCKLENGTH;
-    };
-
-    File.extendDataView = function(view) {
-      var getFloat32, getFloat64, getInt16, getInt32, getInt8, getUint16, getUint32, getUint8;
-      DataView.prototype.getString = function(length) {
-        var c, i, value, _i, _ref;
-        value = '';
-        for (i = _i = 0, _ref = length - 1; 0 <= _ref ? _i <= _ref : _i >= _ref; i = 0 <= _ref ? ++_i : --_i) {
-          c = this.getUint8();
-          value += String.fromCharCode(c > 127 ? 65533 : c);
-        }
-        return value;
-      };
-      DataView.prototype.getChar = function() {
-        return this.getString(1);
-      };
-      view.offset = 0;
-      getInt8 = view.getInt8;
-      getUint8 = view.getUint8;
-      getInt16 = view.getInt16;
-      getUint16 = view.getUint16;
-      getInt32 = view.getInt32;
-      getUint32 = view.getUint32;
-      getFloat32 = view.getFloat32;
-      getFloat64 = view.getFloat64;
-      view.getInt8 = function() {
-        var value;
-        value = getInt8.apply(this, [this.offset]);
-        this.offset += 1;
-        return value;
-      };
-      view.getUint8 = function() {
-        var value;
-        value = getUint8.apply(this, [this.offset]);
-        this.offset += 1;
-        return value;
-      };
-      view.getInt16 = function() {
-        var value;
-        value = getInt16.apply(this, [this.offset, false]);
-        this.offset += 2;
-        return value;
-      };
-      view.getUint16 = function() {
-        var value;
-        value = getUint16.apply(this, [this.offset, false]);
-        this.offset += 2;
-        return value;
-      };
-      view.getInt32 = function() {
-        var value;
-        value = getInt32.apply(this, [this.offset, false]);
-        this.offset += 4;
-        return value;
-      };
-      view.getUint32 = function() {
-        var value;
-        value = getUint32.apply(this, [this.offset, false]);
-        this.offset += 4;
-        return value;
-      };
-      view.getFloat32 = function() {
-        var value;
-        value = getFloat32.apply(this, [this.offset, false]);
-        this.offset += 4;
-        return value;
-      };
-      view.getFloat64 = function() {
-        var value;
-        value = getFloat64.apply(this, [this.offset, false]);
-        this.offset += 8;
-        return value;
-      };
-      view.seek = function(offset) {
-        return this.offset = offset;
-      };
-      return view.tell = function() {
-        return this.offset;
-      };
-    };
-
-    File.prototype.initFromBuffer = function(buffer) {
-      var data, hdu, header, _results;
+    File.prototype.initBuffer = function(buffer, callback, opts) {
+      var data, hdu, header;
       this.length = buffer.byteLength;
       this.view = new DataView(buffer);
-      this.hdus = [];
-      this.eof = false;
-      File.extendDataView(this.view);
-      _results = [];
       while (true) {
         header = this.readHeader();
         data = this.readData(header);
         hdu = new HDU(header, data);
         this.hdus.push(hdu);
-        if (this.eof) {
+        if (this.isEOF()) {
           break;
-        } else {
-          _results.push(void 0);
         }
       }
-      return _results;
+      if (callback != null) {
+        return callback.call(this, this, opts);
+      }
     };
 
-    File.prototype.initFromObject = function(buffer) {
-      this.length = buffer.length;
-      this.view = null;
-      this.hdus = buffer.hdus;
-      return this.eof = true;
+    File.extendDataView = function(view) {
+      DataView.prototype.getString = function(offset, length) {
+        var c, value;
+        value = '';
+        while (length--) {
+          c = this.getUint8(offset);
+          offset += 1;
+          value += String.fromCharCode(c > 127 ? 65533 : c);
+        }
+        return value;
+      };
+      return DataView.prototype.getChar = function(offset) {
+        return this.getString(offset, 1);
+      };
+    };
+
+    File.prototype.excessBytes = function(length) {
+      return (this.BLOCKLENGTH - (length % this.BLOCKLENGTH)) % this.BLOCKLENGTH;
     };
 
     File.prototype.readHeader = function() {
-      var beginOffset, block, done, end, endOffset, endPattern, header, i, line, match, start, whitespacePattern;
-      whitespacePattern = /\s{80}/;
+      var begin, beginOffset, block, end, endOffset, endPattern, i, line, match;
       endPattern = /^END\s/;
-      beginOffset = this.view.tell();
-      done = false;
+      beginOffset = this.offset;
       while (true) {
-        if (done) {
-          break;
-        }
-        block = this.view.getString(File.BLOCKLENGTH);
-        i = 0;
+        block = this.view.getString(this.offset, this.BLOCKLENGTH);
+        this.offset += this.BLOCKLENGTH;
+        i = 1;
         while (true) {
-          start = File.BLOCKLENGTH - File.LINEWIDTH * (i + 1);
-          end = File.BLOCKLENGTH - File.LINEWIDTH * i;
-          line = block.slice(start, end);
-          match = line.match(whitespacePattern);
+          begin = this.BLOCKLENGTH - this.LINEWIDTH * i;
+          end = begin + this.LINEWIDTH;
+          line = block.slice(begin, end);
+          match = /\s{80}/.test(line);
           if (match) {
             i += 1;
             continue;
           }
-          match = line.match(endPattern);
+          match = /^END\s/.test(line);
           if (match) {
-            endOffset = this.view.tell();
-            this.view.seek(beginOffset);
-            block = this.view.getString(endOffset - beginOffset);
-            header = new Header();
-            header.init(block);
-            done = true;
-            this.checkEOF();
-            return header;
+            endOffset = this.offset;
+            block = this.view.getString(beginOffset, endOffset - beginOffset);
+            return new Header(block);
           }
           break;
         }
@@ -1585,46 +1868,41 @@
     };
 
     File.prototype.readData = function(header) {
-      var data, excess;
+      var DU, data, excess;
       if (!header.hasDataUnit()) {
         return;
       }
       if (header.isPrimary()) {
-        data = new Image(this.view, header);
+        DU = Image;
       } else if (header.isExtension()) {
         if (header.extensionType === "BINTABLE") {
           if (header.contains("ZIMAGE")) {
-            data = new CompressedImage(this.view, header);
+            DU = CompressedImage;
           } else {
-            data = new BinaryTable(this.view, header);
+            DU = BinaryTable;
           }
         } else if (header.extensionType === "TABLE") {
-          data = new Table(this.view, header);
+          DU = Table;
         } else if (header.extensionType === "IMAGE") {
-          data = new Image(this.view, header);
+          DU = Image;
         }
       }
-      excess = File.excessBytes(data.length);
-      this.view.seek(this.view.tell() + data.length + excess);
-      this.checkEOF();
+      data = new DU(header, this.view, this.offset);
+      excess = this.excessBytes(data.length);
+      this.offset += data.length + excess;
       return data;
     };
 
-    File.prototype.checkEOF = function() {
-      if (this.view.offset >= this.length) {
-        return this.eof = true;
+    File.prototype.isEOF = function() {
+      if (this.offset === this.length) {
+        return true;
+      } else {
+        return false;
       }
-    };
-
-    File.prototype.count = function() {
-      return this.hdus.length;
     };
 
     File.prototype.getHDU = function(index) {
       var hdu, _i, _len, _ref;
-      if (index == null) {
-        index = void 0;
-      }
       if ((index != null) && (this.hdus[index] != null)) {
         return this.hdus[index];
       }
@@ -1638,23 +1916,14 @@
     };
 
     File.prototype.getHeader = function(index) {
-      if (index == null) {
-        index = void 0;
-      }
       return this.getHDU(index).header;
     };
 
     File.prototype.getDataUnit = function(index) {
-      if (index == null) {
-        index = void 0;
-      }
       return this.getHDU(index).data;
     };
 
     File.prototype.getData = function(index) {
-      if (index == null) {
-        index = void 0;
-      }
       return this.getHDU(index).data.getFrame();
     };
 
