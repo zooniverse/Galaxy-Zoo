@@ -36,6 +36,8 @@ class Main extends Spine.Stack
     '/classify': 'classify'
     '/science': 'science'
     '/profile': 'profile'
+    '/profile/:type' : 'profile'
+    '/profile/:type/:page' : 'profile'
     '/examine/:id': 'examine'
     '/papers': 'papers'
     '/story': 'story'

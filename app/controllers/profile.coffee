@@ -8,17 +8,13 @@ Quiz = require 'models/quiz'
 
 class Profile extends Spine.Controller
   events:
-    'click .favorites-link' : 'switch'
-    'click .recents-link': 'switch'
     'click .item img': 'examine'
     'click .item .inactive.remove': 'removeFavorite'
     'click .item .active.favorite': 'removeFavorite'
     'click .item .inactive.favorite': 'addFavorite'
     'click .quizzes .take-a-quiz': 'takeQuiz'
-  
-  elements:
-    '.favorites-link' : 'favoritesLink'
-    '.recents-link' : 'recentsLink'
+    'click .next-link' : 'next'
+    'click .prev-link' : 'prev'
   
   constructor: ->
     super
@@ -37,11 +33,14 @@ class Profile extends Spine.Controller
   
   refresh: =>
     if User.current && @isActive()
+      @collection().deleteAll()
       fetcher = @collection().fetch(@opts)
       fetcher.onSuccess(@render) if @isActive()
   
-  active: ->
+  active: (params) ->
     super
+    @showing = params.type or 'recents'
+    @opts.page = parseInt(params.page) or 1 
     @render()
     @refresh()
   
@@ -74,11 +73,35 @@ class Profile extends Spine.Controller
   examine: (ev) ->
     item = @collection().find $(ev.target).closest('.item').data 'id'
     @navigate "/examine/#{ item.subjects.zooniverse_id }"
-  
-  switch: (ev) =>
-    toShow = $(ev.target).closest('a').data 'show'
-    return if toShow is @showing
-    @showing = toShow
-    @collection().fetch(@opts).onSuccess @render
 
+  next: (ev) =>
+    @collection().deleteAll()
+    if @max? and @max < (@opts.page + 1)
+      @opts.page = 1
+      @collection.fetch(@opts).onSuccess @render
+    else
+      @opts.page = @opts.page + 1
+      @collection().fetch(@opts).onSuccess =>
+        if @collection().count() is 0
+          @max = @opts.page - 1
+          @opts.page = 1
+          @collection().fetch(@opts).onSuccess @render
+          @navigate "/profile/#{@showing}/#{@opts.page}", false
+        else
+          @render()
+          @navigate "/profile/#{@showing}/#{@opts.page}", false
+          
+
+  prev: (ev) =>
+    @collection().deleteAll()
+    if (@opts.page - 1) <= 0
+      if @max?
+        @opts.page = @max
+      else
+        @opts.page = @opts.page + 1
+    else
+      @opts.page = @opts.page - 1
+    @collection().fetch(@opts).onSuccess @render
+    @navigate "/profile/#{@showing}/#{@opts.page}", false
+  
 module.exports = Profile
