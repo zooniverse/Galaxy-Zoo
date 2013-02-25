@@ -6,8 +6,12 @@
       
       <div class="left">
         <h3 class="sub-heading">
-          <a data-show="favorites" class="<%- "inactive " if @showing == 'recents' %>favorites-link"><%- I18n.t 'profile.favorites' %></a>
-          <a data-show="recents" class="<%- "inactive " if @showing == 'favorites' %>recents-link"><%- I18n.t 'profile.recents' %></a>
+          <a href="/#/profile/favorites/1" data-show="favorites" class="<%- "inactive " if @showing == 'recents' %>favorites-link"><%- I18n.t 'profile.favorites' %></a>
+          <a href="/#/profile/recents/1" data-show="recents" class="<%- "inactive " if @showing == 'favorites' %>recents-link"><%- I18n.t 'profile.recents' %></a>
+          <div class="pull-right">
+            <a class="next-link">Next</a>
+            <a class="prev-link">Prev</a>  
+          </div>
         </h3>
         
         <div class="thumbnails">

@@ -37,6 +37,7 @@ class Question extends Spine.Model
       for key, answer of answers
         _(answer.examples).times (i) =>
           examples[key] or= []
+          console.log "#{ @id }_#{ key}_#{ i }"
           examples[key].push "#{ @id }_#{ key }_#{ i }"
   
   checkbox: (text, { icon: icon, examples: examples } = { icon: null, examples: 0 }) ->
