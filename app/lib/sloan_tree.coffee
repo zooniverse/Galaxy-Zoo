@@ -14,8 +14,8 @@ SloanTree = new DecisionTree 'sloan', ->
   
   @question 'Bar', 'Is there any sign of a bar feature through the center of the galaxy?', leadsTo: 'Is there any sign of a spiral arm pattern?', ->
     @help "Sometimes galaxies have a prominent straight &quot;bar&quot; running through their centre, and that's what we're looking for here. Click to see larger images."
-    @answer 'Bar', icon: 'yes'
-    @answer 'No bar', icon: 'no'
+    @answer 'Bar', icon: 'yes', examples: 4
+    @answer 'No bar', icon: 'no', examples: 4
   
   @question 'Spiral', 'Is there any sign of a spiral arm pattern?', ->
     @help "Look carefully for spiral arms - remember they may be embedded in the disk and not that easy to see. Click to see larger images."
@@ -61,12 +61,12 @@ SloanTree = new DecisionTree 'sloan', ->
     @answer 'Loose', icon: 'spiral_loose', examples: 1
   
   @question 'Spiral', 'How many spiral arms are there?', leadsTo: 'How prominent is the central bulge, compared with the rest of the galaxy?', ->
-    @answer '1', icon: 'spiral_1'
-    @answer '2', icon: 'spiral_2'
-    @answer '3', icon: 'spiral_3'
-    @answer '4', icon: 'spiral_4'
-    @answer 'More than 4', icon: 'spiral_4-plus'
-    @answer "Can't tell", icon: 'spiral_cant-tell', examples: 1
+    @answer '1', icon: 'spiral_1', examples: 2
+    @answer '2', icon: 'spiral_2', examples: 4
+    @answer '3', icon: 'spiral_3', examples: 3
+    @answer '4', icon: 'spiral_4', examples: 2
+    @answer 'More than 4', icon: 'spiral_4-plus', examples: 2
+    @answer "Can't tell", icon: 'spiral_cant-tell', examples: 3
   
   @question 'Discuss', 'Would you like to discuss this object?', ->
     @help "If you have any questions about this object, or think it may be interesting to others, or just have something to say, you can start a discussion on Talk by clicking &quot;Yes&quot;. Talk will open in a new window - just close it to come back to the classification page."
