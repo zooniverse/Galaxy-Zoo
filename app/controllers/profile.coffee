@@ -21,6 +21,11 @@ class Profile extends Spine.Controller
     @showing = 'recents'
     @opts =
       per_page: 12
+    User.bind 'sign-in', =>
+      @pages =
+        recents: Math.ceil (User.current.classification_count / @opts.per_page) or 1
+        favorites: Math.ceil (User.current.favorites / @opts.per_page) or 1
+      console.log @pages
     User.bind 'sign-in', @refresh
     Quiz.bind 'quiz-user', @render
     Quiz.bind 'quiz-finished', @render
@@ -75,33 +80,21 @@ class Profile extends Spine.Controller
     @navigate "/examine/#{ item.subjects.zooniverse_id }"
 
   next: (ev) =>
-    @collection().deleteAll()
-    if @max? and @max < (@opts.page + 1)
+    if @opts.page is @pages[@showing]
       @opts.page = 1
-      @collection.fetch(@opts).onSuccess @render
     else
       @opts.page = @opts.page + 1
-      @collection().fetch(@opts).onSuccess =>
-        if @collection().count() is 0
-          @max = @opts.page - 1
-          @opts.page = 1
-          @collection().fetch(@opts).onSuccess @render
-          @navigate "/profile/#{@showing}/#{@opts.page}", false
-        else
-          @render()
-          @navigate "/profile/#{@showing}/#{@opts.page}", false
-          
-
-  prev: (ev) =>
     @collection().deleteAll()
-    if (@opts.page - 1) <= 0
-      if @max?
-        @opts.page = @max
-      else
-        @opts.page = @opts.page + 1
-    else
-      @opts.page = @opts.page - 1
     @collection().fetch(@opts).onSuccess @render
     @navigate "/profile/#{@showing}/#{@opts.page}", false
-  
+              
+  prev: (ev) =>
+    if @opts.page is 1
+      @opts.page = @pages[@showing]
+    else
+      @opts.page = @opts.page - 1
+    @collection().deleteAll()
+    @collection().fetch(@opts).onSuccess @render
+    @navigate "/profile/#{@showing}/#{@opts.page}", false
+    
 module.exports = Profile
