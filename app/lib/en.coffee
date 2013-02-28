@@ -875,6 +875,7 @@ module.exports =
     credit: 'The Navigator is based upon work supported by the National Science Foundation under Grants No. 1041419 and 0941610. Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.'
     
     groups:
+      rejected: 'These emails did not have an associated Zooniverse account: '
       signup: 'Create New Group'
       select: 'Select Group'
       make: 'Make a New Group'
@@ -888,19 +889,16 @@ module.exports =
       stats: 'Group Info'
       invitations: 'Invitations'
       enter_name: 'Enter Group Name'
-      enter_emails: 'Invite users by entering their emails seperated with a comma (e.g. ed@example.com, cs@example.com, whyte@example.com)'
+      enter_emails: 'Invite users with a current Zooniverse account by entering their emails seperated with a comma (e.g. ed@example.com, cs@example.com, whyte@example.com)'
       send_invites: 'Send Invites'
       disable_talk: 'Disable Talk for this Group'
-      invited_users: 'Users Invited'
+      invited_users: 'Users Invited. '
       participation: 'Participation'
       compare: 'Compare your classification choices with those made by other volunteers.'
       confirm_leave: 'Are you sure?\nThe Group Leader must re-invite you if you wish to rejoin'
       confirm_destroy: 'Are you sure?\nThere is no undo.'
       ensure_selected: 'Select a group or create one from the dropdown menu to see your group classifications'
-      group_url: 'Share this url to join group: '
-      create_button: 'Create Group'
-      classroom: "Are you planning to use the Navigator tool in a classroom setting?"
-      classroom_followup: "What age are your students?"
+      group_url: 'Share this URL to allow anyone to join the group: '
       elementary: "Elementary/Primary"
       middle: "Middle School/Jr. High"
       secondary: "High School/Secondary"

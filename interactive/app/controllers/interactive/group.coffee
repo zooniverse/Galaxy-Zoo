@@ -9,6 +9,11 @@ class Group extends Spine.Controller
     UserGroup.bind 'create', @displayElements
 
     UserGroup.bind 'invited', (result) =>
+      unless _.isEmpty(result.rejected_invites)
+        message = I18n.t('navigator.groups.invited_users') + 
+          I18n.t('navigator.groups.rejected') + 
+          result.rejected_invites.join ', '
+        @usersInvited.text message
       if @group.id is result.id
         UserGroup.create result
         @emails.val('')
@@ -50,6 +55,7 @@ class Group extends Spine.Controller
     if @groupId is null
       @navigate "/navigator/group/#{ @group.id }"
     if @group.owner.id is User.current.id
+      @submitButton.removeAttr 'disabled'
       @leaveGroupButton.hide()
       @destroyGroupButton.show()
       @inviteForm.show()
@@ -74,7 +80,7 @@ class Group extends Spine.Controller
     'ul.stats' : 'statsView'
     'form#group-create' : 'signUpForm'
     'form#group-invite' : 'inviteForm'
-    '#group-invite p' : 'usersInvited'
+    '#group-invite p.group-invites' : 'usersInvited'
     'input[name="name"]' : 'groupNameBox'
     'textarea[name="emails"]' : 'emails'
     'button[name="submit"]' : 'submitButton'
@@ -176,6 +182,7 @@ class Group extends Spine.Controller
 
   onSubmit: (e) =>
     e.preventDefault()
+    @usersInvited.text I18n.t 'navigator.groups.invited_users'
     @submitButton.attr 'disabled', 'disabled'
     name = @groupNameBox.val()
     emails = @emails.val()
