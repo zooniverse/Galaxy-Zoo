@@ -25,7 +25,6 @@ class Profile extends Spine.Controller
       @pages =
         recents: Math.ceil (User.current.classification_count / @opts.per_page) or 1
         favorites: Math.ceil (User.current.favorites / @opts.per_page) or 1
-      console.log @pages
     User.bind 'sign-in', @refresh
     Quiz.bind 'quiz-user', @render
     Quiz.bind 'quiz-finished', @render
