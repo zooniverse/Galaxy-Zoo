@@ -905,6 +905,8 @@ module.exports =
       college: "College/University"
       other: "Other"
       elaborate: "Please Elaborate"
+      classroom: "Do you plan to use the Navigator in a classroom setting?"
+      classroom_followup: "What age are your students?"
       classroom_followup_open: "How do you plan to use the Navigator in your teaching"
       no_classroom: "How do you plan to use the Navigator tool?"
       alone: "As an individual"
