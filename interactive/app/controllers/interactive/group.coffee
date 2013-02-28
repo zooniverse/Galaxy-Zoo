@@ -93,6 +93,9 @@ class Group extends Spine.Controller
     'click button[name="leave"]' : 'leaveGroup'
     'click button[name="destroy"]' : 'destroyGroup'
     'click input[name="classroom"]' : 'followupQuestion'
+    'click #classroom' : 'disableSubmit'
+    'click #no-classroom-followup' : 'enableSubmit'
+    'click #classroom-followup' : 'enableSubmit'
     submit: 'onSubmit'
 
   groupStats: =>
@@ -164,6 +167,12 @@ class Group extends Spine.Controller
       answers.group = @$('input[name="group"]').is ':checked'
       answers.group_elaborate = @$('input[name="elaborate-no-class"]').val() if answers.group is true
     answers
+
+  enableSubmit: (e) =>
+    @submitButton.removeAttr 'disabled'
+
+  disableSubmit: (e) =>
+    @submitButton.attr 'disabled', 'disabled'
 
   onSubmit: (e) =>
     e.preventDefault()
