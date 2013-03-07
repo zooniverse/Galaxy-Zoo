@@ -22,6 +22,7 @@ class Profile extends Spine.Controller
     @opts =
       per_page: 12
     User.bind 'sign-in', =>
+      return unless User.current
       @pages =
         recents: Math.ceil (User.current.classification_count / @opts.per_page) or 1
         favorites: Math.ceil (User.current.favorites / @opts.per_page) or 1
