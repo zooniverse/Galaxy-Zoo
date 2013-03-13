@@ -25,7 +25,7 @@ class Profile extends Spine.Controller
       return unless User.current
       @pages =
         recents: Math.ceil (User.current.classification_count / @opts.per_page) or 1
-        favorites: Math.ceil (User.current.favorites / @opts.per_page) or 1
+        favorites: Math.ceil (User.current.favorite_count / @opts.per_page) or 1
     User.bind 'sign-in', @refresh
     Quiz.bind 'quiz-user', @render
     Quiz.bind 'quiz-finished', @render
