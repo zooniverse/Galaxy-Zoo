@@ -94,6 +94,7 @@ class Group extends Spine.Controller
     'a.group-url-href' : 'groupUrlHref'
 
   events: 
+    'click button[name="download"]' : 'downloadClassList'
     'click button[name="yes"]' : 'setParticipate'
     'click button[name="no"]'  : 'redirectHome'
     'click button[name="leave"]' : 'leaveGroup'
@@ -205,4 +206,18 @@ class Group extends Spine.Controller
     else
       @submitButton.removeAttr 'disabled'
       
+  downloadClassList: =>
+    list = _(@group.users).chain().values().value()
+    $.ajax
+      type: 'POST'
+      data: JSON.stringify(list)
+      url: "https://jcvd.herokuapp.com/to-csv"
+      crossDomain: true
+      dataType: 'json'
+      contentType: 'application/json'
+      success: @downloadIframe
+
+  downloadIframe: (data) =>
+    $("body").append("""<iframe src="https://jcvd.herokuapp.com/to-csv/#{data.data_url}" style="display: none;"></iframe>""")
+
 module.exports = Group

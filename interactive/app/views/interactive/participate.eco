@@ -4,6 +4,7 @@
     <button type="button" name="no"><%- I18n.t 'navigator.groups.stop_classify' %></button>
     <button type="button" name="leave"><%- I18n.t 'navigator.groups.leave' %></button>
     <button type="button" name="destroy"><%- I18n.t 'navigator.groups.destroy' %></button>
+    <button type="button" name="download"><%- I18n.t 'navigator.groups.download' %></button>
   </div>
   <div class="statistics">
     <h2><%- I18n.t 'navigator.groups.stats' %></h2>

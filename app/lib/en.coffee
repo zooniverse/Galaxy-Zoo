@@ -875,6 +875,7 @@ module.exports =
     credit: 'The Navigator is based upon work supported by the National Science Foundation under Grants No. 1041419 and 0941610. Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.'
     
     groups:
+      download: "Download Stats"
       rejected: 'These emails did not have an associated Zooniverse account: '
       signup: 'Create New Group'
       select: 'Select Group'

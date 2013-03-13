@@ -195,7 +195,7 @@ class Graphs extends BaseController
       success: @downloadIframe
         
   downloadIframe: (data) =>
-    $("body").append("""<iframe src="https://jcvd.herokuapp.com/to-csv/#{data.data_url}" style="display: none;"></iframe>""");
+    $("body").append("""<iframe src="https://jcvd.herokuapp.com/to-csv/#{data.data_url}" style="display: none;"></iframe>""")
 
   # Helper functions
   updateTitle: =>
