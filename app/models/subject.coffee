@@ -19,7 +19,7 @@ class Subject extends BaseSubject
       workflowId: Config.surveys.candels.workflowId
       tree: CandelsTree
   
-  @url: (params) -> @withParams "/projects/galaxy_zoo/groups/#{ @randomSurveyId() }/subjects", params
+  @url: (params) -> @withParams "/projects/galaxy_zoo/groups/#{ params.surveyId }/subjects", limit: params.limit
   @randomSurveyId: -> if Math.random() > 0.166667 then @::surveys.sloan.id else @::surveys.candels.id
   
   @next: ->
@@ -28,14 +28,22 @@ class Subject extends BaseSubject
       @current = @first()
       @fetch() if @count() is 1
     else
-      @fetch().onSuccess =>
-        @current = @first()
-        @trigger 'fetched'
+      @fetch()
   
   @fetch: ->
     count = Config.subjectCache - @count()
-    super.onSuccess =>
-      @fetch() if count > 1
+    idCounts = { }
+    idCounts[@::surveys.sloan.id] = 0
+    idCounts[@::surveys.candels.id] = 0
+    idCounts[@randomSurveyId()] += 1 for i in [1..count]
+    
+    hasTriggered = false
+    for id, limit of idCounts
+      continue if limit is 0
+      Api.get @url(surveyId: id, limit: limit), (results) =>
+        @create result for result in results
+        @current or= @first()
+        @trigger 'fetched' unless hasTriggered
   
   @show: (id) ->
     Api.get "/projects/galaxy_zoo/subjects/#{ id }"
