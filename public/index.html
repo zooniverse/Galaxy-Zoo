@@ -6,21 +6,23 @@
     
     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
     <link rel="stylesheet" href="application.css" type="text/css" charset="utf-8">
-    <scirpt src="cordova-1.8.1.js" type="text/javascript" charset="utf-8"></script>
-    <scirpt src="cordova.ios.js" type="text/javascript" charset="utf-8"></script> 
+    <script src="cordova-1.8.1.js" type="text/javascript" charset="utf-8"></script>
+    <script src="cordova.ios.js" type="text/javascript" charset="utf-8"></script> 
     <script src="application.js" type="text/javascript" charset="utf-8"></script>
 
     <title>Galaxy Zoo</title>
   </head>
   <body>
-    <div id="navigation"></div>
-    <div id="main"></div>
+    <div id="contentWrapper">
+      <div id="navigation"></div>
+      <div id="main"></div>
+    </div>
     
     <script type="text/javascript" charset="utf-8">
       var jQuery = require('jqueryify');
       jQuery(function() {
         var App = require('index');
-        new App({ el: $('body') });
+        new App({ el: $('contentWrapper') });
       });
     </script>
   </body>

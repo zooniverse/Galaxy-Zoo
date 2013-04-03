@@ -161,10 +161,11 @@
 @media only screen and (max-device-width: 480px) 
   #home  
     text-align: center
-    padding: 15px 15px 0px 15px
+    padding: 0px 0px 0px 0px
+    margin: none
     img 
       width: 100px
-      margin: 0px 0px 20px 0px
+      margin: 20px 0px 20px 0px
       padding: 0px
     .headline 
       width: 260px
@@ -182,19 +183,22 @@
         font-weight: 700
         margin-top: 10px
 
+      
     #recents
-      width: 1000px
       overflow: auto 
       height : 79px
       white-space: nowrap
       width: 100%
       img 
 
-        margin-right: 10px
+        margin: 0px 10px 0px 0px
         border: 2px solid white
-        width: 75px
-        height: 75px
+        width: 70px
+        height: 70px
         display: inline-block
+
+        &:first-child 
+          margin-left: 10px
        
     .login
       width: 260px
@@ -202,7 +206,7 @@
       padding: 10px
       margin-left: auto
       margin-right: auto
-      margin-top: 10px
+      margin-top: 20px
       background-color: #EDEDED
       -webkit-box-sizing: border-box
       h3 

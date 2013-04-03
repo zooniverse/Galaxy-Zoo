@@ -34,7 +34,20 @@ class App extends Spine.Controller
     #   else if $("body").scrollTop() > 20 and $("body").scrollTop() < 40
     #     $("body").animate({scrollTop:40}, 200)
     Spine.Route.setup()
-    
+
+    Spine.Route.bind "change", =>
+      @hideNav()
+      
+
+    setTimeout =>
+      @hideNav()
+    , 2000 
+
+
+  hideNav:=>
+    setTimeout =>
+        $("#contentWrapper").animate({scrollTop:60},400)
+      , 400
 
 preload = (image) ->
   img = new Image
