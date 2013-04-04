@@ -342,11 +342,36 @@
     padding-left: 5px;
     box-shadow: 0px 1px 0px #fff, inset 0px 1px 2px rgba(0,0,0,0.30);
     border: none;
-    margin-bottom: 20px;
+    margin-bottom: 13px;
   }
-  #home .login input[type='submit'] {
-    margin-top: 0px;
-    z-index: 100000000;
+  #home .login input.submitButton {
+    width: 200px;
+    height: 30px;
+    color: #fff;
+    text-shadow: 1px 1px solid rgba(255,255,255,0.30);
+    background-color: #0490c3;
+    border-radius: 2px;
+    border: 1px solid #005475;
+    font-size: 16px;
+    line-height: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    -webkit-appearance: button;
+    box-shadow: inset 0px 1px 1px #00abef, 1px 1px 2px rgba(0,0,0,0.30);
+  }
+  #home .classifyMore {
+    width: 200px;
+    height: 30px;
+    color: #fff;
+    text-shadow: 1px 1px solid rgba(255,255,255,0.30);
+    background-color: #0490c3;
+    border-radius: 2px;
+    border: 1px solid #005475;
+    font-size: 16px;
+    line-height: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 1px 1px inset #00abef, 1px 1px rgba(0,0,0,0.30);
   }
 }
 @media only screen and (max-device-width: 480px) {
@@ -1171,15 +1196,15 @@
     text-align: center;
   }
   .active #profile .content .button {
-    width: 200px;
-    height: 50px;
+    width: 250px;
+    height: 30px;
     color: #fff;
     text-shadow: 1px 1px solid rgba(255,255,255,0.30);
     background-color: #0490c3;
     border-radius: 2px;
     border: 1px solid #005475;
-    font-size: 20px;
-    line-height: 50px;
+    font-size: 16px;
+    line-height: 25px;
     margin-left: auto;
     margin-right: auto;
     box-shadow: 1px 1px inset #00abef, 1px 1px rgba(0,0,0,0.30);
@@ -1213,18 +1238,18 @@
     text-align: center;
   }
   .active #profile .content #login button {
-    width: 200px;
-    height: 50px;
+    width: 250px;
+    height: 30px;
     color: #fff;
     text-shadow: 1px 1px solid rgba(255,255,255,0.30);
     background-color: #0490c3;
     border-radius: 2px;
     border: 1px solid #005475;
-    font-size: 20px;
-    line-height: 50px;
+    font-size: 16px;
+    line-height: 25px;
     margin-left: auto;
     margin-right: auto;
-    display: inline-block;
+    box-shadow: 1px 1px inset #00abef, 1px 1px rgba(0,0,0,0.30);
   }
   .active #profile .content .content-block .right {
     width: 100%;
