@@ -107,10 +107,27 @@ class Classify extends Spine.Controller
   updateQuestion: ->
     if @classification.question
       @question.html require('views/question')(@classification.question)
+      setTimeout =>
+        @updateScroll(@classification.question)
+      ,200
     else
       @classification.send()
       @finish() # should be a interrupt page for favoriting, info, talk, etc
   
+  updateScroll:(question)=>
+    answerCount = (key for key,val of question.answers).length
+    checkboxCount = (key for key,val of question.checkboxes).length
+    displayCount = Math.max(answerCount,checkboxCount)
+
+    console.log "updating scroll with question ", displayCount
+    window.currentQuestion = question
+    if displayCount > 6
+      $("#contentWrapper").animate({scrollTop : 270}, 400)
+    else if displayCount > 3
+      $("#contentWrapper").animate({scrollTop : 170}, 400)
+    else
+      $("#contentWrapper").animate({scrollTop : 50}, 400)
+
   finish: ->
     Subject.next()
     @nextSubject()

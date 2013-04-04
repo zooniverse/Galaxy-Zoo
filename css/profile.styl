@@ -10,28 +10,89 @@
         margin: 0px
         width: 100%
         height: auto
+        box-sizing: border-box
+        padding-top: 10px
+        min-height: 480px
+        .content-block
+          .heading
+            font-size: 20px
+            padding-left: 0px;
+            width: 100%;
+            text-align: center;
+        .button
+          width: 200px
+          height: 50px
+          color: white 
+          text-shadow: 1px 1px solid rgba(256,256,256,0.3)
+          background-color: #0490C3
+          border-radius: 2px
+          border: 1px solid #005475
+          font-size: 20px
+          line-height: 50px 
+          margin-left: auto
+          margin-right: auto
+          box-shadow: 1px 1px inset #00abef,  1px 1px rgba(0,0,0,0.3)
+
+
+
         #login
           width: 100%
           height: auto
+          text-align: center 
+          padding-top: 20px
           .sign-in
-           width: 100%
+            width: 100%
             height: auto
-          form
-            width: 290px
+            margin-top: 70px
+
+            form
+              width: 100%
+
           label
-            width: 100px
+            width: 100%
             margin-left: 0px
             span
-              width: 100px
+              margin: 0px
+              padding: 0px
+              width: 100%
+              text-align: center!important
           .sign-up
-            margin-left: -200px
+            width: 100%
+            text-align: center 
+
+          button
             width: 200px
+            height: 50px
+            color: white 
+            text-shadow: 1px 1px solid rgba(256,256,256,0.3)
+            background-color: #0490C3
+            border-radius: 2px
+            border: 1px solid #005475
+            font-size: 20px
+            line-height: 50px 
+            margin-left: auto
+            margin-right: auto
+            display:inline-block
+
+
         .content-block
           .right
-            display: none 
+            width: 100%
+            display: block 
+            padding:0px 
+            text-align: center
+            .hubble, .sdss
+              background-image: none !important
+              width: 100% !important
+              padding: 0px !important
+              margin-bottom: 20px !important
+            .quizzes
+              display: none 
           .left
+            display:none
             float: none 
             width: 100%
+
 #profile
   .content
     background-color: $light-gray
@@ -188,3 +249,4 @@
         width: ($full-width * 0.29) - ($middle-padding / 2) - $side-padding
         float: left
         min-height: 565px
+

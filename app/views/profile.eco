@@ -6,12 +6,12 @@
       
       <div class="left">
         <h3 class="sub-heading">
-          <a data-show="favorites" class="<%- "inactive " if @showing == 'recents' %>favorites-link">Favourites</a>
-          <a data-show="recents" class="<%- "inactive " if @showing == 'favorites' %>recents-link">Recents</a>
+          <a data-show="recents" class="">Recents</a>
         </h3>
         
         <div class="thumbnails">
           <% for item in @collection().all() : %>
+            <% console.log "collection is ", @collection().all() %>
             <div class="item" data-id="<%= item.id %>">
               <div class="thumb"><img src="<%- item.subjects.location.thumbnail %>" height="140" width="140" /></div>
               <% if @showing is 'favorites' : %>
@@ -28,22 +28,24 @@
       
       <div class="right">
         <div class="classifications">
-          <h3 class="sub-heading">Classifications</h3>
+          <h3 class="sub-heading">You have classifed</h3>
           <div class="classification-counts">
             <div class="hubble">
               <span class="count"><%= @surveyCount 'candels' %></span>
               Hubble
-              <span class="caption">Hubble Classications</span>
+              <span class="caption">Galaxies</span>
             </div>
             
             <div class="sdss">
               <span class="count"><%= @surveyCount 'sloan' %></span>
               SDSS
-              <span class="caption">SDSS Classifications</span>
+              <span class="caption">Galaxies</span>
             </div>
           </div>
         </div>
         
+        <div class='signout button'>Sign Out</div>
+
         <div class="quizzes">
           <h3 class="sub-heading">Quizzes</h3>
           <div class="classification-counts">

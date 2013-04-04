@@ -15,7 +15,8 @@ class Profile extends Spine.Controller
     'tap .item .active.favorite': 'removeFavorite'
     'tap .item .inactive.favorite': 'addFavorite'
     'tap .quizzes .take-a-quiz': 'takeQuiz'
-  
+    'tap .signout' : 'signout'
+
   elements:
     '.favorites-link' : 'favoritesLink'
     '.recents-link' : 'recentsLink'
@@ -32,11 +33,17 @@ class Profile extends Spine.Controller
   collection: =>
     if @showing is 'recents' then Recent else Favorite
   
+  signout:=>
+    User.logout()
+    @navigate("/")
+
   user: ->
     User.current
   
   refresh: =>
+    console.log "refreshing"
     if User.current && @isActive()
+      console.log "actually refreshing ", @collection()
       fetcher = @collection().fetch(@opts)
       fetcher.onSuccess(@render) if @isActive()
   
@@ -47,6 +54,7 @@ class Profile extends Spine.Controller
   
   render: =>
     if User.current
+      console.log "rendering"
       @html require('views/profile')(@)
     else
       @html require('views/login')()

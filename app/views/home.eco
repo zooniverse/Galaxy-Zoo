@@ -16,7 +16,7 @@
     <%if @user : %>
       <h3> Welcome <%=@user.name%></h3>
 
-      <p style='color: black'> So far on galaxy zoo you have classifed <%=@user.classification_count%> galaxies</p>
+      <p style='color: black'> So far on galaxy zoo you have classifed <%=@user.project.classification_count%> galaxies</p>
       
       <button class='classifyMore'>Classify even more!</button>
 

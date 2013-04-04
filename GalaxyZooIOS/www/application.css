@@ -308,6 +308,7 @@
     height: 79px;
     white-space: nowrap;
     width: 100%;
+    -webkit-overflow-scrolling: touch;
   }
   #home #recents img {
     margin: 0px 10px 0px 0px;
@@ -390,7 +391,7 @@
     position: relative;
     top: 0px;
     left: 0px;
-    min-height: 360px;
+    min-height: 460px;
   }
   body #main .active #classify .tree .question p.heading {
     display: none;
@@ -928,6 +929,9 @@
   margin: 0px;
   padding: 0px;
   width: 100%;
+  max-height: 100%;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
 }
 #science .content .content-block,
 #story .content .content-block,
@@ -1156,32 +1160,90 @@
     margin: 0px;
     width: 100%;
     height: auto;
+    box-sizing: border-box;
+    padding-top: 10px;
+    min-height: 480px;
+  }
+  .active #profile .content .content-block .heading {
+    font-size: 20px;
+    padding-left: 0px;
+    width: 100%;
+    text-align: center;
+  }
+  .active #profile .content .button {
+    width: 200px;
+    height: 50px;
+    color: #fff;
+    text-shadow: 1px 1px solid rgba(255,255,255,0.30);
+    background-color: #0490c3;
+    border-radius: 2px;
+    border: 1px solid #005475;
+    font-size: 20px;
+    line-height: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 1px 1px inset #00abef, 1px 1px rgba(0,0,0,0.30);
   }
   .active #profile .content #login {
     width: 100%;
     height: auto;
+    text-align: center;
+    padding-top: 20px;
   }
-  .active #profile .content #login .sign-in width: 100% {
+  .active #profile .content #login .sign-in {
+    width: 100%;
     height: auto;
+    margin-top: 70px;
   }
-  .active #profile .content #login form {
-    width: 290px;
+  .active #profile .content #login .sign-in form {
+    width: 100%;
   }
   .active #profile .content #login label {
-    width: 100px;
+    width: 100%;
     margin-left: 0px;
   }
   .active #profile .content #login label span {
-    width: 100px;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    text-align: center !important;
   }
   .active #profile .content #login .sign-up {
-    margin-left: -200px;
+    width: 100%;
+    text-align: center;
+  }
+  .active #profile .content #login button {
     width: 200px;
+    height: 50px;
+    color: #fff;
+    text-shadow: 1px 1px solid rgba(255,255,255,0.30);
+    background-color: #0490c3;
+    border-radius: 2px;
+    border: 1px solid #005475;
+    font-size: 20px;
+    line-height: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-block;
   }
   .active #profile .content .content-block .right {
+    width: 100%;
+    display: block;
+    padding: 0px;
+    text-align: center;
+  }
+  .active #profile .content .content-block .right .hubble,
+  .active #profile .content .content-block .right .sdss {
+    background-image: none !important;
+    width: 100% !important;
+    padding: 0px !important;
+    margin-bottom: 20px !important;
+  }
+  .active #profile .content .content-block .right .quizzes {
     display: none;
   }
   .active #profile .content .content-block .left {
+    display: none;
     float: none;
     width: 100%;
   }
@@ -2954,7 +3016,7 @@ body {
     padding: 0px;
     -webkit-tap-highlight-color: rgba(0,0,0,0.00);
     -webkit-touch-callout: none;
-    -webkit-overflow-scrolling: none;
+    -webkit-overflow-scrolling: auto;
     -webkit-user-select: none;
 /* Disable selection/Copy of UIWebView */
     overflow: hidden;
@@ -2965,7 +3027,7 @@ body {
     overflow-y: scroll;
     width: 100%;
     height: 100%;
-    -webkit-overflow-scrolling: touch;
+    -webkit-overflow-scrolling: auto;
   }
   html #contentWrapper #main,
   body #contentWrapper #main {

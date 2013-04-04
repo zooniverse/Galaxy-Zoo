@@ -16,7 +16,7 @@ class Quizzes extends Spine.Controller
         @check()
   
   check: =>
-    return unless User.current
+    return false #unless User.current
     checker = Api.getJSON "/projects/galaxy_zoo_quiz/current_user"
     checker.onSuccess (user) =>
       Quiz.user = user

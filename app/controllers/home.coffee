@@ -22,8 +22,7 @@ class Home extends Spine.Controller
     @attemptLocalStorageLogin()
 
     User.bind 'sign-in' , =>
-      if User.current? 
-        @render()
+      @render()
 
     @render()
   
@@ -34,9 +33,11 @@ class Home extends Spine.Controller
   active: ->
     super
 
+
   attemptLocalStorageLogin:->
     username = window.localStorage['7147821400']
     password = window.localStorage['3298168253']
+
     if username? and password?
       User.login({username, password})
 
@@ -51,10 +52,10 @@ class Home extends Spine.Controller
     @storeLocal(@usernameInput.val(), @passwordInput.val())
 
   updateRecents: =>
-    console.log "getting recents"
+
     # return unless @isActive()
     # return if @recentsFetcher?
-    console.log "reall getting recents"
+
     @recentsFetcher = Recent.fetch(10).onSuccess (subjects) =>
       console.log "got recent reply"
       @recents = Recent.all()

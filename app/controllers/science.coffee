@@ -4,6 +4,7 @@ class Science extends Spine.Controller
   constructor: ->
     super
     @render()  
+    
 
   active: ->
     super

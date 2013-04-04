@@ -35,7 +35,8 @@ class App extends Spine.Controller
     #     $("body").animate({scrollTop:40}, 200)
     Spine.Route.setup()
 
-    Spine.Route.bind "change", =>
+    Spine.Route.bind "change", (nav)=>
+      console.log "nav is ", nav
       @hideNav()
       
 
@@ -47,6 +48,11 @@ class App extends Spine.Controller
   hideNav:=>
     setTimeout =>
         $("#contentWrapper").animate({scrollTop:60},400)
+      , 400
+
+  showNav:=>
+    setTimeout =>
+        $("#contentWrapper").animate({scrollTop:0},400)
       , 400
 
 preload = (image) ->
