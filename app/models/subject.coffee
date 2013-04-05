@@ -20,7 +20,7 @@ class Subject extends BaseSubject
       tree: CandelsTree
   
   @url: (params) -> @withParams "/projects/galaxy_zoo/groups/#{ params.surveyId }/subjects", limit: params.limit
-  @randomSurveyId: -> if Math.random() > 0.166667 then @::surveys.sloan.id else @::surveys.candels.id
+  @randomSurveyId: -> if Math.random() > (2/3) then @::surveys.sloan.id else @::surveys.candels.id
   
   @next: ->
     if @current
