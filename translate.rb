@@ -1,5 +1,9 @@
 #!/usr/bin/env ruby
 
+# Requires the coffeescript gem
+# Install with
+#   gem install coffee-script
+
 gem 'coffee-script'
 require 'coffee_script'
 
@@ -8,7 +12,7 @@ unless ARGV[0]
 end
 
 raw = File.read File.join File.dirname(__FILE__), 'app/lib/en.coffee'
-compiled = CoffeeScript.compile raw, bare: true
+compiled = CoffeeScript.compile raw, :bare => true
 compiled.sub! /^\n?module\.exports = /, ''
 compiled.sub! /\n?;$/, ''
 hash = ExecJS.eval compiled
