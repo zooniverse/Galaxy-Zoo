@@ -4,18 +4,21 @@
       <div class="full">
       <h1 class="heading"><%- I18n.t 'team.title' %></h1>
         <h3 class="sub-heading"><%- I18n.t 'team.science.title' %></h3>
-        <p><%- I18n.t 'team.science.bamford' %></p>
         <p><%- I18n.t 'team.science.lintott' %></p>
+        <p><%- I18n.t 'team.science.masters' %></p>
         <p><%- I18n.t 'team.science.schawinski' %></p>
+        <p><%- I18n.t 'team.science.bamford' %></p>
+        <p><%- I18n.t 'team.science.simmons' %></p>
+        <p><%- I18n.t 'team.science.willet' %></p>
         <p><%- I18n.t 'team.science.edmondson' %></p>
         <p><%- I18n.t 'team.science.keel' %></p>
         <p><%- I18n.t 'team.science.skibba' %></p>
         <p><%- I18n.t 'team.science.cardamone' %></p>
-        <p><%- I18n.t 'team.science.willet' %></p>
         <p><%- I18n.t 'team.science.urry' %></p>
+        <p><%- I18n.t 'team.science.casteels' %></p>
         <p><%- I18n.t 'team.science.nichol' %></p>
         <p><%- I18n.t 'team.science.fortson' %></p>
-        <p><%- I18n.t 'team.science.masters' %></p>
+        <p><%- I18n.t 'team.science.maksym' %></p> 
         <p><%- I18n.t 'team.science.melvin' %></p>
         <p><%- I18n.t 'team.science.szalay' %></p>
         <p><%- I18n.t 'team.science.thomas' %></p>
