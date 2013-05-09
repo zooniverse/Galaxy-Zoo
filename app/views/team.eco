@@ -9,7 +9,7 @@
         <p><%- I18n.t 'team.science.schawinski' %></p>
         <p><%- I18n.t 'team.science.bamford' %></p>
         <p><%- I18n.t 'team.science.simmons' %></p>
-        <p><%- I18n.t 'team.science.willet' %></p>
+        <p><%- I18n.t 'team.science.willett' %></p>
         <p><%- I18n.t 'team.science.edmondson' %></p>
         <p><%- I18n.t 'team.science.keel' %></p>
         <p><%- I18n.t 'team.science.skibba' %></p>
