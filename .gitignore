@@ -10,4 +10,5 @@ public/fits_workers.js
 public/navigator.js
 public/application.js
 public/application.css
+.env
 
