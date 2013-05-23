@@ -20,7 +20,7 @@ class Subject extends BaseSubject
       tree: CandelsTree
   
   @url: (params) -> @withParams "/projects/galaxy_zoo/groups/#{ params.surveyId }/subjects", limit: params.limit
-  @randomSurveyId: -> if Math.random() > (2/3) then @::surveys.sloan.id else @::surveys.candels.id
+  # @randomSurveyId: -> if Math.random() > (2/3) then @::surveys.sloan.id else @::surveys.candels.id
   
   @next: ->
     if @current
@@ -30,20 +30,27 @@ class Subject extends BaseSubject
     else
       @fetch()
   
+  # @fetch: ->
+  #   count = Config.subjectCache - @count()
+  #   idCounts = { }
+  #   idCounts[@::surveys.sloan.id] = 0
+  #   idCounts[@::surveys.candels.id] = 0
+  #   idCounts[@randomSurveyId()] += 1 for i in [1..count]
+  #   
+  #   hasTriggered = false
+  #   for id, limit of idCounts
+  #     continue if limit is 0
+  #     Api.get @url(surveyId: id, limit: limit), (results) =>
+  #       @create result for result in results
+  #       @current or= @first()
+  #       @trigger 'fetched' unless hasTriggered
+
   @fetch: ->
-    count = Config.subjectCache - @count()
-    idCounts = { }
-    idCounts[@::surveys.sloan.id] = 0
-    idCounts[@::surveys.candels.id] = 0
-    idCounts[@randomSurveyId()] += 1 for i in [1..count]
-    
     hasTriggered = false
-    for id, limit of idCounts
-      continue if limit is 0
-      Api.get @url(surveyId: id, limit: limit), (results) =>
-        @create result for result in results
-        @current or= @first()
-        @trigger 'fetched' unless hasTriggered
+    Api.get @url(surveyId: @::surveys.sloan.id, limit: Config.subjectCache - @count()), (results) =>
+      @create result for result in results
+      @current or= @first()
+      @trigger 'fetched' unless hasTriggered
   
   @show: (id) ->
     Api.get "/projects/galaxy_zoo/subjects/#{ id }"
