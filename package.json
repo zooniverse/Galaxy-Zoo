@@ -23,8 +23,9 @@
     "spine": "~1.0.7",
     "clean-css": "0.6.0",
     "uglify-js": "1.3.4",
-    "ubret" : "git+ssh://git@github.com:zooniverse/Ubret.git#57205ffbdef0",
-    "zooniverse": "git+ssh://git@github.com:zooniverse/Zooniverse.git#galaxy_zoo"
+    "ubret" : "git+ssh://git@github.com:zooniverse/Ubret.git#galaxy_zoo",
+    "zooniverse": "git+ssh://git@github.com:zooniverse/Zooniverse.git#galaxy_zoo",
+    "coffee-script": "1.6.2"
   },
   "devDependencies": {
     "jasmine-phantom-node": "git://github.com/edpaget/jasmine-phantom-node.git"
