@@ -24,9 +24,9 @@
       <a href="#/astronomers" data-nav="/astronomers"><%- I18n.t 'navigation.astronomers' %></a>
     </li>    
     <li>
-      <a href="http://talk.galaxyzoo.org" target="_blank"><%- I18n.t 'navigation.discuss' %></a>
+      <a href="http://talk.galaxyzoo.org"><%- I18n.t 'navigation.discuss' %></a>
       <ul class="menu">
-        <li><a href="http://talk.galaxyzoo.org" target="_blank"><%- I18n.t 'navigation.talk' %></a></li>
+        <li><a href="http://talk.galaxyzoo.org"><%- I18n.t 'navigation.talk' %></a></li>
         <li><a href="http://www.galaxyzooforum.org" target="_blank"><%- I18n.t 'navigation.forum' %></a></li>
       </ul>
     </li>
