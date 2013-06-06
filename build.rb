@@ -28,31 +28,36 @@ echo 'Compressing...'
 
 timestamp=#{ timestamp }
 
-mv build/application.js "build/application-$timestamp.js"
-mv build/fits.js "build/fits-$timestamp.js"
-mv build/navigator.js "build/navigator-$timestamp.js"
+./node_modules/clean-css/bin/cleancss build/application.css -o "build/application.css"
 
-./node_modules/clean-css/bin/cleancss build/application.css -o "build/application-$timestamp.css"
-rm build/application.css
-gzip -9 -c "build/application-$timestamp.js" > "build/application-$timestamp.js.gz"
-gzip -9 -c "build/fits-$timestamp.js" > "build/fits-$timestamp.js.gz"
-gzip -9 -c "build/navigator-$timestamp.js" > "build/navigator-$timestamp.js.gz"
-gzip -9 -c "build/application-$timestamp.css" > "build/application-$timestamp.css.gz"
+gzip -9 -c "build/application.js" > "build/application-$timestamp.js"
+gzip -9 -c "build/fits.js" > "build/fits-$timestamp.js"
+gzip -9 -c "build/navigator.js" > "build/navigator-$timestamp.js"
+gzip -9 -c "build/application.css" > "build/application-$timestamp.css"
+gzip -9 -c "build/fits_workers.js" > "build/fits_workers.js.gz"
+gzip -9 -c "build/javascripts/webfits-canvas.js" > "build/javascripts/webfits-canvas.js.gz"
+gzip -9 -c "build/javascripts/webfits-gl.js" > "build/javascripts/webfits-gl.js.gz"
+
+mv build/fits_workers.js.gz build/fits_workers.js
+mv build/javascripts/webfits-canvas.js.gz build/javascripts/webfits-canvas.js
+mv build/javascripts/webfits-gl.js.gz build/javascripts/webfits-gl.js
+
+rm build/application.js build/fits.js build/navigator.js build/application.css
 BASH
 
 system build
-system compress
 
 index = File.read 'build/index.html'
 index.gsub! 'application.js', "application-#{ timestamp }.js"
 index.gsub! 'application.css', "application-#{ timestamp }.css"
 File.open('build/index.html', 'w'){ |f| f.puts index }
 
-app_js = File.read "build/application-#{ timestamp }.js"
+app_js = File.read "build/application.js"
 app_js.gsub! 'fits.js', "fits-#{ timestamp }.js"
 app_js.gsub! 'navigator.js', "navigator-#{ timestamp }.js"
-File.open("build/application-#{ timestamp }.js", 'w'){ |f| f.puts app_js }
+File.open("build/application.js", 'w'){ |f| f.puts app_js }
 
+system compress
 working_directory = File.expand_path Dir.pwd
 Dir.chdir 'build'
 
@@ -85,7 +90,13 @@ to_upload.each.with_index do |file, index|
   end
   
   puts "#{ '%2d' % (index + 1) } / #{ '%2d' % total }: Uploading #{ file } as #{ content_type }"
-  bucket.objects[file].write file: file, acl: :public_read, content_type: content_type
+  options = { file: file, acl: :public_read, content_type: content_type }
+  
+  if content_type == 'application/javascript' || content_type == 'text/css'
+    options[:content_encoding] = 'gzip'
+  end
+  
+  bucket.objects[file].write options
 end
 
 bucket.objects['index.html'].write file: 'index.html', acl: :public_read, content_type: 'text/html', cache_control: 'no-cache, must-revalidate'
