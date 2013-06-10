@@ -380,10 +380,11 @@
     border: none;
     padding: 0px;
     border: 0px;
-    margin: -20px 0px;
+    margin: 0px 0px;
     width: 100%;
     min-height: 400px;
     background-color: #000;
+    min-height: 480px;
   }
   body #main .active #classify .galaxy {
     border: none;
@@ -399,14 +400,18 @@
     margin: 0px;
     width: 100%;
     height: auto;
+    float: none;
   }
   body #main .active #classify .tree {
     display: block;
     float: none;
     width: 100%;
+    margin-top: 0px;
+    height: 100%;
   }
   body #main .active #classify .tree .top {
     display: none;
+    height: 100%;
   }
   body #main .active #classify .tree .question {
     color: #fff;
@@ -416,14 +421,15 @@
     position: relative;
     top: 0px;
     left: 0px;
-    min-height: 460px;
   }
   body #main .active #classify .tree .question p.heading {
     display: none;
   }
   body #main .active #classify .tree .question p {
+    width: 95%;
+    min-height: 40px;
     text-align: center;
-    margin: 0px;
+    margin: 0px auto 0px auto;
     padding: 0px;
   }
   body #main .active #classify .tree .question div.buttons {
