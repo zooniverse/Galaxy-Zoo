@@ -18,9 +18,9 @@ class Subject extends BaseSubject
       id: Config.surveys.candels.id
       workflowId: Config.surveys.candels.workflowId
       tree: CandelsTree
-  
-  @url: (params) -> @withParams "/projects/galaxy_zoo/groups/#{ @randomSurveyId() }/subjects", params
-  @randomSurveyId: -> if Math.random() > 0.166667 then @::surveys.sloan.id else @::surveys.candels.id
+ 
+  @url: (params) -> @withParams "/projects/galaxy_zoo/groups/#{ @::surveys.sloan.id }/subjects", params
+  @randomSurveyId: -> @::surveys.sloan.id
   
   @next: ->
     if @current

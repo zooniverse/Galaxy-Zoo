@@ -24,17 +24,5 @@
     </div>
   </div>
   
-  <div class="content-block">
-    <div class="left">
-      <h1 class="heading"><%- I18n.t 'home.classroom.title' %></h1>
-      <p class="description"><%- I18n.t 'home.classroom.body' %></p>
-      <a data-nav="#/navigator/home" href="/#/navigator/home" class="galaxify"><%- I18n.t 'home.classroom.navigator' %></a>
-    </div>
-    <div class="right">
-      <h1 class="heading"><%- I18n.t 'home.recent_images.title' %></h1>
-      <div class="recents">
-        <%- require('views/recents')(@recents) %>
-      </div>
-    </div>
-  </div>
+ 
 </div>

@@ -19,8 +19,8 @@ class App extends Spine.Controller
       el: '.zooniverse-top-bar'
       languages:
         en: 'English'
-      app: 'galaxy_zoo'
-      appName: 'Galaxy Zoo'
+      app: 'galaxy_zoo_min_project'
+      appName: 'Galaxy Zoo Mini Projects'
     
     @navigation = new Navigation
     @main = new Main

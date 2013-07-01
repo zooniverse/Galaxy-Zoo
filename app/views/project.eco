@@ -1,0 +1,30 @@
+<div id="project">
+  <div class="content">
+    <div class="content-block">
+      <div class="full">
+        <h1 class="heading"><%- I18n.t 'project.overview_title' %></h1>
+        <h3 class='sub-heading'><%-I18n.t 'project.h1' %></h2>
+
+        <p><%- I18n.t 'project.p1' %></p>
+        <p><%- I18n.t 'project.p2' %></p>
+        <p><%- I18n.t 'project.p3' %></p>
+        <p><%- I18n.t 'project.p4' %></p>
+
+        <h3 class='sub-heading'><%-I18n.t 'project.h2' %></h2>
+        <p><%- I18n.t 'project.p5' %></p>
+      </div>
+    </div>
+
+     <div class="content-block">
+      <div class="full" style="padding-top:0px">
+        <h1 class="heading"><%- I18n.t 'project.timeline_title' %></h1>
+        <ul >
+          <li><strong class='sub-heading'>July 9th</strong> Call for volunteers</li>
+          <li><strong class='sub-heading'>July 18th</strong> Begin classifying galaxies</li>
+          <li><strong class='sub-heading'>Aug 1st</strong> Classification complete. <br />Focus on data analysis, discussion, and writing the article. <br />Analysis using tools.zooniverse.org <br /> Discussions within Talk Collaborative article writing using authorea.com </li>
+          <li><strong class='sub-heading'>Sept 9th</strong>  Article writing complete. Submit to the Astrophysical Journal Letters.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

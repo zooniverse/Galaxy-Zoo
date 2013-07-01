@@ -5,30 +5,22 @@
     </li>
     <li>
       <a href="#/science" data-nav="/science"><%- I18n.t 'navigation.science' %></a>
-      <ul class="menu">
-        <li><a href="http://blog.galaxyzoo.org" target="_blank"><%- I18n.t 'navigation.blog' %></a></li>
-        <li><a href="#/team" data-nav="/team"><%- I18n.t 'navigation.team' %></a></li>
-        <li><a href="#/papers" data-nav="/papers"><%- I18n.t 'navigation.papers' %></a></li>
-        <li><a href="http://data.galaxyzoo.org" target="_blank"><%- I18n.t 'navigation.data' %></a></li>
-      </ul>
+     
     </li>
-    <li>
-      <a href="#/story" data-nav="/story"><%- I18n.t 'navigation.story' %></a>
-    </li>
+      <li><a href="#/project" data-nav="/project" target="_blank"><%- I18n.t 'navigation.project' %></a>
+      
+      </li>
     <li class="logo">
       <a href="#/" data-nav="/">
         <img src="images/gz_logo.png" alt="<%- I18n.t 'navigation.galaxy_zoo' %>" />
       </a>
     </li>
+
     <li>
-      <a href="#/astronomers" data-nav="/astronomers"><%- I18n.t 'navigation.astronomers' %></a>
-    </li>    
-    <li>
-      <a href="http://talk.galaxyzoo.org" target="_blank"><%- I18n.t 'navigation.discuss' %></a>
-      <ul class="menu">
-        <li><a href="http://talk.galaxyzoo.org" target="_blank"><%- I18n.t 'navigation.talk' %></a></li>
-        <li><a href="http://www.galaxyzooforum.org" target="_blank"><%- I18n.t 'navigation.forum' %></a></li>
-      </ul>
+   
+      <li><a href="http://www.galaxyzooforum.org" target="_blank"><%- I18n.t 'navigation.forum' %></a></li>
+      <li><a href="http://authorea.org" target="_blank"><%- I18n.t 'navigation.paper' %></a></li>
+
     </li>
     <li class="last">
       <a href="#/profile" data-nav="/profile"><%- I18n.t 'navigation.profile' %></a>

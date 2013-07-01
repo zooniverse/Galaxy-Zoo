@@ -40,6 +40,7 @@ Config =
     quiz:
       invitationId: '502bfa73516bcb3c600003e9'
       workflowId: '502a701e516bcb0001000002'
+  
 
   production:
     apiHost: 'https://api.zooniverse.org'
@@ -63,5 +64,7 @@ else if window.location.port > 1024
   'developmentLocal'
 else
   'production'
+
+console.log "env is #{env}"
 
 module.exports = Config[env]

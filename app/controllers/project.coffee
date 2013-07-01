@@ -1,6 +1,6 @@
 Spine = require 'spine'
 
-class Story extends Spine.Controller
+class Project extends Spine.Controller
   constructor: ->
     super
   
@@ -9,6 +9,6 @@ class Story extends Spine.Controller
     @render()
   
   render: ->
-    @html require('views/story')(@)
+    @html require('views/project')(@)
 
-module.exports = Story
+module.exports = Project

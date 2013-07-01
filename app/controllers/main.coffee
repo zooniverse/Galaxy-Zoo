@@ -5,7 +5,7 @@ Science = require 'controllers/science'
 Profile = require 'controllers/profile'
 Examine = require 'controllers/examine'
 Papers = require 'controllers/papers'
-Story = require 'controllers/story'
+Project = require 'controllers/project'
 Team = require 'controllers/team'
 Interactive = require 'controllers/interactive'
 Astronomers = require 'controllers/astronomers'
@@ -22,7 +22,7 @@ class Main extends Spine.Stack
     profile: Profile
     examine: Examine
     papers: Papers
-    story: Story
+    project: Project
     team: Team
     interactive: Interactive
     astronomers: Astronomers
@@ -38,7 +38,7 @@ class Main extends Spine.Stack
     '/profile': 'profile'
     '/examine/:id': 'examine'
     '/papers': 'papers'
-    '/story': 'story'
+    '/project': 'project'
     '/team': 'team'
     '/navigator/:page': 'interactive'
     '/navigator/:page/:options': 'interactive'

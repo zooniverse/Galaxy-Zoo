@@ -3,7 +3,7 @@
 require 'aws-sdk'
 AWS.config access_key_id: ENV['S3_ACCESS_ID'], secret_access_key: ENV['S3_SECRET_KEY']
 s3 = AWS::S3.new
-bucket = s3.buckets['www.galaxyzoo.org']
+bucket = s3.buckets['zooniverse-demo']
 
 build = <<-BASH
 rm -rf build
@@ -85,10 +85,10 @@ to_upload.each.with_index do |file, index|
   end
   
   puts "#{ '%2d' % (index + 1) } / #{ '%2d' % total }: Uploading #{ file } as #{ content_type }"
-  bucket.objects[file].write file: file, acl: :public_read, content_type: content_type
+  bucket.objects["gz_mini_project/#{file}"].write file: file, acl: :public_read, content_type: content_type
 end
 
-bucket.objects['index.html'].write file: 'index.html', acl: :public_read, content_type: 'text/html', cache_control: 'no-cache, must-revalidate'
+bucket.objects['gz_mini_project/index.html'].write file: 'index.html', acl: :public_read, content_type: 'text/html', cache_control: 'no-cache, must-revalidate'
 
 Dir.chdir working_directory
 `rm -rf build`
