@@ -1,7 +1,7 @@
 Spine = require 'spine'
 
 class Question extends Spine.Model
-  @configure 'Question', 'tree', 'answers', 'checkboxes', 'leadsTo', 'helpText'
+  @configure 'Question', 'tree', 'answers', 'checkboxes', 'leadsTo', 'helpText', 'title', 'text'
   
   @findByTreeAndText: (tree, text) ->
     @select (q) -> q.tree is tree and q.text is text
@@ -15,8 +15,8 @@ class Question extends Spine.Model
     @helpText or= ''
     @answers or= { }
     @checkboxes or= { }
-    @text = I18n.t 'questions', @id, 'text'
-    @title = I18n.t 'questions', @id, 'title'
+    @title = hash.title 
+    @text  = hash.text
     hash.answerWith?.apply @
     super
   
@@ -28,7 +28,6 @@ class Question extends Spine.Model
   
   answer: (text, { leadsTo: leadsTo, icon: icon, examples: examples, talk: talk } = { leadsTo: null, icon: null, examples: 0, talk: false }) ->
     id = "a-#{ _(@answers).keys().length }"
-    text = I18n.t 'questions', @id, 'answers', id
     @answers[id] = { text, leadsTo, icon, examples, talk }
   
   examples: =>
@@ -42,7 +41,6 @@ class Question extends Spine.Model
   checkbox: (text, { icon: icon, examples: examples } = { icon: null, examples: 0 }) ->
     checkbox = true
     id = "x-#{ _(@checkboxes).keys().length }"
-    text = I18n.t 'questions', @id, 'checkboxes', id
     @checkboxes[id] = { checkbox, text, icon, examples }
   
   nextQuestionFrom: (answer) ->

@@ -5,7 +5,7 @@ Api = require 'zooniverse/lib/api'
 class ProjectRecent extends Model
   @configure 'ProjectRecent', 'project_id', 'workflow_id', 'subjects', 'created_at'
 
-  @url: (params) -> @withParams "/projects/galaxy_zoo/recents", params
+  @url: (params) -> @withParams "/projects/galaxy_zoo_starburst/recents", params
   
   @fetch: (count = 3) ->
     Api.get @url(per_page: count), (results) =>

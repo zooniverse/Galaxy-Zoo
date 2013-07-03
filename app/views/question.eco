@@ -1,4 +1,5 @@
 <div class="question" data-id="<%= @id %>">
+  <%console.log "rendering ",@ %>
   <p class="heading"><%= @title %></p>
   <p class="text"><%= @text %></p>
   

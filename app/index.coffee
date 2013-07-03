@@ -19,8 +19,8 @@ class App extends Spine.Controller
       el: '.zooniverse-top-bar'
       languages:
         en: 'English'
-      app: 'galaxy_zoo_min_project'
-      appName: 'Galaxy Zoo Mini Projects'
+      app: 'galaxy_zoo_starburst'
+      appName: 'Galaxy Zoo Starburst'
     
     @navigation = new Navigation
     @main = new Main
@@ -37,7 +37,7 @@ preload '/images/icons.png'
 preload '/images/workflow.png'
 preload '/images/examples.jpg'
 
-googleAnalytics.init account: 'UA-1224199-9', domain: 'galaxyzoo.org'
+# googleAnalytics.init account: 'UA-1224199-9', domain: 'galaxyzoo.org'
 
 (new BrowserCheck).check()
 

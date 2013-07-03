@@ -7,7 +7,7 @@
       <a href="#/science" data-nav="/science"><%- I18n.t 'navigation.science' %></a>
      
     </li>
-      <li><a href="#/project" data-nav="/project" target="_blank"><%- I18n.t 'navigation.project' %></a>
+    <li><a href="#/project" data-nav="/project" target="_blank"><%- I18n.t 'navigation.project' %></a>
       
       </li>
     <li class="logo">
