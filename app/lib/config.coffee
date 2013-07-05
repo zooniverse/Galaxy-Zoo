@@ -65,7 +65,7 @@ else if window.location.port > 1024
 else
   'production'
 
-env = "developmentLocal"
+env = "developmentRemote"
 console.log "env is #{env}"
 
 module.exports = Config[env]

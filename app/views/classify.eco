@@ -10,8 +10,8 @@
         <li class="right"><a class="restart"><%- I18n.t 'classify.restart' %></a></li>
         <li class="right"><a class="help"><%- I18n.t 'classify.help' %></a></li>
         <li class="left">
-          <a title="<%- I18n.t 'classify', @subject.metadata.survey %>" class="icon <%= @subject.metadata.survey %>">&nbsp;</a>
-          <span class="label"><%- I18n.t 'classify', @subject.metadata.survey %></span>
+          <a title="SDSS" class="icon sloan">&nbsp;</a>
+          <span class="label">SDSS</span>
         </li>
         <% if UserGroup.current : %>
           <li class="left">
