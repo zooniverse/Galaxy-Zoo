@@ -619,27 +619,41 @@ module.exports =
   
   
   home:
-    headline: "Experience Science from Beginning to End"
-    call_to_action: 'Classify, analyze, discuss, & write the article to share your results with the world.'
+    headline: "Galaxy Zoo Quench"
+    call_to_action: 'Experience science from beginning to end.'
     
     galaxy_zoo:
       title: 'Classify Galaxies'
       description: "Post-quenched galaxies are a rare type of galaxy whose star formation was recently and abruptly quenched. To understand what caused the quenching and the role that post-quenched galaxies play in galaxy evolution, we need your help to classify them according to their shapes."
       classify: 'Begin Classifying'
-      
-    
+          
     galaxy_formation:
-      title: 'Interacting Galaxies'
-      body: 'Roughly one hundred billion galaxies are scattered throughout our observable Universe, each a glorious system that might contain billions of stars. Many are remarkably beautiful, and the aim of Galaxy Zoo is to study them, assisting astronomers in attempting to understand how the galaxies we see around us formed, and what their stories can tell us about the past, present and future of our Universe as a whole. <a data-nav="#/science" href="#/science">more</a>'
+      title: 'The science'
+      body: 'Galaxies broadly fall into two main categories: blue star-forming disky spirals and red and \'dead\' ellipticals. Evidence suggests the transition from blue to red is rapid, less than a billion years, calling for mechanism(s) that \'quench\', or quickly shut off, star formation.'
+      body2: 'Low-mass galaxies appear to be able to quench their star formation via multiple pathways: through mergers with other galaxies, feedback from supernovae explosions, and/or feedback from actively accreting central supermassive black holes (known as Active Galactic Nuclei or AGN). In contrast, high-mass galaxies (with their deeper gravitational potential wells) more often appear to require a major merger (a merger with a galaxy of similar mass to its own) accompanied by AGN activity to quench their star formation.
+      <a data-nav="#/science" href="#/science">more</a>'
     
     history:
-      title: 'Relation to galaxy zoo.'
-      body: '''The launch of this new version of Galaxy Zoo, the 4th, comes just a few weeks after the site’s 5th birthday. It all started back in July 2007, with a data set made up of a million galaxies imaged by the Sloan Digital Sky Survey, who still provide some of the images in the site today. With so many galaxies, we'd assumed it would take years for visitors to the site to work through them all, but within 24 hours of launch we were stunned to be receiving almost 70,000 classifications an hour. In the end, more than 50 million classifications were received by the project during its first year, contributed by more than 150,000 people. <a data-nav="#/story" href="#/story">more</a>'''
+      title: 'Relation to galaxy zoo'
+      body: 'Galaxy Zoo started back in July 2007, with a data set made up of a million galaxies imaged by the Sloan Digital Sky Survey, who still provide some of the images in the site today. With so many galaxies, we\'d assumed it would take years for visitors to the site to work through them all, but within 24 hours of launch we were stunned to be receiving almost 70,000 classifications an hour. In the end, more than 50 million classifications were received by the project during its first year, contributed by more than 150,000 people.'
+      body2: 'Galaxy Zoo Quench aims to extend upon the original Galaxy Zoo project by asking volunteers to not only participate in classifying galaxies, but offering them the opportunity to analyse the results and write a paper with the results. The website was built by the same team that brought you Galaxy Zoo, using much of the same techniques and technology.'
     
-    classroom:
-      title: 'Galaxy Zoo in the Classroom'
-      body: 'Are you an educator? Would you like to use Galaxy Zoo with a group of students? The <a href="http://www.galaxyzoo.org/#/navigator/home">Navigator</a> is an interactive tool that allows groups to classify galaxies together and then investigate galaxy characteristics. <a href="http://www.zooteach.org/zoo/galaxy_zoo">Zoo Teach</a> is where educators can share lessons, resources and that compliment the citizen science projects that are part of the Zooniverse.'
-      navigator: 'Navigator'
+    leading:
+      title: 'You take the lead'
+      body: 'In this Galaxy Zoo project, you will not only carry out the classification of this sample of post-quenched galaxies, but we will collaboratively analyze the data, discuss the results, and write an article to submit to the Astrophysical Journal.'
+      body2:'<a data-nav="#/project" href="#/project">What do you think? Data Analysis & Discussion</a>'
+      body3:'<a data-nav="#/project" href="#/project">What did you find? Writing the Article</a>'
+
+    timeline:
+      title: 'Project timeline'
+      body: 'This short burst project will last 8 weeks. 
+            <ul>
+              <li>July 9th: Call for volunteers</li>
+              <li>July 18th: Begin galaxies classification</li>
+              <li>August 1st: Classification complete</li>
+              <li>August 1st to September 9th: Data analysis, discussion, and article writing</li>
+              <li>September 9th: Article complete. Submit to the Astrophysical Journal</li>
+            </ul>'
     
     recent_images:
       title: 'Recent Images'
@@ -692,36 +706,47 @@ module.exports =
     take_a_quiz: 'Take a quiz now'
     galaxy_zoo_hubble: 'Galaxy Zoo: Hubble'
     galaxy_zoo_hubble_link: '''If you're looking for your old galaxies from Galaxy Zoo Hubble, then you can <a href="http://hubble.galaxyzoo.org/my_galaxies" target="_blank">find them here</a>.'''
-  
-  
+   
   science:
-    title: 'The Science behind the Site'
-    p1: 'Roughly one hundred billion galaxies are scattered throughout our observable Universe, each a glorious system that might contain billions of stars. Many are remarkably beautiful, and the aim of Galaxy Zoo is to study them, assisting astronomers in attempting to understand how the galaxies we see around us formed, and what their stories can tell us about the past, present and future of our Universe as a whole.'
-    p2: "Galaxies broadly fall into two main categories: blue star-forming disky spirals and red and `dead' ellipticals. Evidence suggests the transition from blue to red is rapid, less than a billion year, calling for mechanism(s) that `quench', or quickly shut off, star formation.  Low-mass galaxies appear to be able to quench their star formation via multiple pathways: through mergers with other galaxies, feedback from supernovae explosions, and/or feedback from actively accreting central supermassive black holes (known as Active Galactic Nuclei or AGN). In contrast, high-mass galaxies (with their deeper gravitational potential wells) more often appear to require a major merger (a merger with a galaxy of similar mass to its own) accompanied by AGN activity to quench their star formation."
-    p3: "Post-quenched galaxies are quiescent galaxies caught within 900 Myr of having significant star formation. They provide an ideal laboratory for studying galaxy evolution, as they have had their star formation recently and abruptly quenched. While post-quenched galaxies are an exceptional and rare population (< 6% of galaxies due to the extremely short time-scale involved), because there are over a million galaxies in the Sloan Digital Sky Survey (SDSS) with spectra and imaging, we are able to identify a sample of 3060 post-quenched galaxies for our study."
-    p4: 'In this Galaxy Zoo project, you will not only carry out the morphological classification of our sample of post-quenched galaxies, but we will collaboratively analyze the data, discuss the results, and write an article to submit to the Astrophysical Journal Letters. '
-    p5: "The results from this study will provide useful constraints on the role that post-quenched galaxies play in galaxy evolution, what caused the quenching in these galaxies, and will help improve our understanding of the role of mergers in galaxy evolution. "
+    title: 'The Science'
+    p1: 'Galaxies broadly fall into two main categories: blue star-forming disky spirals and red and \'dead\' ellipticals. Evidence suggests the transition from blue to red is rapid, less than a billion years, calling for mechanism(s) that \'quench\', or quickly shut off, star formation.'
+    p2: 'Low-mass galaxies appear to be able to quench their star formation via multiple pathways: through mergers with other galaxies, feedback from supernovae explosions, and/or feedback from actively accreting central supermassive black holes (known as Active Galactic Nuclei or AGN). In contrast, high-mass galaxies (with their deeper gravitational potential wells) more often appear to require a major merger (a merger with a galaxy of similar mass to its own) accompanied by AGN activity to quench their star formation.'
+    p3: 'Post-quenched galaxies are quiescent galaxies caught within 900 Myr of having significant star formation. They provide an ideal laboratory for studying galaxy evolution, as they have had their star formation recently and abruptly quenched. While post-quenched galaxies are an exceptional and rare population (< 6% of galaxies due to the extremely short time-scale involved), because there are over a million galaxies in the Sloan Digital Sky Survey (SDSS) with spectra and imaging, we are able to identify a sample of ~3000 post-quenched galaxies for our study. '
+    p4: 'In this Galaxy Zoo project, you will not only carry out the classification of our sample of post-quenched galaxies, but we will collaboratively analyze the data, discuss the results, and write an article to submit to the Astrophysical Journal.'
+    p5: 'The results from this study will provide useful constraints on the role that post-quenched galaxies play in galaxy evolution, what caused the quenching in these galaxies, and will help improve our understanding of the role of mergers in galaxy evolution. '
     
-    subtitle: 'Project Overview'
-    p7: 'In this Galaxy Zoo project, you will not only carry out the morphological classification of our sample of post-quenched galaxies, but we will collaboratively analyze the data, discuss the results, and write an article to submit to the Astrophysical Journal. '
-    p8: 'The scientific legacy of the SDSS is amazing, partly due to the annual release of SDSS data to the astronomical community and public. For example, in 2011, the SDSS collaboration published its eighth data release (DR8), which contains 14,555 square degrees of optical imaging data (with over a trillion pixels), and contains 932 million unique objects, of which 1.63 million objects possessed a SDSS spectrum. This awesome astronomical resource is freely available via a state-of-the-art database. Astronomers have written over 4000 papers (approximate one a day) using SDSS public data, gaining over 175,000 citations. Within the SDSS collaboration, there have been more than 120 PhD theses, while the SDSS data fueling numerous high impact outreach projects e.g. Galaxy Zoo. The SDSS has been named several times the highest impact project, facility or mission in the field of astronomy (Madrid & Macchetto 2006, 2009), and is the source of the most highly cited astronomy article in the years 2000, 2002, 2005, and 2008 (Frogel et al. 2010).'
-    p9: 'The SDSS would not have been possible without a large collaboration of scientists, researchers and astronomers. Many of the astronomers involved in the original SDSS have now moved on in their careers, spreading their experience within large collaborations across the world. At the start of the SDSS, such large collaborations in astronomy were rare and the SDSS has also been at the forefront of changing the culture of collaborative research in astrophysics. The SDSS is now planning a new 4th phase starting 2014. This phase will involve a number of targeted surveys including eBOSS, MaNGA and APOGEE-S2, which are designed to simultaneously explore the distant universe, the dynamics of nearby galaxies, and study stars in our own Galaxy. By the end of this 4th phase, the SDSS will have provided excellent data for over two decades, resulting in over 5 million astronomical spectra.'
-    p10: '''As we peer deeper into the universe, we look into the past, and since the universe is expanding, the galaxies we see are moving away from us faster and faster. This means that the light that left them gets stretched by the time it reaches us. Thus, the light from stars gets "redshifted" and to get a visible light image of a galaxy in the early universe, we need an infrared camera. Taking infrared images is much harder than optical ones for many reasons, but the most important one is that the night sky actually glows in the infrared. This fundamentally limits our ability to take deep infrared images, which is why Hubble's new Wide Field Camera 3 (WFC3) with its infrared capability is so valuable.'''
-    p11: 'A new generation of surveys using the WFC3 is giving us an unprecedented view into the first third of the lifetime of the Universe: the first 3-4 billion years after the Big Bang. Foremost among these is the Cosmic Assembly Deep Extragalactic Near-infrared Survey (CANDELS). The largest treasury survey using the Hubble Space Telescope to date, CANDELS is surveying several patches of sky to put together the largest collection of deep infrared images of galaxies in the early Universe. The combination of Galaxy Zoo and CANDELS offers a formidable tool in our quest to understand the earliest stages of the evolution of the visible Universe, one of the fundamental questions in observational cosmology today.'
-    
-  
   project:
     overview_title: 'Project Overview'
-    p1: "In this Galaxy Zoo project, you will not only carry out the morphological classification of our sample of post-quenched galaxies, but we will collaboratively analyze the data, discuss the results, and write an article to submit to the Astrophysical Journal. "
+    p1: 'In this Galaxy Zoo project, you will not only carry out the morphological classification of our sample of post-quenched galaxies, but we will collaboratively analyze the data, discuss the results, and write an article to submit to the Astrophysical Journal.'
     h1: "What do you think? Data Analysis & Discussion"
+    p2: 'Analysis and discussion is a really fun part of the scientific process. What did we find? What science questions can our data address? What plots and other visualizations can I create to make sense of the data? What do the results mean? How do our results compare to those from other research studies? '
+    p3: 'These questions lie at the heart of the scientific process. '
+    p4: 'Luckily, we have great online tools to help facilitate our data analysis and discussion of results.
+    <ul>
+      <li>We will use <a href="http://tools.zooniverse.org">tools.zooniverse.org</a> to analyze the data from the classification phase.</li>
+      <li>We will use <a href="http://galaxyzoo.org/talk">TALK</a> to discuss our analysis procedures, results, and objects of interest.</li>
+    </ul>'
+    p5: 'Click on those links above and Start Making Sense! ... gotta love the <a href="http://www.rollingstone.com/music/artists/talking-heads">Talking Heads</a>'
+    h2: "What did you find? Writing the Article"
+    p6: 'Quality communication is a key component to the scientific process. If a tree falls in the forest… well, you know the phrase. In order to learn from each other’s experiments, successes, and failures, it is essential that we clearly communicate our process, our results, and their implications in the context of other research studies on the topic. This conversation, via peer-reviewed journals, is what enables our understanding of the Universe to move forward.'
+    p7: 'This article, describing the results from this study, will add another piece to our understanding of how galaxies evolve over time. Many rocks make the mountain.'
+    p8: 'We will collaboratively write a 4-page Astrophysical Journal article on the results from our study, using Authorea.com (see details below). '  
+    p9: 'The process of writing an article can be broken down into the following phases:'
+    p10: '<ul>
+    <li>a) Read background articles to provide a context for our results and be able to compare our results with other research studies on the topic.</li>
+    <li>b) Identify which of our plots, tables, and other visualizations are most useful in conveying our key results.</li>
+    <li>c) Determine the most logical order in which to share these visualizations in our article.</li>
+    <li>d) Write the ‘Results’ section of the article using the order of our visualizations as our guide.</li>
+    <li>e) Write an outline for the ‘Discussion’ section of the article, tracing a coherent and engaging story line for our readers. Be sure to include comparisons to other research results in this ‘Discussion’ section.</li>
+    <li>f) Write the ‘Discussion’ section.</li>
+    <li>g) Write the ‘Methods’ section of the article, containing a description of the sample selection, classification process, and any analysis procedures.</li>
+    <li>h) Write the ‘Summary’ section, briefly recapping the main results of the article.</li>
+    <li>i) Write the ‘Introduction’ section, providing the background and context for this article.</li>                
+    </ul>'
+    p11: 'In order to efficiently move through these phases, we will highlight the phase we’re currently working on in the list above, and make it an active link. The link will provide additional instructions and resources for that phase.'
+    p12: 'We will use <a href="http://Authorea.com">Authorea</a> to collaboratively write the article online. Within <a href="http://Authorea.com">Authorea</a>, we can drag and drop figures, write text, manage references, and easily keep track of previous versions and edits. To access and contribute to our article on <a href="http://Authorea.com">Authorea</a>, please click <a href="https://docs.google.com/forms/d/1eUu2gS6WnH-scD1OS-lzXWxX6VEWciWfOE6hdywHjrk/viewform">here</a>.'
+    p13: 'Tutorials for How-to-Use Authorea.com. (This will soon link to a page with simple user guides).'
 
-    p2: "You will use tools.zooniverse.org to plot the results from the morphological classification and look for trends with mass and time since quenching. "
-    p3: 'You will read a few general audience articles and a few in-depth background articles about galaxy evolution and the role of galaxy mergers (see http://postquench.blogspot.com/, though this will likely live within Talk). '
-    p4: "You will use Talk to discuss objects of interest and analysis results. The science team will be highly engaged in Talk and these conversations. "
-
-    h2: "What did you find? Writing the Article"  
-    p5: "You and the science team will collaboratively write a 4-page Astrophysical Journal Letter article, using Authorea.com. Haven’t written this section yet. Can use as placeholder. "
-    timeline_title: 'Project Timeline'
 
   team:
     title: 'The Galaxy Zoo Team'

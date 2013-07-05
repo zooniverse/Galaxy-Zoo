@@ -20,7 +20,7 @@ class App extends Spine.Controller
       languages:
         en: 'English'
       app: 'galaxy_zoo_starburst'
-      appName: 'Galaxy Zoo Starburst'
+      appName: 'Galaxy Zoo Quench'
     
     @navigation = new Navigation
     @main = new Main

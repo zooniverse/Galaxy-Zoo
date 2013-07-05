@@ -14,15 +14,28 @@
   </div>
   
   <div class="content-block">
-    <div class="left">
-      <h1 class="heading"><%- I18n.t 'home.galaxy_formation.title' %></h1>
-      <p class="description"><%- I18n.t 'home.galaxy_formation.body' %></p>
+  <div class="left">
+    <h1 class="heading"><%- I18n.t 'home.leading.title' %></h1>
+    <p class="description"><%- I18n.t 'home.leading.body' %></p>
+    <p class="description"><%- I18n.t 'home.leading.body2' %></p>    
+    <p class="description"><%- I18n.t 'home.leading.body3' %></p>
+  </div>
+    <div class="right">
+      <h1 class="heading"><%- I18n.t 'home.timeline.title' %></h1>
+      <p class="description"><%- I18n.t 'home.timeline.body' %></p>
     </div>
+  </div>
+  <div class="content-block">
+  <div class="left">
+    <h1 class="heading"><%- I18n.t 'home.galaxy_formation.title' %></h1>
+    <p class="description"><%- I18n.t 'home.galaxy_formation.body' %></p>
+    <p class="description"><%- I18n.t 'home.galaxy_formation.body2' %></p>
+  </div>
     <div class="right">
       <h1 class="heading"><%- I18n.t 'home.history.title' %></h1>
       <p class="description"><%- I18n.t 'home.history.body' %></p>
+      <p class="description"><%- I18n.t 'home.history.body2' %></p>
     </div>
-  </div>
-  
+  </div> 
  
 </div>
