@@ -1,7 +1,7 @@
 DecisionTree = require 'lib/decision_tree'
 
 MiniProjectTree = new DecisionTree 'mini_project', ->
-  @question 'Galaxies', 'is this an isolated galaxy, a galaxy with neighbors or a start or artifact', ->
+  @question 'Galaxies', 'Is this an isolated galaxy, a galaxy with neighbors or a start or artifact', ->
     @help "The aim here is to divide featureless galaxies from all the rest. If you can see any interesting features at all, click &quot;features or disk.&quot; Just occasionally you might see something that isn't a galaxy at all - the long streak of a satellite, for example, or a image swamped by light from a bright star. If this happens, just click &quot;star or artifact&quot;. Click to see larger images."
     @answer 'Isolated galaxy', leadsTo: 'Does the central galaxy have tidal arms?', icon: 'isolated_galaxy', examples: 1
     @answer 'Neighbors', leadsTo: 'Are any neighbors touching the central galaxy?', icon: 'galaxy_neighbors', examples: 3
@@ -14,8 +14,8 @@ MiniProjectTree = new DecisionTree 'mini_project', ->
   
   @question 'Tidal Arms Size', 'How large are the tidal arms?', leadsTo: 'In the center of the galaxy, are there more than 1 bright clumps?', ->
     @help "NEED HELP HERE"
-    @answer 'Large', icon: 'large'
-    @answer 'Small', icon: 'small'
+    @answer 'Large', icon: 'large-tidal'
+    @answer 'Small', icon: 'small-tidal'
   
   @question 'Disrupted', 'Is the galaxy distributed or asymetric?', leadsTo: 'In the center of the galaxy, are there more than 1 bright clumps?', ->
     @help "NEED HELP HERE"
