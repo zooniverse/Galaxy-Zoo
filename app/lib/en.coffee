@@ -623,7 +623,7 @@ module.exports =
     call_to_action: 'Experience science from beginning to end.'
     
     galaxy_zoo:
-      title: 'Classify Galaxies'
+      title: 'Stage 1: Galaxy Classification'
       description: "Post-quenched galaxies are a rare type of galaxy whose star formation was recently and abruptly quenched. To understand what caused the quenching and the role that post-quenched galaxies play in galaxy evolution, we need your help to classify them according to their shapes."
       classify: 'Begin Classifying'
           
@@ -640,20 +640,12 @@ module.exports =
     leading:
       title: 'You take the lead'
       body: 'In this Galaxy Zoo project, you will not only carry out the classification of this sample of post-quenched galaxies, but we will collaboratively analyze the data, discuss the results, and write an article to submit to a professional journal.'
-      body2:'<a data-nav="#/project" href="#/project">What do you think? Data Analysis & Discussion</a>'
-      body3:'<a data-nav="#/project" href="#/project">What did you find? Writing the Article</a>'
+      body2:'<a data-nav="#/project" href="#/project">Stage 2: Data Analysis & Discussion.</a>'
+      body3:'<a data-nav="#/project" href="#/project">Stage 3: Writing the Professional Journal Article.</a>'
 
     timeline:
       title: 'Project timeline'
-      body: 'This short burst project will last approximately 8 weeks. 
-            <ul>
-              <li>July 9th: Call for volunteers</li>
-              <li>July 18th: Begin galaxies classification</li>
-              <li>August 1st: Classification complete</li>
-              <li>August 1st to September 9th: Data analysis, discussion, and article writing</li>
-              <li>September 9th: Article complete. Submit to the Galaxy Zoo Science Team for internal review.</li>
-              <li>September 23rd: Submit to a professional journal.</li>
-            </ul>'
+      body: 'This short burst project will last approximately 8 weeks.'
       body2: 'Note: Science timelines are subject to uncertainty. We\'ll do our best to keep on track, but participants should expect the unexpected!'
     
     recent_images:
@@ -720,7 +712,7 @@ module.exports =
   project:
     overview_title: 'Project Overview'
     p1: 'In this Galaxy Zoo project, you will not only carry out the classification of our sample of post-quenched galaxies, but we will collaboratively analyze the data, discuss the results, and write an article to submit to a professional journal.'
-    h1: "What do you think? Data Analysis & Discussion"
+    h1: "Stage 2: Data Analysis & Discussion"
     p2: 'Analysis and discussion is a really fun part of the scientific process. What did we find? What science questions can our data address? What plots and other visualizations can I create to make sense of the data? What do the results mean? How do our results compare to those from other research studies? '
     p3: 'These questions lie at the heart of the scientific process. '
     p4: 'Luckily, we have great online tools to help facilitate our data analysis and discussion of results.
@@ -729,7 +721,7 @@ module.exports =
       <li>We will use <a href="http://quench.galaxyzoo.org/talk">TALK</a> to discuss our analysis procedures, results, and objects of interest.</li>
     </ul>'
     p5: 'Click on those links above and Start Making Sense! ... gotta love the <a href="http://www.rollingstone.com/music/artists/talking-heads">Talking Heads.</a>'
-    h2: "What did you find? Writing the Article"
+    h2: "Stage 3: Writing the Professional Journal Article"
     p6: 'Quality communication is a key component to the scientific process. If a tree falls in the forest… well, you know the phrase. In order to learn from each other’s experiments, successes, and failures, it is essential that we clearly communicate our process, our results, and their implications in the context of other research studies on the topic. This conversation, via peer-reviewed journals, is what enables our understanding of the Universe to move forward.'
     p7: 'This article, describing the results from this study, will add another piece to our understanding of how galaxies evolve over time. We will collaboratively write a 4-page article on the results from our study, using Authorea.com (see details below). '  
     p8: 'The process of writing an article can be broken down into the following phases:'
