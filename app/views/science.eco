@@ -9,13 +9,6 @@
         <p><%- I18n.t 'science.p4' %></p>
         <p><%- I18n.t 'science.p5' %></p>
         <p><%- I18n.t 'science.p6' %></p>
-        
-        <h3 class="sub-heading"><%- I18n.t 'science.subtitle' %></h3>
-        <p><%- I18n.t 'science.p7' %></p>
-        <p><%- I18n.t 'science.p8' %></p>
-        <p><%- I18n.t 'science.p9' %></p>
-        <p><%- I18n.t 'science.p10' %></p>
-        <p><%- I18n.t 'science.p11' %></p>
       </div>
     </div>
   </div>

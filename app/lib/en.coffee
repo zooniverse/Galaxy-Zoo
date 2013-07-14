@@ -629,9 +629,8 @@ module.exports =
           
     galaxy_formation:
       title: 'The science'
-      body: 'Galaxies broadly fall into two main categories: blue star-forming disky spirals and red and \'dead\' ellipticals. Evidence suggests the transition from blue to red is rapid, less than a billion years, calling for mechanism(s) that \'quench\', or quickly shut off, star formation.'
-      body2: 'Low-mass galaxies appear to be able to quench their star formation via multiple pathways: through mergers with other galaxies, feedback from supernovae explosions, and/or feedback from actively accreting central supermassive black holes (known as Active Galactic Nuclei or AGN). In contrast, high-mass galaxies (with their deeper gravitational potential wells) more often appear to require a major merger (a merger with a galaxy of similar mass to its own) accompanied by AGN activity to quench their star formation.
-      <a data-nav="#/science" href="#/science">more</a>'
+      body: 'Galaxies broadly fall into two main categories: blue star-forming disky spirals and red and \'dead\' ellipticals. Of course, we know from Galaxy Zoo publications that there are also extremely interesting populations of red spirals and blue ellipticals that have provided key insights into galaxy evolution (see <a href="http://blog.galaxyzoo.org/tag/red-spirals/">Red Spirals</a> and <a href="http://blog.galaxyzoo.org/2008/01/07/blue-ellipticals-from-kevin/">Blue Ellipticals From Kevin</a>). In recent years, we have made great strides in understanding the mechanisms that help galaxies transition from star forming to non-star-forming (and back sometimes!). But there remain many open questions and stones unturned.
+      <a data-nav="#/science" href="#/science">More</a>'
     
     history:
       title: 'Relation to galaxy zoo'
@@ -640,20 +639,22 @@ module.exports =
     
     leading:
       title: 'You take the lead'
-      body: 'In this Galaxy Zoo project, you will not only carry out the classification of this sample of post-quenched galaxies, but we will collaboratively analyze the data, discuss the results, and write an article to submit to the Astrophysical Journal.'
+      body: 'In this Galaxy Zoo project, you will not only carry out the classification of this sample of post-quenched galaxies, but we will collaboratively analyze the data, discuss the results, and write an article to submit to a professional journal.'
       body2:'<a data-nav="#/project" href="#/project">What do you think? Data Analysis & Discussion</a>'
       body3:'<a data-nav="#/project" href="#/project">What did you find? Writing the Article</a>'
 
     timeline:
       title: 'Project timeline'
-      body: 'This short burst project will last 8 weeks. 
+      body: 'This short burst project will last approximately 8 weeks. 
             <ul>
               <li>July 9th: Call for volunteers</li>
               <li>July 18th: Begin galaxies classification</li>
               <li>August 1st: Classification complete</li>
               <li>August 1st to September 9th: Data analysis, discussion, and article writing</li>
-              <li>September 9th: Article complete. Submit to the Astrophysical Journal</li>
+              <li>September 9th: Article complete. Submit to the Galaxy Zoo Science Team for internal review.</li>
+              <li>September 23rd: Submit to a professional journal.</li>
             </ul>'
+      body2: 'Note: Science timelines are subject to uncertainty. We\'ll do our best to keep on track, but participants should expect the unexpected!'
     
     recent_images:
       title: 'Recent Images'
@@ -709,31 +710,31 @@ module.exports =
    
   science:
     title: 'The Science'
-    p1: 'Galaxies broadly fall into two main categories: blue star-forming disky spirals and red and \'dead\' ellipticals. Evidence suggests the transition from blue to red is rapid, less than a billion years, calling for mechanism(s) that \'quench\', or quickly shut off, star formation.'
-    p2: 'Low-mass galaxies appear to be able to quench their star formation via multiple pathways: through mergers with other galaxies, feedback from supernovae explosions, and/or feedback from actively accreting central supermassive black holes (known as Active Galactic Nuclei or AGN). In contrast, high-mass galaxies (with their deeper gravitational potential wells) more often appear to require a major merger (a merger with a galaxy of similar mass to its own) accompanied by AGN activity to quench their star formation.'
-    p3: 'Post-quenched galaxies are quiescent galaxies caught within 900 Myr of having significant star formation. They provide an ideal laboratory for studying galaxy evolution, as they have had their star formation recently and abruptly quenched. While post-quenched galaxies are an exceptional and rare population (< 6% of galaxies due to the extremely short time-scale involved), because there are over a million galaxies in the Sloan Digital Sky Survey (SDSS) with spectra and imaging, we are able to identify a sample of ~3000 post-quenched galaxies for our study. '
-    p4: 'In this Galaxy Zoo project, you will not only carry out the classification of our sample of post-quenched galaxies, but we will collaboratively analyze the data, discuss the results, and write an article to submit to the Astrophysical Journal.'
-    p5: 'The results from this study will provide useful constraints on the role that post-quenched galaxies play in galaxy evolution, what caused the quenching in these galaxies, and will help improve our understanding of the role of mergers in galaxy evolution. '
+    p1: 'Galaxies broadly fall into two main categories: blue star-forming disky spirals and red and \'dead\' ellipticals. Of course, we know from Galaxy Zoo publications that there are also extremely interesting populations of red spirals and blue ellipticals that have provided key insights into galaxy evolution (see <a href="http://blog.galaxyzoo.org/tag/red-spirals/">Red Spirals</a> and <a href="http://blog.galaxyzoo.org/2008/01/07/blue-ellipticals-from-kevin/">Blue Ellipticals From Kevin</a>). In recent years, we have made great strides in understanding the mechanisms that help galaxies transition from star forming to non-star-forming (and back sometimes!). But there remain many open questions and stones unturned.'
+    p2: 'The general picture emerging is that low-mass galaxies appear to be able to quench their star formation via multiple pathways: through mergers with other galaxies, feedback from supernovae explosions, and/or feedback from actively accreting central supermassive black holes (known as Active Galactic Nuclei or AGN). In contrast, high-mass galaxies (with their deeper gravitational potential wells) more often appear to require a major merger (a merger with a galaxy of similar mass to its own) accompanied by AGN activity to quench their star formation. But the picture is far from this simple. For example, a number of Galaxy Zoo publications have discussed the role of environment*, which appears to play an important role in how efficiently star formation is quenched. We also find galaxies that seem to have had their star formation quenched as a result of no mechanism at all.' 
+    p3: 'Post-quenched galaxies are non-star-forming galaxies caught within 900 Myr of having significant star formation. They provide an ideal laboratory for studying galaxy evolution, as they have had their star formation recently and abruptly quenched. While post-quenched galaxies are an exceptional and rare population (< 6% of galaxies due to the extremely short time-scale involved), because there are over a million galaxies in the Sloan Digital Sky Survey (SDSS) with spectra and imaging, we are able to identify a sample of ~3000 post-quenched galaxies for our study.'
+    p4: 'In this Galaxy Zoo project, you will not only carry out the classification of our sample of post-quenched galaxies, but we will collaboratively analyze the data, discuss the results, and write an article to submit to a professional journal.'
+    p5: 'The results from this study will provide useful constraints on the role that post-quenched galaxies play in galaxy evolution, what caused the quenching in these galaxies, and will help improve our understanding of the role of mergers in galaxy evolution.'
+    p6: '*See <a href=”http://adsabs.harvard.edu/abs/2009MNRAS.393.1324B”> Bamford et al. 2009 </a>; <a href=”http://adsabs.harvard.edu/abs/2009MNRAS.399..966S”> Skibba et al. 2009</a>; <a href=”http://adsabs.harvard.edu/abs/2010MNRAS.401.1552D”> Darg et al. 2010</a>; <a href=”http://mnras.oxfordjournals.org/content/423/2/1485.full”>  Skibba et al. 2012 </a>; <a href=”http://adsabs.harvard.edu/abs/2012MNRAS.420.1684W”> Wong et al. 2013</a>; and more.'
     
   project:
     overview_title: 'Project Overview'
-    p1: 'In this Galaxy Zoo project, you will not only carry out the morphological classification of our sample of post-quenched galaxies, but we will collaboratively analyze the data, discuss the results, and write an article to submit to the Astrophysical Journal.'
+    p1: 'In this Galaxy Zoo project, you will not only carry out the classification of our sample of post-quenched galaxies, but we will collaboratively analyze the data, discuss the results, and write an article to submit to a professional journal.'
     h1: "What do you think? Data Analysis & Discussion"
     p2: 'Analysis and discussion is a really fun part of the scientific process. What did we find? What science questions can our data address? What plots and other visualizations can I create to make sense of the data? What do the results mean? How do our results compare to those from other research studies? '
     p3: 'These questions lie at the heart of the scientific process. '
     p4: 'Luckily, we have great online tools to help facilitate our data analysis and discussion of results.
     <ul>
       <li>We will use <a href="http://tools.zooniverse.org">tools.zooniverse.org</a> to analyze the data from the classification phase.</li>
-      <li>We will use <a href="http://galaxyzoo.org/talk">TALK</a> to discuss our analysis procedures, results, and objects of interest.</li>
+      <li>We will use <a href="http://quench.galaxyzoo.org/talk">TALK</a> to discuss our analysis procedures, results, and objects of interest.</li>
     </ul>'
-    p5: 'Click on those links above and Start Making Sense! ... gotta love the <a href="http://www.rollingstone.com/music/artists/talking-heads">Talking Heads</a>'
+    p5: 'Click on those links above and Start Making Sense! ... gotta love the <a href="http://www.rollingstone.com/music/artists/talking-heads">Talking Heads.</a>'
     h2: "What did you find? Writing the Article"
     p6: 'Quality communication is a key component to the scientific process. If a tree falls in the forest… well, you know the phrase. In order to learn from each other’s experiments, successes, and failures, it is essential that we clearly communicate our process, our results, and their implications in the context of other research studies on the topic. This conversation, via peer-reviewed journals, is what enables our understanding of the Universe to move forward.'
-    p7: 'This article, describing the results from this study, will add another piece to our understanding of how galaxies evolve over time. Many rocks make the mountain.'
-    p8: 'We will collaboratively write a 4-page Astrophysical Journal article on the results from our study, using Authorea.com (see details below). '  
-    p9: 'The process of writing an article can be broken down into the following phases:'
-    p10: '<ul>
-    <li>a) Read background articles to provide a context for our results and be able to compare our results with other research studies on the topic.</li>
+    p7: 'This article, describing the results from this study, will add another piece to our understanding of how galaxies evolve over time. We will collaboratively write a 4-page article on the results from our study, using Authorea.com (see details below). '  
+    p8: 'The process of writing an article can be broken down into the following phases:'
+    p9: '<ul>
+    <li>a) <a href="http://postquench.blogspot.com">Read background articles</a>  to provide a context for our results and be able to compare our results with other research studies on the topic.</li>
     <li>b) Identify which of our plots, tables, and other visualizations are most useful in conveying our key results.</li>
     <li>c) Determine the most logical order in which to share these visualizations in our article.</li>
     <li>d) Write the ‘Results’ section of the article using the order of our visualizations as our guide.</li>
@@ -743,9 +744,9 @@ module.exports =
     <li>h) Write the ‘Summary’ section, briefly recapping the main results of the article.</li>
     <li>i) Write the ‘Introduction’ section, providing the background and context for this article.</li>                
     </ul>'
-    p11: 'In order to efficiently move through these phases, we will highlight the phase we’re currently working on in the list above, and make it an active link. The link will provide additional instructions and resources for that phase.'
-    p12: 'We will use <a href="http://Authorea.com">Authorea</a> to collaboratively write the article online. Within <a href="http://Authorea.com">Authorea</a>, we can drag and drop figures, write text, manage references, and easily keep track of previous versions and edits. To access and contribute to our article on <a href="http://Authorea.com">Authorea</a>, please click <a href="https://docs.google.com/forms/d/1eUu2gS6WnH-scD1OS-lzXWxX6VEWciWfOE6hdywHjrk/viewform">here</a>.'
-    p13: 'Tutorials for How-to-Use Authorea.com. (This will soon link to a page with simple user guides).'
+    p10: 'In order to efficiently move through these phases, we will highlight the phase we’re currently working on in the list above, and make it an active link. The link will provide additional instructions and resources for that phase.'
+    p11: 'We will use <a href="http://Authorea.com">Authorea</a> to collaboratively write the article online. Within <a href="http://Authorea.com">Authorea</a>, we can drag and drop figures, write text, manage references, and easily keep track of previous versions and edits. To access and contribute to our article on <a href="http://Authorea.com">Authorea</a>, please click <a href="https://docs.google.com/forms/d/1eUu2gS6WnH-scD1OS-lzXWxX6VEWciWfOE6hdywHjrk/viewform">here</a>.'
+    p12: '<a href="http://www.youtube.com/user/authorea">Tutorials for How-to-Use Authorea.com</a>.'
 
 
   team:
