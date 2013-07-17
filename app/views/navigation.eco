@@ -18,7 +18,7 @@
 
     <li>
    
-      <li><a href="http://www.galaxyzooforum.org" target="_blank">Talk</a></li>
+      <li><a href="http://quenchtalk.galaxyzoo.org/" target="_blank">Talk</a></li>
       <li><a href="https://www.authorea.com/" target="_blank"><%- I18n.t 'navigation.paper' %></a></li>
 
     </li>
