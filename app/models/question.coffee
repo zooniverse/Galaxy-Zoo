@@ -24,7 +24,7 @@ class Question extends Spine.Model
     @id in ['candels-17', 'sloan-11']
   
   help: (text) ->
-    @helpText = I18n.t 'questions', @id, 'help'
+    @helpText = text
   
   answer: (text, { leadsTo: leadsTo, icon: icon, examples: examples, talk: talk } = { leadsTo: null, icon: null, examples: 0, talk: false }) ->
     id = "a-#{ _(@answers).keys().length }"
