@@ -25,7 +25,8 @@
           
           <div class="example-images">
             <% for example in row : %>
-              <div class="example-thumbnail <%= example %>" data-example="<%= example %>"></div>
+              <% console.log example %>
+              <div class="example-thumbnail <%= example %>" data-example="<%= example %>" style='background-image:url("images/examples/<%=example%>.jpg"); background-position: center; background-size: 100px 100px '  ></div>
             <% end %>
           </div>
         </div>
