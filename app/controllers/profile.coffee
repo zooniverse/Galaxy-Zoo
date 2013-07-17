@@ -4,7 +4,6 @@ User = require 'zooniverse/lib/models/user'
 Recent = require 'zooniverse/lib/models/recent'
 Favorite = require 'zooniverse/lib/models/favorite'
 LoginForm = require 'zooniverse/lib/controllers/login_form'
-Quiz = require 'models/quiz'
 
 class Profile extends Spine.Controller
   events:
@@ -14,7 +13,6 @@ class Profile extends Spine.Controller
     'click .item .inactive.remove': 'removeFavorite'
     'click .item .active.favorite': 'removeFavorite'
     'click .item .inactive.favorite': 'addFavorite'
-    'click .quizzes .take-a-quiz': 'takeQuiz'
   
   elements:
     '.favorites-link' : 'favoritesLink'
@@ -26,8 +24,6 @@ class Profile extends Spine.Controller
     @opts =
       per_page: 12
     User.bind 'sign-in', @refresh
-    Quiz.bind 'quiz-user', @render
-    Quiz.bind 'quiz-finished', @render
   
   collection: =>
     if @showing is 'recents' then Recent else Favorite
@@ -52,14 +48,8 @@ class Profile extends Spine.Controller
       @html require('views/login')()
       new LoginForm el: '#login'
   
-  quizCount: ->
-    Quiz.classificationCount
-  
-  takeQuiz: ->
-    Quiz.next required: false
-  
   surveyCount: ->
-    User.current.classification_count or 0
+    User.current.project.classification_count or 0
   
   removeFavorite: (ev) ->
     item = @collection().find $(ev.target).closest('.item').data 'id'

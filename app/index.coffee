@@ -5,7 +5,6 @@ Spine = require 'spine'
 Api = require 'zooniverse/lib/api'
 Navigation = require 'controllers/navigation'
 Main = require 'controllers/main'
-Quizzes = require 'controllers/quizzes'
 TopBar = require 'zooniverse/lib/controllers/top_bar'
 googleAnalytics = require 'zooniverse/lib/google_analytics'
 BrowserCheck = require 'zooniverse/lib/controllers/browser_check'
@@ -24,7 +23,6 @@ class App extends Spine.Controller
     
     @navigation = new Navigation
     @main = new Main
-    @quizzes = new Quizzes
     
     @append @navigation.active(), @main
     Spine.Route.setup()
@@ -41,7 +39,6 @@ preload '/images/examples.jpg'
 project = Api.get "/projects/galaxy_zoo_starburst"
 
 project.onSuccess (data) =>
-
   $(".classification_count").html (data.classification_count*100.0/60000.0).toFixed(1)
 
 # googleAnalytics.init account: 'UA-1224199-9', domain: 'galaxyzoo.org'

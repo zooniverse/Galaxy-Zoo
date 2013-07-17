@@ -25,7 +25,7 @@ class Classification extends Spine.Model
     @question = @question.nextQuestionFrom answerId
   
   url: ->
-    "/projects/galaxy_zoo_starburst/workflows/51d46e3f0374f5b13f000002/classifications"
+    "/projects/galaxy_zoo_starburst/workflows/51e6fcdd3ae74023b9000002/classifications"
   
   toJSON: ->
     json =

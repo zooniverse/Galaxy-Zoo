@@ -2,7 +2,6 @@ Spine = require 'spine'
 UserGroup = require 'models/user_group'
 Api = require 'zooniverse/lib/api'
 User = require 'zooniverse/lib/models/user'
-Quiz = require 'models/quiz'
 LoginForm = require 'zooniverse/lib/controllers/login_form'
 
 class UserGroups extends Spine.Controller
@@ -10,7 +9,6 @@ class UserGroups extends Spine.Controller
     super
     User.bind 'sign-in', @render
     User.bind 'sign-in', UserGroup.fetchCurrent
-    Quiz.bind 'quiz-user', @render
   
   active: (params) ->
     super
@@ -20,7 +18,7 @@ class UserGroups extends Spine.Controller
   render: =>
     return unless @isActive()
     
-    if User.current and Quiz.user
+    if User.current
       return unless UserGroup.currentId
       fetcher = UserGroup.join()
       fetcher.onSuccess => @navigate '/classify'
