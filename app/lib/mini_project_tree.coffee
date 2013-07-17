@@ -54,15 +54,15 @@ MiniProjectTree = new DecisionTree 'mini_project', ->
 
   @question 'Merger', 'Is the galaxy currently merging or is there any sign of tidal debris?', leadsTo: 'Does the galaxy appear symmetrical?', ->
     @help "Now you can look at the larger picture - if the galaxy is colliding with another, click &quot;merger.&quot; If you see long streams of stars or gas coming out of the galaxy and/or connecting the galaxy with a neighbor, then click &quot;tidal debris.&quot; &quot;Both&quot; and &quot;Neither&quot; are your other options. Click to see larger images."
-    @answer 'Merging', icon: 'merger', examples: 4
-    @answer 'Tidal debris', icon: 'tidal', examples: 1
+    @answer 'Merging', icon: 'merger', examples: 1
+    @answer 'Tidal debris', icon: 'tidal', examples: 3
     @answer 'Both', icon: 'merger_tidal', examples: 2
     @answer 'Neither', icon: 'no', examples: 1
   
   @question 'Symmetry', 'Does the galaxy appear symmetrical?', leadsTo: 'Would you like to discuss this object?', ->
     @help "Are both halves of the galaxy the same? Or is one side disrupted or different in some way?"
-    @answer 'Yes', icon: 'yes'
-    @answer 'No', icon: 'no'
+    @answer 'Yes', icon: 'yes', examples: 1
+    @answer 'No', icon: 'no', examples: 1
  
   @question 'Discuss', 'Would you like to discuss this object?', ->
     @help "If you have any questions about this object, or think it may be interesting to others, or just have something to say, you can start a discussion on Talk by clicking &quot;Yes&quot;. Talk will open in a new window - just close it to come back to the classification page."
