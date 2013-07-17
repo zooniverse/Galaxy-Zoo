@@ -33,7 +33,6 @@ MiniProjectTree = new DecisionTree 'mini_project', ->
     @help "Look carefully for spiral arms - remember they may be embedded in the disk and not that easy to see. Click to see larger images."
     @answer 'Spiral', leadsTo: 'How tightly wound do the spiral arms appear?', icon: 'yes', examples: 1
     @answer 'No spiral', leadsTo: 'How prominent is the central bulge, compared with the rest of the galaxy?', icon: 'no', examples: 1
-    @answer 'Can\'t tell', leadsTo: 'How prominent is the central bulge, compared with the rest of the galaxy?', icon: 'no', examples: 1
   
   @question 'Spiral', 'How tightly wound do the spiral arms appear?', leadsTo: 'How prominent is the central bulge, compared with the rest of the galaxy?', ->
     @help "Astronomers classify galaxies by how tight their arms are - you might find it easiest to look closest to the centre. Click to see larger images."
