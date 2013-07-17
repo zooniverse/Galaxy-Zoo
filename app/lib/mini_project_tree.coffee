@@ -48,8 +48,8 @@ MiniProjectTree = new DecisionTree 'mini_project', ->
   
    @question 'Clumps', 'Are there any off-centre bright clumps embedded within the galaxy?', leadsTo: 'Is the galaxy currently merging or is there any sign of tidal debris?', ->
     @help "Count the bright clumps! If there's a bright clump at the very center of the galaxy, do not include it in your counting.  If there are more than 1 clumps, than don't worry about it - just click &quot;more than 1.&quot;"
-    @answer '1', icon: 'clumps_1', examples: 1
-    @answer 'More than 1', icon: 'clumps_2', examples: 1
+    @answer '1', icon: 'clump_1', examples: 1
+    @answer 'More than 1', icon: 'clump_2', examples: 1
     @answer 'No', icon: 'no', examples: 1
 
   @question 'Merger', 'Is the galaxy currently merging or is there any sign of tidal debris?', leadsTo: 'Does the galaxy appear symmetrical?', ->
