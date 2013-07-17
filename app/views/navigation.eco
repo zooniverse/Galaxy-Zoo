@@ -12,7 +12,7 @@
       </li>
     <li class="logo">
       <a href="#/" data-nav="/">
-        <img src="images/gz_logo.png" alt="<%- I18n.t 'navigation.galaxy_zoo' %>" />
+        <img src="images/quench_galaxyzoo.png" alt="<%- I18n.t 'navigation.galaxy_zoo' %>" />
       </a>
     </li>
 
