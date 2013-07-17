@@ -37,6 +37,13 @@ preload '/images/icons.png'
 preload '/images/workflow.png'
 preload '/images/examples.jpg'
 
+
+project = Api.get "/projects/galaxy_zoo_starburst"
+
+project.onSuccess (data) =>
+
+  $(".classification_count").html (data.classification_count*100.0/60000.0).toFixed(1)
+
 # googleAnalytics.init account: 'UA-1224199-9', domain: 'galaxyzoo.org'
 
 (new BrowserCheck).check()

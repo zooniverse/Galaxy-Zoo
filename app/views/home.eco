@@ -8,6 +8,7 @@
       <div class="left">
         <p class="header-title2"><%- I18n.t 'home.galaxy_zoo.title' %></p>
         <p class="description"><%- I18n.t 'home.galaxy_zoo.description' %></p>
+        <p class='progress'> <span class='classification_count'></span>% done!</p>
         <a data-nav="#/classify" href="/#/classify" class="blue-button"><%- I18n.t 'home.galaxy_zoo.classify' %></a>
       </div>
     </div>
