@@ -23,7 +23,7 @@ class Subject extends BaseSubject
       id: "51d46e4b0374f5b13f000003"
       tree: MinitProjectTree
  
-  @url: (params) -> @withParams "/projects/galaxy_zoo_starburst/groups/51d6ded30374f5c802000003/subjects", params
+  @url: (params) -> @withParams "/projects/galaxy_zoo_starburst/subjects", params
   # @randomSurveyId: -> @::surveys.sloan.id
   
   @next: ->
