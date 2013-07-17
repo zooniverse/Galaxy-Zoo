@@ -58,8 +58,8 @@ class Profile extends Spine.Controller
   takeQuiz: ->
     Quiz.next required: false
   
-  surveyCount: (survey) ->
-    User.current.project?.groups?[Config.surveys[survey].id]?.classification_count or 0
+  surveyCount: ->
+    User.current.classification_count or 0
   
   removeFavorite: (ev) ->
     item = @collection().find $(ev.target).closest('.item').data 'id'

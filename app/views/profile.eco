@@ -30,36 +30,16 @@
         <div class="classifications">
           <h3 class="sub-heading"><%- I18n.t 'profile.classifications' %></h3>
           <div class="classification-counts">
-            <div class="hubble">
-              <span class="count"><%= @surveyCount 'candels' %></span>
-              <%- I18n.t 'profile.hubble' %>
-              <span class="caption"><%- I18n.t 'profile.hubble_classifications' %></span>
-            </div>
-            
+          
             <div class="sdss">
-              <span class="count"><%= @surveyCount 'sloan' %></span>
-              <%- I18n.t 'profile.sdss' %>
-              <span class="caption"><%- I18n.t 'profile.sdss_classifications' %></span>
+              <span class="count"><%= @surveyCount() %></span>
+              SDSS
+              <span class="caption">SDSS Classifications</span>
             </div>
           </div>
         </div>
         
-        <div class="quizzes">
-          <h3 class="sub-heading"><%- I18n.t 'profile.quizzes' %></h3>
-          <div class="classification-counts">
-            <div class="quizzes">
-              <span class="count"><%= @quizCount() %></span>
-              <%= if @quizCount() is 1 then I18n.t('profile.quiz') else I18n.t('profile.quizzes') %>
-              <span class="caption"><%- I18n.t 'profile.quizzes_taken' %></span>
-              
-              <% if @quizCount() < 6 : %>
-                <button class="take-a-quiz">
-                  <%- I18n.t 'profile.take_a_quiz' %>
-                </button>
-              <% end %>
-            </div>
-          </div>
-        </div>
+      
         
         <% if @user().zooniverse_id < 1050000 : %>
           <div class="gz_3_galaxies">
