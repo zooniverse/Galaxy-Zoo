@@ -3,6 +3,12 @@
     <%- I18n.t 'home.headline' %>
     <p class="call-to-action"><%- I18n.t 'home.call_to_action' %></p>
   </div>
+
+  <div  class='advert'>
+     <a href='http://quench.galaxyzoo.org'><img width=100  src='images/quench_galaxyzoo.png'></img></a>
+     <p> We are trying something new! Come help us understand a very specific type of galaxy and experince science from start to end. <a href='http://quench.galaxyzoo.org'>Take part</a></p>
+  </div>
+
   <div class="slider">
     <div class="slide-element galaxy-zoo">
       <div class="left">
@@ -10,8 +16,11 @@
         <p class="description"><%- I18n.t 'home.galaxy_zoo.description' %></p>
         <a data-nav="#/classify" href="/#/classify" class="blue-button"><%- I18n.t 'home.galaxy_zoo.classify' %></a>
       </div>
+
     </div>
   </div>
+
+
   
   <div class="content-block">
     <div class="left">
