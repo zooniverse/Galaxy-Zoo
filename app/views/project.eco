@@ -3,8 +3,13 @@
     <div class="content-block">
       <div class="full">
         <h1 class="heading"><%- I18n.t 'project.overview_title' %></h1>
-        <h3 class='sub-heading'><%-I18n.t 'project.h1' %></h2>
 
+        <h3 class='sub-heading'><%-I18n.t 'project.hs1' %></h2>
+        <p><%- I18n.t 'project.ps1' %></p>
+        <p><%- I18n.t 'project.ps2' %></p>
+        <p><%- I18n.t 'project.ps3' %></p>
+
+        <h3 class='sub-heading'><%-I18n.t 'project.h1' %></h2>
         <p><%- I18n.t 'project.p1' %></p>
         <p><%- I18n.t 'project.p2' %></p>
         <p><%- I18n.t 'project.p3' %></p>
