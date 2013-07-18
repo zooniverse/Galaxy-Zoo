@@ -6,6 +6,7 @@
     
     <% if _(questionExamples).keys().length > 0 : %>
       <h3 class="sub-heading"><%- I18n.t 'help.examples' %></h3>
+      <p>Click any image to see a larger version</p>
     <% end %>
     
     <% for key, examples of questionExamples : %>
