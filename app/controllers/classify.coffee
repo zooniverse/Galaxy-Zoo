@@ -83,7 +83,7 @@ class Classify extends Spine.Controller
     talk = answer.data 'talk'
     
     if talk
-      url = "http://talk.galaxyzoo.org/objects/#{ @subject.zooniverse_id }"
+      url = "http://quenchtalk.galaxyzoo.org/#/subjects/#{ @subject.zooniverse_id }"
       window.open url, '_blank'
       window.focus()
     
