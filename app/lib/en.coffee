@@ -723,7 +723,7 @@ module.exports =
     p4: 'Luckily, we have great online tools to help facilitate our data analysis and discussion of results.
     <ul>
       <li>We will use <a href="http://tools.zooniverse.org">tools.zooniverse.org</a> to analyze the data from the classification phase.</li>
-      <li>We will use <a href="http://quench.galaxyzoo.org/talk">TALK</a> to discuss our analysis procedures, results, and objects of interest.</li>
+      <li>We will use <a href="http://quenchtalk.galaxyzoo.org/">TALK</a> to discuss our analysis procedures, results, and objects of interest.</li>
     </ul>'
     p5: 'Click on those links above and Start Making Sense! ... gotta love the <a href="http://www.rollingstone.com/music/artists/talking-heads">Talking Heads.</a>'
     h2: "Stage 3: Writing the Professional Journal Article"
