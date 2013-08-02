@@ -624,7 +624,7 @@ module.exports =
     
     galaxy_zoo:
       title: '<strike>Stage 1: Galaxy Classification</strike> COMPLETE!!!!'
-      description: 'A big thank you to everyone who helped classify the galaxies! Post-quenched galaxies are a rare type of galaxy whose star formation was recently and abruptly quenched. We are trying to understand what caused the quenching and the role that post-quenched galaxies play in galaxy evolution, and we can do that by classifying the galaxies according to their shape. The classification interface is still available, but additional classifications are not needed for this project.'
+      description: 'A big thank you to everyone who helped classify the galaxies! Post-quenched galaxies are a rare type of galaxy whose star formation was recently and abruptly quenched. We are trying to understand what caused the quenching and the role that post-quenched galaxies play in galaxy evolution, and we can do that by classifying the galaxies according to their shape. The classifications for this project are complete!'
       classify: 'Begin Classifying'
           
     galaxy_formation:
@@ -639,7 +639,7 @@ module.exports =
     
     leading:
       title: 'Stage 2: Begins Now!'
-      body: 'In this stage we will begin the \'Data Analysis and Discussion\' portion of the project. Nobody has ever attempted an online science project quite like this before, so it is going to be an interesting few weeks! Please check out <a href="http://blog.galaxyzoo.org/2013/07/23/gz-quench-classification-complete-now-the-real-fun-begins/">this blog post</a> for more details about what happens next, or visit <a data-nav="#/talk" href="#/talk">TALK</a> and <a href="http://tools.zooniverse.org">ZooTools</a> to get involved!'
+      body: 'In this stage we will begin the \'Data Analysis and Discussion\' portion of the project. Nobody has ever attempted an online science project quite like this before, so it is going to be an interesting few weeks! Please check out <a href="http://blog.galaxyzoo.org/2013/08/02/gz-quench-classification-complete-now-the-real-fun-begins/">this blog post</a> for more details about what happens next, or visit <a href="http://quenchtalk.galaxyzoo.org/">TALK</a> and <a href="http://tools.zooniverse.org">ZooTools</a> to get involved!'
       body2:'Stage 2'
       body3:'<a data-nav="#/project" href="#/project">Stage 3: Writing the Professional Journal Article.</a>'
 
@@ -716,7 +716,7 @@ module.exports =
     ps2: "The classification decision tree (i.e., the series of questions we ask to identify shape characteristics) is very similar to a previous Galaxy Zoo classification tree used with the Candels data (<a href='http://blog.galaxyzoo.org/2012/09/12/candels-intro/'> http://blog.galaxyzoo.org/2012/09/12/candels-intro/</a>). A few questions have been removed that don’t apply to our science question and a few questions have been reworded to more directly address our science question. For example, the question ‘Does the galaxy have a mostly clumpy appearance?’ is now ‘Are there any off-centre bright clumps embedded within the galaxy?’"
     ps3: "The first stage in this Galaxy Zoo Quench project is to classify all 6004 galaxies. We need to obtain at least 10 classifications per galaxy. That’s the minimum number that Galaxy Zoo has found provides reliable and robust results.  If we can get more, great! But with 10 classifications per galaxy, that means 60,040 classifications total. For context, the Galaxy Zoo site receives 10,000 classifications each day. We will likely have a slower rate. Our goal is to complete Stage 1 in 2 weeks (by August 1st). So get classifying! "  
 
-    p1: '<a href="http://blog.galaxyzoo.org/2013/07/23/gz-quench-classification-complete-now-the-real-fun-begins/">Stage 2 begins now: new blog post with more details!</a> In this Galaxy Zoo project, you will not only carry out the classification of our sample of post-quenched galaxies, but we will collaboratively analyze the data, discuss the results, and write an article to submit to a professional journal.'
+    p1: '<a href="http://blog.galaxyzoo.org/2013/08/02/gz-quench-classification-complete-now-the-real-fun-begins/">Stage 2 begins now: new blog post with more details!</a> In this Galaxy Zoo project, you will not only carry out the classification of our sample of post-quenched galaxies, but we will collaboratively analyze the data, discuss the results, and write an article to submit to a professional journal.'
     h1: "Stage 2: Data Analysis & Discussion"
     p2: 'Analysis and discussion is a really fun part of the scientific process. What did we find? What science questions can our data address? What plots and other visualizations can I create to make sense of the data? What do the results mean? How do our results compare to those from other research studies? '
     p3: 'These questions lie at the heart of the scientific process. '
