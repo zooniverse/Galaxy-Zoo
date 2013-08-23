@@ -35,7 +35,7 @@ class Classify extends Spine.Controller
     User.bind 'sign-in', @hideLoginPrompt
     UserGroup.bind 'participate', @render
     Classification.bind 'classified', @loginPrompt
-    # Subject.next()
+    Subject.next()
     $('#zooniverse-top-bar-login .buttons button[name="signup"]').unbind('click').bind 'click', @signupPrompt
   
   active: ->

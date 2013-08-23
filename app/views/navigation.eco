@@ -1,8 +1,8 @@
 <nav>
   <ul>
     <li>
-      <!-- <a href="#/classify" data-nav="/classify"><%- I18n.t 'navigation.classify' %></a> -->
-      <a style="color: #555555; cursor: auto; text-decoration: none;"><%- I18n.t 'navigation.classify' %></a>
+      <a href="#/classify" data-nav="/classify"><%- I18n.t 'navigation.classify' %></a>
+      <!-- <a style="color: #555555; cursor: auto; text-decoration: none;"><%- I18n.t 'navigation.classify' %></a> -->
     </li>
     <li>
       <a href="#/science" data-nav="/science"><%- I18n.t 'navigation.science' %></a>
