@@ -7,8 +7,7 @@
     <div class="slide-element galaxy-zoo">
       <div class="left">
         <p class="header-title2"><%- I18n.t 'home.leading.title' %></p>
-        <p class="description"><%- I18n.t 'home.leading.body' %></p>
-        <p class="description"><%- I18n.t 'home.leading.body3' %></p>    
+        <p class="description"><%- I18n.t 'home.leading.body' %></p> 
         <a data-nav="#/project" href="/#/project" class="blue-button"><%- I18n.t 'home.leading.body2' %><a>
       </div>
     </div>
@@ -17,7 +16,7 @@
   <div class="content-block">
     <div class="left">
       <h1 class="heading"><%- I18n.t 'home.galaxy_zoo.title' %></h1>
-      <p class="description"><%- I18n.t 'home.galaxy_zoo.description' %></p>
+        <p class="description"><%- I18n.t 'home.galaxy_zoo.description' %></p>
     </div>
     
     <div class="right">
