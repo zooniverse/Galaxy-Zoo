@@ -624,7 +624,7 @@ module.exports =
     
     galaxy_zoo:
       title: 'Quench Boost'
-      description: 'While we need some extra classifications, some of you might still want to explore the existing data on <a href="http://tools.zooniverse.org" target="_blank">ZooTools</a> and start doing some analysis. Over the next few days we will be releasing a series of blog posts breaking some of the analysis tasks down into bite size chunks. <a href="http://blog.galaxyzoo.org/2013/08/23/quench-boost-a-how-to-guide-part-1/"  target="_blank">Blog Post 1</a> is available now!'
+      description: 'Thanks to your wonderful effort we have all the extra classifications we need. Continue to be involved by explore the existing data on <a href="http://tools.zooniverse.org" target="_blank">ZooTools</a> and start doing some analysis. Over the next few days we will be releasing a series of blog posts breaking some of the analysis tasks down into bite size chunks. <a href="http://blog.galaxyzoo.org/2013/08/23/quench-boost-a-how-to-guide-part-1/"  target="_blank">Blog Post 1</a> is available now!'
       classify: 'Begin Classifying'
           
     galaxy_formation:
@@ -638,9 +638,10 @@ module.exports =
       body2: 'Galaxy Zoo Quench aims to extend upon the original Galaxy Zoo project by asking volunteers to not only participate in classifying galaxies, but offering them the opportunity to analyse the results and write a paper with the results. The website was built by the same team that brought you Galaxy Zoo, using much of the same techniques and technology.'
     
     leading:
-      title: 'Quench Boost'
-      body: 'No research project is complete without a few glitches! As some of you rightly pointed out, 57 of the 3002 control sample galaxies were duplicates, so our sample isn\'t big enough! To make sure that no bias is introduced, we\'ve added some of the original post-quenched galaxies. Like the original classification task, you will be asked to classify a mix of control galaxies and post-quenched galaxies. <a href="http://blog.galaxyzoo.org/2013/08/23/quench-new-classifications-needed/" target="_blank">For more details...</a>'
-      body2:'Classify!'
+      title: 'Stage 2: Begins Now!'
+      body: 'In this stage we will begin the \'Data Analysis and Discussion\' portion of the project. Nobody has ever attempted an online science project quite like this before, so it is going to be an interesting few weeks! Please check out <a href="http://blog.galaxyzoo.org/2013/07/23/gz-quench-classification-complete-now-the-real-fun-begins/">this blog post</a> for more details about what happens next, or visit <a data-nav="#/talk" href="#/talk">TALK</a> and <a href="http://tools.zooniverse.org">ZooTools</a> to get involved!'
+      body2:'Stage 2'
+      body3:'<a data-nav="#/project" href="#/project">Stage 3: Writing the Professional Journal Article.</a>'
 
     timeline:
       title: 'Project timeline'
