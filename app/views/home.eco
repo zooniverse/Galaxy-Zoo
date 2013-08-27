@@ -8,7 +8,7 @@
       <div class="left">
         <p class="header-title2"><%- I18n.t 'home.leading.title' %></p>
         <p class="description"><%- I18n.t 'home.leading.body' %></p> 
-        <a data-nav="#/classify" href="/#/classify" class="blue-button"><%- I18n.t 'home.leading.body2' %></a>
+        <a data-nav="#/classify" href="/#/project" class="blue-button"><%- I18n.t 'home.leading.body2' %></a>
       </div>
     </div>
   </div>
