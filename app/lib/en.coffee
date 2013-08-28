@@ -639,7 +639,7 @@ module.exports =
     
     leading:
       title: 'Stage 2: Begins Now!'
-      body: 'In this stage we will begin the \'Data Analysis and Discussion\' portion of the project. Nobody has ever attempted an online science project quite like this before, so it is going to be an interesting few weeks! Please check out <a href="http://blog.galaxyzoo.org/2013/07/23/gz-quench-classification-complete-now-the-real-fun-begins/">this blog post</a> for more details about what happens next, or visit <a data-nav="#/talk" href="#/talk">TALK</a> and <a href="http://tools.zooniverse.org">ZooTools</a> to get involved!'
+      body: 'In this stage we will begin the \'Data Analysis and Discussion\' portion of the project. Nobody has ever attempted an online science project quite like this before, so it is going to be an interesting few weeks! Please check out <a href="http://blog.galaxyzoo.org/2013/08/02/gz-quench-classification-complete-now-the-real-fun-begins/">this blog post</a> for more details about what happens next, or visit <a data-nav="#/talk" href="#/talk">TALK</a> and <a href="http://tools.zooniverse.org">ZooTools</a> to get involved!'
       body2:'Stage 2'
       body3:'<a data-nav="#/project" href="#/project">Stage 3: Writing the Professional Journal Article.</a>'
 
