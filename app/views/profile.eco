@@ -45,6 +45,12 @@
               <%- I18n.t 'profile.sdss' %>
               <span class="caption"><%- I18n.t 'profile.sdss_classifications' %></span>
             </div>
+            
+            <div class="ukidss">
+              <span class="count"><%= @surveyCount 'ukidss' %></span>
+              <%- I18n.t 'profile.ukidss' %>
+              <span class="caption"><%- I18n.t 'profile.ukidss_classifications' %></span>
+            </div>
           </div>
         </div>
         

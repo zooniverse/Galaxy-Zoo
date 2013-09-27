@@ -1,0 +1,33 @@
+<%- @info I18n.t('examine.survey'), I18n.t('examine.ukidss') %>
+<%- @info I18n.t('examine.sdss_id'), @subject.metadata.sdss_dr7_id %>
+<%- @info I18n.t('examine.right_ascension'), @subject.coords[0], '&deg;' %>
+<%- @info I18n.t('examine.declination'), @subject.coords[1], '&deg;' %>
+<%- @info I18n.t('examine.petro_rad'), @subject.metadata.petrorad_r %>
+
+<div class="row">
+  <span class="blank"></span>
+</div>
+
+<div class="row">
+  <span class="key"></span>
+  <span class="value">
+    <% if @subject.metadata.sdss_dr8_id: %>
+      <a target="_blank" href="http://skyserver.sdss3.org/dr8/en/tools/explore/obj.asp?id=<%= @subject.metadata.sdss_dr8_id %>"><%- I18n.t 'examine.skyserver_link' %></a>
+    <% else: %>
+      <a target="_blank" href="http://cas.sdss.org/dr7/en/tools/quicklook/quickobj.asp?id=<%= @subject.metadata.sdss_dr7_id %>"><%- I18n.t 'examine.skyserver_link' %></a>
+    <% end %>
+  </span>
+</div>
+<div class="row">
+  <span class="key"></span>
+  <span class="value">
+    <a target="_blank" href="http://ned.ipac.caltech.edu/cgi-bin/nph-objsearch?search_type=Near+Position+Search&RA=<%= @subject.coords[0] %>&DEC=<%= @subject.coords[1]%>&SR=0.0166666667"><%- I18n.t 'examine.ned_link' %></a>
+  </span>
+</div>
+
+<div class="row">
+  <span class="key"></span>
+  <span class="value">
+    <a target="_blank" href="http://talk.galaxyzoo.org/#/subjects/<%= @subject.zooniverse_id %>"><%- I18n.t 'examine.discuss' %></a>
+  </span>
+</div>
