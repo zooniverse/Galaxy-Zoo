@@ -7,7 +7,10 @@ class Classification extends Spine.Model
   
   constructor: ->
     super
-    @annotations = []
+    @annotations = [{
+      lang: window.app.lang
+    }]
+    
     @question = @subject().tree().first()
   
   subject: ->

@@ -27,12 +27,14 @@
           jQuery.getJSON('locales/' + lang + '.json', function(json) {
             I18n.current = json;
             var App = require('index');
-            new App({ el: $('body') });
+            window.app = new App({ el: $('body') });
+            app.lang = lang;
           });
         }
         else {
           var App = require('index');
-          new App({ el: $('body') });
+          window.app = new App({ el: $('body') });
+          app.lang = 'en';
         }
       })
     </script>

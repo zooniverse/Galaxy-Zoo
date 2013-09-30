@@ -1,7 +1,7 @@
 Spine = require 'spine'
 
 class Question extends Spine.Model
-  @configure 'Question', 'tree', 'answers', 'checkboxes', 'leadsTo', 'helpText'
+  @configure 'Question', 'tree', 'text', 'answers', 'checkboxes', 'leadsTo', 'helpText'
   
   @findByTreeAndText: (tree, text) ->
     @select (q) -> q.tree is tree and q.text is text
@@ -15,8 +15,8 @@ class Question extends Spine.Model
     @helpText or= ''
     @answers or= { }
     @checkboxes or= { }
-    @text = I18n.t 'questions', @i18nId(), 'text'
-    @title = I18n.t 'questions', @i18nId(), 'title'
+    @text or= hash.text
+    @title or= I18n.t 'questions', @i18nId(), 'title'
     hash.answerWith?.apply @
     super
   

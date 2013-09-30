@@ -1,6 +1,6 @@
 <div class="question" data-id="<%= @id %>">
   <p class="heading"><%= @title %></p>
-  <p class="text"><%= @text %></p>
+  <p class="text"><%= I18n.t 'questions', @i18nId(), 'text' %></p>
   
   <div class="buttons">
     <% iOS = if navigator.userAgent.match(/(iPad|iPhone|iPod)/i) then 'iOS' else 'not-iOS' %>
