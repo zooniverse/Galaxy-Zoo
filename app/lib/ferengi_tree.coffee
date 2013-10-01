@@ -56,13 +56,14 @@ FerengiTree = new DecisionTree 'ferengi', ->
   
   @question 'Disk', 'Could this be a disk viewed edge-on?', ->
     @help "Disc galaxies are very thin, so look different when viewed from the side. We're trying to find exactly edge-on galaxies with this question. If the galaxy looks needle-like, perhaps with a bulge at the centre, then click &quot;yes,&quot; otherwise choose &quot;no&quot; (even for galaxies almost edge-on). Click to see larger images."
-    @answer 'Yes', leadsTo: 'Does the galaxy have a bulge at its centre?', icon: 'yes', examples: 1
+    @answer 'Yes', leadsTo: 'Does the galaxy have a bulge at its center? If so, what shape?', icon: 'yes', examples: 1
     @answer 'No', leadsTo: 'Is there any sign of a bar feature through the centre of the galaxy?', icon: 'no', examples: 1
   
-  @question 'Bulge', 'Does the galaxy have a bulge at its centre?', leadsTo: 'Is there anything odd?', ->
-    @help "Look at the centre of the galaxy - is there any sign of a bulge of stars sticking out above and below the otherwise smooth shape? If so, click yes."
-    @answer 'Yes', icon: 'yes', examples: 1
-    @answer 'No', icon: 'no', examples: 1
+  @question 'Bulge', 'Does the galaxy have a bulge at its center? If so, what shape?', leadsTo: 'Is there anything odd?', ->
+    @help "Concentrate on the centre of the galaxy - if it has a smooth, uninterrupted, needle or lens-shape then click &quot;no bulge.&quot; Otherwise your options are &quot;rounded&quot; bulge or &quot;boxy&quot; (but boxy bulges are rare). Click to see larger images."
+    @answer 'Rounded', icon: 'edge_round', examples: 1
+    @answer 'Boxy', icon: 'edge_boxy', examples: 1
+    @answer 'No bulge', icon: 'edge_none', examples: 1
   
   @question 'Bar', 'Is there any sign of a bar feature through the centre of the galaxy?', leadsTo: 'Is there any sign of a spiral arm pattern?', ->
     @help "Sometimes galaxies have a prominent straight &quot;bar&quot; running through their centre, and that's what we're looking for here. Click to see larger images."

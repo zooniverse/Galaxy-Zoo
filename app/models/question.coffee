@@ -58,7 +58,9 @@ class Question extends Spine.Model
       @id.replace 'ukidss', 'sloan'
     else if @id.match /ferengi/
       n = @id.split('-')[1]
-      if n is '16'
+      if n is '10'
+        'sloan-8'
+      else if n is '16'
         'candels-17'
       else if n is '17'
         'sloan-5'
