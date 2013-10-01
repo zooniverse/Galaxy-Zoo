@@ -41,7 +41,7 @@
             </div>
             
             <div class="sdss">
-              <span class="count"><%= @surveyCount 'sloan' %></span>
+              <span class="count"><%= @surveyCount('sloan') + @surveyCount('ferengi') %></span>
               <%- I18n.t 'profile.sdss' %>
               <span class="caption"><%- I18n.t 'profile.sdss_classifications' %></span>
             </div>

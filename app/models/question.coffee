@@ -56,6 +56,16 @@ class Question extends Spine.Model
   i18nId: =>
     if @id.match /ukidss/
       @id.replace 'ukidss', 'sloan'
+    else if @id.match /ferengi/
+      n = @id.split('-')[1]
+      if n is '16'
+        'candels-17'
+      else if n is '17'
+        'sloan-5'
+      else if n is '18'
+        'sloan-6'
+      else
+        @id.replace 'ferengi', 'candels'
     else
       @id
 
