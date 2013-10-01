@@ -3,15 +3,15 @@ DecisionTree = require 'lib/decision_tree'
 FerengiTree = new DecisionTree 'ferengi', ->
   @question 'Shape', 'Is the galaxy simply smooth and rounded, with no sign of a disk?', ->
     @help "The aim here is to divide featureless galaxies from all the rest. If you can see any interesting features at all, click &quot;features or disk.&quot; Just occasionally you might see something that isn't a galaxy at all - the long streak of a satellite, for example, or a image swamped by light from a bright star. If this happens, just click &quot;star or artifact&quot;. Click to see larger images."
-    @answer 'Smooth', leadsTo: 'How rounded is it?', icon: 'smooth_round', examples: 0
-    @answer 'Features or disk', leadsTo: 'Does the galaxy have a mostly clumpy appearance?', icon: 'feature_clumpy', examples: 0
+    @answer 'Smooth', leadsTo: 'How rounded is it?', icon: 'smooth_round', examples: 1
+    @answer 'Features or disk', leadsTo: 'Does the galaxy have a mostly clumpy appearance?', icon: 'feature_clumpy', examples: 2
     @answer 'Star or artifact', leadsTo: 'Would you like to discuss this object?', icon: 'star', examples: 0
   
   @question 'Round', 'How rounded is it?', leadsTo: 'Is there anything odd?', ->
     @help "Not all galaxies are perfectly round - just look at the overall shape and put it in one of these three categories. If there's more than one galaxy in the field, remember always to concentrate on the one in the centre. Click to see larger images."
-    @answer 'Completely round', icon: 'smooth_round', examples: 0
-    @answer 'In between', icon: 'smooth_in-between', examples: 0
-    @answer 'Cigar shaped', icon: 'smooth_cigar', examples: 0
+    @answer 'Completely round', icon: 'smooth_round', examples: 2
+    @answer 'In between', icon: 'smooth_in-between', examples: 3
+    @answer 'Cigar shaped', icon: 'smooth_cigar', examples: 2
   
   @question 'Clumps', 'Does the galaxy have a mostly clumpy appearance?', ->
     @help "Some galaxies are nothing but bright clumps. We don't mean those that have other features with a few small clusters of stars, but rather those that are made up mostly of bright clumps. Click to see larger images."
@@ -56,43 +56,43 @@ FerengiTree = new DecisionTree 'ferengi', ->
   
   @question 'Disk', 'Could this be a disk viewed edge-on?', ->
     @help "Disc galaxies are very thin, so look different when viewed from the side. We're trying to find exactly edge-on galaxies with this question. If the galaxy looks needle-like, perhaps with a bulge at the centre, then click &quot;yes,&quot; otherwise choose &quot;no&quot; (even for galaxies almost edge-on). Click to see larger images."
-    @answer 'Yes', leadsTo: 'Does the galaxy have a bulge at its center? If so, what shape?', icon: 'yes', examples: 0
-    @answer 'No', leadsTo: 'Is there any sign of a bar feature through the centre of the galaxy?', icon: 'no', examples: 0
+    @answer 'Yes', leadsTo: 'Does the galaxy have a bulge at its center? If so, what shape?', icon: 'yes', examples: 1
+    @answer 'No', leadsTo: 'Is there any sign of a bar feature through the centre of the galaxy?', icon: 'no', examples: 3
   
   @question 'Bulge', 'Does the galaxy have a bulge at its center? If so, what shape?', leadsTo: 'Is there anything odd?', ->
     @help "Concentrate on the centre of the galaxy - if it has a smooth, uninterrupted, needle or lens-shape then click &quot;no bulge.&quot; Otherwise your options are &quot;rounded&quot; bulge or &quot;boxy&quot; (but boxy bulges are rare). Click to see larger images."
-    @answer 'Rounded', icon: 'edge_round', examples: 0
+    @answer 'Rounded', icon: 'edge_round', examples: 2
     @answer 'Boxy', icon: 'edge_boxy', examples: 0
-    @answer 'No bulge', icon: 'edge_none', examples: 0
+    @answer 'No bulge', icon: 'edge_none', examples: 3
   
   @question 'Bar', 'Is there any sign of a bar feature through the centre of the galaxy?', leadsTo: 'Is there any sign of a spiral arm pattern?', ->
     @help "Sometimes galaxies have a prominent straight &quot;bar&quot; running through their centre, and that's what we're looking for here. Click to see larger images."
-    @answer 'Bar', icon: 'yes', examples: 0
-    @answer 'No bar', icon: 'no', examples: 0
+    @answer 'Bar', icon: 'yes', examples: 2
+    @answer 'No bar', icon: 'no', examples: 3
   
   @question 'Spiral', 'Is there any sign of a spiral arm pattern?', ->
     @help "Look carefully for spiral arms - remember they may be embedded in the disk and not that easy to see. Click to see larger images."
-    @answer 'Spiral', leadsTo: 'How tightly wound do the spiral arms appear?', icon: 'yes', examples: 0
+    @answer 'Spiral', leadsTo: 'How tightly wound do the spiral arms appear?', icon: 'yes', examples: 3
     @answer 'No spiral', leadsTo: 'How prominent is the central bulge, compared with the rest of the galaxy?', icon: 'no', examples: 0
   
   @question 'Spiral', 'How tightly wound do the spiral arms appear?', leadsTo: 'How many spiral arms are there?', ->
     @help "Astronomers classify galaxies by how tight their arms are - you might find it easiest to see closest to the centre. Click to see larger images."
-    @answer 'Tight', icon: 'spiral_tight', examples: 0
-    @answer 'Medium', icon: 'spiral_medium', examples: 0
-    @answer 'Loose', icon: 'spiral_loose', examples: 0
+    @answer 'Tight', icon: 'spiral_tight', examples: 1
+    @answer 'Medium', icon: 'spiral_medium', examples: 1
+    @answer 'Loose', icon: 'spiral_loose', examples: 2
   
   @question 'Spiral', 'How many spiral arms are there?', leadsTo: 'How prominent is the central bulge, compared with the rest of the galaxy?', ->
     @help "Some spiral galaxies are rather complicated, so don't be afraid to use the &quot;more than 4&quot; or &quot;can't tell&quot; buttons here."
     @answer '1', icon: 'spiral_1', examples: 0
-    @answer '2', icon: 'spiral_2', examples: 0
+    @answer '2', icon: 'spiral_2', examples: 2
     @answer '3', icon: 'spiral_3', examples: 0
     @answer '4', icon: 'spiral_4', examples: 0
     @answer 'More than 4', icon: 'spiral_4-plus', examples: 0
-    @answer "Can't tell", icon: 'spiral_cant-tell', examples: 0
+    @answer "Can't tell", icon: 'spiral_cant-tell', examples: 2
   
   @question 'Bulge', 'How prominent is the central bulge, compared with the rest of the galaxy?', leadsTo: 'Is there anything odd?', ->
     @help "It's not always easy to tell, but look at the centre of the galaxy for a round bulge of stars which may obscure any bar and the spiral arms in this central region. Click to see larger images."
-    @answer 'No bulge', icon: 'bulge_none', examples: 0
+    @answer 'No bulge', icon: 'bulge_none', examples: 1
     @answer 'Obvious', icon: 'bulge_obvious', examples: 0
     @answer 'Dominant', icon: 'bulge_dominant', examples: 0
   
@@ -103,17 +103,17 @@ FerengiTree = new DecisionTree 'ferengi', ->
   
   @question 'Odd', 'Is there anything odd?', ->
     @help "We're looking for signs that the galaxy is merging, is disturbed, or has other unusual features. Click to see larger images."
-    @answer 'Yes', leadsTo: 'What are the odd features?', icon: 'yes', examples: 0
-    @answer 'No', leadsTo: 'Would you like to discuss this object?', icon: 'no', examples: 0
+    @answer 'Yes', leadsTo: 'What are the odd features?', icon: 'yes', examples: 1
+    @answer 'No', leadsTo: 'Would you like to discuss this object?', icon: 'no', examples: 3
   
   @question 'Odd', 'What are the odd features?', ->
-    @checkbox 'Ring', icon: 'ring', examples: 0
+    @checkbox 'Ring', icon: 'ring', examples: 2
     @checkbox 'Lens or arc', icon: 'lens', examples: 0
     @checkbox 'Disturbed', icon: 'disturbed', examples: 0
     @checkbox 'Irregular', icon: 'irregular', examples: 0
     @checkbox 'Other', icon: 'other', examples: 0
-    @checkbox 'Merger', icon: 'merger', examples: 0
-    @checkbox 'Dust lane', icon: 'dustlane', examples: 0
+    @checkbox 'Merger', icon: 'merger', examples: 1
+    @checkbox 'Dust lane', icon: 'dustlane', examples: 1
     @answer 'Done', leadsTo: 'Would you like to discuss this object?', icon: 'yes', examples: 0
 
 module.exports = FerengiTree
