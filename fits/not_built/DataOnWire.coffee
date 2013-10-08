@@ -47,6 +47,9 @@ class DataOnWire
     if survey is 'sloan'
       directory = "dr9zoo/#{id}"
       bands = ['u', 'g', 'r', 'i', 'z']
+    else if survey is 'ukidss'
+      directory = "ukidss/#{id}"
+      bands = ['y', 'h', 'j', 'k']
     else
       directory = @getHubblePath(id)
       bands = ['h', 'i', 'j']
