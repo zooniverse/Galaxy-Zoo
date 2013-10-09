@@ -9,6 +9,7 @@
         <p><%- I18n.t 'story.p4' %></p>
         <p><%- I18n.t 'story.p5' %></p>
         <p><%- I18n.t 'story.p6' %></p>
+        <p><%- I18n.t 'story.p7' %></p>
       </div>
     </div>
   </div>
