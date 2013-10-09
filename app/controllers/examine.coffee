@@ -81,8 +81,14 @@ class Examine extends Spine.Controller
   initializeFitsViewer: =>
     id      = @subject.metadata.sdss_id or @subject.metadata.hubble_id
     survey  = @subject.metadata.survey
-    bands   = if survey is 'sloan' then ['u', 'g', 'r', 'i', 'z'] else ['h', 'i', 'j']
-
+    switch survey
+      when "sloan"
+        bands = ['u', 'g', 'r', 'i', 'z']
+      when "ukidss"
+        bands = ['y', 'h', 'j', 'k']
+      else
+        bands = ['h', 'i', 'j']
+    
     # Initialize viewer
     @viewer = new FITSViewer({el: $('#examine'), bands: bands, survey: survey, survey_id: id})
   
