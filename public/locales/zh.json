@@ -1,964 +1,964 @@
 {
-  "zooniverse": {
-    "browser_check": {
-      "wont_work": "This site probably won't work until you update your browser.",
-      "recommended": "We recommend using <a href=\"http://www.mozilla.org/firefox/\" target=\"_blank\">Mozilla Firefox</a> or <a href=\"http://www.google.com/chrome\" target=\"_blank\">Google Chrome</a>.",
-      "ie": "If you use <a href=\"http://www.microsoft.com/windows/internet-explorer/\" target=\"_blank\">Microsoft Internet Explorer</a>, make sure you're running the latest version.",
-      "chrome_frame": "If you can't install the latest Internet Explorer, try <a href=\"http://google.com/chromeframe\" target=\"_blank\">Chrome Frame</a>!",
-      "dismiss": "Dismiss"
+    "zooniverse": {
+        "browser_check": {
+            "wont_work": "下載最新版本瀏覽器之前，網站可能無法正常運作 ",
+            "recommended": "We recommend using <a href=\"http://www.mozilla.org/firefox/\" target=\"_blank\">Mozilla Firefox</a> or <a href=\"http://www.google.com/chrome\" target=\"_blank\">Google Chrome</a>.",
+            "ie": "If you use <a href=\"http://www.microsoft.com/windows/internet-explorer/\" target=\"_blank\">Microsoft Internet Explorer</a>, make sure you're running the latest version.",
+            "chrome_frame": "If you can't install the latest Internet Explorer, try <a href=\"http://google.com/chromeframe\" target=\"_blank\">Chrome Frame</a>!",
+            "dismiss": "Dismiss"
+        },
+        "login": {
+            "username": "用戶名",
+            "password": "密碼",
+            "login": "登入",
+            "forgot_password": "忘記密碼?"
+        },
+        "sign_in": {
+            "title": "Sign in with your Zooniverse account",
+            "sign_up": "新增帳號",
+            "button": "登入",
+            "progress": "登入中"
+        },
+        "sign_up": {
+            "title": "申請新的 Zooniverse 帳號",
+            "confirmation": "密碼 (確認)",
+            "password_match": "密碼必須經確認符合",
+            "sign_in": "已有帳號？從這裡登入！",
+            "email": "電子信箱帳號",
+            "privacy": "我同意 <a href=\"https://www.zooniverse.org/privacy\" target=\"_blank\"> 隱私權設定規定 </a>",
+            "button": "登入",
+            "progress": "新增帳號並登入"
+        },
+        "sign_out": {
+            "current": "目前登入使用帳號名稱為 <strong class=\"current\"></strong>.",
+            "button": "登出",
+            "progress": "正在登出..."
+        },
+        "top_bar": {
+            "title": "<span id=\"app-name\"></span> is a <a href=\"https://www.zooniverse.org\">Zooniverse</a> project.",
+            "description": "The Zooniverse is a collection of web-based Citizen Science projects that use the efforts and abilities of volunteers to help reseachers deal with the flood of data that confronts them.",
+            "greeting": "您好, <strong>{user}</strong>，歡迎登入 {appName}!",
+            "projects": {
+                "title": "計畫速覽",
+                "list": "目前在四大主題下共有12個計畫 <a href=\"https://www.zooniverse.org/#space\">天文</a>, to <a href=\"https://www.zooniverse.org/#climate\">氣候 climatology</a>, to <a href=\"https://www.zooniverse.org/#nature\">生物 biology</a>, to <a href=\"https://www.zooniverse.org/#humanities\">人類 humanities</a>.'"
+            }
+        }
     },
-    "login": {
-      "username": "用戶名",
-      "password": "密碼",
-      "login": "登入",
-      "forgot_password": "忘記密碼?"
+    "questions": {
+        "sloan-0": {
+            "text": "這個星系是否分布平整均勻，呈圓形，不具盤狀特徵?",
+            "title": "外型",
+            "help": "這邊要先過濾掉外觀結構上無任何特徵(即形狀平整、分布均勻)的星系圖像。只要圖像外型或結構上看來有任何特徵(分布不均勻也算)，請用滑鼠點選「外觀具有特徵或盤狀」這個選項。偶有可能，你所看到的圖像並非星系，而是衛星留下的長條狀拖影，或是很亮的恆星，如果碰到這種情形，請選「恆星或人造飛行器」這個答案。在圖像上點一下可放大。",
+            "answers": {
+                "a-0": "平整勻稱",
+                "a-1": "外觀具有特徵或盤狀",
+                "a-2": "恆星或人造飛行器"
+            }
+        },
+        "sloan-1": {
+            "text": "這有可能會是個完全從側視角度看到的盤狀星系嗎?",
+            "title": "什麼是盤狀",
+            "help": "盤狀星系都很薄，從側面角度看(即「側視」)其形狀很不一樣（相對於俯瞰）。透過這題我們所要找的是那些形狀「完全為側視」的星系。如果星系形狀看起來像一根細長的針，包括那些中間有突起核球在內的，下面選項請選「是」，不然請選「否」（即使該星系幾乎為側視但不完全為側視，也請選擇「否」）。在圖像上點一下可放大",
+            "answers": {
+                "a-0": "是",
+                "a-1": "否"
+            }
+        },
+        "sloan-2": {
+            "text": "有棒狀結構穿過其中央嗎？",
+            "title": "什麼是棒狀",
+            "help": "某些星系會有明顯的棒狀結構貫穿其中心，這就是我們在此想找的星系。點選圖片可觀看大圖。",
+            "answers": {
+                "a-0": "有棒狀",
+                "a-1": "無棒狀"
+            }
+        },
+        "sloan-3": {
+            "text": "有旋臂狀嗎？",
+            "title": "旋臂",
+            "help": "請幫忙仔細找旋臂，提醒您：旋臂可能會埋在盤裡，不容易看出來。點選圖片可觀看大圖。",
+            "answers": {
+                "a-0": "有旋臂",
+                "a-1": "無旋臂"
+            }
+        },
+        "sloan-4": {
+            "text": "請比較中心的核球與此星系的其他部分，核球是否明顯？",
+            "title": "什麼是核球",
+            "help": "位在星系中心的核球由恆星組成，容易和棒狀或旋臂狀結構混雜而很難加以辨識，請嘗試在星系中心區域尋找呈圓形的核球。點選觀看大圖。",
+            "answers": {
+                "a-0": "無核球",
+                "a-1": "可能有核球",
+                "a-2": "明顯有核球",
+                "a-3": "非常明顯的核球"
+            }
+        },
+        "sloan-5": {
+            "text": "有什麼怪怪的嗎？",
+            "title": "怪怪的",
+            "help": "我們在尋找一些代表星系併合、擾動或其他分布不尋常的特徵。點選圖片可觀看大圖。",
+            "answers": {
+                "a-0": "是",
+                "a-1": "否"
+            }
+        },
+        "sloan-6": {
+            "text": "怪怪的特徵是什麼？",
+            "title": "奇怪",
+            "help": "",
+            "answers": {
+                "a-0": "完成"
+            },
+            "checkboxes": {
+                "x-0": "環狀",
+                "x-1": "透鏡或是弧形",
+                "x-2": "受到擾動的",
+                "x-3": "不規則的",
+                "x-4": "其他",
+                "x-5": "併合",
+                "x-6": "塵埃帶"
+            }
+        },
+        "sloan-7": {
+            "text": "此星系有多圓?",
+            "title": "圓",
+            "help": "",
+            "answers": {
+                "a-0": "圓",
+                "a-1": "橢圓",
+                "a-2": "雪茄狀"
+            }
+        },
+        "sloan-8": {
+            "text": "此星系的中心是否有核球？若有，形狀為何？",
+            "title": "什麼是核球",
+            "help": "請注意看此星系的中心部分，如果中心區域的分佈狀態呈現平整、連續，是針狀或透鏡狀的，那麼請點選無核球；否則，請點選圓形核球或是箱形核球（箱形核球很稀有）。點選圖片可觀看大圖。",
+            "answers": {
+                "a-0": "圓形",
+                "a-1": "箱形",
+                "a-2": "無核球"
+            }
+        },
+        "sloan-9": {
+            "text": "旋臂彼此間有多緊密呢？",
+            "title": "旋臂纏繞的程度",
+            "help": "",
+            "answers": {
+                "a-0": "緊密",
+                "a-1": "中等",
+                "a-2": "鬆散"
+            }
+        },
+        "sloan-10": {
+            "text": "此螺旋星系有多少旋臂?",
+            "title": "旋臂數目",
+            "help": "",
+            "answers": {
+                "a-0": "1",
+                "a-1": "2",
+                "a-2": "3",
+                "a-3": "4",
+                "a-4": "超過四個",
+                "a-5": "無法分辨"
+            }
+        },
+        "sloan-11": {
+            "text": "想和其他人討論一下這個天體？",
+            "title": "討論",
+            "help": "如果您有任何關於這個天體的問題，或是覺得此天體可能對其他人來說會很有趣，又或者只是有些意見想表達，請點選「是」，即可在Talk開啟一個討論。Talk將會在一個新的視窗開啟，將新的視窗關閉即可回到星系分類的頁面。",
+            "answers": {
+                "a-0": "是",
+                "a-1": "否"
+            }
+        },
+        "candels-0": {
+            "text": "這個星系是否分布平整均勻，呈圓形，不具盤狀特徵?",
+            "title": "外型",
+            "help": "這邊要先過濾掉外觀結構上無任何特徵(即形狀平整、分布均勻)的星系圖像。只要圖像外型或結構上看來有任何特徵(分布不均勻也算)，請用滑鼠點選「外觀具有特徵或盤狀」這個選項。偶有可能，你所看到的圖像並非星系，而是衛星留下的長條狀拖影，或是很亮的恆星，如果碰到這種情形，請選「恆星或人造飛行器」這個答案。在圖像上點一下可放大。",
+            "answers": {
+                "a-0": "平整勻稱",
+                "a-1": "外觀具有特徵或盤狀",
+                "a-2": "恆星或人造飛行器 "
+            }
+        },
+        "candels-1": {
+            "text": "此星系有多圓?",
+            "title": "什麼是圓",
+            "help": "不是所有星系都是正圓，大致看一下此星系的整體形狀，然後把它歸類於以下三個分類的其中一個。如果圖片中星系數量不只一個，記得：只要分類位於圖像中心的星系即可。在圖像上點一下可以放大。",
+            "answers": {
+                "a-0": "正圓",
+                "a-1": "橢圓",
+                "a-2": "雪茄狀"
+            }
+        },
+        "candels-2": {
+            "text": "這個星系的外觀狀特徵是以塊狀為主?",
+            "title": "什麼是塊狀",
+            "help": "有些星系除了一些明亮的塊狀外，別無其他特色，這裏特別要把這一類分別出來，也就是不含其他特徵、僅只有塊狀特徵而已的那些星系。點一下可以放大圖像",
+            "answers": {
+                "a-0": "是",
+                "a-1": "否"
+            }
+        },
+        "candels-3": {
+            "text": "大約有幾塊？",
+            "title": "塊狀",
+            "help": "Count the clumps! If there are more than 4, than don't worry about it - just click &quot;more than 4.&quot;",
+            "answers": {
+                "a-0": "1",
+                "a-1": "2",
+                "a-2": "3",
+                "a-3": "4",
+                "a-4": "超過四個",
+                "a-5": "無法分辨"
+            }
+        },
+        "candels-4": {
+            "text": "塊形結構的排列是直線的？鍊狀的？還是呈團狀？",
+            "title": "塊狀",
+            "help": "有時塊形結構出現得很有規律，如果是的話，以下點選一個適合的敘述",
+            "answers": {
+                "a-0": "直線",
+                "a-1": "鎖鏈狀",
+                "a-2": "團狀 / 不規則",
+                "a-3": "旋臂"
+            }
+        },
+        "candels-5": {
+            "text": "其中有某一塊比其他塊亮很多，且相當明顯？",
+            "title": "塊狀",
+            "help": "有時塊形結構布滿整個圖像，如果這個星系是這樣的話，請點選「是」，不然請點選「否」",
+            "answers": {
+                "a-0": "是",
+                "a-1": "否"
+            }
+        },
+        "candels-6": {
+            "text": "最亮的一塊是靠近星系中心嗎？",
+            "title": "塊狀",
+            "help": "在以塊狀為主要特色的星系中，判斷那最亮的一塊是否靠近星系中心，可能不容易，請盡量試試看發揮你的好眼力",
+            "answers": {
+                "a-0": "是",
+                "a-1": "否"
+            }
+        },
+        "candels-7": {
+            "text": "這個星系呈對稱嗎？",
+            "title": "對稱性",
+            "help": "星系一分為二的兩半都是一樣的嗎？或者有一半略為擾動和另一半有些不同？",
+            "answers": {
+                "a-0": "是",
+                "a-1": "否"
+            }
+        },
+        "candels-8": {
+            "text": "塊狀結構是否隱藏在比它更大的某個天體裡？",
+            "title": "塊狀",
+            "help": "仔細查看一下：塊狀結構周圍有沒有一圈黯淡的光，此塊狀結構特徵是出現在一個看得到的星系裡面嗎?",
+            "answers": {
+                "a-0": "是",
+                "a-1": "否"
+            }
+        },
+        "candels-9": {
+            "text": "這有可能會是個完全從側視角度看到的盤狀星系嗎?",
+            "title": "什麼是盤狀",
+            "help": "盤狀星系都很薄，從側面角度看(即「側視」)其形狀很不一樣（相對於俯瞰）。透過這題我們所要找的是那些形狀「完全為側視」的星系。如果星系形狀看起來像一根細長的針，包括那些中間有突起核球在內的，下面選項請選「是」，不然請選「否」（即使該星系幾乎為側視但不完全為側視，也請選擇「否」）。在圖像上點一下可放大",
+            "answers": {
+                "a-0": "是",
+                "a-1": "否"
+            }
+        },
+        "candels-10": {
+            "text": "星系的中心有核球嗎?",
+            "title": "核球",
+            "help": "注意看星系的中心 - 有無核球從平整均勻分布的形狀上方或下方伸出？如果有的話，按「是」（核球是由恆星組成）",
+            "answers": {
+                "a-0": "是",
+                "a-1": "否"
+            }
+        },
+        "candels-11": {
+            "text": "有棒狀結構穿過其中央嗎？",
+            "title": "什麼是棒狀",
+            "help": "某些星系會有明顯的棒狀結構貫穿其中心，這就是我們在此想找的星系。點選圖片可觀看大圖。",
+            "answers": {
+                "a-0": "有棒狀",
+                "a-1": "無棒狀"
+            }
+        },
+        "candels-12": {
+            "text": "有旋臂狀嗎？",
+            "title": "旋臂",
+            "help": "請幫忙仔細找旋臂，提醒您：旋臂可能會埋在盤裡，不容易看出來。點選圖片可觀看大圖。",
+            "answers": {
+                "a-0": "有旋臂",
+                "a-1": "無旋臂"
+            }
+        },
+        "candels-13": {
+            "text": "旋臂彼此間有多緊密呢？",
+            "title": "旋臂纏繞的程度",
+            "help": "天文學家按旋臂纏得多緊來分類星系 - 或許在越接近星系中心的地方，較容易看得出這項特徵。點一下可以放大圖像。",
+            "answers": {
+                "a-0": "緊密",
+                "a-1": "中等",
+                "a-2": "鬆散"
+            }
+        },
+        "candels-14": {
+            "text": "此螺旋星系有多少旋臂?",
+            "title": "旋臂數目",
+            "help": "有些螺旋星系頗為複雜，如果你想為它選擇「旋臂數達4個以上」，那也無妨，或者選擇「看不出來」也沒關係。",
+            "answers": {
+                "a-0": "1",
+                "a-1": "2",
+                "a-2": "3",
+                "a-3": "4",
+                "a-4": "超過四個",
+                "a-5": "無法分辨"
+            }
+        },
+        "candels-15": {
+            "text": "請比較中心的核球與此星系的其他部分，核球是否明顯？",
+            "title": "什麼是核球",
+            "help": "位在星系中心的核球由恆星組成，容易和棒狀或旋臂狀結構混雜而很難加以辨識，請嘗試在星系中心區域尋找呈圓形的核球。點選觀看大圖。",
+            "answers": {
+                "a-0": "無核球",
+                "a-1": "明顯有核球",
+                "a-2": "非常明顯的核球"
+            }
+        },
+        "candels-16": {
+            "text": "星系正在進行併合嗎？有發現潮汐殘骸的情形嗎？",
+            "title": "併合",
+            "help": "你可以看大圖-如果星系正處於碰撞發生的過程中，請點選併合。如果看不出有另一個星系，但看得到長條狀的恆星或氣體尾巴，請點選殘骸。你也可以選兩者都有或兩者皆無。點一下可以放大圖像。",
+            "answers": {
+                "a-0": "併合中",
+                "a-1": "有潮汐殘骸",
+                "a-2": "兩者都有",
+                "a-3": "兩者皆無"
+            }
+        },
+        "candels-17": {
+            "text": "想和其他人討論一下這個天體？",
+            "title": "討論",
+            "help": "如果您有任何關於這個天體的問題，或是覺得此天體可能對其他人來說會很有趣，又或者只是有些意見想表達，請點選「是」，即可在Talk開啟一個討論。Talk將會在一個新的視窗開啟，將新的視窗關閉即可回到星系分類的頁面。",
+            "answers": {
+                "a-0": "是",
+                "a-1": "否"
+            }
+        }
     },
-    "sign_in": {
-      "title": "使用 Zooniverse 帳號登入",
-      "sign_up": "Don't have an account? Create one!",
-      "button": "Sign in",
-      "progress": "Signing in..."
+    "quiz_questions": {
+        "set_1": {
+            "question_0": {
+                "text": "Where are elliptical galaxies more common?",
+                "answer_0": "inside clusters of galaxies",
+                "answer_1": "outside clusters of galaxies",
+                "answer_2": "they are equally prevalent everywhere"
+            },
+            "question_1": {
+                "text": "Star A is a red main sequence star and Star B is a blue main sequence star. Which will have a longer lifetime?",
+                "answer_0": "Star A",
+                "answer_1": "Star B",
+                "answer_2": "They will have the same lifetime.",
+                "answer_3": "There is insufficient information to determine this."
+            },
+            "question_2": {
+                "text": "How does the Sun produce the energy that heats our planet?",
+                "answer_0": "The gases inside our Sun are burning and producing energy.",
+                "answer_1": "Atoms are combined into heavier atoms, giving off energy.",
+                "answer_2": "Gas inside the Sun heats up when compressed, giving off energy.",
+                "answer_3": "Atoms are broken apart into lighter atoms, giving off energy.",
+                "answer_4": "The core of the Sun has radioactive atoms that decay, giving off energy."
+            },
+            "question_3": {
+                "text": "The diagram represents three different waves of light emitted at the same time by the Sun. Which wave will arrive first at a satellite orbiting just above Earth’s atmosphere?",
+                "answer_0": "Wave 1",
+                "answer_1": "Wave 2",
+                "answer_2": "Wave 3",
+                "answer_3": "All three waves arrive at the same time."
+            },
+            "question_4": {
+                "text": "A galaxy that appears to have very few bright, blue stars, likely:",
+                "answer_0": "never had blue stars in the galaxy.",
+                "answer_1": "had more blue stars long ago that are no longer present.",
+                "answer_2": "has been around long enough for the blue stars to have evolved into red main sequence stars.",
+                "answer_3": "never contained enough gas to have blue stars develop."
+            }
+        },
+        "set_2": {
+            "question_0": {
+                "text": "Which is true of Doppler shifted light from galaxies and stars?",
+                "answer_0": "If their light is redshifted, that means the objects are moving towards you.",
+                "answer_1": "If their light is blueshifted, that means the objects are close to you.",
+                "answer_2": "If their light is redshifted, that means the objects are moving quickly.",
+                "answer_3": "If their light is blueshifted, that means the objects will appear blue.",
+                "answer_4": "None of the above is true."
+            },
+            "question_1": {
+                "text": "A main sequence star with a long lifetime will be ______ than a main sequence star with a short lifetime.",
+                "answer_0": "bluer",
+                "answer_1": "emitting light at shorter wavelengths",
+                "answer_2": "larger",
+                "answer_3": "more luminous",
+                "answer_4": "less massive"
+            },
+            "question_2": {
+                "text": "The three spectral curves shown in the graphs illustrate the energy output versus wavelength for three Stars A, B, and C. Which of the stars has the highest temperature?",
+                "answer_0": "Star A",
+                "answer_1": "Star B",
+                "answer_2": "Star C",
+                "answer_3": "All three stars have the same temperature.",
+                "answer_4": "There is insufficient information to determine this."
+            },
+            "question_3": {
+                "text": "Which of the following correctly lists objects from largest to smallest?",
+                "answer_0": "Star, Solar System, Globular Cluster, Galaxy, Local Group",
+                "answer_1": "Globular Cluster, Local Group, Galaxy, Star, Solar System",
+                "answer_2": "Galaxy, Local Group, Solar System, Globular Cluster, Star",
+                "answer_3": "Local Group, Galaxy, Globular Cluster, Solar System, Star"
+            },
+            "question_4": {
+                "text": "Which of the following components of an elliptical galaxy has the most mass?",
+                "answer_0": "Stars",
+                "answer_1": "Gas and Dust",
+                "answer_2": "Dark Matter",
+                "answer_3": "There is insufficient information to determine this."
+            },
+            "question_5": {
+                "text": "How many of the four galaxies shown could be a Spiral Galaxy?",
+                "answer_0": "One",
+                "answer_1": "Two",
+                "answer_2": "Three",
+                "answer_3": "Four",
+                "answer_4": "There is insufficient information to determine this."
+            }
+        },
+        "set_3": {
+            "question_0": {
+                "text": "Which of the following has the most energy?",
+                "answer_0": "x-rays",
+                "answer_1": "ultraviolet light",
+                "answer_2": "gamma rays",
+                "answer_3": "They all have the same energy."
+            },
+            "question_1": {
+                "text": "Which of the following is true of all main sequence stars that appear red to us on Earth:",
+                "answer_0": "They are hotter than blue main sequence stars.",
+                "answer_1": "They will live longer than very bright main sequence stars.",
+                "answer_2": "They are moving toward Earth.",
+                "answer_3": "They are moving away from Earth."
+            },
+            "question_2": {
+                "text": "Answer the following question using the image, which represents the Milky Way Galaxy.  Approximately how far is it from the white circle to the center of the Milky Way Galaxy?",
+                "answer_0": "1,000 light years",
+                "answer_1": "10,000 light years",
+                "answer_2": "25,000 light years",
+                "answer_3": "100,000 light years"
+            },
+            "question_3": {
+                "text": "The idea of dark matter is provided to explain which one of the following?",
+                "answer_0": "The location and shape of the arms in the disk of spiral galaxies.",
+                "answer_1": "The location of the maximum in the distribution of globular clusters of stars in the halo of the galaxy.",
+                "answer_2": "The nearly uniform rotation speeds of objects in the Milky Way Galaxy.",
+                "answer_3": "That a spiral density wave moves through the disk of spiral galaxies triggering star formation."
+            },
+            "question_4": {
+                "text": "Why are the arms of spiral galaxies blue?",
+                "answer_0": "The arms are usually moving toward us, so they are Doppler shifted to blue wavelengths.",
+                "answer_1": "The gas and dust in the arms filter out all but the blue light from stars in the arms.",
+                "answer_2": "Active star formation is occurring in the spiral arms.",
+                "answer_3": "Most of the stars of the disk are in the arms of the galaxy and their light makes it appear blue."
+            },
+            "question_5": {
+                "text": "In each figure, two pairs of rocky asteroids are shown along with their masses (m), and the distance (d) between each pair of asteroids. Which of the following correctly describes how the gravitational force exerted BY Asteroid A on its 'partner' asteroid compares to the gravitational force exerted BY Asteroid B on its 'partner' asteroid.",
+                "answer_0": "The force of A on its partner is greater than the force of B on its partner.",
+                "answer_1": "The force of B on its partner is greater than the force of A on its partner.",
+                "answer_2": "The force of A on its partner is equal to the force of B on its partner."
+            }
+        },
+        "set_4": {
+            "question_0": {
+                "text": "Which of the following has the highest speed?",
+                "answer_0": "x-rays",
+                "answer_1": "ultraviolet light",
+                "answer_2": "gamma rays",
+                "answer_3": "They all have the same speed."
+            },
+            "question_1": {
+                "text": "Which of the following determines most characteristics and future events of a star’s existence?",
+                "answer_0": "surface temperature",
+                "answer_1": "size (diameter)",
+                "answer_2": "color",
+                "answer_3": "composition (type of atoms)",
+                "answer_4": "mass"
+            },
+            "question_2": {
+                "text": "Here are possible plots of how fast objects orbit the center of our galaxy versus their distance from the center. Which one graph best represents how objects actually move in our galaxy?",
+                "answer_0": "Graph A",
+                "answer_1": "Graph B",
+                "answer_2": "Graph C",
+                "answer_3": "Graph D",
+                "answer_4": "Graph E",
+                "answer_5": "Graph F"
+            },
+            "question_3": {
+                "text": "Star A is a red main sequence star and Star B is a blue main sequence star. If both stars appear to be the same brightness, which one is closer to Earth?",
+                "answer_0": "Star A",
+                "answer_1": "Star B",
+                "answer_2": "They are the same distance from Earth.",
+                "answer_3": "There is insufficient information to determine this."
+            },
+            "question_4": {
+                "text": "In how many of the four galaxies shown do we observe regions containing cool gas & dust clouds?",
+                "answer_0": "One",
+                "answer_1": "Two",
+                "answer_2": "Three",
+                "answer_3": "Four",
+                "answer_4": "There is insufficient information to determine this."
+            },
+            "question_5": {
+                "text": "In this picture the Earth-Moon system is shown (not to scale) along with three possible positions (A-C) for a spacecraft traveling from Earth to the Moon. Note that Position B is exactly halfway between Earth and the Moon. In what direction would the net (total) force of gravity on the spacecraft point if it were located at Position B?",
+                "answer_0": "toward the Moon",
+                "answer_1": "toward Earth",
+                "answer_2": "Since the spacecraft is exactly halfway between Earth and the Moon, the gravitational force by Earth on the spacecraft is equal to the gravitational force on the spacecraft by the Moon, so the net (total) force would be zero and not point in either direction."
+            }
+        },
+        "set_5": {
+            "question_0": {
+                "text": "Which of the following is not a form of light?",
+                "answer_0": "radio waves",
+                "answer_1": "microwaves",
+                "answer_2": "x-rays",
+                "answer_3": "All of the above are a form of light.",
+                "answer_4": "None of the above is a form of light."
+            },
+            "question_1": {
+                "text": "A collision of two spiral galaxies produces",
+                "answer_0": "a spiral galaxy.",
+                "answer_1": "an elliptical galaxy.",
+                "answer_2": "either a spiral or elliptical galaxy.",
+                "answer_3": "No galaxy will remain."
+            },
+            "question_2": {
+                "text": "Which of the following components of a spiral galaxy has the most mass?",
+                "answer_0": "Stars",
+                "answer_1": "Gas and Dust",
+                "answer_2": "Dark Matter",
+                "answer_3": "There is insufficient information to determine this."
+            },
+            "question_3": {
+                "text": "Answer the following question using the image, which represents the Milky Way Galaxy. Approximately how large is the diameter of the white dot?",
+                "answer_0": "1,000 light years",
+                "answer_1": "10,000 light years",
+                "answer_2": "50,000 light years",
+                "answer_3": "100,000 light years"
+            },
+            "question_4": {
+                "text": "Consider the information given below about three main sequence Stars A, B, and C. Star A will be a main sequence star for a total of 15 billion years. Star B gives off the same amount of light as the Sun. Star C is red. Which of the following is a true statement about these stars?",
+                "answer_0": "Star A has the greatest mass.",
+                "answer_1": "Star B has the greatest mass.",
+                "answer_2": "Star C has the greatest mass.",
+                "answer_3": "Stars A, B and C all have approximately the same mass.",
+                "answer_4": "There is insufficient information to determine this."
+            },
+            "question_5": {
+                "text": "Assume the two galaxies shown have the same total number of stars. Which of these two galaxies most likely has the fewest bright blue stars?",
+                "answer_0": "Galaxy A",
+                "answer_1": "Galaxy B",
+                "answer_2": "They have the same number of bright blue stars.",
+                "answer_3": "There is insufficient information to determine this."
+            }
+        },
+        "set_6": {
+            "question_0": {
+                "text": "Star A is hotter than Star B. Star B gives off much more light than Star A. Which star is larger?",
+                "answer_0": "Star A",
+                "answer_1": "Star B",
+                "answer_2": "They are the same size.",
+                "answer_3": "There is insufficient information to determine this."
+            },
+            "question_1": {
+                "text": "Star F is a red main sequence star and Star G is a blue main sequence star. Which star has a higher temperature?",
+                "answer_0": "Star F",
+                "answer_1": "Star G",
+                "answer_2": "They have the same temperature.",
+                "answer_3": "There is insufficient information to determine this."
+            },
+            "question_2": {
+                "text": "A collision of two elliptical galaxies produces",
+                "answer_0": "a spiral galaxy.",
+                "answer_1": "an elliptical galaxy.",
+                "answer_2": "either a spiral or elliptical galaxy.",
+                "answer_3": "No galaxy will remain."
+            },
+            "question_3": {
+                "text": "Use the graph to answer the following question. Which of the following is the correct ranking for the size of Objects A-C, from largest to smallest?",
+                "answer_0": "A > C = B",
+                "answer_1": "B = C > A",
+                "answer_2": "A = C > B",
+                "answer_3": "A > C > B",
+                "answer_4": "B > C = A"
+            },
+            "question_4": {
+                "text": "Which diagram best describes the net (total) force of gravity on each of the three galaxies shown? Note that: Galaxy C has much more mass than Galaxy A and B  (which have equal mass). The arrows indicate the direction of the net (total) force of gravity exerted on each galaxy but not the strength",
+                "answer_0": "",
+                "answer_1": "",
+                "answer_2": "",
+                "answer_3": "",
+                "answer_4": ""
+            }
+        }
     },
-    "sign_up": {
-      "title": "新開一個宇宙大觀園帳號",
-      "confirmation": "Password (confirm)",
-      "password_match": "Password must match confirmation",
-      "sign_in": "Already have an account? Sign in!",
-      "email": "Email address",
-      "privacy": "I agree to the <a href=\"https://www.zooniverse.org/privacy\" target=\"_blank\">privacy policy</a>",
-      "button": "Sign up",
-      "progress": "Creating account and signing in..."
+    "astronomers": {
+        "heading": "星系大觀園對天文學家的意義",
+        "explanation": {
+            "goals": "這裡介紹的資料，是提供給關心技術層面的天文學者們，以下是一些關於本站在天文科學意義和研究成果方面的整理",
+            "data": "如果你在找的是資料庫的話，請前往星系大觀園的資料庫，有 <a　href=\"http://data.galaxyzoo.org\">多種格式</a>可供選擇。",
+            "papers": "或者是您想參考由本計畫團隊成員所發表的論文，請參考<a href=\"/#/papers\">這個</a>連結。"
+        },
+        "morphology": {
+            "heading": "星系形態學為什麼很重要?",
+            "body": "首先，星系形態學能”示蹤”(tracer)出星系裡的恆星軌道動力，顯示出驅動恆星形成和星系核在它活動過程中所留下的印記，記錄星系演化的星系形態學可以用視覺判辨方式來進行星系間的分門別類，事實上，在星系間的分類和星系間其他的物理參數之間，二者相關性很強，舉個簡單的例子，如果具有多核和延展的潮汐特徵，這可能表示驅動恆星形成的主導機制是一場正在進行中的星系併合。相對之下，如果星系看不到這種特徵，那麼它的演化可能是由內部過程所驅動(secular)。",
+            "reference": "傳統的星系形態變化研究是建立在目測法之上，譬如<a href=\"http://adsabs.harvard.edu/abs/1926ApJ....64..321H\" target=\"_blank\">Hubble 1926</a>這篇知名天文學家哈柏在1926年所發表的論文， <a href=\"http://heasarc.nasa.gov/W3Browse/all/rc3.html\" target=\"_blank\">de Vaucouleurs 1991</a>的論文，更新的還有<a href=\"http://arxiv.org/abs/1001.2401\" target=\"_blank\">Nair and Abraham 2010</a>年的發表，都是使用目測方式取得的研究成果。最近一些形態變化上的proxies，如「密集或疏散」、「對稱與否」、「是否為團塊」、M20、Gini coefficient等，嚴格來說，每個都難免有參與者誤差，不過，針對目測法衍生的誤差，大多已經經過了檢查和校正。並且，一般而言，目測法對於噪訊比和圖像解析力有比較好的容忍度（參考文獻Lisker 2008），所以很適合用來確定星系的形態特徵。無論如何，星系的形態參數都是對大規模分類數據庫很有幫助的，不然，若只透過少數幾個人目測（或僅由一小群天文學者來處理），恐怕真的很曠日廢時，而完成時間則遙遙無期。"
+        },
+        "classification": {
+            "heading": "運用「星系大觀園網站計畫」進行大規模巡天計畫資料集分類",
+            "body": "由星系大觀園計畫 (<a href=\"http://arxiv.org/abs/0804.4483\" target=\"_blank\">Lintott et al. 2008</a>, <a href=\"http://arxiv.org/abs/1007.3265\" target=\"_blank\">2011</a>)所開發出的一種新鮮方法，則是大規模地用目測方式進行巡天觀測資料的分類。在幾十萬名由普通民眾組成的志工團隊(注：2013年最新人數為81萬)協助下，星系大觀園網站就使用直接目測的這種分類法，已分類完畢整個SDSS巡天計畫光譜資料，還有整個哈柏太空望遠鏡的資料庫（共1,500萬星系），每個天體都經過40次以上的分類檢視。雖然星系大觀園提供了這樣一個可觀的星系分類目測結果，連帶地，它本身也具有不確定性（要是參與目測計畫的志工團隊只由少數幾個人組成，這樣的分類結果恐怕會很難在學術研究用途上運用，但還好志工團隊是多達數十萬人）。此外，經檢驗，由一般民眾志工所提供的目測分類結果和來自天文學家的目測結果，正確性幾無差異（參考文獻，Lintott et al. 2008）。"
+        },
+        "highlights": {
+            "heading": "｢星系大觀園」對科學的貢獻",
+            "body": "｢星系大觀園」已協助完成許多不同主題的科學研究，特別是和鄰近宇宙(local Universe)及中紅移宇宙(intermediate-redshift Universe)相關的領域。在最新成果中主題包括以下：規模最大的星系併合(<a href=\"http://arxiv.org/abs/0903.4937\">Darg et al. 2010</a>)，潮汐矮星系 (<a href=\"http://arxiv.org/abs/1108.4410\">Kaviraj et al. 2012</a>)，早型星系中的塵埃帶(<a href=\"http://arxiv.org/abs/1107.5306\">Kaviraj et al. 2012</a>) ，盤狀星系中的棒狀特徵 (<a href=\"http://arxiv.org/abs/1003.0449\">Masters et al. 2011</a>，這些是屬於鄰近宇宙的研究領域。相對於自動化的形態測量法，星系大觀園另有特別之處在於，它可能帶來一些純屬偶然的發現（有些研究靈感還來自於志工團隊在 <a href=\"http://www.galaxyzooforum.org\">｢星系大觀園論壇」</a>中所討論的一些議題的啟發）。其中包括「綠色長豆」(green peas)<a href=\"http://arxiv.org/abs/0907.4155\">Cardamone et al. 2009</a>及最廣為大家所知的”Hanny's Voorwerp”<a href=\"http://arxiv.org/abs/0906.5304\">Lintott et al. 2009</a>(注：green peas位於local Universe，是一類極為緻密的恆星形成區；\"Hanny's Voorwerp\"中文常見譯名為｢漢妮天體」，以及<a href=\"http://arxiv.org/abs/1110.6921\">Keel et al. 2012</a>的AGN-電離氣體雲普查。因為有了星系顏色和星系形態的大樣本可以利用，所以研究人員進一步發現，色彩與環境之間的相關程度其實比形態特徵還更密切，這也帶來一些極有趣的發現，譬如紅色螺旋星系和藍色橢圓星系等次級分類項目 (subclasses)。"
+        },
+        "relaunched": {
+            "heading": "星系大觀園重新開幕",
+            "sdss": "目前的網站內含SDSS DR8第八版新圖像資料集（較上一版新增了南銀冠區域），在鄰近宇宙的星系樣本總數增加了40%，資料庫內首度合併了由哈柏太空望遠鏡CANDELS提供的圖像。CANDELS計畫主要利用哈柏望遠鏡的WFC3（寬視場相機），這加速我們對z> 1星系的觀測，z> 1也相當於宇宙壽命的前50％。此前，在z> 1領域的研究資料庫中，由哈柏望遠鏡大幅取樣提供紫外線波段的靜止座標，是經由ACS等可見光儀器的協助取得。在z>1近紅外波段，WFC3提供非常好的靜止座標光學資料，比NICMOS好20倍。",
+            "candels": "CANDELS使用WFC3視場相機的近紅外濾鏡，在GOODS和COSMOS等哈柏早期攝像場範圍中成像大約800平方角分的視場。WFC3的近紅外圖像特別重要，因為在星系形態分析上，最好用的就是靜止座標光學波長，它能追踪潛藏在星系中不明顯的星族，而非僅只是看到那些恆星形成區（恆星形成區在紫外線波段特別明亮）。",
+            "combination": "綜合運用SDSS、CANDELS，星系大觀園的樣本變成可用來回答一些關鍵的開放式問題的一種好用工具，提供答案，則必需要走星系型態分析法。闢如，哈柏序列是從哪個時期開始？原始球體是何時、如何開始形成？早期宇宙中，重大星系併合和長期過程（secular process）等因素在恆星形成和黑洞增長上有何相對作用？",
+            "conclusion": "星系大觀園的計畫主旨就是為了要回答以上問題，並為未來的星系型態學研究鋪路，下一代的天文儀器如JWST也將受惠於此項計畫，預計在型態樣本中產生一些後續能透過ALMA（阿塔卡瑪大型毫米波及次毫米波陣列望遠鏡）等大型望遠鏡繼續加以追蹤的高紅移星系。"
+        }
     },
-    "sign_out": {
-      "current": "Currently logged in as <strong class=\"current\"></strong>.",
-      "button": "Sign Out",
-      "progress": "Signing out..."
+    "classify": {
+        "heading": "分類",
+        "restart": "重新開始",
+        "help": "需要幫助",
+        "sloan": "SDSS",
+        "candels": "哈柏",
+        "group": "團體",
+        "favorite": "最喜歡",
+        "invert": "圖像正負反轉"
     },
-    "top_bar": {
-      "title": "<span id=\"app-name\"></span> is a <a href=\"https://www.zooniverse.org\">Zooniverse</a> project.",
-      "description": "The Zooniverse is a collection of web-based Citizen Science projects that use the efforts and abilities of volunteers to help reseachers deal with the flood of data that confronts them.",
-      "greeting": "Hi, <strong>{user}</strong>. Welcome to {appName}!",
-      "projects": {
-        "title": "Our Projects",
-        "list": "We currently have 12 projects on subjects ranging from <a href=\"https://www.zooniverse.org/#space\">astronomy</a>, to <a href=\"https://www.zooniverse.org/#climate\">climatology</a>, to <a href=\"https://www.zooniverse.org/#nature\">biology</a>, to <a href=\"https://www.zooniverse.org/#humanities\">humanities</a>."
-      }
-    }
-  },
-  "questions": {
-    "sloan-0": {
-      "text": "這個星系的邊緣平整，是圓的，形狀不像盤狀?",
-      "title": "形狀",
-      "help": "這邊要先過濾圖像上無任何特徵的星系。如果圖像上看起來有些有趣的特徵，請用滑鼠點選特徵或盤狀。偶爾，有可能，你所看到的圖像並非星系，而是衛星留下的長條狀拖影，或來自太亮的恆星。如果碰到這種情形，請用滑鼠點恆星或人造飛行器。點此處看大圖.",
-      "answers": {
-        "a-0": "邊緣平整",
-        "a-1": "無特徵或盤狀",
-        "a-2": "恆星或人造飛行器"
-      }
+    "help": {
+        "title": "需要幫忙",
+        "examples": "例證"
     },
-    "sloan-1": {
-      "text": "Could this be a disk viewed edge-on?",
-      "title": "Disk",
-      "help": "Disc galaxies are very thin, so look different when viewed from the side. We're trying to find exactly edge-on galaxies with this question. If the galaxy looks needle-like, perhaps with a bulge at the centre, then click &quot;yes,&quot; otherwise choose &quot;no&quot; (even for galaxies almost edge-on). Click to see larger images.",
-      "answers": {
-        "a-0": "Yes",
-        "a-1": "No"
-      }
+    "home": {
+        "headline": "星系特搜 見者有分",
+        "call_to_action": "由SDSS史隆數位巡天計畫和哈柏太空望遠鏡所觀測到的宇宙雖然遠在天邊，卻也是近在眼前！你要享受這個能一窺宇宙新奇星系的特蒐計畫的機會嗎？",
+        "galaxy_zoo": {
+            "title": "星系的分類",
+            "description": "要了解星系形成的過程，我們要請你一起來幫忙，把星系按外觀特色加以分類。如果手腳夠快，在觀測你所幫忙辨識的某個星系時，搞不好你已成為全世界第一個看到那個星系的頭號幸運者。",
+            "classify": "開始分類"
+        },
+        "galaxy_formation": {
+            "title": "星系如何形成",
+            "body": "在可觀測宇宙中大約散佈有一千億個星系，每個光芒閃耀的星系又都自成一個系統，擁有著數十億恆星。許多星系都極其美麗，「星系大觀園」的目標就是去研究這些星系，協助天文學者試著去了解我們所看到的這些環繞在我們四周的星系如何形成，從這些星系的故事我們又可以知道自己所置身其中的宇宙過去、現在和未來如何。 <a data-nav=\"#/science\" href=\"#/science\">更多</a>"
+        },
+        "history": {
+            "title": "星系大觀園前傳",
+            "body": "「星系大觀園」計畫從2007年7月啟動以來，網站已歷經第四版更新。最早的資料庫裡大約有一百萬個星系圖像，當時由SDSS巡天普查計畫所觀測取得，SDSS迄今仍持續提供更多新的星系光譜圖像資料。剛開始時，面對如此龐大的星系數量，本以為能夠號召到的志工團隊人數可能很有限，應該要花上好幾年時間才能把資料辨識工作全部完成，沒想到網站開張不到24小時就以每小時收到7萬筆辨識結果的速度一路蓬勃成長，第一年為止，一共已獲得五千萬筆辨識結果，募集志工人數達15萬人。<a data-nav=\"#/story\" href=\"#/story\">更多</a>"
+        },
+        "classroom": {
+            "title": "課堂上利用「星系大觀園」",
+            "body": "如果您是老師或是科學教育人員，有意向學生們進一步介紹「星系大觀園」，我們在 <a href=\"http://www.galaxyzoo.org/#/navigator/home\">導航中心r</a> 這裡，提供同學們一個以小組團隊的方式參加互動的管道，既參與到星系的分類與辨識，又可熟悉學習各種和星系特性有關的知識。<a href=\"http://www.zooteach.org/zoo/galaxy_zoo\">星系大觀園教學補給站</a>是老師們可以分享教學心得和資源的地方，並且也和「宇宙大觀園」裡其他的全民動手做科學網站相互呼應。",
+            "navigator": "導航中心"
+        },
+        "recent_images": {
+            "title": "最近圖像"
+        }
     },
-    "sloan-2": {
-      "text": "Is there any sign of a bar feature through the center of the galaxy?",
-      "title": "Bar",
-      "help": "Sometimes galaxies have a prominent straight &quot;bar&quot; running through their centre, and that's what we're looking for here. Click to see larger images.",
-      "answers": {
-        "a-0": "Bar",
-        "a-1": "No bar"
-      }
+    "login_prompt": {
+        "title": "登入，或開新帳號以取得credit",
+        "decline": "不用，謝謝"
     },
-    "sloan-3": {
-      "text": "Is there any sign of a spiral arm pattern?",
-      "title": "Spiral",
-      "help": "Look carefully for spiral arms - remember they may be embedded in the disk and not that easy to see. Click to see larger images.",
-      "answers": {
-        "a-0": "Spiral",
-        "a-1": "No spiral"
-      }
+    "navigation": {
+        "classify": "分類",
+        "science": "科學知識",
+        "blog": "交流站",
+        "team": "團隊",
+        "papers": "論文",
+        "data": "資料",
+        "story": "我們的故事",
+        "galaxy_zoo": "星系大觀園",
+        "astronomers": "天文學家",
+        "discuss": "討論",
+        "talk": "Talk",
+        "forum": "論壇",
+        "profile": "簡介"
     },
-    "sloan-4": {
-      "text": "How prominent is the central bulge, compared with the rest of the galaxy?",
-      "title": "Bulge",
-      "help": "It's not always easy to tell, but look at the centre of the galaxy for a round bulge of stars which may obscure any bar and the spiral arms in this central region. Click to see larger images.",
-      "answers": {
-        "a-0": "No bulge",
-        "a-1": "Just noticeable",
-        "a-2": "Obvious",
-        "a-3": "Dominant"
-      }
+    "papers": {
+        "title": "已發表論文",
+        "description": "在「星系大觀園」社群成員集體貢獻下，本計畫取得了豐碩的資料集，可做科學研究使用。因星系大觀園提供星系分類資料而進一步取得的研究成果中，有些已通過學術期刊審查，正式發表為論文，以下列出部分。",
+        "available": "此處..."
     },
-    "sloan-5": {
-      "text": "Is there anything odd?",
-      "title": "Odd",
-      "help": "We're looking for signs that the galaxy is merging, is disturbed, or has other unusual features. Click to see larger images.",
-      "answers": {
-        "a-0": "Yes",
-        "a-1": "No"
-      }
+    "profile": {
+        "favorites": "我最愛的圖像",
+        "recents": "最新",
+        "remove_favorite": "移除我最愛的圖像",
+        "favorite_this": "新增為我最愛的圖像",
+        "classifications": "分類",
+        "hubble": "哈柏",
+        "hubble_classifications": "哈柏資料庫分類",
+        "sdss": "SDSS",
+        "sdss_classifications": "SDSS資料庫分類",
+        "quiz": "星系小學堂問答",
+        "quizzes": "星系小學堂問答",
+        "quizzes_taken": "已做過的星系小學堂問答題",
+        "take_a_quiz": "現在就做幾題星系小學堂問答",
+        "galaxy_zoo_hubble": "星系大觀園之哈柏館",
+        "galaxy_zoo_hubble_link": "如果你要找自己之前在星系大觀園哈柏館的資料集，可前往此<a href=\"http://hubble.galaxyzoo.org/my_galaxies\" target=\"_blank\">處</a>找."
     },
-    "sloan-6": {
-      "text": "What are the odd features?",
-      "title": "Odd",
-      "help": "",
-      "answers": {
-        "a-0": "Done"
-      },
-      "checkboxes": {
-        "x-0": "Ring",
-        "x-1": "Lens or arc",
-        "x-2": "Disturbed",
-        "x-3": "Irregular",
-        "x-4": "Other",
-        "x-5": "Merger",
-        "x-6": "Dust lane"
-      }
-    },
-    "sloan-7": {
-      "text": "How rounded is it?",
-      "title": "Round",
-      "help": "",
-      "answers": {
-        "a-0": "Completely round",
-        "a-1": "In between",
-        "a-2": "Cigar shaped"
-      }
-    },
-    "sloan-8": {
-      "text": "Does the galaxy have a bulge at its center? If so, what shape?",
-      "title": "Bulge",
-      "help": "Concentrate on the centre of the galaxy - if it has a smooth, uninterrupted, needle or lens-shape then click &quot;no bulge.&quot; Otherwise your options are &quot;rounded&quot; bulge or &quot;boxy&quot; (but boxy bulges are rare). Click to see larger images.",
-      "answers": {
-        "a-0": "Rounded",
-        "a-1": "Boxy",
-        "a-2": "No bulge"
-      }
-    },
-    "sloan-9": {
-      "text": "How tightly wound do the spiral arms appear?",
-      "title": "Spiral",
-      "help": "",
-      "answers": {
-        "a-0": "Tight",
-        "a-1": "Medium",
-        "a-2": "Loose"
-      }
-    },
-    "sloan-10": {
-      "text": "How many spiral arms are there?",
-      "title": "Spiral",
-      "help": "",
-      "answers": {
-        "a-0": "1",
-        "a-1": "2",
-        "a-2": "3",
-        "a-3": "4",
-        "a-4": "More than 4",
-        "a-5": "Can't tell"
-      }
-    },
-    "sloan-11": {
-      "text": "Would you like to discuss this object?",
-      "title": "Discuss",
-      "help": "If you have any questions about this object, or think it may be interesting to others, or just have something to say, you can start a discussion on Talk by clicking &quot;Yes&quot;. Talk will open in a new window - just close it to come back to the classification page.",
-      "answers": {
-        "a-0": "Yes",
-        "a-1": "No"
-      }
-    },
-    "candels-0": {
-      "text": "Is the galaxy simply smooth and rounded, with no sign of a disk?",
-      "title": "Shape",
-      "help": "The aim here is to divide featureless galaxies from all the rest. If you can see any interesting features at all, click &quot;features or disk.&quot; Just occasionally you might see something that isn't a galaxy at all - the long streak of a satellite, for example, or a image swamped by light from a bright star. If this happens, just click &quot;star or artifact&quot;. Click to see larger images.",
-      "answers": {
-        "a-0": "Smooth",
-        "a-1": "Features or disk",
-        "a-2": "Star or artifact"
-      }
-    },
-    "candels-1": {
-      "text": "How rounded is it?",
-      "title": "Round",
-      "help": "Not all galaxies are perfectly round - just look at the overall shape and put it in one of these three categories. If there's more than one galaxy in the field, remember always to concentrate on the one in the centre. Click to see larger images.",
-      "answers": {
-        "a-0": "Completely round",
-        "a-1": "In between",
-        "a-2": "Cigar shaped"
-      }
-    },
-    "candels-2": {
-      "text": "Does the galaxy have a mostly clumpy appearance?",
-      "title": "Clumps",
-      "help": "Some galaxies are nothing but bright clumps. We don't mean those that have other features with a few small clusters of stars, but rather those that are made up mostly of bright clumps. Click to see larger images.",
-      "answers": {
-        "a-0": "Yes",
-        "a-1": "No"
-      }
-    },
-    "candels-3": {
-      "text": "How many clumps are there?",
-      "title": "Clumps",
-      "help": "Count the clumps! If there are more than 4, than don't worry about it - just click &quot;more than 4.&quot;",
-      "answers": {
-        "a-0": "1",
-        "a-1": "2",
-        "a-2": "3",
-        "a-3": "4",
-        "a-4": "More than 4",
-        "a-5": "Can't tell"
-      }
-    },
-    "candels-4": {
-      "text": "Do the clumps appear in a straight line, a chain, or a cluster?",
-      "title": "Clumps",
-      "help": "Sometimes the clumps appear in a regular pattern - if so, then click the appropriate symbol.",
-      "answers": {
-        "a-0": "Straight Line",
-        "a-1": "Chain",
-        "a-2": "Cluster / Irregular",
-        "a-3": "Spiral"
-      }
-    },
-    "candels-5": {
-      "text": "Is there one clump which is clearly brighter than the others?",
-      "title": "Clumps",
-      "help": "Sometimes one clump dominates the scene. If so, click yes, otherwise, no.",
-      "answers": {
-        "a-0": "Yes",
-        "a-1": "No"
-      }
-    },
-    "candels-6": {
-      "text": "Is the brightest clump central to the galaxy?",
-      "title": "Clumps",
-      "help": "For very clumpy galaxies it may be difficult to tell, but make your best guess whether that brightest clump lies at the centre of the system or not.",
-      "answers": {
-        "a-0": "Yes",
-        "a-1": "No"
-      }
-    },
-    "candels-7": {
-      "text": "Does the galaxy appear symmetrical?",
-      "title": "Symmetry",
-      "help": "Are both halves of the galaxy the same? Or is one side disrupted or different in some way?",
-      "answers": {
-        "a-0": "Yes",
-        "a-1": "No"
-      }
-    },
-    "candels-8": {
-      "text": "Do the clumps appear to be embedded within a larger object?",
-      "title": "Clumps",
-      "help": "Look carefully for faint background light surrounding the clumps - are they embedded in a visible galaxy?",
-      "answers": {
-        "a-0": "Yes",
-        "a-1": "No"
-      }
-    },
-    "candels-9": {
-      "text": "Could this be a disk viewed edge-on?",
-      "title": "Disk",
-      "help": "Disc galaxies are very thin, so look different when viewed from the side. We're trying to find exactly edge-on galaxies with this question. If the galaxy looks needle-like, perhaps with a bulge at the centre, then click &quot;yes,&quot; otherwise choose &quot;no&quot; (even for galaxies almost edge-on). Click to see larger images.",
-      "answers": {
-        "a-0": "Yes",
-        "a-1": "No"
-      }
-    },
-    "candels-10": {
-      "text": "Does the galaxy have a bulge at its centre?",
-      "title": "Bulge",
-      "help": "Look at the centre of the galaxy - is there any sign of a bulge of stars sticking out above and below the otherwise smooth shape? If so, click yes.",
-      "answers": {
-        "a-0": "Yes",
-        "a-1": "No"
-      }
-    },
-    "candels-11": {
-      "text": "Is there any sign of a bar feature through the centre of the galaxy?",
-      "title": "Bar",
-      "help": "Sometimes galaxies have a prominent straight &quot;bar&quot; running through their centre, and that's what we're looking for here. Click to see larger images.",
-      "answers": {
-        "a-0": "Bar",
-        "a-1": "No bar"
-      }
-    },
-    "candels-12": {
-      "text": "Is there any sign of a spiral arm pattern?",
-      "title": "Spiral",
-      "help": "Look carefully for spiral arms - remember they may be embedded in the disk and not that easy to see. Click to see larger images.",
-      "answers": {
-        "a-0": "Spiral",
-        "a-1": "No spiral"
-      }
-    },
-    "candels-13": {
-      "text": "How tightly wound do the spiral arms appear?",
-      "title": "Spiral",
-      "help": "Astronomers classify galaxies by how tight their arms are - you might find it easiest to see closest to the centre. Click to see larger images.",
-      "answers": {
-        "a-0": "Tight",
-        "a-1": "Medium",
-        "a-2": "Loose"
-      }
-    },
-    "candels-14": {
-      "text": "How many spiral arms are there?",
-      "title": "Spiral",
-      "help": "Some spiral galaxies are rather complicated, so don't be afraid to use the &quot;more than 4&quot; or &quot;can't tell&quot; buttons here.",
-      "answers": {
-        "a-0": "1",
-        "a-1": "2",
-        "a-2": "3",
-        "a-3": "4",
-        "a-4": "More than 4",
-        "a-5": "Can't tell"
-      }
-    },
-    "candels-15": {
-      "text": "How prominent is the central bulge, compared with the rest of the galaxy?",
-      "title": "Bulge",
-      "help": "It's not always easy to tell, but look at the centre of the galaxy for a round bulge of stars which may obscure any bar and the spiral arms in this central region. Click to see larger images.",
-      "answers": {
-        "a-0": "No bulge",
-        "a-1": "Obvious",
-        "a-2": "Dominant"
-      }
-    },
-    "candels-16": {
-      "text": "Is the galaxy currently merging or is there any sign of tidal debris?",
-      "title": "Merger",
-      "help": "Now you can look at the larger picture - if the galaxy is colliding with another, click &quot;merger.&quot; If there's no visible second system, but long streams of stars or gas are visible then click &quot;tidal debris.&quot; &quot;Both&quot; and &quot;Neither&quot; are your other options. Click to see larger images.",
-      "answers": {
-        "a-0": "Merging",
-        "a-1": "Tidal debris",
-        "a-2": "Both",
-        "a-3": "Neither"
-      }
-    },
-    "candels-17": {
-      "text": "Would you like to discuss this object?",
-      "title": "Discuss",
-      "help": "If you have any questions about this object, or think it may be interesting to others, or just have something to say, you can start a discussion on Talk by clicking &quot;Yes&quot;. Talk will open in a new window - just close it to come back to the classification page.",
-      "answers": {
-        "a-0": "Yes",
-        "a-1": "No"
-      }
-    }
-  },
-  "quiz_questions": {
-    "set_1": {
-      "question_0": {
-        "text": "Where are elliptical galaxies more common?",
-        "answer_0": "inside clusters of galaxies",
-        "answer_1": "outside clusters of galaxies",
-        "answer_2": "they are equally prevalent everywhere"
-      },
-      "question_1": {
-        "text": "Star A is a red main sequence star and Star B is a blue main sequence star. Which will have a longer lifetime?",
-        "answer_0": "Star A",
-        "answer_1": "Star B",
-        "answer_2": "They will have the same lifetime.",
-        "answer_3": "There is insufficient information to determine this."
-      },
-      "question_2": {
-        "text": "How does the Sun produce the energy that heats our planet?",
-        "answer_0": "The gases inside our Sun are burning and producing energy.",
-        "answer_1": "Atoms are combined into heavier atoms, giving off energy.",
-        "answer_2": "Gas inside the Sun heats up when compressed, giving off energy.",
-        "answer_3": "Atoms are broken apart into lighter atoms, giving off energy.",
-        "answer_4": "The core of the Sun has radioactive atoms that decay, giving off energy."
-      },
-      "question_3": {
-        "text": "The diagram represents three different waves of light emitted at the same time by the Sun. Which wave will arrive first at a satellite orbiting just above Earth’s atmosphere?",
-        "answer_0": "Wave 1",
-        "answer_1": "Wave 2",
-        "answer_2": "Wave 3",
-        "answer_3": "All three waves arrive at the same time."
-      },
-      "question_4": {
-        "text": "A galaxy that appears to have very few bright, blue stars, likely:",
-        "answer_0": "never had blue stars in the galaxy.",
-        "answer_1": "had more blue stars long ago that are no longer present.",
-        "answer_2": "has been around long enough for the blue stars to have evolved into red main sequence stars.",
-        "answer_3": "never contained enough gas to have blue stars develop."
-      }
-    },
-    "set_2": {
-      "question_0": {
-        "text": "Which is true of Doppler shifted light from galaxies and stars?",
-        "answer_0": "If their light is redshifted, that means the objects are moving towards you.",
-        "answer_1": "If their light is blueshifted, that means the objects are close to you.",
-        "answer_2": "If their light is redshifted, that means the objects are moving quickly.",
-        "answer_3": "If their light is blueshifted, that means the objects will appear blue.",
-        "answer_4": "None of the above is true."
-      },
-      "question_1": {
-        "text": "A main sequence star with a long lifetime will be ______ than a main sequence star with a short lifetime.",
-        "answer_0": "bluer",
-        "answer_1": "emitting light at shorter wavelengths",
-        "answer_2": "larger",
-        "answer_3": "more luminous",
-        "answer_4": "less massive"
-      },
-      "question_2": {
-        "text": "The three spectral curves shown in the graphs illustrate the energy output versus wavelength for three Stars A, B, and C. Which of the stars has the highest temperature?",
-        "answer_0": "Star A",
-        "answer_1": "Star B",
-        "answer_2": "Star C",
-        "answer_3": "All three stars have the same temperature.",
-        "answer_4": "There is insufficient information to determine this."
-      },
-      "question_3": {
-        "text": "Which of the following correctly lists objects from largest to smallest?",
-        "answer_0": "Star, Solar System, Globular Cluster, Galaxy, Local Group",
-        "answer_1": "Globular Cluster, Local Group, Galaxy, Star, Solar System",
-        "answer_2": "Galaxy, Local Group, Solar System, Globular Cluster, Star",
-        "answer_3": "Local Group, Galaxy, Globular Cluster, Solar System, Star"
-      },
-      "question_4": {
-        "text": "Which of the following components of an elliptical galaxy has the most mass?",
-        "answer_0": "Stars",
-        "answer_1": "Gas and Dust",
-        "answer_2": "Dark Matter",
-        "answer_3": "There is insufficient information to determine this."
-      },
-      "question_5": {
-        "text": "How many of the four galaxies shown could be a Spiral Galaxy?",
-        "answer_0": "One",
-        "answer_1": "Two",
-        "answer_2": "Three",
-        "answer_3": "Four",
-        "answer_4": "There is insufficient information to determine this."
-      }
-    },
-    "set_3": {
-      "question_0": {
-        "text": "Which of the following has the most energy?",
-        "answer_0": "x-rays",
-        "answer_1": "ultraviolet light",
-        "answer_2": "gamma rays",
-        "answer_3": "They all have the same energy."
-      },
-      "question_1": {
-        "text": "Which of the following is true of all main sequence stars that appear red to us on Earth:",
-        "answer_0": "They are hotter than blue main sequence stars.",
-        "answer_1": "They will live longer than very bright main sequence stars.",
-        "answer_2": "They are moving toward Earth.",
-        "answer_3": "They are moving away from Earth."
-      },
-      "question_2": {
-        "text": "Answer the following question using the image, which represents the Milky Way Galaxy.  Approximately how far is it from the white circle to the center of the Milky Way Galaxy?",
-        "answer_0": "1,000 light years",
-        "answer_1": "10,000 light years",
-        "answer_2": "25,000 light years",
-        "answer_3": "100,000 light years"
-      },
-      "question_3": {
-        "text": "The idea of dark matter is provided to explain which one of the following?",
-        "answer_0": "The location and shape of the arms in the disk of spiral galaxies.",
-        "answer_1": "The location of the maximum in the distribution of globular clusters of stars in the halo of the galaxy.",
-        "answer_2": "The nearly uniform rotation speeds of objects in the Milky Way Galaxy.",
-        "answer_3": "That a spiral density wave moves through the disk of spiral galaxies triggering star formation."
-      },
-      "question_4": {
-        "text": "Why are the arms of spiral galaxies blue?",
-        "answer_0": "The arms are usually moving toward us, so they are Doppler shifted to blue wavelengths.",
-        "answer_1": "The gas and dust in the arms filter out all but the blue light from stars in the arms.",
-        "answer_2": "Active star formation is occurring in the spiral arms.",
-        "answer_3": "Most of the stars of the disk are in the arms of the galaxy and their light makes it appear blue."
-      },
-      "question_5": {
-        "text": "In each figure, two pairs of rocky asteroids are shown along with their masses (m), and the distance (d) between each pair of asteroids. Which of the following correctly describes how the gravitational force exerted BY Asteroid A on its 'partner' asteroid compares to the gravitational force exerted BY Asteroid B on its 'partner' asteroid.",
-        "answer_0": "The force of A on its partner is greater than the force of B on its partner.",
-        "answer_1": "The force of B on its partner is greater than the force of A on its partner.",
-        "answer_2": "The force of A on its partner is equal to the force of B on its partner."
-      }
-    },
-    "set_4": {
-      "question_0": {
-        "text": "Which of the following has the highest speed?",
-        "answer_0": "x-rays",
-        "answer_1": "ultraviolet light",
-        "answer_2": "gamma rays",
-        "answer_3": "They all have the same speed."
-      },
-      "question_1": {
-        "text": "Which of the following determines most characteristics and future events of a star’s existence?",
-        "answer_0": "surface temperature",
-        "answer_1": "size (diameter)",
-        "answer_2": "color",
-        "answer_3": "composition (type of atoms)",
-        "answer_4": "mass"
-      },
-      "question_2": {
-        "text": "Here are possible plots of how fast objects orbit the center of our galaxy versus their distance from the center. Which one graph best represents how objects actually move in our galaxy?",
-        "answer_0": "Graph A",
-        "answer_1": "Graph B",
-        "answer_2": "Graph C",
-        "answer_3": "Graph D",
-        "answer_4": "Graph E",
-        "answer_5": "Graph F"
-      },
-      "question_3": {
-        "text": "Star A is a red main sequence star and Star B is a blue main sequence star. If both stars appear to be the same brightness, which one is closer to Earth?",
-        "answer_0": "Star A",
-        "answer_1": "Star B",
-        "answer_2": "They are the same distance from Earth.",
-        "answer_3": "There is insufficient information to determine this."
-      },
-      "question_4": {
-        "text": "In how many of the four galaxies shown do we observe regions containing cool gas & dust clouds?",
-        "answer_0": "One",
-        "answer_1": "Two",
-        "answer_2": "Three",
-        "answer_3": "Four",
-        "answer_4": "There is insufficient information to determine this."
-      },
-      "question_5": {
-        "text": "In this picture the Earth-Moon system is shown (not to scale) along with three possible positions (A-C) for a spacecraft traveling from Earth to the Moon. Note that Position B is exactly halfway between Earth and the Moon. In what direction would the net (total) force of gravity on the spacecraft point if it were located at Position B?",
-        "answer_0": "toward the Moon",
-        "answer_1": "toward Earth",
-        "answer_2": "Since the spacecraft is exactly halfway between Earth and the Moon, the gravitational force by Earth on the spacecraft is equal to the gravitational force on the spacecraft by the Moon, so the net (total) force would be zero and not point in either direction."
-      }
-    },
-    "set_5": {
-      "question_0": {
-        "text": "Which of the following is not a form of light?",
-        "answer_0": "radio waves",
-        "answer_1": "microwaves",
-        "answer_2": "x-rays",
-        "answer_3": "All of the above are a form of light.",
-        "answer_4": "None of the above is a form of light."
-      },
-      "question_1": {
-        "text": "A collision of two spiral galaxies produces",
-        "answer_0": "a spiral galaxy.",
-        "answer_1": "an elliptical galaxy.",
-        "answer_2": "either a spiral or elliptical galaxy.",
-        "answer_3": "No galaxy will remain."
-      },
-      "question_2": {
-        "text": "Which of the following components of a spiral galaxy has the most mass?",
-        "answer_0": "Stars",
-        "answer_1": "Gas and Dust",
-        "answer_2": "Dark Matter",
-        "answer_3": "There is insufficient information to determine this."
-      },
-      "question_3": {
-        "text": "Answer the following question using the image, which represents the Milky Way Galaxy. Approximately how large is the diameter of the white dot?",
-        "answer_0": "1,000 light years",
-        "answer_1": "10,000 light years",
-        "answer_2": "50,000 light years",
-        "answer_3": "100,000 light years"
-      },
-      "question_4": {
-        "text": "Consider the information given below about three main sequence Stars A, B, and C. Star A will be a main sequence star for a total of 15 billion years. Star B gives off the same amount of light as the Sun. Star C is red. Which of the following is a true statement about these stars?",
-        "answer_0": "Star A has the greatest mass.",
-        "answer_1": "Star B has the greatest mass.",
-        "answer_2": "Star C has the greatest mass.",
-        "answer_3": "Stars A, B and C all have approximately the same mass.",
-        "answer_4": "There is insufficient information to determine this."
-      },
-      "question_5": {
-        "text": "Assume the two galaxies shown have the same total number of stars. Which of these two galaxies most likely has the fewest bright blue stars?",
-        "answer_0": "Galaxy A",
-        "answer_1": "Galaxy B",
-        "answer_2": "They have the same number of bright blue stars.",
-        "answer_3": "There is insufficient information to determine this."
-      }
-    },
-    "set_6": {
-      "question_0": {
-        "text": "Star A is hotter than Star B. Star B gives off much more light than Star A. Which star is larger?",
-        "answer_0": "Star A",
-        "answer_1": "Star B",
-        "answer_2": "They are the same size.",
-        "answer_3": "There is insufficient information to determine this."
-      },
-      "question_1": {
-        "text": "Star F is a red main sequence star and Star G is a blue main sequence star. Which star has a higher temperature?",
-        "answer_0": "Star F",
-        "answer_1": "Star G",
-        "answer_2": "They have the same temperature.",
-        "answer_3": "There is insufficient information to determine this."
-      },
-      "question_2": {
-        "text": "A collision of two elliptical galaxies produces",
-        "answer_0": "a spiral galaxy.",
-        "answer_1": "an elliptical galaxy.",
-        "answer_2": "either a spiral or elliptical galaxy.",
-        "answer_3": "No galaxy will remain."
-      },
-      "question_3": {
-        "text": "Use the graph to answer the following question. Which of the following is the correct ranking for the size of Objects A-C, from largest to smallest?",
-        "answer_0": "A > C = B",
-        "answer_1": "B = C > A",
-        "answer_2": "A = C > B",
-        "answer_3": "A > C > B",
-        "answer_4": "B > C = A"
-      },
-      "question_4": {
-        "text": "Which diagram best describes the net (total) force of gravity on each of the three galaxies shown? Note that: Galaxy C has much more mass than Galaxy A and B  (which have equal mass). The arrows indicate the direction of the net (total) force of gravity exerted on each galaxy but not the strength",
-        "answer_0": "",
-        "answer_1": "",
-        "answer_2": "",
-        "answer_3": "",
-        "answer_4": ""
-      }
-    }
-  },
-  "astronomers": {
-    "heading": "Galaxy Zoo for Astronomers",
-    "explanation": {
-      "goals": "This page aims to give background to the scientific motivation behind the project for a more technical audience.",
-      "data": "You may be looking for data - public Galaxy Zoo data is available in a range of formats <a href=\"http://data.galaxyzoo.org\">here</a>.",
-      "papers": "Alternatively, you can browse a list of papers published by the team <a href=\"/#/papers\">here</a>."
-    },
-    "morphology": {
-      "heading": "Why is galaxy morphology important?",
-      "body": "To first order, the morphology of a galaxy is a tracer of the orbital dynamics of the stars in it, but it also carries an imprint of the processes driving star formation and nuclear activity in galaxies. Visual morphology produces classifications which are strongly correlated with other, physical parameters. To give a single example, the presence of multiple nuclei and extended tidal features indicates that the dominant mechanism driving star formation is an ongoing merger. Equally, the absence of such features implies that the evolution of the galaxy may be being driven by internal ('secular') processes.",
-      "reference": "Traditionally morphology has been derived either by visual inspection of galaxy images (e.g. <a href=\"http://adsabs.harvard.edu/abs/1926ApJ....64..321H\" target=\"_blank\">Hubble 1926</a>, <a href=\"http://heasarc.nasa.gov/W3Browse/all/rc3.html\" target=\"_blank\">de Vaucouleurs 1991</a>, and more recently e.g. <a href=\"http://arxiv.org/abs/1001.2401\" target=\"_blank\">Nair and Abraham 2010</a> or via morphological parameters, such as Concentration, Asymmetry, Clumpiness, M20, the Gini coefficient, etc (e.g. <a href=\"http://arxiv.org/abs/astro-ph/0303065\" target=\"_blank\">Conselice 2003</a>, <a href=\"http://adsabs.harvard.edu/abs/2008ApJ...672..177L\" target=\"_blank\">Lotz et al. 2008</a>. Strictly speaking, these parameters are morphological 'proxies', each with its own attendant biases, which are typically checked and calibrated against visual inspection. A visual approach is generally more resistant to changing signal-to-noise and resolution in images (e.g. Lisker 2008), making it an ideal method for determining galaxy morphology. Nevertheless, morphological parameters have been valuable for classifying large survey-scale datasets, for which visual inspection by individuals (or small groups of researchers) can be prohibitively time-consuming."
-    },
-    "classification": {
-      "heading": "Classifications of large survey datasets using Galaxy Zoo",
-      "body": "Galaxy Zoo (<a href=\"http://arxiv.org/abs/0804.4483\" target=\"_blank\">Lintott et al. 2008</a>, <a href=\"http://arxiv.org/abs/1007.3265\" target=\"_blank\">2011</a>) pioneered a novel method for performing large-scale visual classifications of survey datasets. Using more than half a million members of the general public, the project has classified – via direct visual inspection - the entire Sloan Digital Sky Survey spectroscopic sample and all existing Hubble Space Telescope surveys (around 1.5 million galaxies in total). With more than 40 classifications per object, Galaxy Zoo provides both a visual classification and an associated uncertainty (which is challenging to estimate if there are only a few human classifiers). The classifications themselves have been demonstrated to be of comparable accuracy to those derived by expert astronomers (see Lintott et al. 2008)."
-    },
-    "highlights": {
-      "heading": "Galaxy Zoo science highlights",
-      "body": "The Galaxy Zoo science programme has contributed to a diverse set of topics, largely focused on the nearby and intermediate-redshift Universe. Some recent highlights include the largest studies of galaxy mergers (<a href=\"http://arxiv.org/abs/0903.4937\">Darg et al. 2010</a>), tidal dwarf galaxies (<a href=\"http://arxiv.org/abs/1108.4410\">Kaviraj et al. 2012</a>), dust lanes in early-type galaxies (<a href=\"http://arxiv.org/abs/1107.5306\">Kaviraj et al. 2012</a>) and bars in disc galaxies (<a href=\"http://arxiv.org/abs/1003.0449\">Masters et al. 2011</a>, <a href=\"http://arxiv.org/abs/1205.5271\">2012</a>) in the nearby Universe to date. One of the unique aspects of Galaxy Zoo over automated morphological measurements is the possibility of serendipitous discoveries (often aided by volunteer led discussion on the <a href=\"http://www.galaxyzooforum.org\">Galaxy Zoo Forum</a>). These have included the discovery of 'green peas' (a class of compact extremely star-forming galaxies in the local Universe; <a href=\"http://arxiv.org/abs/0907.4155\">Cardamone et al. 2009</a>) and perhaps most famously \"Hanny's Voorwerp\" (<a href=\"http://arxiv.org/abs/0906.5304\">Lintott et al. 2009</a>) along with a survey of similar AGN-ionised gas clouds (<a href=\"http://arxiv.org/abs/1110.6921\">Keel et al. 2012</a>). The availability of a large sample of galaxies with both color and morphological information has led to the important realisation that color, not morphology, is most strongly correlated with environment (<a href=\"http://arxiv.org/abs/0805.2612\">Bamford et al. 2009</a>; <a href=\"http://arxiv.org/abs/0811.3970\">Skibba et al. 2009</a>), leading to intriguing subclasses of galaxies like red spiral galaxies (<a href=\"http://arxiv.org/abs/0910.4113\">Masters et al. 2010</a>) and blue ellipticals (<a href=\"http://arxiv.org/abs/0903.3415\">Schawinski et al. 2009</a>)."
-    },
-    "relaunched": {
-      "heading": "Galaxy Zoo Relaunched",
-      "sdss": "The current site incorporates new images from SDSS DR8 (the Southern Galactic cap area), increasing the sample size of galaxies in the local universe by 40%. It also, for the first time, incorporates images from CANDELS, the largest HST Treasury Program. This survey is designed to take advantage of the advent of HST's Wide Field Camera 3 (WFC3) is rapidly opening up a new window into galaxies at z > 1 – the first 50% of the lifetime of the Universe. Previous HST imaging at these epochs has largely sampled the rest-frame ultraviolet, since the available survey instruments (e.g. ACS) have operated in the optical wavelengths. However, the near-infrared capabilities of the WFC3 (a factor of 20 better than NICMOS) are providing us with unprecedented rest-frame optical data of galaxies at z > 1.",
-      "candels": "CANDELS is using the WFC3 near-infrared filters to image 800 arcmin<sup>2</sup> in established HST legacy fields (e.g. GOODS, COSMOS). The near-infrared WFC3 images are particularly important because morphological analysis is best performed in rest-frame optical wavelengths, which trace the underlying stellar population of the galaxy rather than just the UV-bright star-forming regions.",
-      "combination": "The combination of the SDSS and CANDELS Galaxy Zoo samples will offer a formidable tool for answering significant open questions that demand a morphological analysis. For example, at what epochs was the Hubble sequence established? How and when were the primordial spheroids formed? What was the relative role of major mergers and secular processes in driving star formation and black hole growth in the early Universe?",
-      "conclusion": "The purpose of the Galaxy Zoo project is to answer such questions, prepare the ground for morphological work using future instruments like the JWST and produce samples of morphologically selected high-redshift galaxies for follow-up using instruments like the extremely large telescopes and ALMA."
-    }
-  },
-  "classify": {
-    "heading": "Classify",
-    "restart": "Restart",
-    "help": "Help",
-    "sloan": "SDSS",
-    "candels": "Hubble",
-    "group": "Group",
-    "favorite": "Favourite",
-    "invert": "Invert"
-  },
-  "help": {
-    "title": "Help",
-    "examples": "Examples"
-  },
-  "home": {
-    "headline": "很少亲眼目睹你即将看到",
-    "call_to_action": "由斯隆数字巡天和哈勃太空望远镜观测到遥远的宇宙，体验特权一瞥",
-    "galaxy_zoo": {
-      "title": "星系的分类",
-      "description": "要了解星系如何形成的，我们需要您的帮助，对它们进行分类，根据它们的形状。如果你快，你甚至有可能看到你问的星系分类的第一人。",
-      "classify": "开始判断"
-    },
-    "galaxy_formation": {
-      "title": "星系如何形成的？",
-      "body": "大约有100亿的星系遍布我们观察到的宇宙，每一个光荣的系统可能含有数十亿颗恒星。很多都非常美丽，和银河动物园的目的就是要研究他们，协助天文学家试图了解我们周围的星系是如何形成的，以及他们的故事可以告诉我们的过去，现在和未来，我们的宇宙作为一个整体利益。 <a data-nav=\"#/science\" href=\"#/science\">更多</a>"
-    },
-    "history": {
-      "title": "历史 Galaxy Zoo",
-      "body": "T他推出的这个新版本的银河动物园，4日，就在几个星期后，该网站的5岁生日。这一切都开始于2007年7月，由斯隆数字巡天，仍然提供了一些在今天的现场图像成像一万个星系组成的一组数据。有了这么多的星系，我们假设将需要几年的工作，通过他们所有的观众到现场，但推出后的24小时内，我们都惊呆了接收几乎每小时70,000分类。年底，共收到超过50万分类的项目在第一年贡献超过15万人。 <a data-nav=\"#/story\" href=\"#/story\">更多</a>"
-    },
-    "classroom": {
-      "title": "Galaxy Zoo 在课堂上",
-      "body": "Are you an educator? Would you like to use Galaxy Zoo with a group of students? The <a href=\"http://www.galaxyzoo.org/#/navigator/home\">Navigator</a> is an interactive tool that allows groups to classify galaxies together and then investigate galaxy characteristics. <a href=\"http://www.zooteach.org/zoo/galaxy_zoo\">Zoo Teach</a> is where educators can share lessons, resources and that compliment the citizen science projects that are part of the Zooniverse.",
-      "navigator": "Navigator"
-    },
-    "recent_images": {
-      "title": "最近图像"
-    }
-  },
-  "login_prompt": {
-    "title": "Login or create an account to receive credit for your work",
-    "decline": "No, thanks"
-  },
-  "navigation": {
-    "classify": "分类",
-    "science": "科学",
-    "blog": "博客",
-    "team": "班组",
-    "papers": "文件",
-    "data": "数据",
-    "story": "故事",
-    "galaxy_zoo": "Galaxy Zoo",
-    "astronomers": "天文学家",
-    "discuss": "讨论",
-    "talk": "Talk",
-    "forum": "论坛",
-    "profile": "剖面"
-  },
-  "papers": {
-    "title": "Published Papers",
-    "description": "The efforts of the Galaxy Zoo community has resulted in fantastically rich dataset with which to do science. Below is a list of just some of the publications that have come about because of the classifications collected on Galaxy Zoo.",
-    "available": "available here"
-  },
-  "profile": {
-    "favorites": "Favourites",
-    "recents": "Recents",
-    "remove_favorite": "Remove this favourite",
-    "favorite_this": "Favourite this",
-    "classifications": "Classifications",
-    "hubble": "Hubble",
-    "hubble_classifications": "Hubble Classifications",
-    "sdss": "SDSS",
-    "sdss_classifications": "SDSS Classifications",
-    "quiz": "Quizzes",
-    "quizzes": "Quizzes",
-    "quizzes_taken": "Quizzes Taken",
-    "take_a_quiz": "Take a quiz now",
-    "galaxy_zoo_hubble": "Galaxy Zoo: Hubble",
-    "galaxy_zoo_hubble_link": "If you're looking for your old galaxies from Galaxy Zoo Hubble, then you can <a href=\"http://hubble.galaxyzoo.org/my_galaxies\" target=\"_blank\">find them here</a>."
-  },
-  "science": {
-    "title": "The Science behind the Site",
-    "p1": "Roughly one hundred billion galaxies are scattered throughout our observable Universe, each a glorious system that might contain billions of stars. Many are remarkably beautiful, and the aim of Galaxy Zoo is to study them, assisting astronomers in attempting to understand how the galaxies we see around us formed, and what their stories can tell us about the past, present and future of our Universe as a whole.",
-    "p2": "Our strategy is based on the remarkable fact that you can tell a lot about a galaxy just from its shape. Find a system with spiral arms, for example, and normally - but critically not always - you'll know that you're looking at a rotating disk of stars, dust and gas with plenty of fuel for future star formation. Find one of the big balls of stars we call ellipticals, however, and you're probably looking at a more mature system, one which long ago finished forming stars. The galaxies' histories are also revealed; that elliptical is likely to be the product of a head-on collision between two smaller galaxies, and smaller scars such as warped disks, large bulges or long streams of stars bear testament to the complexity of these galaxies' lives.",
-    "p3": "We've already said that a merger can have a major impact on a galaxy’s appearance, but many other factors could have played an important role; for example, there is steadily growing evidence (not least from previous Galaxy Zoo projects) that the black holes that lurk at the heart of galaxies may have a profound effect on their surroundings.",
-    "p4": "As material falls towards the black hole, it can be heated to enormous temperatures and the resulting radiation packs a powerful punch, sometimes aided by the presence of powerful jets of materials flung away from the vicinity of the black hole (though not, of course, from the black hole itself) at close to the speed of light. These combination of forces can, it seems, heat or expel gas from the galaxy, depriving it of fuel for future star formation and changing its face for ever.",
-    "p5": "A galaxy's surroundings matter too. At the centre of the Virgo cluster, our nearest large group of galaxies, mergers between systems are rare - held by the cluster’s powerful gravitational grip, galaxies are moving too fast for more than brief encounters. In the emptiest parts of space, the density of galaxies is just too low for mergers to play a significant role, and so it’s only on the outskirts of clusters or in small groups like our own Local Group that mergers currently play a significant part. It should come as no surprise, then, that we find different types of galaxies in different places, and this too must be taken into account.",
-    "p6": "Disentangling these effects, and many more, requires the largest possible samples of classified galaxies. It’s not uncommon for us to need, for example, a large sample of red, barred, spiral galaxies that reside on the edges of clusters, and if we don't have a large sample to begin with there will be none left when we've narrowed the search. Modern surveys provide enough images - hundreds of thousands upon hundreds of thousands of them - but we still need people to classify them. That's where you come in...",
-    "subtitle": "Where do the images come from?",
-    "p7": "The Sloan Digital Sky Survey (SDSS) started in 2000 and is one of the first, and largest, digital maps of the Universe available to astronomers. The original SDSS, which ran for 5 years, included two main instruments, namely a 126 megapixel imaging camera and two fiber-fed spectrographs, mounted on a dedicated 2.5 meter telescope at Apache Point Observatory in New Mexico. During good weather, the SDSS undertook draft-scan imaging of the northern sky using the camera, while in cloud conditions the SDSS obtained spectra of a sub-set of detected objects to measure their redshift and thus distance. From 2005 to 2008, the second phase of SDSS, or SDSS-II, continued to survey the north galactic cap of our Galaxy as well as undertaking a new supernova survey and a new spectroscopic survey of stars (SEGUE). Since 2008, the third incarnation of the SDSS, or SDSS-III, has focused exclusively on spectroscopy (the imaging camera has been retired to the Smithsonian Museum) and comprises of four sub-surveys of BOSS, APOGEE, SEGUE and MARVELS.",
-    "p8": "The scientific legacy of the SDSS is amazing, partly due to the annual release of SDSS data to the astronomical community and public. For example, in 2011, the SDSS collaboration published its eighth data release (DR8), which contains 14,555 square degrees of optical imaging data (with over a trillion pixels), and contains 932 million unique objects, of which 1.63 million objects possessed a SDSS spectrum. This awesome astronomical resource is freely available via a state-of-the-art database. Astronomers have written over 4000 papers (approximate one a day) using SDSS public data, gaining over 175,000 citations. Within the SDSS collaboration, there have been more than 120 PhD theses, while the SDSS data fueling numerous high impact outreach projects e.g. Galaxy Zoo. The SDSS has been named several times the highest impact project, facility or mission in the field of astronomy (Madrid & Macchetto 2006, 2009), and is the source of the most highly cited astronomy article in the years 2000, 2002, 2005, and 2008 (Frogel et al. 2010).",
-    "p9": "The SDSS would not have been possible without a large collaboration of scientists, researchers and astronomers. Many of the astronomers involved in the original SDSS have now moved on in their careers, spreading their experience within large collaborations across the world. At the start of the SDSS, such large collaborations in astronomy were rare and the SDSS has also been at the forefront of changing the culture of collaborative research in astrophysics. The SDSS is now planning a new 4th phase starting 2014. This phase will involve a number of targeted surveys including eBOSS, MaNGA and APOGEE-S2, which are designed to simultaneously explore the distant universe, the dynamics of nearby galaxies, and study stars in our own Galaxy. By the end of this 4th phase, the SDSS will have provided excellent data for over two decades, resulting in over 5 million astronomical spectra.",
-    "p10": "As we peer deeper into the universe, we look into the past, and since the universe is expanding, the galaxies we see are moving away from us faster and faster. This means that the light that left them gets stretched by the time it reaches us. Thus, the light from stars gets \"redshifted\" and to get a visible light image of a galaxy in the early universe, we need an infrared camera. Taking infrared images is much harder than optical ones for many reasons, but the most important one is that the night sky actually glows in the infrared. This fundamentally limits our ability to take deep infrared images, which is why Hubble's new Wide Field Camera 3 (WFC3) with its infrared capability is so valuable.",
-    "p11": "A new generation of surveys using the WFC3 is giving us an unprecedented view into the first third of the lifetime of the Universe: the first 3-4 billion years after the Big Bang. Foremost among these is the Cosmic Assembly Deep Extragalactic Near-infrared Survey (CANDELS). The largest treasury survey using the Hubble Space Telescope to date, CANDELS is surveying several patches of sky to put together the largest collection of deep infrared images of galaxies in the early Universe. The combination of Galaxy Zoo and CANDELS offers a formidable tool in our quest to understand the earliest stages of the evolution of the visible Universe, one of the fundamental questions in observational cosmology today."
-  },
-  "story": {
-    "title": "The Story So Far",
-    "p1": "The launch of this new version of Galaxy Zoo, the 4th, comes just a few weeks after the site's 5th birthday. It all started back in July 2007, with a data set made up of a million galaxies imaged by the Sloan Digital Sky Survey, who still provide some of the images in the site today. With so many galaxies, we'd assumed it would take years for visitors to the site to work through them all, but within 24 hours of launch we were stunned to be receiving almost 70,000 classifications an hour. In the end, more than 50 million classifications were received by the project during its first year, contributed by more than 150,000 people.",
-    "p2": "That meant that each galaxy was seen by many different participants. This is deliberate; having multiple independent classifications of the same object is important, as it allows us to assess how reliable our results are. For example, for projects where we may only need a few thousand galaxies but want to be sure they're all spirals before using up valuable telescope time on them, there's no problem - we can just use those that 100% of classifiers agree are spiral. For other projects, we may need to look at the properties of hundreds of thousands of galaxies, and can use those that a majority say are spiral.",
-    "p3": "The task in that first Galaxy Zoo was slightly simpler than yours; all we asked volunteers to do was to split the galaxies into ellipticals, mergers and spirals and - if the galaxy was spiral - to record the direction of the arms. But it was enough to show that the classifications Galaxy Zoo provides were as good as those from professional astronomers, and were of use to a large number of researchers. You can find out what people have been up to with Galaxy Zoo data in our list of <a href=\"#/papers\" data-nav=\"/papers\">papers published</a> and on the <a href=\"http://blog.galaxyzoo.org\" target=\"_blank\">Galaxy Zoo blog</a>, as well as below. Perhaps the most exciting sign of success is the fact that we’ve been successful in bidding for time on some of the largest telescopes in the world to follow up on many Galaxy Zoo discoveries : the list currently includes the Isaac Newton and William Herschel Telescopes on the island of La Palma in the Canaries, Gemini South in Chile, the WIYN telescope on Kitt Peak, Arizona, the IRAM radio telescope in Spain's Sierra Nevada, Swift, GALEX, Chandra, XMM-Newton and Suzaku up in space, and perhaps most excitingly the Hubble Space Telescope.",
-    "p4": "Galaxy Zoo 2 was inspired by our newfound confidence in the ability of you, our volunteer classifiers, and so we asked for a closer look at just over 200,000 of the brightest of the Sloan galaxies. We asked about the number of spiral arms, the size of the galaxies' bulges and much else besides. Once again, we were thrilled with the response (and a little more prepared for it than we were for Zoo 1!) and in the 14 months the site was up we received a little more than 60 million classifications.",
-    "p5": "Along the way, we added more detailed images from an area of the survey known as 'Stripe 82', but it was soon time to look at the more distant Universe. The site’s third incarnation, Galaxy Zoo : Hubble drew from surveys conducted by the Hubble Space Telescope to view earlier epochs of galaxy formation. In these surveys, which involve many, many days of dedicated observing time, we can see light from galaxies which has taken billions of years to reach us. The idea behind Galaxy Zoo : Hubble was to be able to compare galaxies then to galaxies now, giving us a clear understanding of what factors influence their growth, whether through mergers, active black holes or simply star formation.",
-    "p6": "The present day Galaxy Zoo combines new imaging from Sloan, giving us our best ever view of the local Universe, with the most distant images yet from Hubble's CANDELS survey. The <a href=\"http://candels.ucolick.org\" target=\"_blank\">CANDELS survey</a> makes use of the new Wide Field Camera 3 - installed during the final shuttle mission to Hubble - to take ultra-deep images of the Universe, so who knows what's out there to be found?"
-  },
-  "team": {
-    "title": "The Galaxy Zoo Team",
     "science": {
-      "title": "Science Team",
-      "bamford": "<span class=\"person\">Steven Bamford</span> - Astronomer, University of Nottingham<br />Works on figuring out what makes galaxies look the way they do: how they formed and why they change as they get older and move to new cosmic locations.  When not busy working on science or doing his bit to help run the Zooniverse, he is usually to be found entertaining his two young children or sailing a boat.",
-      "lintott": "<span class=\"person\">Chris Lintott</span> - Astronomer, University of Oxford<br />Between Galaxy Zoo, co-presenting the BBC's Sky at Night program and writing for <a href=\"http://www.chrislintott.net\">www.chrislintott.net</a> and elsewhere, Chris usually wishes he had more time to sleep.",
-      "schawinski": "<span class=\"person\">Kevin Schawinski</span> - Astronomer, <a href=\"http://www.astro.ethz.ch\" target=\"_blank\">ETH Zurich</a><br />Works on the formation and evolution of galaxies and their supermassive black holes. Usually trying to get more sleep. And coffee.",
-      "edmondson": "<span class=\"person\">Edd Edmondson</span> - Astronomer, University of Portsmouth<br />Zookeeper, aiding in accessing Sloan data, and general helper-outer.",
-      "keel": "<span class=\"person\">Bill Keel</span> - Astronomer, <a href=\"http://astronomy.ua.edu/keel\" target=\"_blank\">University of Alabama</a><br />Author of 'The Road to Galaxy Formation' and 'The Sky at Einstein's Feet'. With research interests in galaxy formation and evolution, dust content of galaxies, and active galactic nuclei, he couldn't stay away when Galaxy Zoo got started.",
-      "skibba": "<span class=\"person\">Ramin Skibba</span> - Astronomer, UC San Diego<br />Leading the use of marked correlation functions to analyse the Galaxy Zoo morphologies.",
-      "cardamone": "<span class=\"person\">Carie Cardamone</span> - Astronomer, <a href=\"https://sites.google.com/a/brown.edu/ccardamone/\" target=\"_blank\">Brown University</a><br />An educator and astronomer, studying the Zoo's green peas, interested in understanding why galaxies grow they way they do. She's very enthusiastic about engaging the broader public in scientific research and the nature of science.",
-      "willett": "<span class=\"person\">Kyle Willett</span>, University of Minnesota<br />Works on environments of galaxies with active black holes, assembling the final catalogs for Galaxy Zoo 2, and new tools for the Zooniverse sites. Probably runs more than is healthy.",
-      "urry": "<span class=\"person\">Meg Urry</span> - Physicist, Yale University<br />Works on supermassive black holes (growth history, unification, relativistic jets, blazars) and their interplay with galaxies. In her spare time, she writes for CNN.com and works to increase the participation of women and minorities in science.",
-      "nichol": "<span class=\"person\">Bob Nichol</span> - Cosmologist, University of Portsmouth<br />An astronomer, astrophysicist and cosmologist with interests in computer science and statistics. A senior member (or 'Builder') of the Sloan Digital Sky Survey, the most ambitious digital survey of the sky ever undertaken. A long suffering supporter of Manchester City, suffering no more.",
-      "fortson": "<span class=\"person\">Lucy Fortson</span> - Astrophysicist, University of Minnesota<br />Interested in galaxy evolution, black holes and the jets of material beaming from the centers of active galactic nuclei. Started the Zooniverse effort at the Adler Planetarium, now bringing the light to the University of Minnesota. On the odd weekend, when she's not preparing lecture or writing grants, Lucy can be found hanging out with her husband and son at one of Minneapolis' fine dining establishments.",
-      "masters": "<span class=\"person\">Karen Masters</span> - Astronomer, University of Portsmouth<br />Interested in spiral galaxies of all kinds, red has always been her favourite colour. She's working to disentangle the 'true' red spirals, from those that are reddened because we see them edge on, and along the way learn about interstellar dust, and the nature of red spirals themselves. Bars also a speciality.",
-      "melvin": "<span class=\"person\">Tom Melvin</span> - Astronomer, University of Portsmouth<br />A PhD student currently studying the formation and evolution of bars in disk galaxies.",
-      "szalay": "<span class=\"person\">Alex Szalay</span> - Cosmologist, Johns Hopkins University<br />One of the creators of the SDSS SkyServer, and currently involved in building the Virtual Observatory. Plays some music in his 'spare' time.",
-      "thomas": "<span class=\"person\">Daniel Thomas </span>- Astronomer, University of Portsmouth<br />Interested in galaxies of any shape, age, colour and habitat in the universe. When he's not sunbathing, his research focuses on the stars in galaxies and what they tell us about galaxy formation and evolution.",
-      "haussler": "<span class=\"person\">Boris H&auml;u&szlig;ler</span> - Astronomer, University of Nottingham<br />An expert on analysing Hubble Space Telescope images and automatic morphology methods.",
-      "hoyle": "<span class=\"person\">Ben Hoyle</span> - Astronomer, University of Portsmouth<br />Currently developing exciting connections between Google Sky and Galaxy Zoo. Also working on using the lensing of distant quasars to learn about the properties of nearby Galaxy Zoo galaxies.",
-      "kaviraj": "<span class=\"person\">Sugata Kaviraj</span> - Astronomer, University of Oxford<br />Studying the Galaxy Zoo mergers.",
-      "raddick": "<span class=\"person\">Jordan Raddick</span> - Science Education and Outreach Coordinator, Johns Hopkins University<br />A science writer and educator, creator of the science projects on the SDSS SkyServer web site, and an avid science fiction reader and writer. Jordan wishes he could visit galaxies in their natural habitat.",
-      "wong": "<span class=\"person\">Ivy Wong</span> - Astronomer, CSIRO"
+        "title": "星系大觀園網站的科學意義",
+        "p1": "在可觀測宇宙中大約散佈有一千億個星系，每個光芒閃耀的星系又都自成一個系統，擁有著數十億恆星。許多星系都極其美麗，「星系大觀園」的目標就是去研究這些星系，協助天文學者試著去了解我們所看到的這些環繞在我們四周的星系如何形成，從這些星系的故事我們又可以知道自己所置身其中的宇宙過去、現在和未來如何。",
+        "p2": "本計畫長期目標具有科學基礎，也就是，從星系形狀可得知許多關於星系的細節。比方說，當你發現的是旋臂星系，通常（非百分之百）你立刻就知道這個星系擁有由恆星、氣體、塵埃組成的一個旋轉盤面，這個盤面擁有大量燃料，未來將孕育更多新恆星。而如果你找到的是由恆星組成的一大團的球狀星系，這種星系常被稱為橢圓星系，那麼，這個星系可能已進入成熟期，形成恆星的過程早已完成。本計畫還可以挖掘出星系的往事，譬如橢圓星系，其前身可能是兩個較小星系發生過迎面對撞，有些帶有小疤痕，譬如呈扭曲狀的磁盤、大而凸起的核球、尾巴長長的恆星流，諸如此類的特徵，都是星系生命歷經複雜故事的最佳見證。",
+        "p3": "如前所述，星系合併對外觀影響至鉅，但還有其他許多因素也可能發揮重要作用，例如，越來越多證據顯示，潛伏在星系中心的黑洞，對周圍環境就可能產生深遠影響。.",
+        "p4": "物質朝黑洞下落的過程中因受熱而溫度極高，高熱並意味著輻射強大，有時會有強大的物質噴流從黑洞鄰近區域以近光速的速度向外甩出（噴流不是從黑洞本身噴出，而是黑洞附近區域）。這些力在彼此相結合之下，能將星系的氣體加熱，或把氣體從星系裡排出，使得星系原本可用來製造新恆星的原料因而遭搜刮一空，大幅改變星系原本面貌。",
+        "p5": "星系所在位置的周圍條件如何也很重要。在距離銀河系位置最近的室女座星系團中心，星系彼此間因重力而發生併合是少見的，因為星系移動太快，只來得及短暫擦身而過。然而在太空中最空曠之處，星系密度又太低，在那裏，併合也無法很顯著作用，唯有在星系群聚的外圍區域形成小團體，就像我們銀河系所屬的本地星系群一樣，這時併合作用才比較顯著。因此，特性不同星系出現在各種不同的環境中應該毫不奇怪，而且是一定必須要納入考量的。",
+        "p6": "要釐清種種諸如此類的影響因素，當然星系分類的樣本數量需求是越大越好。譬如，我們很可能需要大樣本數的、位置在星系團邊緣的紅色棒旋星系，但如果你一開始的初始樣本量不夠大，下一步將沒有空間可再做縮小篩選，接下來的研究也就捉襟見肘。新穎的巡天普查結果提供很多圖像 – 每一次資料庫更新都可增加數十萬又幾十萬星系圖像 - 這些星系圖像需要有人力來加以分類。這就是我們要邀請您來幫忙貢獻您的好眼力的原因......",
+        "subtitle": "這些圖像來自何處？",
+        "p7": "從2000年開始啟動的史隆數位巡天普查計畫，簡稱為SDSS，是第一個，同時也是最大型的宇宙數位巡天成像計畫，為天文學家提供研究所需資料。最初的計畫為期5年，包括兩個主要儀器，其一為126萬像素的相機，其二是兩個光纖等級的光譜儀，這些儀器裝置在位於美國新墨西哥州Apache Point Observatory天文台裡的一座SDSS專用2.5米望遠鏡上。天氣好時，SDSS用相機進行北天draft-scan成像，在多雲時進入光譜儀模式轉而針對一些經選定的觀測對象，從光譜方面來測量紅移及其距離。2005年到2008年，SDSS進入第二階段，繼續對銀河系北銀冠的掃描，也開始了超新星普查，且啟動另一個新的”SEGUE”星系光譜普查計畫。2008年迄今，SDSS進入第三代，完全只從事光譜儀巡天普查，這部分包括四個子項目：BOSS、APOGEE、SEGUE、MARVELS。（在進入本階段時，SDSS相機已除役，收藏於美國史密松博物館）",
+        "p8": "SDSS締造出豐碩的科學成果，部分原因是SDSS更新的資料每年都公開釋出給天文學界和公眾使用。2011年所釋出的DR8資料庫所含的光學影像資料總共廣達14,555平方度，總像素數超過一兆，共含有9.32億個天體，其中163萬個並已由SDSS取得其光譜資料。這麼了不起的天文資源，全都可透過相當先進的網站介面以下載方式取得。天文學家運用SDSS資料庫產生學術論文的速度幾乎是每天一篇，目前已產生數千篇的天文學術論文，獲引用次數累積達17.5萬，擁有120篇博士論文，同時在公眾推廣領域也是結實累累，譬如本網站星系大觀園計畫也是公眾推廣領域成果之一。SDSS多次在天文學領域最具影響力的計畫或機構選拔中獲得提名。在2000, 2002, 2005, 2008時榮登該年度獲引用次數最高論文之來源資料庫。(參考文獻, Frogel et al. 2010 )",
+        "p9": "SDSS的成就是屬於許多科學家，研究人員和天文學家所共有，沒有大家集體合作就不可能會有SDSS。許多一開始參與SDSS計畫的天文學家，如今散佈全球各地，繼續在大型合作中從事學術研究，流傳分享著SDSS經驗。 從SDSS的一開始，規模如此龐大的合作在天文學中即屬罕見，並且，SDSS還首開風氣之先，創新改變了天文物理學的合作研究文化。從2014年開始，SDSS即將邁入它的另一個新階段：第四期。此階段將進行的是好幾個針對性的調查，包括eBOSS、MaNGA、APOGEE-S2等，其目的除了要探索遙遠的宇宙，了解附近星系的動力學以外，同時也將研究本銀河系裡的恆星。直到第四期走完，2019年時，SDSS將已為天文學界提供優異資料庫達超過20年之久，並預計天體光譜資料數將會達5百萬筆以上。",
+        "p10": "凝視宇宙深處，意味著我們得以回顧宇宙的過去，因為宇宙持續膨脹，所見的星系遠離我們的速度也正變得越來越快。這意味著，星光在離開恆星並抵達我們以前，它是被拉長的。恆星光既然會被紅移，那麼我們如果要得到一個在早期宇宙中的星系在可見光波段中的圖像，所需要的其實紅外照相機。紅外圖像實際上比可見光圖像更難取得，原因很多，但其中最重要的原因是，夜空本身實際上是發出紅外光的。這很基本地造成拍攝深空紅外影像的困難重重，哈柏望遠鏡的WFC3卻正是因為能突破這些限制、具備了可取得紅外光圖像的能力，所以貢獻非凡。",
+        "p11": "配備採用WFC3的巡天計畫給了我們一個全新的視野，讓我們能看到大霹靂以後的宇宙最早三～四十億年，即大約宇宙年齡的前1/3部分。其中最重要的CANDELS（Cosmic Assembly Deep Extragalactic Near-infrared Survey）計畫，是個近紅外線波段的普查。它奠基在哈柏太空望遠鏡普查基礎之上，正針對早期宇宙在進行一個最大的深空紅外圖像的宇宙地圖蒐集。星系大觀園計畫與CANDELS的結合，產生一個非常好的工具，讓我們可以略為滿足在可見宇宙中找到最初宇宙演化線索的一些渴望，尋訪宇宙演化最早的線索是當今觀測派宇宙學正亟待解決的重要問題之一。"
     },
-    "dev": {
-      "title": "Zooniverse Development Team",
-      "kapadia": "<span class=\"person\">Amit Kapadia</span><br />Amit Kapadia develops astronomical web applications. He is a citizen science developer for the crowd-sourcing based platform Zooniverse. New to the world of JavaScript he spends his days dreaming of conducting in-browser analyses on astronomical data sets. On occasion he flexes his modest sway to advocate for more modern solutions to data access in astronomy. He believes the scientific world needs to speak more closely with the tech world, and constantly strives to learn more from the latter. Amit is often found at the Adler Planetarium in Chicago.",
-      "carstensen": "<span class=\"person\">Brian Carstensen</span><br />Brian is a web developer working on the Zooniverse family of projects at the Adler Planearium. Brian has a degree in graphic design from Columbia College in Chicago, and worked in that field for a number of years before finding a niche in web development.",
-      "miller": "<span class=\"person\">David Miller</span><br />As a visual communicator, David is passionate about tellings stories through clear, clean, and effective design. Before joining the Zooniverse team as Visual Designer, David worked for The Raindance Film Festival, the News 21 Initiative's Apart From War, Syracuse Magazine, and as a freelance designer for his small business, Miller Visual. David is a graduate of the S.I. Newhouse School of Public Communications at Syracuse University, where he studied Visual & Interactive Communications.",
-      "paget": "<span class=\"person\">Ed Paget</span><br />Ed somehow went from studying Film at Northwestern University to joining the Zooniverse team as a software developer. Along the way, he picked up a little programming. In his spare time, he enjoys photography, chess, fencing, and growing his beard.",
-      "parrish": "<span class=\"person\">Michael Parrish</span><br />Michael has a degree in Computer Science and has been working with The Zooniverse for the past three years as a Software Developer. Aside from web development; new technologies, science, AI, reptiles, and coffee tend to occupy his attention.",
-      "simpson": "<span class=\"person\">Robert Simpson</span><br />Zooniverse Researcher and developer at Oxford University. PI of the <a href=\"http://www.milkywayproject.org/\" target=\"_blank\">Milky Way Project</a>.",
-      "smith": "<span class=\"person\">Arfon Smith</span><br />As an undergraduate, Arfon studied Chemistry at the University of Sheffield before completing his Ph.D. in Astrochemistry at The University of Nottingham in 2006. He worked as a senior developer at the Wellcome Trust Sanger Institute (Human Genome Project) in Cambridge before joining the Galaxy Zoo team in Oxford. Over the past 3 years he has been responsible for leading the development of a platform for citizen science called Zooniverse. In August of 2011 he took up the position of Director of Citizen Science at the Adler Planetarium where he continues to lead the software and infrastructure development for the Zooniverse.",
-      "whyte": "<span class=\"person\">Laura Whyte</span><br />Having spent her PhD trying to get computers to classify galaxies, Laura know only to well the true value of the contribution to science made by the Galaxy Zoo volunteers. Since leaving astronomy she has retrained as a Maths teacher and picked up a few programming skills. It was with great delight she joined the team at the Zooniverse, developing online education and research tools, allowing her to use bits and pieces of all the skills she's picked up over the last decade."
+    "story": {
+        "title": "目前現況",
+        "p1": "「星系大觀園」計畫從2007年7月啟動以來，網站已歷經第四版更新。最早的資料庫裡大約有一百萬個星系圖像，當時由SDSS巡天普查計畫所觀測取得，SDSS迄今仍持續提供更多新的星系光譜圖像資料。剛開始時，面對如此龐大的星系數量，本以為能夠號召到的志工團隊人數可能很有限，應該要花上好幾年時間才能把資料辨識工作全部完成，沒想到網站開張不到24小時就以每小時收到7萬筆辨識結果的速度一路蓬勃成長，第一年為止，一共已獲得五千萬筆辨識結果，募集志工人數達15萬人。",
+        "p2": "這意味著每個星系都獲得好幾位不同的參與者個別的辨識，這是經過刻意安排的，因為辨識的多元化能讓星系分類結果可靠度更高，這很重要，例如，有些研究專案只需要幾千個星系就可，但必須很確定它們全都是螺旋星系，以免所申請到的寶貴望遠鏡使用時數被不必要的浪費掉，那麼這些專案可能就會採用分類意見中獲得100％同意的那些天體為目標，並加以進一步觀測，倘若專案計畫需要的星系數較多，達幾十萬個，那就使用「多數」分類意見同意其為螺旋狀星系的天體做為下一階段的觀測目標即可",
+        "p3": "The task in that first Galaxy Zoo was slightly simpler than yours; all we asked volunteers to do was to split the galaxies into ellipticals, mergers and spirals and - if the galaxy was spiral - to record the direction of the arms. But it was enough to show that the classifications Galaxy Zoo provides were as good as those from professional astronomers, and were of use to a large number of researchers. You can find out what people have been up to with Galaxy Zoo data in our list of <a href=\"#/papers\" data-nav=\"/papers\">papers published</a> and on the <a href=\"http://blog.galaxyzoo.org\" target=\"_blank\">Galaxy Zoo blog</a>, as well as below. Perhaps the most exciting sign of success is the fact that we’ve been successful in bidding for time on some of the largest telescopes in the world to follow up on many Galaxy Zoo discoveries : the list currently includes the Isaac Newton and William Herschel Telescopes on the island of La Palma in the Canaries, Gemini South in Chile, the WIYN telescope on Kitt Peak, Arizona, the IRAM radio telescope in Spain's Sierra Nevada, Swift, GALEX, Chandra, XMM-Newton and Suzaku up in space, and perhaps most excitingly the Hubble Space Telescope.",
+        "p4": "第二代星系大觀園的改版動力，源自於我們對志工分類者的能力更加有信心了。從第二版開始，我們要求志工在參與分類時，必須更仔細地看20多萬個SDSS資料庫中最亮的星系，並且邀請志工們回答關於星系旋臂的數量、大小、星系中心核球特色等，以及其他許多問題。這次的再號召，結果依舊叫人非常感動，因為僅僅14個月內，我們就收到了超過6,000多萬筆分類結果。",
+        "p5": "這段時間當中，我們陸續密集地在一個長條狀，稱為”Stripe 82”的區域裡增添了許多詳盡圖像，不過很快地，我們也動身前往探勘更遙遠的宇宙，也就是網站第三代！第三代的星系大觀園吸收了一張大補帖，多增加了許多來自哈柏太空望遠鏡的圖像資料，這樣能看到星系剛形成時的更早期宇宙。這些圖像來自於耗費較多寶貴觀測時間的星系普查，能讓我們可看到來自數十億年前星系發出的光。星系大觀園認為，哈柏望遠鏡能將星系的過去和現在加以比較，這樣就能清楚了解星系的合併、活躍的黑洞或單單只有恆星形成，究竟星系成長是受到其中哪些因素的影響。",
+        "p6": "最新一代的「星系大觀園」結合了SDSS有史以來所取得的最好local Universe圖像，加上CANDELS計畫（使用哈柏太空望遠鏡上裝設的新WFC3寬視場相機所拍攝到的宇宙超深空影像），向我們展示了較遙遠的宇宙，到底星空中哪裡正有什麼新奇的事情等你去發現呢？拭目以待！"
     },
-    "czech": {
-      "title": "Galaxy Zoo Czech Support Team",
-      "vykouril": "<span class=\"person\">Dušan Vykouřil</span><br />Initiator, and coordinator Czech Galaxy Zoo. He thinks that line of the universe is never-ending. He like pushes the limits of the unknown.",
-      "moudra": "<span class=\"person\">Míla Moudrá</span><br />Main Czech Galaxy Zoo translator. Student from Prague, Czech republic, and amateur astronomer, especially deep-sky objects (i.e. galaxies, among others) visual observer. Interested in protection of environment and small rodents :-)",
-      "hresil": "<span class=\"person\">Petr Hřešil</span><br />Czech Galaxy Zoo co-translator. He has always been fascinated by the sky and the universe but he got trapped into the IT world and fell into the clutches of the Internet. Fan of Distributed computing, lover of sci-fi which allows him to set out \"Where No One Has Gone Before\".",
-      "miksovsky": "<span class=\"person\">Jaroslav Mikšovský</span><br />Czech Galaxy Zoo corrector. Pensioner still economically active."
+    "team": {
+        "title": "The Galaxy Zoo Team",
+        "science": {
+            "title": "Science Team",
+            "bamford": "<span class=\"person\">Steven Bamford</span> - Astronomer, University of Nottingham<br />Works on figuring out what makes galaxies look the way they do: how they formed and why they change as they get older and move to new cosmic locations.  When not busy working on science or doing his bit to help run the Zooniverse, he is usually to be found entertaining his two young children or sailing a boat.",
+            "lintott": "<span class=\"person\">Chris Lintott</span> - Astronomer, University of Oxford<br />Between Galaxy Zoo, co-presenting the BBC's Sky at Night program and writing for <a href=\"http://www.chrislintott.net\">www.chrislintott.net</a> and elsewhere, Chris usually wishes he had more time to sleep.",
+            "schawinski": "<span class=\"person\">Kevin Schawinski</span> - Astronomer, <a href=\"http://www.astro.ethz.ch\" target=\"_blank\">ETH Zurich</a><br />Works on the formation and evolution of galaxies and their supermassive black holes. Usually trying to get more sleep. And coffee.",
+            "edmondson": "<span class=\"person\">Edd Edmondson</span> - Astronomer, University of Portsmouth<br />Zookeeper, aiding in accessing Sloan data, and general helper-outer.",
+            "keel": "<span class=\"person\">Bill Keel</span> - Astronomer, <a href=\"http://astronomy.ua.edu/keel\" target=\"_blank\">University of Alabama</a><br />Author of 'The Road to Galaxy Formation' and 'The Sky at Einstein's Feet'. With research interests in galaxy formation and evolution, dust content of galaxies, and active galactic nuclei, he couldn't stay away when Galaxy Zoo got started.",
+            "skibba": "<span class=\"person\">Ramin Skibba</span> - Astronomer, UC San Diego<br />Leading the use of marked correlation functions to analyse the Galaxy Zoo morphologies.",
+            "cardamone": "<span class=\"person\">Carie Cardamone</span> - Astronomer, <a href=\"https://sites.google.com/a/brown.edu/ccardamone/\" target=\"_blank\">Brown University</a><br />An educator and astronomer, studying the Zoo's green peas, interested in understanding why galaxies grow they way they do. She's very enthusiastic about engaging the broader public in scientific research and the nature of science.",
+            "willett": "<span class=\"person\">Kyle Willett</span>, University of Minnesota<br />Works on environments of galaxies with active black holes, assembling the final catalogs for Galaxy Zoo 2, and new tools for the Zooniverse sites. Probably runs more than is healthy.",
+            "urry": "<span class=\"person\">Meg Urry</span> - Physicist, Yale University<br />Works on supermassive black holes (growth history, unification, relativistic jets, blazars) and their interplay with galaxies. In her spare time, she writes for CNN.com and works to increase the participation of women and minorities in science.",
+            "nichol": "<span class=\"person\">Bob Nichol</span> - Cosmologist, University of Portsmouth<br />An astronomer, astrophysicist and cosmologist with interests in computer science and statistics. A senior member (or 'Builder') of the Sloan Digital Sky Survey, the most ambitious digital survey of the sky ever undertaken. A long suffering supporter of Manchester City, suffering no more.",
+            "fortson": "<span class=\"person\">Lucy Fortson</span> - Astrophysicist, University of Minnesota<br />Interested in galaxy evolution, black holes and the jets of material beaming from the centers of active galactic nuclei. Started the Zooniverse effort at the Adler Planetarium, now bringing the light to the University of Minnesota. On the odd weekend, when she's not preparing lecture or writing grants, Lucy can be found hanging out with her husband and son at one of Minneapolis' fine dining establishments.",
+            "masters": "<span class=\"person\">Karen Masters</span> - Astronomer, University of Portsmouth<br />Interested in spiral galaxies of all kinds, red has always been her favourite colour. She's working to disentangle the 'true' red spirals, from those that are reddened because we see them edge on, and along the way learn about interstellar dust, and the nature of red spirals themselves. Bars also a speciality.",
+            "melvin": "<span class=\"person\">Tom Melvin</span> - Astronomer, University of Portsmouth<br />A PhD student currently studying the formation and evolution of bars in disk galaxies.",
+            "szalay": "<span class=\"person\">Alex Szalay</span> - Cosmologist, Johns Hopkins University<br />One of the creators of the SDSS SkyServer, and currently involved in building the Virtual Observatory. Plays some music in his 'spare' time.",
+            "thomas": "<span class=\"person\">Daniel Thomas </span>- Astronomer, University of Portsmouth<br />Interested in galaxies of any shape, age, colour and habitat in the universe. When he's not sunbathing, his research focuses on the stars in galaxies and what they tell us about galaxy formation and evolution.",
+            "haussler": "<span class=\"person\">Boris H&auml;u&szlig;ler</span> - Astronomer, University of Nottingham<br />An expert on analysing Hubble Space Telescope images and automatic morphology methods.",
+            "hoyle": "<span class=\"person\">Ben Hoyle</span> - Astronomer, University of Portsmouth<br />Currently developing exciting connections between Google Sky and Galaxy Zoo. Also working on using the lensing of distant quasars to learn about the properties of nearby Galaxy Zoo galaxies.",
+            "kaviraj": "<span class=\"person\">Sugata Kaviraj</span> - Astronomer, University of Oxford<br />Studying the Galaxy Zoo mergers.",
+            "raddick": "<span class=\"person\">Jordan Raddick</span> - Science Education and Outreach Coordinator, Johns Hopkins University<br />A science writer and educator, creator of the science projects on the SDSS SkyServer web site, and an avid science fiction reader and writer. Jordan wishes he could visit galaxies in their natural habitat.",
+            "wong": "<span class=\"person\">Ivy Wong</span> - Astronomer, CSIRO"
+        },
+        "dev": {
+            "title": "Zooniverse Development Team",
+            "kapadia": "<span class=\"person\">Amit Kapadia</span><br />Amit Kapadia develops astronomical web applications. He is a citizen science developer for the crowd-sourcing based platform Zooniverse. New to the world of JavaScript he spends his days dreaming of conducting in-browser analyses on astronomical data sets. On occasion he flexes his modest sway to advocate for more modern solutions to data access in astronomy. He believes the scientific world needs to speak more closely with the tech world, and constantly strives to learn more from the latter. Amit is often found at the Adler Planetarium in Chicago.",
+            "carstensen": "<span class=\"person\">Brian Carstensen</span><br />Brian is a web developer working on the Zooniverse family of projects at the Adler Planearium. Brian has a degree in graphic design from Columbia College in Chicago, and worked in that field for a number of years before finding a niche in web development.",
+            "miller": "<span class=\"person\">David Miller</span><br />As a visual communicator, David is passionate about tellings stories through clear, clean, and effective design. Before joining the Zooniverse team as Visual Designer, David worked for The Raindance Film Festival, the News 21 Initiative's Apart From War, Syracuse Magazine, and as a freelance designer for his small business, Miller Visual. David is a graduate of the S.I. Newhouse School of Public Communications at Syracuse University, where he studied Visual & Interactive Communications.",
+            "paget": "<span class=\"person\">Ed Paget</span><br />Ed somehow went from studying Film at Northwestern University to joining the Zooniverse team as a software developer. Along the way, he picked up a little programming. In his spare time, he enjoys photography, chess, fencing, and growing his beard.",
+            "parrish": "<span class=\"person\">Michael Parrish</span><br />Michael has a degree in Computer Science and has been working with The Zooniverse for the past three years as a Software Developer. Aside from web development; new technologies, science, AI, reptiles, and coffee tend to occupy his attention.",
+            "simpson": "<span class=\"person\">Robert Simpson</span><br />Zooniverse Researcher and developer at Oxford University. PI of the <a href=\"http://www.milkywayproject.org/\" target=\"_blank\">Milky Way Project</a>.",
+            "smith": "<span class=\"person\">Arfon Smith</span><br />As an undergraduate, Arfon studied Chemistry at the University of Sheffield before completing his Ph.D. in Astrochemistry at The University of Nottingham in 2006. He worked as a senior developer at the Wellcome Trust Sanger Institute (Human Genome Project) in Cambridge before joining the Galaxy Zoo team in Oxford. Over the past 3 years he has been responsible for leading the development of a platform for citizen science called Zooniverse. In August of 2011 he took up the position of Director of Citizen Science at the Adler Planetarium where he continues to lead the software and infrastructure development for the Zooniverse.",
+            "whyte": "<span class=\"person\">Laura Whyte</span><br />Having spent her PhD trying to get computers to classify galaxies, Laura know only to well the true value of the contribution to science made by the Galaxy Zoo volunteers. Since leaving astronomy she has retrained as a Maths teacher and picked up a few programming skills. It was with great delight she joined the team at the Zooniverse, developing online education and research tools, allowing her to use bits and pieces of all the skills she's picked up over the last decade."
+        },
+        "czech": {
+            "title": "Galaxy Zoo Czech Support Team",
+            "vykouril": "<span class=\"person\">Dušan Vykouřil</span><br />Initiator, and coordinator Czech Galaxy Zoo. He thinks that line of the universe is never-ending. He like pushes the limits of the unknown.",
+            "moudra": "<span class=\"person\">Míla Moudrá</span><br />Main Czech Galaxy Zoo translator. Student from Prague, Czech republic, and amateur astronomer, especially deep-sky objects (i.e. galaxies, among others) visual observer. Interested in protection of environment and small rodents :-)",
+            "hresil": "<span class=\"person\">Petr Hřešil</span><br />Czech Galaxy Zoo co-translator. He has always been fascinated by the sky and the universe but he got trapped into the IT world and fell into the clutches of the Internet. Fan of Distributed computing, lover of sci-fi which allows him to set out \"Where No One Has Gone Before\".",
+            "miksovsky": "<span class=\"person\">Jaroslav Mikšovský</span><br />Czech Galaxy Zoo corrector. Pensioner still economically active."
+        },
+        "french": {
+            "title": "Galaxy Zoo France Support Team",
+            "marco": "<span class=\"person\">Olivier Marco</span> - Observatoire de Paris"
+        },
+        "german": {
+            "title": "Galaxy Zoo Germany Support Team",
+            "poessel": "<span class=\"person\">Markus Poessel</span> - Center for Astronomy Education and Outreach, Heidelberg<br />German Galaxy Zoo co-translator. Managing scientist of the Center for Astronomy Education and Outreach in Heidelberg, whose galaxy-shaped building has a disk, is not clumpy, can be viewed edge-on, has two spiral arms that are medium-tightly wound, and an obvious bulge. (And please tell him if you notice anything odd.).",
+            "leifke": "<span class=\"person\">Carolin Leifke</span> - Center for Astronomy Education and Outreach, Heidelberg<br />German Galaxy Zoo co-translator. Observes flares on active stars with X-ray satellites and the VLT, and galaxies of all kind with her 16-inch Dobsonian. Has now turned her passion for astronomy education and outreach into a profession."
+        },
+        "polish": {
+            "title": "Galaxy Zoo Poland Support Team",
+            "biernacki": "<span class=\"person\">Paweł Biernacki</span><br />Student of astronomy at Wrocław University, enthusiast of the Sun, addicted to sci-fi books; upbeaten optimist and fan of soccer.",
+            "czart": "<span class=\"person\">Krzysztof Czart</span><br />An astronomer and PhD student in a city where Nicolaus Copernicus was born, investigating the biggest stars in galaxies (those from Earth, too). In a spare time, he is a journalist as editor-in-chief of the Polish Astronomy Portal.",
+            "czernik": "<span class=\"person\">Tomasz Czernik</span><br />Loves astronomy and photography. The youngest team member.",
+            "kolodziej": "<span class=\"person\">Mirek Kołodziej</span><br />Galaxy Zoo translator, lover of the sky, IT student in secoundary school in Niepolomice, in spare time bard, he tried to bend a spoon with willpower.",
+            "kotarba": "<span class=\"person\">Marta Kotarba</span><br />Marta has worked on the Polish version of Galaxy Zoo 2. Normally she spends her time setting puzzles, photographing and trying to study astronomy at Jagiellonian University.",
+            "majcher": "<span class=\"person\">Ariel Majcher</span><br />An astronomer and astrophotographer, likes watching sky through a telescope. This is the reason that he dreams about removal from Poland to Malta at least (along with the temperature in winter).",
+            "mankiewicz": "<span class=\"person\">Lech Mankiewicz</span><br />Hunts for fast optical transients in the sky. Coordinator of the 'Pi of the sky' robotic telescope project and father of Agnieszka. In his spare time coordinates the EU-HOU project.",
+            "ogloza": "<span class=\"person\">Waldemar Ogloza</span><br />An astronomer from Pedagogical University of Kracow, variable star observer. He devotes his spare time to astronomical education and sailing.",
+            "pomierny": "<span class=\"person\">Jan Pomierny</span><br />Founder and team leader of the Polish Astronomy Portal. Philosophy and classical music enthusiast who rests in mountains.",
+            "skowron": "<span class=\"person\">Tomasz Skowron</span><br />Astronomy amateur and educator. Daily teacher of physics and astronomy in secondary school in Szczecin."
+        },
+        "retired": {
+            "title": "Retired members of the Galaxy Zoo Team",
+            "andreescu": "<span class=\"person\">Dan Andreescu</span><br />Consultant by day, programmer and seeker of knowledge and fun by night. Avid basketball player and rookie surfer on the weekends.",
+            "land": "<span class=\"person\">Kate Land</span><br />Added some much-missed glamour to the world of Theoretical Cosmology. Once could not sleep at night for thoughts about the early Universe, but slept during seminars instead. Now lured away by the bright lights of the City.",
+            "vandenberg": "<span class=\"person\">Jan VandenBerg</span><br />Ringleader of the IT support circus in the JHU Physics & Astronomy department.",
+            "wonders": "<span class=\"person\">Alainna Wonders</span><br />Tightrope walker therein.",
+            "locksmith": "<span class=\"person\">Danny Locksmith</span> - Volunteer Programmer<br />Responsible for wrestling the Galaxy Zoo 2 beta site into existence.",
+            "murray": "<span class=\"person\">Phil Murray</span> - Web Designer, Artist and Managing Director of Fingerprint Digital Media Responsible for the visual design of the Galaxy Zoo web site. Designer of <a href=\"http://www.banguniverse.com\" target=\"_blank\">www.banguniverse.com</a> for Brian May, Patrick Moore and Chris Lintott. A keen musician and lapsed tennis and soccer player.",
+            "slosar": "<span class=\"person\">Anze Slosar</span> - Cosmologist, Berkeley Center for Cosmological Physics<br />A theoretical physicist, who has has never sat behind a telescope, likes to drink good beer and wishes he were richer.",
+            "darg": "<span class=\"person\">Daniel Darg</span> - Astronomer, University of Oxford<br />Working on measuring the number and properties of galaxy mergers identified in Galaxy Zoo."
+        }
     },
-    "french": {
-      "title": "Galaxy Zoo France Support Team",
-      "marco": "<span class=\"person\">Olivier Marco</span> - Observatoire de Paris"
+    "examine": {
+        "title": "查驗",
+        "survey": "調查",
+        "right_ascension": "右上升",
+        "declination": "下降",
+        "magnitude": "星等",
+        "ned_link": "搜尋 NED",
+        "discuss": "和他人討論",
+        "hubble": "哈柏",
+        "sdss": "SDSS",
+        "sdss_id": "SDSS天體",
+        "petro_rad": "Petrosian半徑",
+        "skyserver_link": "從SkyServer上檢視"
     },
-    "german": {
-      "title": "Galaxy Zoo Germany Support Team",
-      "poessel": "<span class=\"person\">Markus Poessel</span> - Center for Astronomy Education and Outreach, Heidelberg<br />German Galaxy Zoo co-translator. Managing scientist of the Center for Astronomy Education and Outreach in Heidelberg, whose galaxy-shaped building has a disk, is not clumpy, can be viewed edge-on, has two spiral arms that are medium-tightly wound, and an obvious bulge. (And please tell him if you notice anything odd.).",
-      "leifke": "<span class=\"person\">Carolin Leifke</span> - Center for Astronomy Education and Outreach, Heidelberg<br />German Galaxy Zoo co-translator. Observes flares on active stars with X-ray satellites and the VLT, and galaxies of all kind with her 16-inch Dobsonian. Has now turned her passion for astronomy education and outreach into a profession."
+    "fits": {
+        "view": "以不同波常看原始資料",
+        "x_y": "X, Y 資料",
+        "intensity": "稠密度",
+        "color": "顏色",
+        "linear": "線性",
+        "logarithm": "對數",
+        "square_root": "開平方根",
+        "arcsinh": "反正弦",
+        "power": "Power"
     },
-    "polish": {
-      "title": "Galaxy Zoo Poland Support Team",
-      "biernacki": "<span class=\"person\">Paweł Biernacki</span><br />Student of astronomy at Wrocław University, enthusiast of the Sun, addicted to sci-fi books; upbeaten optimist and fan of soccer.",
-      "czart": "<span class=\"person\">Krzysztof Czart</span><br />An astronomer and PhD student in a city where Nicolaus Copernicus was born, investigating the biggest stars in galaxies (those from Earth, too). In a spare time, he is a journalist as editor-in-chief of the Polish Astronomy Portal.",
-      "czernik": "<span class=\"person\">Tomasz Czernik</span><br />Loves astronomy and photography. The youngest team member.",
-      "kolodziej": "<span class=\"person\">Mirek Kołodziej</span><br />Galaxy Zoo translator, lover of the sky, IT student in secoundary school in Niepolomice, in spare time bard, he tried to bend a spoon with willpower.",
-      "kotarba": "<span class=\"person\">Marta Kotarba</span><br />Marta has worked on the Polish version of Galaxy Zoo 2. Normally she spends her time setting puzzles, photographing and trying to study astronomy at Jagiellonian University.",
-      "majcher": "<span class=\"person\">Ariel Majcher</span><br />An astronomer and astrophotographer, likes watching sky through a telescope. This is the reason that he dreams about removal from Poland to Malta at least (along with the temperature in winter).",
-      "mankiewicz": "<span class=\"person\">Lech Mankiewicz</span><br />Hunts for fast optical transients in the sky. Coordinator of the 'Pi of the sky' robotic telescope project and father of Agnieszka. In his spare time coordinates the EU-HOU project.",
-      "ogloza": "<span class=\"person\">Waldemar Ogloza</span><br />An astronomer from Pedagogical University of Kracow, variable star observer. He devotes his spare time to astronomical education and sailing.",
-      "pomierny": "<span class=\"person\">Jan Pomierny</span><br />Founder and team leader of the Polish Astronomy Portal. Philosophy and classical music enthusiast who rests in mountains.",
-      "skowron": "<span class=\"person\">Tomasz Skowron</span><br />Astronomy amateur and educator. Daily teacher of physics and astronomy in secondary school in Szczecin."
+    "quiz": {
+        "thanks": "多謝!",
+        "help": "請支持星系大觀園！",
+        "research": "我們想多了解星系大觀園志工對宇宙的認識如何",
+        "helping": "你的作答能幫我們了解參加星系大觀園的志工對宇宙的認識",
+        "gift": "您將有機會參加抽獎，<strong>獎品是價值20元美金的Amazon禮品兌換券</strong>.",
+        "reward": "這是禮物，每回答一組題目，<strong>就可以參加一次20 元美金的Amazon禮品兌換券</strong>",
+        "now_or_later": "現在你可以再繼續回答另一組題目,或者是晚一點再回到你的profile區來作答",
+        "start_next": "願意做下一輪題目大概是什麼時候?",
+        "reminder": "先前答應每週回答一組5&ndash6個題目",
+        "ready": "現在可以作答嗎?",
+        "now": "現在可以",
+        "later": "稍後",
+        "complete": "全部題目都做完了!",
+        "okay": "好的，了解",
+        "participate": "願意想參加嗎？",
+        "yes": "是!",
+        "no_thanks": "謝謝，不要",
+        "ask_later": "考慮中，稍後再詢問我",
+        "never_again": "以後別再問我",
+        "example": {
+            "prompt": "If you agree to help you will be given short surveys that contain 6 multiple choice questions, which you can answer at your own pace. The first survey is available immediately after you agree to participate.<br />A question might be:",
+            "question": "Hubble's observation that galaxies farther away from us are moving faster led to which conclusion?",
+            "answer_a": "The universe is expanding",
+            "answer_b": "The universe is contracting",
+            "answer_c": "We are located at the center of the universe",
+            "answer_d": "Our galaxy repels other galaxies"
+        }
     },
-    "retired": {
-      "title": "Retired members of the Galaxy Zoo Team",
-      "andreescu": "<span class=\"person\">Dan Andreescu</span><br />Consultant by day, programmer and seeker of knowledge and fun by night. Avid basketball player and rookie surfer on the weekends.",
-      "land": "<span class=\"person\">Kate Land</span><br />Added some much-missed glamour to the world of Theoretical Cosmology. Once could not sleep at night for thoughts about the early Universe, but slept during seminars instead. Now lured away by the bright lights of the City.",
-      "vandenberg": "<span class=\"person\">Jan VandenBerg</span><br />Ringleader of the IT support circus in the JHU Physics & Astronomy department.",
-      "wonders": "<span class=\"person\">Alainna Wonders</span><br />Tightrope walker therein.",
-      "locksmith": "<span class=\"person\">Danny Locksmith</span> - Volunteer Programmer<br />Responsible for wrestling the Galaxy Zoo 2 beta site into existence.",
-      "murray": "<span class=\"person\">Phil Murray</span> - Web Designer, Artist and Managing Director of Fingerprint Digital Media Responsible for the visual design of the Galaxy Zoo web site. Designer of <a href=\"http://www.banguniverse.com\" target=\"_blank\">www.banguniverse.com</a> for Brian May, Patrick Moore and Chris Lintott. A keen musician and lapsed tennis and soccer player.",
-      "slosar": "<span class=\"person\">Anze Slosar</span> - Cosmologist, Berkeley Center for Cosmological Physics<br />A theoretical physicist, who has has never sat behind a telescope, likes to drink good beer and wishes he were richer.",
-      "darg": "<span class=\"person\">Daniel Darg</span> - Astronomer, University of Oxford<br />Working on measuring the number and properties of galaxy mergers identified in Galaxy Zoo."
+    "navigator": {
+        "title": "Navigator",
+        "construct": "Construct Your Question",
+        "my_galaxies": "My Galaxies",
+        "graph": "Graph Data",
+        "loading": "Loading...",
+        "reset": "Reset Graph",
+        "snapshot": "Take Snapshot",
+        "download": "Download Data",
+        "n_galaxies": "# of Galaxies",
+        "smooth": "Smooth",
+        "feature": "Features or disk",
+        "star": "Star or artifact",
+        "redshift": "Redshift",
+        "color": "Color",
+        "apparent_brightness": "Apparent Brightness",
+        "absolute_radius": "Absolute Radius",
+        "absolute_brightness": "Absolute Brightness",
+        "no_results": "You need to classify galaxies first",
+        "intro": "Welcome to the Galaxy Zoo Navigator, where you can investigate the galaxy classifications you have made as part of a group. To get started you will need to select the group you'd like to work with.",
+        "credit": "The Navigator is based upon work supported by the National Science Foundation under Grants No. 1041419 and 0941610. Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.",
+        "groups": {
+            "select": "Select Group",
+            "make": "Make a New Group",
+            "create": "Create New Group",
+            "classify": "Classify Galaxies",
+            "group_classify": "Classify in Group",
+            "stop_classify": "Stop Classifying in Group",
+            "leave": "Leave Group",
+            "destroy": "Delete Group",
+            "classify_desc": "Visit the Galaxy Zoo website to classify galaxies as part your group.",
+            "stats": "Statistics",
+            "invitations": "Invitations",
+            "enter_name": "Enter Group Name",
+            "enter_emails": "Invite users by entering their emails seperated with a comma (e.g. ed@example.com, cs@example.com, whyte@example.com)",
+            "send_invites": "Send Invites",
+            "disable_talk": "Disable Talk for this Group",
+            "invited_users": "Users Invited",
+            "participation": "Participation",
+            "compare": "Compare your classification choices with those made by other volunteers.",
+            "confirm_leave": "Are you sure?\nThe Group Leader must re-invite you if you wish to rejoin",
+            "confirm_destroy": "Are you sure?\nThere is no undo.",
+            "ensure_selected": "Select a group or create one from the dropdown menu to see your group classifications"
+        },
+        "sample": {
+            "label": "with a sample size of...",
+            "choose": "Choose sample size",
+            "small": "Small Sample of Galaxies",
+            "random_small": "Small Random Sample of Galaxies",
+            "medium": "Medium Sample of Galaxies",
+            "random_medium": "Medium Random Sample of Galaxies",
+            "large": "Large Sample of Galaxies",
+            "random_large": "Large Random Sample of Galaxies"
+        },
+        "galaxy_type": {
+            "label": "in the following galaxy type...",
+            "smooth": "Smooth",
+            "feature": "Feature/Disk"
+        },
+        "source": {
+            "label": "I'd like to use data from...",
+            "my_group": "My Group",
+            "galaxy_zoo": "Galaxy Zoo",
+            "my_choice": "My choice"
+        },
+        "histogram": {
+            "title": "Histogram",
+            "description": "Investigate the characteristics of different galaxy types.",
+            "label": "'I'd like to see...'",
+            "y_label": "Number of Galaxies",
+            "distribution": "Distribution of",
+            "distributed": "is distributed across...",
+            "one_var": "One-Variable",
+            "two_var": "Two-Variable",
+            "create": "Create Graph"
+        },
+        "scatterplot": {
+            "title": "Scatter Graph",
+            "description": "Compare the characteristics of different galaxy types.",
+            "label": "I'd like to see how...",
+            "vs": "vs.",
+            "relation": "relates to...",
+            "choose_x": "Choose the x-axis variable",
+            "choose_y": "Choose the y-axis variable"
+        }
     }
-  },
-  "examine": {
-    "title": "Examine",
-    "survey": "Survey",
-    "right_ascension": "Right Ascension",
-    "declination": "Declination",
-    "magnitude": "Magnitude",
-    "ned_link": "Search NED",
-    "discuss": "Discuss this",
-    "hubble": "Hubble",
-    "sdss": "SDSS",
-    "sdss_id": "SDSS ObjectId",
-    "petro_rad": "Petrosian Radius",
-    "skyserver_link": "View on SkyServer"
-  },
-  "fits": {
-    "view": "View raw data in different wavelengths",
-    "x_y": "X, Y",
-    "intensity": "Intensity",
-    "color": "Color",
-    "linear": "Linear",
-    "logarithm": "Logarithm",
-    "square_root": "Square Root",
-    "arcsinh": "Arcsinh",
-    "power": "Power"
-  },
-  "quiz": {
-    "thanks": "Thanks!",
-    "help": "Galaxy Zoo needs your help!",
-    "research": "We are doing research to better understand what Galaxy Zoo volunteers think about the universe.",
-    "helping": "You are helping us better understand what Galaxy Zoo volunteers think about the universe.",
-    "gift": "You have been entered into a raffle to win a <strong>$20 Amazon Gift Certificate</strong>.",
-    "reward": "As a reward, each time you complete a set of questions you will be entered in a raffle to win a <strong>$20 Amazon Gift Certificate</strong>.",
-    "now_or_later": "You can take another quiz now, or later by visiting your profile.",
-    "start_next": "When would you like to take the next set of questions?",
-    "reminder": "You have previously agreed to be asked a set of 5&ndash;6 short questions once every week.",
-    "ready": "Are you ready?",
-    "now": "Now",
-    "later": "Later",
-    "complete": "You have completed all the quizzes!",
-    "okay": "Okay",
-    "participate": "Would you like to participate?",
-    "yes": "Yes!",
-    "no_thanks": "No, thanks",
-    "ask_later": "Ask later",
-    "never_again": "Never ask again",
-    "example": {
-      "prompt": "If you agree to help you will be given short surveys that contain 6 multiple choice questions, which you can answer at your own pace. The first survey is available immediately after you agree to participate.<br />A question might be:",
-      "question": "Hubble's observation that galaxies farther away from us are moving faster led to which conclusion?",
-      "answer_a": "The universe is expanding",
-      "answer_b": "The universe is contracting",
-      "answer_c": "We are located at the center of the universe",
-      "answer_d": "Our galaxy repels other galaxies"
-    }
-  },
-  "navigator": {
-    "title": "Navigator",
-    "construct": "Construct Your Question",
-    "my_galaxies": "My Galaxies",
-    "graph": "Graph Data",
-    "loading": "Loading...",
-    "reset": "Reset Graph",
-    "snapshot": "Take Snapshot",
-    "download": "Download Data",
-    "n_galaxies": "# of Galaxies",
-    "smooth": "Smooth",
-    "feature": "Features or disk",
-    "star": "Star or artifact",
-    "redshift": "Redshift",
-    "color": "Color",
-    "apparent_brightness": "Apparent Brightness",
-    "absolute_radius": "Absolute Radius",
-    "absolute_brightness": "Absolute Brightness",
-    "no_results": "You need to classify galaxies first",
-    "intro": "Welcome to the Galaxy Zoo Navigator, where you can investigate the galaxy classifications you have made as part of a group. To get started you will need to select the group you'd like to work with.",
-    "credit": "The Navigator is based upon work supported by the National Science Foundation under Grants No. 1041419 and 0941610. Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.",
-    "groups": {
-      "select": "Select Group",
-      "make": "Make a New Group",
-      "create": "Create New Group",
-      "classify": "Classify Galaxies",
-      "group_classify": "Classify in Group",
-      "stop_classify": "Stop Classifying in Group",
-      "leave": "Leave Group",
-      "destroy": "Delete Group",
-      "classify_desc": "Visit the Galaxy Zoo website to classify galaxies as part your group.",
-      "stats": "Statistics",
-      "invitations": "Invitations",
-      "enter_name": "Enter Group Name",
-      "enter_emails": "Invite users by entering their emails seperated with a comma (e.g. ed@example.com, cs@example.com, whyte@example.com)",
-      "send_invites": "Send Invites",
-      "disable_talk": "Disable Talk for this Group",
-      "invited_users": "Users Invited",
-      "participation": "Participation",
-      "compare": "Compare your classification choices with those made by other volunteers.",
-      "confirm_leave": "Are you sure?\nThe Group Leader must re-invite you if you wish to rejoin",
-      "confirm_destroy": "Are you sure?\nThere is no undo.",
-      "ensure_selected": "Select a group or create one from the dropdown menu to see your group classifications"
-    },
-    "sample": {
-      "label": "with a sample size of...",
-      "choose": "Choose sample size",
-      "small": "Small Sample of Galaxies",
-      "random_small": "Small Random Sample of Galaxies",
-      "medium": "Medium Sample of Galaxies",
-      "random_medium": "Medium Random Sample of Galaxies",
-      "large": "Large Sample of Galaxies",
-      "random_large": "Large Random Sample of Galaxies"
-    },
-    "galaxy_type": {
-      "label": "in the following galaxy type...",
-      "smooth": "Smooth",
-      "feature": "Feature/Disk"
-    },
-    "source": {
-      "label": "I'd like to use data from...",
-      "my_group": "My Group",
-      "galaxy_zoo": "Galaxy Zoo",
-      "my_choice": "My choice"
-    },
-    "histogram": {
-      "title": "Histogram",
-      "description": "Investigate the characteristics of different galaxy types.",
-      "label": "'I'd like to see...'",
-      "y_label": "Number of Galaxies",
-      "distribution": "Distribution of",
-      "distributed": "is distributed across...",
-      "one_var": "One-Variable",
-      "two_var": "Two-Variable",
-      "create": "Create Graph"
-    },
-    "scatterplot": {
-      "title": "Scatter Graph",
-      "description": "Compare the characteristics of different galaxy types.",
-      "label": "I'd like to see how...",
-      "vs": "vs.",
-      "relation": "relates to...",
-      "choose_x": "Choose the x-axis variable",
-      "choose_y": "Choose the y-axis variable"
-    }
-  }
 }
