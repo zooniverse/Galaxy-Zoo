@@ -16,6 +16,9 @@
         <p><%- I18n.t 'science.p9' %></p>
         <p><%- I18n.t 'science.p10' %></p>
         <p><%- I18n.t 'science.p11' %></p>
+        <p><%- I18n.t 'science.p12' %></p>
+        <p><%- I18n.t 'science.p13' %></p>
+        <p><%- I18n.t 'science.p14' %></p>
       </div>
     </div>
   </div>
