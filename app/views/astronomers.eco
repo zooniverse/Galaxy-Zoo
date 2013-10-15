@@ -21,6 +21,7 @@
         <p><%- I18n.t 'astronomers.relaunched.sdss' %></p>
         <p><%- I18n.t 'astronomers.relaunched.candels' %></p>
         <p><%- I18n.t 'astronomers.relaunched.combination' %></p>
+        <p><%- I18n.t 'astronomers.relaunched.ferengi' %></p>
         <p><%- I18n.t 'astronomers.relaunched.conclusion' %></p>
       </div>
     </div>
