@@ -624,7 +624,7 @@ module.exports =
   
   home:
     headline: "Few have witnessed what you're about to see"
-    call_to_action: 'Experience a privileged glimpse of the distant universe, observed by the Sloan Digital Sky Survey and Hubble Space Telescope'
+    call_to_action: 'Experience a privileged glimpse of the distant universe as observed by the SDSS, the Hubble Space Telescope, and UKIRT'
     
     galaxy_zoo:
       title: 'Classify Galaxies'
