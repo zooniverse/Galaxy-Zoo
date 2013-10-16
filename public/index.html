@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=1024">
@@ -29,6 +29,7 @@
             var App = require('index');
             window.app = new App({ el: $('body') });
             app.lang = lang;
+            $('html').attr('lang', lang);
           });
         }
         else {
