@@ -668,7 +668,11 @@ module.exports =
     talk: 'Talk'
     forum: 'Forum'
     profile: 'Profile'
-  
+
+  languages:
+    en: 'English'
+    es: 'Español'
+    zh: '普通話'
   
   papers:
     title: 'Published Papers'
