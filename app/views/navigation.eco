@@ -19,8 +19,8 @@
       <a href="#/" data-nav="/">
         <img src="images/gz_logo.png" alt="<%- I18n.t 'navigation.galaxy_zoo' %>" />
       </a>
-    </li> 
-    <li> 
+    </li>
+    <li>
       <a href="http://talk.galaxyzoo.org"><%- I18n.t 'navigation.discuss' %></a>
       <ul class="menu">
         <li><a href="http://talk.galaxyzoo.org"><%- I18n.t 'navigation.talk' %></a></li>
@@ -34,9 +34,9 @@
     <li class="last">
       <a><%- I18n.t 'languages.language' %></a>
       <ul class="menu">
-        <li><a href="?lang=en">English</a></li>
-        <li><a href="?lang=es">Español</a></li>
-        <li><a href="?lang=zh">普通話</a></li>
+        <li><a data-lang-switch="en">English</a></li>
+        <li><a data-lang-switch="es">Español</a></li>
+        <li><a data-lang-switch="zh">普通話</a></li>
       </ul>
     </li>
   </ul>
