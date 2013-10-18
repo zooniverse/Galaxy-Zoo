@@ -669,6 +669,8 @@ module.exports =
     forum: 'Forum'
     profile: 'Profile'
   
+  languages:
+    language: 'Language'
   
   papers:
     title: 'Published Papers'

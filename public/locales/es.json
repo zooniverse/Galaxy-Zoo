@@ -698,6 +698,9 @@
     "forum": "Foro",
     "profile": "Perfil"
   },
+  "languages": {
+    "language": "Idioma"
+  },
   "papers": {
     "title": "Trabajos publicados",
     "description": "Los esfuerzos de la comunidad de Galaxy Zoo han resultado en conjuntos de datos tremendamente provechosos con los cuales hacer ciencia. Más abajo hay una lista con sólo algunas de las publicaciones que han surgido de las clasificaciones recolectadas por Galaxy Zoo.",
