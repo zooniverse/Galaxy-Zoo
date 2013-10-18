@@ -35,7 +35,7 @@
             "progress": "正在登出..."
         },
         "top_bar": {
-            "title": "<span id=\"app-name\"></span> is a <a href=\"https://www.zooniverse.org\">Zooniverse</a> project.",
+            "title": "<span id=\"app-name\"></span> 是 <a href=\"https://www.zooniverse.org\">Zooniverse</a> 的計畫之一。 ",
             "description": "美國以網站為主的「全民科學」計畫在網路上以Zooniverse更為網民所廣知，參與計畫的志工藉由在電腦螢幕上以人眼分辨分析圖像，幫助科學家消化處理來自最新天文觀測的大量資 料。 ",
             "greeting": "您好, <strong>{user}</strong>，歡迎登入 {appName}!",
             "projects": {
@@ -48,7 +48,7 @@
         "sloan-0": {
             "text": "這個星系是不是呈圓形、無盤狀或其他特徵、光點呈均勻分布？",
             "title": "外型",
-            "help": "這邊要先過濾掉的是外觀結構上看起來是圓的、形狀平整、分布均勻的星系（所謂形狀平整的意思是：沒有旋臂、盤、或環）。只要外型或結構上看來像是有旋臂、有環等等特徵，包括分布不均勻也算，請用滑鼠點選「外觀具有特徵或呈盤狀」這個選項。偶有可能，你所看到的圖像並非星系，而是衛星留下的長條狀拖影，或是很亮的恆星，如果碰到這種情形，請選「恆星或人造衛星」這個答案。如果圖片中星系數量不只一個，記得：只要分類位於圖像中心的星系即可。在圖像上點一下可放大。",
+            "help": "這邊要先過濾掉的是外觀結構上看起來是圓的、形狀平整、分布均勻的星系（所謂形狀平整的意思是：沒有旋臂、盤、或環）。只要外型或結構上看來像是有旋臂、有環等等特徵，包括分布不均勻也算，請用滑鼠點選「外觀具有特徵或呈盤狀」這個選項。偶有可能，你所看到的圖像並非星系，而是衛星留下的長條狀拖影，或是很亮的恆星，如果碰到這種情形，請選「恆星或假影」這個答案。如果圖片中星系數量不只一個，記得：只要分類位於圖像中心的星系即可。在圖像上點一下可放大。",
             "answers": {
                 "a-0": "光點分布屬圓形且勻稱",
                 "a-1": "外觀有盤狀或旋臂等特徵",
@@ -174,7 +174,7 @@
         "candels-0": {
             "text": "這個星系是不是呈圓形、無盤狀或其他特徵、光點呈均勻分布？",
             "title": "外型",
-            "help": "這邊要先過濾掉的是外觀結構上看起來是圓的、形狀平整、分布均勻的星系（所謂形狀平整的意思是：沒有旋臂、盤、或環）。只要外型或結構上看來像是有旋臂、有環等等特徵，包括分布不均勻也算，請用滑鼠點選「外觀具有特徵或呈盤狀」這個選項。偶有可能，你所看到的圖像並非星系，而是衛星留下的長條狀拖影，或是很亮的恆星，如果碰到這種情形，請選「恆星或人造衛星」這個答案。如果圖片中星系數量不只一個，記得：只要分類位於圖像中心的星系即可。在圖像上點一下可放大。",
+            "help": "這邊要先過濾掉的是外觀結構上看起來是圓的、形狀平整、分布均勻的星系（所謂形狀平整的意思是：沒有旋臂、盤、或環）。只要外型或結構上看來像是有旋臂、有環等等特徵，包括分布不均勻也算，請用滑鼠點選「外觀具有特徵或呈盤狀」這個選項。偶有可能，你所看到的圖像並非星系，而是衛星留下的長條狀拖影，或是很亮的恆星，如果碰到這種情形，請選「恆星或假影」這個答案。如果圖片中星系數量不只一個，記得：只要分類位於圖像中心的星系即可。在圖像上點一下可放大。",
             "answers": {
                 "a-0": "光點分布屬圓形且勻稱",
                 "a-1": "外觀有盤狀或旋臂等特徵",
@@ -637,6 +637,8 @@
             "sdss": "目前的網站內含SDSS DR8第八版新圖像資料集（較上一版新增了南銀冠區域），在鄰近宇宙的星系樣本總數增加了40%，資料庫內首度合併了由哈柏太空望遠鏡CANDELS提供的圖像。CANDELS計畫主要利用哈柏望遠鏡的WFC3（寬視場相機），這加速我們對z> 1星系的觀測，z> 1也相當於宇宙壽命的前50％。此前，在z> 1領域的研究資料庫中，由哈柏望遠鏡大幅取樣提供紫外線波段的靜止座標，是經由ACS等可見光儀器的協助取得。在z>1近紅外波段，WFC3提供非常好的靜止座標光學資料，比NICMOS好20倍。",
             "candels": "CANDELS使用WFC3視場相機的近紅外濾鏡，在GOODS和COSMOS等哈柏早期攝像場範圍中成像大約800平方角分的視場。WFC3的近紅外圖像特別重要，因為在星系形態分析上，最好用的就是靜止座標光學波長，它能追踪潛藏在星系中不明顯的星族，而非僅只是看到那些恆星形成區（恆星形成區在紫外線波段特別明亮）。",
             "combination": "綜合運用SDSS、CANDELS，星系動物園的樣本變成可用來回答一些關鍵的開放式問題的一種好用工具，提供答案，則必需要走星系型態分析法。闢如，哈柏序列是從哪個時期開始？原始球體是何時、如何開始形成？早期宇宙中，重大星系併合和長期過程（secular process）等因素在恆星形成和黑洞增長上有何相對作用？",
+            "ukidss": "The UKIRT images are from the Large Area Survey (LAS) as part of UKIDSS, which imaged 4000 sq. deg. of the sky overlapping with the SDSS fields. We selected all galaxies classified in Galaxy Zoo 2 that had high-quality UKIDSS imaging, totaling about 70,000 galaxies. The images shown on the site are a colour-composite of the Y, J, and K-band images (where the J-band uses dithered observations to improve the angular resolution in that channel). These images will allow us to trace morphology as a function of wavelength; for example, whether the observed bar fraction increases for galaxies in the rest-frame infrared.",
+            "ferengi": "Finally, Galaxy Zoo also includes a small set of SDSS images that have been artificially processed to simulate the observed effects of redshift. This set used a morphologically diverse sample of galaxies from Galaxy Zoo 2 and were processed using the FERENGI code (<a href=\"http://www.mpia-hd.mpg.de/FERENGI/\">Barden, Jahnke, & Hausler 2008</a>) out to redshifts of z=1. Results from these images will be used as calibration for galaxies in the GZ: Hubble and CANDELS data, since it allows us to assess resolution and brightness-dependent biases independent of true galaxy evolution.",
             "conclusion": "星系動物園的計畫主旨就是為了要回答以上問題，並為未來的星系型態學研究鋪路，下一代的天文儀器如JWST也將受惠於此項計畫，預計在型態樣本中產生一些後續能透過ALMA（阿塔卡瑪大型毫米波及次毫米波陣列望遠鏡）等大型望遠鏡繼續加以追蹤的高紅移星系。"
         }
     },
@@ -646,9 +648,11 @@
         "help": "請協助",
         "sloan": "SDSS",
         "candels": "哈柏",
+        "ukidss": "UKIDSS",
+        "ferengi": "SDSS",
         "group": "團體",
         "favorite": "我的最愛",
-        "invert": "反轉圖"
+        "invert": "反轉"
     },
     "help": {
         "title": "需要幫忙",
@@ -713,6 +717,8 @@
         "hubble_classifications": "哈柏資料庫分類",
         "sdss": "SDSS",
         "sdss_classifications": "SDSS資料庫分類",
+        "ukidss": "UKIDSS",
+        "ukidss_classifications": "UKIDSS資料庫分類",
         "quiz": "星系小學堂問答",
         "quizzes": "星系小學堂問答",
         "quizzes_taken": "已做過的星系小學堂問答題",
@@ -733,7 +739,10 @@
         "p8": "SDSS締造出豐碩的科學成果，部分原因是SDSS更新的資料每年都公開釋出給天文學界和公眾使用。2011年所釋出的DR8資料庫所含的光學影像資料總共廣達14,555平方度，總像素數超過一兆，共含有9.32億個天體，其中163萬個並已由SDSS取得其光譜資料。這麼了不起的天文資源，全都可透過相當先進的網站介面以下載方式取得。天文學家運用SDSS資料庫產生學術論文的速度幾乎是每天一篇，目前已產生數千篇的天文學術論文，獲引用次數累積達17.5萬，擁有120篇博士論文，同時在公眾推廣領域也是結實累累，譬如本網站星系動物園計畫也是公眾推廣領域成果之一。SDSS多次在天文學領域最具影響力的計畫或機構選拔中獲得提名。在2000, 2002, 2005, 2008時榮登該年度獲引用次數最高論文之來源資料庫。(參考文獻, Frogel et al. 2010 )",
         "p9": "SDSS的成就是屬於許多科學家，研究人員和天文學家所共有，沒有大家集體合作就不可能會有SDSS。許多一開始參與SDSS計畫的天文學家，如今散佈全球各地，繼續在大型合作中從事學術研究，流傳分享著SDSS經驗。 從SDSS的一開始，規模如此龐大的合作在天文學中即屬罕見，並且，SDSS還首開風氣之先，創新改變了天文物理學的合作研究文化。從2014年開始，SDSS即將邁入它的另一個新階段：第四期。此階段將進行的是好幾個針對性的調查，包括eBOSS、MaNGA、APOGEE-S2等，其目的除了要探索遙遠的宇宙，了解附近星系的動力學以外，同時也將研究本銀河系裡的恆星。直到第四期走完，2019年時，SDSS將已為天文學界提供優異資料庫達超過20年之久，並預計天體光譜資料數將會達5百萬筆以上。",
         "p10": "凝視宇宙深處，意味著我們得以回顧宇宙的過去，因為宇宙持續膨脹，所見的星系遠離我們的速度也正變得越來越快。這意味著，星光在離開恆星並抵達我們以前，它是被拉長的。恆星光既然會被紅移，那麼我們如果要得到一個在早期宇宙中的星系在可見光波段中的圖像，所需要的其實紅外照相機。紅外圖像實際上比可見光圖像更難取得，原因很多，但其中最重要的原因是，夜空本身實際上是發出紅外光的。這很基本地造成拍攝深空紅外影像的困難重重，哈柏望遠鏡的WFC3卻正是因為能突破這些限制、具備了可取得紅外光圖像的能力，所以貢獻非凡。",
-        "p11": "配備採用WFC3的巡天計畫給了我們一個全新的視野，讓我們能看到大霹靂以後的宇宙最早三～四十億年，即大約宇宙年齡的前1/3部分。其中最重要的CANDELS（Cosmic Assembly Deep Extragalactic Near-infrared Survey）計畫，是個近紅外線波段的普查。它奠基在哈柏太空望遠鏡普查基礎之上，正針對早期宇宙在進行一個最大的深空紅外圖像的宇宙地圖蒐集。星系動物園計畫與CANDELS的結合，產生一個非常好的工具，讓我們可以略為滿足在可見宇宙中找到最初宇宙演化線索的一些渴望，尋訪宇宙演化最早的線索是當今觀測派宇宙學正亟待解決的重要問題之一。"
+        "p11": "配備採用WFC3的巡天計畫給了我們一個全新的視野，讓我們能看到大霹靂以後的宇宙最早三～四十億年，即大約宇宙年齡的前1/3部分。其中最重要的CANDELS（Cosmic Assembly Deep Extragalactic Near-infrared Survey）計畫，是個近紅外線波段的普查。它奠基在哈柏太空望遠鏡普查基礎之上，正針對早期宇宙在進行一個最大的深空紅外圖像的宇宙地圖蒐集。星系動物園計畫與CANDELS的結合，產生一個非常好的工具，讓我們可以略為滿足在可見宇宙中找到最初宇宙演化線索的一些渴望，尋訪宇宙演化最早的線索是當今觀測派宇宙學正亟待解決的重要問題之一。",
+        "p12": "天文學家從史隆數位巡天計畫（SDSS）和哈柏太空望遠鏡（HST）的照片已經得到了數量驚人的資料，然而，如果我們以肉眼看不見的電磁波段來看星系，才能夠探索某些特定的區域。對於那些以熱輻射為主的天體（譬如恆星），使用不同的波長反映出天體的溫度。和太陽相類似的星球表面溫度約5500 K，在史隆數位巡天計畫的可見光波段照片上非常容易顯現出來。然而，如果透過紫外光波段觀測星系，溫度較高的區域會變得比較明顯；這意味著我們正篩選出年輕、質量大的星球以及個別的恆星形成區（通常以較小片的面貌呈現）。紅外光波段觀測的星系，溫度較低的區域會凸顯出來；這包括較老、質量較小的恆星，以及那些被恆星加熱的塵雲，吸收了恆星的光芒再用較低的能量輻射出來。",
+        "p13": "比較星系在多個波段下的不同面貌，給了天文學家一個主導星系背後天文物理更完整的圖像。藉由溫度觀測來追溯恆星，代表著恆星的年齡和化學演化；辨認出恆星形成的區域，告訴我們星系盤面密度最高的部份和星系質量聚積之處。",
+        "p14": "星系動物園裡新的紅外光影像來自坐落夏威夷海拔超過4000公尺凱亞山頂，口徑3.8公尺的英國紅外光巡天望遠鏡（United Kingdom Infared Survey Telescope, UKIRT）。2005年，UKIRT針對北天球開始了紅外光的巡天觀測，稱為UKIDSS，用1至2.5微米波段涵蓋了7500平方度的天空。其中有一部分特地與史隆數位巡天計畫觀測相同的區域。也就是說，星系動物園裡這些新的UKIDSS紅外光影像已經由先前星系動物園2的使用者分類完成了；這讓我們得以直接比較這兩組不同樣本，檢驗星系外貌（譬如說，像是棒旋星系所佔的比例）如何隨著所用的波段而改變。"
     },
     "story": {
         "title": "目前現況",
@@ -748,6 +757,7 @@
         "title": "團隊成員介紹",
         "science": {
             "title": "Science Team",
+            "simmons": "<span class=\"person\">Brooke Simmons</span> - Astronomer, University of Oxford<br />Supermassive black holes live in galaxies; the bigger the galaxy, the bigger the black hole. But, wait. Why should that be? Galaxies are huge, and even supermassive black holes are small by comparison. So how do they grow together? That's cool. Brooke studies that. Mostly.",
             "bamford": "<span class=\"person\">Steven Bamford</span> - Astronomer, University of Nottingham<br />Works on figuring out what makes galaxies look the way they do: how they formed and why they change as they get older and move to new cosmic locations.  When not busy working on science or doing his bit to help run the Zooniverse, he is usually to be found entertaining his two young children or sailing a boat.",
             "lintott": "<span class=\"person\">Chris Lintott</span> - Astronomer, University of Oxford<br />Between Galaxy Zoo, co-presenting the BBC's Sky at Night program and writing for <a href=\"http://www.chrislintott.net\">www.chrislintott.net</a> and elsewhere, Chris usually wishes he had more time to sleep.",
             "schawinski": "<span class=\"person\">Kevin Schawinski</span> - Astronomer, <a href=\"http://www.astro.ethz.ch\" target=\"_blank\">ETH Zurich</a><br />Works on the formation and evolution of galaxies and their supermassive black holes. Usually trying to get more sleep. And coffee.",
@@ -756,6 +766,7 @@
             "skibba": "<span class=\"person\">Ramin Skibba</span> - Astronomer, UC San Diego<br />Leading the use of marked correlation functions to analyse the Galaxy Zoo morphologies.",
             "cardamone": "<span class=\"person\">Carie Cardamone</span> - Astronomer, <a href=\"https://sites.google.com/a/brown.edu/ccardamone/\" target=\"_blank\">Brown University</a><br />An educator and astronomer, studying the Zoo's green peas, interested in understanding why galaxies grow they way they do. She's very enthusiastic about engaging the broader public in scientific research and the nature of science.",
             "willett": "<span class=\"person\">Kyle Willett</span>, University of Minnesota<br />Works on environments of galaxies with active black holes, assembling the final catalogs for Galaxy Zoo 2, and new tools for the Zooniverse sites. Probably runs more than is healthy.",
+            "casteels": "<span class=\"person\">Kevin Casteels</span> - Astronomer and System Administrator, Simulation Curriculum Corp<br />  Interested in galaxy evolution and morphologies, specifically how they are affected by mergers and interactions.  Kevin is currently working with the makers of the Starry Night astronomy software, helping to develop new astronomy apps and keep the systems running!  In his spare time he is also a SCUBA instructor and loves the great outdoors.",
             "urry": "<span class=\"person\">Meg Urry</span> - Physicist, Yale University<br />Works on supermassive black holes (growth history, unification, relativistic jets, blazars) and their interplay with galaxies. In her spare time, she writes for CNN.com and works to increase the participation of women and minorities in science.",
             "nichol": "<span class=\"person\">Bob Nichol</span> - Cosmologist, University of Portsmouth<br />An astronomer, astrophysicist and cosmologist with interests in computer science and statistics. A senior member (or 'Builder') of the Sloan Digital Sky Survey, the most ambitious digital survey of the sky ever undertaken. A long suffering supporter of Manchester City, suffering no more.",
             "fortson": "<span class=\"person\">Lucy Fortson</span> - Astrophysicist, University of Minnesota<br />Interested in galaxy evolution, black holes and the jets of material beaming from the centers of active galactic nuclei. Started the Zooniverse effort at the Adler Planetarium, now bringing the light to the University of Minnesota. On the odd weekend, when she's not preparing lecture or writing grants, Lucy can be found hanging out with her husband and son at one of Minneapolis' fine dining establishments.",
@@ -831,6 +842,8 @@
         "discuss": "和他人討論",
         "hubble": "哈柏",
         "sdss": "SDSS",
+   	"ukidss": "UKIDSS",
+	"ferengi": "Artificially redshifted SDSS",
         "sdss_id": "SDSS天體",
         "petro_rad": "Petrosian半徑",
         "skyserver_link": "從SkyServer上檢視"
@@ -876,7 +889,9 @@
         }
     },
     "navigator": {
-        "title": "導航中心",
+       "affirmative": "是",
+       "negative": "否",
+       "title": "導航中心",
         "construct": "構思你的問題",
         "my_galaxies": "我的星系",
         "graph": "圖檔資料",
@@ -887,16 +902,19 @@
         "n_galaxies": "星系數量",
         "smooth": "平整勻稱",
         "feature": "外觀具有特徵或盤狀",
-        "star": "恆星或人造飛行器",
+        "star": "恆星或假影",
         "redshift": "紅移",
         "color": "顏色",
         "apparent_brightness": "視亮度",
         "absolute_radius": "絕對直徑",
         "absolute_brightness": "絕對亮度",
         "no_results": "請先分類星系",
-        "intro": "Welcome to the Galaxy Zoo Navigator, where you can investigate the galaxy classifications you have made as part of a group. To get started you will need to select the group you'd like to work with.",
-        "credit": "The Navigator is based upon work supported by the National Science Foundation under Grants No. 1041419 and 0941610. Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.",
+        "intro": "歡迎來到星系動物園導航中心，在這裡你將以團員身分對你已做過的星系分類做進一步的調查認識。請先選擇你要參加 團隊然後開始。",
+        "credit": "導航中心資料來自於獲美國NSF基金會撥款贊助之專案成果，此處所有意見、發現、結論或建議等，均由作者個人身分提供，不代表NSF立場。",
         "groups": {
+            "download": "下載統計數字",
+            "rejected": "這些email和宇宙大觀園帳號都不相連",
+            "signup": "開新小組",
             "select": "選擇小組",
             "make": "開新小組",
             "create": "開新小組",
@@ -917,7 +935,20 @@
             "compare": "將你所完成的分類和其他志工的分類加以比較",
             "confirm_leave": "確定嗎?\n你必須重新獲得小組長發布的邀請才能再回到小組中",
             "confirm_destroy": "確定嗎?\n這個動作將無法復原或取消",
-            "ensure_selected": "看小組完成的分類成果之前，請選擇一個小組，或從下拉式選單中選擇小組"
+            "ensure_selected": "看小組完成的分類成果之前，請選擇一個小組，或從下拉式選單中選擇小組",
+            "group_url": "分享這個URL就可以讓任何人加入你的小組",
+            "elementary": "國小",
+            "middle": "國中",
+            "secondary": "高中",
+            "college": "大學",
+            "other": "其他",
+            "elaborate": "請詳述",
+            "classroom": "你的課堂上會用到導航中心?",
+            "classroom_followup": "班上同學的年齡?",
+            "classroom_followup_open": "教學上使用導航中心的具體規劃是?",
+            "no_classroom": "將如何使用導航中心的工具?",
+            "alone": "個人使用",
+            "group": "小組中使用"
         },
         "sample": {
             "label": "樣本大小為...",
