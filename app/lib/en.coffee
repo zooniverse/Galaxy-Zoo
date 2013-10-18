@@ -671,9 +671,6 @@ module.exports =
 
   languages:
     language: 'Language'
-    en: 'English'
-    es: 'Español'
-    zh: '普通話'
   
   papers:
     title: 'Published Papers'

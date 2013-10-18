@@ -32,11 +32,11 @@
       <a href="#/profile" data-nav="/profile"><%- I18n.t 'navigation.profile' %></a>
     </li>
     <li class="last">
-      <a href="#"><%- I18n.t 'languages.language' %></a>
+      <a><%- I18n.t 'languages.language' %></a>
       <ul class="menu">
-        <li><a href="?lang=en"><%- I18n.t 'languages.en' %></a></li>
-        <li><a href="?lang=es"><%- I18n.t 'languages.es' %></a></li>
-        <li><a href="?lang=zh"><%- I18n.t 'languages.zh' %></a></li>
+        <li><a href="?lang=en">English</a></li>
+        <li><a href="?lang=es">Español</a></li>
+        <li><a href="?lang=zh">普通話</a></li>
       </ul>
     </li>
   </ul>

@@ -1,5 +1,8 @@
 {
   "zooniverse": {
+    "languages": {
+      "language": "Idioma"
+    },
     "browser_check": {
       "wont_work": "Es probable que este sitio no funcione hasta que actualices tu navegador.",
       "recommended": "Te recomendamos usar <a href=\"http://www.mozilla.org/firefox/\" target=\"_blank\">Mozilla Firefox</a> o <a href=\"http://www.google.com/chrome\" target=\"_blank\">Google Chrome</a>.",
