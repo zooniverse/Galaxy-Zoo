@@ -1,8 +1,5 @@
 {
     "zooniverse": {
-        "languages": {
-            "language": "語"
-        },
         "browser_check": {
             "wont_work": "下載最新版本瀏覽器之前，網站可能無法正常運作 ",
             "recommended": "建議使用 <a href=\"http://www.mozilla.org/firefox/\" target=\"_blank\">Mozilla Firefox</a> 或 <a href=\"http://www.google.com/chrome\" target=\"_blank\">Google Chrome</a>。",
@@ -700,6 +697,9 @@
         "talk": "Talk",
         "forum": "論壇",
         "profile": "你的分類記錄"
+    },
+    "languages": {
+        "language": "語"
     },
     "papers": {
         "title": "已發表論文",
