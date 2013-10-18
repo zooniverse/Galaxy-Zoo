@@ -668,7 +668,7 @@ module.exports =
     talk: 'Talk'
     forum: 'Forum'
     profile: 'Profile'
-
+  
   languages:
     language: 'Language'
   
