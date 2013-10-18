@@ -670,6 +670,7 @@ module.exports =
     profile: 'Profile'
 
   languages:
+    language: 'Language'
     en: 'English'
     es: 'Español'
     zh: '普通話'

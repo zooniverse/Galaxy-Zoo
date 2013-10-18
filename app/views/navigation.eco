@@ -1,14 +1,10 @@
 <nav>
   <ul>
     <li>
-      <a href="#/?lang=en" data-nav="/"><%- I18n.t 'languages.en' %></a>
-      <ul class="menu">
-        <li><a href="/?lang=es" data-nav="/?lang=es"><%- I18n.t 'languages.es' %></a></li>
-        <li><a href="/?lang=zh" data-nav="/?lang=zh"><%- I18n.t 'languages.zh' %></a></li>
-      </ul>
+      <a href="#/classify" data-nav="/classify"><%- I18n.t 'navigation.classify' %></a>
     </li>
     <li>
-      <a href="#/classify" data-nav="/classify"><%- I18n.t 'navigation.classify' %></a>
+      <a href="#/story" data-nav="/story"><%- I18n.t 'navigation.story' %></a>
     </li>
     <li>
       <a href="#/science" data-nav="/science"><%- I18n.t 'navigation.science' %></a>
@@ -23,11 +19,8 @@
       <a href="#/" data-nav="/">
         <img src="images/gz_logo.png" alt="<%- I18n.t 'navigation.galaxy_zoo' %>" />
       </a>
-    </li>  
-    <li>
-      <a href="#/story" data-nav="/story"><%- I18n.t 'navigation.story' %></a>
-    </li>
-    <li>
+    </li> 
+    <li> 
       <a href="http://talk.galaxyzoo.org"><%- I18n.t 'navigation.discuss' %></a>
       <ul class="menu">
         <li><a href="http://talk.galaxyzoo.org"><%- I18n.t 'navigation.talk' %></a></li>
@@ -35,8 +28,16 @@
         <li><a href="http://blog.galaxyzoo.org" target="_blank"><%- I18n.t 'navigation.blog' %></a></li>
       </ul>
     </li>
-    <li class="last">
+    <li>
       <a href="#/profile" data-nav="/profile"><%- I18n.t 'navigation.profile' %></a>
+    </li>
+    <li class="last">
+      <a href="#"><%- I18n.t 'languages.language' %></a>
+      <ul class="menu">
+        <li><a href="?lang=en"><%- I18n.t 'languages.en' %></a></li>
+        <li><a href="?lang=es"><%- I18n.t 'languages.es' %></a></li>
+        <li><a href="?lang=zh"><%- I18n.t 'languages.zh' %></a></li>
+      </ul>
     </li>
   </ul>
 </nav>
