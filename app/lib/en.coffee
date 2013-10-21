@@ -607,7 +607,7 @@ module.exports =
   classify:
     heading: 'Classify'
     restart: 'Restart'
-    help: 'Help'
+    help: 'Examples'
     sloan: 'SDSS'
     candels: 'Hubble'
     ukidss: 'UKIDSS'
