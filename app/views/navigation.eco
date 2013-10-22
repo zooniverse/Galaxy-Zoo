@@ -36,7 +36,7 @@
       <ul class="menu">
         <li><a data-lang-switch="en">English</a></li>
         <li><a data-lang-switch="es">Español</a></li>
-        <li><a data-lang-switch="zh">普通話</a></li>
+        <li><a data-lang-switch="zh">國語</a></li>
       </ul>
     </li>
   </ul>
