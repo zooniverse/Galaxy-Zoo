@@ -1,0 +1,964 @@
+{
+    "zooniverse": {
+        "browser_check": {
+            "wont_work": "该网页无法正常打开，请升级您的浏览器",
+            "recommended": "我们推荐使用 <a href=\"http://www.mozilla.org/firefox/\" target=\"_blank\">火狐</a> 或者 <a href=\"http://www.google.com/chrome\" target=\"_blank\">谷歌Chrome</a>。",
+            "ie": "如果您使用<a href=\"http://www.microsoft.com/windows/internet-explorer/\" target=\"_blank\">微软IE浏览器</a>，请确保您更新至最新版本。",
+            "chrome_frame": "如果您无法安装最新的IE浏览器，不妨尝试一下 <a href=\"http://google.com/chromeframe\" target=\"_blank\">Chrome Frame</a>！",
+            "dismiss": "返回"
+        },
+        "login": {
+            "username": "用户名",
+            "password": "密码",
+            "login": "登陆",
+            "forgot_password": "忘记密码？"
+        },
+        "sign_in": {
+            "title": "用您的 星系动物园 账户登陆",
+            "sign_up": "没有账户？注册一个！",
+            "button": "登陆",
+            "progress": "登陆中..."
+        },
+        "sign_up": {
+            "title": "注册一个新的 星系动物园 账号",
+            "confirmation": "确认密码",
+            "password_match": "两次密码需保持一致",
+            "sign_in": "已有账户？登陆！",
+            "email": "邮件地址",
+            "privacy": "我同意<a href=\"https://www.zooniverse.org/privacy\" target=\"_blank\">隐私权政策</a>",
+            "button": "注册",
+            "progress": "创建账户并登陆中..."
+        },
+        "sign_out": {
+            "current": "当前以<strong class=\"current\"></strong>登陆。",
+            "button": "退出",
+            "progress": "退出中..."
+        },
+        "top_bar": {
+            "title": "<span id=\"app-name\"></span> 属于 <a href=\"https://www.zooniverse.org\">星系动物园</a> 项目。",
+            "description": "星系动物园是一系列在线大众科学项目的集合。我们汇聚志愿者的努力与智慧，帮助科学家处理海量数据。",
+            "greeting": "你好， <strong>{user}</strong>。 欢迎来到{appName}！",
+            "projects": {
+                "title": "我们的项目",
+                "list": "目前，我们运行着12个项目，上知<a href=\"https://www.zooniverse.org/#space\">天文</a>， <a href=\"https://www.zooniverse.org/#climate\">气候</a>，下知 <a href=\"https://www.zooniverse.org/#nature\">生物</a>, to <a href=\"https://www.zooniverse.org/#humanities\">人类学</a>。"
+            }
+        }
+    },
+    "questions": {
+        "sloan-0": {
+            "text": "这个星系是否呈现圆润，光滑且没有盘状结构？",
+            "title": "形状",
+            "help": "这里先要找出那些没有平淡无奇的平滑星系(圆润，光滑且没有悬臂，盘或者环等结构)。如果你看到任何有趣的特征，请点击&quot;有特征或盘&quot;这一选项。偶尔，你看到的目标根本不是星系，而是人造卫星经过所留下的长直痕迹，或者被亮星的星光淹没，碰到这种情况，请点击&quot;恒星或人造天体&quot;。点击图片可以放大。",
+            "answers": {
+                "a-0": "平滑",
+                "a-1": "有特征或盘",
+                "a-2": "恒星或人造天体"
+            }
+        },
+        "sloan-1": {
+            "text": "这个星系看上去像是侧对着看到的图像么？",
+            "title": "星系的盘",
+            "help": "盘状星系通常很薄，所以不同的角度下会“横看成岭侧成峰”。这个问题中，要找出侧对着我们的星系。如果这个星系看起来像是一根针，中心或许还有突出部分（核球），那么请点击&quot;是&quot;，否则请点击&quot;否&quot;（哪怕星系看起来差不多侧面对着我们，只要不是完全侧对，请选择 否）。点击图片可以放大。",
+            "answers": {
+                "a-0": "是",
+                "a-1": "否"
+            }
+        },
+        "sloan-2": {
+            "text": "在星系中心是否有棒状结构？",
+            "title": "棒状结构",
+            "help": "有时，显著的&quot;棒状结构&quot;会穿过星系中心，这一步就是要寻找这种结构。点击图片可以放大。",
+            "answers": {
+                "a-0": "有棒状结构",
+                "a-1": "没有棒状结构"
+            }
+        },
+        "sloan-3": {
+            "text": "是否有旋臂的迹象？",
+            "title": "旋涡星系",
+            "help": "仔细寻找旋臂——记住他们可能藏在星系盘中而不易被人发觉。点击图片可以这大。",
+            "answers": {
+                "a-0": "有旋臂",
+                "a-1": "沒旋臂"
+            }
+        },
+        "sloan-4": {
+            "text": "和星系其它部分相比，中心的核球有多显著？",
+            "title": "核球",
+            "help": "对于核球，很难一概而论，不过请仔细看星系中心，核球可能会遮蔽住中央的棒状结构和旋臂。点击图片可以放大。",
+            "answers": {
+                "a-0": "没有核球",
+                "a-1": "勉强可见",
+                "a-2": "一望即知",
+                "a-3": "异常显著"
+            }
+        },
+        "sloan-5": {
+            "text": "有什么奇特的地方么？",
+            "title": "奇特",
+            "help": "我们寻找星系并合、被扰动或其他不同寻常的特征。点击图片可以放大。",
+            "answers": {
+                "a-0": "有",
+                "a-1": "无"
+            }
+        },
+        "sloan-6": {
+            "text": "在什么地方奇特？",
+            "title": "奇特",
+            "help": "",
+            "answers": {
+                "a-0": "完成"
+            },
+            "checkboxes": {
+                "x-0": "环",
+                "x-1": "透镜或圆弧",
+                "x-2": "被扰动",
+                "x-3": "不规则",
+                "x-4": "其他",
+                "x-5": "并合",
+                "x-6": "尘埃带"
+            }
+        },
+        "sloan-7": {
+            "text": "此星系有多圓?",
+            "title": "圓",
+            "help": "",
+            "answers": {
+                "a-0": "圓",
+                "a-1": "介於圓與雪茄狀之間",
+                "a-2": "雪茄狀"
+            }
+        },
+        "sloan-8": {
+            "text": "这个星系中间有突起的核球么？如果有，什么形状？",
+            "title": "核球",
+            "help": "注意星系中心：如果它有一个光滑、连续的针状或透镜形的成分，请点击&quot;没有核球。&quot; 若没有，则您可以选择 &quot;圆形&quot;核球或者 &quot;方形&quot;（不过方形的核球比较少见）。点击图片可以放大。",
+            "answers": {
+                "a-0": "圆形",
+                "a-1": "方形",
+                "a-2": "没有核球"
+            }
+        },
+        "sloan-9": {
+            "text": "旋臂看起来由多紧致？",
+            "title": "漩涡",
+            "help": "",
+            "answers": {
+                "a-0": "紧致",
+                "a-1": "适中",
+                "a-2": "宽松"
+            }
+        },
+        "sloan-10": {
+            "text": "一共有几条旋臂？",
+            "title": "漩涡",
+            "help": "",
+            "answers": {
+                "a-0": "1",
+                "a-1": "2",
+                "a-2": "3",
+                "a-3": "4",
+                "a-4": "4条以上",
+                "a-5": "说不清"
+            }
+        },
+        "sloan-11": {
+            "text": "你想讨论一下这个天体么？",
+            "title": "讨论",
+            "help": "如果你对这个天体有任何问题，或者你觉得这个天体很有意思，亦或者只是想聊聊这个天体，你可以点击&quot;是&quot;在Talk界面开启一次讨论。Talk界面会在新窗口打开，关掉它就可以回到分类界面。",
+            "answers": {
+                "a-0": "是",
+                "a-1": "否"
+            }
+        },
+        "candels-0": {
+            "text": "这个星系是否呈现圆润，光滑且没有盘状结构？",
+            "title": "形状",
+            "help": "这里先要找出那些没有平淡无奇的平滑星系(圆润，光滑且没有悬臂，盘或者环等结构)。如果你看到任何有趣的特征，请点击&quot;有特征或盘&quot;这一选项。偶尔，你看到的目标根本不是星系，而是人造卫星经过所留下的长直痕迹，或者被亮星的星光淹没，碰到这种情况，请点击&quot;恒星或人造天体&quot;。点击图片可以放大。",
+            "answers": {
+                "a-0": "平滑",
+                "a-1": "有特征或盘",
+                "a-2": "恒星或人造天体"
+            }
+        },
+        "candels-1": {
+            "text": "星系有多圓?",
+            "title": "什麼是圓",
+            "help": "不是所有的星系都是完美的圆形。看一下大致的形状，归类到列出的三个选项中。如果有多于一个星系出现在图像中，请只关心图像正中的星系。点击图片可以放大。",
+            "answers": {
+                "a-0": "完美的圆形",
+                "a-1": "介于圆形和雪茄形中间",
+                "a-2": "雪茄形"
+            }
+        },
+        "candels-2": {
+            "text": "这个星系是不是看起来一块一块的亮斑，像打了马赛克一样？",
+            "title": "团块",
+            "help": "有些星系只不过就是一块块亮斑。这里并不是指那些包含聚集恒星团的星系，而是指那些基本上纯粹由亮斑组成的星系。点击图片可以放大。",
+            "answers": {
+                "a-0": "是",
+                "a-1": "否"
+            }
+        },
+        "candels-3": {
+            "text": "一共有几块亮斑？",
+            "title": "团块",
+            "help": "数亮斑的个数！如果有大于4个，不要担心，只要点击&quot;多于4个。&quot;",
+            "answers": {
+                "a-0": "1",
+                "a-1": "2",
+                "a-2": "3",
+                "a-3": "4",
+                "a-4": "多于4个",
+                "a-5": "说不清"
+            }
+        },
+        "candels-4": {
+            "text": "这些亮斑看起来是什么样子的？直线，一条链，还是聚成一团？",
+            "title": "团块",
+            "help": "有时候团块看起来会有一些规则的样式，如果是这样，请参照对应的符号点击。",
+            "answers": {
+                "a-0": "直线",
+                "a-1": "链状",
+                "a-2": "聚团/不规则",
+                "a-3": "漩涡状"
+            }
+        },
+        "candels-5": {
+            "text": "有没有一个团块明显比别的要亮的多？",
+            "title": "团块",
+            "help": "有时候有一个亮斑会主宰整个图片。如果是这种情况，请点击 是 ，否则点击 否。",
+            "answers": {
+                "a-0": "是",
+                "a-1": "否"
+            }
+        },
+        "candels-6": {
+            "text": "最亮的团块是否处于星系中央？",
+            "title": "团块",
+            "help": "对于这种有很多团块的星系，这也许很难分辨，不过请努力判断最亮的团块是否处于这个系统的正中。",
+            "answers": {
+                "a-0": "是",
+                "a-1": "否"
+            }
+        },
+        "candels-7": {
+            "text": "这个星系看起来是否对称？",
+            "title": "对称",
+            "help": "星系的两半看起来是否一样？还是说有一面被扰动或有一些不一样？",
+            "answers": {
+                "a-0": "是",
+                "a-1": "否"
+            }
+        },
+        "candels-8": {
+            "text": "这些团块看起来是不是嵌于更大的物体中？",
+            "title": "团块",
+            "help": "仔细看团块周围暗弱的背景光，判断团块是否处于一个可见的星系中？",
+            "answers": {
+                "a-0": "是",
+                "a-1": "否"
+            }
+        },
+        "candels-9": {
+            "text": "这个星系看上去像是侧对着看到的图像么？",
+            "title": "星系的盘",
+            "help": "盘状星系通常很薄，所以不同的角度下会“横看成岭侧成峰”。这个问题中，要找出侧对着我们的星系。如果这个星系看起来像是一根针，中心或许还有突出部分（核球），那么请点击&quot;是&quot;，否则请点击&quot;否&quot;（哪怕星系看起来差不多侧面对着我们，只要不是完全侧对，请选择 否）。点击图片可以放大。",
+            "answers": {
+                "a-0": "是",
+                "a-1": "否"
+            }
+        },
+        "candels-10": {
+            "text": "这个星系中间有突起的核球么？",
+            "title": "核球",
+            "help": "注意星系中心：在其他地方平滑的背景上下是否有一块突出的核球？如果有，请点击是。",
+            "answers": {
+                "a-0": "是",
+                "a-1": "否"
+            }
+        },
+        "candels-11": {
+            "text": "在星系中心是否有棒状结构？",
+            "title": "棒状结构",
+            "help": "有时，显著的&quot;棒状结构&quot;会穿过星系中心，这一步就是要寻找这种结构。点击图片可以放大。",
+            "answers": {
+                "a-0": "有棒状结构",
+                "a-1": "没有棒状结构"
+            }
+        },
+        "candels-12": {
+            "text": "是否有旋臂的迹象？",
+            "title": "旋涡星系",
+            "help": "仔细寻找旋臂——记住他们可能藏在星系盘中而不易被人发觉。点击图片可以这大。",
+            "answers": {
+                "a-0": "有旋臂",
+                "a-1": "沒旋臂"
+            }
+        },
+        "candels-13": {
+            "text": "旋臂看起来有多紧致？",
+            "title": "漩涡",
+            "help": "天文学家通过漩涡星系旋臂的紧致程度来为其分类。一般来说，越往中心看越容易分辨。点击图片可以放大。",
+            "answers": {
+                "a-0": "紧致",
+                "a-1": "适中",
+                "a-2": "宽松"
+            }
+        },
+        "candels-14": {
+            "text": "一共有几条旋臂？",
+            "title": "漩涡",
+            "help": "有些漩涡星系非常复杂，看到这样的星系请大胆的选择&quot;4条以上&quot;，或者&quot;说不清&quot;。",
+            "answers": {
+                "a-0": "1",
+                "a-1": "2",
+                "a-2": "3",
+                "a-3": "4",
+                "a-4": "4条以上",
+                "a-5": "说不清"
+            }
+        },
+        "candels-15": {
+            "text": "和星系其它部分相比，中心的核球有多显著？",
+            "title": "核球",
+            "help": "对于核球，很难一概而论，不过请仔细看星系中心，核球可能会遮蔽住中央的棒状结构和旋臂。点击图片可以放大。",
+            "answers": {
+                "a-0": "没有核球",
+                "a-1": "一望即知",
+                "a-2": "异常显著"
+            }
+        },
+        "candels-16": {
+            "text": "这个星系是否处于并合状态？或者你是否能看到由引潮力引起的拖出的残片？",
+            "title": "并合",
+            "help": "请看放大的图片——如果这个星系正在和另一个星系碰撞，请点击&quot;并合。&quot; 如果没有这样明显的第二个星系，但是依然可以看到一长条拖出的恒星或者气体，请点击&quot;潮汐残片。&quot; 你也可以选择&quot;两者皆有&quot; 和&quot;两者皆无&quot;。点击放大图片。",
+            "answers": {
+                "a-0": "并合",
+                "a-1": "潮汐残片",
+                "a-2": "两者皆有",
+                "a-3": "两者皆无"
+            }
+        },
+        "candels-17": {
+            "text": "你想讨论一下这个天体么？",
+            "title": "讨论",
+            "help": "如果你对这个天体有任何问题，或者你觉得这个天体很有意思，亦或者只是想聊聊这个天体，你可以点击&quot;是&quot;在Talk界面开启一次讨论。Talk界面会在新窗口打开，关掉它就可以回到分类界面。",
+            "answers": {
+                "a-0": "是",
+                "a-1": "否"
+            }
+        }
+    },
+    "quiz_questions": {
+        "set_1": {
+            "question_0": {
+                "text": "椭圆形系在哪里更常见？",
+                "answer_0": "在星系团中",
+                "answer_1": "在星系团外",
+                "answer_2": "哪里都一样"
+            },
+            "question_1": {
+                "text": "甲兴是一颗红色的主序星，乙星是一颗蓝色的主序星。请问哪个寿命更长？",
+                "answer_0": "甲星",
+                "answer_1": "乙星",
+                "answer_2": "它们有相同的寿命",
+                "answer_3": "信息不够，无法判断"
+            },
+            "question_2": {
+                "text": "我们的地球从太阳接受能量，而太阳的能量又是如何产生的呢？",
+                "answer_0": "太阳内部的气体在燃烧产生能量",
+                "answer_1": "原子聚集在一起形成更重的原子，产生能量",
+                "answer_2": "太阳内部的气体被压缩时产热，释放能量",
+                "answer_3": "原子被分裂成更轻的原子，释放能量",
+                "answer_4": "太阳的内核有放射性的原子时刻衰变，产生能量"
+            },
+            "question_3": {
+                "text": "图中显示了三种同时自太阳发出的光波。哪种波会最先到达处于地球大气之上的人造卫星？",
+                "answer_0": "第一种波",
+                "answer_1": "第二种波",
+                "answer_2": "第三种波",
+                "answer_3": "三种波同时到达"
+            },
+            "question_4": {
+                "text": "若一個星系看起來只有數量很少的明亮藍色恆星，可能的原因是：",
+                "answer_0": "此星系內從來沒有藍色恆星存在過。",
+                "answer_1": "很久已前曾經存在很多藍色恆星，不過現在已經沒有了。",
+                "answer_2": "此星系已經存在很久，因此藍色的恆星已經演化成紅色的主序星了。",
+                "answer_3": "此星系內的氣體一直不足，以至於無法產生藍色恆星。"
+            }
+        },
+        "set_2": {
+            "question_0": {
+                "text": "下列關於從星系和恆星發出的光經過都卜勒位移後的描述何者正確？",
+                "answer_0": "如果這些光被紅位移了，表示這些天體正在朝向你移動。",
+                "answer_1": "如果這些光被藍位移了，表示這些天體跟你很接近。",
+                "answer_2": "如果這些光被紅位移了，表示這些天體移動的速度很快。",
+                "answer_3": "如果這些光被藍位移了，表示這些天體是藍色的。",
+                "answer_4": "以上皆不正確。"
+            },
+            "question_1": {
+                "text": "一個有較長壽命的主序星，會比另一個有較短壽命的主序星______。",
+                "answer_0": "藍",
+                "answer_1": "發出較短波長的光",
+                "answer_2": "大顆",
+                "answer_3": "明亮",
+                "answer_4": "質量低"
+            },
+            "question_2": {
+                "text": "以下三個光譜曲線代表三顆恆星A、B與C發出不同波長的光，所對應的能量輸出，請問那一顆恆星的溫度最高？",
+                "answer_0": "恆星A。",
+                "answer_1": "恆星B。",
+                "answer_2": "恆星C。",
+                "answer_3": "三顆恆星的溫度一樣。",
+                "answer_4": "題目資訊不足，無法判斷。"
+            },
+            "question_3": {
+                "text": "下列那一個選項，正確地將不同天體由大到小排列?",
+                "answer_0": "恆星，太陽系，球狀星團，星系，本星系群。",
+                "answer_1": "球狀星團，本星系群，星系，恆星，太陽系。",
+                "answer_2": "星系，本星系群，太陽系，球狀星團，恆星。",
+                "answer_3": "本星系群，星系，球狀星團，太陽系，恆星。"
+            },
+            "question_4": {
+                "text": "下列橢圓星系的組成物質何者質量最大？",
+                "answer_0": "恆星。",
+                "answer_1": "氣體與塵埃",
+                "answer_2": "暗物質。",
+                "answer_3": "題目資訊不足，無法判斷。"
+            },
+            "question_5": {
+                "text": "以下四個星系有幾個看起來可能是螺旋星系？",
+                "answer_0": "一個。",
+                "answer_1": "兩個。",
+                "answer_2": "三個。",
+                "answer_3": "四個。",
+                "answer_4": "題目資訊不足，無法判斷。"
+            }
+        },
+        "set_3": {
+            "question_0": {
+                "text": "下列何者能量最高？",
+                "answer_0": "X射線。",
+                "answer_1": "紫外光。",
+                "answer_2": "伽瑪射線。",
+                "answer_3": "三者能量相同。"
+            },
+            "question_1": {
+                "text": "下列關於所有在地球看來是紅色的主序星的敘述，何者正確:",
+                "answer_0": "它們的溫度比藍色的主序星高。",
+                "answer_1": "它們的壽命比非常亮的主序星長。",
+                "answer_2": "它們朝向地球移動。",
+                "answer_3": "它們遠離地球而去。"
+            },
+            "question_2": {
+                "text": "下圖是銀河系的示意圖，請問圖中白色圓圈距離銀河系中心大約有多遠？",
+                "answer_0": "1,000 光年",
+                "answer_1": "10,000 光年。",
+                "answer_2": "25,000 光年。",
+                "answer_3": "100,000 光年。"
+            },
+            "question_3": {
+                "text": "暗物質概念的提出是為了解釋下列那一個問題？",
+                "answer_0": "找出螺旋星系盤中旋臂出現的位置和形狀。",
+                "answer_1": "找出球狀星團恆星在星系暈中最大分佈值的位置",
+                "answer_2": "在銀河系中天體接近均勻的轉速",
+                "answer_3": "螺旋密度波穿過螺旋星系誘發恆星形成。"
+            },
+            "question_4": {
+                "text": "為什麼螺旋星系的旋臂是藍色的？",
+                "answer_0": "旋臂總是朝向地球移動，所以光波經過都卜勒位移後看起是藍色的。",
+                "answer_1": "旋臂中的氣體和塵埃會過濾恆星發出的光，只讓藍光通過。",
+                "answer_2": "旋臂中正在發生很活耀的恆星形成。",
+                "answer_3": "螺旋星系盤中大部份的恆星都在旋臂上，這些恆星發出的光讓旋臂看起來是藍色的。"
+            },
+            "question_5": {
+                "text": "下列兩張圖各有一對小行星，個別小行星的質量（m）和小行星彼此之間的距離（d）也已標示出。下列對小行星A和小行星B分別施加在它們伴小行星上的重力比較，何者正確？",
+                "answer_0": "小行星A施加在其伴小行星上的重力較大。",
+                "answer_1": "小行星B施加在其伴小行星上的重力較大。",
+                "answer_2": "小行星A與小行星B施加在它們伴小行星上的重力相等。"
+            }
+        },
+        "set_4": {
+            "question_0": {
+                "text": "下列哪個選項的速度較快？",
+                "answer_0": "X射線。",
+                "answer_1": "紫外光。",
+                "answer_2": "伽瑪射線。",
+                "answer_3": "以上三者速度相等。"
+            },
+            "question_1": {
+                "text": "下列那一個選項決定了一個恆星大部分的特徵和其結局？",
+                "answer_0": "表面溫度。",
+                "answer_1": "大小（直徑）。",
+                "answer_2": "顏色。",
+                "answer_3": "組成（原子的種類）。",
+                "answer_4": "質量。"
+            },
+            "question_2": {
+                "text": "以下有幾張圖，縱軸是天體繞銀河系中心公轉的速度，橫軸是它們與銀河系中心的距離，請問那一張圖最能代表天體是如何在銀河系裡移動？",
+                "answer_0": "圖A。",
+                "answer_1": "圖B。",
+                "answer_2": "圖C。",
+                "answer_3": "圖D。",
+                "answer_4": "圖E。",
+                "answer_5": "圖F。"
+            },
+            "question_3": {
+                "text": "恆星A是一顆紅色的主序星，恆星B是一顆藍色的主序星，如果兩顆恆星顯示出的亮度一樣，請問那一顆離地球比較近？",
+                "answer_0": "恆星A。",
+                "answer_1": "恆星B。",
+                "answer_2": "它們與地球的距離相同。",
+                "answer_3": "它們與地球的距離相同。"
+            },
+            "question_4": {
+                "text": "以下四個星系裡，有幾個星系顯示出我們有觀測到冷氣體和塵埃雲區域？",
+                "answer_0": "一個。",
+                "answer_1": "兩個。",
+                "answer_2": "三個。",
+                "answer_3": "四個。",
+                "answer_4": "題目資訊不足，無法判斷。"
+            },
+            "question_5": {
+                "text": "下圖是一地月系統示意圖（非等比例），圖中A、B、C三點是太空船在地月之間航行可能的位置，請注意B點是地月的中點。若太空船位於B點，請問施加在太空船的淨力會指向那一個方向？",
+                "answer_0": "指向月球。",
+                "answer_1": "指向地球。",
+                "answer_2": "因為太空船位於地月的中點，地球和月球個別施加在太空船的重力會相等，所以淨力值會是零，且不指向任何方向。"
+            }
+        },
+        "set_5": {
+            "question_0": {
+                "text": "下列何者不是光的一種形式？",
+                "answer_0": "無線電波。",
+                "answer_1": "微波。",
+                "answer_2": "X射線。",
+                "answer_3": "以上皆是。",
+                "answer_4": "以上皆不是。"
+            },
+            "question_1": {
+                "text": "兩個螺旋星系相撞會產生：",
+                "answer_0": "一個螺旋星系。",
+                "answer_1": "一個橢圓星系。",
+                "answer_2": "螺旋星系或橢圓星系都有可能。",
+                "answer_3": "不會產生任何星系。"
+            },
+            "question_2": {
+                "text": "以下螺旋星系的組成物質中，何者的質量最大？",
+                "answer_0": "恆星。",
+                "answer_1": "氣體與塵埃。",
+                "answer_2": "暗物質",
+                "answer_3": "題目資訊不足，無法判斷。"
+            },
+            "question_3": {
+                "text": "利用下面銀河系的圖片回答問題。請問圖中白色的圓圈直徑大約有多長？",
+                "answer_0": "1,000 光年。",
+                "answer_1": "10,000 光年。",
+                "answer_2": "50,000 光年。",
+                "answer_3": "100,000 光年。"
+            },
+            "question_4": {
+                "text": "參考以下關於編號A, B, C的這三顆主序星的資料，嘗試作答：A星是個有150億歲的主序星，B星釋放與太陽等亮的光，C星是紅的，下列哪一種敘述是正確？",
+                "answer_0": "A星質量最大",
+                "answer_1": "A星質量最大",
+                "answer_2": "C星質量最大",
+                "answer_3": "A,B,C星質量差不多一樣大",
+                "answer_4": "題目資訊不足，無法判斷。"
+            },
+            "question_5": {
+                "text": "假設兩個星系的恆星總數看起來一樣多，哪個星系的藍色亮星可能比較少？",
+                "answer_0": "A星系",
+                "answer_1": "B星系",
+                "answer_2": "藍色亮星的數量一樣",
+                "answer_3": "題目資訊不足，無法判斷。"
+            }
+        },
+        "set_6": {
+            "question_0": {
+                "text": "恆星A比恆星B更熱，且恆星B發出的光比恆星A更多，哪一顆星比較大呢？",
+                "answer_0": "恆星Ａ",
+                "answer_1": "恆星Ｂ",
+                "answer_2": "兩個一樣大",
+                "answer_3": "題目資訊不足，無法判斷。"
+            },
+            "question_1": {
+                "text": "恆星Ｆ是主序星，恆星Ｇ是藍色主序星，哪個溫度較高？",
+                "answer_0": "恆星Ｆ",
+                "answer_1": "恆星Ｇ",
+                "answer_2": "兩者溫度一樣",
+                "answer_3": "題目資訊不足，無法判斷。"
+            },
+            "question_2": {
+                "text": "兩個橢圓星系相撞會產生：",
+                "answer_0": "一個旋臂星系",
+                "answer_1": "一個橢圓星系",
+                "answer_2": "旋臂星系或橢圓星系都有可能",
+                "answer_3": "兩個星系都會不見"
+            },
+            "question_3": {
+                "text": "請用圖像來回答下列問題。ABC的排序下列何者是正確的，由大到小?",
+                "answer_0": "A > C = B",
+                "answer_1": "B = C > A",
+                "answer_2": "A = C > B",
+                "answer_3": "A > C > B",
+                "answer_4": "B > C = A"
+            },
+            "question_4": {
+                "text": "下面哪個圖正確顯示出三個星系所獲得的淨力？請注意星系C的質量比星系A和星系B大(星系A和B的質量一樣)，箭頭顯示的是淨力施加於個別星系的方向，但並非其強度。",
+                "answer_0": "",
+                "answer_1": "",
+                "answer_2": "",
+                "answer_3": "",
+                "answer_4": ""
+            }
+        }
+    },
+    "astronomers": {
+        "heading": "星系動物園對天文學家的意義",
+        "explanation": {
+            "goals": "這裡介紹的資料，是提供給關心技術層面的天文學者們，以下是一些關於本站在天文科學意義和研究成果方面的整理",
+            "data": "如果你在找的是資料庫的話，請前往星系動物園的資料庫，有 <a　href=\"http://data.galaxyzoo.org\">多種格式</a>可供選擇。",
+            "papers": "或者是您想參考由本計畫團隊成員所發表的論文，請參考<a href=\"/#/papers\">這個</a>連結。"
+        },
+        "morphology": {
+            "heading": "星系形態學為什麼很重要?",
+            "body": "首先，星系形態學能”示蹤”(tracer)出星系裡的恆星軌道動力，顯示出驅動恆星形成和星系核在它活動過程中所留下的印記，記錄星系演化的星系形態學可以用視覺判辨方式來進行星系間的分門別類，事實上，在星系間的分類和星系間其他的物理參數之間，二者相關性很強，舉個簡單的例子，如果具有多核和延展的潮汐特徵，這可能表示驅動恆星形成的主導機制是一場正在進行中的星系併合。相對之下，如果星系看不到這種特徵，那麼它的演化可能是由內部過程所驅動(secular)。",
+            "reference": "傳統的星系形態變化研究是建立在目測法之上，譬如<a href=\"http://adsabs.harvard.edu/abs/1926ApJ....64..321H\" target=\"_blank\">Hubble 1926</a>這篇知名天文學家哈柏在1926年所發表的論文， <a href=\"http://heasarc.nasa.gov/W3Browse/all/rc3.html\" target=\"_blank\">de Vaucouleurs 1991</a>的論文，更新的還有<a href=\"http://arxiv.org/abs/1001.2401\" target=\"_blank\">Nair and Abraham 2010</a>年的發表，都是使用目測方式取得的研究成果。最近一些形態變化上的proxies，如「密集或疏散」、「對稱與否」、「是否為團塊」、M20、Gini coefficient等，嚴格來說，每個都難免有參與者誤差，不過，針對目測法衍生的誤差，大多已經經過了檢查和校正。並且，一般而言，目測法對於噪訊比和圖像解析力有比較好的容忍度（參考文獻Lisker 2008），所以很適合用來確定星系的形態特徵。無論如何，星系的形態參數都是對大規模分類數據庫很有幫助的，不然，若只透過少數幾個人目測（或僅由一小群天文學者來處理），恐怕真的很曠日廢時，而完成時間則遙遙無期。"
+        },
+        "classification": {
+            "heading": "運用「星系動物園網站計畫」進行大規模巡天計畫資料集分類",
+            "body": "由星系動物園計畫 (<a href=\"http://arxiv.org/abs/0804.4483\" target=\"_blank\">Lintott et al. 2008</a>, <a href=\"http://arxiv.org/abs/1007.3265\" target=\"_blank\">2011</a>)所開發出的一種新鮮方法，則是大規模地用目測方式進行巡天觀測資料的分類。在幾十萬名由普通民眾組成的志工團隊(注：2013年最新人數為81萬)協助下，星系動物園網站就使用直接目測的這種分類法，已分類完畢整個SDSS巡天計畫光譜資料，還有整個哈柏太空望遠鏡的資料庫（共1,500萬星系），每個天體都經過40次以上的分類檢視。雖然星系動物園提供了這樣一個可觀的星系分類目測結果，連帶地，它本身也具有不確定性（要是參與目測計畫的志工團隊只由少數幾個人組成，這樣的分類結果恐怕會很難在學術研究用途上運用，但還好志工團隊是多達數十萬人）。此外，經檢驗，由一般民眾志工所提供的目測分類結果和來自天文學家的目測結果，正確性幾無差異（參考文獻，Lintott et al. 2008）。"
+        },
+        "highlights": {
+            "heading": "｢星系動物園」對科學的貢獻",
+            "body": "｢星系動物園」已協助完成許多不同主題的科學研究，特別是和鄰近宇宙(local Universe)及中紅移宇宙(intermediate-redshift Universe)相關的領域。在最新成果中主題包括以下：規模最大的星系併合(<a href=\"http://arxiv.org/abs/0903.4937\">Darg et al. 2010</a>)，潮汐矮星系 (<a href=\"http://arxiv.org/abs/1108.4410\">Kaviraj et al. 2012</a>)，早型星系中的塵埃帶(<a href=\"http://arxiv.org/abs/1107.5306\">Kaviraj et al. 2012</a>) ，盤狀星系中的棒狀特徵 (<a href=\"http://arxiv.org/abs/1003.0449\">Masters et al. 2011</a>，這些是屬於鄰近宇宙的研究領域。相對於自動化的形態測量法，星系動物園另有特別之處在於，它可能帶來一些純屬偶然的發現（有些研究靈感還來自於志工團隊在 <a href=\"http://www.galaxyzooforum.org\">｢星系動物園論壇」</a>中所討論的一些議題的啟發）。其中包括「綠色長豆」(green peas)<a href=\"http://arxiv.org/abs/0907.4155\">Cardamone et al. 2009</a>及最廣為大家所知的”Hanny's Voorwerp”<a href=\"http://arxiv.org/abs/0906.5304\">Lintott et al. 2009</a>(注：green peas位於local Universe，是一類極為緻密的恆星形成區；\"Hanny's Voorwerp\"中文常見譯名為｢漢妮天體」，以及<a href=\"http://arxiv.org/abs/1110.6921\">Keel et al. 2012</a>的AGN-電離氣體雲普查。因為有了星系顏色和星系形態的大樣本可以利用，所以研究人員進一步發現，色彩與環境之間的相關程度其實比形態特徵還更密切，這也帶來一些極有趣的發現，譬如紅色螺旋星系和藍色橢圓星系等次級分類項目 (subclasses)。"
+        },
+        "relaunched": {
+            "heading": "星系動物園重新開幕",
+            "sdss": "目前的網站內含SDSS DR8第八版新圖像資料集（較上一版新增了南銀冠區域），在鄰近宇宙的星系樣本總數增加了40%，資料庫內首度合併了由哈柏太空望遠鏡CANDELS提供的圖像。CANDELS計畫主要利用哈柏望遠鏡的WFC3（寬視場相機），這加速我們對z> 1星系的觀測，z> 1也相當於宇宙壽命的前50％。此前，在z> 1領域的研究資料庫中，由哈柏望遠鏡大幅取樣提供紫外線波段的靜止座標，是經由ACS等可見光儀器的協助取得。在z>1近紅外波段，WFC3提供非常好的靜止座標光學資料，比NICMOS好20倍。",
+            "candels": "CANDELS使用WFC3視場相機的近紅外濾鏡，在GOODS和COSMOS等哈柏早期攝像場範圍中成像大約800平方角分的視場。WFC3的近紅外圖像特別重要，因為在星系形態分析上，最好用的就是靜止座標光學波長，它能追踪潛藏在星系中不明顯的星族，而非僅只是看到那些恆星形成區（恆星形成區在紫外線波段特別明亮）。",
+            "combination": "綜合運用SDSS、CANDELS，星系動物園的樣本變成可用來回答一些關鍵的開放式問題的一種好用工具，提供答案，則必需要走星系型態分析法。闢如，哈柏序列是從哪個時期開始？原始球體是何時、如何開始形成？早期宇宙中，重大星系併合和長期過程（secular process）等因素在恆星形成和黑洞增長上有何相對作用？",
+            "conclusion": "星系動物園的計畫主旨就是為了要回答以上問題，並為未來的星系型態學研究鋪路，下一代的天文儀器如JWST也將受惠於此項計畫，預計在型態樣本中產生一些後續能透過ALMA（阿塔卡瑪大型毫米波及次毫米波陣列望遠鏡）等大型望遠鏡繼續加以追蹤的高紅移星系。"
+        }
+    },
+    "classify": {
+        "heading": "分類",
+        "restart": "重新開始",
+        "help": "請協助",
+        "sloan": "SDSS",
+        "candels": "哈柏",
+        "group": "團體",
+        "favorite": "我的最愛",
+        "invert": "反轉圖"
+    },
+    "help": {
+        "title": "需要幫忙",
+        "examples": "舉例"
+    },
+    "home": {
+        "headline": "星系特搜 見者有分",
+        "call_to_action": "由SDSS(史隆數位巡天計畫)和哈柏望遠鏡(Hubble Space Telescope)所觀測的宇宙雖遠在天邊，卻也近在眼前！一窺宇宙新奇星系特蒐，機會難得。",
+        "galaxy_zoo": {
+            "title": "星系的分類",
+            "description": "我們需要更透徹了解星系形成的過程，所以，邀請你一起來幫忙，把星系按外觀分類。如果你手腳快，在幫忙辨識某個星系時，搞不好你已成為全世界第一個看到那個星系的頭號幸運者！",
+            "classify": "開始分類"
+        },
+        "galaxy_formation": {
+            "title": "星系如何形成",
+            "body": "在可觀測宇宙中大約散佈有一千億個星系，每個光芒閃耀的星系又都自成一個系統，擁有著數十億恆星。許多星系都極其美麗，「星系動物園」的目標就是去研究這些星系，協助天文學者試著去了解我們所看到的這些環繞在我們四周的星系如何形成，從這些星系的故事我們又可以知道自己所置身其中的宇宙過去、現在和未來如何。 <a data-nav=\"#/science\" href=\"#/science\">更多</a>"
+        },
+        "history": {
+            "title": "星系動物園前傳",
+            "body": "「星系動物園」計畫從2007年7月啟動以來，網站已歷經第四版更新。最早的資料庫裡大約有一百萬個星系圖像，當時由SDSS巡天普查計畫所觀測取得，SDSS迄今仍持續提供更多新的星系光譜圖像資料。剛開始時，面對如此龐大的星系數量，本以為能夠號召到的志工團隊人數可能很有限，應該要花上好幾年時間才能把資料辨識工作全部完成，沒想到網站開張不到24小時就以每小時收到7萬筆辨識結果的速度一路蓬勃成長，第一年為止，一共已獲得五千萬筆辨識結果，募集志工人數達15萬人。<a data-nav=\"#/story\" href=\"#/story\">更多</a>"
+        },
+        "classroom": {
+            "title": "課堂上利用「星系動物園」",
+            "body": "如果您是老師或是科學教育人員，有意向學生們進一步介紹「星系動物園」，我們在 <a href=\"http://www.galaxyzoo.org/#/navigator/home\">導航中心</a> 這裡，提供同學們一個以小組團隊的方式參加互動的管道，既參與到星系的分類與辨識，又可熟悉學習各種和星系特性有關的知識。<a href=\"http://www.zooteach.org/zoo/galaxy_zoo\">星系動物園教學補給站</a>是老師們可以分享教學心得和資源的地方，並且也和「Zooniverse」裡其他的全民動手做科學網站相互呼應。",
+            "navigator": "導航中心"
+        },
+        "recent_images": {
+            "title": "最近圖像"
+        }
+    },
+    "login_prompt": {
+        "title": "登入，或開新帳號，以感謝您所作的貢獻",
+        "decline": "不用，謝謝"
+    },
+    "navigation": {
+        "classify": "分類",
+        "science": "科學知識",
+        "blog": "交流站",
+        "team": "團隊",
+        "papers": "論文",
+        "data": "資料",
+        "story": "我們的故事",
+        "galaxy_zoo": "星系動物園",
+        "astronomers": "天文學家專區",
+        "discuss": "討論",
+        "talk": "Talk",
+        "forum": "論壇",
+        "profile": "你的分類記錄"
+    },
+    "papers": {
+        "title": "已發表論文",
+        "description": "在「星系動物園」社群成員集體貢獻下，本計畫取得了豐碩的資料集，可做科學研究使用。因星系動物園提供星系分類資料而進一步取得的研究成果中，有些已通過學術期刊審查，正式發表為論文，以下列出部分。",
+        "available": "此處..."
+    },
+    "profile": {
+        "favorites": "我最愛的圖像",
+        "recents": "最新",
+        "remove_favorite": "移除我的最愛",
+        "favorite_this": "新增為我的最愛",
+        "classifications": "分類",
+        "hubble": "哈柏",
+        "hubble_classifications": "哈柏資料庫分類",
+        "sdss": "SDSS",
+        "sdss_classifications": "SDSS資料庫分類",
+        "quiz": "星系小學堂問答",
+        "quizzes": "星系小學堂問答",
+        "quizzes_taken": "已做過的星系小學堂問答題",
+        "take_a_quiz": "現在就做幾題星系小學堂問答",
+        "galaxy_zoo_hubble": "星系動物園：哈柏",
+        "galaxy_zoo_hubble_link": " 如果你要找自己之前在星系動物園哈柏館的資料集，可前往此處找"
+    },
+    "science": {
+        "title": "星系動物園網站的科學意義",
+        "p1": "在可觀測宇宙中大約散佈有一千億個星系，每個光芒閃耀的星系又都自成一個系統，擁有著數十億恆星。許多星系都極其美麗，「星系動物園」的目標就是去研究這些星系，協助天文學者試著去了解我們所看到的這些環繞在我們四周的星系如何形成，從這些星系的故事我們又可以知道自己所置身其中的宇宙過去、現在和未來如何。",
+        "p2": "本計畫長期目標具有科學基礎，也就是，從星系形狀可得知許多關於星系的細節。比方說，當你發現的是旋臂星系，通常（非百分之百）你立刻就知道這個星系擁有由恆星、氣體、塵埃組成的一個旋轉盤面，這個盤面擁有大量燃料，未來將孕育更多新恆星。而如果你找到的是由恆星組成的一大團的球狀星系，這種星系常被稱為橢圓星系，那麼，這個星系可能已進入成熟期，形成恆星的過程早已完成。本計畫還可以挖掘出星系的往事，譬如橢圓星系，其前身可能是兩個較小星系發生過迎面對撞，有些帶有小疤痕，譬如呈扭曲狀的磁盤、大而凸起的核球、尾巴長長的恆星流，諸如此類的特徵，都是星系生命歷經複雜故事的最佳見證。",
+        "p3": "如前所述，星系合併對外觀影響至鉅，但還有其他許多因素也可能發揮重要作用，例如，越來越多證據顯示，潛伏在星系中心的黑洞，對周圍環境就可能產生深遠影響。.",
+        "p4": "物質朝黑洞下落的過程中因受熱而溫度極高，高熱並意味著輻射強大，有時會有強大的物質噴流從黑洞鄰近區域以近光速的速度向外甩出（噴流不是從黑洞本身噴出，而是黑洞附近區域）。這些力在彼此相結合之下，能將星系的氣體加熱，或把氣體從星系裡排出，使得星系原本可用來製造新恆星的原料因而遭搜刮一空，大幅改變星系原本面貌。",
+        "p5": "星系所在位置的周圍條件如何也很重要。在距離銀河系位置最近的室女座星系團中心，星系彼此間因重力而發生併合是少見的，因為星系移動太快，只來得及短暫擦身而過。然而在太空中最空曠之處，星系密度又太低，在那裏，併合也無法很顯著作用，唯有在星系群聚的外圍區域形成小團體，就像我們銀河系所屬的本地星系群一樣，這時併合作用才比較顯著。因此，特性不同星系出現在各種不同的環境中應該毫不奇怪，而且是一定必須要納入考量的。",
+        "p6": "要釐清種種諸如此類的影響因素，當然星系分類的樣本數量需求是越大越好。譬如，我們很可能需要大樣本數的、位置在星系團邊緣的紅色棒旋星系，但如果你一開始的初始樣本量不夠大，下一步將沒有空間可再做縮小篩選，接下來的研究也就捉襟見肘。新穎的巡天普查結果提供很多圖像 – 每一次資料庫更新都可增加數十萬又幾十萬星系圖像 - 這些星系圖像需要有人力來加以分類。這就是我們要邀請您來幫忙貢獻您的好眼力的原因......",
+        "subtitle": "這些圖像來自何處？",
+        "p7": "從2000年開始啟動的史隆數位巡天普查計畫，簡稱為SDSS，是第一個，同時也是最大型的宇宙數位巡天成像計畫，為天文學家提供研究所需資料。最初的計畫為期5年，包括兩個主要儀器，其一為126萬像素的相機，其二是兩個光纖等級的光譜儀，這些儀器裝置在位於美國新墨西哥州Apache Point Observatory天文台裡的一座SDSS專用2.5米望遠鏡上。天氣好時，SDSS用相機進行北天draft-scan成像，在多雲時進入光譜儀模式轉而針對一些經選定的觀測對象，從光譜方面來測量紅移及其距離。2005年到2008年，SDSS進入第二階段，繼續對銀河系北銀冠的掃描，也開始了超新星普查，且啟動另一個新的”SEGUE”星系光譜普查計畫。2008年迄今，SDSS進入第三代，完全只從事光譜儀巡天普查，這部分包括四個子項目：BOSS、APOGEE、SEGUE、MARVELS。（在進入本階段時，SDSS相機已除役，收藏於美國史密松博物館）",
+        "p8": "SDSS締造出豐碩的科學成果，部分原因是SDSS更新的資料每年都公開釋出給天文學界和公眾使用。2011年所釋出的DR8資料庫所含的光學影像資料總共廣達14,555平方度，總像素數超過一兆，共含有9.32億個天體，其中163萬個並已由SDSS取得其光譜資料。這麼了不起的天文資源，全都可透過相當先進的網站介面以下載方式取得。天文學家運用SDSS資料庫產生學術論文的速度幾乎是每天一篇，目前已產生數千篇的天文學術論文，獲引用次數累積達17.5萬，擁有120篇博士論文，同時在公眾推廣領域也是結實累累，譬如本網站星系動物園計畫也是公眾推廣領域成果之一。SDSS多次在天文學領域最具影響力的計畫或機構選拔中獲得提名。在2000, 2002, 2005, 2008時榮登該年度獲引用次數最高論文之來源資料庫。(參考文獻, Frogel et al. 2010 )",
+        "p9": "SDSS的成就是屬於許多科學家，研究人員和天文學家所共有，沒有大家集體合作就不可能會有SDSS。許多一開始參與SDSS計畫的天文學家，如今散佈全球各地，繼續在大型合作中從事學術研究，流傳分享著SDSS經驗。 從SDSS的一開始，規模如此龐大的合作在天文學中即屬罕見，並且，SDSS還首開風氣之先，創新改變了天文物理學的合作研究文化。從2014年開始，SDSS即將邁入它的另一個新階段：第四期。此階段將進行的是好幾個針對性的調查，包括eBOSS、MaNGA、APOGEE-S2等，其目的除了要探索遙遠的宇宙，了解附近星系的動力學以外，同時也將研究本銀河系裡的恆星。直到第四期走完，2019年時，SDSS將已為天文學界提供優異資料庫達超過20年之久，並預計天體光譜資料數將會達5百萬筆以上。",
+        "p10": "凝視宇宙深處，意味著我們得以回顧宇宙的過去，因為宇宙持續膨脹，所見的星系遠離我們的速度也正變得越來越快。這意味著，星光在離開恆星並抵達我們以前，它是被拉長的。恆星光既然會被紅移，那麼我們如果要得到一個在早期宇宙中的星系在可見光波段中的圖像，所需要的其實紅外照相機。紅外圖像實際上比可見光圖像更難取得，原因很多，但其中最重要的原因是，夜空本身實際上是發出紅外光的。這很基本地造成拍攝深空紅外影像的困難重重，哈柏望遠鏡的WFC3卻正是因為能突破這些限制、具備了可取得紅外光圖像的能力，所以貢獻非凡。",
+        "p11": "配備採用WFC3的巡天計畫給了我們一個全新的視野，讓我們能看到大霹靂以後的宇宙最早三～四十億年，即大約宇宙年齡的前1/3部分。其中最重要的CANDELS（Cosmic Assembly Deep Extragalactic Near-infrared Survey）計畫，是個近紅外線波段的普查。它奠基在哈柏太空望遠鏡普查基礎之上，正針對早期宇宙在進行一個最大的深空紅外圖像的宇宙地圖蒐集。星系動物園計畫與CANDELS的結合，產生一個非常好的工具，讓我們可以略為滿足在可見宇宙中找到最初宇宙演化線索的一些渴望，尋訪宇宙演化最早的線索是當今觀測派宇宙學正亟待解決的重要問題之一。"
+    },
+    "story": {
+        "title": "目前現況",
+        "p1": "「星系動物園」計畫從2007年7月啟動以來，網站已歷經第四版更新。最早的資料庫裡大約有一百萬個星系圖像，當時由SDSS巡天普查計畫所觀測取得，SDSS迄今仍持續提供更多新的星系光譜圖像資料。剛開始時，面對如此龐大的星系數量，本以為能夠號召到的志工團隊人數可能很有限，應該要花上好幾年時間才能把資料辨識工作全部完成，沒想到網站開張不到24小時就以每小時收到7萬筆辨識結果的速度一路蓬勃成長，第一年為止，一共已獲得五千萬筆辨識結果，募集志工人數達15萬人。",
+        "p2": "這意味著每個星系都獲得好幾位不同的參與者個別的辨識，這是經過刻意安排的，因為辨識的多元化能讓星系分類結果可靠度更高，這很重要，例如，有些研究專案只需要幾千個星系就可，但必須很確定它們全都是螺旋星系，以免所申請到的寶貴望遠鏡使用時數被不必要的浪費掉，那麼這些專案可能就會採用分類意見中獲得100％同意的那些天體為目標，並加以進一步觀測，倘若專案計畫需要的星系數較多，達幾十萬個，那就使用「多數」分類意見同意其為螺旋狀星系的天體做為下一階段的觀測目標即可",
+        "p3": "第一代星系動物園的任務比今天這一版的任務略為簡單，當時我們只要求志工將星系按橢圓，是否併合、螺旋等三類加以區分，如果星系呈螺旋狀，則記錄一下旋臂的方向為何。任務雖然簡單，但已足以顯示非專業天文學家與專業天文學家在進行星系分類的結果上並無差異，這些結果也開始獲得很多研究人員的採用。前往<a href=\"#/papers\" data-nav=\"/papers\">已出版論文</a>論文和<a href=\"http://blog.galaxyzoo.org\" target=\"_blank\">交流站</a>兩個連結，便可看出藉由星系動物園所提供分類資料，已有哪些論文發表。更令人興奮的是，從這個網站辨識出來的星系分類資料結果，持續吸引一些世界最大望遠鏡，願更進一步做跟進觀測，這代表相當的肯定。這些望遠鏡包括：位於西班牙Canaries群島La Palma島上的Isaac Newton、William Herschel望遠鏡，在南半球智利的Gemini南天望遠鏡，美國Arizona州Kitt峰上的WIYN望遠鏡，西班牙Sierra Nevada地區的IRAM電波望遠鏡，以及Swift、GALEX,、錢卓(Chandra)、XMM-Newton和Suzaku 等太空望遠鏡，廣為知名的哈柏太空望遠鏡。",
+        "p4": "第二代星系動物園的改版動力，源自於我們對志工分類者的能力更加有信心了。從第二版開始，我們要求志工在參與分類時，必須更仔細地看20多萬個SDSS資料庫中最亮的星系，並且邀請志工們回答關於星系旋臂的數量、大小、星系中心核球特色等，以及其他許多問題。這次的再號召，結果依舊叫人非常感動，因為僅僅14個月內，我們就收到了超過6,000多萬筆分類結果。",
+        "p5": "這段時間當中，我們陸續密集地在一個長條狀，稱為”Stripe 82”的區域裡增添了許多詳盡圖像，不過很快地，我們也動身前往探勘更遙遠的宇宙，也就是網站第三代！第三代的星系動物園吸收了一張大補帖，多增加了許多來自哈柏太空望遠鏡的圖像資料，這樣能看到星系剛形成時的更早期宇宙。這些圖像來自於耗費較多寶貴觀測時間的星系普查，能讓我們可看到來自數十億年前星系發出的光。星系動物園認為，哈柏望遠鏡能將星系的過去和現在加以比較，這樣就能清楚了解星系的合併、活躍的黑洞或單單只有恆星形成，究竟星系成長是受到其中哪些因素的影響。",
+        "p6": "最新一代的「星系動物園」結合了SDSS有史以來所取得的最好local Universe圖像，加上CANDELS計畫（使用哈柏太空望遠鏡上裝設的新WFC3寬視場相機所拍攝到的宇宙超深空影像），向我們展示了較遙遠的宇宙，到底星空中哪裡正有什麼新奇的事情等你去發現呢？拭目以待！"
+    },
+    "team": {
+        "title": "團隊成員介紹",
+        "science": {
+            "title": "Science Team",
+            "bamford": "<span class=\"person\">Steven Bamford</span> - Astronomer, University of Nottingham<br />Works on figuring out what makes galaxies look the way they do: how they formed and why they change as they get older and move to new cosmic locations.  When not busy working on science or doing his bit to help run the Zooniverse, he is usually to be found entertaining his two young children or sailing a boat.",
+            "lintott": "<span class=\"person\">Chris Lintott</span> - Astronomer, University of Oxford<br />Between Galaxy Zoo, co-presenting the BBC's Sky at Night program and writing for <a href=\"http://www.chrislintott.net\">www.chrislintott.net</a> and elsewhere, Chris usually wishes he had more time to sleep.",
+            "schawinski": "<span class=\"person\">Kevin Schawinski</span> - Astronomer, <a href=\"http://www.astro.ethz.ch\" target=\"_blank\">ETH Zurich</a><br />Works on the formation and evolution of galaxies and their supermassive black holes. Usually trying to get more sleep. And coffee.",
+            "edmondson": "<span class=\"person\">Edd Edmondson</span> - Astronomer, University of Portsmouth<br />Zookeeper, aiding in accessing Sloan data, and general helper-outer.",
+            "keel": "<span class=\"person\">Bill Keel</span> - Astronomer, <a href=\"http://astronomy.ua.edu/keel\" target=\"_blank\">University of Alabama</a><br />Author of 'The Road to Galaxy Formation' and 'The Sky at Einstein's Feet'. With research interests in galaxy formation and evolution, dust content of galaxies, and active galactic nuclei, he couldn't stay away when Galaxy Zoo got started.",
+            "skibba": "<span class=\"person\">Ramin Skibba</span> - Astronomer, UC San Diego<br />Leading the use of marked correlation functions to analyse the Galaxy Zoo morphologies.",
+            "cardamone": "<span class=\"person\">Carie Cardamone</span> - Astronomer, <a href=\"https://sites.google.com/a/brown.edu/ccardamone/\" target=\"_blank\">Brown University</a><br />An educator and astronomer, studying the Zoo's green peas, interested in understanding why galaxies grow they way they do. She's very enthusiastic about engaging the broader public in scientific research and the nature of science.",
+            "willett": "<span class=\"person\">Kyle Willett</span>, University of Minnesota<br />Works on environments of galaxies with active black holes, assembling the final catalogs for Galaxy Zoo 2, and new tools for the Zooniverse sites. Probably runs more than is healthy.",
+            "urry": "<span class=\"person\">Meg Urry</span> - Physicist, Yale University<br />Works on supermassive black holes (growth history, unification, relativistic jets, blazars) and their interplay with galaxies. In her spare time, she writes for CNN.com and works to increase the participation of women and minorities in science.",
+            "nichol": "<span class=\"person\">Bob Nichol</span> - Cosmologist, University of Portsmouth<br />An astronomer, astrophysicist and cosmologist with interests in computer science and statistics. A senior member (or 'Builder') of the Sloan Digital Sky Survey, the most ambitious digital survey of the sky ever undertaken. A long suffering supporter of Manchester City, suffering no more.",
+            "fortson": "<span class=\"person\">Lucy Fortson</span> - Astrophysicist, University of Minnesota<br />Interested in galaxy evolution, black holes and the jets of material beaming from the centers of active galactic nuclei. Started the Zooniverse effort at the Adler Planetarium, now bringing the light to the University of Minnesota. On the odd weekend, when she's not preparing lecture or writing grants, Lucy can be found hanging out with her husband and son at one of Minneapolis' fine dining establishments.",
+            "masters": "<span class=\"person\">Karen Masters</span> - Astronomer, University of Portsmouth<br />Interested in spiral galaxies of all kinds, red has always been her favourite colour. She's working to disentangle the 'true' red spirals, from those that are reddened because we see them edge on, and along the way learn about interstellar dust, and the nature of red spirals themselves. Bars also a speciality.",
+            "melvin": "<span class=\"person\">Tom Melvin</span> - Astronomer, University of Portsmouth<br />A PhD student currently studying the formation and evolution of bars in disk galaxies.",
+            "szalay": "<span class=\"person\">Alex Szalay</span> - Cosmologist, Johns Hopkins University<br />One of the creators of the SDSS SkyServer, and currently involved in building the Virtual Observatory. Plays some music in his 'spare' time.",
+            "thomas": "<span class=\"person\">Daniel Thomas </span>- Astronomer, University of Portsmouth<br />Interested in galaxies of any shape, age, colour and habitat in the universe. When he's not sunbathing, his research focuses on the stars in galaxies and what they tell us about galaxy formation and evolution.",
+            "haussler": "<span class=\"person\">Boris H&auml;u&szlig;ler</span> - Astronomer, University of Nottingham<br />An expert on analysing Hubble Space Telescope images and automatic morphology methods.",
+            "hoyle": "<span class=\"person\">Ben Hoyle</span> - Astronomer, University of Portsmouth<br />Currently developing exciting connections between Google Sky and Galaxy Zoo. Also working on using the lensing of distant quasars to learn about the properties of nearby Galaxy Zoo galaxies.",
+            "kaviraj": "<span class=\"person\">Sugata Kaviraj</span> - Astronomer, University of Oxford<br />Studying the Galaxy Zoo mergers.",
+            "raddick": "<span class=\"person\">Jordan Raddick</span> - Science Education and Outreach Coordinator, Johns Hopkins University<br />A science writer and educator, creator of the science projects on the SDSS SkyServer web site, and an avid science fiction reader and writer. Jordan wishes he could visit galaxies in their natural habitat.",
+            "wong": "<span class=\"person\">Ivy Wong</span> - Astronomer, CSIRO"
+        },
+        "dev": {
+            "title": "Zooniverse Development Team",
+            "kapadia": "<span class=\"person\">Amit Kapadia</span><br />Amit Kapadia develops astronomical web applications. He is a citizen science developer for the crowd-sourcing based platform Zooniverse. New to the world of JavaScript he spends his days dreaming of conducting in-browser analyses on astronomical data sets. On occasion he flexes his modest sway to advocate for more modern solutions to data access in astronomy. He believes the scientific world needs to speak more closely with the tech world, and constantly strives to learn more from the latter. Amit is often found at the Adler Planetarium in Chicago.",
+            "carstensen": "<span class=\"person\">Brian Carstensen</span><br />Brian is a web developer working on the Zooniverse family of projects at the Adler Planearium. Brian has a degree in graphic design from Columbia College in Chicago, and worked in that field for a number of years before finding a niche in web development.",
+            "miller": "<span class=\"person\">David Miller</span><br />As a visual communicator, David is passionate about tellings stories through clear, clean, and effective design. Before joining the Zooniverse team as Visual Designer, David worked for The Raindance Film Festival, the News 21 Initiative's Apart From War, Syracuse Magazine, and as a freelance designer for his small business, Miller Visual. David is a graduate of the S.I. Newhouse School of Public Communications at Syracuse University, where he studied Visual & Interactive Communications.",
+            "paget": "<span class=\"person\">Ed Paget</span><br />Ed somehow went from studying Film at Northwestern University to joining the Zooniverse team as a software developer. Along the way, he picked up a little programming. In his spare time, he enjoys photography, chess, fencing, and growing his beard.",
+            "parrish": "<span class=\"person\">Michael Parrish</span><br />Michael has a degree in Computer Science and has been working with The Zooniverse for the past three years as a Software Developer. Aside from web development; new technologies, science, AI, reptiles, and coffee tend to occupy his attention.",
+            "simpson": "<span class=\"person\">Robert Simpson</span><br />Zooniverse Researcher and developer at Oxford University. PI of the <a href=\"http://www.milkywayproject.org/\" target=\"_blank\">Milky Way Project</a>.",
+            "smith": "<span class=\"person\">Arfon Smith</span><br />As an undergraduate, Arfon studied Chemistry at the University of Sheffield before completing his Ph.D. in Astrochemistry at The University of Nottingham in 2006. He worked as a senior developer at the Wellcome Trust Sanger Institute (Human Genome Project) in Cambridge before joining the Galaxy Zoo team in Oxford. Over the past 3 years he has been responsible for leading the development of a platform for citizen science called Zooniverse. In August of 2011 he took up the position of Director of Citizen Science at the Adler Planetarium where he continues to lead the software and infrastructure development for the Zooniverse.",
+            "whyte": "<span class=\"person\">Laura Whyte</span><br />Having spent her PhD trying to get computers to classify galaxies, Laura know only to well the true value of the contribution to science made by the Galaxy Zoo volunteers. Since leaving astronomy she has retrained as a Maths teacher and picked up a few programming skills. It was with great delight she joined the team at the Zooniverse, developing online education and research tools, allowing her to use bits and pieces of all the skills she's picked up over the last decade."
+        },
+        "czech": {
+            "title": "Galaxy Zoo Czech Support Team",
+            "vykouril": "<span class=\"person\">Dušan Vykouřil</span><br />Initiator, and coordinator Czech Galaxy Zoo. He thinks that line of the universe is never-ending. He like pushes the limits of the unknown.",
+            "moudra": "<span class=\"person\">Míla Moudrá</span><br />Main Czech Galaxy Zoo translator. Student from Prague, Czech republic, and amateur astronomer, especially deep-sky objects (i.e. galaxies, among others) visual observer. Interested in protection of environment and small rodents :-)",
+            "hresil": "<span class=\"person\">Petr Hřešil</span><br />Czech Galaxy Zoo co-translator. He has always been fascinated by the sky and the universe but he got trapped into the IT world and fell into the clutches of the Internet. Fan of Distributed computing, lover of sci-fi which allows him to set out \"Where No One Has Gone Before\".",
+            "miksovsky": "<span class=\"person\">Jaroslav Mikšovský</span><br />Czech Galaxy Zoo corrector. Pensioner still economically active."
+        },
+        "french": {
+            "title": "Galaxy Zoo France Support Team",
+            "marco": "<span class=\"person\">Olivier Marco</span> - Observatoire de Paris"
+        },
+        "german": {
+            "title": "Galaxy Zoo Germany Support Team",
+            "poessel": "<span class=\"person\">Markus Poessel</span> - Center for Astronomy Education and Outreach, Heidelberg<br />German Galaxy Zoo co-translator. Managing scientist of the Center for Astronomy Education and Outreach in Heidelberg, whose galaxy-shaped building has a disk, is not clumpy, can be viewed edge-on, has two spiral arms that are medium-tightly wound, and an obvious bulge. (And please tell him if you notice anything odd.).",
+            "leifke": "<span class=\"person\">Carolin Leifke</span> - Center for Astronomy Education and Outreach, Heidelberg<br />German Galaxy Zoo co-translator. Observes flares on active stars with X-ray satellites and the VLT, and galaxies of all kind with her 16-inch Dobsonian. Has now turned her passion for astronomy education and outreach into a profession."
+        },
+        "polish": {
+            "title": "Galaxy Zoo Poland Support Team",
+            "biernacki": "<span class=\"person\">Paweł Biernacki</span><br />Student of astronomy at Wrocław University, enthusiast of the Sun, addicted to sci-fi books; upbeaten optimist and fan of soccer.",
+            "czart": "<span class=\"person\">Krzysztof Czart</span><br />An astronomer and PhD student in a city where Nicolaus Copernicus was born, investigating the biggest stars in galaxies (those from Earth, too). In a spare time, he is a journalist as editor-in-chief of the Polish Astronomy Portal.",
+            "czernik": "<span class=\"person\">Tomasz Czernik</span><br />Loves astronomy and photography. The youngest team member.",
+            "kolodziej": "<span class=\"person\">Mirek Kołodziej</span><br />Galaxy Zoo translator, lover of the sky, IT student in secoundary school in Niepolomice, in spare time bard, he tried to bend a spoon with willpower.",
+            "kotarba": "<span class=\"person\">Marta Kotarba</span><br />Marta has worked on the Polish version of Galaxy Zoo 2. Normally she spends her time setting puzzles, photographing and trying to study astronomy at Jagiellonian University.",
+            "majcher": "<span class=\"person\">Ariel Majcher</span><br />An astronomer and astrophotographer, likes watching sky through a telescope. This is the reason that he dreams about removal from Poland to Malta at least (along with the temperature in winter).",
+            "mankiewicz": "<span class=\"person\">Lech Mankiewicz</span><br />Hunts for fast optical transients in the sky. Coordinator of the 'Pi of the sky' robotic telescope project and father of Agnieszka. In his spare time coordinates the EU-HOU project.",
+            "ogloza": "<span class=\"person\">Waldemar Ogloza</span><br />An astronomer from Pedagogical University of Kracow, variable star observer. He devotes his spare time to astronomical education and sailing.",
+            "pomierny": "<span class=\"person\">Jan Pomierny</span><br />Founder and team leader of the Polish Astronomy Portal. Philosophy and classical music enthusiast who rests in mountains.",
+            "skowron": "<span class=\"person\">Tomasz Skowron</span><br />Astronomy amateur and educator. Daily teacher of physics and astronomy in secondary school in Szczecin."
+        },
+        "retired": {
+            "title": "Retired members of the Galaxy Zoo Team",
+            "andreescu": "<span class=\"person\">Dan Andreescu</span><br />Consultant by day, programmer and seeker of knowledge and fun by night. Avid basketball player and rookie surfer on the weekends.",
+            "land": "<span class=\"person\">Kate Land</span><br />Added some much-missed glamour to the world of Theoretical Cosmology. Once could not sleep at night for thoughts about the early Universe, but slept during seminars instead. Now lured away by the bright lights of the City.",
+            "vandenberg": "<span class=\"person\">Jan VandenBerg</span><br />Ringleader of the IT support circus in the JHU Physics & Astronomy department.",
+            "wonders": "<span class=\"person\">Alainna Wonders</span><br />Tightrope walker therein.",
+            "locksmith": "<span class=\"person\">Danny Locksmith</span> - Volunteer Programmer<br />Responsible for wrestling the Galaxy Zoo 2 beta site into existence.",
+            "murray": "<span class=\"person\">Phil Murray</span> - Web Designer, Artist and Managing Director of Fingerprint Digital Media Responsible for the visual design of the Galaxy Zoo web site. Designer of <a href=\"http://www.banguniverse.com\" target=\"_blank\">www.banguniverse.com</a> for Brian May, Patrick Moore and Chris Lintott. A keen musician and lapsed tennis and soccer player.",
+            "slosar": "<span class=\"person\">Anze Slosar</span> - Cosmologist, Berkeley Center for Cosmological Physics<br />A theoretical physicist, who has has never sat behind a telescope, likes to drink good beer and wishes he were richer.",
+            "darg": "<span class=\"person\">Daniel Darg</span> - Astronomer, University of Oxford<br />Working on measuring the number and properties of galaxy mergers identified in Galaxy Zoo."
+        }
+    },
+    "examine": {
+        "title": "查驗",
+        "survey": "調查",
+        "right_ascension": "右上升",
+        "declination": "下降",
+        "magnitude": "星等",
+        "ned_link": "搜尋 NED",
+        "discuss": "和他人討論",
+        "hubble": "哈柏",
+        "sdss": "SDSS",
+        "sdss_id": "SDSS天體",
+        "petro_rad": "Petrosian半徑",
+        "skyserver_link": "從SkyServer上檢視"
+    },
+    "fits": {
+        "view": "以不同波常看原始資料",
+        "x_y": "X, Y 資料",
+        "intensity": "稠密度",
+        "color": "顏色",
+        "linear": "線性",
+        "logarithm": "對數",
+        "square_root": "開平方根",
+        "arcsinh": "反正弦",
+        "power": "Power"
+    },
+    "quiz": {
+        "thanks": "多謝!",
+        "help": "請支持星系動物園！",
+        "research": "我們想多了解星系動物園志工對宇宙的認識如何",
+        "helping": "你的作答能幫我們了解參加星系動物園的志工對宇宙的認識",
+        "gift": "您將有機會參加抽獎，<strong>獎品是價值20元美金的Amazon禮品兌換券</strong>.",
+        "reward": "這是禮物，每回答一組題目，<strong>就可以參加一次20 元美金的Amazon禮品兌換券</strong>",
+        "now_or_later": "現在你可以再繼續回答另一組題目,或者是晚一點再回到你的profile區來作答",
+        "start_next": "願意做下一輪題目大概是什麼時候?",
+        "reminder": "先前答應每週回答一組5&ndash6個題目",
+        "ready": "現在可以作答嗎?",
+        "now": "現在可以",
+        "later": "稍後",
+        "complete": "全部題目都做完了!",
+        "okay": "好的，了解",
+        "participate": "願意想參加嗎？",
+        "yes": "是!",
+        "no_thanks": "謝謝，不要",
+        "ask_later": "考慮中，稍後再詢問我",
+        "never_again": "以後別再問我",
+        "example": {
+            "prompt": "願意的話你將會收到內含六個題目的問卷，答題時間自由，第一組題目在您同意參加後馬上開始作答。<br />第一個問題可能會是：",
+            "question": "Hubble's observation that galaxies farther away from us are moving faster led to which conclusion?",
+            "answer_a": "宇宙正在膨脹",
+            "answer_b": "宇宙正在收縮",
+            "answer_c": "我們位於宇宙中心",
+            "answer_d": "我們的星系把其他星系後推"
+        }
+    },
+    "navigator": {
+        "title": "導航中心",
+        "construct": "構思你的問題",
+        "my_galaxies": "我的星系",
+        "graph": "圖檔資料",
+        "loading": "上傳中...",
+        "reset": "重設圖檔",
+        "snapshot": "截圖",
+        "download": "下載資料",
+        "n_galaxies": "星系數量",
+        "smooth": "平整勻稱",
+        "feature": "外觀具有特徵或盤狀",
+        "star": "恆星或人造飛行器",
+        "redshift": "紅移",
+        "color": "顏色",
+        "apparent_brightness": "視亮度",
+        "absolute_radius": "絕對直徑",
+        "absolute_brightness": "絕對亮度",
+        "no_results": "請先分類星系",
+        "intro": "Welcome to the Galaxy Zoo Navigator, where you can investigate the galaxy classifications you have made as part of a group. To get started you will need to select the group you'd like to work with.",
+        "credit": "The Navigator is based upon work supported by the National Science Foundation under Grants No. 1041419 and 0941610. Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.",
+        "groups": {
+            "select": "選擇小組",
+            "make": "開新小組",
+            "create": "開新小組",
+            "classify": "星系分類",
+            "group_classify": "小組分類模式",
+            "stop_classify": "停止小組分類模式",
+            "leave": "離開小組",
+            "destroy": "刪除小組",
+            "classify_desc": "以某小組成員身分造訪星系動物園網站",
+            "stats": "Statistics",
+            "invitations": "邀請成員",
+            "enter_name": "輸入小組名稱",
+            "enter_emails": "邀請現已有宇宙大觀園帳號者輸入其email資料，名字間以逗號隔開（譬如 ed@example.com, cs@example.com, whyte@example.com)",
+            "send_invites": "送出邀請",
+            "disable_talk": "取消小組Talk設定",
+            "invited_users": "使用者邀請發出",
+            "participation": "參與",
+            "compare": "將你所完成的分類和其他志工的分類加以比較",
+            "confirm_leave": "確定嗎?\n你必須重新獲得小組長發布的邀請才能再回到小組中",
+            "confirm_destroy": "確定嗎?\n這個動作將無法復原或取消",
+            "ensure_selected": "看小組完成的分類成果之前，請選擇一個小組，或從下拉式選單中選擇小組"
+        },
+        "sample": {
+            "label": "樣本大小為...",
+            "choose": "選取樣本大小",
+            "small": "星系小樣本",
+            "random_small": "隨機選取的星系小樣本",
+            "medium": "星系中樣本",
+            "random_medium": "隨機選取的星系中樣本",
+            "large": "大樣本",
+            "random_large": "隨機選取的星系大樣本"
+        },
+        "galaxy_type": {
+            "label": "選以下類型的星系",
+            "smooth": "平整勻稱",
+            "feature": "外觀具有特徵或盤狀"
+        },
+        "source": {
+            "label": "想要使用的資料是",
+            "my_group": "我的小組",
+            "galaxy_zoo": "星系動物園",
+            "my_choice": "我選"
+        },
+        "histogram": {
+            "title": "直方圖",
+            "description": "調查不同型態星系的特性",
+            "label": "'我想看...'",
+            "y_label": "星系數量",
+            "distribution": "分布",
+            "distributed": "分布於...",
+            "one_var": "單一變數",
+            "two_var": "兩個變數",
+            "create": "新增圖表"
+        },
+        "scatterplot": {
+            "title": "點狀圖",
+            "description": "比較不同型態星系的特性",
+            "label": "我想看...",
+            "vs": "vs.",
+            "relation": "和...的關聯",
+            "choose_x": "選擇X軸變數",
+            "choose_y": "選擇Y軸變數"
+        }
+    }
+}
