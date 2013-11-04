@@ -38,13 +38,17 @@ class Classify extends Spine.Controller
     Subject.next()
     $('#zooniverse-top-bar-login .buttons button[name="signup"]').unbind('click').bind 'click', @signupPrompt
 
-    #bind document keypress, so powerusers can utilise key shortcuts
-    _.bindAll(@, 'handleKeyPress', 'toggleInverted')
-    $(document).unbind('keypress').bind 'keypress', @handleKeyPress
-
   active: ->
     super
     @render()
+
+  activate: ->
+    super
+    $(document).on('keypress', @handleKeypress)
+
+  deactivate: ->
+    super
+    $(document).off('keypress', @handleKeypress)
   
   render: =>
     return unless @subject and @isActive()
@@ -118,15 +122,14 @@ class Classify extends Spine.Controller
     @render()
     ev.preventDefault()
 
-  handleKeyPress: (ev) ->
-    ev.preventDefault()
+  handleKeypress: (ev) =>
     key = ev.which || ev.keyCode || ev.charCode
 
     #toggle color/greyscale on spacebar
     if key == 32
       @toggleInverted(ev)
 
-  toggleInverted: (ev) ->
+  toggleInverted: (ev) =>
     if @image.hasClass 'inverted'
       @image.attr 'src', Subject.current.location.standard
     else
