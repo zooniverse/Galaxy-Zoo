@@ -36,7 +36,7 @@ class Subject extends BaseSubject
     if Math.random() > 0.5
       if Math.random() > (1/3) then @::surveys.ukidss.id else @::surveys.ferengi.id
     else
-      if Math.random() > (1/3) then @::surveys.candels.id else @::surveys.sloan.id
+      @::surveys.sloan.id
   
   @next: ->
     if @current
