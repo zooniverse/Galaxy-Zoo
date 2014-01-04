@@ -34,12 +34,10 @@ class Subject extends BaseSubject
   @randomSurveyId: ->
     return @::surveys.sloan.id if UserGroup.current
     n = Math.random()
-    if n <= 0.1
+    if n <= 0.10
       @::surveys.sloan.id   # 10%
-    else if n <= 0.6
-      @::surveys.ukidss.id  # 50%
-    else
-      @::surveys.ferengi.id # 40%
+    else 
+      @::surveys.ukidss.id  # 90%
   
   @next: ->
     if @current
