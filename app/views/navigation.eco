@@ -4,16 +4,16 @@
       <a href="#/classify" data-nav="/classify"><%- I18n.t 'navigation.classify' %></a>
     </li>
     <li>
+      <a href="#/story" data-nav="/story"><%- I18n.t 'navigation.story' %></a>
+    </li>
+    <li>
       <a href="#/science" data-nav="/science"><%- I18n.t 'navigation.science' %></a>
       <ul class="menu">
-        <li><a href="http://blog.galaxyzoo.org" target="_blank"><%- I18n.t 'navigation.blog' %></a></li>
         <li><a href="#/team" data-nav="/team"><%- I18n.t 'navigation.team' %></a></li>
         <li><a href="#/papers" data-nav="/papers"><%- I18n.t 'navigation.papers' %></a></li>
         <li><a href="http://data.galaxyzoo.org" target="_blank"><%- I18n.t 'navigation.data' %></a></li>
+        <li><a href="#/astronomers" data-nav="/astronomers"><%- I18n.t 'navigation.astronomers' %></a></li>
       </ul>
-    </li>
-    <li>
-      <a href="#/story" data-nav="/story"><%- I18n.t 'navigation.story' %></a>
     </li>
     <li class="logo">
       <a href="#/" data-nav="/">
@@ -21,17 +21,23 @@
       </a>
     </li>
     <li>
-      <a href="#/astronomers" data-nav="/astronomers"><%- I18n.t 'navigation.astronomers' %></a>
-    </li>    
-    <li>
       <a href="http://talk.galaxyzoo.org"><%- I18n.t 'navigation.discuss' %></a>
       <ul class="menu">
         <li><a href="http://talk.galaxyzoo.org"><%- I18n.t 'navigation.talk' %></a></li>
         <li><a href="http://www.galaxyzooforum.org" target="_blank"><%- I18n.t 'navigation.forum' %></a></li>
+        <li><a href="http://blog.galaxyzoo.org" target="_blank"><%- I18n.t 'navigation.blog' %></a></li>
       </ul>
     </li>
-    <li class="last">
+    <li>
       <a href="#/profile" data-nav="/profile"><%- I18n.t 'navigation.profile' %></a>
+    </li>
+    <li class="last">
+      <a><%- I18n.t 'languages.language' %></a>
+      <ul class="menu">
+        <li><a data-lang-switch="en">English</a></li>
+        <li><a data-lang-switch="es">Español</a></li>
+        <li><a data-lang-switch="zh">繁體中文</a></li>
+      </ul>
     </li>
   </ul>
 </nav>

@@ -3,6 +3,6 @@ params = { }
 
 for string in query
   [key, value] = string.split '='
-  params[key] = value
+  params[key] = value if key
 
 module.exports = params

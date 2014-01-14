@@ -62,7 +62,7 @@ class Group extends Spine.Controller
       @usersInvited.hide()
       @signUpForm.hide()
       @participation.show()
-      url = "http://galaxyzoo.org/#/user_groups/#{group.unique_name}"
+      url = "http://www.galaxyzoo.org/#/user_groups/#{group.unique_name}"
       @groupUrlHref.attr 'href', url
       @groupUrlHref.html url
       @groupUrl.show()

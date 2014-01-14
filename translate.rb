@@ -7,6 +7,17 @@
 gem 'coffee-script'
 require 'coffee_script'
 
+require 'json/common'
+module JSON
+  require 'json/version'
+
+  begin
+    require 'json/ext'
+  rescue
+    require 'json/pure'
+  end
+end
+
 unless ARGV[0]
   puts "Usage: ./translate.rb <locale>\n\n"
 end

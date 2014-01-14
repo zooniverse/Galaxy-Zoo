@@ -649,7 +649,6 @@ module.exports =
     title: 'Login or create an account to receive credit for your work'
     decline: 'No, thanks'
   
-  
   navigation:
     classify: 'Classify'
     science: 'Science'
@@ -665,6 +664,10 @@ module.exports =
     forum: 'Forum'
     profile: 'Profile'
   
+  languages:
+    en: 'English'
+    es: 'Español'
+    zh: '普通話'
   
   papers:
     title: 'Published Papers'
