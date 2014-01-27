@@ -838,10 +838,10 @@
         }
     },
     "examine": {
-        "title": "查驗",
-        "survey": "調查",
-        "right_ascension": "右上升",
-        "declination": "下降",
+        "title": "詳細檢查",
+        "survey": "巡天資料庫",
+        "right_ascension": "赤經",
+        "declination": "赤緯",
         "magnitude": "星等",
         "ned_link": "搜尋 NED",
         "discuss": "和他人討論",
@@ -849,12 +849,12 @@
         "sdss": "SDSS",
    	"ukidss": "UKIDSS",
 	"ferengi": "人為紅移的SDSS影像",
-        "sdss_id": "SDSS天體",
+        "sdss_id": "SDSS天體編號",
         "petro_rad": "Petrosian半徑",
-        "skyserver_link": "從SkyServer上檢視"
+        "skyserver_link": "前往SkyServer看詳細資料"
     },
     "fits": {
-        "view": "以不同波常看原始資料",
+        "view": "以不同 波長看原始資料",
         "x_y": "X, Y 資料",
         "intensity": "稠密度",
         "color": "顏色",
