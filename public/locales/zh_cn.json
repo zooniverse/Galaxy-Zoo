@@ -676,7 +676,7 @@
         },
         "classroom": {
             "title": "星系动物园进课堂",
-            "body": "如果您是一名教师，并且有意向学生介绍星系动物园，这个 <a href=\"http://www.galaxyzoo.org/#/navigator/home\">导航中心</a> 提供了互动的星系分类工具，同学们可以团队合作，一起研究星系的特征。在<a href=\"http://www.zooteach.org/zoo/galaxy_zoo\">星系动物园教学园地</a>中，老师们可以共享课程和资源，并且与Zooniverse的其他全民科学项目的参与者互通有无。",
+            "body": "如果您是一名教师，并且有意向学生介绍星系动物园，这个 <a href=\"http://www.galaxyzoo.org/?lang=zh_cn#/navigator/home\">导航中心</a> 提供了互动的星系分类工具，同学们可以团队合作，一起研究星系的特征。在<a href=\"http://www.zooteach.org/zoo/galaxy_zoo\">星系动物园教学园地</a>中，老师们可以共享课程和资源，并且与Zooniverse的其他全民科学项目的参与者互通有无。",
             "navigator": "导航中心"
         },
         "recent_images": {
@@ -991,4 +991,5 @@
             "choose_y": "选择Y轴变量"
         }
     }
+
 }
