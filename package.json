@@ -27,7 +27,7 @@
     "ubret" : "git://github.com/zooniverse/Ubret.git#galaxy_zoo",
     "zooniverse": "git://github.com/zooniverse/Zooniverse.git#galaxy_zoo",
     "coffee-script": "1.6.2",
-    "translator-seed": "0.1.0"
+    "translator-seed": "0.1.1"
   },
   "devDependencies": {
     "jasmine-phantom-node": "git://github.com/edpaget/jasmine-phantom-node.git"
