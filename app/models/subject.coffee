@@ -63,7 +63,7 @@ class Subject extends BaseSubject
         @create result for result in results
         @current or= @first()
         
-        unless hasTriggered
+        if @current and not hasTriggered
           hasTriggered = true
           @trigger 'fetched'
 
