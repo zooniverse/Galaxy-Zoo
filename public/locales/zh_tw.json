@@ -26,7 +26,7 @@
             "sign_in": "已有帳號？從這裡登入！",
             "email": "電子信箱帳號",
             "privacy": "我同意 <a href=\"https://www.zooniverse.org/privacy\" target=\"_blank\"> 隱私權設定規定 </a>",
-            "button": "登入",
+            "button": "建立新帳號",
             "progress": "新增帳號並登入"
         },
         "sign_out": {
