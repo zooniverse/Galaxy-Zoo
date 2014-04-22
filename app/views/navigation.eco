@@ -36,7 +36,7 @@
       <ul class="menu">
         <li><a data-lang-switch="en">English</a></li>
         <li><a data-lang-switch="es">Español</a></li>
-        <!-- <li><a data-lang-switch="fa">Farsi</a></li> -->
+        <li><a data-lang-switch="fa">Farsi</a></li>
         <li><a data-lang-switch="it">Italiano</a></li>
         <li><a data-lang-switch="pt">Português</a></li>
         <li><a data-lang-switch="zh_tw">繁體中文</a></li>
