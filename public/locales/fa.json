@@ -1,38 +1,38 @@
 ﻿{
   "zooniverse": {
     "browser_check": {
-      "wont_work": "این سایت ممکن است تا زمان بروزرسانی مرورگرتان، کار نکند.",
-      "recommended": "ما استفاده از <a href=\"http://www.mozilla.org/firefox/\" target=\"_blank\"> موزیلا فایرفاکس </a> یا <a href=\"http://www.google.com/chrome\" target=\"_blank\"> و یا گوگل کروم</a> را پیشنهاد می‌کنیم.",
-      "ie": "اگر شما از مرورگر <a href=\"http://www.microsoft.com/windows/internet-explorer/\" target=\"_blank\">اینترنت اکسپلورر</a> استفاده‌می‌کنید، مطمئن ‌شوید که از آخرین نسخه‌ی این مرورگر استفاده می‌کنید.",
+      "wont_work": "این سایت ممکن است تا زمان بروزرسانی مرورگرتان، کار نکند‫.‬",
+      "recommended": "پیشنهاد ما استفاده از <a href=\"http://www.mozilla.org/firefox/\" target=\"_blank\"> موزیلا فایرفاکس </a> یا <a href=\"http://www.google.com/chrome\" target=\"_blank\"> و یا گوگل کروم</a> است.",
+      "ie": "اگر از مرورگر <a href=\"http://www.microsoft.com/windows/internet-explorer/\" target=\"_blank\">اینترنت اکسپلورر</a> استفاده‌ می‌کنید، مطمئن ‌شوید که از آخرین نسخه‌ی این مرورگر استفاده می‌کنید.",
       "chrome_frame": "اگر نمی‌توانید آخرین نسخه‌ی اینترنت اکسپلورر را نصب ‌کنید، <a href=\"http://google.com/chromeframe\" target=\"_blank\">گوگل کروم</a> را امتحان کنید!",
       "dismiss": "نادیده بگیر"
     },
     "login": {
-      "username": "نام‌کاربری",
-      "password": "رمز‌عبور",
+      "username": "نام کاربری",
+      "password": "رمز‌ عبور",
       "login": "ورود",
       "forgot_password": "رمز‌عبور را فراموش کرده‌اید؟"
     },
     "sign_in": {
-      "title": "با حساب زونیورس (Zooniverse) خود وارد‌شوید ",
-      "sign_up": "حساب‌کاربری ندارید؟ هم‌اکنون یک حساب ایجاد کنید!",
+      "title": "با حساب زونیورس (Zooniverse) خود وارد ‌شوید ",
+      "sign_up": "حساب‌ کاربری ندارید؟ هم‌ اکنون یک حساب ایجاد کنید‫.‬",
       "button": "وارد‌شدن",
       "progress": "در حال ورود..."
     },
     "sign_up": {
       "title": "ایجاد حساب زونیورس (Zooniverse) جدید",
       "confirmation": "رمز‌عبور (تایید)",
-      "password_match": "رمز‌عبور باید با تایید آن مطابقت‌داشته‌باشد",
-      "sign_in": "قبلا حسابی ایجادکرده‌اید؟ وارد‌شوید!",
+      "password_match": "رمز‌عبور باید با تایید آن مطابقت ‌داشته‌ باشد",
+      "sign_in": "قبلا حسابی ایجادکرده‌اید؟ وارد‌شوید‫!‬",
       "email": "آدرس ایمیل",
       "privacy": "من با <a href=\"https://www.zooniverse.org/privacy\" target=\"_blank\"> مقررات حریم خصوصی</a> موافقم",
       "button": "ایجاد حساب",
-      "progress": "در حال ساخت حساب جدید و وارد شدن به آن حساب..."
+      "progress": "در حال ایجاد حساب جدید و وارد شدن به آن حساب ‫…‬"
     },
     "sign_out": {
-      "current": "هم‌اکنون به عنوان <strong class=\"current\"></strong> واردشده‌اید.",
+      "current": "هم‌اکنون به عنوان <strong class=\"current\"></strong> واردشده‌اید‫.‬",
       "button": "خروج از حساب",
-      "progress": "در حال خروج..."
+      "progress": "در حال خروج‫…‬"
     },
     "top_bar": { 
       "title": "<span id=\"app-name\"></span> یک پروژه‌ی <a href=\"https://www.zooniverse.org\">زونیورس</a>  است.",
@@ -40,7 +40,7 @@
       "greeting": "سلام <strong>{user}</strong>. به {appName} خوش‌آمدی!",
       "projects": {
         "title": "پروژه‌های ما",
-        "list": " ما در حال حاضر 12 پروژه داریم که شامل حوزه‌های مانند، <a href=\"https://www.zooniverse.org/#space\">نجوم</a> تا <a href=\"https://www.zooniverse.org/#climate\">اقلیم‌شناسی</a> و <a href=\"https://www.zooniverse.org/#nature\">زیست‌شناسی</a> و <a href=\"https://www.zooniverse.org/#humanities\">علوم‌انسانی</a> است. "
+        "list": " ما در حال حاضر 12 پروژه اجرا می کنیم که شامل حوزه‌هایی مانند، <a href=\"https://www.zooniverse.org/#space\">نجوم</a> تا <a href=\"https://www.zooniverse.org/#climate\">اقلیم‌شناسی</a> و <a href=\"https://www.zooniverse.org/#nature\">زیست‌شناسی</a> و <a href=\"https://www.zooniverse.org/#humanities\">علوم‌انسانی</a> است. "
       }
     }
   },
@@ -48,10 +48,10 @@
     "sloan-0": {
       "text": " آیا این کهکشان هموار و گرد بوده و بدون هرگونه نشان دیسک-مانند است؟",
       "title": "شکل",
-      "help": " در اینجا هدف جداسازی کهکشان‌های بدون علایم ویژه(featureless) از سایر کهکشان ها است. اگر ویژگی جالب توجه‌ی می‌بینید، &quot; ویژگی‌ها یا دیسکی بودن &quot; را انتخاب کنید، در برخی شرایط ممکن چیزی ببینید که اصلا یک کهکشان نیست – برای نمونه یک رگه‌ی نوری ناشی از یک قمر، یا تصویری که کاملا تحت تاثیر نور یک ستاره‌ی درخشان است. اگر این‌چنین است، &quot;ستاره یا تصویر ساختگی&quot; را انتخاب ‌کنید. برای دیدن تصاویر در ابعاد بزرگ‌تر، کلیک ‌کنید.",
+      "help": " در اینجا هدف جداسازی کهکشان‌های بدون علایم ویژه (featureless) از سایر کهکشان ها است. اگر ویژگی جالب توجه‌ی می‌بینید، &quot; ویژگی‌ها یا دیسکی بودن &quot; را انتخاب کنید، در برخی شرایط ممکن چیزی ببینید که اصلا یک کهکشان نیست – برای نمونه یک رگه‌ی نوری ناشی از یک قمر، یا تصویری که کاملا تحت تاثیر نور یک ستاره‌ی درخشان باشد. اگر این‌چنین است، &quot;ستاره یا تصویر ساختگی&quot; را انتخاب ‌کنید. برای دیدن تصاویر در ابعاد بزرگ‌تر، کلیک ‌کنید.",
       "answers": {
         "a-0": "هموار",
-        "a-1": "علایم ویژگه یا دیسک",
+        "a-1": "علایم ویژه یا دیسک",
         "a-2": "ستاره یا اثری ساختگی"
       }
     },
@@ -65,7 +65,7 @@
       }
     },
     "sloan-2": {
-      "text": " آیا نشانی از میله در وسط مرکز کهکشان وجود دارد؟ ",
+      "text": " آیا نشانی از میله ای که از مرکز کهکشان عبور می کند وجود دارد؟ ",
       "title": "میله",
       "help": " گاه کهکشان‌ها به‌طور واضح دارای یک &quot;میله&quot; صاف هستند که از مرکزشان عبور می‌کند، و این چیزی است که در این‌جا به دنبال شناسایی آن هستیم. برای دیدن تصاویر در ابعاد بزرگ‌تر، کلیک‌کنید.",
       "answers": {
@@ -74,9 +74,9 @@
       }
     },
     "sloan-3": {
-      "text": "آیا هیچ نشانه‌ای از یک الگوی بازوی مارپیچی وجود دارد؟",
+      "text": "آیا نشانی از یک الگوی بازوی مارپیچی وجود دارد؟",
       "title": "مارپیچی",
-      "help": " به دنبال بازوی مارپیچی بگردید – به یاد داشته‌باشید که این بازوها ممکن در درون دیسک جای گرفته‌باشند و دیدن آن‌ها آسان نباشد. برای دیدن تصاویر در ابعاد برزگ‌تر کلیک کنید.",
+      "help": " به دنبال بازوی مارپیچی بگردید – به یاد داشته‌باشید که این بازوها ممکن است درون دیسک جای گرفته‌باشند و دیدن آن‌ها آسان نباشد. برای دیدن تصاویر در ابعاد برزگ‌تر کلیک کنید.",
       "answers": {
         "a-0": "مارپیچی",
         "a-1": "بدون بازوی مارپیچی"
@@ -132,15 +132,15 @@
     "sloan-8": {
       "text": " آیا کهکشان در مرکز خود یک برآمدگی دارد؟ اگر بله، شکل آن چگونه است؟",
       "title": "برآمدگی",
-      "help": " روی مرکز کهکشان تمرکز‌کنید – اگر هموار، بدون اختلال، سوزنی یا عدسی-مانند است روی &quot;بدون برآمدگی&quot; کلیک ‌کنید در غیر این‌صورت گزینه‌های شما برآمدگی &quot;گرد&quot; یا برآمدگی &quot;جعبه‌ای&quot; است ( برآمدگی‌های جعبه‌ای نادر هستند). برای دیدن تصاویر در ابعاد بزرگ‌تر کلیک‌کنید.",
+      "help": " روی مرکز کهکشان تمرکز‌کنید – اگر هموار، بدون اختلال، سوزنی یا عدسی-مانند است روی &quot;بدون برآمدگی&quot; کلیک ‌کنید در غیر این ‌صورت گزینه‌های شما برآمدگی &quot;گرد&quot; یا برآمدگی &quot;جعبه‌ای&quot; است ( برآمدگی‌های جعبه‌ای نادر هستند). برای دیدن تصاویر در ابعاد بزرگ‌تر کلیک‌کنید.",
       "answers": {
         "a-0": "گِرد",
-        "a-1": "جعبه‎ای",
+        "a-1": "جعبه ای",
         "a-2": "بدون برآمدگی"
       }
     },
     "sloan-9": {
-      "text": " شکل مارپیچی چقدر تنگ به‌نظر می‌رسد؟",
+      "text": "میزان تنگ بودن پیچش بازوهای مارپیچی چقدر است‌؟",
       "title": "شکل مارپیچی",
       "help": "",
       "answers": {
@@ -159,13 +159,13 @@
         "a-2": "3",
         "a-3": "4",
         "a-4": "بیش‌تر از 4",
-        "a-5": "نمی‌توان تشخیص‌داد"
+        "a-5": "نمی‌توان تشخیص ‌داد"
       }
     },
     "sloan-11": {
       "text": "تمایل‌دارید در مورد این جسم بحث‌کنید؟",
       "title": "بحث",
-      "help": " اگر در مورد این جسم سوالی دارید، یا فکر‌می‌کنید این جسم می‌تواند برای دیگران جالب باشد، یا اینکه چیزی برای گفتن در مورد آن دارید، می‌توانید با کلیک روی &quot;بله&quot; بحثی در مورد آن در بخش گفتگو(Talk) شروع کنید. گفتگو در یک پنجره جدید باز خواهد‌شد – برای برگشتن به صفحه‌ی طبق بندی کافیست آن پنجره را ببندید.",
+      "help": " اگر در مورد این جسم سوالی دارید، یا فکر‌می‌کنید این جسم می‌تواند برای دیگران جالب باشد، یا اینکه چیزی برای گفتن در مورد آن دارید، می‌توانید با کلیک روی &quot;بله&quot; بحثی در مورد آن در بخش گفتگو (Talk) شروع کنید. گفتگو در یک پنجره جدید باز خواهد‌شد – برای برگشتن به صفحه‌ی طبق بندی کافیست آن پنجره را ببندید.",
       "answers": {
         "a-0": "بله",
         "a-1": "نه"
@@ -174,17 +174,17 @@
     "candels-0": {
       "text": " آیا این کهکشان هموار و گرد بوده و بدون هرگونه نشان دیسک-مانند است؟",
       "title": "شکل",
-      "help": " در اینجا هدف جداسازی کهکشان‌های بدون علایم ویژه(featureless) از سایر کهکشان ها است. اگر ویژگی جالب توجه‌ی می‌بینید، &quot; ویژگی‌ها یا دیسکی بودن &quot; را انتخاب کنید، در برخی شرایط ممکن چیزی ببینید که اصلا یک کهکشان نیست – برای نمونه یک رگه‌ی نوری ناشی از یک قمر، یا تصویری که کاملا تحت تاثیر نور یک ستاره‌ی درخشان است. اگر این‌چنین است، &quot;ستاره یا تصویر ساختگی&quot; را انتخاب ‌کنید. برای دیدن تصاویر در ابعاد بزرگ‌تر، کلیک ‌کنید.",
+      "help": " در اینجا هدف جداسازی کهکشان‌های بدون علایم ویژه (featureless) از سایر کهکشان ها است. اگر ویژگی جالب توجه‌ی می‌بینید، &quot; ویژگی‌ها یا دیسکی بودن &quot; را انتخاب کنید، در برخی شرایط ممکن چیزی ببینید که اصلا یک کهکشان نیست – برای نمونه یک رگه‌ی نوری ناشی از یک قمر، یا تصویری که کاملا تحت تاثیر نور یک ستاره‌ی درخشان است. اگر این‌چنین است، &quot;ستاره یا تصویر ساختگی&quot; را انتخاب ‌کنید. برای دیدن تصاویر در ابعاد بزرگ‌تر، کلیک ‌کنید.",
       "answers": {
         "a-0": "هموار",
-        "a-1": "علایم ویژگه یا دیسک",
+        "a-1": "علایم ویژه یا دیسک",
         "a-2": "ستاره یا اثری ساختگی"
       }
     },
     "candels-1": {
-      "text": "تا چه اندازه گِرد است؟",
-      "title": "گِردی",
-      "help": " همه‌ی کهکشان‌ها کاملن گرد نیستند – نگاهی کلی به شکل بیاندازید و آن‌را در یکی از این سه دسته قراردهید. اگر بیش از یک کهکشان در میدان دید بود، همواره به کهکشانی که در مرکز تصویر است توجه کنید. برای دیدن تصاویر در ابعاد بزرگ‌تر، کلیک‌کنید.",
+      "text": "تا چه اندازه گرد است؟",
+      "title": "گردی",
+      "help": " همه‌ی کهکشان‌ها کاملا گرد نیستند – نگاهی کلی به شکل بیاندازید و آن ‌را در یکی از این سه دسته قراردهید. اگر بیش از یک کهکشان در میدان دید بود، همواره به کهکشانی که در مرکز تصویر است توجه کنید. برای دیدن تصاویر در ابعاد بزرگ‌تر، کلیک‌کنید.",
       "answers": {
         "a-0": "کاملن گِرد",
         "a-1": "بینابین",
@@ -194,7 +194,7 @@
     "candels-2": {
       "text": " آیا کهکشان، بیش‌تر ظاهری توده ای دارد؟",
       "title": "توده‌ها",
-      "help": " برخی کهکشان‌ها چیزی جز توده های نورانی نیستند. منظور ما آن‌هایی نیستند که در کنار ویژگی‌های دیگر خود، دسته‌های کوچکی از ستاره‌ نیز دارند، بلکه ترجیح ما آن‌هایی که قسمت عمده‌شان از توده های نورانی تشکیل‌شده‌است. برای دیدن تصاویر در ابعاد بزرگ‌تر، کلیک‌کنید. ",
+      "help": " برخی کهکشان‌ها چیزی جز توده های نورانی نیستند. منظور ما آن‌هایی نیست که در کنار ویژگی‌های دیگر خود، دسته‌های کوچکی از ستاره‌ نیز دارند، بلکه ترجیح ما آن‌هایی است که قسمت عمده‌شان از توده های نورانی تشکیل ‌شده‌است. برای دیدن تصاویر در ابعاد بزرگ‌تر، کلیک‌کنید. ",
       "answers": {
         "a-0": "بله",
         "a-1": "نه"
@@ -214,7 +214,7 @@
       }
     },
     "candels-4": {
-      "text": " آیا توده ها در یک خط راست، بشکل زنجیر، یا بصورت خوشه هستند ؟",
+      "text": " آیا توده ها در یک خط راست، بشکل زنجیر، یا بصورت خوشه هستند؟",
       "title": "توده‌ها",
       "help": " گاهی توده‌ها در یک الگوی منظم ظاهر می‌شوند – اگر چنین است، شکل مناسب را انتخاب‌کنید.",
       "answers": {
@@ -279,7 +279,7 @@
       }
     },
     "candels-11": {
-      "text": " آیا نشانی از میله در وسط مرکز کهکشان وجود دارد؟ ",
+      "text": " آیا نشانی از میله ای که از مرکز کهکشان عبور می کند وجود دارد؟ ",
       "title": "میله",
       "help": " گهگاه کهکشان‌ها بهطور واضح دارای یک &quot;میله&quot; صاف هستند که از مرکزشان عبور می‌کند، و این چیزی است که در اینجا به دنبال آن هستیم. برای دیدن تصاویر در ابعاد بزرگ‌تر، کلیک‌کنید.",
       "answers": {
@@ -288,16 +288,16 @@
       }
     },
     "candels-12": {
-      "text": "آیا هیچ نشانه‌ای از یک الگوی بازوی مارپیچی وجود دارد؟",
+      "text": "آیا نشانی از یک الگوی بازوی مارپیچی وجود دارد؟",
       "title": "مارپیچی",
-      "help": " به دنبال بازوی مارپیچی بگردید – به یاد داشته‌باشید که این بازوها ممکن در  درون دیسک جای گرفته‌باشند و دیدن آنها آسان نباشد. برای دیدن تصاویر در ابعاد برزگ‌تر کلیک‌کنید.",
+      "help": " به دنبال بازوی مارپیچی بگردید – به یاد داشته‌باشید که این بازوها ممکن است درون دیسک جای گرفته‌باشند و دیدن آنها آسان نباشد. برای دیدن تصاویر در ابعاد برزگ‌تر کلیک‌کنید.",
       "answers": {
         "a-0": "مارپیچی",
         "a-1": "بدون بازوی مارپیچی"
       }
     },
     "candels-13": {
-      "text": " شکل مارپیچی چقدر تنگ به‌نظر میرسد؟",
+      "text": " میزان تنگ بودن پیچش بازوهای مارپیچی چقدر است‌؟‌",
       "title": "مارپیچی",
       "help": "",
       "answers": {
@@ -454,10 +454,10 @@
       },
       "question_2": {
         "text": " سوال زیر را با استفاده از تصویر، که کهکشان راه شیری را نمایش می‌دهد، پاسخ دهید. به‌طور تقریبی حلقه‌ی سفید رنگ از مرکز کهکشان راه شیری چقدر فاصله دارد؟",
-        "answer_0": "1000 سال نوری",
-        "answer_1": "10000 (ده هزار) سال نوری",
-        "answer_2": "25000 سال نوری",
-        "answer_3": "100000 (صد هزار) سال نوری"
+        "answer_0": "۱۰۰۰ سال نوری",
+        "answer_1": "۱۰۰۰۰ سال نوری",
+        "answer_2": "۲۵۰۰۰ سال نوری",
+        "answer_3": "۱۰۰۰۰۰ سال نوری"
       },
       "question_3": {
         "text": " ایده‌ی ماده‌ی تاریک برای توضیح دادن کدام یک از موارد زیر مطرح شد؟",
@@ -552,10 +552,10 @@
       },
       "question_3": {
         "text": " سوال زیر را با استفاده از تصویر، که کهکشان راه شیری را نمایش می‌دهد، پاسخ دهید. به‌طور تقریبی قطر لکه‌ی سفید رنگ چقدر است؟",
-        "answer_0": "1000 سال نوری",
-        "answer_1": "10000 (ده هزار) سال نوری",
-        "answer_2": "50000 سال نوری",
-        "answer_3": "100000 (صد هزار) سال نوری"
+        "answer_0": "۱۰۰۰ سال نوری",
+        "answer_1": "۱۰۰۰۰ سال نوری",
+        "answer_2": "۲۵۰۰۰ سال نوری",
+        "answer_3": "۱۰۰۰۰۰ سال نوری"
       },
       "question_4": {
         "text": " اطلاعات زیر که در مورد سه ستاره‌ای که در رشته اصلی  هستند A، B و C  را درنظر بگیرید. ستاره A برای 15 میلیارد سال در رشته اصلی  خواهد‌بود. ستاره‌ی B نوری به اندازه‌ی خورشید از خود ساتع می‌کند. ستاره‌ی C قرمز است. کدام گزینه در مورد این سه ستاره درست است؟",
@@ -615,10 +615,10 @@
     }
   },
   "astronomers": {
-    "heading": " گلکسی زو (Galaxy Zoo) برای ستاره‌شناسان",
+    "heading": " باغ کهکشان (Galaxy Zoo) برای ستاره‌شناسان",
     "explanation": {
-      "goals": " هدف این صفحه، تبیین انگیزه‌های علمی پنهان شده در پسِ پروژه، برای مخاطب حرفه ای تر است.",
-      "data": " ممکن است در جست‌و‌جوی اطلاعات باشد – اطلاعات عمومی شده‌ی گلکسی زو در فرمت‌های مختلف، از <a href=\"http://data.galaxyzoo.org\">اینجا</a> در دسترس است.",
+      "goals": " هدف این صفحه، تبیین انگیزه‌های علمی این پروژه، برای مخاطب حرفه ای تر است.",
+      "data": " ممکن است در جست‌و‌جوی اطلاعات باشد – اطلاعات عمومی شده‌ی باغ کهکشان در فرمت‌های مختلف، از <a href=\"http://data.galaxyzoo.org\">اینجا</a> در دسترس است.",
       "papers": " از سوی دیگر، می‌توانید در <a href=\"/#/papers\">اینجا</a> در لیست مقاله‌های منتشر شده توسط تیم گشت‌و‌گذار کنید."
     },
     "morphology": {
@@ -627,26 +627,25 @@
       "reference": "ریخت‌شناسی رایج یا با بررسی چشمی تصاویر کهکشان‌ها  انجام می شود ( نمونه <a href=\"http://adsabs.harvard.edu/abs/1926ApJ....64..321H\" target=\"_blank\">Hubble 1926</a>, <a href=\"http://heasarc.nasa.gov/W3Browse/all/rc3.html\" target=\"_blank\">de Vaucouleurs 1991</a>, و نمونه‌های جدیدتر <a href=\"http://arxiv.org/abs/1001.2401\" target=\"_blank\">Nair and Abraham 2010</a>) یا با پارامترهای ریخت‌شناسی، مانند تمرکز، عدم تقارن، خوشه‌ای بودن، پارامتر M20، ضریب جینی و غیره (نمونه <a href=\"http://arxiv.org/abs/astro-ph/0303065\" target=\"_blank\">Conselice 2003</a>, <a href=\"http://adsabs.harvard.edu/abs/2008ApJ...672..177L\" target=\"_blank\">Lotz et al. 2008</a>). به عبارت دقیق‌تر، این پارامترها عوامل ریخت‌شناسی، هر کدام با نقاط قوت و ضعف خود هستند که نوعا با مقایسه با دسته بندی های چشمی واسنجی می‌شوند. شیوه‌ی دسته بندی چشمی بطور کلی در برابر تغییرات سیگنال-به-نویز و توان تفکیک  مقاوم تر بوده  و این رویکرد را برای تعیین ریخت‌شناسی کهکشان مناسب می‌کند. با این وجود، پارامترهای ریخت‌شناسیک برای دسته ‌بندی مجموعه اطلاعات پیمایش‌های بزرگ‌مقیاس، که برای آن‌ها بررسی ظاهری توسط فرد (یا گروه کوچکی از محققان) منع محدودیت زمانی دارد، ارزشمند است."
     },
     "classification": {
-      "heading": " دسته‌بندی دسته ‌های بزرگ اطلاعات بدست‌آمده از پیمایش با استفاده از گلکسی زو",
-      "body": " گلکسی زو((<a href=\"http://arxiv.org/abs/0804.4483\" target=\"_blank\">Lintott et al. 2008</a>, <a href=\"http://arxiv.org/abs/1007.3265\" target=\"_blank\">2011</a>) پیشگام روشی نوین برای انجام دسته ‌بندی چشمی در مقیاس وسیع بر روی داده های مساحی ها کهکشان ها است. با استفاده از بیش از نیم میلیون کاربر از میان عموم جامعه، پروژه گلکسی زو، توانسته است تمام کهکشانهای طیف سنجی شده مساحی دیجیتال اسلون همه‌ی مساحی های تلسکوپ فضایی هابل (مجموعا حدود 1.5 میلیون کهکشان) را - با بررسی چشمی مستقیم- دسته بندی کند. با بیش از 40 دسته ‌بندی برای هر جسم، گلکسی زو همزمان دسته بندی چشمی و نیز عدم قطعیتی وابسته به آن را فراهم می کند (که در مواقعی که تعداد افراد دسته بندی کننده کم باشد بسیار دشوار است). نشان داده شده است که دسته بندی‌ها از نظر دقت با دسته بندی های انجام گرفته توسط ستاره‌شناسان حرفه‌ای قابل مقایسه است (به Lintott et al. 2008 رجوع کنید)."
+      "heading": " دسته‌بندی دسته ‌های بزرگ اطلاعات بدست‌آمده از مساحی با استفاده از باغ کهکشان ",
+      "body": " باغ کهکشان((<a href=\"http://arxiv.org/abs/0804.4483\" target=\"_blank\">Lintott et al. 2008</a>, <a href=\"http://arxiv.org/abs/1007.3265\" target=\"_blank\">2011</a>) پیشگام روشی نوین برای انجام دسته ‌بندی چشمی در مقیاس وسیع بر روی داده های مساحی ها کهکشان ها است. با استفاده از بیش از نیم میلیون کاربر از میان عموم جامعه، پروژه باغ کهکشان، توانسته است تمام کهکشانهای طیف سنجی شده مساحی دیجیتال اسلون همه‌ی مساحی های تلسکوپ فضایی هابل (مجموعا حدود 1.5 میلیون کهکشان) را - با بررسی چشمی مستقیم- دسته بندی کند. با بیش از 40 دسته ‌بندی برای هر جسم، باغ کهکشان همزمان دسته بندی چشمی و نیز عدم قطعیتی وابسته به آن را فراهم می کند (که در مواقعی که تعداد افراد دسته بندی کننده کم باشد بسیار دشوار است). نشان داده شده است که دسته بندی‌ها از نظر دقت با دسته بندی های انجام گرفته توسط ستاره‌شناسان حرفه‌ای قابل مقایسه است (به Lintott et al. 2008 رجوع کنید)."
     },
     "highlights": {
-
-      "heading": "Galaxy Zoo science highlights",
-      "body": "The Galaxy Zoo science programme has contributed to a diverse set of topics, largely focused on the nearby and intermediate-redshift Universe. Some recent highlights include the largest studies of galaxy mergers (<a href=\"http://arxiv.org/abs/0903.4937\">Darg et al. 2010</a>), tidal dwarf galaxies (<a href=\"http://arxiv.org/abs/1108.4410\">Kaviraj et al. 2012</a>), dust lanes in early-type galaxies (<a href=\"http://arxiv.org/abs/1107.5306\">Kaviraj et al. 2012</a>) and bars in disc galaxies (<a href=\"http://arxiv.org/abs/1003.0449\">Masters et al. 2011</a>, <a href=\"http://arxiv.org/abs/1205.5271\">2012</a>) in the nearby Universe to date. One of the unique aspects of Galaxy Zoo over automated morphological measurements is the possibility of serendipitous discoveries (often aided by volunteer led discussion on the <a href=\"http://www.galaxyzooforum.org\">Galaxy Zoo Forum</a>). These have included the discovery of 'green peas' (a class of compact extremely star-forming galaxies in the local Universe; <a href=\"http://arxiv.org/abs/0907.4155\">Cardamone et al. 2009</a>) and perhaps most famously \"Hanny's Voorwerp\" (<a href=\"http://arxiv.org/abs/0906.5304\">Lintott et al. 2009</a>) along with a survey of similar AGN-ionised gas clouds (<a href=\"http://arxiv.org/abs/1110.6921\">Keel et al. 2012</a>). The availability of a large sample of galaxies with both color and morphological information has led to the important realisation that color, not morphology, is most strongly correlated with environment (<a href=\"http://arxiv.org/abs/0805.2612\">Bamford et al. 2009</a>; <a href=\"http://arxiv.org/abs/0811.3970\">Skibba et al. 2009</a>), leading to intriguing subclasses of galaxies like red spiral galaxies (<a href=\"http://arxiv.org/abs/0910.4113\">Masters et al. 2010</a>) and blue ellipticals (<a href=\"http://arxiv.org/abs/0903.3415\">Schawinski et al. 2009</a>)."
+      "heading": "عناوین برجسته علمی باغ کهکشان ",
+      "body": "   برنامه علمی باغ کهکشان بر مجموعه مختلفی از موضوعات در حوزه عالم نزدیک و انتقال سرخ میانی تاثیر گذار بوده است‫.‬ از عناوین علمی جدید می توان به بزرگترین مطالعه کهکشان های در حال ادغام (<a href=\"http://arxiv.org/abs/0903.4937\">Darg et al. 2010</a>), کهکشان های کوتوله کشندی (<a href=\"http://arxiv.org/abs/1108.4410\">Kaviraj et al. 2012</a>), نواحی غبار در کهکشان های اولیه (<a href=\"http://arxiv.org/abs/1107.5306\">Kaviraj et al. 2012</a>) و ساختار میله ای در کهکشان های دیسکی (<a href=\"http://arxiv.org/abs/1003.0449\">Masters et al. 2011</a>, <a href=\"http://arxiv.org/abs/1205.5271\">2012</a>) در عالم مجاور اشاره کرد‫.‬ یکی از جنبه های منحصربفرد باغ کهکشان در مقایسه با شیوه های خودکار طبقه بندی کهکشان ها امکان کشفیات غیرمترقبه (‬که اغلب بواسطه مباحث مطرح شده توسط داوطلبان در <‪/‬a> انجمن باغ کهکشان a href=\"http://www.galaxyzooforum.org‪”>‬> انجام می گیرد‫)‬ است. این کشفیات شامل کشف ‪‘‬نخود های سبز‪’‬ ‫(‬دسته ای از کهکشانها با ستاره زایی شدید در عالم مجاور‫)‬ <a href=\"http://arxiv.org/abs/0907.4155\">Cardamone et al. 2009</a>) و شاید مشهورتر از آن \"Hanny's Voorwerp\" (<a href=\"http://arxiv.org/abs/0906.5304\">Lintott et al. 2009</a>) به همراه مساحی ابرهای یونیزه شده توسط هسته های کهکشانی فعال باشد (<a href=\"http://arxiv.org/abs/1110.6921\">Keel et al. 2012</a>). در دسترس بودن مجموعه ای از کهکشانهایی با اطلاعات رنگ و شکل به این درک مهم منجر شد که نه شکل بلکه رنگ کهکشانها بیشترین همبستگی با محیط کهکشانی دارد (<a href=\"http://arxiv.org/abs/0805.2612\">Bamford et al. 2009</a>; <a href=\"http://arxiv.org/abs/0811.3970\">Skibba et al. 2009</a>), و این منجر به کشف مارپیچی های سرخ (<a href=\"http://arxiv.org/abs/0910.4113\">Masters et al. 2010</a>) و بیضی گونهای آبی (<a href=\"http://arxiv.org/abs/0903.3415\">Schawinski et al. 2009</a>) شد."
     },
     "relaunched": {
-      "heading": "Galaxy Zoo Relaunched",
-      "sdss": "The current site incorporates images from three different telescopes: SDSS, HST, and UKIRT. The SDSS images are from DR8 and the Southern Galactic cap, which increases the sample size of galaxies in the local universe by 40%. The HST images are from CANDELS, the largest HST Treasury Program. This survey is designed to take advantage of the advent of Wide Field Camera 3 (WFC3), which is rapidly opening up a new window into galaxies at z > 1 – the first 50% of the lifetime of the Universe. Previous HST imaging at these epochs largely sampled the rest-frame ultraviolet, since the available survey instruments (e.g. ACS) operated in the optical wavelengths. However, the near-infrared capabilities of the WFC3 (a factor of 20 better than NICMOS) are providing us with unprecedented rest-frame optical data of galaxies at z > 1.",
-      "candels": "CANDELS is using the WFC3 near-infrared filters to image 800 arcmin<sup>2</sup> in established HST legacy fields (e.g. GOODS, COSMOS). The near-infrared WFC3 images are particularly important because morphological analysis is best performed in rest-frame optical wavelengths, which trace the underlying stellar population of the galaxy rather than just the UV-bright star-forming regions.",
-      "combination": "The combination of the SDSS and CANDELS Galaxy Zoo samples will offer a formidable tool for answering significant open questions that demand a morphological analysis. For example, at what epochs was the Hubble sequence established? How and when were the primordial spheroids formed? What was the relative role of major mergers and secular processes in driving star formation and black hole growth in the early Universe?",
-      "ukidss": "The UKIRT images are from the Large Area Survey (LAS) as part of UKIDSS, which imaged 4000 sq. deg. of the sky overlapping with the SDSS fields. We selected all galaxies classified in Galaxy Zoo 2 that had high-quality UKIDSS imaging, totaling about 70,000 galaxies. The images shown on the site are a colour-composite of the Y, J, and K-band images (where the J-band uses dithered observations to improve the angular resolution in that channel). These images will allow us to trace morphology as a function of wavelength; for example, whether the observed bar fraction increases for galaxies in the rest-frame infrared.",
-      "ferengi": "Finally, Galaxy Zoo also includes a small set of SDSS images that have been artificially processed to simulate the observed effects of redshift. This set used a morphologically diverse sample of galaxies from Galaxy Zoo 2 and were processed using the FERENGI code (<a href=\"http://www.mpia-hd.mpg.de/FERENGI/\">Barden, Jahnke, & Hausler 2008</a>) out to redshifts of z=1. Results from these images will be used as calibration for galaxies in the GZ: Hubble and CANDELS data, since it allows us to assess resolution and brightness-dependent biases independent of true galaxy evolution.",
-      "conclusion": "The purpose of the Galaxy Zoo project is to answer such questions, prepare the ground for morphological work using future instruments like the JWST and produce samples of morphologically selected high-redshift galaxies for follow-up using instruments like the extremely large telescopes and ALMA."
+      "heading": " آغاز مجدد باغ کهکشان ",
+      "sdss": " سایت جدید تصاویر سه تلسکوپ SDSS، تلسکوپ فضایی هابل و تلسکوپ فروسرخ بریتانیا را شامل می شود‫.‬ تصاویر  SDSS  از داده های سری ۸ و برجستگی کهکشانی جنوبی است که مجموعه کهکشان های عالم مجاور را ۴۰ درصد افزایش می دهد‫.‬ تصاویر تلسکوپ فضایی هابل مربوط به مساحی CANDELS که بزرگترین برنامه گنجینه ای تلسکوپ فضایی هابل است‫.‬ این مساحی برای استفاده هرچه بهتر از دوربین میدان گسترده ۳ این تلسکوپ است که به سرعت پنجره ای جدید به سوی کهکشانهای با انتقال سرخ z>1 یا همان نیمه نخست عمر عالم باز می کند طراحی شده است‫.‬ تصاویر قبلی هابل در این فواصل، تابش فرابنفش کهکشان ها را نمونه برداری می کرد چراکه ابزار ACS در ناحیه اپتیکی رصد می کرد‫.‬ ولی ظرفیت فروسرخ نزدیک WFC3 که ۲۰ برابر بهتر از NICMOS است داده های بی سابقه ای اپتیکی برای کهکشان های z>1 در اختیار ما قرار میدهد‫.‬ ",
+      " candels ": "CANDELS از فیلترهای فروسرخ نزدیک WFC3 برای تصویر برداری از محدوده ای به ابعاد ۸۰۰ دقیقه قوسی مربع در نواحی شناخته شده هابل یعنی GOODS و  COSMOS استفاده می کند. تصاویر فروسرخ WFC3 از اینرو اهمیت دارند که طبقه بندی شکل یا ریخت کهکشانها در ناحیه اپتیکی که جمعیت ستاره ای را محک می زند بهتر از ناحیه فرابنفش که نواحی ستاره زایی را مشخص می کند عمل می کند.",
+      "combination": "ترکیب SDSS و  CANDELS باغ کهکشان ابزاری نیرومند برای پاسخگویی به سوالات پیش روی تحلیل شکل کهکشان هاست‫.‬ برای مثال، رشته هابلی کهکشانها در چه دوره زمانی شکل گرفته است؟ چگونه و در چه دوره ای کهکشانهای کروی اولیه تشکیل شده اند؟ نقش نسبی ادغام های مهم و فرآیندهای آرام ‫(‬سکولار‫)‬ در ستاره زایی و رشد سیاه چاله در عالم اولیه چگونه بود؟‌ ",
+      "ukidss": " تصاویر تلسکوپ فروسرخ بریتانیا مربوط است به مساحی بزرگ مقیاس UKIDSS که ۴۰۰۰ درجه مربع آسمان را پوشش و با مساحی  SDSS همپوشانی دارد‫.‬ ما همه کهکشانهایی که در باغ کهکشان ۲ طبقه بندی شده و دارای تصاویر با کیفیت UKIDSS بودند یعنی حدود ۷۰ هزار کهکشان را انتخاب کردیم‫.‬ تصاویر نشان داده شده در سایت ترکیب رنگی Y، J و K است ‫(‬البته تصاویر مربوط به فیلتر J از روش جابجایی کوچک یا dithering برای بهبود توان کفکیک زاویه ای استفاده می کند‫).‬ این تصاویر به ما امکان می دهد تا شکل کهکشان ها را بصورت تابعی از طول موج دنبال کنیم‫.‬ برای مثال آیا نسبت ساختار میله ای در کهکشانها در طول موج سکون‫-‬فروسرخ افزایش می یابد‫.‬ ",
+      "ferengi": " در نهایت باغ کهکشان مجموعه کوچکی از تصاویر SDSS که برای مطالعه آثار مشاهداتی انتقال سرخ شبیه سازی شده اند را در بر می گیرد‫.‬ این مجموعه از کهکشان های گوناگون باغ کهکشان ۲ که توسط کد FERENGI فرآوری شده اند ‫(<a href=\"http://www.mpia-hd.mpg.de/FERENGI/\">Barden, Jahnke, & Hausler 2008</a>)‬ و تا انتقال سرخ ۱ گسترده اند تشکیل شده است‫.‬ نتایج این تصاویر در کالیبره کردن کهکشانهای هابل و داده های CANDELS در باغ کهکشان مورد استفاده قرار خواهد گرفت چون این امکان را فراهم می کند تا اثر توان تفکیک و عوامل وابسته به درخشندگی بدون حضور تحول کهکشانها در طبقه بندی های انجام شده مورد مطالعه قرار گیرد‫.‬ ",
+      " conclusion ": " هدف پروژه باغ کهکشان پاسخ به چنین سوالات و مهیا شدن برای طبقه بندی با استفاده از ابزارهای آتی مانند تلسکوپ فضایی جیمز وب و تولید نمونه هایی از کهکشان های طبقه بندی شده در انتقال سرخ بالا برای مشاهده تلسکوپ های بسیار بزرگ و ALMA است‫.‬ "
     }
   },
   "classify": {
-    "heading": "دسته ‌بندی",
+    "heading": "دسته‌بندی",
     "restart": "شروع مجدد",
     "help": "راهنما",
     "sloan": "SDSS",
@@ -662,24 +661,24 @@
     "examples": "مثال‌ها"
   },
   "home": {
-    "headline": " بر آستان نگاه توست آنچه شاهدانش اندکند.",
-    "call_to_action": " یک نگاه ممتاز به جهان دور دست، آن گونه که SDSS ، تلسکوپ فضایی هابل، و UKIRT مشاهده کرده‌اند را تجربه کنید",
+    "headline": "بر آستان نگاه توست آنچه شاهدانش اندک اند‫.‬",
+    "call_to_action": " تجربه نگاهی ممتاز به عالم دور دست آن گونه که SDSS، تلسکوپ فضایی هابل و UKIRT به تصویر کشیده اند‌!",
     "galaxy_zoo": {
-      "title": "رده‌بندی کهکشان‌ها",
-      "description": " برای فهمیدن چگونگی شکل‌گرفتن کهکشان‌ها، ما به کمک شما نیاز داریم تا آن‌ها را بر اساس شکل‌شان دسته ‌بندی کنیم. اگر فرز وچابک باشید، حتی ممکن است اولین فردی باشید که کهکشان‌هایی که برای دسته ‌بندی انتخاب می‌کنید را می‌بیند.",
-      "classify": "شروع دسته ‌بندی کردن"
+      "title": "دسته‌بندی کهکشان‌ها",
+      "description": " ما برای درک چگونگی تشکیل‌ کهکشان‌ها به کمک شما نیاز داریم تا آن‌ها را بر اساس شکل‌شان دسته‌بندی کنیم. اگر سریع و چابک باشید، حتی ممکن است اولین فردی باشید که کهکشانی را برای دسته ‌بندی انتخاب می‌کنید‫.‬",
+      "classify": "شروع دسته ‌بندی"
     },
     "galaxy_formation": {
       "title": "کهکشان‌ها چگونه شکل‌می‌گیرند؟",
-      "body": " یک میلیارد کهکشان در سرتاسر جهانی که تا به امروز قادر به مشاهده آن بوده ایم پراکنده شده‌اندکه هر یک منظومه‌ای با شکوه بوده  که ممکن است شامل میلیاردها ستاره باشد. بسیاری از آن‌ها به طرز جالب توجه‌ای زیبا هستند، و هدف گلکسی زو مطالعه‌ی آن‌هاست، با همکاری  ستاره‌شناسان در تلاش برای فهمیدن اینکه کهکشان‌هایی که در اطراف خود می‌بینیم چگونه شکل‌گرفته‌اند، و آن‌چه داستان آن‌ها در مورد گذشته، حال و آینده‌ی تمامی جهان ما به ما می‌گوید. <a data-nav=\"#/science\" href=\"#/science\">بیش‌تر</a> "
+      "body": " یک میلیارد کهکشان در سرتاسر جهانی که تا به امروز قادر به مشاهده آن بوده ایم پراکنده شده‌اندکه هر یک منظومه‌ای با شکوه بوده  که ممکن است شامل میلیاردها ستاره باشد. بسیاری از آن‌ها به طرز جالب توجه‌ای زیبا هستند، و هدف باغ کهکشان مطالعه‌ی آن‌هاست، با همکاری  ستاره‌شناسان در تلاش برای فهمیدن اینکه کهکشان‌هایی که در اطراف خود می‌بینیم چگونه شکل‌گرفته‌اند، و آن‌چه داستان آن‌ها در مورد گذشته، حال و آینده‌ی تمامی عالم ما به ما می‌گوید. <a data-nav=\"#/science\" href=\"#/science\">بیش‌تر</a> "
     },
     "history": {
-      "title": "تاریخچه‌ی گلکسی زو",
-      "body": " راه‌اندازی نسخه‌ی جدید گلکسی زو، نسخه‌ی چهارم، تنها چند هفته بعد از پنجمین سالروز تولد سایت صورت‌گرفت. این‌ها همگی از جولای 2007 شروع شد، با مجموعه‌ای از اطلاعات از یک میلیون کهکشان که توسط پیمایش  بدست آمده بود، که کماکان امروز هم بخشی از تصاویر سایت را تامین می‌کند. با این تعداد زیاد کهکشان، تصور می‌کردیم که سال‌ها طول خواهد کشید که کاربران روی همگی آن‌ها کار کنند، اما در همان 24 ساعت اول راه‌اندازی، با دریافت تقریبن 70 هزار دسته ‌بندی در یک ساعت، حیرت‌زده شدیم. در نهایت، در طی سال اول راه‌اندازی، بیش از 50 میلیون دسته ‌بندی دریافت کردیم که از مشارکت بیش از 150 هزار نفر در پروژه بدست‌آمده‌بود. <a data-nav=\"#/story\" href=\"#/story\">بیش‌تر</a>"
+      "title": "تاریخچه‌ی باغ کهکشان",
+      "body": " راه‌اندازی نسخه‌ی جدید باغ کهکشان، یعنی نسخه‌ی چهارم، تنها چند هفته بعد از پنجمین سالروز تولد سایت صورت‌ گرفت. همه ماجرا از جولای ۲۰۰۷ یعنی با تصاویر یک میلیون کهکشان مساحی دیجیتال اسلون (Sloan Digital Sky Survey) که هنوز هم تامین کننده بخشی از تصاویر سایت است، شروع شد.‌‌ با این تعداد زیاد کهکشان، تصور می‌کردیم که سال‌ها طول خواهد کشید تا تمامی کهکشان ها توسط کاربران دسته بندی شوند‌‫.‬ اما در همان ۲۴ ساعت اول راه‌اندازی، با دریافت تقریبا ۷۰ هزار دسته ‌بندی در هر ساعت، حیرت‌زده شدیم. در نهایت، طی سال اول راه‌اندازی، بیش از ۵۰ میلیون دسته ‌بندی دریافت شد که با مشارکت بیش از 150 هزار نفر در این پروژه بدست‌آمده ‌بود‫.‬ <a data-nav=\"#/story\" href=\"#/story\">بیش‌تر</a>"
     },
     "classroom": {
-      "title": "گلکسی زو در کلاس",
-      "body": " آیا شما یک آموزگار هستید؟ تمایل دارید با گروهی از دانش‌آموزان از گلکسی زو استفاده‌کنید؟ <a href=\"http://www.galaxyzoo.org/#/navigator/home\">ناوشگر</a>  یک ابزار جذاب است که به (اعضای) گروه‌ها اجازه می‌دهد کهکشان‌ها را به با (کمک) هم دسته ‌بندی کنند و سپس ویژگی‌های کهکشان را وارسی نمایند. <a href=\"http://www.zooteach.org/zoo/galaxy_zoo\">Zoo Teach</a> is where educators can share lessons, resources and that compliment the citizen science projects that are part of the Zooniverse. ",
+      "title": "باغ کهکشان در کلاس",
+      "body": " آیا شما آموزگار هستید؟ تمایل دارید با گروهی از دانش‌آموزان از باغ کهکشان استفاده‌کنید؟ <a href=\"http://www.galaxyzoo.org/#/navigator/home\">ناوشگر</a> ابزاری است که اجازه می دهد بصورت گروهی‌‌ کهکشان‌ها را دسته ‌بندی کرده و ویژگی‌های کهکشان را بررسی کنید. <a href=\"http://www.zooteach.org/zoo/galaxy_zoo\">زوتک</a> محلی است که آموزگار می تواند درس و منابع خود را به اشتراک بگذارد و با این کار  پروژه های شهروندان علمی که بخشی از زونیورس هستند را تکمیل کند. ",
       "navigator": "ناوشگر"
     },
     "recent_images": {
@@ -692,13 +691,13 @@
   },
   "navigation": {
     "classify": "دسته ‌بندی",
-    "science": "علوم",
+    "science": "علمی",
     "blog": "وبلاگ",
     "team": "تیم",
     "papers": "مقالات",
     "data": "داده ها",
     "story": "داستان",
-    "galaxy_zoo": "گلکسی زو",
+    "galaxy_zoo": "باغ کهکشان",
     "astronomers": "ستاره‌شناسان",
     "discuss": "بحث",
     "talk": "گفتگو",
@@ -710,7 +709,7 @@
   },
   "papers": {
     "title": "مقالات منتشرشده",
-    "description": " تلاش‌های اعضای گلکسی زو، مجموعه‌ای عظیم و خارق‌العاده از اطلاعات به همراه کار علمی انجام‌شده روی آن‌ها را مهیاکرده‌است. لیست پایین، تنها بخشی از مقالاتی است که بواسطه‌ی دسته ‌بندی‌های گرد‌آوری شده در گلکسی زو به انجام رسیده‌است. ",
+    "description": " تلاش‌های اعضای باغ کهکشان، مجموعه‌ای عظیم و خارق‌العاده از اطلاعات به همراه کار علمی انجام‌شده روی آن‌ها را مهیاکرده‌است. لیست پایین، تنها بخشی از مقالاتی است که بواسطه‌ی دسته ‌بندی‌های گرد‌آوری شده در باغ کهکشان به انجام رسیده‌است. ",
     "available": "قابل دسترسی از اینجا"
   },
   "profile": {
@@ -729,41 +728,41 @@
     "quizzes": "آزمونک‌ها",
     "quizzes_taken": "آزمونک‌های پاسخ‌داده‌‌شده",
     "take_a_quiz": "پاسخ به یک آزمونک",
-    "galaxy_zoo_hubble": "گلکسی زو: هابل",
-    "galaxy_zoo_hubble_link": " اگر به‌دنبال کهکشان‌های قدیمی خود در گلکسی زو هابل هستید، می‌توانید آن‌ها را در <a href=\"http://hubble.galaxyzoo.org/my_galaxies\" target=\"_blank\">اینجا پیدا کنید</a>."
+    "galaxy_zoo_hubble": "باغ کهکشان: هابل",
+    "galaxy_zoo_hubble_link": " اگر به‌دنبال کهکشان‌های قدیمی خود در باغ کهکشان هابل هستید، می‌توانید آن‌ها را در <a href=\"http://hubble.galaxyzoo.org/my_galaxies\" target=\"_blank\">اینجا پیدا کنید</a>."
   },
   "science": {
     "title": "ایده‌ی علمی پشت سایت",
-    "p1": " یک میلیارد کهکشان در سرتاسر جهانی که می‌توانیم مشاهده کنیم پراکنده شده‌اند، هر یک منظومه‌ای با شکوه که ممکن است شامل میلیاردها ستاره باشد. بسیاری از آن‌ها به طرز جالب توجه‌ای زیبا هستند، و هدف گلکسی زو مطالعه‌ی آن‌هاست، با همدستی ستاره‌شناسان در تلاش برای فهمیدن اینکه کهکشان‌هایی که در اطراف خود می‌بینیم چگونه شکل‌گرفته‌اند، و آن‌چه داستان آن‌ها در مورد گذشته، حال و آینده‌ی تمامی جهان ما به ما می‌گوید. ",
-    "p2": "Our strategy is based on the remarkable fact that you can tell a lot about a galaxy just from its shape. Find a system with spiral arms, for example, and normally - but critically not always - you'll know that you're looking at a rotating disk of stars, dust and gas with plenty of fuel for future star formation. Find one of the big balls of stars we call ellipticals, however, and you're probably looking at a more mature system, one which long ago finished forming stars. The galaxies' histories are also revealed; that elliptical is likely to be the product of a head-on collision between two smaller galaxies, and smaller scars such as warped disks, large bulges or long streams of stars bear testament to the complexity of these galaxies' lives.",
-    "p3": "We've already said that a merger can have a major impact on a galaxy’s appearance, but many other factors could have played an important role; for example, there is steadily growing evidence (not least from previous Galaxy Zoo projects) that the black holes that lurk at the heart of galaxies may have a profound effect on their surroundings.",
-    "p4": "As material falls towards the black hole, it can be heated to enormous temperatures and the resulting radiation packs a powerful punch, sometimes aided by the presence of powerful jets of materials flung away from the vicinity of the black hole (though not, of course, from the black hole itself) at close to the speed of light. These combination of forces can, it seems, heat or expel gas from the galaxy, depriving it of fuel for future star formation and changing its face for ever.",
-    "p5": "A galaxy's surroundings matter too. At the centre of the Virgo cluster, our nearest large group of galaxies, mergers between systems are rare - held by the cluster’s powerful gravitational grip, galaxies are moving too fast for more than brief encounters. In the emptiest parts of space, the density of galaxies is just too low for mergers to play a significant role, and so it’s only on the outskirts of clusters or in small groups like our own Local Group that mergers currently play a significant part. It should come as no surprise, then, that we find different types of galaxies in different places, and this too must be taken into account.",
-    "p6": "Disentangling these effects, and many more, requires the largest possible samples of classified galaxies. It’s not uncommon for us to need, for example, a large sample of red, barred, spiral galaxies that reside on the edges of clusters, and if we don't have a large sample to begin with there will be none left when we've narrowed the search. Modern surveys provide enough images - hundreds of thousands upon hundreds of thousands of them - but we still need people to classify them. That's where you come in...",
-    "subtitle": "Where do the images come from?",
-    "p7": "The Sloan Digital Sky Survey (SDSS) started in 2000 and is one of the first, and largest, digital maps of the Universe available to astronomers. The original SDSS, which ran for 5 years, included two main instruments, namely a 126 megapixel imaging camera and two fiber-fed spectrographs, mounted on a dedicated 2.5 meter telescope at Apache Point Observatory in New Mexico. During good weather, the SDSS undertook draft-scan imaging of the northern sky using the camera, while in cloud conditions the SDSS obtained spectra of a sub-set of detected objects to measure their redshift and thus distance. From 2005 to 2008, the second phase of SDSS, or SDSS-II, continued to survey the north galactic cap of our Galaxy as well as undertaking a new supernova survey and a new spectroscopic survey of stars (SEGUE). Since 2008, the third incarnation of the SDSS, or SDSS-III, has focused exclusively on spectroscopy (the imaging camera has been retired to the Smithsonian Museum) and comprises of four sub-surveys of BOSS, APOGEE, SEGUE and MARVELS.",
-    "p8": "The scientific legacy of the SDSS is amazing, partly due to the annual release of SDSS data to the astronomical community and public. For example, in 2011, the SDSS collaboration published its eighth data release (DR8), which contains 14,555 square degrees of optical imaging data (with over a trillion pixels), and contains 932 million unique objects, of which 1.63 million objects possessed a SDSS spectrum. This awesome astronomical resource is freely available via a state-of-the-art database. Astronomers have written over 4000 papers (approximate one a day) using SDSS public data, gaining over 175,000 citations. Within the SDSS collaboration, there have been more than 120 PhD theses, while the SDSS data fueling numerous high impact outreach projects e.g. Galaxy Zoo. The SDSS has been named several times the highest impact project, facility or mission in the field of astronomy (Madrid & Macchetto 2006, 2009), and is the source of the most highly cited astronomy article in the years 2000, 2002, 2005, and 2008 (Frogel et al. 2010).",
-    "p9": "The SDSS would not have been possible without a large collaboration of scientists, researchers and astronomers. Many of the astronomers involved in the original SDSS have now moved on in their careers, spreading their experience within large collaborations across the world. At the start of the SDSS, such large collaborations in astronomy were rare and the SDSS has also been at the forefront of changing the culture of collaborative research in astrophysics. The SDSS is now planning a new 4th phase starting 2014. This phase will involve a number of targeted surveys including eBOSS, MaNGA and APOGEE-S2, which are designed to simultaneously explore the distant universe, the dynamics of nearby galaxies, and study stars in our own Galaxy. By the end of this 4th phase, the SDSS will have provided excellent data for over two decades, resulting in over 5 million astronomical spectra.",
-    "p10": "As we peer deeper into the universe, we look into the past, and since the universe is expanding, the galaxies we see are moving away from us faster and faster. This means that the light that left them gets stretched by the time it reaches us. Thus, the light from stars gets \"redshifted\" and to get a visible light image of a galaxy in the early universe, we need an infrared camera. Taking infrared images is much harder than optical ones for many reasons, but the most important one is that the night sky actually glows in the infrared. This fundamentally limits our ability to take deep infrared images, which is why Hubble's new Wide Field Camera 3 (WFC3) with its infrared capability is so valuable.",
-    "p11": "A new generation of surveys using the WFC3 is giving us an unprecedented view into the first third of the lifetime of the Universe: the first 3-4 billion years after the Big Bang. Foremost among these is the Cosmic Assembly Deep Extragalactic Near-infrared Survey (CANDELS). The largest treasury survey using the Hubble Space Telescope to date, CANDELS is surveying several patches of sky to put together the largest collection of deep infrared images of galaxies in the early Universe. The combination of Galaxy Zoo and CANDELS offers a formidable tool in our quest to understand the earliest stages of the evolution of the visible Universe, one of the fundamental questions in observational cosmology today.",
-    "p12": "While astronomers have learned an amazing amount from the SDSS and Hubble images, there are also areas we can only probe if we look at galaxies in wavelengths beyond those seen by the human eye. For objects that radiate thermally (such as stars), the wavelength used probes the temperature of the object being observed. Stars like our own Sun have temperatures around 5500 K, which show up strongly in the optical wavelengths used in SDSS imaging. If we look at galaxies in ultraviolet wavelengths, however, hotter regions become more prominent; in galaxies, this means we're picking out young, massive stars and individual star-forming regions (often leading to a patchier appearance). For galaxies observed at infrared wavelengths, cooler regions become more prominent; these include older and lower-mass stars, as well as clouds of dust that are heated by the stars and then re-emit that light at lower energies.",
-    "p13": "Comparing the morphologies of galaxies at multiple wavelengths gives astronomers a much more complete picture of the processes that govern their astrophysics. Tracing stars by temperature gives us proxies for their age and chemical evolution, while identifying star formation regions tells us where the densest parts of the disk are and where the mass in these galaxies is being built up.",
-    "p14": "The new infrared images on Galaxy Zoo come from the United Kingdom Infared Survey Telescope (UKIRT), a 3.8m telescope located on the summit of Mauna Kea in Hawaii at nearly 14,000 ft. elevation. Starting in 2005, UKIRT began an infrared survey of the northern sky called UKIDSS, covering 7500 square degrees at wavelengths of 1--2.5 microns. A portion of this survey was dedicated to covering the same regions as the SDSS. This means that the new UKIDSS images in Galaxy Zoo have already been classified by users in Galaxy Zoo 2; this will let us do direct comparisons for the two samples and examine how morphology (like the fraction of galaxies with bars, for example) changes with the wavelength being used."
+    "p1": " یک میلیارد کهکشان در سرتاسر عالم قابل مشاهده در مجموعه هایی که می توانند خود شامل میلیاردها ستاره باشند پراکنده شده‌اند‫.‬ بسیاری از آن‌ها به طرز جالب توجه‌ای زیبا هستند‫.‬ هدف باغ کهکشان مطالعه‌ی آن‌ها و کمک به ستاره‌شناسان در تلاش برای فهمیدن اینکه کهکشان‌هایی که در اطراف خود می‌بینیم چگونه شکل‌گرفته‌اند، و در مورد گذشته، حال و آینده‌ی عالم چه می‌گوید. ",
+    "p2": "استراتژی ما بر این واقعیت استوار است که شکل یا ریخت کهکشانها اطلاعات زیادی در اختیار ما قرار می دهند. برای مثال اگر یک کهکشان مارپیچی پیدا کنید بطور معمول - اما نه همیشه - نشانه وجود دیسک چرخانی از ستاره، گاز و غبار بوده و سوخت لازم برای ستاره زایی آتی موجود است. اگر یک مجموعه گردی از ستاره ها که به آنها کهکشان بیضی گون می گوییم پیدا کنید، احتمالا به یک سیستم پیرتر که مدت ها قبل ستاره زایی در آن به اتمام رسیده نگاه می کنید. تاریخچه کهکشانها نشان می دهد که بیضی گون ها به احتمال زیاد حاصل برخورد رو در روی دو کهکشان کوچکتر باشند، نشان های زخم مانندی چون دیسک پیچیده، بالج یا دنباله ای از ستاره ها نشان دهنده زیست پیچیده این نوع کهکشان هاست.",
+    "p3": "گفتیم که ادغام کهکشانها تاثیر عمده ای بر روی ریخت و ظاهر کهکشانها دارد اما عوامل دیگری نیز می توانند تاثیر زیادی داشته باشند برای نمونه شواهد زیادی بر تاثیر سیاه چاله هایی که در مرکز کهکشان ها قرار دارند بر محیط اطراف آنها وجود دارد. ",
+    "p4": "با ریزش مواد به سمت سیاه چاله، دمای آن نیز بشدت افزایش می یابد و تابش ناشی از آن منجر به التهاب عظیمی می شود که گاه بکمک جت های پر توانی مواد را از اطراف سیاه چاله  (البته نه از خود سیاه چاله) با سرعتی نزدیک به سرعت نور به بیرون پرت می کند. به نظر می رسد که ترکیب این نیروها می تواند موجب گرمایش یا خروج گاز ار کهکشان و در نتیجه کاهش سوخت مورد نیاز برای ستاره زایی آتی کهکشان شده و تغییر شکل همشگی کهکشان شود.",
+    "p5": "محیط اطراف کهکشان ها نیز اهمیت دارد. در مرکز خوشه سنبله، نزدیک ترین خوشه کهکشانها به ما، بدلیل سرعت بالای کهکشانها که ناشی از قدرت گرانشی خوشه است، ادغام کهکشانها بندرت اتفاق می افتد. در بخش هایی از عالم که خالی تر است نیز چگالی کهکشانها کمتر از آن است که ادغام کهکشانها  نقش مهمی ایفا کند. فقط در  بخش های بیرونی کهکشانها و گروههای کهکشانی کوچکی مانند گروه موضعی خودمان است که ادغام نقش برجسته ای دارد.  عجیب نیست در انواع مختلف کهکشانها را در محیط های مختلف بیابیم و این وابستگی محیطی نیز باید مد نظر قرار گیرد.",
+    "p6": "تفکیک نقش هریک از این فرآیندها در شکل گیری کهکشانها نیازمند نمونه آماری بسیار بزرگی از کهکشانها های طبقه بندی شده است. داشتن یک مجموعه از کهکشانهای قرمز، میله ای  و مارپیچی که در کوشه ای از خوشه های  کهکشانی نیازی غیرمتعارف نیست و اگر نمونه آماری کوچک باشد با تنگ تر کردن جستجو دیگری کهکشانی باقی نمی ماند. مساحی ها مدرن به اندازه کافی تصویر کهکشان در اختیار ما  می گذارند - صدها هزار  - اما ما به مردم برای طبقه بندی آنها نیاز داریم. برای همین اینجا هستید …",
+    "subtitle": "تصاویر از کجا می آیند؟",
+    "p7": "مساحی آسمان دیجیتال اسلون (SDSS) در سال ۲۰۰۰ میلادی شروع شد و یکی از اولین  و بزرگترین نقشه های دیجیتال عالم است که در اختیار منجمان است. اولین مساحی SDSS که ۵ سال طول کشید با استفاده از دو ابزار رصدی انجام گرفت، یک دوربین تصویر برداری ۱۲۶ مگاپیکسلی و دو طیف نگار تغذیه شده توسط فیبرنوری که همگی روی یک تلسکوپ دو و نیم متری در رصدخانه آپاچی پوینت (Apache Point Observatory) در نیومکزیکو قرار گرفته بودند. در شرایط خوب جوّی SDSS اقدام به تصویر برداری آسمان نیمکره شمالی می کرد و در شرایط ابری SDSS اقدام به گرفتن طیف زیر مجموعه از اجرام تصویر برداری شده می کرد تا انتقال سرخ آنها و در نتیجه فاصله اجرام را اندازه گیری کند. از سال ۲۰۰۵ تا ۲۰۰۸ فاز دوم SDSS یا SDSS‪-‬II مساحی قطب شمال کهکشانی راه شیری را ادامه داد و مساحی جدید ابرنواخترها و مساحی طیف سنجی جدید ستاره ها (SEGUE) را آغاز کرد. از سال ۲۰۰۸، سومین فاز SDSS یا SDSS‪-‬III منحصرا بر روی طیف سنجی متمرکز شد و مساحی های ‌BOSS ‪,‬ APOGEE ‪,‬ SEGUE و MARVELS را تشکیل داد.  به این ترتیب دوربین تصویربرداری بازنشست و به موزه سیمسونین منتقل شد. ",
+    "p8": "میراث علمی SDSS شگفت انگیز است که بخشی از آن بخاطر انتشار آن در جامعه نجوم و عموم است. برای مثال در سال ۲۰۱۱ گروه همکاری SDSS اقدام به انتشار هشتمین سری داده ها (DR8) کرد که تصاویر اپتیکی ۱۴۵۵۵ درجه مربع از آسمان را که در برگیرنده ۹۳۲ میلیون جسم بوده و ۱ میلیون و ۶۳۰ هزار آنها دارای طیف SDSS بودند. این منبع نجومی عالی از طریق یک ‍پایگاه داده پیشرفته بطور مجانی در اختیار عموم است. منجمان با استفاده از داده های عمومی SDSS بیش از ۴۰۰۰ مقاله نوشته اند که ۱۷۵۰۰۰ بار به آنها ارجاع شده است. در گروه همکاری SDSS بیش از ۱۲۰ رساله دکتری نوشته شده است و این درحالی است که SDSS پرژوه های عمومی مانند باغ کهکشان را رقم زده است. چندین بار از SDSS بعنوان پروژه ای با بیشترین تاثیر گذاری در نجوم یاد شده است (Madrid ‪&‬ Macchetto 2006‪,‬ 2009) و منبع مقالاتی بوده که بیشترین ارجاع در سالهای ۲۰۰۰، ۲۰۰۲، ۲۰۰۵ و ۲۰۰۸ را داشته اند (Frogel et al 2010).",
+    "p9": " پروژه SDSS بدون همکاری تعداد زیادی دانشمند، پژوهشگر و منجم ممکن نبود‫.‬ بسیاری از منجمانی که در SDSS اولیه سهیم بودند در مشاغل خود پیشرفت کرده اند و تجربه خود را با گروههای دیگری در سراسر جهان به اشتراک گذاشته اند‫.‬ در بدو شروع SDSS چنین همکاری گسترده ای بندرت یافت می شدو از اینرو SDSS در خط مقدم تغییر فرهنگ همکاری در اخترفیزیک بود. اکنون در سال ۲۰۱۴ چهارمین فاز SDSS در حال برنامه ریزی است. این فاز شامل تعدادی از مساحی های هدف گیری شده مانند eBOSS، MaNGA، و APOGEE‪-‬S2 است که هدف آنها شناسایی عالم دوردست، دینامیک کهکشانهای نزدیک و مطالعه ستاره های کهکشان خودمان است. با اتمام فاز چهارم مساحی SDSS داده های عالی برای ۲ دهه ارایه می کند که شامل طیف بیش از ۵ میلیون شی نجومی است.",
+    "p10": " همچنان که به عمق عالم خیره می شویم، به گذشته نگاه می کنیم و چون عالم در حال انبساط است، کهکشانهایی که می بینیم با سرعت بیتشری از ما دور می شوند‫.‬ این بدان معنی است که نوری که از آنها دریافت می کنیم نیز تا زمانی که به ما برسد کشیده می شود‫.‬ از اینرو نور ستاره ها به سرخی می گراید و برای دیدن تصاویر مرئی در عالم اولیه باید با دوربین های فروسرخ به آنها نگریست‫.‬ بدلایل متعدد تصاویر برداری در فروسرخ دشوارتر از تصویر برداری مرئی است اما مهمترین آن این است که آسمان در فروسرخ بسیار روشنتر است‫.‬ این امر بطور بنیادی توانایی ما در تصویر برداری فروسرخ عمیق را محدود می کند و برای همین است که دوربین میدان گسترده ۳ هابل (WFC3) با قابلیت فروسرخ بسیار با ارزش است.",
+    "p11": "نسل جدید مساحی ها با استفاده از WFC3  نمای بی سابقه ای از یک سوم آغازین عالم یعنی ۳ تا ۴ میلیارد سال بعد از انفجار بزرگ را در اختیار ما قرار می دهند. نخستین مساحی در این میان،‌ مساحی عمیق فراکهکشانی در باند فروسرخ (CANDELS) است. این مساحی که بزرگترین مساحی در میان مجموعه مساحی های گنجینه هابل است،‌ با پوشش بخش های مختلف آسمان و در کنار هم قرار دادن این بخش ها، بزرگترین مجموعه از تصاویر از عمق کیهان (کیهان اولیه) در باند فروسرخ را در فراهم ساخته است. ترکیب باغ کهکشان با این مساحی، ابزاری توانمند برای درک ابتدایی ترین مراحل از تحول کیهان، که یکی از اساسی ترین سوالات در کیهان شناسی رصدی است را ارایه می دهد. ",
+    "p12": "هرچند داده های مساحی SDSS و تصاویر هابل  به شکل حجم شگفت انگیزی برای منجمین آموزنده بوده است اما همچنان مناطقی از عالم تنها از طریق مطالعه کهکشان ها در بازه طول موجی فراتر از آنچه چشم انسان قادر به دیدن آن است میسر است. برای اجرامی که به صورت گرمایی تابش می کنند (نظیر ستاره ها) از طول موج دریافتی به عنوان ابزاری برای بررسی دما استفاده می شود. برای ستارگانی نظیر خورشید که دمایی در حدود ۵۵۰۰ درجه کلوین دارد، عمده این طوا موج ها در بازه طول موجی است که توسط مساحی اسلون پوشش یافته. اگر به کهکشانی در باند فرابنفش بنگریم مناطق داغ تر کهکشان خودنمایی می کنند. این بدان معنی است که ستارگان جوان، پرجرم و محیط های ستاره زا در کهکشان را دنبال می کنیم. رصد کهکشان ها در باند فروسرخو مناطق سردتر و ستارگان کم جرم تر و همچنین ابرهای غباری را که در اثر تابش ستاره ها گرم شده و در انرژی های پایین تر بازتابش می کنند را نمایان می سازد. ",
+    "p13": "مقایسه ریخت شناسی کهکشان ها در بازه های طول موجی مختلف،‌ تصویری کامل تر از فرایند های حاکم بر اخترفیزیک را ارایه می کند.دنبال کردن ستاره ها بر اساس دما،‌قیودی برای تخمین سن و تحول شیمیایی ستارگان تعیین می کند و شناسایی نواحی ستاره زا، ما را به  چگال ترین نقاط دیسک کهکشان ها و محل هایی که عمده جرم کهکشان ها در آن جا شکل گرفته رهنمون می سازد.",
+    "p14": "تصاویر جدید باغ کهکشان در باند فروسرخ، با استفاده از تلسکوپ ۳.۸ متری UKIRT نصب شده بر روی قله موناکی در هاوایی در ارتفاع تقریبا ۱۴۰۰۰ پایی به دست آمده است. از سال ۲۰۰۵ تلسکوپ UKIRT مساحی گسترده ای از نیمکره شمالی آسمان که UKIDSS نامیده می شود را در باند فروسرخ آغاز نموده و ۷۵۰۰ درجه مربع از آسمان را در بازه طول موجی ۱ تا ۲.۵ میکرون پوشش می دهد. بخشی از این مساحی به پوشش نواحی که توسط مساحی SDSS رصد شده اختصاص دارد. این بدان معنی است که تصاویر UKIDSS در باغ کهکشان، پیش از این توسط کاربران نسخه دوم باغ کهکشان دسته بندی شده است. همین مورد سبب می شود که قادر باشیم تا مقایسه ای مستقیم بین این دو نمونه انجام داده و چگونگی تغییرات ریخت شناسی (برای نمونه کسری از کهکشان ها که دارای میله می باشند) را با تغییر طول بررسی کنیم."
   },
   "story": {
-    "title": "داستان،آن چه تاکنون گذشته",
-    "p1": " راه‌اندازی نسخه‌ی جدید گلکسی زو، نسخه‌ی چهارم، تنها چند هفته بعد از پنجمین سالروز تولد سایت صورت‌گرفت. این‌ها همگی از جولای 2007 شروع شد، با مجموعه‌ای از اطلاعات از یک میلیون کهکشان که توسط پیمایش  بدست آمده بود و کماکان امروز هم بخشی از تصاویر سایت را تامین می‌کند. با این تعداد زیاد کهکشان، تصور می‌کردیم که سال‌ها طول خواهد کشید که کاربران روی همگی آن‌ها کار کنند، اما در همان 24 ساعت اول راه‌اندازی، با دریافت تقریبن 70 هزار دسته ‌بندی در ساعت، حیرت‌زده شدیم. در نهایت، در طی سال اول راه‌اندازی، بیش از 50 میلیون دسته ‌بندی دریافت کردیم که از مشارکت بیش از 150 هزار نفر در پروژه بدست‌آمده‌بود. ",
-    "p2": " این به این معنی بود که هر کهکشان توسط چندین مشارکت‌کننده مختلف دیده شده‌بود. این اتفاق عمدی بود، داشتن چندین دسته ‌بندی مختلف از یک جسم مهم بود، زیرا اجازه می‌داد که میزان معتبر بودن نتایج‌مان را ارزیابی کنیم. برای نمونه، در پروژه‌هایی که به نمونه ای چند صد تایی از کهکشان های مارپیچی نیاز داریم و پیش از صرف کردن وقت پر ارزش تلسکوپ روی آن‌ها  می‌خواهیم اطمینان حاصل کنیم که همه‌ی آن‌ها مارپیچی هستند، هیچ مشکلی وجود ندارد – می‌توانیم تنها از آن‌هایی استفاده کنیم که 100 درصد دسته ‌بندی کنندگان مارپیچی بودن‌شان را پذیرفته‌اند. برای پروژه‌های دیگر، ممکن است احتیاج داشته‌باشیم که به مشخصات صدها هزار کهکشان نگاه کنیم، و می‌توانیم از آن‌هایی که اکثریت (افراد) گفته‌اند که مارپیچی‌اند استفاده کنیم.",
-    "p3": " فعالیت در آن گلکسی زوی اول کمی ساده‌تر از فعالیت (فعلی) شما بود، تمام چیزی که ما از داوطلبان می‌خواتیم این بود که کهکشان‌ها را به بیضی گون‌ها، ادغامی‌ها و مارپیچی‌ها تقسیم کنند و – اگر کهکشان مارپیچی بود – جهت بازوهای آن را ثبت کنند. اما این برای نشان دادن این مسئله کافی بود که دسته ‌بندی‌هایی که گلکسی زو فراهم ساخته‌بود، به خوبی آن‌هایی بود که ستاره‌شناسان حرفه‌ای تهیه کرده‌بودند، و آن‌هایی که مورد استفاده‌ی تعداد زیادی از محققان بود. شما می‌توانید به آنچه که مردم با استفاده از اطلاعات گلکسی زو انجام‌داده‌اند، در لیست <a href=\"#/papers\" data-nav=\"/papers\">مقالات منتشر شده‌ی ما</a>  و روی <a href=\"http://blog.galaxyzoo.org\" target=\"_blank\">وبلاگ گلکسی زو</a> و همچنین در پایین، پی‌ببرید. شاید مهیج‌ترین نشانه‌ی موفقیت این واقعیت است که ما در مزایده‌های زمانی برای دنبال کردن چندین اکتشاف گلکسی زو، روی برخی از بزرگ‌ترین تلسکوپ‌های جهان، پیروز شده‌ایم. هم اکنون لیست تلسکوپ‌ها شامل تلسکوپ‌های ایزاک نیوتون و ویلیام هرشل، در جزیره‌ی لاپالما در کانارییز، جیمینی جنوبی در شیلی، تلسکوپ WIYN در کیت‌پیک در آریزونا، رادیو تلسکوپ در سیرا اسپانیا،   Nevada ، Swift، GALEX، Chandra، XMM-Newton   و Suzaku در فضا و احتمالن هیجان‌انگیز‌ترین آن‌ها، تلسکوپ فضایی هابل.",
-    "p4": " گلکسی زوی 2 از اعتقاد نوظهور ما به توانایی‌های شما، داوطلبان دسته ‌بندی کننده، الهام گرفته‌شد، و بنابراین نگاهی دقیق‌تر () به کمی بیش از 200 هزار از درخشان‌ترین کهکشان‌های  را خواستیم. ما درباره‌ی تعداد بازوهای مارپیچی، اندازه‌ی برآمدگی کهکشان‌ها و خیلی چیزهای دیگر، پرسیدیم. بار دیگر، ما از نتیجه هیجان‌زده شدیم ( و کمی بیش از زمان زو1 خود را برای این آماده کرده‌بودیم) و در 14 ماهی که سایت فعال بود ما کمی بیش از 60 میلیون دسته ‌بندی را دریافت کردیم.",
-    "p5": " در طول مسیر، ما تصاویری با جزئیات بیش‌تر از ناحیه‌ای از پیمایش که به نام  شناخته می‌شود را اضافه کردیم، اما خیلی زود بود که به جهان دورتری نگاه کردیم. سومین صورت سایت، گلکسی زو: هابل از پیمایشی که توسط تلسکوپ فضایی هابل برای دیدن دوره‌های پیشین شکل گرفتن کهکشان اداره‌شد(صورت گرفت)، نقش‌هایی کشید (تصاویری داد). در این پیمایش‌ها که شامل روزها و روزها مشاهده‌ی اختصاصی بود، نور کهکشان‌هایی را می‌بینیم که میلیاردها سال طول کشید تا به ما برسد. ایده‌ی پشت گلکسی زو: هایل می‌توانست کهکشان‌ها را مقایسه کند سپس برای کهکشان‌های کنونی، درکی روشن از عواملی که باعث رشد آن‌ها می‌شوند، whether through mergers ، سیاه‌چاله‌های فعال یا شکل‌گیری ساده‌ی ستاره، بدهد. ",
-    "p6": " این روزها گلکسی زو تصویربرداری جدید Sloan که بهترین تصویری که تاکنون از جهان نزدیک (لوکال) داشته‌ایم را در اختیار قرار می دهد، را با دورترین تصاویر از  پیمایش هابل CANDELS را در کنار هم دارد. <a href=\"http://candels.ucolick.org\" target=\"_blank\">پیمایش CANDELS</a> امکان استفاده از دوربین‌های دید عرض 3 () – طی آخرین ماموریت شاتل روی هابل نصب شد – را برای گرفتن عکس‌های فوق-عمیق از جهان، فراهم کرده‌است، بنابراین چه کسی آنچه که هست و باید پیدا شود را می‌داند؟‌",
-    "p7": " همچنین، سایت شامل تصاویر گرفته شده از تلسکوپ فروسروخ بریتانیا (UKIRT) در هاوایی، برای پروژه‌ی تازه تکمیل‌شده‌ی UKIDSS (http://www.ukidss.org)، است.  UKIDSS  بزرگ‌ترین و عمیق‌ترین پیمایش آسمان با طول موج فروسرخ است. تصاویر فروسرخ UKIDSS و تصاویر در محدوده باند مرئی SDSS به دو دلیل متفاوت‌اند. اول، ستاره‌های پیر تر در طول موج فروسرخ درخشان‌تر هستند ( در حالی که در نور مرئی ما ستاره‌های جوان‌تر را می‌بینیم )، و دوم، نور فروسرخ، مانند نور مه‌شکن، می‌تواند در گردوغبار و دود در مرکز کهکشان‌ها نفوذ کند. بازبینی کردن تصاویر UKIDSS در گلکسی زو برای آن خواهد بود که ما را در فهمیدن چگونگی تفاوت قرارگیری ستاره‌های پیر و جوان در کهکشان‌ها توانا کند، و ساختار قسمت درونی کهکشان‌ها را آشکارتر گرداند."
-  },
+    "title": "داستان، آن چه تاکنون گذشته",
+    "p1": " راه‌اندازی نسخه‌ی جدید باغ کهکشان، یعنی نسخه‌ی چهارم، تنها چند هفته بعد از پنجمین سالروز تولد سایت صورت‌ گرفت. همه ماجرا از جولای ۲۰۰۷ یعنی با تصاویر یک میلیون کهکشان مساحی دیجیتال اسلون (Sloan Digital Sky Survey) که هنوز هم تامین کننده بخشی از تصاویر سایت است، شروع شد.‌‌ با این تعداد زیاد کهکشان، تصور می‌کردیم که سال‌ها طول خواهد کشید تا تمامی کهکشان ها توسط کاربران دسته بندی شوند‌. اما در همان ۲۴ ساعت اول راه‌اندازی، با دریافت تقریبا ۷۰ هزار دسته ‌بندی در هر ساعت، حیرت‌زده شدیم. در نهایت، طی سال اول راه‌اندازی، بیش از ۵۰ میلیون دسته ‌بندی دریافت شد که با مشارکت بیش از 150 هزار نفر در این پروژه بدست‌آمده ‌بود‫.‬ ",
+    "p2": " این بدان معنی بود که هر کهکشان توسط چندین مشارکت‌کننده مختلف دیده شده‌بود. این کار عمدی بود، داشتن چندین دسته ‌بندی مختلف از یک جسم مهم بود، زیرا اجازه می‌داد که میزان معتبر بودن نتایج‌مان را ارزیابی کنیم. برای مثال، در پروژه‌هایی که به نمونه ای چند صد تایی از کهکشان های مارپیچی نیاز داریم، می توانیم پیش از صرف وقت پر ارزش تلسکوپها تنها از آن‌هایی استفاده کنیم که ۱۰۰ درصد دسته ‌بندی کنندگان مارپیچی بودن‌شان را پذیرفته‌اند. در پروژه‌های دیگر، ممکن است به مشخصات صدها هزار کهکشان نیاز داشته باشیم‫.‬ در این صورت می‌توانیم از آن‌هایی که اکثریت افراد رای به مارپیچی بودن آنها داده اند استفاده کنیم‫.‬ ",
+    "p3": " کار با باغ کهکشان ابتدایی کمی ساده‌تر از کار (فعلی) شما بود، چون از داوطلبان می‌خواستیم تا کهکشان‌ها را به بیضی گون‌ها، ادغامی‌ها و مارپیچی‌ها دسته بندی کنند و اگر کهکشان مارپیچی بود، جهت بازوهای آن را تعیین کنند. این برای نشان دادن اینکه دسته بندی هایی که باغ کهکشان ارایه می کند بخوبی دسته بندی منجمان حرفه ایست و می تواند مورد استفاده پژوهشگران قرار گیرد کافی بود‫.‬ شما می‌توانید به آنچه که دیگران با استفاده از اطلاعات باغ کهکشان انجام‌داده‌اند، در لیست <a href=\"#/papers\" data-nav=\"/papers\">مقالات منتشر شده‌ی ما</a>  و روی <a href=\"http://blog.galaxyzoo.org\" target=\"_blank\">وبلاگ باغ کهکشان</a> و همچنین در زیر، مراجعه کنید‌. شاید مهیج‌ترین نشانه‌ی موفقیت ما همین باشد که در رقابت برای کسب زمان رصد برای دنبال کردن چندین یافته باغ کهکشان، روی برخی از بزرگ‌ترین تلسکوپ‌های جهان، موفق بودیم. این تلسکوپ ها عبارتند از‫:‬ تلسکوپ‌های ایزاک نیوتون و ویلیام هرشل، در جزیره‌ی لاپالما در جزایر قناری، جیمینی جنوبی در شیلی، تلسکوپ WIYN در کیت‌پیک آریزونا، تلسکوپ رادیویی آیرام در کوههای نوادای اسپانیا، تلسکوپ فضایی Swift ، Swift، GALEX ،Chandra، XMM-Newton و سوزاکو و احتمالن هیجان‌انگیز‌ترین آن‌ها، تلسکوپ فضایی هابل‫.‬",
+    "p4": " باغ کهکشانی ۲ از باور ما به توانایی‌های شما داوطلبان الهام گرفته ‌است و بنابراین نگاهی دقیق‌تر به کمی بیش از ۲۰۰ هزار از درخشان‌ترین کهکشان‌های مساحی اسلون را درخواست کردیم. اینبار درباره‌ی تعداد بازوهای مارپیچی، اندازه‌ی برآمدگی کهکشان‌ها و خیلی چیزهای دیگر، پرسیدیم. بار دیگر، از نتیجه بدست آمده هیجان‌زده شدیم (البته کمی بیش از باغ ۱ آمادگی داشتیم‫!‬‌) و در ۱۴ ماهی که سایت فعال بود کمی بیش از ۶۰ میلیون دسته ‌بندی  دریافت کردیم.",
+    "p5": " به مرور زمان، تصاویری با جزئیات بیش‌تر از ناحیه‌ای از مساحی که به نام باریکه ۸۲ شناخته می‌شود را اضافه کردیم، اما زود زمان آن رسید که به عالم دور دست نگاه کنیم. سومین چهره سایت، باغ کهکشان‫:‬هابل، از مساحی هایی که توسط تلسکوپ فضایی هابل برای دیدن دوره‌های پیشین شکل گیری کهکشان انجام گرفته، تشکیل می شد. در این مساحی‌ها که متشکل از چندین روز رصدی بود، نور کهکشان‌هایی را می‌بینیم که میلیاردها سال طول کشیده تا به ما برسد. ایده‌ی پشت، باغ کهکشان:هابل، ‌‌مقایسه کهکشان های دور دست و نزدیک بود تا‌ درکی روشن از عواملی که باعث رشد کهکشان‌ها می‌شوند، مانند ادغام کهکشانها، سیاه چاله یا ستاره زایی، بدست آوریم.",
+    "p6": " باغ کهکشان امروز ترکیبی است از تصاویر اسلون (SDSS) که بهترین نمای عالم نزدیک را به تصویر می کشد و تصاویر دورترین اجرام عالم که از مساحی CANDELS بدست آمده است. <a href=\"http://candels.ucolick.org\" target=\"_blank\">مساحی CANDELS</a> از دوربین دید گسترده ۳ (WFC3) که طی آخرین ماموریت شاتل برای ثبت تصاویر فوق-عمیق از عالم بر بروی هابل نصب شد، بهره می برد‌. بنابراین کیست که بداند چه خواهیم یافت؟‌",
+    "p7": " این سایت همچنین شامل تصاویر ثبت شده توسط تلسکوپ فروسروخ بریتانیا در هاوایی، مربوط به پروژه‌ی جدید UKIDSS است. این پروژه بزرگ‌ترین و عمیق‌ترین مساحی آسمان در طول موج فروسرخ است. تصاویر فروسرخ و مرئی دو تفاوت عمده دار‌ند. اول، ستاره‌های پیر تر در طول موج فروسرخ درخشان‌تر هستند (در حالی که در نور مرئی ما ستاره‌های جوان‌تر را می‌بینیم) و دوم، نور فروسرخ، مانند نور مه‌شکن، می‌تواند از گردوغبار و دود مرکز کهکشان‌ها عبور کند. بازبینی تصاویر UKIDSS در باغ کهکشان این امکان را فراهم می کند که توزیع ستاره های جوان و پیر در یک کهکشان و همچنین ساختار بخشهای مرکزی کهکشان نمایان شود."
+    },
   "team": {
-    "title": "تیم گلکسی زو",
+    "title": "The Galaxy Zoo Team",
     "science": {
-      "title": "تیم علمی",
+      "title": "Science Team",
       "simmons": "<span class=\"person\">Brooke Simmons</span> - Astronomer, University of Oxford<br />Supermassive black holes live in galaxies; the bigger the galaxy, the bigger the black hole. But, wait. Why should that be? Galaxies are huge, and even supermassive black holes are small by comparison. So how do they grow together? That's cool. Brooke studies that. Mostly.",
       "bamford": "<span class=\"person\">Steven Bamford</span> - Astronomer, University of Nottingham<br />Works on figuring out what makes galaxies look the way they do: how they formed and why they change as they get older and move to new cosmic locations.  When not busy working on science or doing his bit to help run the Zooniverse, he is usually to be found entertaining his two young children or sailing a boat.",
       "lintott": "<span class=\"person\">Chris Lintott</span> - Principal Investigator: Astronomer, University of Oxford<br />  Runs the Zooniverse collaboration and works on how galaxies form and evolve; particularly interested in the effects of active galactic nuclei and mergers. In his 'spare' time, he hunts for planets, presents the BBC's long-running Sky at Night program and cooks.",
@@ -789,7 +788,7 @@
       "wong": "<span class=\"person\">Ivy Wong</span> - Astronomer, CSIRO"
     },
     "dev": {
-      "title": "تیم توسعه‌دهنده‌ی گلکسی زو",
+      "title": "Zooniverse Development Team",
       "kapadia": "<span class=\"person\">Amit Kapadia</span><br />Amit Kapadia develops astronomical web applications. He is a citizen science developer for the crowd-sourcing based platform Zooniverse. New to the world of JavaScript he spends his days dreaming of conducting in-browser analyses on astronomical data sets. On occasion he flexes his modest sway to advocate for more modern solutions to data access in astronomy. He believes the scientific world needs to speak more closely with the tech world, and constantly strives to learn more from the latter. Amit is often found at the Adler Planetarium in Chicago.",
       "carstensen": "<span class=\"person\">Brian Carstensen</span><br />Brian is a web developer working on the Zooniverse family of projects at the Adler Planearium. Brian has a degree in graphic design from Columbia College in Chicago, and worked in that field for a number of years before finding a niche in web development.",
       "miller": "<span class=\"person\">David Miller</span><br />As a visual communicator, David is passionate about tellings stories through clear, clean, and effective design. Before joining the Zooniverse team as Visual Designer, David worked for The Raindance Film Festival, the News 21 Initiative's Apart From War, Syracuse Magazine, and as a freelance designer for his small business, Miller Visual. David is a graduate of the S.I. Newhouse School of Public Communications at Syracuse University, where he studied Visual & Interactive Communications.",
@@ -799,24 +798,24 @@
       "smith": "<span class=\"person\">Arfon Smith</span><br />As an undergraduate, Arfon studied Chemistry at the University of Sheffield before completing his Ph.D. in Astrochemistry at The University of Nottingham in 2006. He worked as a senior developer at the Wellcome Trust Sanger Institute (Human Genome Project) in Cambridge before joining the Galaxy Zoo team in Oxford. Over the past 3 years he has been responsible for leading the development of a platform for citizen science called Zooniverse. In August of 2011 he took up the position of Director of Citizen Science at the Adler Planetarium where he continues to lead the software and infrastructure development for the Zooniverse.",
       "whyte": "<span class=\"person\">Laura Whyte</span><br />Having spent her PhD trying to get computers to classify galaxies, Laura know only to well the true value of the contribution to science made by the Galaxy Zoo volunteers. Since leaving astronomy she has retrained as a Maths teacher and picked up a few programming skills. It was with great delight she joined the team at the Zooniverse, developing online education and research tools, allowing her to use bits and pieces of all the skills she's picked up over the last decade."
     },
-    "چک": {
-      "title": " تیم پشتیبانی چک ",
+    "czech": {
+      "title": "Galaxy Zoo Czech Support Team",
       "vykouril": "<span class=\"person\">Dušan Vykouřil</span><br />Initiator, and coordinator Czech Galaxy Zoo. He thinks that line of the universe is never-ending. He like pushes the limits of the unknown.",
       "moudra": "<span class=\"person\">Míla Moudrá</span><br />Main Czech Galaxy Zoo translator. Student from Prague, Czech republic, and amateur astronomer, especially deep-sky objects (i.e. galaxies, among others) visual observer. Interested in protection of environment and small rodents :-)",
       "hresil": "<span class=\"person\">Petr Hřešil</span><br />Czech Galaxy Zoo co-translator. He has always been fascinated by the sky and the universe but he got trapped into the IT world and fell into the clutches of the Internet. Fan of Distributed computing, lover of sci-fi which allows him to set out \"Where No One Has Gone Before\".",
       "miksovsky": "<span class=\"person\">Jaroslav Mikšovský</span><br />Czech Galaxy Zoo corrector. Pensioner still economically active."
     },
-    "فرانسوی": {
-      "title": "تیم پشتیبانی فرانسه",
+    "french": {
+      "title": "Galaxy Zoo France Support Team",
       "marco": "<span class=\"person\">Olivier Marco</span> - Observatoire de Paris"
     },
-    "آلمانی": {
-      "title": "تیم پشتیبانی آلمان",
+    "german": {
+      "title": "Galaxy Zoo Germany Support Team",
       "poessel": "<span class=\"person\">Markus Poessel</span> - Center for Astronomy Education and Outreach, Heidelberg<br />German Galaxy Zoo co-translator. Managing scientist of the Center for Astronomy Education and Outreach in Heidelberg, whose galaxy-shaped building has a disk, is not clumpy, can be viewed edge-on, has two spiral arms that are medium-tightly wound, and an obvious bulge. (And please tell him if you notice anything odd.).",
       "leifke": "<span class=\"person\">Carolin Leifke</span> - Center for Astronomy Education and Outreach, Heidelberg<br />German Galaxy Zoo co-translator. Observes flares on active stars with X-ray satellites and the VLT, and galaxies of all kind with her 16-inch Dobsonian. Has now turned her passion for astronomy education and outreach into a profession."
     },
-    "لهستانی": {
-      "title": "تیم پشتیبانی لهستان",
+    "polish": {
+      "title": "Galaxy Zoo Poland Support Team",
       "biernacki": "<span class=\"person\">Paweł Biernacki</span><br />Student of astronomy at Wrocław University, enthusiast of the Sun, addicted to sci-fi books; upbeaten optimist and fan of soccer.",
       "czart": "<span class=\"person\">Krzysztof Czart</span><br />An astronomer and PhD student in a city where Nicolaus Copernicus was born, investigating the biggest stars in galaxies (those from Earth, too). In a spare time, he is a journalist as editor-in-chief of the Polish Astronomy Portal.",
       "czernik": "<span class=\"person\">Tomasz Czernik</span><br />Loves astronomy and photography. The youngest team member.",
@@ -829,7 +828,7 @@
       "skowron": "<span class=\"person\">Tomasz Skowron</span><br />Astronomy amateur and educator. Daily teacher of physics and astronomy in secondary school in Szczecin."
     },
     "retired": {
-      "title": "اعضای بازنشسته‌ی تیم گلکسی زو",
+      "title": "Retired members of the Galaxy Zoo Team",
       "andreescu": "<span class=\"person\">Dan Andreescu</span><br />Consultant by day, programmer and seeker of knowledge and fun by night. Avid basketball player and rookie surfer on the weekends.",
       "land": "<span class=\"person\">Kate Land</span><br />Added some much-missed glamour to the world of Theoretical Cosmology. Once could not sleep at night for thoughts about the early Universe, but slept during seminars instead. Now lured away by the bright lights of the City.",
       "vandenberg": "<span class=\"person\">Jan VandenBerg</span><br />Ringleader of the IT support circus in the JHU Physics & Astronomy department.",
@@ -842,7 +841,7 @@
   },
   "examine": {
     "title": "آزمودن",
-    "survey": "پیمایش",
+    "survey": "مساحی",
     "right_ascension": "بعد (Right Ascension)",
     "declination": "میل",
     "magnitude": "قدر",
@@ -869,9 +868,9 @@
   },
   "quiz": {
     "thanks": "سپاس!",
-    "help": "گلکسی زو به کمک شما نیاز دارد!",
-    "research": " ما برای بهتر فهمیدن این‌که داوطلبان گلکسی زو در مورد جهان چه‌گونه فکر می‌کنند، تحقیق می‌کنیم.",
-    "helping": " برای فهمیدین این که داوطلبان گلکسی زو در مورد جهان چه‌گونه فکر می‌کنند، به ما کمک کنید.",
+    "help": "باغ کهکشان به کمک شما نیاز دارد!",
+    "research": " ما برای بهتر فهمیدن این‌که داوطلبان باغ کهکشان در مورد جهان چه‌گونه فکر می‌کنند، تحقیق می‌کنیم.",
+    "helping": " برای فهمیدین این که داوطلبان باغ کهکشان در مورد جهان چه‌گونه فکر می‌کنند، به ما کمک کنید.",
     "gift": " شما در یک قرعه‌کشی برای  برنده شدن <strong>$20 Amazon Gift Certificate</strong> شرکت داده‌شده‌اید. ",
     "reward": " به عنوان پاداش، هر بار که شما مجموعه‌ای از سوالات را تکمیل‌کنید، در قرعه کشی <strong>$20 Amazon Gift Certificate</strong> شرکت داده‌خواهید‌شد.",
     "now_or_later": " می‌توانید هم اکنون آزمونک دیگری را پاسخ‌دهید، یا این کار را در آینده با مراجعه به پروفایل خود انجام دهید. ",
@@ -917,11 +916,11 @@
     "absolute_radius": "شعاع مطلق",
     "absolute_brightness": "روشنایی مطلق",
     "no_results": "ابتدا باید کهکشان‌ها را دسته ‌بندی کنید",
-    "intro": " به ناوشگر گلکسی زو، جایی که می‌توانید دسته ‌بندی‌هایی را که خودتان به عنوان عضوی از گروه ایجاد کرده‌اید را وارسی کنید، خوش‌آمدید. ",
-    "credit": " ناوشگر برپایه‌ی کار  توسط بنیاد ملی علوم پشتیبانی می‌شد، تحت اجازه‌نامه‌های شماره 1011419 و 0941610، قرار دارد. هر نظری، کشفی، نتیجه یا توصیه‌ای که در این ابزار بیان شده مربوط به نویسنده(گان) آن است و لزومن بازتاب‌دهنده‌ی دیدگاه بنیاد ملی علوم نیست.",
+    "intro": " به ناوشگر باغ کهکشان، جایی که می‌توانید دسته ‌بندی‌هایی را که خودتان به عنوان عضوی از گروه ایجاد کرده‌اید را وارسی کنید، خوش‌آمدید. ",
+    "credit": " ناوشگر توسط بنیاد ملی علوم با شماره 1011419 و 0941610 پشتیبانی می شود. هر نظر، یافته، نتیجه یا توصیه‌ای مربوط به نویسنده(گان) آن است و لزوماً بازتاب‌دهنده‌ی دیدگاه بنیاد ملی علوم نیست.",
     "groups": {
       "download": "دریافت آمارها",
-      "rejected": " این ایمیل‌ها مربوط به هیچ حساب کاربری در زونیورس نیستند:",
+      "rejected": " این ایمیل‌ها مربوط به هیچ حساب کاربری در زونیورس نیستند‫:‬",
       "signup": "ایجاد گروه جدید",
       "select": "انتخاب گروه",
       "make": "ساخت گروه جدید",
@@ -931,7 +930,7 @@
       "stop_classify": "توقف دسته ‌بندی کردن در گروه",
       "leave": "ترک گروه",
       "destroy": "حذف گروه",
-      "classify_desc": " برای دسته ‌بندی کردن کهکشان‌ها به عنوان عضوی از گروه خود، وب‌سایت گلکسی زو را ببینید.",
+      "classify_desc": " برای دسته ‌بندی کردن کهکشان‌ها به عنوان عضوی از گروه خود، وب‌سایت باغ کهکشان را ببینید‫.‬",
       "stats": "اطلاعات گروه",
       "invitations": "دعوت‌ها",
       "enter_name": "نام گروه را وارد کنید",
@@ -944,7 +943,7 @@
       "confirm_leave": " مطمئن هستید؟\n برای پیوستن مجدد شما، سردسته‌ی گروه باید دوباره شما را دعوت کند",
       "confirm_destroy": " مطمئن هستید؟\n راه برگشتی وجود ندارد.",
       "ensure_selected": " برای دیدن دسته ‌بندی‌های گروه خود یک گروه انتخاب کنید یا از لیست‌بازشدنی یکی ایجادکنید",
-      "group_url": "این آدرس را به اشتراک بگذارید تا هر کسی امکان پیوستن به گروه را داشته‌باشد: ",
+      "group_url": "این آدرس را به اشتراک بگذارید تا هر کسی امکان پیوستن به گروه را داشته باشد‫:‬‌",
       "elementary": "مقدماتی/ اصلی",
       "middle": "Middle School/Jr. High",
       "secondary": "High School/Secondary",
@@ -959,7 +958,7 @@
       "group": "به عنوان یک گروه"
     },
     "sample": {
-      "label": "با انداره‌ی نمونه‌ی...",
+      "label": "با اندازه‌ی نمونه‌ی...",
       "choose": "اندازه‌ی نمونه را انتخاب‌کنید",
       "small": "نمونه‌ی کوچکی از کهکشان‌ها",
       "random_small": "نمونه‌ی تصادفی کوچکی از کهکشان‌ها",
@@ -969,36 +968,35 @@
       "random_large": "نمونه‌ی تصادفی بزرگی از کهکشان‌ها"
     },
     "galaxy_type": {
-      "label": "در کهکشان‌هایی از نوع..",
+      "label": "در کهکشان‌هایی از نوع‫…‬",
       "smooth": "صاف",
       "feature": "برجسته/ دارای حالت دیسکی"
     },
     "source": {
       "label": "مایلم از اطلاعات ... استفاده‌کنم.",
       "my_group": "گروه خودم",
-      "galaxy_zoo": "گلکسی زو",
+      "galaxy_zoo": "باغ کهکشان",
       "my_choice": "انتخاب‌های خودم"
     },
     "histogram": {
       "title": "هیستوگرام",
-      "description": " وارسی ویژگی‌های گوناگون انواع کهکشان‌ها.",
+      "description": " وارسی ویژگی‌های گوناگون انواع کهکشان‌ها",
       "label": "مایلم ... را ببینم'",
       "y_label": "تعداد کهکشان‌ها",
       "distribution": "توزیعِ ",
-      "distributed": "توزیع شده در سراسر...",
+      "distributed": "توزیع شده در سراسر ‫…‬",
       "one_var": "یک-متغیر",
       "two_var": "دو-متغیر",
       "create": "ایجاد نمودار"
     },
     "scatterplot": {
       "title": "نمودار پراکندگی",
-      "description": " مقایسه‌ی ویژگی‌های گوناگون انواع کهکشان‌ها.",
-      "label": "مایلم ببینم چگونه..",
+      "description": " مقایسه‌ی ویژگی‌های گوناگون انواع کهکشان‌ها",
+      "label": "مایلم ببینم چگونه ‫…‬",
       "vs": "vs.",
-      "relation": "مربوط می‌شود به ...",
+      "relation": "مربوط می‌شود به ‫…‬",
       "choose_x": "متغیر محور x ها را انتخاب کنید",
       "choose_y": "متغیر محور y ها را انتخاب کنید"
     }
   }
 }
-
