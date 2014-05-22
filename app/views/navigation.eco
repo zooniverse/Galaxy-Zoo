@@ -46,3 +46,10 @@
     </li>
   </ul>
 </nav>
+
+<div class="social-icons">
+  <a href="https://www.facebook.com/thegalaxyzoo" target="_blank"><i class="fa fa-facebook"></i></a>
+  <a href="https://twitter.com/galaxyzoo" target="_blank"><i class="fa fa-twitter"></i></a>
+  <a href="https://plus.google.com/communities/107479920116989734725" target="_blank"><i class="fa fa-google-plus"></i></a>
+  <a href="http://blog.galaxyzoo.org/" target="_blank"><i class="fa fa-rss"></i></a>
+</div>
