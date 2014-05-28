@@ -26,7 +26,7 @@
             "sign_in": "已有帳號？從這裡登入！",
             "email": "電子信箱帳號",
             "privacy": "我同意 <a href=\"https://www.zooniverse.org/privacy\" target=\"_blank\"> 隱私權設定規定 </a>",
-            "button": "登入",
+            "button": "建立新帳號",
             "progress": "新增帳號並登入"
         },
         "sign_out": {
@@ -637,8 +637,8 @@
             "sdss": "目前的網站內含SDSS DR8第八版新圖像資料集（較上一版新增了南銀冠區域），在鄰近宇宙的星系樣本總數增加了40%，資料庫內首度合併了由哈柏太空望遠鏡CANDELS提供的圖像。CANDELS計畫主要利用哈柏望遠鏡的WFC3（寬視場相機），這加速我們對z> 1星系的觀測，z> 1也相當於宇宙壽命的前50％。此前，在z> 1領域的研究資料庫中，由哈柏望遠鏡大幅取樣提供紫外線波段的靜止座標，是經由ACS等可見光儀器的協助取得。在z>1近紅外波段，WFC3提供非常好的靜止座標光學資料，比NICMOS好20倍。",
             "candels": "CANDELS使用WFC3視場相機的近紅外濾鏡，在GOODS和COSMOS等哈柏早期攝像場範圍中成像大約800平方角分的視場。WFC3的近紅外圖像特別重要，因為在星系形態分析上，最好用的就是靜止座標光學波長，它能追踪潛藏在星系中不明顯的星族，而非僅只是看到那些恆星形成區（恆星形成區在紫外線波段特別明亮）。",
             "combination": "綜合運用SDSS、CANDELS，星系動物園的樣本變成可用來回答一些關鍵的開放式問題的一種好用工具，提供答案，則必需要走星系型態分析法。闢如，哈柏序列是從哪個時期開始？原始球體是何時、如何開始形成？早期宇宙中，重大星系併合和長期過程（secular process）等因素在恆星形成和黑洞增長上有何相對作用？",
-            "ukidss": "The UKIRT images are from the Large Area Survey (LAS) as part of UKIDSS, which imaged 4000 sq. deg. of the sky overlapping with the SDSS fields. We selected all galaxies classified in Galaxy Zoo 2 that had high-quality UKIDSS imaging, totaling about 70,000 galaxies. The images shown on the site are a colour-composite of the Y, J, and K-band images (where the J-band uses dithered observations to improve the angular resolution in that channel). These images will allow us to trace morphology as a function of wavelength; for example, whether the observed bar fraction increases for galaxies in the rest-frame infrared.",
-            "ferengi": "Finally, Galaxy Zoo also includes a small set of SDSS images that have been artificially processed to simulate the observed effects of redshift. This set used a morphologically diverse sample of galaxies from Galaxy Zoo 2 and were processed using the FERENGI code (<a href=\"http://www.mpia-hd.mpg.de/FERENGI/\">Barden, Jahnke, & Hausler 2008</a>) out to redshifts of z=1. Results from these images will be used as calibration for galaxies in the GZ: Hubble and CANDELS data, since it allows us to assess resolution and brightness-dependent biases independent of true galaxy evolution.",
+            "ukidss": "我們選用的UKIRT影像為名為大區域巡天(Large Area Survey,簡寫為LAS)的UKIDSS子計畫。LAS巡天觀察了4000平方度的天區，且觀測的天區與SDSS觀測過的天區有重合。在這些影像中，我們又挑出了曾於星系動物園2(Galaxy Zoo 2)分析中被認定具有高品質影像的70,000個星系。本網頁展示的彩色星系圖片為由Y,J,及K濾鏡取得觀測影像作成的合成照片(J濾鏡觀測利用稱為「顫」(dither)的技術來提高角解析度)。這些圖片可以讓我們觀察星系的形狀是否隨著不同觀測波段而變化; 例如檢視在靜止座標系，紅外光的觀測是否看到較高的棒狀結構比例(bar fraction)。",
+            "ferengi": "另外，星系動物園亦引入了一些經由人工紅移過的SDSS星系影像，來模擬宇宙膨脹造成紅移對觀測所造成的影響。這些由星系動物園2(Galaxy Zoo 2)中挑選出的不同形狀的星系經由電腦程式FERENGI(<a href=\"http://www.mpia-hd.mpg.de/FERENGI/\">原論文見Barden, Jahnke, & Hausler 2008</a>)處理而產生它們在z=3的模似觀測結果。 這些模似結果亦可用來校正哈柏太空望遠鏡的CANDELS計畫對極遙遠星系觀測數據中，因解析度及對亮度的靈敏度對測量所照成的偏差。",
             "conclusion": "星系動物園的計畫主旨就是為了要回答以上問題，並為未來的星系型態學研究鋪路，下一代的天文儀器如JWST也將受惠於此項計畫，預計在型態樣本中產生一些後續能透過ALMA（阿塔卡瑪大型毫米波及次毫米波陣列望遠鏡）等大型望遠鏡繼續加以追蹤的高紅移星系。"
         }
     },
@@ -660,7 +660,7 @@
     },
     "home": {
         "headline": "星系特搜 見者有分",
-        "call_to_action": "由SDSS(史隆數位巡天計畫)和哈柏望遠鏡(Hubble Space Telescope)所觀測的宇宙雖遠在天邊，卻也近在眼前！一窺宇宙新奇星系特蒐，機會難得。",
+        "call_to_action": "體驗專屬於您的，對遙遠太空的觀測巡禮 [資料來源為史隆望遠鏡數位巡天普查(SDSS)，以及哈柏太空望遠鏡(Hubble Space Telescope)與大英近紅外光望遠鏡(UKIRT)的觀測資料]。",
         "galaxy_zoo": {
             "title": "星系的分類",
             "description": "我們需要更透徹了解星系形成的過程，所以，邀請你一起來幫忙，把星系按外觀分類。如果你手腳快，在幫忙辨識某個星系時，搞不好你已成為全世界第一個看到那個星系的頭號幸運者！",
@@ -701,6 +701,9 @@
         "talk": "Talk",
         "forum": "論壇",
         "profile": "你的分類記錄"
+    },
+    "languages": {
+        "language": "其他語言"
     },
     "papers": {
         "title": "已發表論文",
@@ -751,7 +754,8 @@
         "p3": "第一代星系動物園的任務比今天這一版的任務略為簡單，當時我們只要求志工將星系按橢圓，是否併合、螺旋等三類加以區分，如果星系呈螺旋狀，則記錄一下旋臂的方向為何。任務雖然簡單，但已足以顯示非專業天文學家與專業天文學家在進行星系分類的結果上並無差異，這些結果也開始獲得很多研究人員的採用。前往<a href=\"#/papers\" data-nav=\"/papers\">已出版論文</a>論文和<a href=\"http://blog.galaxyzoo.org\" target=\"_blank\">交流站</a>兩個連結，便可看出藉由星系動物園所提供分類資料，已有哪些論文發表。更令人興奮的是，從這個網站辨識出來的星系分類資料結果，持續吸引一些世界最大望遠鏡，願更進一步做跟進觀測，這代表相當的肯定。這些望遠鏡包括：位於西班牙Canaries群島La Palma島上的Isaac Newton、William Herschel望遠鏡，在南半球智利的Gemini南天望遠鏡，美國Arizona州Kitt峰上的WIYN望遠鏡，西班牙Sierra Nevada地區的IRAM電波望遠鏡，以及Swift、GALEX,、錢卓(Chandra)、XMM-Newton和Suzaku 等太空望遠鏡，廣為知名的哈柏太空望遠鏡。",
         "p4": "第二代星系動物園的改版動力，源自於我們對志工分類者的能力更加有信心了。從第二版開始，我們要求志工在參與分類時，必須更仔細地看20多萬個SDSS資料庫中最亮的星系，並且邀請志工們回答關於星系旋臂的數量、大小、星系中心核球特色等，以及其他許多問題。這次的再號召，結果依舊叫人非常感動，因為僅僅14個月內，我們就收到了超過6,000多萬筆分類結果。",
         "p5": "這段時間當中，我們陸續密集地在一個長條狀，稱為”Stripe 82”的區域裡增添了許多詳盡圖像，不過很快地，我們也動身前往探勘更遙遠的宇宙，也就是網站第三代！第三代的星系動物園吸收了一張大補帖，多增加了許多來自哈柏太空望遠鏡的圖像資料，這樣能看到星系剛形成時的更早期宇宙。這些圖像來自於耗費較多寶貴觀測時間的星系普查，能讓我們可看到來自數十億年前星系發出的光。星系動物園認為，哈柏望遠鏡能將星系的過去和現在加以比較，這樣就能清楚了解星系的合併、活躍的黑洞或單單只有恆星形成，究竟星系成長是受到其中哪些因素的影響。",
-        "p6": "最新一代的「星系動物園」結合了SDSS有史以來所取得的最好local Universe圖像，加上CANDELS計畫（使用哈柏太空望遠鏡上裝設的新WFC3寬視場相機所拍攝到的宇宙超深空影像），向我們展示了較遙遠的宇宙，到底星空中哪裡正有什麼新奇的事情等你去發現呢？拭目以待！"
+        "p6": "最新一代的「星系動物園」結合了SDSS有史以來所取得的最好local Universe圖像，加上CANDELS計畫（使用哈柏太空望遠鏡上裝設的新WFC3寬視場相機所拍攝到的宇宙超深空影像），向我們展示了較遙遠的宇宙，到底星空中哪裡正有什麼新奇的事情等你去發現呢？拭目以待！",
+	"p7":"本網站今引入了利用座落在夏威夷的大英近紅外光望遠鏡(United Kindom Infrared Telescope, 簡稱UKIRT)，於近期完成觀測的UKIDSS影像巡天計畫(完整內容見網站http://www.ukidss.org)所取得的影像。該計畫為目前巡天範圍最廣且曝光最深的近紅外光普查。UKIDSS觀測提供的的近紅外光照片與SDSS提供的可見光照片有兩處不同。首先，較年長的恆星在紅外光波段有較強的輻射(反之，年輕的恆星則易由可見光波段觀測)。此外，相似於霧燈光，由星系中心發出的紅外光相對於可見光較容易穿透阻擋的大量星際灰塵而到達觀測者。因此，藉由觀察星系動物園(Galaxy Zoo)所展示的UKIDSS影像能幫助我們了解年輕與年長的恆星在星系內的分佈是否有不同之處，並且能展現更多位於星系內部的結構。"
     },
     "team": {
         "title": "團隊成員介紹",
@@ -772,6 +776,7 @@
             "fortson": "<span class=\"person\">Lucy Fortson</span> - Astrophysicist, University of Minnesota<br />Interested in galaxy evolution, black holes and the jets of material beaming from the centers of active galactic nuclei. Started the Zooniverse effort at the Adler Planetarium, now bringing the light to the University of Minnesota. On the odd weekend, when she's not preparing lecture or writing grants, Lucy can be found hanging out with her husband and son at one of Minneapolis' fine dining establishments.",
             "masters": "<span class=\"person\">Karen Masters</span> - Astronomer, University of Portsmouth<br />Interested in spiral galaxies of all kinds, red has always been her favourite colour. She's working to disentangle the 'true' red spirals, from those that are reddened because we see them edge on, and along the way learn about interstellar dust, and the nature of red spirals themselves. Bars also a speciality.",
             "melvin": "<span class=\"person\">Tom Melvin</span> - Astronomer, University of Portsmouth<br />A PhD student currently studying the formation and evolution of bars in disk galaxies.",
+            "maksym": "<span class=\"person\">Peter Maksym</span> - Astronomer, University of Alabama<br />Interested in the un-lives and behaviors of black holes and their habitats, amongst other things.  He's currently working on analysis of the Voorwerpjes (\"little Voorwerps\") but can also be found looking for hapless stars getting ripped to shreds.",
             "szalay": "<span class=\"person\">Alex Szalay</span> - Cosmologist, Johns Hopkins University<br />One of the creators of the SDSS SkyServer, and currently involved in building the Virtual Observatory. Plays some music in his 'spare' time.",
             "thomas": "<span class=\"person\">Daniel Thomas </span>- Astronomer, University of Portsmouth<br />Interested in galaxies of any shape, age, colour and habitat in the universe. When he's not sunbathing, his research focuses on the stars in galaxies and what they tell us about galaxy formation and evolution.",
             "haussler": "<span class=\"person\">Boris H&auml;u&szlig;ler</span> - Astronomer, University of Nottingham<br />An expert on analysing Hubble Space Telescope images and automatic morphology methods.",
@@ -833,23 +838,23 @@
         }
     },
     "examine": {
-        "title": "查驗",
-        "survey": "調查",
-        "right_ascension": "右上升",
-        "declination": "下降",
+        "title": "詳細檢查",
+        "survey": "巡天資料庫",
+        "right_ascension": "赤經",
+        "declination": "赤緯",
         "magnitude": "星等",
         "ned_link": "搜尋 NED",
         "discuss": "和他人討論",
         "hubble": "哈柏",
         "sdss": "SDSS",
    	"ukidss": "UKIDSS",
-	"ferengi": "Artificially redshifted SDSS",
-        "sdss_id": "SDSS天體",
+	"ferengi": "人為紅移的SDSS影像",
+        "sdss_id": "SDSS天體編號",
         "petro_rad": "Petrosian半徑",
-        "skyserver_link": "從SkyServer上檢視"
+        "skyserver_link": "前往SkyServer看詳細資料"
     },
     "fits": {
-        "view": "以不同波常看原始資料",
+        "view": "以不同 波長看原始資料",
         "x_y": "X, Y 資料",
         "intensity": "稠密度",
         "color": "顏色",
@@ -881,7 +886,7 @@
         "never_again": "以後別再問我",
         "example": {
             "prompt": "願意的話你將會收到內含六個題目的問卷，答題時間自由，第一組題目在您同意參加後馬上開始作答。<br />第一個問題可能會是：",
-            "question": "Hubble's observation that galaxies farther away from us are moving faster led to which conclusion?",
+            "question": "哈柏的觀測結果「離我們愈遠的星系逃離我們的速度愈快」可使我們了解什麼呢?",
             "answer_a": "宇宙正在膨脹",
             "answer_b": "宇宙正在收縮",
             "answer_c": "我們位於宇宙中心",

@@ -4,10 +4,12 @@
     <p class="call-to-action"><%- I18n.t 'home.call_to_action' %></p>
   </div>
 
+  <!--
   <div  class='advert'>
      <a href='http://quench.galaxyzoo.org'><img width=100  src='images/quench_galaxyzoo.png'></img></a>
      <p> We are trying something new! Come help us understand a very specific type of galaxy and experience science from start to end. <a href='http://quench.galaxyzoo.org'>Take part</a></p>
   </div>
+  -->
 
   <div class="slider">
     <div class="slide-element galaxy-zoo">

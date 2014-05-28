@@ -1,0 +1,980 @@
+{
+  "zooniverse": {
+    "browser_check": {
+      "wont_work": "Il sito non funzionerˆ fino all'aggiornamento del browser.",
+      "recommended": "Raccomandiamo l'utilizzo di <a href=\"http://www.mozilla.org/firefox/\" target=\"_blank\">Mozilla Firefox</a> o <a href=\"http://www.google.com/chrome\" target=\"_blank\">Google Chrome</a>.",
+      "ie": "Se stai utilizzando <a href=\"http://www.microsoft.com/windows/internet-explorer/\" target=\"_blank\">Microsoft Internet Explorer</a> assicurati di essere in possesso dell'ultima versione",
+      "chrome_frame": "Se non puoi installare l'ultima versione di Internet Explorer prova <a href=\"http://google.com/chromeframe\" target=\"_blank\">Chrome Frame</a>!",
+      "dismiss": "Ignora - Dismiss"
+    },
+    "login": {
+      "username": "Nome utente",
+      "password": "Password",
+      "login": "Login",
+      "forgot_password": "Password dimenticata?"
+    },
+    "sign_in": {
+      "title": "Registrati con il tuo account Zooniverse",
+      "sign_up": "Non possiedi un account? Creane uno!",
+      "button": "Registrati",
+      "progress": "Registrazione..."
+    },
+    "sign_up": {
+      "title": "Iscriviti per ottenere un nuovo account Zooniverse",
+      "confirmation": "Password (conferma)",
+      "password_match": "La password deve corrispondere alla conferma",
+      "sign_in": "Possiedi giˆ un account? Accedi!",
+      "email": "Indirizzo email",
+      "privacy": "Accetto le <a href=\"https://www.zooniverse.org/privacy\" target=\"_blank\">condizioni sulla privacy</a>",
+      "button": "Iscriviti",
+      "progress": "Creazione account e registrazione..."
+    },
+    "sign_out": {
+      "current": "Attualmente connesso come <strong class=\"current\"></strong>.",
+      "button": "Esci",
+      "progress": "Disconnetti..."
+    },
+    "top_bar": {
+      "title": "<span id=\"app-name\"></span>  un progetto di <a href=\"https://www.zooniverse.org\">Zooniverse</a>.",
+      "description": "Zooniverse  composto da diversi progetti web di Citizen Science che, grazie agli sforzi e all'abilitˆ dei volontari, aiuteranno i ricercatori a gestire le grandi quantitˆ di dati con cui devono lavorare.",
+      "greeting": "Salve <strong>{user}</strong>. Benvenuto su {appName}!",
+      "projects": {
+        "title": "I nostri progetti",
+        "list": "Attualmente abbiamo 12 progetti su temi che spaziano tra href=\"https://www.zooniverse.org/#space\">astronomia</a>, <a href=\"https://www.zooniverse.org/#climate\">climatologia</a>, <a href=\"https://www.zooniverse.org/#nature\">biologia</a> e <a href=\"https://www.zooniverse.org/#humanities\">scienze umane</a>."
+      }
+    }
+  },
+  "questions": {
+    "sloan-0": {
+      "text": "Questa galassia  omogenea e arrotondata, senza evidenze di un disco?",
+      "title": "Forma",
+      "help": "Qui lo scopo  selezionare galassie che presentano segni particolari. Se  presente qualche segno interessante clicca &quot;segni particolari o disco.&quot; Occasionalmente l'immagine potrebbe non corrispondere ad una galassia - potrebbe trattarsi ad esempio della lunga scia di un satellite o di un artefatto dovuto ad una stella luminosa. In questo caso clicca &quot;stella o artefatto&quot. Clicca per visualizzare le immagini pi grandi.",
+      "answersO": {
+        "a-0": "Omogenea",
+        "a-1": "Segni particolari o disco",
+        "a-2": "Stella o artefatto"
+      }
+    },
+    "sloan-1": {
+      "text": "Questo potrebbe essere un disco visto di profilo?",
+      "title": "Disco",
+      "help": "Le galassie a disco sono molto sottili, perci˜ appaiono diverse se viste lateralmente. Con questa domanda stiamo cercando galassie viste esattamente di profilo. Se la galassia sembra sottile come un ago, magari con un bulge al centro, clicca &quot;si,&quot; altrimenti &quot;no&quot; (anche per galassie viste prevalentemente di lato). Clicca per vedere le immagini pi grandi.",
+      "answers": {
+        "a-0": "Si",
+        "a-1": "No"
+      }
+    },
+    "sloan-2": {
+      "text": "Nella regione centrale della galassia  possibile distinguere una struttura a forma di barra?",
+      "title": "Barra",
+      "help": "A volte le galassie presentano una &quot;barra&quot ben visibile che ne attraversa la regione centrale. Questo  quello che stiamo cercando qui. Clicca per vedere le immagini pi grandi.",
+      "answers": {
+        "a-0": "Barra",
+        "a-1": "Nessuna barra"
+      }
+    },
+    "sloan-3": {
+      "text": "La galassia presenta dei bracci a spirale?",
+      "title": "Spirale",
+      "help": "Cerca attentamente dei bracci a spirale - ricorda che possono essere racchiusi nel disco e quindi non facili da vedere. Clicca per vedere le immagini pi grandi.",
+      "answers": {
+        "a-0": "Spirale",
+        "a-1": "Nessuna spirale"
+      }
+    },
+    "sloan-4": {
+      "text": "Quanto  prominente il bulge centrale rispetto al resto della galassia?",
+      "title": "Bulge",
+      "help": "Osserva attentamente il centro della galassia per determinare la presenza o meno di un bulge che potrebbe oscurare una barra o dei bracci a spirale. Clicca per vedere le immagini pi grandi.",
+      "answers": {
+        "a-0": "Nessun bulge",
+        "a-1": "Appena visibile",
+        "a-2": "Evidente",
+        "a-3": "Dominante"
+      }
+    },
+    "sloan-5": {
+      "text": "C' qualcosa di particolare?",
+      "title": "Particolare",
+      "help": "Stiamo cercando segni particolari per capire se la galassia  coinvolta in una fusione (merger),  perturbata o ha caratteristiche inusuali. Clicca per vedere le immagini pi grandi.",
+      "answers": {
+        "a-0": "Si",
+        "a-1": "No"
+      }
+    },
+    "sloan-6": {
+      "text": "Cosa sono i segni particolari?",
+      "title": "Particolare",
+      "help": "",
+      "answers": {
+        "a-0": "Fatto"
+      },
+      "checkboxes": {
+        "x-0": "Anello",
+        "x-1": "Lente o arco",
+        "x-2": "Perturbata",
+        "x-3": "Irregolare",
+        "x-4": "Altro",
+        "x-5": "Merger",
+        "x-6": "Banda di polvere"
+      }
+    },
+    "sloan-7": {
+      "text": "Quanto  arrotondata questa galassia?",
+      "title": "Rotonda",
+      "help": "",
+      "answers": {
+        "a-0": "Completamente rotonda",
+        "a-1": "Parzialmente arrotondata",
+        "a-2": "A forma di sigaro"
+      }
+    },
+    "sloan-8": {
+      "text": "Al centro della galassia  presente un bulge? Se si, di che forma?",
+      "title": "Bulge",
+      "help": "Concentrati sul centro della galassia - se  smorzato, sottile come un ago o a forma di lente clicca &quot;nessun bulge&quot;. Altrimenti le tue opzioni sono &quot;arrotondato&quot; o &quot;squadrato&quot; (ma bulges squadrati sono rari). Clicca per vedere le immagini pi grandi.",
+      "answers": {
+        "a-0": "Arrotondato",
+        "a-1": "Squadrato",
+        "a-2": "Nessun bulge"
+      }
+    },
+    "sloan-9": {
+      "text": "Quanto appaiono stretti i bracci a spirale?",
+      "title": "Spirale",
+      "help": "",
+      "answers": {
+        "a-0": "Stretti",
+        "a-1": "Mediamente stretti",
+        "a-2": "Dispersi"
+      }
+    },
+    "sloan-10": {
+      "text": "Quanti bracci a spirale sono presenti?",
+      "title": "Spirale",
+      "help": "",
+      "answers": {
+        "a-0": "1",
+        "a-1": "2",
+        "a-2": "3",
+        "a-3": "4",
+        "a-4": "Pi di 4",
+        "a-5": "Non posso determinarlo"
+      }
+    },
+    "sloan-11": {
+      "text": "Vorresti discutere questo oggetto?",
+      "title": "Discuti",
+      "help": "Se hai qualche domanda riguardo a questo oggetto, oppure pensi che potrebbe essere interessante per altri, o semplicemente hai qualcosa da dire, puoi iniziare una discussione in \"Discussioni\" cliccando &quot;si&quot. \"Discussioni\" aprirˆ una nuova finestra - chiudila per tornare alla pagina di classificazione.",
+      "answers": {
+        "a-0": "Si",
+        "a-1": "No"
+      }
+    },
+    "candels-0": {
+      "text": "Questa galassia  omogenea e arrotondata, senza segni della presenza di un disco?",
+      "title": "Forma",
+      "help": "Qui lo scopo  selezionare galassie che presentano segni particolari. Se  presente qualche segno interessante clicca &quot;segni particolari o disco.&quot; occasionalmente l'immagine potrebbe non corrispondere ad una galassia - potrebbe trattarsi ad esempio della lunga scia di un satellite o di un artefatto dovuto ad una stella luminosa. In questo caso clicca &quot;stella o artefatto&quot. Clicca per visualizzare le immagini pi grandi.",
+      "answers": {
+        "a-0": "Omogenea",
+        "a-1": "Segni particolari o disco",
+        "a-2": "Stella o artefatto"
+      }
+    },
+    "candels-1": {
+      "text": "Quanto  arrotondata questa galassia?",
+      "title": "Rotonda",
+      "help": "Non tutte le galassie sono perfettamente rotonde - osserva la forma generale e assegnala ad una delle tre categorie seguenti. Se in un campo ci sono pi di una galassia, ricorda di concentrarti su quella al centro. Clicca per vedere le immagini pi grandi.",
+      "answers": {
+        "a-0": "Copletamente rotonda",
+        "a-1": "Parzialmente arrotondata",
+        "a-2": "A forma di sigaro"
+      }
+    },
+    "candels-2": {
+      "text": "Nella galassia appaiono zone pi dense? Tecnicamente queste zone vengono chiamate clumps",
+      "title": "Clumps",
+      "help": "Alcune galassie non sono altro che clumps luminosi. Con questo non si intendono le galassie con piccoli ammassi secondari di stelle, ma piuttosto quelle composte prevalentemente da clumps luminosi. Clicca per vedere le immagini pi grandi.",
+      "answers": {
+        "a-0": "Si",
+        "a-1": "No"
+      }
+    },
+    "candels-3": {
+      "text": "Quanti clumps ci sono?",
+      "title": "Clumps",
+      "help": "Conta i clumps! Se sono pi di 4 non preoccuparti - clicca semplicemente &quot;pi di 4.&quot",
+      "answers": {
+        "a-0": "1",
+        "a-1": "2",
+        "a-2": "3",
+        "a-3": "4",
+        "a-4": "Pi di 4",
+        "a-5": "Non posso stabilirlo"
+      }
+    },
+    "candels-4": {
+      "text": "I clumps appaiono come una line retta, una catena, oppure un ammasso?",
+      "title": "Clumps",
+      "help": "Qualche volta i clumps appaiono in una forma irregolare - se  il caso clicca il simbolo appropriato.",
+      "answers": {
+        "a-0": "Line retta",
+        "a-1": "Catena",
+        "a-2": "Ammasso/Irregolare",
+        "a-3": "Spiarale"
+      }
+    },
+    "candels-5": {
+      "text": "C' un clump chiaramente pi luminoso degli altri?",
+      "title": "Clumps",
+      "help": "Qualche volta un clump domina l'immagine. Se  il caso clicca si, altrimenti no.",
+      "answers": {
+        "a-0": "Si",
+        "a-1": "No"
+      }
+    },
+    "candels-6": {
+      "text": "Il clump pi luminoso si trova al centro della galassia?",
+      "title": "clumps - Clumps",
+      "help": "Nel caso di galassie con molti clumps pu˜ essere difficile da determinare, ma fai del tuo meglio per decidere se il clump pi luminoso si trova al centro del sistema oppure no.",
+      "answers": {
+        "a-0": "Si",
+        "a-1": "No"
+      }
+    },
+    "candels-7": {
+      "text": "La galassia appare simmetrica?",
+      "title": "Simmetria",
+      "help": "Le due metˆ della galassia appaiono uguali? Oppure una parte  perturbata o in qualche modo diversa?",
+      "answers": {
+        "a-0": "Si",
+        "a-1": "No"
+      }
+    },
+    "candels-8": {
+      "text": "I clumps appaiono raggruppati in un corpo pi grande?",
+      "title": "Clumps",
+      "help": "Cerca attentamente nello sfondo deboli sorgenti di luce attorno ai clumps - sono racchiusi in una galassia visibile?",
+      "answers": {
+        "a-0": "Si",
+        "a-1": "No"
+      }
+    },
+    "candels-9": {
+      "text": "Questo potrebbe essere un disco visto di profilo?",
+      "title": "Disco",
+      "help": "Le galassie a disco sono molto sottili, perci˜ appaiono diverse se viste lateralmente. Con questa domanda stiamo cercando galassie viste esattamente di profilo. Se la galassia sembra sottile come un ago, magari con un bulge al centro, clicca &quot;si,&quot; altrimenti &quot;no&quot; (anche per galassie viste prevalentemente di lato). Clicca per vedere le immagini pi grandi.",
+      "answers": {
+        "a-0": "Si",
+        "a-1": "No"
+      }
+    },
+    "candels-10": {
+      "text": "Al centro della galassia  presente un bulge? Se si, di che forma?",
+      "title": "Bulge",
+      "help": "Concentrati sul centro della galassia - se  smorzato, sottile come un ago o a forma di lente clicca &quot;nessun bulge.&quot;. Altrimenti le tue opzioni sono &quot;arrotondato&quot; o &quot;squadrato&quot; (ma bulges squadrati sono rari). Clicca per vedere le immagini pi grandi.",
+      "answers": {
+        "a-0": "Arrotondato",
+        "a-1": "Squadrato",
+        "a-2": "Nessun bulge"
+      }
+    },
+    "candels-11": {
+      "text": "Nella regione centrale della galassia  possibile distinguere una struttura a forma di barra?",
+      "title": "Barra",
+      "help": "A volte le galassie presentano una &quot;barra&quot ben visibile che ne attraversa la regione centrale. Questo  quello che stiamo cercando qui. Clicca per vedere le immagini pi grandi.",
+      "answers": {
+        "a-0": "Barra",
+        "a-1": "Nessuna barra"
+      }
+    },
+    "candels-12": {
+      "text": "La galassia presenta dei bracci a spirale?",
+      "title": "Spirale",
+      "help": "Cerca attentamente dei bracci a spirale - ricorda che possono essere racchiusi nel disco e quindi non facili da vedere. Clicca per vedere le immagini pi grandi.",
+      "answers": {
+        "a-0": "Spirale",
+        "a-1": "Nessuna spirale"
+      }
+    },
+    "candels-13": {
+      "text": "Quanto appaiono stretti i bracci a spirale?",
+      "title": "Spirale",
+      "help": "Gli astronomi classificano le galassie in base a quanto sono stretti i loro bracci - potrebbe risultare pi semplice stabilirlo vicino al centro. Clicca per vedere le immagini pi grandi. ",
+      "answers": {
+        "a-0": "Stretti",
+        "a-1": "Mediamente stretti",
+        "a-2": "Dispersi"
+      }
+    },
+    "candels-14": {
+      "text": "Quanti bracci a spirale sono presenti?",
+      "title": "Spirale",
+      "help": "Alcune galassie a spirale sono piuttosto complesse, non temere di rispondere &quot;pi di 4&quot; o &quot;non posso determinarlo&quot;.",
+      "answers": {
+        "a-0": "1",
+        "a-1": "2",
+        "a-2": "3",
+        "a-3": "4",
+        "a-4": "Pi di 4",
+        "a-5": "Non posso determinarlo"
+      }
+    },
+    "candels-15": {
+      "text": "Quanto  prominente il bulge centrale rispetto al resto della galassia?",
+      "title": "Bulge",
+      "help": "Osserva attentamente il centro della galassia per determinare la presenza o meno di un bulge che potrebbebbe oscurarne una barra o dei bracci a spirale. Clicca per vedere le immagini pi grandi.",
+      "answers": {
+        "a-0": "Nessun bulge",
+        "a-1": "Appena visibile",
+        "a-2": "Evidente",
+        "a-3": "Dominante"
+      }
+    },
+    "candels-16": {
+      "text": "La galassia  coinvolta in una fusione (merger) o ci sono segni di tidal debris?",
+      "title": "Merger",
+      "help": "Ora puoi guardare l'immagine pi grande. Se la galassia si sta scontrando con un'altra clicca &quot;merger.&quot; Se non ci sono altri sistemi visibili ma si notano lunghi filamenti di stelle o gas scegli tra &quot;tidal debris.&quot;, &quot;entrambi&quot; e &quot;nessuna&quot;. Clicca per vedere le immagini pi grandi.",
+      "answers": {
+        "a-0": "Merger",
+        "a-1": "Tidal debris",
+        "a-2": "Entrambi",
+        "a-3": "Nessuna"
+      }
+    },
+    "candels-17": {
+      "text": "Vorresti discutere questo oggetto?",
+      "title": "Discuti",
+      "help": "Se hai qualche domanda riguardo a questo oggetto, oppure pensi che potrebbe essere interessante per altri, o semplicemente hai qualcosa da dire, puoi iniziare una discussione in \"Discussioni\" cliccando &quot;si&quot. \"Discussioni\" aprirˆ una nuova finestra - chiudila per tornare alla pagina di classificazione.",
+      "answers": {
+        "a-0": "Si",
+        "a-1": "No"
+      }
+    }
+  },
+  "quiz_questions": {
+    "set_1": {
+      "question_0": {
+        "text": "Dove sono pi comuni le galassie ellittiche?",
+        "answer_0": "All'interno di ammassi di galassie",
+        "answer_1": "All'esterno di ammassi di galassie",
+        "answer_2": "Sono distribuite equamente dappertutto"
+      },
+      "question_1": {
+        "text": "La stella A  una stella di sequenza principale rossa mentre la stella B  una stella di sequenza principale blu. Quale avrˆ un tempo di vita maggiore?",
+        "answer_0": "Stella A",
+        "answer_1": "Stella B",
+        "answer_2": "Avranno lo stesso tempo di vita.",
+        "answer_3": "Non ci sono sufficienti informazioni per determinarlo."
+      },
+      "question_2": {
+        "text": "In che modo il Sole produce l'energia che riscalda il nostro pianeta?",
+        "answer_0": "I gas all'interno del Sole bruciano e producono energia.",
+        "answer_1": "Gli atomi si combinano in atomi pi pesanti rilasciando energia.",
+        "answer_2": "Se i gas all'interno del Sole vengono compressi si riscaldano e rilasciano energia.",
+        "answer_3": "Gli atomi si separano in atomi pi leggeri rilasciando energia.",
+        "answer_4": "Il centro del Sole contiene atomi radioattivi che decadono rilasciando energia."
+      },
+      "question_3": {
+        "text": "Il diagramma rappresenta tre differenti onde di luce emesse dal Sole allo stesso momento. Quale onda raggiungerˆ per prima il satellite che sta orbitando apena al di fuori dell'atmosfera terrestre?",
+        "answer_0": "Onda 1",
+        "answer_1": "Onda 2",
+        "answer_2": "Onda 3",
+        "answer_3": "Le tre onde raggiungeranno il satellite nello stesso momento."
+      },
+      "question_4": {
+        "text": "Probabilmente una galassia che sembra contenere unicamente stelle blu poco luminose...",
+        "answer_0": "...non ha mai contenuto stelle blu.",
+        "answer_1": "...ha contenuto pi stelle blu in passato rispetto ad oggi.",
+        "answer_2": "... vecchia abbastanza da aver permesso alle stelle blu di evolversi in stelle rosse di sequenza principale.",
+        "answer_3": "...non ha mai contenuto una quantitˆ di gas sufficiente alla formazione di stelle blu."
+      }
+    },
+    "set_2": {
+      "question_0": {
+        "text": "Quale delle seguenti affermazioni riguardanti lo spostamento Doppler della luce emessa da galassie e stelle  corretta?",
+        "answer_0": "Uno spostamento verso il rosso significa che gli oggetti si stanno avvicinando.",
+        "answer_1": "Uno spostamento verso il blu significa che gli oggetti sono vicini a noi.",
+        "answer_2": "Uno spostamento verso il rosso significa che gli oggetti si stanno muovendo velocemente.",
+        "answer_3": "Uno spostamento verso il blu significa che gli oggetti appaiono pi blu.",
+        "answer_4": "Nessuna delle affermazioni precedenti  corretta."
+      },
+      "question_1": {
+        "text": "Rispetto ad una stella di sequenza principale con un tempo di vita breve, una stella di sequenza principale con un tempo di vita pi lungo...",
+        "answer_0": "... pi blu",
+        "answer_1": "...emette pi luce a lunghezze d'onda pi corte",
+        "answer_2": "... pi grande",
+        "answer_3": "... pi luminosa",
+        "answer_4": "...ha una massa minore"
+      },
+      "question_2": {
+        "text": "Le tre curve spettrali mostrate nei grafici rappresentano l'energia emessa da tre stelle A, B e C in funzione della lunghezza d'onda. Quale stella ha la temperatura maggiore?",
+        "answer_0": "Stella A",
+        "answer_1": "Stella B",
+        "answer_2": "Stella C",
+        "answer_3": "Le tre stelle hanno la stessa temperatura.",
+        "answer_4": "Non ci sono sufficienti informazioni per determinarlo."
+      },
+      "question_3": {
+        "text": "In quale dei seguenti elenchi gli oggetti sono ordinati correttamente dal pi grande al pi piccolo?",
+        "answer_0": "Stella, Sistema Solare, ammasso globulare, galassia, Gruppo Locale",
+        "answer_1": "Ammasso globulare, Gruppo Locale, galassia, stella, Sistema Solare",
+        "answer_2": "Galassia, Gruppo Locale, Sistema Solare, ammasso globulare, stella",
+        "answer_3": "Gruppo Locale, galassia, ammasso globulare, Sistema Solare, stella"
+      },
+      "question_4": {
+        "text": "Quale delle seguenti componenti di una galassia ellittica ha massa maggiore?",
+        "answer_0": "Stelle",
+        "answer_1": "Gas e polvere",
+        "answer_2": "Materia oscura",
+        "answer_3": "Non ci sono sufficienti informazioni per determinarlo."
+      },
+      "question_5": {
+        "text": "Quante delle quattro galassie mostrate potrebbero essere galassie a spirale?",
+        "answer_0": "Una",
+        "answer_1": "Due",
+        "answer_2": "Tre",
+        "answer_3": "Quattro",
+        "answer_4": "Non ci sono sufficienti informazioni per determinarlo."
+      }
+    },
+    "set_3": {
+      "question_0": {
+        "text": "Quale delle seguenti onde possiede l'energia maggiore?",
+        "answer_0": "Raggi X",
+        "answer_1": "Luce ultravioletta",
+        "answer_2": "Raggi gamma",
+        "answer_3": "Possiedono tutte la stessa energia."
+      },
+      "question_1": {
+        "text": "Quale delle seguenti affermazioni  corretta per tutte le stelle di sequenza principale che, se osservate dalla Terra, appaiono rosse?",
+        "answer_0": "Sono tutte pi calde delle stelle di sequenza principale blu.",
+        "answer_1": "Vivranno pi a lungo delle stelle di sequenza principale molto luminose.",
+        "answer_2": "Si stanno muovendo in direzione della Terra.",
+        "answer_3": "Si stanno allontanando dalla Terra."
+      },
+      "question_2": {
+        "text": "Rispondi alla seguente domanda utilizzando l'immagine che rappresenta la Via Lattea. Qual  la distanza approssimativa tra il cerchio bianco e il cetro della galassia?",
+        "answer_0": "1000 anni luce",
+        "answer_1": "10000 anni luce",
+        "answer_2": "25000 anni luce",
+        "answer_3": "100000 anni luce"
+      },
+      "question_3": {
+        "text": "Quale dei seguenti effetti potrebbe essere spiegato considerando la materia oscura?",
+        "answer_0": "La posizione e la forma dei bracci presenti nel disco delle galassie a spirale.",
+        "answer_1": "La posizione del massimo nella distribuzione di ammassi globulari di stelle nell'alone della galassia.",
+        "answer_2": "La velocitˆ di rotazione quasi uniforme per tutti i corpi nella Via Lattea.",
+        "answer_3": "Il fatto che un'onda di densitˆ a spirale si muove attraverso il disco delle galassie a spirale aumentandone la formazione di stelle."
+      },
+      "question_4": {
+        "text": "Perch i bracci di una galassia a spirale sono blu?",
+        "answer_0": "Solitamente i bracci si muovono verso di noi e perci˜ la luce da essi emessa  spostata verso lunghezze d'onda minori dall'effetto Doppler.",
+        "answer_1": "L'unica luce proveniente dalle stelle che non viene filtrata dal gas e dalla polvere presenti nei bracci  quella blu.",
+        "answer_2": "La formazione di stelle avviene nei bracci a spirale.",
+        "answer_3": "La maggior parte delle stelle del disco si trova nei bracci e la loro luce li fa apparire blu."
+      },
+      "question_5": {
+        "text": "In ogni figura sono mostrate due paia di asteroidi rocciosi con la rispettiva massa (m) e la distanza (d) tra ogni coppia. Quale delle seguenti risposte descrive correttamente la relazione tra la forza di gravitˆ esercitata dall'asteroide A sul suo asteroide partner e la forza di gravitˆ esercitata dall'asteroide B sul suo asteroide partner?",
+        "answer_0": "La forza esercitata da A sul suo partner  maggiore di quella esercitata da B sul suo partner.",
+        "answer_1": "La forza esercitata da B sul suo partner  maggiore di quella esercitata da A sul suo partner.",
+        "answer_2": "La forza esercitata da A sul suo partner  uguale a quella esercitata da B sul suo partner."
+      }
+    },
+    "set_4": {
+      "question_0": {
+        "text": "Quale delle seguenti onde possiede l'energia maggiore?",
+        "answer_0": "Raggi X",
+        "answer_1": "Luce ultravioletta",
+        "answer_2": "Raggi gamma",
+        "answer_3": "Possiedono tutte la stessa energia."
+      },
+      "question_1": {
+        "text": "Quale dei parametri seguenti determina il maggior numero di caratteristiche e peculiaritˆ di una stella?",
+        "answer_0": "Temperatura superficiale",
+        "answer_1": "Dimensione (diametro)",
+        "answer_2": "Colore",
+        "answer_3": "Composizione (tipo di atomi)",
+        "answer_4": "Massa"
+      },
+      "question_2": {
+        "text": "Ecco dei possibili grafici della velocitˆ orbitale di corpi attorno al centro della nostra galassia in funzione della loro distanza dal centro. Quale grafico rappresenta al meglio il moto dei corpi nella galassia?",
+        "answer_0": "Grafico A",
+        "answer_1": "Grafico B",
+        "answer_2": "Grafico C",
+        "answer_3": "Grafico D",
+        "answer_4": "Grafico E",
+        "answer_5": "Grafico F"
+      },
+      "question_3": {
+        "text": "La stella A  una stella di sequenza principale rossa mentre la stella B  una stella di sequenza principale blu. Se entrambe possiedono la stessa luminositˆ apparente, quale si trova pi vicina alla Terra?",
+        "answer_0": "Stella A",
+        "answer_1": "Stella B",
+        "answer_2": "Si trovano alla stessa distanza dalla Terra.",
+        "answer_3": "Non ci sono sufficienti informazioni per determinarlo."
+      },
+      "question_4": {
+        "text": "In quante delle quattro galassie mostrate si possono osservare regioni contenenti gas freddo e nubi di polvere?",
+        "answer_0": "Una",
+        "answer_1": "Due",
+        "answer_2": "Tre",
+        "answer_3": "Quattro",
+        "answer_4": "Non ci sono sufficienti informazioni per determinarlo."
+      },
+      "question_5": {
+        "text": "Questa immagine mostra il sistema Terra-Luna (non in scala) con tre possibili posizioni (A-C) per un veicolo spaziale in viaggio dalla Terra alla Luna. Nota che la posizione B  esattamente a metˆ strada tra la Terra e la Luna. In quale direzione  rivolta la forza di gravitˆ netta (totale) subita dal veicolo spaziale quando si trova nella posizione B?",
+        "answer_0": "In direzione della Luna",
+        "answer_1": "In direzione della Terra",
+        "answer_2": "Visto che il veicolo spaziale si trova esattamente a metˆ strada tra la Terra e la Luna la forza di gravitˆ dovuta alla Terra  uguale a quella dovuta alla Luna. La forza netta (totale)  quindi zero e non punta in nessuna direzione."
+      }
+    },
+    "set_5": {
+      "question_0": {
+        "text": "Quale delle seguenti onde non pu˜ essere considerata luce?",
+        "answer_0": "Onde radio",
+        "answer_1": "Microonde",
+        "answer_2": "Raggi X",
+        "answer_3": "Tutte le onde elencate sopra possono essere considerate luce.",
+        "answer_4": "Nessuna delle onde elencate sopra pu˜ essere considerate luce."
+      },
+      "question_1": {
+        "text": "Cosa produce una collisione fra due galassie a spirale?",
+        "answer_0": "Una galassia a spirale.",
+        "answer_1": "Una galassia ellittica.",
+        "answer_2": "Una galassia a spirale oppure una galassia ellittica.",
+        "answer_3": "Non rimane nessuna galassia."
+      },
+      "question_2": {
+        "text": "Quale delle seguenti componenti di una galassia a spirale possiede la massa maggiore?",
+        "answer_0": "Stelle",
+        "answer_1": "Gas e polvere",
+        "answer_2": "Materia oscura",
+        "answer_3": "Non ci sono sufficienti informazioni per determinarlo."
+      },
+      "question_3": {
+        "text": "Rispondi alla seguente domanda utilizzando l'immagine che rappresenta la Via Lattea. Qual  il diametro approssimativo del cerchio bianco?",
+        "answer_0": "1000 anni luce",
+        "answer_1": "10000 anni luce",
+        "answer_2": "50000 anni luce",
+        "answer_3": "100000 anni luce"
+      },
+      "question_4": {
+        "text": "Considera le seguenti informazioni relative a tre stelle di sequenze principale A, B e C. La stella A rimarrˆ nella sequenza principale per un totale di 15 miliardi di anni. La stella B emette la stessa quantitˆ di luce del Sole. La stella C  rossa. Quale delle seguenti affermazioni  corretta?",
+        "answer_0": "La stella A ha la massa maggiore.",
+        "answer_1": "La stella B ha la massa maggiore.",
+        "answer_2": "La stella C ha la massa maggiore.",
+        "answer_3": "Le stelle A, B e C hanno all'incirca la stessa massa.",
+        "answer_4": "Non ci sono sufficienti informazioni per determinarlo."
+      },
+      "question_5": {
+        "text": "Assumi che le due galassie mostrate possiedono lo stesso numero di stelle. Quale di queste dua galassie ha pi probabilmente le stelle blu con minore luminositˆ?",
+        "answer_0": "Galassia A",
+        "answer_1": "Galassia B",
+        "answer_2": "Hanno lo stesso numero di stelle blue e luminose.",
+        "answer_3": "Non ci sono sufficienti informazioni per determinarlo."
+      }
+    },
+    "set_6": {
+      "question_0": {
+        "text": "La stella A  pi calda della stella B. La stella B emette pi luce della stella A. Quale stella ha dimensione maggiore?",
+        "answer_0": "Stella A",
+        "answer_1": "Stella B",
+        "answer_2": "Hanno la stessa dimensione.",
+        "answer_3": "Non ci sono sufficienti informazioni per determinarlo."
+      },
+      "question_1": {
+        "text": "La stella F  una stella di sequenza principale rossa mentre la stella G  una stella di sequenza principale blu. Quale stella possiede la temperatura maggiore?",
+        "answer_0": "Stella F",
+        "answer_1": "Stella G",
+        "answer_2": "Possiedono entrambe la stessa temperatura",
+        "answer_3": "Non ci sono sufficienti informazioni per determinarlo."
+      },
+      "question_2": {
+        "text": "Cosa produce una collisione fra due galassie ellittiche?",
+        "answer_0": "Una galassia a spirale.",
+        "answer_1": "Una galassia ellittica.",
+        "answer_2": "Una galassia a spirale oppure una galassia ellittica.",
+        "answer_3": "Non rimane nessuna galassia."
+      },
+      "question_3": {
+        "text": "Usa il grafico per rispondere alla seguente domanda. Quale dei seguenti  l'ordine corretto per le dimensioni degli oggetti A-C, dal pi grande al pi piccolo?",
+        "answer_0": "A > C = B",
+        "answer_1": "B = C > A",
+        "answer_2": "A = C > B",
+        "answer_3": "A > C > B",
+        "answer_4": "B > C = A"
+      },
+      "question_4": {
+        "text": "Quale diagramma descrive al meglio la forza di gravitˆ netta (totale) subita da ognuna delle tre galassie mostrate? Nota che la galassia C possiede una massa molto maggiore delle galassie A e B, le quali possiedono una massa equivalente. Le frecce indicano la direzione della forza di gravitˆ netta (totale) esercitata su ogni galassia ma non la sua intensitˆ.",
+        "answer_0": "",
+        "answer_1": "",
+        "answer_2": "",
+        "answer_3": "",
+        "answer_4": ""
+      }
+    }
+  },
+  "astronomers": {
+    "heading": "Galaxy Zoo per astronomi",
+    "explanation": {
+      "goals": "Lo scopo di questa pagina  di illustrare le motivazioni scientifiche del progetto Galaxy Zoo. Si indirizza quindi ad un pubblico pi tecnico.",
+      "data": "Forse stai cercando dei dati - i dati pubblici di Galaxy Zoo sono disponibili <a href=\"http://data.galaxyzoo.org\">qui</a> in diversi formati.",
+      "papers": "In alternativa, <a href=\"/#/papers\">qui</a> puoi trovare una lista di articoli pubblicati dal team."
+    },
+    "morphology": {
+      "heading": "Perche la morfologia dell galassie  importante?",
+      "body": "In primo ordine, la morfologia di una galassia  un indicatore della dinamica orbitale delle stelle che contiene, ma dipende pure dai processi che governano la formazione stellare e l'attivitˆ nucleare al suo interno. La morfologia visiva produce una classificazione che  strettamente correlata ad altri parametri fisici. Ad esempio, la presenza di pi nuclei e di estesi segni di interazione tidal indicano che il meccanismo dominante nella formazione stellare  la fusione con un'altra galassia (merger). Al contrario, l'assenza di queste caratteristiche implica che l'evoluzione della galassia potrebbe essere dominata da processi interni ('secolari').",
+      "reference": "Tradizionalmente la morfologia delle galassie veniva derivata attraverso l'analisi visiva delle immagini (vedi <a href=\"http://adsabs.harvard.edu/abs/1926ApJ....64..321H\" target=\"_blank\">Hubble 1926</a>, <a href=\"http://heasarc.nasa.gov/W3Browse/all/rc3.html\" target=\"_blank\">de Vaucouleurs 1991</a> o pi recentemente <a href=\"http://arxiv.org/abs/1001.2401\" target=\"_blank\">Nair and Abraham 2010</a>), o tramite parametri morfologici come ad esempio la concentrazione, la presenza di clumps o l'asimmetria (vedi <a href=\"http://arxiv.org/abs/astro-ph/0303065\" target=\"_blank\">Conselice 2003</a>, <a href=\"http://adsabs.harvard.edu/abs/2008ApJ...672..177L\" target=\"_blank\">Lotz et al. 2008</a>.). Questi parametri sono per˜ approssimativi e presentano ognuno un proprio bias che viene solitamente controllato e calibrato a occhio (ispezione visiva). Generalmente un approcio visivo  pi resistente alle variazioni del rapporto segnale-rumore e della risoluzione delle immagini (ad esempio Lisker 2008), e questo ne fa il metodo ideale per determinare la morfologia delle galassie. In ogni caso, i parametri morfologici sono stati un fattore importante nella classificazione di dati provenienti da surveys su larga scala, per i quali l'analisi visiva effettuata da un singolo ricercatore (o in piccoli gruppi di ricercatori) pu˜ risultare proibitiva a livello di tempo."
+    },
+    "classification": {
+      "heading": "Classificazione di databases relativi a surveys su larga scala usando Galaxy Zoo",
+      "body": "Galaxy Zoo (<a href=\"http://arxiv.org/abs/0804.4483\" target=\"_blank\">Lintott et al. 2008</a>, <a href=\"http://arxiv.org/abs/1007.3265\" target=\"_blank\">2011</a>)  stato il primo progetto a sperimentare su larga scala un nuovo metodo di classificazione visiva di dati. Grazie a pi di un milione di membri appartenenti al pubblico generico, il progetto ha classificato, attraverso l'analisi visiva diretta, l'intero catalogo spettroscopico della Sloan Digital Sky Survey e tutti i surveys effettuati dal Telescopio Spaziale Hubble (per un totale di circa 1.5 milioni di galassie). Con pi di 40 classificazioni per oggetto, Galaxy Zoo fornisce sia una classificazione visiva sia la sua incertezza, la quale  difficilmente stimabile se esistono solo poche classificazioni prodotte dall'uomo. é stato dimostrato che l'accuratezza di queste classificazioni  comparabile a quella raggiunta da astronomi esperti (vedi Linott et al. 2008)."
+    },
+    "highlights": {
+      "heading": "Highlights scientifici di Galaxy Zoo",
+      "body": ""
+    },
+    "relaunched": {
+      "heading": "Il rilancio di Galaxy Zoo",
+      "sdss": "Il sito attuale incorpora le nuove immagini provenienti da SDSS DR8 (la Southern Galactic cap area), aumentando del 40% la dimensione della sample di galassie nell'Universo vicino. Per la prima volta incorpora pure immagini provenienti da CANDELS, il pi grande HST Treasury Program. Questo survey potrˆ approfittare dell'avvento della Wide Field Camera 3 (WFC3) montata sull'HST e aprirˆ una nuova finestra sulle galassie a redshift z > 1, corrispondenti a ca. il 50% della vita dell'Universo. Siccome gli strumenti esistenti operano nel visibile, precedenti osservazioni effettuate da HST per queste epoche hanno campionato il fondo ultravioletto. Le capacitˆ di WFC nell'infrarosso vicino (un fattore 20 migliore di NICMOS) ci forniranno dati ottici rest-frame a z>1 senza precedenti.",
+      "candels": "Candels utilizza i filtri nell'infrarosso vicino di WFC3 per osservare 800 arcmin<sup>2</sup> nel campo visivo di HST (ad esempio GOODS, COSMOS). Le immagini nell'infrarosso vicino di WFC3 sono particolarmente importanti in quanto l'analisi morfologica  migliore a lunghezze d'onda rest-frame nell'ottico, le quali forniscono indicazioni riguardanti tutta la popolazione stellare e non solamente le regioni di formazione stellare molto luminose nell'UV.",
+      "combination": "La combinazione delle samples di Galaxy Zoo relative a SDSS e CANDELS offriranno uno strumento formidabile per rispondere ad importanti domande che richiedono un'analisi morfologica. Ad esempio, a che epoca si  stabilita le sequenza di Hubble? Come e quando si sono formati i primi sferoidi? Qual'era il ruolo relativo di major mergers e processi secolari nel condurre la formazione stellare e la crescita dei buchi neri nell'Universo primordiale?",
+      "conclusion": "Lo scopo del progetto Galaxy Zoo  di rispondere a queste domande, gettare le basi per uno studio morfologico che si avvarrˆ di strumenti futuri come il JWST, e produrre samples di galassie ad alto redshift selezionate morfologicamente, le quali potranno essere osservate con telescopi come E-ELT e ALMA."
+    }
+  },
+  "classify": {
+    "heading": "Classifica",
+    "restart": "Ricomincia",
+    "help": "Aiuto",
+    "sloan": "SDSS",
+    "candels": "Hubble",
+    "group": "Gruppo",
+    "favorite": "Preferito",
+    "invert": "Inverti"
+  },
+  "help": {
+    "title": "Aiuto",
+    "examples": "Esempi"
+  },
+  "home": {
+    "headline": "In pochi hanno potuto assistere a quello che stai per vedere",
+    "call_to_action": "Cogli l'occasione di dare un'occhiata privilegiata all'Universo lontano, osservato dalla Sloan Digital Sky Survey (SDSS) e dal Telescopio Spaziale Hubble (HST)",
+    "galaxy_zoo": {
+      "title": "Classifica le galassie",
+      "description": "Per comprendere come si formano le galassie abbiamo bisogno del tuo aiuto a classificarle secondo la loro forma. Se sei veloce potresti addirittura essere la prima persona a vedere le galassie che devi classificare.",
+      "classify": "Inizia la classificazione"
+    },
+    "galaxy_formation": {
+      "title": "Come si formano le galassie?",
+      "body": "Nell'Universo visibile sono presenti all'incirca cento miliardi di galassie, ognuna delle quali costituisce un magnifico sistema che potrebbe contenere miliardi di stelle. Alcune sono particolarmente belle ed interessanti e lo scopo di Galaxy Zoo  di studiarle, assistendo gli astronomi nell'intento di comprendere come le galassie che vediamo attorno a noi si siano formate,  e cosa ci possono raccontare le loro storie riguardo al passato, presente e futuro del nostro Universo nel suo insieme. <a data-nav=\"#/science\" href=\"#/science\">more</a>"
+    },
+    "history": {
+      "title": "La storia di Galaxy Zoo",
+      "body": ""
+    },
+    "classroom": {
+      "title": "Galaxy Zoo a scuola",
+      "body": "Sei un insegnante? Vorresti utilizzare Galaxy Zoo con un gruppo di student? Il <a href=\"http://www.galaxyzoo.org/#/navigator/home\">Navigatore</a>  uno strumento interattivo che permette di classificare galassie in gruppo e in seguito analizzarne le caratteristiche. <a href=\"http://www.zooteach.org/zoo/galaxy_zoo\">Zoo Teach</a>  il luogo dove gli insegnanti possono condividere lezioni e materiale e fa da complemento ai progetti di citizen science facenti parte di Zooniverse.",
+      "navigator": "Navigatore - Navigator"
+    },
+    "recent_images": {
+      "title": "Immagini recenti"
+    }
+  },
+  "login_prompt": {
+    "title": "Accedi oppure crea un account per ricevere un riconoscimento per il tuo lavoro",
+    "decline": "No, grazie"
+  },
+  "navigation": {
+    "classify": "Classifica",
+    "science": "Scienza",
+    "blog": "Blog",
+    "team": "Team",
+    "papers": "Pubblicazioni",
+    "data": "Dati",
+    "story": "Storia",
+    "galaxy_zoo": "Galaxy Zoo",
+    "astronomers": "Astronomi",
+    "discuss": "Discuti",
+    "talk": "Discussione",
+    "forum": "Forum",
+    "profile": "Profilo"
+  },
+  "papers": {
+    "title": "Pubblicazioni",
+    "description": "Grazie agli sforzi della comunitˆ di Galaxy Zoo si  creato un archivio straordinariamente ricco da utilizzare nella ricerca astrofisica. Qui sotto sono elencate solo alcune delle pubblicazioni rese possibili grazie alle classificazioni raccolte su Galaxy Zoo.",
+    "available": "ottenibile qui"
+  },
+  "profile": {
+    "favorites": "Preferiti",
+    "recents": "Recenti",
+    "remove_favorite": "Rimuovi questo preferito",
+    "favorite_this": "Aggiungi come preferito",
+    "classifications": "Classificazione",
+    "hubble": "Hubble",
+    "hubble_classifications": "Classificazioni Hubble",
+    "sdss": "SDSS",
+    "sdss_classifications": "Classificazioni SDSS",
+    "quiz": "Quiz",
+    "quizzes": "Quiz",
+    "quizzes_taken": "Fai il quiz",
+    "take_a_quiz": "Fai il quiz ora",
+    "galaxy_zoo_hubble": "Galaxy Zoo: Hubble",
+    "galaxy_zoo_hubble_link": "Se stai cercando le tue vecchie galassie da Galaxy Zoo Hubble puoi trovarle <a href=\"http://hubble.galaxyzoo.org/my_galaxies\" target=\"_blank\">qui</a>."
+  },
+  "science": {
+    "title": "La scienza dietro al sito",
+    "p1": "Nell'Universo visibile sono sparse miliardi di galassie, ognuna delle quali  uno splendido sistema che potrebbe contenere miliardi di stelle. Alcune sono particolarmente belle ed interessanti e lo scopo di Galaxy Zoo  di studiarle per aiutare gli astronomi nel loro intento di comprendere come si sono formate le galassie che vediamo attorno a noi e quello che le loro storie ci raccontano del passato, presente e futuro dell'Universo.",
+    "p2": "La nostra strategia si basa sul fatto che una galassia svela molto di se stessa giˆ attraverso la sua forma. Se trovi un sistema con bracci a spirale, ad esempio, probabilmente stai osservando un disco rotante di stelle, polvere e gas con molto combustibile da utilizzare per la futura formazione di stelle. Se invece osservi una sorta di pallone di stelle chiamato ellittica stai osservando un sistema pi maturo che ha terminato il processo di formazione stellare molto tempo fa. La forma delle galassie rivela molto anche riguardo alla loro storia; il fatto che una galassia ellittica  solitamente il prodotto della collisione frontale tra due galassie pi piccole, e piccole caratteristiche come dischi deformati, grandi bulges e lunghi filamenti di stelle, testimoniano la complessitˆ della vita delle galassie.",
+    "p3": "Abbiamo gi detto che un merger pu avere un impatto importante sull'aspetto di una galassia, ma ci sono altri fattori che possono giocare un ruolo fondamentale; ad esempio, esiste un'evidenza crescente (anche grazie a precedenti progetti di Galaxy Zoo) di come un buco nero nel cuore della galassia possa influenzare l'ambiente circostante.",
+    "p4": "Quando della materia cade in un buco nero la sua temperatura pu raggiungere livelli elevatissimi risultando in una forte radiazione, a volte supportata dalla presenza di potenti getti di materiale provenienti dalle zone vicino al buco nero (ovviamente non da buco nero stesso) a velocitˆ prossime alla velocitˆ della luce. Sembra che questa combinazione di forze possa scaldare o espellere gas dalla galassia, sottraendole cos“ combustibile per la futura formazione stellare e cambiandone per sempre l'aspetto",
+    "p5": "Anche i dintorni di una galassia sono importanti. Al centro dell'Ammasso della Vergine, il grande gruppo di galassie pi vicino a noi, i mergers tra galassie sono rari. A causa della forte interazione gravitazionale infatti le galassie si muovono troppo veloci per essere soggetti ad incontri di una certa lunghezza temporale. Negli spazi vuoti dello spazio la densitˆ di galassie  troppo bassa affinch i mergers possano avere un ruolo importante. é dunque solo nelle parti pi esterne degli ammassi o nei piccoli gruppi come il nostro Gruppo Locale che i merger giocano un ruolo fondamentale. Non dovrebbe perci˜ sorprendere che in differenti luoghi troviamo differenti tipi di galassie, e questo deve essere tenuto in considerazione.",
+    "p6": "Al fine di riconoscere e separare questi effetti e molti altri, importante essere in possesso di una sample di galassie classificate la pi grande possibile. Ad esempio possiamo necessitare di una saple di galassie rosse, barrate e spirali che risiedono ai margini di clusters, e se inizialmente non disponiamo di una sample grande abbastanza il restringimento della ricerca ci lascerˆ senza candidati. I moderni surveys forniscono sufficienti immagini - centinaia di migliaia - ma abbiamo sempre bisogno di persone che le classifichino. E qui  dove potete entrare in gioco voié",
+    "subtitle": "Da dove arrivano le immagini?",
+    "p7": "La Sloan Digital Sky Survey (SDSS)  iniziata nel 2000 ed  una dell prime e pi grandi mappe digitali dell'Universo a disposizione degli astronomi. La prima SDSS, attiva per 5 anni, includeva due strumenti principali: una camera per imaging di 126 megapixel e due spettrografi fiber-fed montati su di un apposito telescopio di 2,5 metri all'Apache Point Observatory in New Mexico.\nDurante i periodi di bel tempo SDSS effettuava un draft-scan imaging del cielo dell'emisfero nord utilizzando la camera, mentre in condizioni nuvolose otteneva spettri di sub-set di oggetti detettati al fine di determinarne il redshift e la distanza. Dal 2005 al 2008 la seconda fase di SDSS, SDSS-II, ha continuato il survey dell'emisfero galattico nord ed iniziato due nuovi surveys, uno relativo alle supernovae ed uno spettroscopico relativo alle stelle (SEGUE). Dal 2008 la terza fase di SDSS, SDSS-III, si focalizza unicamente sulla spettroscopia (la camera per inaging  stata esposta nello Smithsonian Museum) e comprende quattro sub-serveys di BOSS, APOGEE, SEGUE e MARVELS",
+    "p8": "L'ereditˆ scientifica di SDSS  sorprendente, in particolare grazie al rilascio annuale di dati alla comunitˆ scientifica e al pubblico. Nel 2011 ad esempio la collaborazione di SDSS ha pubblicato il suo ottavo rilascio di dati (DR8), il quale contiene 14555 gradi quadrati di immagini ottiche (con pi di un trilione di pixels) e 932 milioni di singoli oggetti, dei quali 1.63 milioni possiedono uno spettro SDSS. Questa grandiosa risorsa di dati  ottenibile liberamente attraverso databases all'avanguardia. Usando dati SDSS gli astronomi hanno scritto pi di 4000 articoli (approssimativamente uno al giorno) e guadagnato pi di 175000 citazioni. All'interno della collaborazione SDSS ci sono state pi di 120 tesi di dottorato in ricerca, e i dati SDSS sono pure stati la base di importanti progetti di outreach come ad esempio Galaxy Zoo. SDSS  stata designata pi volte come il progetto, struttura o missione con il maggior impatto nel campo dell'astronomia (Madrid & Macchetto 2006, 2009) ed  la sorgente degli articoli pi citati in astronomia negli anni 2000, 2002, 2005 e 2008 (Frogel et al. 2010).",
+    "p9": "SDSS non sarebbe stata possibile senza una grande collaborazione tra scienziati, ricercatori ed astronomi. Molti degli astronomi coinvolti nella SDSS originale sono avanzati nella loro carriera, portando la loro esperienza all'interno di grandi collaborazioni in tutto il mondo. All'inizio di SDSS collaborazioni cos“ grandi erano rare e questo ha portato ad un cambiamento nella cultura della collaborazione nella ricerca astrofisica. SDSS sta ora pianificando la sua quarta fase, che inizierˆ nel 2014. Questa fase includerˆ molti surveys tra cui eBOSS, MaNGA e APOGEE-S2, i quali sono progettati per esplorare simultaneamente l'Universo lontano, la dinamica di galassie vicine, e studiare le stelle presenti nella nostra Galassia. Alla fine della quarta fase SDSS avrˆ fornito dati eccellenti per pi di due decenni, risultando in pi di 5 milioni di spettri astronomici.",
+    "p10": "Quando ci addentriamo nell'Universo osserviamo il passato e siccome l'Universo  in espansione le galassie che osserviamo si allontanano da noi sempre pi velocemente. Questo significa che la luce da loro emessa  stata dilatata prima di raggiuncerci. Per quest osserviamo uno spostamento verso il rosso delle lunghezze d'onda (il cosiddetto \"redshift\") e per ottenere immagini ottiche di galassie nell'Universo primordiale necessitiamo di una camera ad infrarossi. Ottenere immagini nell'infrarosso  molto pi complesso che nel visibile per diverse ragioni, ma la pi importante  che il cielo notturno  molto luminoso nell'infrarosso. Questo fattore limita drammaticamente la nostra abilitˆ di ottenere immagini profonde nell'infrarosso, per questo le capacitˆ nell'infrarosso della nuova Wide Field Camera 3 (WFC3) montata sul Telescopio Spaziale Hubble sono cos“ preziose.",
+    "p11": "La nuova generazione di surveys che faranno capo a WFC3 ci forniranno una visione senza precedenti del primo terzo di vita dell'Universo: i primi 3-4 miliardi di anni dopo il Big Bang. Il principale di questi surveys  il Cosmic Assembly Deep Extragalactic Near-infrared Survey (CANDELS). Essendo il pi importante survey effettuato fino ad oggi con il Telescopio Spaziale Hubble, CANDELS sta osservando diverse aree di cielo per assemblare la pi grande raccolta di immagini infrarosse profonde dell'Universo primordiale. La combinazione di Galaxy Zoo e CANDELS offre uno strumento formidabile per la nostra comprensione delle prime fasi dell'evoluzione dell'Universo visibile, una delle domande fodamentali della cosmologia osservativa attuale."
+  },
+  "story": {
+    "title": "La storia fino ad oggi",
+    "p1": "Il lancio di questa nuova versione di Galaxy Zoo, la quarta,  avvenuto poche settimane dopo il quinto compleanno del sito. Tutto  cominciato nel luglio del 2007, con un campione di dati costituito da un milione di galassie osservate dalla Sloan Digital Sky Survey, che ancora oggi fornisce parte delle immagini presenti sul sito. Con cos“ tante immagini, credevamo che i visitatori avrebbero impiegato anni per analizzarle tutte, ma nel giro di 24 ore dal lancio ci siamo ritrovati sbalorditi a ricevere pi di 70000 classificazioni all'ora. Alla fine, durante il primo anno il progetto ha ricevuto oltre 50 milioni di classificazioni, grazie al contributo di pi di 150000 persone.",
+    "p2": "Ci˜ significa che ogni galassia  stata vista da diversi partecipanti. Questo  intenzionale;  importante avere pi classificazioni indipendenti dello stesso oggetto, in quanto ci permette di valutare quanto il risultato sia attendibile. Ad esempio, per progetti in cui necessitiamo solamente un migliaio di galassie ma dobbiamo essere certi che siano tutte galassie a spirale prima di investire prezioso tempo di osservazione, possiamo utilizzare galassie per cui le classificazioni concordano al 100%. In altri progetti dobbiamo analizzare le proprietˆ di centinaia di migliaia di galassie e possiamo quindi utilizare quelle che la maggioranza afferma essere spirali.",
+    "p3": "Il compito della prima versione di Galaxy Zoo era leggermente pi semplice del vostro; tutto quello che richiedevamo ai volontari era di dividere le galassie in ellittiche, mergers e spirali e, se la galassia era a spirale, annotare la direzione dei bracci. Ma giˆ questo era sufficiente a mostrare che le classificazioni fornite da Galaxy Zoo erano buone quanto quelle di astronomi professionisti e utilizzabili da un grande numero di ricercatori. Puoi trovare quello che  stato possibile fare con i dati di Galaxy Zoo nella nostra lista di <a href=\"#/papers\" data-nav=\"/papers\">articoli pubblicati</a> e nel href=\"http://blog.galaxyzoo.org\" target=\"_blank\">blog di Galaxy Zoo</a>, come pure qui sotto. Il segno forse pi evidente del successo del progetto  stata la possibilitˆ di utilizzare alcuni dei pi grandi telescopi al mondo per osservare alcuni oggetti interessanti scoperti da Galaxy Zoo: la lista corrente include i telescopi Isaac Newton e William Hershel sull'isola di La Palma nelle Canarie, Gemini South in Chile, il telescopio WIYN a Kitt Peak in Arizona, il telescopio radio IRAM in Sierra Nevada in Spagna, Swift, GALEX, Chandra, XMM-Newton e Suzaku nello spazio, e il forse pi importante Telescopio Spaziale Hubble.",
+    "p4": "Galaxy Zoo 2  stato incoraggiato dalla nostra fiducia nelle vostre capacitˆ, voi classificatori volontari, e cos“ vi abbiamo chiesto di osservare pi attentamente all'incirca 200000 delle galassie pi luminose presenti in SDSS. Abbiamo posto domande a proposito del numero di bracci a spirale, le dimensioni del bulge e molto altro. Ancora una volta siamo rimasti elettrizzati dalle risposte (anche se un po' pi preparati a questo di quanto eravamo per Galaxy Zoo 1) e nei 14 mesi di vita del sito abbiamo ricevuto pi di 60 milioni di classificazioni.",
+    "p5": "Strada facendo abbiamo aggiunto immagini pi dettagliate da un'area del survey conosciura come 'Stripe 82', ma presto era tempo di guardare all'Universo pi lontano. La terza versione del sito, Galaxy Zoo Hubble, si basa su surveys condotti dal Telescopio Spaziale Hubble per osservare le prime fasi nell formazione di galassie. In questi surveys, che richiedono molti giorni di osservazioni, possiamo vedere luce di galassie che ha impiegato miliardi di anni per raggiungerci. L'idea dietro a Galaxy Zoo Hubble era di confrontare queste galassie con le attuali, fornendoci importanti dettagli su quali fattori influenzano la loro crescita, sia questa attraverso mergers, buchi neri attivi o semplice formazione di stelle.",
+    "p6": "L'attuale Galaxy Zoo combina nuove immagini da Sloan, che ci fornisce la vista migliore da sempre dell'Universo locale, con le immagini pi lontane mai osservate da Hubble e CANDELS.<a href=\"http://candels.ucolick.org\" target=\"_blank\">CANDELS</a> utilizza la nuova Wide Field Camera 3, installata durante l'ultima missione dello shuttle verso Hubble, per ottenere immagini estremamente profonde (\"ultra-deep\") dell'Universo. Chissˆ cosa scopriremo?"
+  },
+  "team": {
+    "title": "Il team di Galaxy Zoo",
+    "science": {
+      "title": "Team scientifico",
+      "bamford": "<span class=\"person\">Steven Bamford</span>Astronomo, Universitˆ di Nottingham<br />Cerca di comprendere perch le galassie appaiono cos“ come le vediamo: come si formano e perch cambiano quando invecchiano. Solitamente, quando non  uccupato come scienziato o ad aiutare Galaxy Zoo a funzionare, si pu˜ trovare ad intrattenere i suoi due giovani figli o su di una barca.",
+      "lintott": "<span class=\"person\">Chris Lintott</span>Astronomo, Universitˆ di Oxford<br />Tra Galaxy Zoo, la co-moderazione del programma della BBC Sky at Night e lo scrivere per <a href=\"http://www.chrislintott.net\">www.chrislintott.net</a>, Chris desidera spesso pi tempo per dormire.",
+      "schawinski": "<span class=\"person\">Kevin Schawinski</span>Astronomo,<a href=\"http://www.astro.ethz.ch\" target=\"_blank\">ETH Zurich</a><br />Si occupa della formazione e dell'evoluzione di galassie e dei loro buchi neri supermassivi. Cerca sempre di trovare pi tempo per dormire. E caff.",
+      "edmondson": "<span class=\"person\">Edd Edmondson</span>Astronomo, Universitˆ di Portsmouth<br />Aiuta ad accedere ai dati di Sloan e in generale chi ne ha bisogno.",
+      "keel": "<span class=\"person\">Bill Keel</span>Astronomo, <a href=\"http://astronomy.ua.edu/keel\" target=\"_blank\">University of Alabama</a><br />Autore di 'The Road to Galaxy Formation' e 'The Sky at Einstein's Feet'. Visto il suo interesse scientifico per formazione ed evoluzione di galassie, polvere nelle galassie e nuclei galattici attivi, non poteva starsene lontano quando  iniziato Galaxy Zoo.",
+      "skibba": "<span class=\"person\">Ramin Skibba</span>Astronomo, UC San Diego<br />Si occupa dell'aplicazione di funzioni di correlazione per analizzare le morfologie di Galaxy Zoo.",
+      "cardamone": "<span class=\"person\">Carie Cardamone</span>Astronoma, <a href=\"https://sites.google.com/a/brown.edu/ccardamone/\" target=\"_blank\">Brown University</a><br />Docente ed astronoma, studia i gren peas in Galaxy Zoo, interessata a scoprire come crescono e si sviluppano le galassie. é molto entusiasta del coinvolgimento del pubblico nella ricerca scientifica e della natura della scienza.",
+      "willett": "<span class=\"person\">Kyle Willett</span>, Universitˆ del Minnesota<br />Si occupa dell'ambiente circostante le galassie contenenti buchi neri attivi, sta assemblando il catalogo finale per Galaxy Zoo 2 e nuovi strumenti per il sito di Zooniverse. Probabilmente corre pi di quanto sia sano.",
+      "urry": "<span class=\"person\">Meg Urry</span>Fisica, Universitˆ di Yale<br />Si occupa di buchi neri supermassivi (evoluzione, unificazione,getti relativistici, blazars) e della loro interazione con le galassie che li ospitano. Nel suo tempo libero scrive per CCN.com e si impegna per aumentare la partecipazione delle donne e delle minoranze nella scienza.",
+      "nichol": "<span class=\"person\">Bob Nichol</span>Cosmologo, Universitˆ di Portsmouth<br />Un astronomo, astrofisico e cosmologo interessato all'informatica e alla statistica. é senior member (o \"fondatore\") della Sloan Digital Sky Survey, il pi ambizioso survey digitale del cielo mai effettuato. A lungo sofferente sostenitore del Manchester, ora non soffre pi.",
+      "fortson": "<span class=\"person\">Lucy Fortson</span>Astrofisica, Universitˆ del Minnesota<br />Studia l'evoluzione delle galassie, i buchi neri e i getti di materia emessi dai nuclei galattici attivi. I suoi sforzi per Zooniverse sono iniziati al Planetario Adler e continuano ora all'Universitˆ del Minnesota. Nei fine settimana, se non sta preparando, possiamo trovarla assieme al marito e al figlio in un buon ristorante di Minneapolis.",
+      "masters": "<span class=\"person\">Karen Masters</span>Astronoma, Universit di Portsmouth<br />é interessata alle galassie a spirale di ogni tipo e il rosso  da sempre il suo colore preferito. Sta lavorando per separare le spirali rosse \"vere\" da quelle che appaiono rosse perch viste di profilo, e strada facendo impara nuove cose sulla polvere interstellare e sulla natura delle spirali rosse stesse. Un'altra sua specialitˆ sono le barre.",
+      "melvin": "<span class=\"person\">Tom Melvin</span>Astronomo, Universitˆ di Portsmouth<br />Un dottorando che attualmente studia la formazione e l'evoluzione delle barre nelle galassie disco.",
+      "szalay": "<span class=\"person\">Alex Szalay</span>Cosmologo, Universitˆ Johns Hopkins<br />Uno dei fondatori di SDSS SkyServer, attualmente attivo nella preparazione del Virtual Observatory. Nel suo tempo \"libero\" suona.",
+      "thomas": "<span class=\"person\">Daniel Thomas </span>Astronomo, Universitˆ di Portsmouth<br />é interessato alle galassie di ogni forma, etˆ, colore e habitat nell'Universo. Quando non si sta abbronzando la sua ricerca si focalizza sulle stelle in galassie e quello che ci raccontano a proposito della formazione ed evoluzione delle galassie.",
+      "haussler": "<span class=\"person\">Boris H&auml;u&szlig;ler</span>Astronomo, Universitˆ di Nottingham<br />Un esperto dell'analisi di immagini provenienti dal Telescopio Spaziale Hubble e di metodi automatici di morfologia.",
+      "hoyle": "<span class=\"person\">Ben Hoyle</span>Astronomo, Universitˆ di Portsmouth<br />Attualmente sta sviluppando interessanti connessioni tra Google Sky e Galaxy Zoo. Cerca anche di utilizzare lenti gravitazionali di quasars lontani per studiare le proprietˆ delle galassie vicine in Galaxy Zoo.",
+      "kaviraj": "<span class=\"person\">Sugata Kaviraj</span>Astronomo, Universitˆ di Oxford<br />Studia i mergers presenti in Galaxy Zoo.",
+      "raddick": "<span class=\"person\">Jordan Raddick</span>Science Education e Outreach Coordinator, Universitˆ Johns Hopkins<br />Scrittore scientifico e docente, creatore di progetti per il sito SDSS SkyServer e avido lettore e scrittore di fantascienza. Gli piacerebbe visitare delle galassie nel loro habitat naturale.",
+      "wong": "<span class=\"person\">Ivy Wong</span>Astronoma, CSIRO"
+    },
+    "dev": {
+      "title": "Team di sviluppo di Zooniverse",
+      "kapadia": "<span class=\"person\">Amit Kapadia</span><br />Amit Kapadia ha sviluppato le applicazioni astronomiche per il web. é appena entrato nel mondo di JavaScript e passa le giornate a sognare di poter condurre analisi in-browser di data sets astronomici. All'occasione dedica il suo tempo alla ricerca di soluzioni pi moderne per l'ottenimento di dati in astronomia. é convinto che il mondo scientifico debba comunicare maggiormente con il mondo dell'insegnamento e cerca costantemente di imparare di pi da quest'ultimo. Amit si trova spesso al Planetario Adler di Chicago.",
+      "carstensen": "<span class=\"person\">Brian Carstensen</span><br />Brian  uno sviluppatore web che lavora a molti progetti di Zooniverse al Planetario Adler. Si  laureato in graphic design al Columbia College di Chicago ed ha lavorato in quel campo per molti anni prima di entrare nel web development.",
+      "miller": "<span class=\"person\">David Miller</span><br />Comunicatore visivo, David ama raccontare storie attraverso design chiari, puliti e ad effetto. Prima di unirsi al team di Zooniverse come Visual Designer ha lavorato per The Raindance Film Festival, News 21 Initiative's Apart From War, Syracuse Magazine e come freelance designer per Miller Visual. David si laureato alla S.I. Newhouse School of Public Communications della Syracuse University, dove ha studiato comunicazione visiva e interattiva.",
+      "paget": "<span class=\"person\">Ed Paget</span><br />Ed  passato in qualche modo dallo studiare film all'Universitˆ Northwestern al lavorare nel team di Zooniverse come sviluppatore di software. Strada facendo ha anche imparato a programmare. Nel suo tempo libero ama fare fotografie, giocare a scacchi, praticare la scherma e crescere il suo pappagallo.",
+      "parrish": "<span class=\"person\">Michael Parrish</span><br /> Michael ha una laurea in informatica e negli ultimi tre anni ha lavorato con Zooniverse come sviluppatore di softwares. Oltre allo sviluppo web le sue attenzioni sono rivolte a nuove tecnologie, scienza, rettili e caff.",
+      "simpson": "<span class=\"person\">Robert Simpson</span><br />Ricercatore all'universit di Oxford. PI del <a href=\"http://www.milkywayproject.org/\" target=\"_blank\">Milky Way Project</a>.",
+      "smith": "<span class=\"person\">Arfon Smith</span><br /> Arfon ha studiato chimica all'Universitˆ di Sheffield e nel 2006 ha conseguito il dottorato in astrochimica all'Universitˆ di Nottingham. Prima di raggiungere il team di Galaxy Zoo ad Oxford ha lavorato a Cambridge come senior developer per il progetto Wellcome Trust Sanger Institute (Human Genome Project). Negli ultimi tre anni ha guidato lo sviluppo di Zooniverse. Nell'agosto 2011  stato nominato direttore di Citizen Science al Planetario Adler dove continua a guidare lo sviluppo di softwares e infrastrutture per Zooniverse.",
+      "whyte": "<span class=\"person\">Laura Whyte</span><br />Siccome ha passato il suo dottorato a cercare di far classificare galassie ad un computer Laura conosce molto bene il valore del contributo fornito alla scienza dai volontari di Galaxy Zoo. Da quando ha lasciato l'astronomia si  data all'insegnamento della matematica. Con grande piacere si  unita al team di Zooniverse sviluppando strumenti online per l'insegnamento e la ricerca, e questo le ha permesso di mettere in pratica un po' delle abilitˆ di programmazione che ha aquisito nel tempo."
+    },
+    "czech": {
+      "title": "Galaxy Zoo Support Team in Repubblica Ceca",
+      "vykouril": "<span class=\"person\">DuÅ¡an VykouÅ™il</span><br />Fondatore e coordinatore di Galaxy Zoo in Repubblica Ceca. é convinto che la linea dell'Universo sia senza fine. Ama spingersi oltre l'ignoto.'\nmoudra: '<span class=\"person\">MÃ­la MoudrÃ¡</span><br />Principale traduttore di Galaxy Zoo in Ceco. Studente di Praga, Repubblica Ceca, e astronomo amatoriale, ama osservare il cielo profondo (in particolare le galassie). Si impegna per la protezione dell'ambiente e dei piccoli roditori :-)",
+      "hresil": "<span class=\"person\">Petr HÅ™eÅ¡il</span><br /> Cotraduttore di Galaxy Zoo in Ceco. é sempre stato affascinato dal cielo, ma  rimasto intrappolato nel mondo della tecnologia e di Internet. é un fan del calcolo distribuito e ama la fantascienza che gli permette di andare \"dove nessuno  mai giunto prima\".",
+      "miksovsky": "<span class=\"person\">Jaroslav MikÅ¡ovskÃ½</span><br />Correttore di Galaxy Zoo in Ceco. Pensionato ancora attivo economicamente."
+    },
+    "french": {
+      "title": "Galaxy Zoo Support Team in Francia",
+      "marco": "<span class=\"person\">Olivier Marco</span>Osservatorio di Parigi"
+    },
+    "german": {
+      "title": "Galaxy Zoo Support Team in Germania",
+      "poessel": "<span class=\"person\">Markus Poessel</span>Centro per l'educazione e la divulgazione astronomica, Heidelberg<br />Cotraduttore di Galaxy Zoo in tedesco. Managing scientist del Centro per l'educazione e la divulgazione astronomica di Heidelberg, che ha sede in un edificio a forma di galassia con un disco, due bracci a spirale, bulge evidente ecc. (E per favore fategli sapere se notate qualcosa di strano).",
+      "leifke": "<span class=\"person\">Carolin Leifke</span>Centro per l'educazione e la divulgazione astronomica, Heidelberg<br />Cotraduttrice di Galaxy Zoo in tedesco. Osserva le stelle attive con satelliti nei raggi X e con il VLT e galassie di tutti i tipi con il suo telescopio Dobsonian di 16 inch. é riuscita a trasformare la sua passione per l'astronomia e la divulgazione scientifica in professione."
+    },
+    "polish": {
+      "title": "Galaxy Zoo Support Team in Polonia",
+      "biernacki": "<span class=\"person\">PaweÅ‚ Biernacki</span><br />Studente di astronomia all'Universitˆ di WrocÅ‚aw, affascinato dal Sole e dipendente dai libri di fantascienza; grande ottimista e tifoso di calcio.",
+      "czart": "<span class=\"person\">Krzysztof Czart</span><br />Astronomo e dottorando nella cittˆ natale di Niccol˜ Copernico, studia le stelle pi grandi nelle galassie (anche dalla Terra). Nel tempo libero  giornalista e caporedattore del \"Polish Astronomy Portal\"",
+      "czernik": "<span class=\"person\">Tomasz Czernik</span><br />Ama l'astronomia e la fotografia. Il membro pi giovane del team.",
+      "kolodziej": "<span class=\"person\">Mirek KoÅ‚odziej</span><br />Traduttore di Galaxy Zoo, ama il cielo ed  studente di IT alla scuola secondaria di Niepolomice. Nel tempo libero si diletta con la poesia ed ha provato pi volte a piegare un cucchiaio con la forza di volontˆ.",
+      "kotarba": "<span class=\"person\">Marta Kotarba</span><br />Marta sta lavorando alla versione polacca di Galaxy Zoo 2. Normalmente passa il suo tempo a comporre puzzle, fare fotografie e cercare di studiare astronomia alla Jagiellonian University.",
+      "majcher": "<span class=\"person\">Ariel Majcher</span><br />Astronomo e astrofotografo, ama osservare il cielo attraverso il telescopio. Per questo vorrebbe trasferirsi dalla Polonia come minimo a Malta, dove la temperatura in inverno  pi mite.",
+      "mankiewicz": "<span class=\"person\">Lech Mankiewicz</span><br />é il coordinatore del progetto \"Pi of the sky\" (un telescopio robotico) e padre di Agnieszka. Nel tempo libero coordina il progetto EU-HOU.",
+      "ogloza": "<span class=\"person\">Waldemar Ogloza</span><br />Astronomo della Pedagogical University di Cracovia, osserva le stelle variabili. Dedica il suo tempo libero all'insegnamento dell'astronomia e alla barca a vela.",
+      "pomierny": "<span class=\"person\">Jan Pomierny</span><br />Fondatore e team leader del \"Polish Astronomy Portal\". Appassionato di filosofia e musica classica, ama stare in momtagna.",
+      "skowron": "<span class=\"person\">Tomasz Skowron</span><br />Astronomo amatoriale e docente. Ogni giorno insegna fisica e astronomia alla scuola secondaria di Szczecin."
+    },
+    "retired": {
+      "title": "Ex membri del Galaxy Zoo Team",
+      "andreescu": "<span class=\"person\">Dan Andreescu</span><br />Di giorno consulente, di notte programmatore e cacciatore di conoscenza e divertimento. Durante i fine settimana  un entusiasta giocatore di basket e un surfer esordiente.",
+      "land": "<span class=\"person\">Kate Land</span><br />Dona un tocco di stile al mondo della cosmologia teorica. Un tempo non riusciva a dormire di notte per via dei troppi pensieri sull'Universo primordiale, ma recuperava dormendo durante i seminari. Ora  attirata dalle luci scintillanti della City.",
+      "vandenberg": "<span class=\"person\">Jan VandenBerg</span><br />Capobanda del circo di supporto IT al dipartimento di fisica e astronomia alla Johns Hopkins University.",
+      "wonders": "<span class=\"person\">Alainna Wonders</span><br />Una funambola...",
+      "locksmith": "<span class=\"person\">Danny Locksmith</span> - Programmatore volontario<br />Responsabile per la creazione del sito di Galaxy Zoo 2.",
+      "murray": "<span class=\"person\">Phil Murray</span>Web Designer, artista e Managing Director della Fingerprint Digital Media responsabile del design del sito di Galaxy Zoo. Designer di <a href=\"http://www.banguniverse.com\" target=\"_blank\">www.banguniverse.com</a> per Brian May, Patrick Moore e Chris Lintott. Musicista entusiasta ed ex gicatore di tennis e calcio.",
+      "slosar": "<span class=\"person\">Anze Slosar</span>Cosmologo, Berkeley Center for Cosmological Physics<br />Un fisico teorico che non si  mai seduto dietro ad un telescopio. Ama bere della buona birra e desidera di essere stato pi ricco.",
+      "darg": "<span class=\"person\">Daniel Darg</span>Astronomo, Universitˆ di Oxford<br />Lavora per stabilire il numero e le proprietˆ dei mergers di galassie identificati in Galaxy Zoo."
+    }
+  },
+  "examine": {
+    "title": "Esamina",
+    "survey": "Survey",
+    "right_ascension": "Ascensione retta",
+    "declination": "Declinazione",
+    "magnitude": "Magnitudine",
+    "ned_link": "Cerca in NED",
+    "discuss": "Discuti",
+    "hubble": "Hubble",
+    "sdss": "SDSS",
+    "sdss_id": "SDSS ObjectId",
+    "petro_rad": "Raggio petrosiano",
+    "skyserver_link": "Visualizza in SkyServer"
+  },
+  "fits": {
+    "view": "Guarda i dati grezzi a differenti lunghezze d'onda",
+    "x_y": "X, Y",
+    "intensity": "Intensitˆ",
+    "color": "Colore",
+    "linear": "Lineare",
+    "logarithm": "Logaritmo",
+    "square_root": "Radice quadrata",
+    "arcsinh": "Arcsinh",
+    "power": "Potenza"
+  },
+  "quiz": {
+    "thanks": "Grazie!",
+    "help": "Galaxy Zoo ha bisogno del tuo aiuto!",
+    "research": "Stiamo svolgendo delle ricerche per comprendere meglio cosa pensano dell'Universo i volontari di Galaxy Zoo.",
+    "helping": "Ci stai aiutando a comprendere meglio cosa pensano dell'Universo i volontari di Galaxy Zoo.'\ngift: 'Potrai partecipare all'estrazione per vincere un <strong>buono Amazon del valore di $20</strong>.'\nreward: 'Come ricompensa, ogni volta che completerai un questionario potrai partecipare all'estrazione per vincere un <strong>buono Amazon del valore di $20</strong>.",
+    "now_or_later": "Puoi rispondere ad un questionario ora, oppure pi tardi visitando il tuo profilo",
+    "start_next": "Quando vorresti rispondere al prossimo questionario?",
+    "reminder": "In precedenza hai accettato di rispondere ad un piccolo questionario una volta alla settimana.",
+    "ready": "Sei pronto?",
+    "now": "Ora",
+    "later": "Pi tardi",
+    "complete": "Hai risposto a tutti i questionari!",
+    "okay": "D'accordo",
+    "participate": "Vorresti partecipare?",
+    "yes": "Si!",
+    "no_thanks": "No, grazie",
+    "ask_later": "Chiedimi pi tardi",
+    "never_again": "Non chiedere pi",
+    "example": {
+      "prompt": "Se decidi di aiutarci riceverai un questionario contenete 6 domande a risposta multipla a cui potrai rispondere con tranquillitˆ. Il primo questionario sarˆ disponibile appena accetterai di partecipare<br />Una domanda potrebbe essere:",
+      "question": "Hubble ossev˜ che le galassie pi lontane da noi si allontanano pi velocemente rispetto a quelle pi vicine. A quale conclusione port˜ questa osservazione?",
+      "answer_a": "L'universo si sta espandendo",
+      "answer_b": "Luniverso si sta contraendo",
+      "answer_c": "Ci troviamo al centro dell'Universo",
+      "answer_d": "La nostra galassia respinge le altre galassie"
+    }
+  },
+  "navigator": {
+    "affirmative": "Si",
+    "negative": "No",
+    "title": "Navigatore",
+    "construct": "Formula la tua domanda",
+    "my_galaxies": "Le mie galassie",
+    "graph": "Dati per grafico",
+    "loading": "Carico...",
+    "reset": "Resetta il grafico",
+    "snapshot": "Scatta un'istantanea",
+    "download": "Scarica i dati",
+    "n_galaxies": "Numero di galassie",
+    "smooth": "Omogeneo",
+    "feature": "Peculiartiˆ o disco",
+    "star": "Stelle o artefatti",
+    "redshift": "Spostamento verso il rosso",
+    "color": "Colore",
+    "apparent_brightness": "Luminositˆ apparente",
+    "absolute_radius": "Raggio assoluto",
+    "absolute_brightness": "Luminositˆ assoluta",
+    "no_results": "Benvenuto nel Navigatore di Galxy Zoo, dove puoi approfondire le classificazioni di galassie che hai effettuato come parte di un gruppo. Per iniziare devi selezionare il gruppo con cui vorresti lavorare.",
+    "credit": "Il Navigatore si basa sul lavoro svolto grazie al supporto della National Science Foundation (Grants No. 1041419 e 0941610). Tutte le opinioni, le scoperte, le conclusioni e le segnalazioni espresse in questo materiale sono personali dell'autore degli autori e non riflettono necessariamente l'opinione della National Science Foundation.",
+    "groups": {
+      "download": "Scarica le statistiche",
+      "rejected": "Queste emails non avevano un account Zooniverse associato:",
+      "signup": "Crea un nuovo gruppo",
+      "select": "Seleziona un gruppo",
+      "make": "Realizza un nuovo gruppo",
+      "create": "Crea un nuovo gruppo",
+      "classify": "Classifica le galassie",
+      "group_classify": "Classifica in gruppo",
+      "stop_classify": "Smetti di classificare in gruppo",
+      "leave": "Lascia il gruppo",
+      "destroy": "Elimina il gruppo",
+      "classify_desc": "Visita il sito di Galaxy Zoo per classificare galassie come membro del tuo gruppo",
+      "stats": "Informazioni sul gruppo",
+      "invitations": "Inviti",
+      "enter_name": "Inserisci il nome del gruppo",
+      "enter_emails": "Invita users con un account Zooniverse inserendo i loro indirizzi email separati da una virgola (ad esempio tizio@esempio.ch, caio@esempio.ch, sempronio@esempio.ch)",
+      "send_invites": "Invia inviti",
+      "disable_talk": "Disattiva la conversazione per questo gruppo",
+      "invited_users": "Users invitati.",
+      "participation": "Prendere parte",
+      "compare": "Confronta le tue scelte di classificazione con quelle effettuate da altri volontari.",
+      "confirm_leave": "Sei sicuro?\nSe desideri ancora unirti dovrai essere invitato dal responsible del tuo gruppo",
+      "confirm_destroy": "Sei sicuro?\nNon  possibile annullare.",
+      "ensure_selected": "Seleziona un gruppo o creane uno dal menu per visualizzare le classificazioni del tuo gruppo",
+      "group_url": "Condividi questo URL per permettere a tutti di unirsi al gruppo: ",
+      "elementary": "Scuola elementare",
+      "middle": "Scuola media",
+      "secondary": "Liceo/Scuola medio superiore",
+      "college": "Universitˆ",
+      "other": "Altro",
+      "elaborate": "Per favore approfondisci",
+      "classroom": "Come intendi utilizzare il Navigatore nell'ambiente scolastico?",
+      "classroom_followup": "Che etˆ hanno i tuoi studenti?",
+      "classroom_followup_open": "Come intendi utilizzare il Navigatore per il tuo insegnamento?",
+      "no_classroom": "Come intendi utilizzare il Navigatore?",
+      "alone": "Come singolo",
+      "group": "Come gruppo"
+    },
+    "sample": {
+      "label": "con un campione di dimensione...",
+      "choose": "Scegli la dimensione del campione",
+      "small": "Campione di galassie piccolo",
+      "random_small": "Campione di galassie piccolo e casuale",
+      "medium": "Campione di galassie medio",
+      "random_medium": "Campione di galassie medio e casuale",
+      "large": "Campione di galassie grande",
+      "random_large": "Campione di galassie grande e casuale"
+    },
+    "galaxy_type": {
+      "label": "nel tipo di galassia seguente...",
+      "smooth": "Omogeneo",
+      "feature": "Peculiaritˆ/disco"
+    },
+    "source": {
+      "label": "Vorrei usere dati da...",
+      "my_group": "Il mio gruppo",
+      "galaxy_zoo": "Galaxy Zoo",
+      "my_choice": "La mia scelta"
+    },
+    "histogram": {
+      "title": "Istogramma",
+      "description": "Esamina le caratteristiche di differenti tipi di galassie.",
+      "label": "Vorrei vedere...",
+      "y_label": "Numero di galassie",
+      "distribution": "Distribuzione di",
+      "distributed": " distribuito attorno a...",
+      "one_var": "Una variabile",
+      "two_var": "Due variabili",
+      "create": "Crea il grafico"
+    },
+    "scatterplot": {
+      "title": "Grafico a dispersione",
+      "description": "Confronta le caratteristiche di differenti tipi di galassie.",
+      "label": "vorrei vedere come...",
+      "vs": "vs.",
+      "relation": " in relazione con...",
+      "choose_x": "Scegli la variabile x",
+      "choose_y": "Scegli la variabile y"
+    }
+  }
+}

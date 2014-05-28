@@ -32,12 +32,13 @@ class Subject extends BaseSubject
   
   @url: (params) -> @withParams "/projects/galaxy_zoo/groups/#{ params.surveyId }/subjects", limit: params.limit
   @randomSurveyId: ->
-    return @::surveys.sloan.id if UserGroup.current
-    n = Math.random()
-    if n <= 0.10
-      @::surveys.sloan.id   # 10%
-    else 
-      @::surveys.ukidss.id  # 90%
+    @::surveys.sloan.id
+    # return @::surveys.sloan.id if UserGroup.current
+    # n = Math.random()
+    # if n <= 0.10
+    #   @::surveys.sloan.id   # 10%
+    # else
+    #   @::surveys.ukidss.id  # 90%
   
   @next: ->
     if @current
@@ -63,7 +64,7 @@ class Subject extends BaseSubject
         @create result for result in results
         @current or= @first()
         
-        unless hasTriggered
+        if @current and not hasTriggered
           hasTriggered = true
           @trigger 'fetched'
 

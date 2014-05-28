@@ -1,601 +1,603 @@
-{
+﻿{
   "zooniverse": {
     "browser_check": {
-      "wont_work": "This site probably won't work until you update your browser.",
-      "recommended": "We recommend using <a href=\"http://www.mozilla.org/firefox/\" target=\"_blank\">Mozilla Firefox</a> or <a href=\"http://www.google.com/chrome\" target=\"_blank\">Google Chrome</a>.",
-      "ie": "If you use <a href=\"http://www.microsoft.com/windows/internet-explorer/\" target=\"_blank\">Microsoft Internet Explorer</a>, make sure you're running the latest version.",
-      "chrome_frame": "If you can't install the latest Internet Explorer, try <a href=\"http://google.com/chromeframe\" target=\"_blank\">Chrome Frame</a>!",
-      "dismiss": "Dismiss"
+      "wont_work": "این سایت ممکن است تا زمان بروزرسانی مرورگرتان، کار نکند‫.‬",
+      "recommended": "پیشنهاد ما استفاده از <a href=\"http://www.mozilla.org/firefox/\" target=\"_blank\"> موزیلا فایرفاکس </a> یا <a href=\"http://www.google.com/chrome\" target=\"_blank\"> و یا گوگل کروم</a> است.",
+      "ie": "اگر از مرورگر <a href=\"http://www.microsoft.com/windows/internet-explorer/\" target=\"_blank\">اینترنت اکسپلورر</a> استفاده‌ می‌کنید، مطمئن ‌شوید که از آخرین نسخه‌ی این مرورگر استفاده می‌کنید.",
+      "chrome_frame": "اگر نمی‌توانید آخرین نسخه‌ی اینترنت اکسپلورر را نصب ‌کنید، <a href=\"http://google.com/chromeframe\" target=\"_blank\">گوگل کروم</a> را امتحان کنید!",
+      "dismiss": "نادیده بگیر"
     },
     "login": {
-      "username": "Username",
-      "password": "Password",
-      "login": "Login",
-      "forgot_password": "Forgot Password?"
+      "username": "نام کاربری",
+      "password": "رمز‌ عبور",
+      "login": "ورود",
+      "forgot_password": "رمز‌عبور را فراموش کرده‌اید؟"
     },
     "sign_in": {
-      "title": "Sign in with your Zooniverse account",
-      "sign_up": "Don't have an account? Create one!",
-      "button": "Sign in",
-      "progress": "Signing in..."
+      "title": "با حساب زونیورس (Zooniverse) خود وارد ‌شوید ",
+      "sign_up": "حساب‌ کاربری ندارید؟ هم‌ اکنون یک حساب ایجاد کنید‫.‬",
+      "button": "وارد‌شدن",
+      "progress": "در حال ورود..."
     },
     "sign_up": {
-      "title": "Sign up for a new Zooniverse account",
-      "confirmation": "Password (confirm)",
-      "password_match": "Password must match confirmation",
-      "sign_in": "Already have an account? Sign in!",
-      "email": "Email address",
-      "privacy": "I agree to the <a href=\"https://www.zooniverse.org/privacy\" target=\"_blank\">privacy policy</a>",
-      "button": "Sign up",
-      "progress": "Creating account and signing in..."
+      "title": "ایجاد حساب زونیورس (Zooniverse) جدید",
+      "confirmation": "رمز‌عبور (تایید)",
+      "password_match": "رمز‌عبور باید با تایید آن مطابقت ‌داشته‌ باشد",
+      "sign_in": "قبلا حسابی ایجادکرده‌اید؟ وارد‌شوید‫!‬",
+      "email": "آدرس ایمیل",
+      "privacy": "من با <a href=\"https://www.zooniverse.org/privacy\" target=\"_blank\"> مقررات حریم خصوصی</a> موافقم",
+      "button": "ایجاد حساب",
+      "progress": "در حال ایجاد حساب جدید و وارد شدن به آن حساب ‫…‬"
     },
     "sign_out": {
-      "current": "Currently logged in as <strong class=\"current\"></strong>.",
-      "button": "Sign Out",
-      "progress": "Signing out..."
+      "current": "هم‌اکنون به عنوان <strong class=\"current\"></strong> واردشده‌اید‫.‬",
+      "button": "خروج از حساب",
+      "progress": "در حال خروج‫…‬"
     },
-    "top_bar": {
-      "title": "<span id=\"app-name\"></span> is a <a href=\"https://www.zooniverse.org\">Zooniverse</a> project.",
-      "description": "The Zooniverse is a collection of web-based Citizen Science projects that use the efforts and abilities of volunteers to help reseachers deal with the flood of data that confronts them.",
-      "greeting": "Hi, <strong>{user}</strong>. Welcome to {appName}!",
+    "top_bar": { 
+      "title": "<span id=\"app-name\"></span> یک پروژه‌ی <a href=\"https://www.zooniverse.org\">زونیورس</a>  است.",
+      "description": " Zooniverse  مجموعه‌ای از پروژه‌های تحت وب Citizen Science است که از تلاش و توانایی‌ داوطلبان بهره می‌برد تا به پژوهشگران در مواجهه با انبوهی از داده ها، کمک کند.",
+      "greeting": "سلام <strong>{user}</strong>. به {appName} خوش‌آمدی!",
       "projects": {
-        "title": "Our Projects",
-        "list": "We currently have 12 projects on subjects ranging from <a href=\"https://www.zooniverse.org/#space\">astronomy</a>, to <a href=\"https://www.zooniverse.org/#climate\">climatology</a>, to <a href=\"https://www.zooniverse.org/#nature\">biology</a>, to <a href=\"https://www.zooniverse.org/#humanities\">humanities</a>."
+        "title": "پروژه‌های ما",
+        "list": " ما در حال حاضر 12 پروژه اجرا می کنیم که شامل حوزه‌هایی مانند، <a href=\"https://www.zooniverse.org/#space\">نجوم</a> تا <a href=\"https://www.zooniverse.org/#climate\">اقلیم‌شناسی</a> و <a href=\"https://www.zooniverse.org/#nature\">زیست‌شناسی</a> و <a href=\"https://www.zooniverse.org/#humanities\">علوم‌انسانی</a> است. "
       }
     }
   },
   "questions": {
     "sloan-0": {
-      "text": "Is the galaxy simply smooth and rounded, with no sign of a disk?",
-      "title": "Shape",
-      "help": "The aim here is to divide featureless galaxies from all the rest. If you can see any interesting features at all, click &quot;features or disk.&quot; Just occasionally you might see something that isn't a galaxy at all - the long streak of a satellite, for example, or a image swamped by light from a bright star. If this happens, just click &quot;star or artifact&quot;. Click to see larger images.",
+      "text": " آیا این کهکشان هموار و گرد بوده و بدون هرگونه نشان دیسک-مانند است؟",
+      "title": "شکل",
+      "help": " در اینجا هدف جداسازی کهکشان‌های بدون علایم ویژه (featureless) از سایر کهکشان ها است. اگر ویژگی جالب توجه‌ی می‌بینید، &quot; ویژگی‌ها یا دیسکی بودن &quot; را انتخاب کنید، در برخی شرایط ممکن چیزی ببینید که اصلا یک کهکشان نیست – برای نمونه یک رگه‌ی نوری ناشی از یک قمر، یا تصویری که کاملا تحت تاثیر نور یک ستاره‌ی درخشان باشد. اگر این‌چنین است، &quot;ستاره یا تصویر ساختگی&quot; را انتخاب ‌کنید. برای دیدن تصاویر در ابعاد بزرگ‌تر، کلیک ‌کنید.",
       "answers": {
-        "a-0": "Smooth",
-        "a-1": "Features or disk",
-        "a-2": "Star or artifact"
+        "a-0": "هموار",
+        "a-1": "علایم ویژه یا دیسک",
+        "a-2": "ستاره یا اثری ساختگی"
       }
     },
     "sloan-1": {
-      "text": "Could this be a disk viewed edge-on?",
-      "title": "Disk",
-      "help": "Disc galaxies are very thin, so look different when viewed from the side. We're trying to find exactly edge-on galaxies with this question. If the galaxy looks needle-like, perhaps with a bulge at the centre, then click &quot;yes,&quot; otherwise choose &quot;no&quot; (even for galaxies almost edge-on). Click to see larger images.",
+      "text": " آیا این می‌تواند دیسکی باشد که از لبه دیده‌ شده؟",
+      "title": "دیسک",
+      "help": " کهکشان‌های دیسکی بسیار نازک هستند، بنابراین هنگامی که از لبه دیده شوند متفاوت به‌نظر میرسند. با این سوال تلاش می‌کنیم تا کهکشان‌هایی که دقیقا از لبه دیده‌ می شوند را بیابیم. اگر کهکشان به شکل سوزنی همراه با یک برآمدگی در وسط آن دیده شد، &quot;بله&quot; را انتخاب‌کنید، در غیر اینصورت &quot;نه&quot; را برگزینید (حتی برای کهکشان‌هایی که تقریبا از لبه دیده‌شده‌اند). برای دیدن تصاویر در ابعاد بزرگ‌تر، کلیک‌ کنید.",
       "answers": {
-        "a-0": "Yes",
-        "a-1": "No"
+        "a-0": "بله",
+        "a-1": "نه"
       }
     },
     "sloan-2": {
-      "text": "Is there any sign of a bar feature through the center of the galaxy?",
-      "title": "Bar",
-      "help": "Sometimes galaxies have a prominent straight &quot;bar&quot; running through their centre, and that's what we're looking for here. Click to see larger images.",
+      "text": " آیا نشانی از میله ای که از مرکز کهکشان عبور می کند وجود دارد؟ ",
+      "title": "میله",
+      "help": " گاه کهکشان‌ها به‌طور واضح دارای یک &quot;میله&quot; صاف هستند که از مرکزشان عبور می‌کند، و این چیزی است که در این‌جا به دنبال شناسایی آن هستیم. برای دیدن تصاویر در ابعاد بزرگ‌تر، کلیک‌کنید.",
       "answers": {
-        "a-0": "Bar",
-        "a-1": "No bar"
+        "a-0": "میله",
+        "a-1": "بدون میله"
       }
     },
     "sloan-3": {
-      "text": "Is there any sign of a spiral arm pattern?",
-      "title": "Spiral",
-      "help": "Look carefully for spiral arms - remember they may be embedded in the disk and not that easy to see. Click to see larger images.",
+      "text": "آیا نشانی از یک الگوی بازوی مارپیچی وجود دارد؟",
+      "title": "مارپیچی",
+      "help": " به دنبال بازوی مارپیچی بگردید – به یاد داشته‌باشید که این بازوها ممکن است درون دیسک جای گرفته‌باشند و دیدن آن‌ها آسان نباشد. برای دیدن تصاویر در ابعاد برزگ‌تر کلیک کنید.",
       "answers": {
-        "a-0": "Spiral",
-        "a-1": "No spiral"
+        "a-0": "مارپیچی",
+        "a-1": "بدون بازوی مارپیچی"
       }
     },
     "sloan-4": {
-      "text": "How prominent is the central bulge, compared with the rest of the galaxy?",
-      "title": "Bulge",
-      "help": "It's not always easy to tell, but look at the centre of the galaxy for a round bulge of stars which may obscure any bar and the spiral arms in this central region. Click to see larger images.",
+      "text": " میزان برجستگی قسمت برآمده مرکزی نسبت به سایر بخش های کهکشان‌ چگونه‌است؟",
+      "title": "برآمدگی",
+      "help": " هرچند ممکن است به سادگی ممکن نباشد، به مرکز کهکشان نگاه کنید و به دنبال یک برآمدگی گرد از ستاره‌ها بگردید که در آن ناحیه ممکن است بازوی مارپیچی و میله، محو ‌شوند. برای دیدن تصاویر در ابعاد بزرگ‌تر کلیک کنید.",
       "answers": {
-        "a-0": "No bulge",
-        "a-1": "Just noticeable",
-        "a-2": "Obvious",
-        "a-3": "Dominant"
+        "a-0": "بدون برآمدگی",
+        "a-1": "قابل مشاهده",
+        "a-2": "واضح ",
+        "a-3": "غالب "
       }
     },
     "sloan-5": {
-      "text": "Is there anything odd?",
-      "title": "Odd",
-      "help": "We're looking for signs that the galaxy is merging, is disturbed, or has other unusual features. Click to see larger images.",
+      "text": "آیا چیز عجیبی می بینید؟",
+      "title": "عجیب", 
+      "help": " به دنبال نشانه‌هایی از ادغام‌شدن کهکشان، مختل‌شدن یا ویژگی‌های غیرمعمول دیگر هستیم. برای دیدن تصاویر در ابعاد بزرگ‌تر کلیک کنید.",
       "answers": {
-        "a-0": "Yes",
-        "a-1": "No"
+        "a-0": "بله",
+        "a-1": "نه"
       }
     },
     "sloan-6": {
-      "text": "What are the odd features?",
-      "title": "Odd",
+      "text": "ویژگی‌های عجیب کدام‌اند؟",
+      "title": "عجیب",
       "help": "",
       "answers": {
-        "a-0": "Done"
+        "a-0": "انجام‌شد"
       },
       "checkboxes": {
-        "x-0": "Ring",
-        "x-1": "Lens or arc",
-        "x-2": "Disturbed",
-        "x-3": "Irregular",
-        "x-4": "Other",
-        "x-5": "Merger",
-        "x-6": "Dust lane"
+        "x-0": "حلقه",
+        "x-1": "عدسی یا کمان",
+        "x-2": "آشفته",
+        "x-3": "نامنظم",
+        "x-4": "سایر",
+        "x-5": "ادغام‌",
+        "x-6": "خط غبار"
       }
     },
     "sloan-7": {
-      "text": "How rounded is it?",
-      "title": "Round",
+      "text": "تا چه اندازه گِرد است؟",
+      "title": "گِردی",
       "help": "",
       "answers": {
-        "a-0": "Completely round",
-        "a-1": "In between",
-        "a-2": "Cigar shaped"
+        "a-0": "کاملا گِرد",
+        "a-1": "بینابین ",
+        "a-2": "به‌شکل سیگار"
       }
     },
     "sloan-8": {
-      "text": "Does the galaxy have a bulge at its center? If so, what shape?",
-      "title": "Bulge",
-      "help": "Concentrate on the centre of the galaxy - if it has a smooth, uninterrupted, needle or lens-shape then click &quot;no bulge.&quot; Otherwise your options are &quot;rounded&quot; bulge or &quot;boxy&quot; (but boxy bulges are rare). Click to see larger images.",
+      "text": " آیا کهکشان در مرکز خود یک برآمدگی دارد؟ اگر بله، شکل آن چگونه است؟",
+      "title": "برآمدگی",
+      "help": " روی مرکز کهکشان تمرکز‌کنید – اگر هموار، بدون اختلال، سوزنی یا عدسی-مانند است روی &quot;بدون برآمدگی&quot; کلیک ‌کنید در غیر این ‌صورت گزینه‌های شما برآمدگی &quot;گرد&quot; یا برآمدگی &quot;جعبه‌ای&quot; است ( برآمدگی‌های جعبه‌ای نادر هستند). برای دیدن تصاویر در ابعاد بزرگ‌تر کلیک‌کنید.",
       "answers": {
-        "a-0": "Rounded",
-        "a-1": "Boxy",
-        "a-2": "No bulge"
+        "a-0": "گِرد",
+        "a-1": "جعبه ای",
+        "a-2": "بدون برآمدگی"
       }
     },
     "sloan-9": {
-      "text": "How tightly wound do the spiral arms appear?",
-      "title": "Spiral",
+      "text": "میزان تنگ بودن پیچش بازوهای مارپیچی چقدر است‌؟",
+      "title": "شکل مارپیچی",
       "help": "",
       "answers": {
-        "a-0": "Tight",
-        "a-1": "Medium",
-        "a-2": "Loose"
+        "a-0": "تنگ",
+        "a-1": "متوسط",
+        "a-2": "شُل یا باز"
       }
     },
     "sloan-10": {
-      "text": "How many spiral arms are there?",
-      "title": "Spiral",
+      "text": "چه تعداد بازوی مارپیچی وجود دارد؟",
+      "title": " مارپیچی",
       "help": "",
       "answers": {
         "a-0": "1",
         "a-1": "2",
         "a-2": "3",
         "a-3": "4",
-        "a-4": "More than 4",
-        "a-5": "Can't tell"
+        "a-4": "بیش‌تر از 4",
+        "a-5": "نمی‌توان تشخیص ‌داد"
       }
     },
     "sloan-11": {
-      "text": "Would you like to discuss this object?",
-      "title": "Discuss",
-      "help": "If you have any questions about this object, or think it may be interesting to others, or just have something to say, you can start a discussion on Talk by clicking &quot;Yes&quot;. Talk will open in a new window - just close it to come back to the classification page.",
+      "text": "تمایل‌دارید در مورد این جسم بحث‌کنید؟",
+      "title": "بحث",
+      "help": " اگر در مورد این جسم سوالی دارید، یا فکر‌می‌کنید این جسم می‌تواند برای دیگران جالب باشد، یا اینکه چیزی برای گفتن در مورد آن دارید، می‌توانید با کلیک روی &quot;بله&quot; بحثی در مورد آن در بخش گفتگو (Talk) شروع کنید. گفتگو در یک پنجره جدید باز خواهد‌شد – برای برگشتن به صفحه‌ی طبق بندی کافیست آن پنجره را ببندید.",
       "answers": {
-        "a-0": "Yes",
-        "a-1": "No"
+        "a-0": "بله",
+        "a-1": "نه"
       }
     },
     "candels-0": {
-      "text": "Is the galaxy simply smooth and rounded, with no sign of a disk?",
-      "title": "Shape",
-      "help": "The aim here is to divide featureless galaxies from all the rest. If you can see any interesting features at all, click &quot;features or disk.&quot; Just occasionally you might see something that isn't a galaxy at all - the long streak of a satellite, for example, or a image swamped by light from a bright star. If this happens, just click &quot;star or artifact&quot;. Click to see larger images.",
+      "text": " آیا این کهکشان هموار و گرد بوده و بدون هرگونه نشان دیسک-مانند است؟",
+      "title": "شکل",
+      "help": " در اینجا هدف جداسازی کهکشان‌های بدون علایم ویژه (featureless) از سایر کهکشان ها است. اگر ویژگی جالب توجه‌ی می‌بینید، &quot; ویژگی‌ها یا دیسکی بودن &quot; را انتخاب کنید، در برخی شرایط ممکن چیزی ببینید که اصلا یک کهکشان نیست – برای نمونه یک رگه‌ی نوری ناشی از یک قمر، یا تصویری که کاملا تحت تاثیر نور یک ستاره‌ی درخشان است. اگر این‌چنین است، &quot;ستاره یا تصویر ساختگی&quot; را انتخاب ‌کنید. برای دیدن تصاویر در ابعاد بزرگ‌تر، کلیک ‌کنید.",
       "answers": {
-        "a-0": "Smooth",
-        "a-1": "Features or disk",
-        "a-2": "Star or artifact"
+        "a-0": "هموار",
+        "a-1": "علایم ویژه یا دیسک",
+        "a-2": "ستاره یا اثری ساختگی"
       }
     },
     "candels-1": {
-      "text": "How rounded is it?",
-      "title": "Round",
-      "help": "Not all galaxies are perfectly round - just look at the overall shape and put it in one of these three categories. If there's more than one galaxy in the field, remember always to concentrate on the one in the centre. Click to see larger images.",
+      "text": "تا چه اندازه گرد است؟",
+      "title": "گردی",
+      "help": " همه‌ی کهکشان‌ها کاملا گرد نیستند – نگاهی کلی به شکل بیاندازید و آن ‌را در یکی از این سه دسته قراردهید. اگر بیش از یک کهکشان در میدان دید بود، همواره به کهکشانی که در مرکز تصویر است توجه کنید. برای دیدن تصاویر در ابعاد بزرگ‌تر، کلیک‌کنید.",
       "answers": {
-        "a-0": "Completely round",
-        "a-1": "In between",
-        "a-2": "Cigar shaped"
+        "a-0": "کاملن گِرد",
+        "a-1": "بینابین",
+        "a-2": "به‌شکل سیگار"
       }
     },
     "candels-2": {
-      "text": "Does the galaxy have a mostly clumpy appearance?",
-      "title": "Clumps",
-      "help": "Some galaxies are nothing but bright clumps. We don't mean those that have other features with a few small clusters of stars, but rather those that are made up mostly of bright clumps. Click to see larger images.",
+      "text": " آیا کهکشان، بیش‌تر ظاهری توده ای دارد؟",
+      "title": "توده‌ها",
+      "help": " برخی کهکشان‌ها چیزی جز توده های نورانی نیستند. منظور ما آن‌هایی نیست که در کنار ویژگی‌های دیگر خود، دسته‌های کوچکی از ستاره‌ نیز دارند، بلکه ترجیح ما آن‌هایی است که قسمت عمده‌شان از توده های نورانی تشکیل ‌شده‌است. برای دیدن تصاویر در ابعاد بزرگ‌تر، کلیک‌کنید. ",
       "answers": {
-        "a-0": "Yes",
-        "a-1": "No"
+        "a-0": "بله",
+        "a-1": "نه"
       }
     },
     "candels-3": {
-      "text": "How many clumps are there?",
-      "title": "Clumps",
-      "help": "Count the clumps! If there are more than 4, than don't worry about it - just click &quot;more than 4.&quot;",
+      "text": "چه تعداد توده وجود دارد؟",
+      "title": "توده‌ها",
+      "help": " توده‌ها را شمارش کنید! اگر تعدادشان بیش‌از 4 بود، نگران نباشید – &quot;بیش‌تر از &quot;4 را انتخاب کنید.",
       "answers": {
         "a-0": "1",
         "a-1": "2",
         "a-2": "3",
         "a-3": "4",
-        "a-4": "More than 4",
-        "a-5": "Can't tell"
+        "a-4": "بیش‌تر از 4",
+        "a-5": "نمی‌توان تشخیص‌داد"
       }
     },
     "candels-4": {
-      "text": "Do the clumps appear in a straight line, a chain, or a cluster?",
-      "title": "Clumps",
-      "help": "Sometimes the clumps appear in a regular pattern - if so, then click the appropriate symbol.",
+      "text": " آیا توده ها در یک خط راست، بشکل زنجیر، یا بصورت خوشه هستند؟",
+      "title": "توده‌ها",
+      "help": " گاهی توده‌ها در یک الگوی منظم ظاهر می‌شوند – اگر چنین است، شکل مناسب را انتخاب‌کنید.",
       "answers": {
-        "a-0": "Straight Line",
-        "a-1": "Chain",
-        "a-2": "Cluster / Irregular",
-        "a-3": "Spiral"
+        "a-0": "خط راست",
+        "a-1": "زنجیر",
+        "a-2": "خوشه/ بی‌نظم",
+        "a-3": "مارپیچی"
       }
     },
     "candels-5": {
-      "text": "Is there one clump which is clearly brighter than the others?",
-      "title": "Clumps",
-      "help": "Sometimes one clump dominates the scene. If so, click yes, otherwise, no.",
+      "text": "آیا توده‌ای وجود دارد که به‌طور واضح از سایر توده ها درخشان‌تر باشد؟",
+      "title": "توده‌ها",
+      "help": "گاه یک توده در تصویر غالب است. اگر چنین است روی بله و در غیر این‌صورت روی نه کلیک‌کنید. ",
       "answers": {
-        "a-0": "Yes",
-        "a-1": "No"
+        "a-0": "بله",
+        "a-1": "نه"
       }
     },
     "candels-6": {
-      "text": "Is the brightest clump central to the galaxy?",
-      "title": "Clumps",
-      "help": "For very clumpy galaxies it may be difficult to tell, but make your best guess whether that brightest clump lies at the centre of the system or not.",
+      "text": "آیا روشن‌ترین توده در مرکز کهکشان است؟",
+      "title": "خوشه‌ها",
+      "help": " ممکن است برای کهکشان‌های پر از توده تعیین این موضع دشوار باشد، اما سعی کنید بهترین حدس را بزنید که آیا روشن‌ترین خوشه در مرکز مجموعه قراردارد یا نه.",
       "answers": {
-        "a-0": "Yes",
-        "a-1": "No"
+        "a-0": "بله",
+        "a-1": "نه"
       }
     },
     "candels-7": {
-      "text": "Does the galaxy appear symmetrical?",
-      "title": "Symmetry",
-      "help": "Are both halves of the galaxy the same? Or is one side disrupted or different in some way?",
+      "text": "آیا کهکشان متقارن به‌نظر می‌رسد؟",
+      "title": "تقارن",
+      "help": " آیا هر دو نیمه از کهکشان مشابه هم هستند؟ یا یک طرف آن از هم‌گسیخته یا به هر طریق دیگری متفاوت‌ است؟",
       "answers": {
-        "a-0": "Yes",
-        "a-1": "No"
+        "a-0": "بله",
+        "a-1": "نه"
       }
     },
     "candels-8": {
-      "text": "Do the clumps appear to be embedded within a larger object?",
-      "title": "Clumps",
-      "help": "Look carefully for faint background light surrounding the clumps - are they embedded in a visible galaxy?",
+      "text": " آیا به‌نظر می‌رسد توده‌ها در یک جسم بزرگ‌تر جای ‌گرفته‌اند؟",
+      "title": "توده‌ها",
+      "help": " با‌دقت به پس‌زمینه‌ی روشن ضعیفی که توده‌ها را دربرگرفته توجه کنید – آیا آن‌ها در یک کهکشان نمایان جای ‌گرفته‌اند؟",
       "answers": {
-        "a-0": "Yes",
-        "a-1": "No"
+        "a-0": "بله",
+        "a-1": "نه"
       }
     },
-    "candels-9": {
-      "text": "Could this be a disk viewed edge-on?",
-      "title": "Disk",
-      "help": "Disc galaxies are very thin, so look different when viewed from the side. We're trying to find exactly edge-on galaxies with this question. If the galaxy looks needle-like, perhaps with a bulge at the centre, then click &quot;yes,&quot; otherwise choose &quot;no&quot; (even for galaxies almost edge-on). Click to see larger images.",
+    "candels-9":  {
+      "text": " آیا این میتواند دیسکی باشد که از لبه دیده شده؟",
+      "title": "دیسک",
+      "help": " کهکشان‌های دیسکی بسیار نازک هستند، بنابراین هنگامی که از لبه دیده شوند متفاوت به‌نظر میرسند. با این سوال تلاش می‌کنیم تا کهکشان‌هایی که دقیقا از لبه دیده‌ می شوند را بیابیم. اگر کهکشان به شکل سوزنی همراه با یک برآمدگی در وسط آن دیده شد، &quot;بله&quot; را انتخاب‌کنید، در غیر اینصورت &quot;نه&quot; را برگزینید (حتی برای کهکشان‌هایی که تقریبا از لبه دیده‌شده‌اند). برای دیدن تصاویر در ابعاد بزرگ‌تر، کلیک‌ کنید.",
       "answers": {
-        "a-0": "Yes",
-        "a-1": "No"
+        "a-0": "بله",
+        "a-1": "نه"
       }
     },
     "candels-10": {
-      "text": "Does the galaxy have a bulge at its centre?",
-      "title": "Bulge",
-      "help": "Look at the centre of the galaxy - is there any sign of a bulge of stars sticking out above and below the otherwise smooth shape? If so, click yes.",
+      "text": " آیا کهکشان در مرکز خود یک برآمدگی دارد؟",
+      "title": "برآمدگی",
+      "help": " به مرکز کهکشان نگاه کنید – هیچ نشانی از برآمدگی ناشی از بیرون‌زدگی ستاره‌ها از بالا و پایین وجود دارد؟ اگر چنین است، بله را انتخاب کنید.",
       "answers": {
-        "a-0": "Yes",
-        "a-1": "No"
+        "a-0": "بله",
+        "a-1": "نه"
       }
     },
     "candels-11": {
-      "text": "Is there any sign of a bar feature through the centre of the galaxy?",
-      "title": "Bar",
-      "help": "Sometimes galaxies have a prominent straight &quot;bar&quot; running through their centre, and that's what we're looking for here. Click to see larger images.",
+      "text": " آیا نشانی از میله ای که از مرکز کهکشان عبور می کند وجود دارد؟ ",
+      "title": "میله",
+      "help": " گهگاه کهکشان‌ها بهطور واضح دارای یک &quot;میله&quot; صاف هستند که از مرکزشان عبور می‌کند، و این چیزی است که در اینجا به دنبال آن هستیم. برای دیدن تصاویر در ابعاد بزرگ‌تر، کلیک‌کنید.",
       "answers": {
-        "a-0": "Bar",
-        "a-1": "No bar"
+        "a-0": "میله",
+        "a-1": "بدون میله"
       }
     },
     "candels-12": {
-      "text": "Is there any sign of a spiral arm pattern?",
-      "title": "Spiral",
-      "help": "Look carefully for spiral arms - remember they may be embedded in the disk and not that easy to see. Click to see larger images.",
+      "text": "آیا نشانی از یک الگوی بازوی مارپیچی وجود دارد؟",
+      "title": "مارپیچی",
+      "help": " به دنبال بازوی مارپیچی بگردید – به یاد داشته‌باشید که این بازوها ممکن است درون دیسک جای گرفته‌باشند و دیدن آنها آسان نباشد. برای دیدن تصاویر در ابعاد برزگ‌تر کلیک‌کنید.",
       "answers": {
-        "a-0": "Spiral",
-        "a-1": "No spiral"
+        "a-0": "مارپیچی",
+        "a-1": "بدون بازوی مارپیچی"
       }
     },
     "candels-13": {
-      "text": "How tightly wound do the spiral arms appear?",
-      "title": "Spiral",
-      "help": "Astronomers classify galaxies by how tight their arms are - you might find it easiest to see closest to the centre. Click to see larger images.",
+      "text": " میزان تنگ بودن پیچش بازوهای مارپیچی چقدر است‌؟‌",
+      "title": "مارپیچی",
+      "help": "",
       "answers": {
-        "a-0": "Tight",
-        "a-1": "Medium",
-        "a-2": "Loose"
-      }
+        "a-0": "تنگ",
+        "a-1": "متوسط",
+        "a-2": "شُل و گشاد"
+      } 
     },
     "candels-14": {
-      "text": "How many spiral arms are there?",
-      "title": "Spiral",
-      "help": "Some spiral galaxies are rather complicated, so don't be afraid to use the &quot;more than 4&quot; or &quot;can't tell&quot; buttons here.",
+      "text": "چه تعداد بازوی مارپیچی وجود دارد؟",
+      "title": "مارپیچی",
+      "help": "بعضی از کهکشان‌های مارپیچی پیچیدگی فراوانی دارند، بنابراین هراسی از انتخاب &quot;بیش‌تر از &quot;4 یا &quot;نمی‌توان تشخیص‌داد&quot; نداشته‌باشید.",
       "answers": {
         "a-0": "1",
         "a-1": "2",
         "a-2": "3",
         "a-3": "4",
-        "a-4": "More than 4",
-        "a-5": "Can't tell"
+        "a-4": "بیشتر از 4",
+        "a-5": "نمی‌توان تشخیص‌داد"
       }
     },
+
     "candels-15": {
-      "text": "How prominent is the central bulge, compared with the rest of the galaxy?",
-      "title": "Bulge",
-      "help": "It's not always easy to tell, but look at the centre of the galaxy for a round bulge of stars which may obscure any bar and the spiral arms in this central region. Click to see larger images.",
+      "text": " در مقایسه با سایر کهکشان‌ها، برآمدگی مرکزی چگونه‌است؟",
+      "title": "برآمدگی",
+      "help": " هرچند ممکن است به سادگی ممکن نباشد، اما به مرکز کهکشان نگاه کنید و به دنبال یک برآمدگی گرد از ستاره‌ها بگردید که در آن ناحیه ممکن است بازوی مارپیچی و میله، محو ‌شوند. برای دیدن تصاویر در ابعاد بزرگ‌تر کلیک کنید.",
       "answers": {
-        "a-0": "No bulge",
-        "a-1": "Obvious",
-        "a-2": "Dominant"
+        "a-0": "بدون برآمدگی",
+        "a-1": "برآمدگی آشکار",
+        "a-2": "برآمدگی غالب"
       }
     },
     "candels-16": {
-      "text": "Is the galaxy currently merging or is there any sign of tidal debris?",
-      "title": "Merger",
-      "help": "Now you can look at the larger picture - if the galaxy is colliding with another, click &quot;merger.&quot; If there's no visible second system, but long streams of stars or gas are visible then click &quot;tidal debris.&quot; &quot;Both&quot; and &quot;Neither&quot; are your other options. Click to see larger images.",
+      "text": " آیا کهکشان درحال ادغام‌شدن است یا هیچ اثری از خرد و ریز کشندی وجود دارد؟",
+      "title": "ادغام شدن",
+      "help": " حالا به تصویر بزرگ‌تر نگاه‌کنید – اگر کهکشان‌ها در حال برخورد با یکدیگر هستند، &quot;ادغام‌شدن&quot; را انتخاب‌کنید. اگر سیستم دیگری قابل مشاهده نیست، اما یک جریان طویل از گاز یا ستاره را می‌بینید، &quot;خورد و ریز های کشندی&quot; را انتخاب کنید. &quot;هر دو&quot; و &quot;هیچ‌کدام&quot; جزء گزینه‌ها هستند. برای دیدن تصاویر در ابعاد بزرگ‌تر، کلیک‌کنید.",
       "answers": {
-        "a-0": "Merging",
-        "a-1": "Tidal debris",
-        "a-2": "Both",
-        "a-3": "Neither"
+        "a-0": "ادغام‌شدن",
+        "a-1": "خرد و ریز کشندی",
+        "a-2": "هر دو",
+        "a-3": "هیچ‌کدام"
       }
     },
-    "candels-17": {
-      "text": "Would you like to discuss this object?",
-      "title": "Discuss",
-      "help": "If you have any questions about this object, or think it may be interesting to others, or just have something to say, you can start a discussion on Talk by clicking &quot;Yes&quot;. Talk will open in a new window - just close it to come back to the classification page.",
+    "candels-17":  {
+      "text": "تمایل‌دارید در مورد این جسم بحث ‌کنید؟",
+      "title": "بحث",
+      "help": " اگر در مورد این جسم سوالی دارید، یا فکر‌می‌کنید این جسم می‌تواند برای دیگران جالب باشد، یا اینکه چیزی برای گفتن در مورد آن دارید، می‌توانید با کلیک روی &quot;بله&quot; بحثی در مورد آن در بخش گفتگو(Talk) شروع کنید. گفتگو در یک پنجره جدید باز خواهد‌شد – برای برگشتن به صفحه‌ی طبق بندی کافیست آن پنجره را ببندید.",
       "answers": {
-        "a-0": "Yes",
-        "a-1": "No"
+        "a-0": "بله",
+        "a-1": "نه"
       }
     }
   },
   "quiz_questions": {
     "set_1": {
       "question_0": {
-        "text": "Where are elliptical galaxies more common?",
-        "answer_0": "inside clusters of galaxies",
-        "answer_1": "outside clusters of galaxies",
-        "answer_2": "they are equally prevalent everywhere"
+        "text": "کهکشان‌های بیضی گون معمولا در چه جاهایی بیشتر یافت می شوند؟",
+        "answer_0": "درون خوشه‌های کهکشانی",
+        "answer_1": "بیرون خوشه‌های کهکشانی",
+        "answer_2": "آن‌ها در همه‌جا به یک اندازه یافت می شوند "
       },
       "question_1": {
-        "text": "Star A is a red main sequence star and Star B is a blue main sequence star. Which will have a longer lifetime?",
-        "answer_0": "Star A",
-        "answer_1": "Star B",
-        "answer_2": "They will have the same lifetime.",
-        "answer_3": "There is insufficient information to determine this."
+       "text": " ستاره A ستاره‌ی قرمزی است که در رشته اصلی بسر می برد و ستاره B ستاره‌ی آبی در رشته اصلی است. کدام‌ یک طول عمر بلندتری دارد؟ ",
+        "answer_0": "ستاره A",
+        "answer_1": "ستاره B",
+        "answer_2": "هر دو طول عمر یکسانی دارند.",
+        "answer_3": "اطلاعات کافی برای تعیین عمر وجودندارد."
       },
       "question_2": {
-        "text": "How does the Sun produce the energy that heats our planet?",
-        "answer_0": "The gases inside our Sun are burning and producing energy.",
-        "answer_1": "Atoms are combined into heavier atoms, giving off energy.",
-        "answer_2": "Gas inside the Sun heats up when compressed, giving off energy.",
-        "answer_3": "Atoms are broken apart into lighter atoms, giving off energy.",
-        "answer_4": "The core of the Sun has radioactive atoms that decay, giving off energy."
+        "text": " خورشید به چه روشی انرژی‌ لازم برای گرم‌شدن سیاره‌ی ما را تولید می‌کند؟",
+        "answer_0": " گازهای درون خورشید ما درحال سوختن هستند و انرژی تولید می‌کنند.",
+        "answer_1": " اتم‌ها به اتم‌های سنگین‌تری تبدیل می‌شوند و انرژی آزاد می‌ شود.",
+        "answer_2": " گاز درون خورشید زمانی که فشرده می شود گرم‌تر شده و انرژی آزاد می‌کند.",
+        "answer_3": " اتم‌ها به اتم‌های سبک‌تری شکسته می‌شوند و انرژی آزاد می‌شود.",
+        "answer_4": " هسته‌ی خورشید دارای اتم‌های رادیواکتیو است که متلاشی می‌شوند و بدین ترتیب انرژی آزاد می شود."
       },
       "question_3": {
-        "text": "The diagram represents three different waves of light emitted at the same time by the Sun. Which wave will arrive first at a satellite orbiting just above Earth’s atmosphere?",
-        "answer_0": "Wave 1",
-        "answer_1": "Wave 2",
-        "answer_2": "Wave 3",
-        "answer_3": "All three waves arrive at the same time."
+        "text": " نمودار، سه موج نوری که در یک زمان از خورشید ساطع شده‌اند را نشان‌می‌دهد. ابتدا کدام‌یک به ماهواره‌ای که درست در بالای اتمسفر زمین در حال چرخش است می‌رسد؟",
+        "answer_0": "موج 1",
+        "answer_1": "موج 2",
+        "answer_2": "موج 3",
+        "answer_3": "هر سه در یک زمان می‌رسند."
       },
       "question_4": {
-        "text": "A galaxy that appears to have very few bright, blue stars, likely:",
-        "answer_0": "never had blue stars in the galaxy.",
-        "answer_1": "had more blue stars long ago that are no longer present.",
-        "answer_2": "has been around long enough for the blue stars to have evolved into red main sequence stars.",
-        "answer_3": "never contained enough gas to have blue stars develop."
+        "text": " کهکشانی که دارای تعداد اندکی ستاره آبی و درخشان باشد به احتمالا زیاد: ",
+        "answer_0": " هرگز ستاره آبی در کهکشان نداشته است.",
+        "answer_1": " ستاره های آبی بیشتری در گذشته داشته که در حال حاضر حضور ندارند.",
+        "answer_2": " به اندازه کافی عمر کرده است که ستاره های آبی به ستاره های قرمز رشته اصلی تحول یابند.",
+        "answer_3": "هیچ وقت گاز کافی برای تولید ستاره های آبی نداشته است."
       }
     },
     "set_2": {
       "question_0": {
-        "text": "Which is true of Doppler shifted light from galaxies and stars?",
-        "answer_0": "If their light is redshifted, that means the objects are moving towards you.",
-        "answer_1": "If their light is blueshifted, that means the objects are close to you.",
-        "answer_2": "If their light is redshifted, that means the objects are moving quickly.",
-        "answer_3": "If their light is blueshifted, that means the objects will appear blue.",
-        "answer_4": "None of the above is true."
+        "text": " کدام گزینه در مورد نور کهکشان سا ستاره ای که تحت انتقال دوپلری قرارگرفته درست است؟",
+        "answer_0": " اگر نور آن‌ها گرایش به سرخ داشت، به این معنی است که اجسام به سمت شما حرکت می‌کنند.",
+        "answer_1": " اگر نور آن‌ها گرایش به آبی داشت، به این معنی است که اجسام  به شما نزدیک‌اند.",
+        "answer_2": " اگر نور آن‌ها گرایش به سرخ داشت، به این معنی است که اجسام سریع حرکت می‌کنند.",
+        "answer_3": " اگر نور آن‌ها گرایش به آبی داشت، به این معنی است که اجسام آبی به‌نظر خواهند رسید.",
+        "answer_4": "هیچ‌کدام از موارد بالا درست نیست."
       },
       "question_1": {
-        "text": "A main sequence star with a long lifetime will be ______ than a main sequence star with a short lifetime.",
-        "answer_0": "bluer",
-        "answer_1": "emitting light at shorter wavelengths",
-        "answer_2": "larger",
-        "answer_3": "more luminous",
-        "answer_4": "less massive"
+        "text": " یک ستاره رشته اصلی با عمر طولانی ......... ستاره‌رشته اصلی با عمر کوتاه است.",
+        "answer_0": "آبی‌تر از",
+        "answer_1": "منتشر کننده نوری با طول موج کوتاه‌تر از",
+        "answer_2": "بزرگ‌تر از",
+        "answer_3": "درخشان‌تر از",
+        "answer_4": "کم جرم تر از"
       },
       "question_2": {
-        "text": "The three spectral curves shown in the graphs illustrate the energy output versus wavelength for three Stars A, B, and C. Which of the stars has the highest temperature?",
-        "answer_0": "Star A",
-        "answer_1": "Star B",
-        "answer_2": "Star C",
-        "answer_3": "All three stars have the same temperature.",
-        "answer_4": "There is insufficient information to determine this."
+        "text": " سه منحنی طیفی در نمودار، انرژی خروجی بر حسب طول موج را برای سه ستاره‌ی A، B و C نشان می‌دهند. کدام ستاره دمای بالاتری دارد؟",
+        "answer_0": "ستاره A",
+        "answer_1": "ستاره B",
+        "answer_2": "ستاره C",
+        "answer_3": "هر سه ستاره دمای برابری دارند.",
+        "answer_4": " اطلاعات کافی برای حکم‌دادن درمورد این مسئله وجودندارد."
       },
       "question_3": {
-        "text": "Which of the following correctly lists objects from largest to smallest?",
-        "answer_0": "Star, Solar System, Globular Cluster, Galaxy, Local Group",
-        "answer_1": "Globular Cluster, Local Group, Galaxy, Star, Solar System",
-        "answer_2": "Galaxy, Local Group, Solar System, Globular Cluster, Star",
-        "answer_3": "Local Group, Galaxy, Globular Cluster, Solar System, Star"
+        "text": " در کدام لیست اجسام به ترتیب از بزرگ به کوچک قرار گرفته‌اند؟",
+        "answer_0": " ستاره، منظومه شمسی، خوشه‌ی کروی(Globular Cluster)، کهکشان، گروه محلی(Local Group)",
+        "answer_1": " خوشه‌ی کروی، گروه محلی، کهکشان، ستاره، منظومه‌ی شمسی",
+        "answer_2": " کهکشان، گروه محلی، منظومه‌ی شمسی، خوشه‌ی کروی، ستاره",
+        "answer_3": " گروه محلی، کهکشان، خوشه‌ی کروی، منظومه‌ی شمسی، ستاره"
       },
       "question_4": {
-        "text": "Which of the following components of an elliptical galaxy has the most mass?",
-        "answer_0": "Stars",
-        "answer_1": "Gas and Dust",
-        "answer_2": "Dark Matter",
-        "answer_3": "There is insufficient information to determine this."
+        "text": " کدام جزء(از موارد زیر) در یک کهکشان بیضی گون جرم بیش‌تری دارد؟",
+        "answer_0": "ستاره‌ها",
+        "answer_1": "گاز و گردوغبار",
+        "answer_2": "ماده‌ی تاریک",
+        "answer_3": " اطلاعات کافی برای حکم‌دادن درمورد این مسئله وجودندارد."
       },
       "question_5": {
-        "text": "How many of the four galaxies shown could be a Spiral Galaxy?",
-        "answer_0": "One",
-        "answer_1": "Two",
-        "answer_2": "Three",
-        "answer_3": "Four",
-        "answer_4": "There is insufficient information to determine this."
+        "text": " چه تعداد از چهار کهکشان نشان‌داده‌شده می‌توانند یک کهکشان مارپیچی باشند؟",
+        "answer_0": "یک",
+        "answer_1": "دو",
+        "answer_2": "سه",
+        "answer_3": "چهار",
+        "answer_4": "اطلاعات کافی برای حکم‌دادن درمورد این مسئله وجودندارد."
       }
     },
     "set_3": {
       "question_0": {
-        "text": "Which of the following has the most energy?",
-        "answer_0": "x-rays",
-        "answer_1": "ultraviolet light",
-        "answer_2": "gamma rays",
-        "answer_3": "They all have the same energy."
+        "text": " کدام یک انرژی بیش‌تری دارد؟",
+        "answer_0": "پرتو ایکس",
+        "answer_1": "نور فرابنفش",
+        "answer_2": "پرتو گاما",
+        "answer_3": "همگی انرژی برابر دارند."
       },
       "question_1": {
-        "text": "Which of the following is true of all main sequence stars that appear red to us on Earth:",
-        "answer_0": "They are hotter than blue main sequence stars.",
-        "answer_1": "They will live longer than very bright main sequence stars.",
-        "answer_2": "They are moving toward Earth.",
-        "answer_3": "They are moving away from Earth."
+        "text": " کدام گزینه در مورد همه ستاره‌هایی که در دوره اصلی خود قرار دارند(main sequence stars) و برای ما از روی زمین، قرمز به‌نظر می‌رسند درست است؟",
+        "answer_0": "آن‌ها از ستاره‌هایی که در دوره اصلی خود هستند و آبی به‌نظر می‌رسند، داغ‌تر‌اند.",
+        "answer_1": " آن‌ها از ستاره‌های خیلی روشنی که در دوره‌ی اصلی خود بسر می‌برند، بیش‌تر عمر خواهند کرد.",
+        "answer_2": " آن‌ها به سمت زمین در حال حرکت‌اند.",
+        "answer_3": " آن‌ها در حال دور شدن از زمین هستند."
       },
       "question_2": {
-        "text": "Answer the following question using the image, which represents the Milky Way Galaxy.  Approximately how far is it from the white circle to the center of the Milky Way Galaxy?",
-        "answer_0": "1,000 light years",
-        "answer_1": "10,000 light years",
-        "answer_2": "25,000 light years",
-        "answer_3": "100,000 light years"
+        "text": " سوال زیر را با استفاده از تصویر، که کهکشان راه شیری را نمایش می‌دهد، پاسخ دهید. به‌طور تقریبی حلقه‌ی سفید رنگ از مرکز کهکشان راه شیری چقدر فاصله دارد؟",
+        "answer_0": "۱۰۰۰ سال نوری",
+        "answer_1": "۱۰۰۰۰ سال نوری",
+        "answer_2": "۲۵۰۰۰ سال نوری",
+        "answer_3": "۱۰۰۰۰۰ سال نوری"
       },
       "question_3": {
-        "text": "The idea of dark matter is provided to explain which one of the following?",
-        "answer_0": "The location and shape of the arms in the disk of spiral galaxies.",
-        "answer_1": "The location of the maximum in the distribution of globular clusters of stars in the halo of the galaxy.",
-        "answer_2": "The nearly uniform rotation speeds of objects in the Milky Way Galaxy.",
-        "answer_3": "That a spiral density wave moves through the disk of spiral galaxies triggering star formation."
+        "text": " ایده‌ی ماده‌ی تاریک برای توضیح دادن کدام یک از موارد زیر مطرح شد؟",
+        "answer_0": " مکان و شکل بازوها درون صفحه‌ی(دیسک) کهکشان‌های مارپیچی.",
+        "answer_1": " مکان بیشینه در توزیع خوشه‌های کروی ستارگان در هاله‌ی کهکشان",
+        "answer_2": " سرعت چرخشی تقریبن یکنواخت اجسام در کهکشان راه شیری",
+        "answer_3": "حرکت امواج چگالی در صفحه بازوهای مارپیچی باعث روش کردن ستاره زایی در کهکشان های مارپیچی می شود"
       },
       "question_4": {
-        "text": "Why are the arms of spiral galaxies blue?",
-        "answer_0": "The arms are usually moving toward us, so they are Doppler shifted to blue wavelengths.",
-        "answer_1": "The gas and dust in the arms filter out all but the blue light from stars in the arms.",
-        "answer_2": "Active star formation is occurring in the spiral arms.",
-        "answer_3": "Most of the stars of the disk are in the arms of the galaxy and their light makes it appear blue."
+        "text": " چرا بازوهای کهکشان‌های مارپیچی آبی رنگ است؟",
+        "answer_0": " بازوها معمولا به سمت ما حرکت می‌کنند، بنابراین طول موج آن‌ها گرایش  به آبی خواهد داشت (اثر داپلر) ",
+        "answer_1": " گاز و گردوغبار موجود در بازوها، به جز نور آبی، باقی نورهای ستارگان درون بازو را فیلتر می‌کنند.",
+        "answer_2": " در بازوهای مارپیچی، ستاره‌ی فعال(Active star) تشکیل می‌گردد.",
+        "answer_3": " بیش‌تر ستاره‌های موجود در صفحه‌ی کهکشان، در بازوهای آن جای گرفته‌اند و نور آن‌ها دلیل ظاهر شدن بازوها به رنگ آبی است. "
       },
       "question_5": {
-        "text": "In each figure, two pairs of rocky asteroids are shown along with their masses (m), and the distance (d) between each pair of asteroids. Which of the following correctly describes how the gravitational force exerted BY Asteroid A on its 'partner' asteroid compares to the gravitational force exerted BY Asteroid B on its 'partner' asteroid.",
-        "answer_0": "The force of A on its partner is greater than the force of B on its partner.",
-        "answer_1": "The force of B on its partner is greater than the force of A on its partner.",
-        "answer_2": "The force of A on its partner is equal to the force of B on its partner."
+        "text": " در هر شکل، دو جفت از سیارک صخره‌ای همراه با جرم‌شان(m) و فاصله‌ی بین هر جفت(d)، نمایش داده‌شده‌است. کدام گزینه در مورد نیروی گرانشی‌ای که سیارک A بر سیارک کناری خود وارد می‌کند در مقایسه با نیروی گرانشی‌ای که سیارک B بر سیارک کناری خود وارد می‌کند، درست است؟",
+        "answer_0": " نیروی A بر سایرک کناری خود بزرگ‌تر است از نیروی B بر سیارک کناری‌اش.",
+        "answer_1": " نیروی B بر سایرک کناری خود بزرگ‌تر است از نیروی A بر سیارک کناری‌اش.",
+        "answer_2": "نیرویی که A بر سیارک کناری خود وارد می‌کند با نیرویی که B بر سیارک کناری‌اش وارد می‌کند برابراند."
       }
     },
     "set_4": {
       "question_0": {
-        "text": "Which of the following has the highest speed?",
-        "answer_0": "x-rays",
-        "answer_1": "ultraviolet light",
-        "answer_2": "gamma rays",
-        "answer_3": "They all have the same speed."
+        "text": " کدام یک سرعت بیش‌تری دارد؟",
+        "answer_0": "پرتوهای ایکس",
+        "answer_1": "نور فرابنفش",
+        "answer_2": "پرتوهای گاما",
+        "answer_3": "همگی سرعتی برابر دارند."
       },
       "question_1": {
-        "text": "Which of the following determines most characteristics and future events of a star’s existence?",
-        "answer_0": "surface temperature",
-        "answer_1": "size (diameter)",
-        "answer_2": "color",
-        "answer_3": "composition (type of atoms)",
-        "answer_4": "mass"
+        "text": " کدام گزینه مشخصه‌ها و رویدادهای آتی بیش‌تری از زندگی یک ستاره را تعیین می‌کند؟",
+        "answer_0": "دمای سطح",
+        "answer_1": "اندازه (قطر)",
+        "answer_2": "رنگ",
+        "answer_3": "ترکیب (نوع اتم‌ها)",
+        "answer_4": "جرم"
       },
       "question_2": {
-        "text": "Here are possible plots of how fast objects orbit the center of our galaxy versus their distance from the center. Which one graph best represents how objects actually move in our galaxy?",
-        "answer_0": "Graph A",
-        "answer_1": "Graph B",
-        "answer_2": "Graph C",
-        "answer_3": "Graph D",
-        "answer_4": "Graph E",
-        "answer_5": "Graph F"
+        "text": " این‌ شکل‌ها می‌توانند نمودار میزان تندی گردش اجسام در مدارشان به دور مرکز کهکشان بر حسب فاصله‌ی این اجسام از مرکز باشند. کدام نمودار، حرکت واقعی‌ای که اجسام در کهکشان ما انجام می‌دهند را به بهترین شکل نمایش می‌دهد؟",
+        "answer_0": "نمودار A",
+        "answer_1": " نمودار B",
+        "answer_2": " نمودار C",
+        "answer_3": " نمودار D",
+        "answer_4": " نمودار E",
+        "answer_5": " نمودار F"
       },
       "question_3": {
-        "text": "Star A is a red main sequence star and Star B is a blue main sequence star. If both stars appear to be the same brightness, which one is closer to Earth?",
-        "answer_0": "Star A",
-        "answer_1": "Star B",
-        "answer_2": "They are the same distance from Earth.",
-        "answer_3": "There is insufficient information to determine this."
+        "text": " ستاره‌ی A ستاره‌ای قرمز است که در دوره‌ی اصلی خود قرار دارد و ستاره‌ی B نیز ستاره‌ای آبی‌ست که در دوره‌ی اصلی خود بسر می‌برد. اگر هر دو ستاره با یک میزان از روشنایی ظاهر شوند، کدام یک به زمین نزدیک‌تر است؟",
+        "answer_0": "ستاره A",
+        "answer_1": "ستاره B",
+        "answer_2": "آن‌ها در فاصله‌ی برابری از زمین قرار دارند.",
+        "answer_3": "اطلاعات کافی برای حکم‌دادن درمورد این مسئله وجودندارد."
       },
       "question_4": {
-        "text": "In how many of the four galaxies shown do we observe regions containing cool gas & dust clouds?",
-        "answer_0": "One",
-        "answer_1": "Two",
-        "answer_2": "Three",
-        "answer_3": "Four",
-        "answer_4": "There is insufficient information to determine this."
+        "text": " در چه تعداد از چهار کهکشان نمایش داده‌شده،ناحیه‌هایی شامل گازهای سرد و ابرهای گردوغبار را مشاهده می شود؟",
+        "answer_0": "یک",
+        "answer_1": "دو",
+        "answer_2": "سه",
+        "answer_3": "چهار",
+        "answer_4": "اطلاعات کافی برای حکم‌دادن درمورد این مسئله وجودندارد."
       },
       "question_5": {
-        "text": "In this picture the Earth-Moon system is shown (not to scale) along with three possible positions (A-C) for a spacecraft traveling from Earth to the Moon. Note that Position B is exactly halfway between Earth and the Moon. In what direction would the net (total) force of gravity on the spacecraft point if it were located at Position B?",
-        "answer_0": "toward the Moon",
-        "answer_1": "toward Earth",
-        "answer_2": "Since the spacecraft is exactly halfway between Earth and the Moon, the gravitational force by Earth on the spacecraft is equal to the gravitational force on the spacecraft by the Moon, so the net (total) force would be zero and not point in either direction."
+        "text": " در این تصویر سیستم زمین-ماه نمایش داده‌شده (ابعاد رعایت نشده)، به همراه سه موقعیت ممکن (A-C) برای فضاپیمایی که از زمین به ماه سفر می‌کند. توجه کنید که موقعیت دقیقا در وسط زمین و ماه است. نیروی گرانشی برآیندی که به فضاپیما در موقعیت B وارد می‌شود درچه جهتی است؟ ",
+        "answer_0": "به سمت ماه",
+        "answer_1": "به سمت زمین",
+        "answer_2": " چون فضاپیما دقیقن در وسط زمین و ماه قرار دارد، نیروی گرانشی وارد بر فضاپیما از طرف زمین برابر است با نیروی گرانشی وارد بر فضاپیما از طرف ماه، بنابراین نیروی برآیند صفر خواهد بود و جهتی نخواهد‌داشت."
       }
     },
     "set_5": {
       "question_0": {
-        "text": "Which of the following is not a form of light?",
-        "answer_0": "radio waves",
-        "answer_1": "microwaves",
-        "answer_2": "x-rays",
-        "answer_3": "All of the above are a form of light.",
-        "answer_4": "None of the above is a form of light."
+        "text": " کدام یک گونه‌ای از نور نیست؟",
+        "answer_0": "امواج رادیوئی",
+        "answer_1": "میکروموج‌ها (microwaves)",
+        "answer_2": "پرتوهای ایکس",
+        "answer_3": "همه‌ی موارد بالا گونه‌ای از نور هستند.",
+        "answer_4": "هیچ یک از موارد بالا گونه‌ای از نور نیست."
       },
       "question_1": {
-        "text": "A collision of two spiral galaxies produces",
-        "answer_0": "a spiral galaxy.",
-        "answer_1": "an elliptical galaxy.",
-        "answer_2": "either a spiral or elliptical galaxy.",
-        "answer_3": "No galaxy will remain."
+        "text": " محصول برخورد دو کهکشان مارپیچی",
+        "answer_0": "یک کهکشان مارپیچی است.",
+        "answer_1": "یک کهکشان بیضی گون است.",
+        "answer_2": "می‌تواند کهکشان مارپیچی یا بیضی گون باشد.",
+        "answer_3": "کهکشانی برجای نخواهدماند."
       },
       "question_2": {
-        "text": "Which of the following components of a spiral galaxy has the most mass?",
-        "answer_0": "Stars",
-        "answer_1": "Gas and Dust",
-        "answer_2": "Dark Matter",
-        "answer_3": "There is insufficient information to determine this."
+        "text": " کدام جزء(از موارد زیر) در یک کهکشان بیضی گون، جرم بیش‌تری دارد؟",
+        "answer_0": "ستاره‌ها",
+        "answer_1": "گاز و گردوغبار",
+        "answer_2": "ماده‌ی تاریک",
+        "answer_3": " اطلاعات کافی برای حکم‌دادن درمورد این مسئله وجودندارد."
       },
       "question_3": {
-        "text": "Answer the following question using the image, which represents the Milky Way Galaxy. Approximately how large is the diameter of the white dot?",
-        "answer_0": "1,000 light years",
-        "answer_1": "10,000 light years",
-        "answer_2": "50,000 light years",
-        "answer_3": "100,000 light years"
+        "text": " سوال زیر را با استفاده از تصویر، که کهکشان راه شیری را نمایش می‌دهد، پاسخ دهید. به‌طور تقریبی قطر لکه‌ی سفید رنگ چقدر است؟",
+        "answer_0": "۱۰۰۰ سال نوری",
+        "answer_1": "۱۰۰۰۰ سال نوری",
+        "answer_2": "۲۵۰۰۰ سال نوری",
+        "answer_3": "۱۰۰۰۰۰ سال نوری"
       },
       "question_4": {
-        "text": "Consider the information given below about three main sequence Stars A, B, and C. Star A will be a main sequence star for a total of 15 billion years. Star B gives off the same amount of light as the Sun. Star C is red. Which of the following is a true statement about these stars?",
-        "answer_0": "Star A has the greatest mass.",
-        "answer_1": "Star B has the greatest mass.",
-        "answer_2": "Star C has the greatest mass.",
-        "answer_3": "Stars A, B and C all have approximately the same mass.",
-        "answer_4": "There is insufficient information to determine this."
+        "text": " اطلاعات زیر که در مورد سه ستاره‌ای که در رشته اصلی  هستند A، B و C  را درنظر بگیرید. ستاره A برای 15 میلیارد سال در رشته اصلی  خواهد‌بود. ستاره‌ی B نوری به اندازه‌ی خورشید از خود ساتع می‌کند. ستاره‌ی C قرمز است. کدام گزینه در مورد این سه ستاره درست است؟",
+        "answer_0": " ستاره‌ی A بیش‌ترین جرم را دارد.",
+        "answer_1": " ستاره‌ی B بیش‌ترین جرم را دارد.",
+        "answer_2": " ستاره‌ی C بیش‌ترین جرم را دارد.",
+        "answer_3": " ستاره‌های A، B و C هر سه جرم تقریبا برابری دارند.",
+        "answer_4": " اطلاعات کافی برای حکم‌دادن درمورد این مسئله وجودندارد."
       },
       "question_5": {
-        "text": "Assume the two galaxies shown have the same total number of stars. Which of these two galaxies most likely has the fewest bright blue stars?",
-        "answer_0": "Galaxy A",
-        "answer_1": "Galaxy B",
-        "answer_2": "They have the same number of bright blue stars.",
-        "answer_3": "There is insufficient information to determine this."
+        "text": " فرض کنید تعداد کل ستاره‌های دو کهکشان نشان داده‌شده با هم برابر است. برای کدام کهکشان محتمل‌تر است که کمترین تعداد ستاره‌های آبی را داشته‌باشد؟",
+        "answer_0": "کهکشان A",
+        "answer_1": "کهکشان B",
+        "answer_2": "هر دو تعداد ستاره‌های آبی برابری دارند.",
+        "answer_3": " اطلاعات کافی برای حکم‌دادن درمورد این مسئله وجودندارد."
       }
     },
     "set_6": {
       "question_0": {
-        "text": "Star A is hotter than Star B. Star B gives off much more light than Star A. Which star is larger?",
-        "answer_0": "Star A",
-        "answer_1": "Star B",
-        "answer_2": "They are the same size.",
-        "answer_3": "There is insufficient information to determine this."
+        "text": " ستاره‌ی A از ستاره‌ی B داغ‌تر است. ستاره‌ی B مقدار بسیار بیش‌تری نور نسبت به ستاره‌ی A بیرون می‌دهد. کدام ستاره بزرگ‌تر است؟",
+        "answer_0": "ستاره‌ی A",
+        "answer_1": "ستاره‌ی B",
+        "answer_2": "اندازه‌ای برابر دارند.",
+        "answer_3": " اطلاعات کافی برای حکم‌دادن درمورد این مسئله وجودندارد."
       },
       "question_1": {
-        "text": "Star F is a red main sequence star and Star G is a blue main sequence star. Which star has a higher temperature?",
-        "answer_0": "Star F",
-        "answer_1": "Star G",
-        "answer_2": "They have the same temperature.",
-        "answer_3": "There is insufficient information to determine this."
+
+        "text": " ستاره‌ی F ستاره‌ای قرمز است که در دوره‌ی اصلی خود قرار دارد و ستاره‌ی G نیز ستاره‌ای آبی‌ست که در دوره‌ی اصلی خود بسر می‌برد. اگر هر دو ستاره با یک میزان از روشنایی ظاهر شوند، کدام یک دمای بالاتری دارد؟",
+        "answer_0": "ستاره‌ی F",
+        "answer_1": "ستاره‌ی G",
+        "answer_2": "هر دو دمای برابری دارند.",
+        "answer_3": " اطلاعات کافی برای حکم‌دادن درمورد این مسئله وجودندارد."
       },
       "question_2": {
-        "text": "A collision of two elliptical galaxies produces",
-        "answer_0": "a spiral galaxy.",
-        "answer_1": "an elliptical galaxy.",
-        "answer_2": "either a spiral or elliptical galaxy.",
-        "answer_3": "No galaxy will remain."
+        "text": " محصول برخورد دو کهکشان بیضی گون",
+        "answer_0": "یک کهکشان مارپیچی است.",
+        "answer_1": "یک کهکشان بیضی گون است.",
+        "answer_2": "می‌تواند کهکشان مارپیچی یا بیضی گون باشد.",
+        "answer_3": "کهکشانی برجای نخواهدماند."
       },
       "question_3": {
-        "text": "Use the graph to answer the following question. Which of the following is the correct ranking for the size of Objects A-C, from largest to smallest?",
+        "text": " با استفاده از نمودار به سوال زیر پاسخ دهید. ترتیب درست اجسام A-C از نظر اندازه، کدام است؟ از بزرگ‌ترین به کوچک‌ترین.",
         "answer_0": "A > C = B",
         "answer_1": "B = C > A",
         "answer_2": "A = C > B",
@@ -603,7 +605,7 @@
         "answer_4": "B > C = A"
       },
       "question_4": {
-        "text": "Which diagram best describes the net (total) force of gravity on each of the three galaxies shown? Note that: Galaxy C has much more mass than Galaxy A and B  (which have equal mass). The arrows indicate the direction of the net (total) force of gravity exerted on each galaxy but not the strength",
+        "text": " کدام نمودار بهترین نمایش برآیند نیروهای گرانشی وارد بر هر کدام از سه کهکشان را ارائه می‌دهد؟ توجه کنید: کهکشان C نسبت به کهکشان‌های A و B جرم بسیار بیش‌تری دارد( این دو جرمی برابر دارند). پیکان‌ها جهت نیروی گرانشی برآیند اعمال شده بر هر کهکشان را نشان‌می‌دهند، نه مقدار آن را. ",
         "answer_0": "",
         "answer_1": "",
         "answer_2": "",
@@ -613,150 +615,150 @@
     }
   },
   "astronomers": {
-    "heading": "Galaxy Zoo for Astronomers",
+    "heading": " باغ کهکشان (Galaxy Zoo) برای ستاره‌شناسان",
     "explanation": {
-      "goals": "This page aims to give background to the scientific motivation behind the project for a more technical audience.",
-      "data": "You may be looking for data - public Galaxy Zoo data is available in a range of formats <a href=\"http://data.galaxyzoo.org\">here</a>.",
-      "papers": "Alternatively, you can browse a list of papers published by the team <a href=\"/#/papers\">here</a>."
+      "goals": " هدف این صفحه، تبیین انگیزه‌های علمی این پروژه، برای مخاطب حرفه ای تر است.",
+      "data": " ممکن است در جست‌و‌جوی اطلاعات باشد – اطلاعات عمومی شده‌ی باغ کهکشان در فرمت‌های مختلف، از <a href=\"http://data.galaxyzoo.org\">اینجا</a> در دسترس است.",
+      "papers": " از سوی دیگر، می‌توانید در <a href=\"/#/papers\">اینجا</a> در لیست مقاله‌های منتشر شده توسط تیم گشت‌و‌گذار کنید."
     },
     "morphology": {
-      "heading": "Why is galaxy morphology important?",
-      "body": "To first order, the morphology of a galaxy is a tracer of the orbital dynamics of the stars in it, but it also carries an imprint of the processes driving star formation and nuclear activity in galaxies. Visual morphology produces classifications which are strongly correlated with other, physical parameters. To give a single example, the presence of multiple nuclei and extended tidal features indicates that the dominant mechanism driving star formation is an ongoing merger. Equally, the absence of such features implies that the evolution of the galaxy may be being driven by slower ('secular') processes.",
-      "reference": "Traditionally morphology has been derived either by visual inspection of galaxy images (e.g. <a href=\"http://adsabs.harvard.edu/abs/1926ApJ....64..321H\" target=\"_blank\">Hubble 1926</a>, <a href=\"http://heasarc.nasa.gov/W3Browse/all/rc3.html\" target=\"_blank\">de Vaucouleurs 1991</a>, and more recently e.g. <a href=\"http://arxiv.org/abs/1001.2401\" target=\"_blank\">Nair and Abraham 2010</a>) or via morphological parameters, such as Concentration, Asymmetry, Clumpiness, M20, the Gini coefficient, etc (e.g. <a href=\"http://arxiv.org/abs/astro-ph/0303065\" target=\"_blank\">Conselice 2003</a>, <a href=\"http://adsabs.harvard.edu/abs/2008ApJ...672..177L\" target=\"_blank\">Lotz et al. 2008</a>). Strictly speaking, these parameters are morphological 'proxies', each with its own attendant biases, which are typically checked and calibrated against visual inspection. A visual approach is generally more resistant to changing signal-to-noise and resolution in images (e.g. <a href=\"http://labs.adsabs.harvard.edu/adsabs/abs/2008ApJS..179..319L\">Lisker 2008</a>), making it an ideal method for determining galaxy morphology. Nevertheless, morphological parameters have been valuable for classifying large survey-scale datasets, for which visual inspection by individuals (or small groups of researchers) can be prohibitively time-consuming."
+      "heading": "چرا ریخت‌شناسی کهکشان مهم است؟",
+      "body": "در نگاه نخست، ریخت‌شناسی یک کهکشان، بیانگر دینامیک مداری ستاره‌های درون آن است. اما علاوه بر این، اطلاعاتی در مورد فرآیندهای ستاره زایی و فعالیت‌های هسته‌ای درون کهکشان‌ها را نیز به همراه‌ دارد. ریخت‌شناسی چشمی منجر به دسته بندی می شود که با دیگر پارامترهای فیزیکی کهکشان ها همبسته است. به عنوان نمونه، وجود چند هسته در کهکشان و یا علایم کشندگی گسترده نشان دهنده این است که مکانیزم غالب تشکیل ستاره، فرایند های تحولی آرام است که  در هنوز در جریان است. به این ترتیب، عدم وجود این ویژگی‌ها نشان می‌دهد که احتمالا تکامل کهکشان تحت فرآیندهای کند‌تری ('secular') انجام می‌گیرد.",
+      "reference": "ریخت‌شناسی رایج یا با بررسی چشمی تصاویر کهکشان‌ها  انجام می شود ( نمونه <a href=\"http://adsabs.harvard.edu/abs/1926ApJ....64..321H\" target=\"_blank\">Hubble 1926</a>, <a href=\"http://heasarc.nasa.gov/W3Browse/all/rc3.html\" target=\"_blank\">de Vaucouleurs 1991</a>, و نمونه‌های جدیدتر <a href=\"http://arxiv.org/abs/1001.2401\" target=\"_blank\">Nair and Abraham 2010</a>) یا با پارامترهای ریخت‌شناسی، مانند تمرکز، عدم تقارن، خوشه‌ای بودن، پارامتر M20، ضریب جینی و غیره (نمونه <a href=\"http://arxiv.org/abs/astro-ph/0303065\" target=\"_blank\">Conselice 2003</a>, <a href=\"http://adsabs.harvard.edu/abs/2008ApJ...672..177L\" target=\"_blank\">Lotz et al. 2008</a>). به عبارت دقیق‌تر، این پارامترها عوامل ریخت‌شناسی، هر کدام با نقاط قوت و ضعف خود هستند که نوعا با مقایسه با دسته بندی های چشمی واسنجی می‌شوند. شیوه‌ی دسته بندی چشمی بطور کلی در برابر تغییرات سیگنال-به-نویز و توان تفکیک  مقاوم تر بوده  و این رویکرد را برای تعیین ریخت‌شناسی کهکشان مناسب می‌کند. با این وجود، پارامترهای ریخت‌شناسیک برای دسته ‌بندی مجموعه اطلاعات پیمایش‌های بزرگ‌مقیاس، که برای آن‌ها بررسی ظاهری توسط فرد (یا گروه کوچکی از محققان) منع محدودیت زمانی دارد، ارزشمند است."
     },
     "classification": {
-      "heading": "Classifications of large survey datasets using Galaxy Zoo",
-      "body": "Galaxy Zoo (<a href=\"http://arxiv.org/abs/0804.4483\" target=\"_blank\">Lintott et al. 2008</a>, <a href=\"http://arxiv.org/abs/1007.3265\" target=\"_blank\">2011</a>) pioneered a novel method for performing large-scale visual classifications of survey datasets. Using more than half a million members of the general public, the project has classified – via direct visual inspection - the entire Sloan Digital Sky Survey spectroscopic sample and all existing Hubble Space Telescope surveys (around 1.5 million galaxies in total). With more than 40 classifications per object, Galaxy Zoo provides both a visual classification and an associated uncertainty (which is challenging to estimate if there are only a few human classifiers). The classifications themselves have been demonstrated to be of comparable accuracy to those derived by expert astronomers (see Lintott et al. 2008)."
+      "heading": " دسته‌بندی دسته ‌های بزرگ اطلاعات بدست‌آمده از مساحی با استفاده از باغ کهکشان ",
+      "body": " باغ کهکشان((<a href=\"http://arxiv.org/abs/0804.4483\" target=\"_blank\">Lintott et al. 2008</a>, <a href=\"http://arxiv.org/abs/1007.3265\" target=\"_blank\">2011</a>) پیشگام روشی نوین برای انجام دسته ‌بندی چشمی در مقیاس وسیع بر روی داده های مساحی ها کهکشان ها است. با استفاده از بیش از نیم میلیون کاربر از میان عموم جامعه، پروژه باغ کهکشان، توانسته است تمام کهکشانهای طیف سنجی شده مساحی دیجیتال اسلون همه‌ی مساحی های تلسکوپ فضایی هابل (مجموعا حدود 1.5 میلیون کهکشان) را - با بررسی چشمی مستقیم- دسته بندی کند. با بیش از 40 دسته ‌بندی برای هر جسم، باغ کهکشان همزمان دسته بندی چشمی و نیز عدم قطعیتی وابسته به آن را فراهم می کند (که در مواقعی که تعداد افراد دسته بندی کننده کم باشد بسیار دشوار است). نشان داده شده است که دسته بندی‌ها از نظر دقت با دسته بندی های انجام گرفته توسط ستاره‌شناسان حرفه‌ای قابل مقایسه است (به Lintott et al. 2008 رجوع کنید)."
     },
     "highlights": {
-      "heading": "Galaxy Zoo science highlights",
-      "body": "The Galaxy Zoo science programme has contributed to a diverse set of topics, largely focused on the nearby and intermediate-redshift Universe. Some recent highlights include the largest studies of galaxy mergers (<a href=\"http://arxiv.org/abs/0903.4937\">Darg et al. 2010</a>), tidal dwarf galaxies (<a href=\"http://arxiv.org/abs/1108.4410\">Kaviraj et al. 2012</a>), dust lanes in early-type galaxies (<a href=\"http://arxiv.org/abs/1107.5306\">Kaviraj et al. 2012</a>) and bars in disc galaxies (<a href=\"http://arxiv.org/abs/1003.0449\">Masters et al. 2011</a>, <a href=\"http://arxiv.org/abs/1205.5271\">2012</a>) in the nearby Universe to date. One of the unique aspects of Galaxy Zoo over automated morphological measurements is the possibility of serendipitous discoveries (often aided by volunteer led discussion on the <a href=\"http://www.galaxyzooforum.org\">Galaxy Zoo Forum</a>). These have included the discovery of 'green peas' (a class of compact extremely star-forming galaxies in the local Universe; <a href=\"http://arxiv.org/abs/0907.4155\">Cardamone et al. 2009</a>) and perhaps most famously \"Hanny's Voorwerp\" (<a href=\"http://arxiv.org/abs/0906.5304\">Lintott et al. 2009</a>) along with a survey of similar AGN-ionised gas clouds (<a href=\"http://arxiv.org/abs/1110.6921\">Keel et al. 2012</a>). The availability of a large sample of galaxies with both color and morphological information has led to the important realisation that color, not morphology, is most strongly correlated with environment (<a href=\"http://arxiv.org/abs/0805.2612\">Bamford et al. 2009</a>; <a href=\"http://arxiv.org/abs/0811.3970\">Skibba et al. 2009</a>), leading to intriguing subclasses of galaxies like red spiral galaxies (<a href=\"http://arxiv.org/abs/0910.4113\">Masters et al. 2010</a>) and blue ellipticals (<a href=\"http://arxiv.org/abs/0903.3415\">Schawinski et al. 2009</a>)."
+      "heading": "عناوین برجسته علمی باغ کهکشان ",
+      "body": "   برنامه علمی باغ کهکشان بر مجموعه مختلفی از موضوعات در حوزه عالم نزدیک و انتقال سرخ میانی تاثیر گذار بوده است‫.‬ از عناوین علمی جدید می توان به بزرگترین مطالعه کهکشان های در حال ادغام (<a href=\"http://arxiv.org/abs/0903.4937\">Darg et al. 2010</a>), کهکشان های کوتوله کشندی (<a href=\"http://arxiv.org/abs/1108.4410\">Kaviraj et al. 2012</a>), نواحی غبار در کهکشان های اولیه (<a href=\"http://arxiv.org/abs/1107.5306\">Kaviraj et al. 2012</a>) و ساختار میله ای در کهکشان های دیسکی (<a href=\"http://arxiv.org/abs/1003.0449\">Masters et al. 2011</a>, <a href=\"http://arxiv.org/abs/1205.5271\">2012</a>) در عالم مجاور اشاره کرد‫.‬ یکی از جنبه های منحصربفرد باغ کهکشان در مقایسه با شیوه های خودکار طبقه بندی کهکشان ها امکان کشفیات غیرمترقبه (‬که اغلب بواسطه مباحث مطرح شده توسط داوطلبان در <‪/‬a> انجمن باغ کهکشان a href=\"http://www.galaxyzooforum.org‪”>‬> انجام می گیرد‫)‬ است. این کشفیات شامل کشف ‪‘‬نخود های سبز‪’‬ ‫(‬دسته ای از کهکشانها با ستاره زایی شدید در عالم مجاور‫)‬ <a href=\"http://arxiv.org/abs/0907.4155\">Cardamone et al. 2009</a>) و شاید مشهورتر از آن \"Hanny's Voorwerp\" (<a href=\"http://arxiv.org/abs/0906.5304\">Lintott et al. 2009</a>) به همراه مساحی ابرهای یونیزه شده توسط هسته های کهکشانی فعال باشد (<a href=\"http://arxiv.org/abs/1110.6921\">Keel et al. 2012</a>). در دسترس بودن مجموعه ای از کهکشانهایی با اطلاعات رنگ و شکل به این درک مهم منجر شد که نه شکل بلکه رنگ کهکشانها بیشترین همبستگی با محیط کهکشانی دارد (<a href=\"http://arxiv.org/abs/0805.2612\">Bamford et al. 2009</a>; <a href=\"http://arxiv.org/abs/0811.3970\">Skibba et al. 2009</a>), و این منجر به کشف مارپیچی های سرخ (<a href=\"http://arxiv.org/abs/0910.4113\">Masters et al. 2010</a>) و بیضی گونهای آبی (<a href=\"http://arxiv.org/abs/0903.3415\">Schawinski et al. 2009</a>) شد."
     },
     "relaunched": {
-      "heading": "Galaxy Zoo Relaunched",
-      "sdss": "The current site incorporates images from three different telescopes: SDSS, HST, and UKIRT. The SDSS images are from DR8 and the Southern Galactic cap, which increases the sample size of galaxies in the local universe by 40%. The HST images are from CANDELS, the largest HST Treasury Program. This survey is designed to take advantage of the advent of Wide Field Camera 3 (WFC3), which is rapidly opening up a new window into galaxies at z > 1 – the first 50% of the lifetime of the Universe. Previous HST imaging at these epochs largely sampled the rest-frame ultraviolet, since the available survey instruments (e.g. ACS) operated in the optical wavelengths. However, the near-infrared capabilities of the WFC3 (a factor of 20 better than NICMOS) are providing us with unprecedented rest-frame optical data of galaxies at z > 1.",
-      "candels": "CANDELS is using the WFC3 near-infrared filters to image 800 arcmin<sup>2</sup> in established HST legacy fields (e.g. GOODS, COSMOS). The near-infrared WFC3 images are particularly important because morphological analysis is best performed in rest-frame optical wavelengths, which trace the underlying stellar population of the galaxy rather than just the UV-bright star-forming regions.",
-      "combination": "The combination of the SDSS and CANDELS Galaxy Zoo samples will offer a formidable tool for answering significant open questions that demand a morphological analysis. For example, at what epochs was the Hubble sequence established? How and when were the primordial spheroids formed? What was the relative role of major mergers and secular processes in driving star formation and black hole growth in the early Universe?",
-      "ukidss": "The UKIRT images are from the Large Area Survey (LAS) as part of UKIDSS, which imaged 4000 sq. deg. of the sky overlapping with the SDSS fields. We selected all galaxies classified in Galaxy Zoo 2 that had high-quality UKIDSS imaging, totaling about 70,000 galaxies. The images shown on the site are a colour-composite of the Y, J, and K-band images (where the J-band uses dithered observations to improve the angular resolution in that channel). These images will allow us to trace morphology as a function of wavelength; for example, whether the observed bar fraction increases for galaxies in the rest-frame infrared.",
-      "ferengi": "Finally, Galaxy Zoo also includes a small set of SDSS images that have been artificially processed to simulate the observed effects of redshift. This set used a morphologically diverse sample of galaxies from Galaxy Zoo 2 and were processed using the FERENGI code (<a href=\"http://www.mpia-hd.mpg.de/FERENGI/\">Barden, Jahnke, & Hausler 2008</a>) out to redshifts of z=1. Results from these images will be used as calibration for galaxies in the GZ: Hubble and CANDELS data, since it allows us to assess resolution and brightness-dependent biases independent of true galaxy evolution.",
-      "conclusion": "The purpose of the Galaxy Zoo project is to answer such questions, prepare the ground for morphological work using future instruments like the JWST and produce samples of morphologically selected high-redshift galaxies for follow-up using instruments like the extremely large telescopes and ALMA."
+      "heading": " آغاز مجدد باغ کهکشان ",
+      "sdss": " سایت جدید تصاویر سه تلسکوپ SDSS، تلسکوپ فضایی هابل و تلسکوپ فروسرخ بریتانیا را شامل می شود‫.‬ تصاویر  SDSS  از داده های سری ۸ و برجستگی کهکشانی جنوبی است که مجموعه کهکشان های عالم مجاور را ۴۰ درصد افزایش می دهد‫.‬ تصاویر تلسکوپ فضایی هابل مربوط به مساحی CANDELS که بزرگترین برنامه گنجینه ای تلسکوپ فضایی هابل است‫.‬ این مساحی برای استفاده هرچه بهتر از دوربین میدان گسترده ۳ این تلسکوپ است که به سرعت پنجره ای جدید به سوی کهکشانهای با انتقال سرخ z>1 یا همان نیمه نخست عمر عالم باز می کند طراحی شده است‫.‬ تصاویر قبلی هابل در این فواصل، تابش فرابنفش کهکشان ها را نمونه برداری می کرد چراکه ابزار ACS در ناحیه اپتیکی رصد می کرد‫.‬ ولی ظرفیت فروسرخ نزدیک WFC3 که ۲۰ برابر بهتر از NICMOS است داده های بی سابقه ای اپتیکی برای کهکشان های z>1 در اختیار ما قرار میدهد‫.‬ ",
+      " candels ": "CANDELS از فیلترهای فروسرخ نزدیک WFC3 برای تصویر برداری از محدوده ای به ابعاد ۸۰۰ دقیقه قوسی مربع در نواحی شناخته شده هابل یعنی GOODS و  COSMOS استفاده می کند. تصاویر فروسرخ WFC3 از اینرو اهمیت دارند که طبقه بندی شکل یا ریخت کهکشانها در ناحیه اپتیکی که جمعیت ستاره ای را محک می زند بهتر از ناحیه فرابنفش که نواحی ستاره زایی را مشخص می کند عمل می کند.",
+      "combination": "ترکیب SDSS و  CANDELS باغ کهکشان ابزاری نیرومند برای پاسخگویی به سوالات پیش روی تحلیل شکل کهکشان هاست‫.‬ برای مثال، رشته هابلی کهکشانها در چه دوره زمانی شکل گرفته است؟ چگونه و در چه دوره ای کهکشانهای کروی اولیه تشکیل شده اند؟ نقش نسبی ادغام های مهم و فرآیندهای آرام ‫(‬سکولار‫)‬ در ستاره زایی و رشد سیاه چاله در عالم اولیه چگونه بود؟‌ ",
+      "ukidss": " تصاویر تلسکوپ فروسرخ بریتانیا مربوط است به مساحی بزرگ مقیاس UKIDSS که ۴۰۰۰ درجه مربع آسمان را پوشش و با مساحی  SDSS همپوشانی دارد‫.‬ ما همه کهکشانهایی که در باغ کهکشان ۲ طبقه بندی شده و دارای تصاویر با کیفیت UKIDSS بودند یعنی حدود ۷۰ هزار کهکشان را انتخاب کردیم‫.‬ تصاویر نشان داده شده در سایت ترکیب رنگی Y، J و K است ‫(‬البته تصاویر مربوط به فیلتر J از روش جابجایی کوچک یا dithering برای بهبود توان کفکیک زاویه ای استفاده می کند‫).‬ این تصاویر به ما امکان می دهد تا شکل کهکشان ها را بصورت تابعی از طول موج دنبال کنیم‫.‬ برای مثال آیا نسبت ساختار میله ای در کهکشانها در طول موج سکون‫-‬فروسرخ افزایش می یابد‫.‬ ",
+      "ferengi": " در نهایت باغ کهکشان مجموعه کوچکی از تصاویر SDSS که برای مطالعه آثار مشاهداتی انتقال سرخ شبیه سازی شده اند را در بر می گیرد‫.‬ این مجموعه از کهکشان های گوناگون باغ کهکشان ۲ که توسط کد FERENGI فرآوری شده اند ‫(<a href=\"http://www.mpia-hd.mpg.de/FERENGI/\">Barden, Jahnke, & Hausler 2008</a>)‬ و تا انتقال سرخ ۱ گسترده اند تشکیل شده است‫.‬ نتایج این تصاویر در کالیبره کردن کهکشانهای هابل و داده های CANDELS در باغ کهکشان مورد استفاده قرار خواهد گرفت چون این امکان را فراهم می کند تا اثر توان تفکیک و عوامل وابسته به درخشندگی بدون حضور تحول کهکشانها در طبقه بندی های انجام شده مورد مطالعه قرار گیرد‫.‬ ",
+      " conclusion ": " هدف پروژه باغ کهکشان پاسخ به چنین سوالات و مهیا شدن برای طبقه بندی با استفاده از ابزارهای آتی مانند تلسکوپ فضایی جیمز وب و تولید نمونه هایی از کهکشان های طبقه بندی شده در انتقال سرخ بالا برای مشاهده تلسکوپ های بسیار بزرگ و ALMA است‫.‬ "
     }
   },
   "classify": {
-    "heading": "Classify",
-    "restart": "Restart",
-    "help": "Help",
+    "heading": "دسته‌بندی",
+    "restart": "شروع مجدد",
+    "help": "راهنما",
     "sloan": "SDSS",
-    "candels": "Hubble",
+    "candels": "هابل (Hubble)",
     "ukidss": "UKIDSS",
     "ferengi": "SDSS",
-    "group": "Group",
-    "favorite": "Favourite",
-    "invert": "Invert"
+    "group": "گروه",
+    "favorite": "علاقه‌مندی",
+    "invert": "تصویر نگاتیو"
   },
   "help": {
-    "title": "Help",
-    "examples": "Examples"
+    "title": "راهنما",
+    "examples": "مثال‌ها"
   },
   "home": {
-    "headline": "Few have witnessed what you're about to see",
-    "call_to_action": "Experience a privileged glimpse of the distant universe as observed by the SDSS, the Hubble Space Telescope, and UKIRT",
+    "headline": "بر آستان نگاه توست آنچه شاهدانش اندک اند‫.‬",
+    "call_to_action": " تجربه نگاهی ممتاز به عالم دور دست آن گونه که SDSS، تلسکوپ فضایی هابل و UKIRT به تصویر کشیده اند‌!",
     "galaxy_zoo": {
-      "title": "Classify Galaxies",
-      "description": "To understand how galaxies formed we need your help to classify them according to their shapes. If you're quick, you may even be the first person to see the galaxies you're asked to classify.",
-      "classify": "Begin Classifying"
+      "title": "دسته‌بندی کهکشان‌ها",
+      "description": " ما برای درک چگونگی تشکیل‌ کهکشان‌ها به کمک شما نیاز داریم تا آن‌ها را بر اساس شکل‌شان دسته‌بندی کنیم. اگر سریع و چابک باشید، حتی ممکن است اولین فردی باشید که کهکشانی را برای دسته ‌بندی انتخاب می‌کنید‫.‬",
+      "classify": "شروع دسته ‌بندی"
     },
     "galaxy_formation": {
-      "title": "How Do Galaxies Form?",
-      "body": "Roughly one hundred billion galaxies are scattered throughout our observable Universe, each a glorious system that might contain billions of stars. Many are remarkably beautiful, and the aim of Galaxy Zoo is to study them, assisting astronomers in attempting to understand how the galaxies we see around us formed, and what their stories can tell us about the past, present and future of our Universe as a whole. <a data-nav=\"#/science\" href=\"#/science\">more</a>"
+      "title": "کهکشان‌ها چگونه شکل‌می‌گیرند؟",
+      "body": " یک میلیارد کهکشان در سرتاسر جهانی که تا به امروز قادر به مشاهده آن بوده ایم پراکنده شده‌اندکه هر یک منظومه‌ای با شکوه بوده  که ممکن است شامل میلیاردها ستاره باشد. بسیاری از آن‌ها به طرز جالب توجه‌ای زیبا هستند، و هدف باغ کهکشان مطالعه‌ی آن‌هاست، با همکاری  ستاره‌شناسان در تلاش برای فهمیدن اینکه کهکشان‌هایی که در اطراف خود می‌بینیم چگونه شکل‌گرفته‌اند، و آن‌چه داستان آن‌ها در مورد گذشته، حال و آینده‌ی تمامی عالم ما به ما می‌گوید. <a data-nav=\"#/science\" href=\"#/science\">بیش‌تر</a> "
     },
     "history": {
-      "title": "History of Galaxy Zoo",
-      "body": "The launch of this new version of Galaxy Zoo, the 4th, comes just a few weeks after the site’s 5th birthday. It all started back in July 2007, with a data set made up of a million galaxies imaged by the Sloan Digital Sky Survey, who still provide some of the images in the site today. With so many galaxies, we'd assumed it would take years for visitors to the site to work through them all, but within 24 hours of launch we were stunned to be receiving almost 70,000 classifications an hour. In the end, more than 50 million classifications were received by the project during its first year, contributed by more than 150,000 people. <a data-nav=\"#/story\" href=\"#/story\">more</a>"
+      "title": "تاریخچه‌ی باغ کهکشان",
+      "body": " راه‌اندازی نسخه‌ی جدید باغ کهکشان، یعنی نسخه‌ی چهارم، تنها چند هفته بعد از پنجمین سالروز تولد سایت صورت‌ گرفت. همه ماجرا از جولای ۲۰۰۷ یعنی با تصاویر یک میلیون کهکشان مساحی دیجیتال اسلون (Sloan Digital Sky Survey) که هنوز هم تامین کننده بخشی از تصاویر سایت است، شروع شد.‌‌ با این تعداد زیاد کهکشان، تصور می‌کردیم که سال‌ها طول خواهد کشید تا تمامی کهکشان ها توسط کاربران دسته بندی شوند‌‫.‬ اما در همان ۲۴ ساعت اول راه‌اندازی، با دریافت تقریبا ۷۰ هزار دسته ‌بندی در هر ساعت، حیرت‌زده شدیم. در نهایت، طی سال اول راه‌اندازی، بیش از ۵۰ میلیون دسته ‌بندی دریافت شد که با مشارکت بیش از 150 هزار نفر در این پروژه بدست‌آمده ‌بود‫.‬ <a data-nav=\"#/story\" href=\"#/story\">بیش‌تر</a>"
     },
     "classroom": {
-      "title": "Galaxy Zoo in the Classroom",
-      "body": "Are you an educator? Would you like to use Galaxy Zoo with a group of students? The <a href=\"http://www.galaxyzoo.org/#/navigator/home\">Navigator</a> is an interactive tool that allows groups to classify galaxies together and then investigate galaxy characteristics. <a href=\"http://www.zooteach.org/zoo/galaxy_zoo\">Zoo Teach</a> is where educators can share lessons, resources and that compliment the citizen science projects that are part of the Zooniverse.",
-      "navigator": "Navigator"
+      "title": "باغ کهکشان در کلاس",
+      "body": " آیا شما آموزگار هستید؟ تمایل دارید با گروهی از دانش‌آموزان از باغ کهکشان استفاده‌کنید؟ <a href=\"http://www.galaxyzoo.org/#/navigator/home\">ناوشگر</a> ابزاری است که اجازه می دهد بصورت گروهی‌‌ کهکشان‌ها را دسته ‌بندی کرده و ویژگی‌های کهکشان را بررسی کنید. <a href=\"http://www.zooteach.org/zoo/galaxy_zoo\">زوتک</a> محلی است که آموزگار می تواند درس و منابع خود را به اشتراک بگذارد و با این کار  پروژه های شهروندان علمی که بخشی از زونیورس هستند را تکمیل کند. ",
+      "navigator": "ناوشگر"
     },
     "recent_images": {
-      "title": "Recent Images"
+      "title": "تصاویر تازه‌رسیده"
     }
   },
   "login_prompt": {
-    "title": "Login or create an account to receive credit for your work",
-    "decline": "No, thanks"
+    "title": "جهت دریافت اعتبار برای کار خود، وارد حساب کاربری خود شوید یا یک حساب جدید ایجاد‌کنید",
+    "decline": "نه، متشکرم"
   },
   "navigation": {
-    "classify": "Classify",
-    "science": "Science",
-    "blog": "Blog",
-    "team": "Team",
-    "papers": "Papers",
-    "data": "Data",
-    "story": "Story",
-    "galaxy_zoo": "Galaxy Zoo",
-    "astronomers": "Astronomers",
-    "discuss": "Discuss",
-    "talk": "Talk",
-    "forum": "Forum",
-    "profile": "Profile"
+    "classify": "دسته ‌بندی",
+    "science": "علمی",
+    "blog": "وبلاگ",
+    "team": "تیم",
+    "papers": "مقالات",
+    "data": "داده ها",
+    "story": "داستان",
+    "galaxy_zoo": "باغ کهکشان",
+    "astronomers": "ستاره‌شناسان",
+    "discuss": "بحث",
+    "talk": "گفتگو",
+    "forum": "انجمن",
+    "profile": "پروفایل"
   },
   "languages": {
-    "language": "Language"
+    "language": "زبان"
   },
   "papers": {
-    "title": "Published Papers",
-    "description": "The efforts of the Galaxy Zoo community has resulted in fantastically rich dataset with which to do science. Below is a list of just some of the publications that have come about because of the classifications collected on Galaxy Zoo.",
-    "available": "available here"
+    "title": "مقالات منتشرشده",
+    "description": " تلاش‌های اعضای باغ کهکشان، مجموعه‌ای عظیم و خارق‌العاده از اطلاعات به همراه کار علمی انجام‌شده روی آن‌ها را مهیاکرده‌است. لیست پایین، تنها بخشی از مقالاتی است که بواسطه‌ی دسته ‌بندی‌های گرد‌آوری شده در باغ کهکشان به انجام رسیده‌است. ",
+    "available": "قابل دسترسی از اینجا"
   },
   "profile": {
-    "favorites": "Favourites",
-    "recents": "Recents",
-    "remove_favorite": "Remove this favourite",
-    "favorite_this": "Favourite this",
-    "classifications": "Classifications",
-    "hubble": "Hubble",
-    "hubble_classifications": "Hubble Classifications",
+    "favorites": "علاقه‌مندی‌ها",
+    "recents": "تازه‌ها",
+    "remove_favorite": "حذف این علاقه‌مندی",
+    "favorite_this": "اضافه‌کردن این به علاقه‌مندی‌ها",
+    "classifications": "دسته ‌بندی‌ها",
+    "hubble": "هابل",
+    "hubble_classifications": "دسته ‌بندی‌های هابل",
     "sdss": "SDSS",
-    "sdss_classifications": "SDSS Classifications",
+    "sdss_classifications": " دسته ‌بندی‌های SDSS ",
     "ukidss": "UKIDSS",
-    "ukidss_classifications": "UKIDSS Classifications",
-    "quiz": "Quizzes",
-    "quizzes": "Quizzes",
-    "quizzes_taken": "Quizzes Taken",
-    "take_a_quiz": "Take a quiz now",
-    "galaxy_zoo_hubble": "Galaxy Zoo: Hubble",
-    "galaxy_zoo_hubble_link": "If you're looking for your old galaxies from Galaxy Zoo Hubble, then you can <a href=\"http://hubble.galaxyzoo.org/my_galaxies\" target=\"_blank\">find them here</a>."
+    "ukidss_classifications": " دسته ‌بندی‌های UKIDSS ",
+    "quiz": "آزمونک‌ها",
+    "quizzes": "آزمونک‌ها",
+    "quizzes_taken": "آزمونک‌های پاسخ‌داده‌‌شده",
+    "take_a_quiz": "پاسخ به یک آزمونک",
+    "galaxy_zoo_hubble": "باغ کهکشان: هابل",
+    "galaxy_zoo_hubble_link": " اگر به‌دنبال کهکشان‌های قدیمی خود در باغ کهکشان هابل هستید، می‌توانید آن‌ها را در <a href=\"http://hubble.galaxyzoo.org/my_galaxies\" target=\"_blank\">اینجا پیدا کنید</a>."
   },
   "science": {
-    "title": "The Science behind the Site",
-    "p1": "Roughly one hundred billion galaxies are scattered throughout our observable Universe, each a glorious system that might contain billions of stars. Many are remarkably beautiful, and the aim of Galaxy Zoo is to study them, assisting astronomers in attempting to understand how the galaxies we see around us formed, and what their stories can tell us about the past, present and future of our Universe as a whole.",
-    "p2": "Our strategy is based on the remarkable fact that you can tell a lot about a galaxy just from its shape. Find a system with spiral arms, for example, and normally - but critically not always - you'll know that you're looking at a rotating disk of stars, dust and gas with plenty of fuel for future star formation. Find one of the big balls of stars we call ellipticals, however, and you're probably looking at a more mature system, one which long ago finished forming stars. The galaxies' histories are also revealed; that elliptical is likely to be the product of a head-on collision between two smaller galaxies, and smaller scars such as warped disks, large bulges or long streams of stars bear testament to the complexity of these galaxies' lives.",
-    "p3": "We've already said that a merger can have a major impact on a galaxy’s appearance, but many other factors could have played an important role; for example, there is steadily growing evidence (not least from previous Galaxy Zoo projects) that the black holes that lurk at the heart of galaxies may have a profound effect on their surroundings.",
-    "p4": "As material falls towards the black hole, it can be heated to enormous temperatures and the resulting radiation packs a powerful punch, sometimes aided by the presence of powerful jets of materials flung away from the vicinity of the black hole (though not, of course, from the black hole itself) at close to the speed of light. These combination of forces can, it seems, heat or expel gas from the galaxy, depriving it of fuel for future star formation and changing its face for ever.",
-    "p5": "A galaxy's surroundings matter too. At the centre of the Virgo cluster, our nearest large group of galaxies, mergers between systems are rare - held by the cluster’s powerful gravitational grip, galaxies are moving too fast for more than brief encounters. In the emptiest parts of space, the density of galaxies is just too low for mergers to play a significant role, and so it’s only on the outskirts of clusters or in small groups like our own Local Group that mergers currently play a significant part. It should come as no surprise, then, that we find different types of galaxies in different places, and this too must be taken into account.",
-    "p6": "Disentangling these effects, and many more, requires the largest possible samples of classified galaxies. It’s not uncommon for us to need, for example, a large sample of red, barred, spiral galaxies that reside on the edges of clusters, and if we don't have a large sample to begin with there will be none left when we've narrowed the search. Modern surveys provide enough images - hundreds of thousands upon hundreds of thousands of them - but we still need people to classify them. That's where you come in...",
-    "subtitle": "Where do the images come from?",
-    "p7": "The Sloan Digital Sky Survey (SDSS) started in 2000 and is one of the first, and largest, digital maps of the Universe available to astronomers. The original SDSS, which ran for 5 years, included two main instruments, namely a 126 megapixel imaging camera and two fiber-fed spectrographs, mounted on a dedicated 2.5 meter telescope at Apache Point Observatory in New Mexico. During good weather, the SDSS undertook draft-scan imaging of the northern sky using the camera, while in cloud conditions the SDSS obtained spectra of a sub-set of detected objects to measure their redshift and thus distance. From 2005 to 2008, the second phase of SDSS, or SDSS-II, continued to survey the north galactic cap of our Galaxy as well as undertaking a new supernova survey and a new spectroscopic survey of stars (SEGUE). Since 2008, the third incarnation of the SDSS, or SDSS-III, has focused exclusively on spectroscopy (the imaging camera has been retired to the Smithsonian Museum) and comprises of four sub-surveys of BOSS, APOGEE, SEGUE and MARVELS.",
-    "p8": "The scientific legacy of the SDSS is amazing, partly due to the annual release of SDSS data to the astronomical community and public. For example, in 2011, the SDSS collaboration published its eighth data release (DR8), which contains 14,555 square degrees of optical imaging data (with over a trillion pixels), and contains 932 million unique objects, of which 1.63 million objects possessed a SDSS spectrum. This awesome astronomical resource is freely available via a state-of-the-art database. Astronomers have written over 4000 papers (approximate one a day) using SDSS public data, gaining over 175,000 citations. Within the SDSS collaboration, there have been more than 120 PhD theses, while the SDSS data fueling numerous high impact outreach projects e.g. Galaxy Zoo. The SDSS has been named several times the highest impact project, facility or mission in the field of astronomy (Madrid & Macchetto 2006, 2009), and is the source of the most highly cited astronomy article in the years 2000, 2002, 2005, and 2008 (Frogel et al. 2010).",
-    "p9": "The SDSS would not have been possible without a large collaboration of scientists, researchers and astronomers. Many of the astronomers involved in the original SDSS have now moved on in their careers, spreading their experience within large collaborations across the world. At the start of the SDSS, such large collaborations in astronomy were rare and the SDSS has also been at the forefront of changing the culture of collaborative research in astrophysics. The SDSS is now planning a new 4th phase starting 2014. This phase will involve a number of targeted surveys including eBOSS, MaNGA and APOGEE-S2, which are designed to simultaneously explore the distant universe, the dynamics of nearby galaxies, and study stars in our own Galaxy. By the end of this 4th phase, the SDSS will have provided excellent data for over two decades, resulting in over 5 million astronomical spectra.",
-    "p10": "As we peer deeper into the universe, we look into the past, and since the universe is expanding, the galaxies we see are moving away from us faster and faster. This means that the light that left them gets stretched by the time it reaches us. Thus, the light from stars gets \"redshifted\" and to get a visible light image of a galaxy in the early universe, we need an infrared camera. Taking infrared images is much harder than optical ones for many reasons, but the most important one is that the night sky actually glows in the infrared. This fundamentally limits our ability to take deep infrared images, which is why Hubble's new Wide Field Camera 3 (WFC3) with its infrared capability is so valuable.",
-    "p11": "A new generation of surveys using the WFC3 is giving us an unprecedented view into the first third of the lifetime of the Universe: the first 3-4 billion years after the Big Bang. Foremost among these is the Cosmic Assembly Deep Extragalactic Near-infrared Survey (CANDELS). The largest treasury survey using the Hubble Space Telescope to date, CANDELS is surveying several patches of sky to put together the largest collection of deep infrared images of galaxies in the early Universe. The combination of Galaxy Zoo and CANDELS offers a formidable tool in our quest to understand the earliest stages of the evolution of the visible Universe, one of the fundamental questions in observational cosmology today.",
-    "p12": "While astronomers have learned an amazing amount from the SDSS and Hubble images, there are also areas we can only probe if we look at galaxies in wavelengths beyond those seen by the human eye. For objects that radiate thermally (such as stars), the wavelength used probes the temperature of the object being observed. Stars like our own Sun have temperatures around 5500 K, which show up strongly in the optical wavelengths used in SDSS imaging. If we look at galaxies in ultraviolet wavelengths, however, hotter regions become more prominent; in galaxies, this means we're picking out young, massive stars and individual star-forming regions (often leading to a patchier appearance). For galaxies observed at infrared wavelengths, cooler regions become more prominent; these include older and lower-mass stars, as well as clouds of dust that are heated by the stars and then re-emit that light at lower energies.",
-    "p13": "Comparing the morphologies of galaxies at multiple wavelengths gives astronomers a much more complete picture of the processes that govern their astrophysics. Tracing stars by temperature gives us proxies for their age and chemical evolution, while identifying star formation regions tells us where the densest parts of the disk are and where the mass in these galaxies is being built up.",
-    "p14": "The new infrared images on Galaxy Zoo come from the United Kingdom Infared Survey Telescope (UKIRT), a 3.8m telescope located on the summit of Mauna Kea in Hawaii at nearly 14,000 ft. elevation. Starting in 2005, UKIRT began an infrared survey of the northern sky called UKIDSS, covering 7500 square degrees at wavelengths of 1--2.5 microns. A portion of this survey was dedicated to covering the same regions as the SDSS. This means that the new UKIDSS images in Galaxy Zoo have already been classified by users in Galaxy Zoo 2; this will let us do direct comparisons for the two samples and examine how morphology (like the fraction of galaxies with bars, for example) changes with the wavelength being used."
+    "title": "ایده‌ی علمی پشت سایت",
+    "p1": " یک میلیارد کهکشان در سرتاسر عالم قابل مشاهده در مجموعه هایی که می توانند خود شامل میلیاردها ستاره باشند پراکنده شده‌اند‫.‬ بسیاری از آن‌ها به طرز جالب توجه‌ای زیبا هستند‫.‬ هدف باغ کهکشان مطالعه‌ی آن‌ها و کمک به ستاره‌شناسان در تلاش برای فهمیدن اینکه کهکشان‌هایی که در اطراف خود می‌بینیم چگونه شکل‌گرفته‌اند، و در مورد گذشته، حال و آینده‌ی عالم چه می‌گوید. ",
+    "p2": "استراتژی ما بر این واقعیت استوار است که شکل یا ریخت کهکشانها اطلاعات زیادی در اختیار ما قرار می دهند. برای مثال اگر یک کهکشان مارپیچی پیدا کنید بطور معمول - اما نه همیشه - نشانه وجود دیسک چرخانی از ستاره، گاز و غبار بوده و سوخت لازم برای ستاره زایی آتی موجود است. اگر یک مجموعه گردی از ستاره ها که به آنها کهکشان بیضی گون می گوییم پیدا کنید، احتمالا به یک سیستم پیرتر که مدت ها قبل ستاره زایی در آن به اتمام رسیده نگاه می کنید. تاریخچه کهکشانها نشان می دهد که بیضی گون ها به احتمال زیاد حاصل برخورد رو در روی دو کهکشان کوچکتر باشند، نشان های زخم مانندی چون دیسک پیچیده، بالج یا دنباله ای از ستاره ها نشان دهنده زیست پیچیده این نوع کهکشان هاست.",
+    "p3": "گفتیم که ادغام کهکشانها تاثیر عمده ای بر روی ریخت و ظاهر کهکشانها دارد اما عوامل دیگری نیز می توانند تاثیر زیادی داشته باشند برای نمونه شواهد زیادی بر تاثیر سیاه چاله هایی که در مرکز کهکشان ها قرار دارند بر محیط اطراف آنها وجود دارد. ",
+    "p4": "با ریزش مواد به سمت سیاه چاله، دمای آن نیز بشدت افزایش می یابد و تابش ناشی از آن منجر به التهاب عظیمی می شود که گاه بکمک جت های پر توانی مواد را از اطراف سیاه چاله  (البته نه از خود سیاه چاله) با سرعتی نزدیک به سرعت نور به بیرون پرت می کند. به نظر می رسد که ترکیب این نیروها می تواند موجب گرمایش یا خروج گاز ار کهکشان و در نتیجه کاهش سوخت مورد نیاز برای ستاره زایی آتی کهکشان شده و تغییر شکل همشگی کهکشان شود.",
+    "p5": "محیط اطراف کهکشان ها نیز اهمیت دارد. در مرکز خوشه سنبله، نزدیک ترین خوشه کهکشانها به ما، بدلیل سرعت بالای کهکشانها که ناشی از قدرت گرانشی خوشه است، ادغام کهکشانها بندرت اتفاق می افتد. در بخش هایی از عالم که خالی تر است نیز چگالی کهکشانها کمتر از آن است که ادغام کهکشانها  نقش مهمی ایفا کند. فقط در  بخش های بیرونی کهکشانها و گروههای کهکشانی کوچکی مانند گروه موضعی خودمان است که ادغام نقش برجسته ای دارد.  عجیب نیست در انواع مختلف کهکشانها را در محیط های مختلف بیابیم و این وابستگی محیطی نیز باید مد نظر قرار گیرد.",
+    "p6": "تفکیک نقش هریک از این فرآیندها در شکل گیری کهکشانها نیازمند نمونه آماری بسیار بزرگی از کهکشانها های طبقه بندی شده است. داشتن یک مجموعه از کهکشانهای قرمز، میله ای  و مارپیچی که در کوشه ای از خوشه های  کهکشانی نیازی غیرمتعارف نیست و اگر نمونه آماری کوچک باشد با تنگ تر کردن جستجو دیگری کهکشانی باقی نمی ماند. مساحی ها مدرن به اندازه کافی تصویر کهکشان در اختیار ما  می گذارند - صدها هزار  - اما ما به مردم برای طبقه بندی آنها نیاز داریم. برای همین اینجا هستید …",
+    "subtitle": "تصاویر از کجا می آیند؟",
+    "p7": "مساحی آسمان دیجیتال اسلون (SDSS) در سال ۲۰۰۰ میلادی شروع شد و یکی از اولین  و بزرگترین نقشه های دیجیتال عالم است که در اختیار منجمان است. اولین مساحی SDSS که ۵ سال طول کشید با استفاده از دو ابزار رصدی انجام گرفت، یک دوربین تصویر برداری ۱۲۶ مگاپیکسلی و دو طیف نگار تغذیه شده توسط فیبرنوری که همگی روی یک تلسکوپ دو و نیم متری در رصدخانه آپاچی پوینت (Apache Point Observatory) در نیومکزیکو قرار گرفته بودند. در شرایط خوب جوّی SDSS اقدام به تصویر برداری آسمان نیمکره شمالی می کرد و در شرایط ابری SDSS اقدام به گرفتن طیف زیر مجموعه از اجرام تصویر برداری شده می کرد تا انتقال سرخ آنها و در نتیجه فاصله اجرام را اندازه گیری کند. از سال ۲۰۰۵ تا ۲۰۰۸ فاز دوم SDSS یا SDSS‪-‬II مساحی قطب شمال کهکشانی راه شیری را ادامه داد و مساحی جدید ابرنواخترها و مساحی طیف سنجی جدید ستاره ها (SEGUE) را آغاز کرد. از سال ۲۰۰۸، سومین فاز SDSS یا SDSS‪-‬III منحصرا بر روی طیف سنجی متمرکز شد و مساحی های ‌BOSS ‪,‬ APOGEE ‪,‬ SEGUE و MARVELS را تشکیل داد.  به این ترتیب دوربین تصویربرداری بازنشست و به موزه سیمسونین منتقل شد. ",
+    "p8": "میراث علمی SDSS شگفت انگیز است که بخشی از آن بخاطر انتشار آن در جامعه نجوم و عموم است. برای مثال در سال ۲۰۱۱ گروه همکاری SDSS اقدام به انتشار هشتمین سری داده ها (DR8) کرد که تصاویر اپتیکی ۱۴۵۵۵ درجه مربع از آسمان را که در برگیرنده ۹۳۲ میلیون جسم بوده و ۱ میلیون و ۶۳۰ هزار آنها دارای طیف SDSS بودند. این منبع نجومی عالی از طریق یک ‍پایگاه داده پیشرفته بطور مجانی در اختیار عموم است. منجمان با استفاده از داده های عمومی SDSS بیش از ۴۰۰۰ مقاله نوشته اند که ۱۷۵۰۰۰ بار به آنها ارجاع شده است. در گروه همکاری SDSS بیش از ۱۲۰ رساله دکتری نوشته شده است و این درحالی است که SDSS پرژوه های عمومی مانند باغ کهکشان را رقم زده است. چندین بار از SDSS بعنوان پروژه ای با بیشترین تاثیر گذاری در نجوم یاد شده است (Madrid ‪&‬ Macchetto 2006‪,‬ 2009) و منبع مقالاتی بوده که بیشترین ارجاع در سالهای ۲۰۰۰، ۲۰۰۲، ۲۰۰۵ و ۲۰۰۸ را داشته اند (Frogel et al 2010).",
+    "p9": " پروژه SDSS بدون همکاری تعداد زیادی دانشمند، پژوهشگر و منجم ممکن نبود‫.‬ بسیاری از منجمانی که در SDSS اولیه سهیم بودند در مشاغل خود پیشرفت کرده اند و تجربه خود را با گروههای دیگری در سراسر جهان به اشتراک گذاشته اند‫.‬ در بدو شروع SDSS چنین همکاری گسترده ای بندرت یافت می شدو از اینرو SDSS در خط مقدم تغییر فرهنگ همکاری در اخترفیزیک بود. اکنون در سال ۲۰۱۴ چهارمین فاز SDSS در حال برنامه ریزی است. این فاز شامل تعدادی از مساحی های هدف گیری شده مانند eBOSS، MaNGA، و APOGEE‪-‬S2 است که هدف آنها شناسایی عالم دوردست، دینامیک کهکشانهای نزدیک و مطالعه ستاره های کهکشان خودمان است. با اتمام فاز چهارم مساحی SDSS داده های عالی برای ۲ دهه ارایه می کند که شامل طیف بیش از ۵ میلیون شی نجومی است.",
+    "p10": " همچنان که به عمق عالم خیره می شویم، به گذشته نگاه می کنیم و چون عالم در حال انبساط است، کهکشانهایی که می بینیم با سرعت بیتشری از ما دور می شوند‫.‬ این بدان معنی است که نوری که از آنها دریافت می کنیم نیز تا زمانی که به ما برسد کشیده می شود‫.‬ از اینرو نور ستاره ها به سرخی می گراید و برای دیدن تصاویر مرئی در عالم اولیه باید با دوربین های فروسرخ به آنها نگریست‫.‬ بدلایل متعدد تصاویر برداری در فروسرخ دشوارتر از تصویر برداری مرئی است اما مهمترین آن این است که آسمان در فروسرخ بسیار روشنتر است‫.‬ این امر بطور بنیادی توانایی ما در تصویر برداری فروسرخ عمیق را محدود می کند و برای همین است که دوربین میدان گسترده ۳ هابل (WFC3) با قابلیت فروسرخ بسیار با ارزش است.",
+    "p11": "نسل جدید مساحی ها با استفاده از WFC3  نمای بی سابقه ای از یک سوم آغازین عالم یعنی ۳ تا ۴ میلیارد سال بعد از انفجار بزرگ را در اختیار ما قرار می دهند. نخستین مساحی در این میان،‌ مساحی عمیق فراکهکشانی در باند فروسرخ (CANDELS) است. این مساحی که بزرگترین مساحی در میان مجموعه مساحی های گنجینه هابل است،‌ با پوشش بخش های مختلف آسمان و در کنار هم قرار دادن این بخش ها، بزرگترین مجموعه از تصاویر از عمق کیهان (کیهان اولیه) در باند فروسرخ را در فراهم ساخته است. ترکیب باغ کهکشان با این مساحی، ابزاری توانمند برای درک ابتدایی ترین مراحل از تحول کیهان، که یکی از اساسی ترین سوالات در کیهان شناسی رصدی است را ارایه می دهد. ",
+    "p12": "هرچند داده های مساحی SDSS و تصاویر هابل  به شکل حجم شگفت انگیزی برای منجمین آموزنده بوده است اما همچنان مناطقی از عالم تنها از طریق مطالعه کهکشان ها در بازه طول موجی فراتر از آنچه چشم انسان قادر به دیدن آن است میسر است. برای اجرامی که به صورت گرمایی تابش می کنند (نظیر ستاره ها) از طول موج دریافتی به عنوان ابزاری برای بررسی دما استفاده می شود. برای ستارگانی نظیر خورشید که دمایی در حدود ۵۵۰۰ درجه کلوین دارد، عمده این طوا موج ها در بازه طول موجی است که توسط مساحی اسلون پوشش یافته. اگر به کهکشانی در باند فرابنفش بنگریم مناطق داغ تر کهکشان خودنمایی می کنند. این بدان معنی است که ستارگان جوان، پرجرم و محیط های ستاره زا در کهکشان را دنبال می کنیم. رصد کهکشان ها در باند فروسرخو مناطق سردتر و ستارگان کم جرم تر و همچنین ابرهای غباری را که در اثر تابش ستاره ها گرم شده و در انرژی های پایین تر بازتابش می کنند را نمایان می سازد. ",
+    "p13": "مقایسه ریخت شناسی کهکشان ها در بازه های طول موجی مختلف،‌ تصویری کامل تر از فرایند های حاکم بر اخترفیزیک را ارایه می کند.دنبال کردن ستاره ها بر اساس دما،‌قیودی برای تخمین سن و تحول شیمیایی ستارگان تعیین می کند و شناسایی نواحی ستاره زا، ما را به  چگال ترین نقاط دیسک کهکشان ها و محل هایی که عمده جرم کهکشان ها در آن جا شکل گرفته رهنمون می سازد.",
+    "p14": "تصاویر جدید باغ کهکشان در باند فروسرخ، با استفاده از تلسکوپ ۳.۸ متری UKIRT نصب شده بر روی قله موناکی در هاوایی در ارتفاع تقریبا ۱۴۰۰۰ پایی به دست آمده است. از سال ۲۰۰۵ تلسکوپ UKIRT مساحی گسترده ای از نیمکره شمالی آسمان که UKIDSS نامیده می شود را در باند فروسرخ آغاز نموده و ۷۵۰۰ درجه مربع از آسمان را در بازه طول موجی ۱ تا ۲.۵ میکرون پوشش می دهد. بخشی از این مساحی به پوشش نواحی که توسط مساحی SDSS رصد شده اختصاص دارد. این بدان معنی است که تصاویر UKIDSS در باغ کهکشان، پیش از این توسط کاربران نسخه دوم باغ کهکشان دسته بندی شده است. همین مورد سبب می شود که قادر باشیم تا مقایسه ای مستقیم بین این دو نمونه انجام داده و چگونگی تغییرات ریخت شناسی (برای نمونه کسری از کهکشان ها که دارای میله می باشند) را با تغییر طول بررسی کنیم."
   },
   "story": {
-    "title": "The Story So Far",
-    "p1": "The launch of this new version of Galaxy Zoo, the 4th, comes just a few weeks after the site's 5th birthday. It all started back in July 2007, with a data set made up of a million galaxies imaged by the Sloan Digital Sky Survey, who still provide some of the images in the site today. With so many galaxies, we'd assumed it would take years for visitors to the site to work through them all, but within 24 hours of launch we were stunned to be receiving almost 70,000 classifications an hour. In the end, more than 50 million classifications were received by the project during its first year, contributed by more than 150,000 people.",
-    "p2": "That meant that each galaxy was seen by many different participants. This is deliberate; having multiple independent classifications of the same object is important, as it allows us to assess how reliable our results are. For example, for projects where we may only need a few thousand galaxies but want to be sure they're all spirals before using up valuable telescope time on them, there's no problem - we can just use those that 100% of classifiers agree are spiral. For other projects, we may need to look at the properties of hundreds of thousands of galaxies, and can use those that a majority say are spiral.",
-    "p3": "The task in that first Galaxy Zoo was slightly simpler than yours; all we asked volunteers to do was to split the galaxies into ellipticals, mergers and spirals and - if the galaxy was spiral - to record the direction of the arms. But it was enough to show that the classifications Galaxy Zoo provides were as good as those from professional astronomers, and were of use to a large number of researchers. You can find out what people have been up to with Galaxy Zoo data in our list of <a href=\"#/papers\" data-nav=\"/papers\">papers published</a> and on the <a href=\"http://blog.galaxyzoo.org\" target=\"_blank\">Galaxy Zoo blog</a>, as well as below. Perhaps the most exciting sign of success is the fact that we’ve been successful in bidding for time on some of the largest telescopes in the world to follow up on many Galaxy Zoo discoveries : the list currently includes the Isaac Newton and William Herschel Telescopes on the island of La Palma in the Canaries, Gemini South in Chile, the WIYN telescope on Kitt Peak, Arizona, the IRAM radio telescope in Spain's Sierra Nevada, Swift, GALEX, Chandra, XMM-Newton and Suzaku up in space, and perhaps most excitingly the Hubble Space Telescope.",
-    "p4": "Galaxy Zoo 2 was inspired by our newfound confidence in the ability of you, our volunteer classifiers, and so we asked for a closer look at just over 200,000 of the brightest of the Sloan galaxies. We asked about the number of spiral arms, the size of the galaxies' bulges and much else besides. Once again, we were thrilled with the response (and a little more prepared for it than we were for Zoo 1!) and in the 14 months the site was up we received a little more than 60 million classifications.",
-    "p5": "Along the way, we added more detailed images from an area of the survey known as 'Stripe 82', but it was soon time to look at the more distant Universe. The site’s third incarnation, Galaxy Zoo : Hubble drew from surveys conducted by the Hubble Space Telescope to view earlier epochs of galaxy formation. In these surveys, which involve many, many days of dedicated observing time, we can see light from galaxies which has taken billions of years to reach us. The idea behind Galaxy Zoo : Hubble was to be able to compare galaxies then to galaxies now, giving us a clear understanding of what factors influence their growth, whether through mergers, active black holes or simply star formation.",
-    "p6": "The present day Galaxy Zoo combines new imaging from Sloan, giving us our best ever view of the local Universe, with the most distant images yet from Hubble's CANDELS survey. The <a href=\"http://candels.ucolick.org\" target=\"_blank\">CANDELS survey</a> makes use of the new Wide Field Camera 3 - installed during the final shuttle mission to Hubble - to take ultra-deep images of the Universe, so who knows what's out there to be found?",
-    "p7": "The site also includes images taken with the United Kingdom Infrared Telescope (UKIRT), in Hawaii, for the recently-completed UKIDSS project (http://www.ukidss.org). UKIDSS is the largest, deepest survey of the sky at infrared wavelengths. The UKIDSS infrared-light pictures and the SDSS visible-light pictures are different for two reasons. Firstly, older stars are brighter in infrared wavelengths (while in visible-light we see younger stars), and secondly, infrared light, like a foglight, can penetrate the dust and smoke in the centres of galaxies. Examining the UKIDSS images in Galaxy Zoo will therefore enable us to see how old and young stars are arranged differently in the galaxies, and will reveal more of the structure in the inner parts of galaxies."
-  },
+    "title": "داستان، آن چه تاکنون گذشته",
+    "p1": " راه‌اندازی نسخه‌ی جدید باغ کهکشان، یعنی نسخه‌ی چهارم، تنها چند هفته بعد از پنجمین سالروز تولد سایت صورت‌ گرفت. همه ماجرا از جولای ۲۰۰۷ یعنی با تصاویر یک میلیون کهکشان مساحی دیجیتال اسلون (Sloan Digital Sky Survey) که هنوز هم تامین کننده بخشی از تصاویر سایت است، شروع شد.‌‌ با این تعداد زیاد کهکشان، تصور می‌کردیم که سال‌ها طول خواهد کشید تا تمامی کهکشان ها توسط کاربران دسته بندی شوند‌. اما در همان ۲۴ ساعت اول راه‌اندازی، با دریافت تقریبا ۷۰ هزار دسته ‌بندی در هر ساعت، حیرت‌زده شدیم. در نهایت، طی سال اول راه‌اندازی، بیش از ۵۰ میلیون دسته ‌بندی دریافت شد که با مشارکت بیش از 150 هزار نفر در این پروژه بدست‌آمده ‌بود‫.‬ ",
+    "p2": " این بدان معنی بود که هر کهکشان توسط چندین مشارکت‌کننده مختلف دیده شده‌بود. این کار عمدی بود، داشتن چندین دسته ‌بندی مختلف از یک جسم مهم بود، زیرا اجازه می‌داد که میزان معتبر بودن نتایج‌مان را ارزیابی کنیم. برای مثال، در پروژه‌هایی که به نمونه ای چند صد تایی از کهکشان های مارپیچی نیاز داریم، می توانیم پیش از صرف وقت پر ارزش تلسکوپها تنها از آن‌هایی استفاده کنیم که ۱۰۰ درصد دسته ‌بندی کنندگان مارپیچی بودن‌شان را پذیرفته‌اند. در پروژه‌های دیگر، ممکن است به مشخصات صدها هزار کهکشان نیاز داشته باشیم‫.‬ در این صورت می‌توانیم از آن‌هایی که اکثریت افراد رای به مارپیچی بودن آنها داده اند استفاده کنیم‫.‬ ",
+    "p3": " کار با باغ کهکشان ابتدایی کمی ساده‌تر از کار (فعلی) شما بود، چون از داوطلبان می‌خواستیم تا کهکشان‌ها را به بیضی گون‌ها، ادغامی‌ها و مارپیچی‌ها دسته بندی کنند و اگر کهکشان مارپیچی بود، جهت بازوهای آن را تعیین کنند. این برای نشان دادن اینکه دسته بندی هایی که باغ کهکشان ارایه می کند بخوبی دسته بندی منجمان حرفه ایست و می تواند مورد استفاده پژوهشگران قرار گیرد کافی بود‫.‬ شما می‌توانید به آنچه که دیگران با استفاده از اطلاعات باغ کهکشان انجام‌داده‌اند، در لیست <a href=\"#/papers\" data-nav=\"/papers\">مقالات منتشر شده‌ی ما</a>  و روی <a href=\"http://blog.galaxyzoo.org\" target=\"_blank\">وبلاگ باغ کهکشان</a> و همچنین در زیر، مراجعه کنید‌. شاید مهیج‌ترین نشانه‌ی موفقیت ما همین باشد که در رقابت برای کسب زمان رصد برای دنبال کردن چندین یافته باغ کهکشان، روی برخی از بزرگ‌ترین تلسکوپ‌های جهان، موفق بودیم. این تلسکوپ ها عبارتند از‫:‬ تلسکوپ‌های ایزاک نیوتون و ویلیام هرشل، در جزیره‌ی لاپالما در جزایر قناری، جیمینی جنوبی در شیلی، تلسکوپ WIYN در کیت‌پیک آریزونا، تلسکوپ رادیویی آیرام در کوههای نوادای اسپانیا، تلسکوپ فضایی Swift ، Swift، GALEX ،Chandra، XMM-Newton و سوزاکو و احتمالن هیجان‌انگیز‌ترین آن‌ها، تلسکوپ فضایی هابل‫.‬",
+    "p4": " باغ کهکشانی ۲ از باور ما به توانایی‌های شما داوطلبان الهام گرفته ‌است و بنابراین نگاهی دقیق‌تر به کمی بیش از ۲۰۰ هزار از درخشان‌ترین کهکشان‌های مساحی اسلون را درخواست کردیم. اینبار درباره‌ی تعداد بازوهای مارپیچی، اندازه‌ی برآمدگی کهکشان‌ها و خیلی چیزهای دیگر، پرسیدیم. بار دیگر، از نتیجه بدست آمده هیجان‌زده شدیم (البته کمی بیش از باغ ۱ آمادگی داشتیم‫!‬‌) و در ۱۴ ماهی که سایت فعال بود کمی بیش از ۶۰ میلیون دسته ‌بندی  دریافت کردیم.",
+    "p5": " به مرور زمان، تصاویری با جزئیات بیش‌تر از ناحیه‌ای از مساحی که به نام باریکه ۸۲ شناخته می‌شود را اضافه کردیم، اما زود زمان آن رسید که به عالم دور دست نگاه کنیم. سومین چهره سایت، باغ کهکشان‫:‬هابل، از مساحی هایی که توسط تلسکوپ فضایی هابل برای دیدن دوره‌های پیشین شکل گیری کهکشان انجام گرفته، تشکیل می شد. در این مساحی‌ها که متشکل از چندین روز رصدی بود، نور کهکشان‌هایی را می‌بینیم که میلیاردها سال طول کشیده تا به ما برسد. ایده‌ی پشت، باغ کهکشان:هابل، ‌‌مقایسه کهکشان های دور دست و نزدیک بود تا‌ درکی روشن از عواملی که باعث رشد کهکشان‌ها می‌شوند، مانند ادغام کهکشانها، سیاه چاله یا ستاره زایی، بدست آوریم.",
+    "p6": " باغ کهکشان امروز ترکیبی است از تصاویر اسلون (SDSS) که بهترین نمای عالم نزدیک را به تصویر می کشد و تصاویر دورترین اجرام عالم که از مساحی CANDELS بدست آمده است. <a href=\"http://candels.ucolick.org\" target=\"_blank\">مساحی CANDELS</a> از دوربین دید گسترده ۳ (WFC3) که طی آخرین ماموریت شاتل برای ثبت تصاویر فوق-عمیق از عالم بر بروی هابل نصب شد، بهره می برد‌. بنابراین کیست که بداند چه خواهیم یافت؟‌",
+    "p7": " این سایت همچنین شامل تصاویر ثبت شده توسط تلسکوپ فروسروخ بریتانیا در هاوایی، مربوط به پروژه‌ی جدید UKIDSS است. این پروژه بزرگ‌ترین و عمیق‌ترین مساحی آسمان در طول موج فروسرخ است. تصاویر فروسرخ و مرئی دو تفاوت عمده دار‌ند. اول، ستاره‌های پیر تر در طول موج فروسرخ درخشان‌تر هستند (در حالی که در نور مرئی ما ستاره‌های جوان‌تر را می‌بینیم) و دوم، نور فروسرخ، مانند نور مه‌شکن، می‌تواند از گردوغبار و دود مرکز کهکشان‌ها عبور کند. بازبینی تصاویر UKIDSS در باغ کهکشان این امکان را فراهم می کند که توزیع ستاره های جوان و پیر در یک کهکشان و همچنین ساختار بخشهای مرکزی کهکشان نمایان شود."
+    },
   "team": {
     "title": "The Galaxy Zoo Team",
     "science": {
@@ -838,163 +840,163 @@
     }
   },
   "examine": {
-    "title": "Examine",
-    "survey": "Survey",
-    "right_ascension": "Right Ascension",
-    "declination": "Declination",
-    "magnitude": "Magnitude",
-    "ned_link": "Search NED",
-    "discuss": "Discuss this",
-    "hubble": "Hubble",
+    "title": "آزمودن",
+    "survey": "مساحی",
+    "right_ascension": "بعد (Right Ascension)",
+    "declination": "میل",
+    "magnitude": "قدر",
+    "ned_link": "جست‌و‌جوی NED ",
+    "discuss": "بحث در مورد این",
+    "hubble": "هابل",
     "sdss": "SDSS",
     "ukidss": "UKIDSS",
-    "ferengi": "Artificially redshifted SDSS",
+    "ferengi": "سرخ شدگی مصنوعی SDSS ",
     "sdss_id": "SDSS ObjectId",
-    "petro_rad": "Petrosian Radius",
-    "skyserver_link": "View on SkyServer"
+    "petro_rad": "شعاع پتروسین",
+    "skyserver_link": "مشاهده روی SkyServer "
   },
   "fits": {
-    "view": "View raw data in different wavelengths",
+    "view": "مشاهده‌ی داده‌های خام در طول موج‌های مختلف",
     "x_y": "X, Y",
-    "intensity": "Intensity",
-    "color": "Color",
-    "linear": "Linear",
-    "logarithm": "Logarithm",
-    "square_root": "Square Root",
+    "intensity": "شدت",
+    "color": "رنگ",
+    "linear": "خطی",
+    "logarithm": "لگاریتمی",
+    "square_root": "ریشه‌ی دوم",
     "arcsinh": "Arcsinh",
-    "power": "Power"
+    "power": "توان"
   },
   "quiz": {
-    "thanks": "Thanks!",
-    "help": "Galaxy Zoo needs your help!",
-    "research": "We are doing research to better understand what Galaxy Zoo volunteers think about the universe.",
-    "helping": "You are helping us better understand what Galaxy Zoo volunteers think about the universe.",
-    "gift": "You have been entered into a raffle to win a <strong>$20 Amazon Gift Certificate</strong>.",
-    "reward": "As a reward, each time you complete a set of questions you will be entered in a raffle to win a <strong>$20 Amazon Gift Certificate</strong>.",
-    "now_or_later": "You can take another quiz now, or later by visiting your profile.",
-    "start_next": "When would you like to take the next set of questions?",
-    "reminder": "You have previously agreed to be asked a set of 5&ndash;6 short questions once every week.",
-    "ready": "Are you ready?",
-    "now": "Now",
-    "later": "Later",
-    "complete": "You have completed all the quizzes!",
-    "okay": "Okay",
-    "participate": "Would you like to participate?",
-    "yes": "Yes!",
-    "no_thanks": "No, thanks",
-    "ask_later": "Ask later",
-    "never_again": "Never ask again",
+    "thanks": "سپاس!",
+    "help": "باغ کهکشان به کمک شما نیاز دارد!",
+    "research": " ما برای بهتر فهمیدن این‌که داوطلبان باغ کهکشان در مورد جهان چه‌گونه فکر می‌کنند، تحقیق می‌کنیم.",
+    "helping": " برای فهمیدین این که داوطلبان باغ کهکشان در مورد جهان چه‌گونه فکر می‌کنند، به ما کمک کنید.",
+    "gift": " شما در یک قرعه‌کشی برای  برنده شدن <strong>$20 Amazon Gift Certificate</strong> شرکت داده‌شده‌اید. ",
+    "reward": " به عنوان پاداش، هر بار که شما مجموعه‌ای از سوالات را تکمیل‌کنید، در قرعه کشی <strong>$20 Amazon Gift Certificate</strong> شرکت داده‌خواهید‌شد.",
+    "now_or_later": " می‌توانید هم اکنون آزمونک دیگری را پاسخ‌دهید، یا این کار را در آینده با مراجعه به پروفایل خود انجام دهید. ",
+    "start_next": " تمایل دارید مجموعه‌ی بعدی از سوالات را در چه موقعی پاسخ دهید؟",
+    "reminder": " شما قبلن پذیرفته‌اید که هفته‌ای یک بار به 5 یا 6 سوال کوتاه پاسخ دهید.",
+    "ready": "آماده‌اید؟",
+    "now": "هم‌اکنون",
+    "later": "بعدن",
+    "complete": " شما همه‌ی آزمونک‌ها را تکمیل کرده‌اید!",
+    "okay": "بسیار خُب",
+    "participate": "تمایلی به مشارکت دارید؟",
+    "yes": "بله!",
+    "no_thanks": "نه، متشکرم",
+    "ask_later": "بعدن بپرس",
+    "never_again": "هرگز دوباره این سوال را نپرس",
     "example": {
-      "prompt": "If you agree to help you will be given short surveys that contain 6 multiple choice questions, which you can answer at your own pace. The first survey is available immediately after you agree to participate.<br />A question might be:",
-      "question": "Hubble's observation that galaxies farther away from us are moving faster led to which conclusion?",
-      "answer_a": "The universe is expanding",
-      "answer_b": "The universe is contracting",
-      "answer_c": "We are located at the center of the universe",
-      "answer_d": "Our galaxy repels other galaxies"
+      "prompt": " اگر موافق کمک‌کردن باشید، بررسی‌هایی مختصر شامل 6 سوال چندگزینه‌ای، که می‌توانید با هر سرعتی که خواستید به آن‌ها پاسخ دهید،  در انتظار شماست. اولین بررسی به محض قبول کردن مشارکت در دسترس شماست. <br /> یک سوال می‌تواند اینگونه باشد: ",
+      "question": " مشاهده‌ی هابل که کهکشان‌هایی که از ما دورتر هستند با سرعت بیش‌تری حرکت می‌کنند به چه حکمی منجر می‌شود؟",
+      "answer_a": "جهان در حال منبسط‌شدن است",
+      "answer_b": "جهان در حال منقبض‌شدن است",
+      "answer_c": "ما در مرکز جهان جای گرفته‌ایم",
+      "answer_d": "کهکشان ما کهکشان‌های دیگر را دفع می‌کند"
     }
   },
   "navigator": {
-    "affirmative": "Yes",
-    "negative": "No",
-    "title": "Navigator",
-    "construct": "Construct Your Question",
-    "my_galaxies": "My Galaxies",
-    "graph": "Graph Data",
-    "loading": "Loading...",
-    "reset": "Reset Graph",
-    "snapshot": "Take Snapshot",
-    "download": "Download Data",
-    "n_galaxies": "# of Galaxies",
-    "smooth": "Smooth",
-    "feature": "Features or disk",
-    "star": "Star or artifact",
-    "redshift": "Redshift",
-    "color": "Color",
-    "apparent_brightness": "Apparent Brightness",
-    "absolute_radius": "Absolute Radius",
-    "absolute_brightness": "Absolute Brightness",
-    "no_results": "You need to classify galaxies first",
-    "intro": "Welcome to the Galaxy Zoo Navigator, where you can investigate the galaxy classifications you have made as part of a group. To get started you will need to select the group you'd like to work with.",
-    "credit": "The Navigator is based upon work supported by the National Science Foundation under Grants No. 1041419 and 0941610. Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.",
+    "affirmative": "بله",
+    "negative": "نه",
+    "title": "ناوشگر",
+    "construct": "سوال خود را بسازید",
+    "my_galaxies": "کهکشان‌های من",
+    "graph": "اطلاعات نمودار",
+    "loading": "در حال بارگزاری...",
+    "reset": "تنظیم مجدد نمودار",
+    "snapshot": "دریافت تصویر  لحظه‌ای",
+    "download": "دریافت داده‌ها",
+    "n_galaxies": "# از کهکشان‌ها",
+    "smooth": "صاف و هموار",
+    "feature": "دارای ویژگی خاص",
+    "star": "ستاره یا  سوژه ساختگی",
+    "redshift": "انتقال به سرخ",
+    "color": "رنگ",
+    "apparent_brightness": "روشنایی ظاهری",
+    "absolute_radius": "شعاع مطلق",
+    "absolute_brightness": "روشنایی مطلق",
+    "no_results": "ابتدا باید کهکشان‌ها را دسته ‌بندی کنید",
+    "intro": " به ناوشگر باغ کهکشان، جایی که می‌توانید دسته ‌بندی‌هایی را که خودتان به عنوان عضوی از گروه ایجاد کرده‌اید را وارسی کنید، خوش‌آمدید. ",
+    "credit": " ناوشگر توسط بنیاد ملی علوم با شماره 1011419 و 0941610 پشتیبانی می شود. هر نظر، یافته، نتیجه یا توصیه‌ای مربوط به نویسنده(گان) آن است و لزوماً بازتاب‌دهنده‌ی دیدگاه بنیاد ملی علوم نیست.",
     "groups": {
-      "download": "Download Stats",
-      "rejected": "These emails did not have an associated Zooniverse account: ",
-      "signup": "Create New Group",
-      "select": "Select Group",
-      "make": "Make a New Group",
-      "create": "Create New Group",
-      "classify": "Classify Galaxies",
-      "group_classify": "Classify in Group",
-      "stop_classify": "Stop Classifying in Group",
-      "leave": "Leave Group",
-      "destroy": "Delete Group",
-      "classify_desc": "Visit the Galaxy Zoo website to classify galaxies as part your group.",
-      "stats": "Group Info",
-      "invitations": "Invitations",
-      "enter_name": "Enter Group Name",
-      "enter_emails": "Invite users with a current Zooniverse account by entering their emails seperated with a comma (e.g. ed@example.com, cs@example.com, whyte@example.com)",
-      "send_invites": "Send Invites",
-      "disable_talk": "Disable Talk for this Group",
-      "invited_users": "Users Invited. ",
-      "participation": "Participation",
-      "compare": "Compare your classification choices with those made by other volunteers.",
-      "confirm_leave": "Are you sure?\nThe Group Leader must re-invite you if you wish to rejoin",
-      "confirm_destroy": "Are you sure?\nThere is no undo.",
-      "ensure_selected": "Select a group or create one from the dropdown menu to see your group classifications",
-      "group_url": "Share this URL to allow anyone to join the group: ",
-      "elementary": "Elementary/Primary",
+      "download": "دریافت آمارها",
+      "rejected": " این ایمیل‌ها مربوط به هیچ حساب کاربری در زونیورس نیستند‫:‬",
+      "signup": "ایجاد گروه جدید",
+      "select": "انتخاب گروه",
+      "make": "ساخت گروه جدید",
+      "create": "ایجاد گروه جدید",
+      "classify": "دسته ‌بندی کهکشان‌ها",
+      "group_classify": "دسته ‌بندی در گروه",
+      "stop_classify": "توقف دسته ‌بندی کردن در گروه",
+      "leave": "ترک گروه",
+      "destroy": "حذف گروه",
+      "classify_desc": " برای دسته ‌بندی کردن کهکشان‌ها به عنوان عضوی از گروه خود، وب‌سایت باغ کهکشان را ببینید‫.‬",
+      "stats": "اطلاعات گروه",
+      "invitations": "دعوت‌ها",
+      "enter_name": "نام گروه را وارد کنید",
+      "enter_emails": " با حساب زونیورس جاری کاربرانی را با وارد کردن آدرس ایمیل آن‌ها، دعوت‌کنید. آدرس‌ها را با کاما جداکنید (نمونه ed@example.com, cs@example.com, whyte@example.com )",
+      "send_invites": "ارسال دعوت‌نامه ها",
+      "disable_talk": "غیرفعال‌کردن گفتگو برای این گروه",
+      "invited_users": "کاربرها دعوت شدند. ",
+      "participation": "مشارکت",
+      "compare": " دسته ‌بندی‌هایی که برگزیده‌اید را با انتخاب‌های سایر داوطلبان مقایسه‌کنید.",
+      "confirm_leave": " مطمئن هستید؟\n برای پیوستن مجدد شما، سردسته‌ی گروه باید دوباره شما را دعوت کند",
+      "confirm_destroy": " مطمئن هستید؟\n راه برگشتی وجود ندارد.",
+      "ensure_selected": " برای دیدن دسته ‌بندی‌های گروه خود یک گروه انتخاب کنید یا از لیست‌بازشدنی یکی ایجادکنید",
+      "group_url": "این آدرس را به اشتراک بگذارید تا هر کسی امکان پیوستن به گروه را داشته باشد‫:‬‌",
+      "elementary": "مقدماتی/ اصلی",
       "middle": "Middle School/Jr. High",
       "secondary": "High School/Secondary",
-      "college": "College/University",
-      "other": "Other",
-      "elaborate": "Please Elaborate",
-      "classroom": "Do you plan to use the Navigator in a classroom setting?",
-      "classroom_followup": "What age are your students?",
-      "classroom_followup_open": "How do you plan to use the Navigator in your teaching",
-      "no_classroom": "How do you plan to use the Navigator tool?",
-      "alone": "As an individual",
-      "group": "As a group"
+      "college": "کالج / دانشگاه",
+      "other": "سایر",
+      "elaborate": "لطفن با دقت پاسخ دهید",
+      "classroom": " آیا خیال دارید در محیط کلاس از ناوشگر استفاده‌کنید؟",
+      "classroom_followup": " دانش‌آموزان شما در چه سنی هستند؟",
+      "classroom_followup_open": " چگونه به فکر استفاده از ناوشگر در تدریس خود افتادید؟",
+      "no_classroom": "چگونه طرح استفاده از ابزار ناوشگر به ذهن شما رسید؟",
+      "alone": "به عنوان یک فرد",
+      "group": "به عنوان یک گروه"
     },
     "sample": {
-      "label": "with a sample size of...",
-      "choose": "Choose sample size",
-      "small": "Small Sample of Galaxies",
-      "random_small": "Small Random Sample of Galaxies",
-      "medium": "Medium Sample of Galaxies",
-      "random_medium": "Medium Random Sample of Galaxies",
-      "large": "Large Sample of Galaxies",
-      "random_large": "Large Random Sample of Galaxies"
+      "label": "با اندازه‌ی نمونه‌ی...",
+      "choose": "اندازه‌ی نمونه را انتخاب‌کنید",
+      "small": "نمونه‌ی کوچکی از کهکشان‌ها",
+      "random_small": "نمونه‌ی تصادفی کوچکی از کهکشان‌ها",
+      "medium": "نمونه متوسط از کهکشان‌ها",
+      "random_medium": "نمونه‌ی تصادفی متوسط از کهکشان‌ها",
+      "large": "نمونه‌ی بزرگی از کهکشان‌ها",
+      "random_large": "نمونه‌ی تصادفی بزرگی از کهکشان‌ها"
     },
     "galaxy_type": {
-      "label": "in the following galaxy type...",
-      "smooth": "Smooth",
-      "feature": "Feature/Disk"
+      "label": "در کهکشان‌هایی از نوع‫…‬",
+      "smooth": "صاف",
+      "feature": "برجسته/ دارای حالت دیسکی"
     },
     "source": {
-      "label": "I'd like to use data from...",
-      "my_group": "My Group",
-      "galaxy_zoo": "Galaxy Zoo",
-      "my_choice": "My choice"
+      "label": "مایلم از اطلاعات ... استفاده‌کنم.",
+      "my_group": "گروه خودم",
+      "galaxy_zoo": "باغ کهکشان",
+      "my_choice": "انتخاب‌های خودم"
     },
     "histogram": {
-      "title": "Histogram",
-      "description": "Investigate the characteristics of different galaxy types.",
-      "label": "'I'd like to see...'",
-      "y_label": "Number of Galaxies",
-      "distribution": "Distribution of",
-      "distributed": "is distributed across...",
-      "one_var": "One-Variable",
-      "two_var": "Two-Variable",
-      "create": "Create Graph"
+      "title": "هیستوگرام",
+      "description": " وارسی ویژگی‌های گوناگون انواع کهکشان‌ها",
+      "label": "مایلم ... را ببینم'",
+      "y_label": "تعداد کهکشان‌ها",
+      "distribution": "توزیعِ ",
+      "distributed": "توزیع شده در سراسر ‫…‬",
+      "one_var": "یک-متغیر",
+      "two_var": "دو-متغیر",
+      "create": "ایجاد نمودار"
     },
     "scatterplot": {
-      "title": "Scatter Graph",
-      "description": "Compare the characteristics of different galaxy types.",
-      "label": "I'd like to see how...",
+      "title": "نمودار پراکندگی",
+      "description": " مقایسه‌ی ویژگی‌های گوناگون انواع کهکشان‌ها",
+      "label": "مایلم ببینم چگونه ‫…‬",
       "vs": "vs.",
-      "relation": "relates to...",
-      "choose_x": "Choose the x-axis variable",
-      "choose_y": "Choose the y-axis variable"
+      "relation": "مربوط می‌شود به ‫…‬",
+      "choose_x": "متغیر محور x ها را انتخاب کنید",
+      "choose_y": "متغیر محور y ها را انتخاب کنید"
     }
   }
 }
