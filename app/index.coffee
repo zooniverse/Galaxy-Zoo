@@ -24,7 +24,9 @@ class App extends Spine.Controller
     
     @navigation = new Navigation
     @main = new Main
-    @quizzes = new Quizzes
+    
+    if Config.quizzesActive?
+      @quizzes = new Quizzes
     
     @append @navigation.active(), @main
     Spine.Route.setup()

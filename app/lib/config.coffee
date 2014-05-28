@@ -1,5 +1,6 @@
 Config =
   test:
+    quizzesActive: false
     apiHost: null
     surveys:
       candels:
@@ -20,6 +21,7 @@ Config =
       workflowId: '502a701e516bcb0001000002'
   
   developmentLocal:
+    quizzesActive: false
     apiHost: 'http://localhost:3000'
     surveys:
       candels:
@@ -40,6 +42,7 @@ Config =
       workflowId: '502a701e516bcb0001000002'
   
   developmentRemote:
+    quizzesActive: false
     apiHost: 'https://dev.zooniverse.org'
     surveys:
       candels:
@@ -60,6 +63,7 @@ Config =
       workflowId: '502a701e516bcb0001000002'
 
   production:
+    quizzesActive: false
     apiHost: 'https://api.zooniverse.org'
     surveys:
       candels:
