@@ -9,7 +9,6 @@ npm install .
 ./fits/build.rb
 ./interactive/build.rb
 
-[comment]: <> (hem server)
 ./node_modules/hem/bin/hem server
 open http://localhost:9294/
 ```
