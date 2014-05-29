@@ -24,11 +24,13 @@
       <p class="description"><%- I18n.t 'home.timeline.body' %></p>
       <ul>
         <li>July 9th: Call for volunteers</li>
-        <li>July 18th: <a data-nav="#/classify" href="#/project" style="float:none">Stage 1</a> Galaxy classification begins.</li>
-        <li>August 1st: Classification complete</li>
-        <li>August 1st to September 9th: <a data-nav="#/project" href="#/project" style="float:none">Stage 2</a> and <a data-nav="#/project" href="#/project" style="float:none">Stage 3</a> data analysis, discussion and article writing.</li>
-        <li>September 9th: Article complete. Submit to the Galaxy Zoo Science Team for internal review.</li>
-        <li>September 23rd: Submit to a professional journal.</li>
+        <li>July 18th: <a data-nav="#/classify" href="#/project" style="float:none">Stage 1</a> Galaxy classification begins</li>
+        <li>August 1st: First set of classifications completed</li>
+        <li>August 1st to September 9th: <a data-nav="#/project" href="#/project" style="float:none">Stage 2</a> Initial data analysis and discussion</li>
+        <li>August 23rd to 25th: <a data-nav="#/classify" href="#/project" style="float:none">Stage 1.5</a> Quench Boost (supplemental classifications)</li>
+        <li>August 25th &mdash; ongoing: <a data-nav="#/classify" href="#/project" style="float:none">Stage 2</a> Continue data analysis and discussion in ZooTools and Talk
+        <li>TBD: <a data-nav="#/project" href="#/project" style="float:none">Stage 3</a> Submit article draft to the Galaxy Zoo science team for internal review</li>
+        <li>TBD: Submit article to a professional journal</li>
       </ul>
       <p class="description"><%- I18n.t 'home.timeline.body2' %></p>
     </div>
