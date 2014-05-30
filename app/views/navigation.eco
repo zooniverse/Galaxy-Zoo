@@ -10,7 +10,7 @@
       <a href="#/science" data-nav="/science"><%- I18n.t 'navigation.science' %></a>
       <ul class="menu">
         <li><a href="#/team" data-nav="/team"><%- I18n.t 'navigation.team' %></a></li>
-        <li><a href="#/papers" data-nav="/papers"><%- I18n.t 'navigation.papers' %></a></li>
+        <li><a href="http://www.zooniverse.org/publications?project=hubble" target="_blank"><%- I18n.t 'navigation.papers' %></a></li>
         <li><a href="http://data.galaxyzoo.org" target="_blank"><%- I18n.t 'navigation.data' %></a></li>
         <li><a href="#/astronomers" data-nav="/astronomers"><%- I18n.t 'navigation.astronomers' %></a></li>
       </ul>
