@@ -3,7 +3,7 @@
 require 'aws-sdk'
 AWS.config access_key_id: ENV['AWS_ACCESS_KEY_ID'], secret_access_key: ENV['AWS_SECRET_ACCESS_KEY']
 s3 = AWS::S3.new
-bucket = s3.buckets['static.zooniverse.org']
+bucket = s3.buckets['zooniverse-static']
 
 build = <<-BASH
 rm -rf build
