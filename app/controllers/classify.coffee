@@ -37,10 +37,18 @@ class Classify extends Spine.Controller
     Classification.bind 'classified', @loginPrompt
     Subject.next()
     $('#zooniverse-top-bar-login .buttons button[name="signup"]').unbind('click').bind 'click', @signupPrompt
-  
+
   active: ->
     super
     @render()
+
+  activate: ->
+    super
+    $(document).on('keypress', @handleKeypress)
+
+  deactivate: ->
+    super
+    $(document).off('keypress', @handleKeypress)
   
   render: =>
     return unless @subject and @isActive()
@@ -113,8 +121,15 @@ class Classify extends Spine.Controller
     @classification = new Classification subject_id: @subject.id
     @render()
     ev.preventDefault()
-  
-  toggleInverted: (ev) ->
+
+  handleKeypress: (ev) =>
+    key = ev.which || ev.keyCode || ev.charCode
+
+    #toggle color/greyscale on spacebar
+    if key == 32
+      @toggleInverted(ev)
+
+  toggleInverted: (ev) =>
     if @image.hasClass 'inverted'
       @image.attr 'src', Subject.current.location.standard
     else
