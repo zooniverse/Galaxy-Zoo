@@ -1,7 +1,7 @@
 <% UserGroup = require 'models/user_group' %>
 <div id="classify">
   <div class="galaxy">
-    <img src="<%= @subject.image() %>" />
+    <img src="<%= @subject.image() %>" title="<%= @subject.zooniverse_id %>" />
   </div>
   <div class="tree">
     <div class="top">
