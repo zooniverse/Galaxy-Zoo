@@ -8,6 +8,7 @@
     "url": "https://github.com/zooniverse/Galaxy-Zoo.git"
   },
   "scripts": {
+    "start": "hem server --port 9294",
     "pretest": "hem server --port 9290 & echo $! > ./hem.pid",
     "test": "jasmine-phantom-node --port 9290",
     "posttest": "kill `cat hem.pid`; rm hem.pid",
