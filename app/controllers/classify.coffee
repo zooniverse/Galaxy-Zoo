@@ -43,9 +43,16 @@ class Classify extends Spine.Controller
     @render()
   
   render: =>
-    return unless @subject and @isActive()
-    @html require('views/classify')(@)
-  
+    return unless @isActive()
+    if @subject
+      @html require('views/classify')(@)
+    else
+      @html '''
+        <div id="classify">
+          <p style="text-align: center;">Galaxy Zoo is currently down for maintenance&mdash;we're looking for more galaxies!</p>
+        </div>
+      '''
+
   loginPrompt: =>
     unless User.current
       @classificationCount += 1
