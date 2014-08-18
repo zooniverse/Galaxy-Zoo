@@ -5,26 +5,26 @@
   border-top: 1px solid $dark-blue
   border-bottom: 1px solid $dark-blue
   margin-top: 100px
-  
+
   .galaxy
     width: $one-half
     margin-right: $gutter-size
     float: left
-    
+
     img
       cursor: pointer
       width: 424px
       height: 424px
       float: left
-  
+
   .tree
     float: left
     width: $one-half
     margin-top: $gutter-size
-    
+
     .top
       clearfix()
-      
+
       h1
         float: left
         display: inline
@@ -32,7 +32,7 @@
         font-weight: 300
         margin: 6px 0 0 0
         width: 100px
-      
+
       .buttons
         clearfix()
         float: right
@@ -40,7 +40,7 @@
         width: $one-half - 100px
         margin: 15px 0
         padding: 0
-        
+
         li
           display: inline-block
           text-align: center
@@ -48,7 +48,7 @@
           list-style: none
           width: $column-size + 0.5 * $gutter-size
           margin-left: 10px
-          
+
           a
             display: block
             width: 100%
@@ -59,10 +59,10 @@
             color: #000000
             -webkit-border-radius: 3px
             border-radius: 3px
-            
+
             &.active
               background-color: $green
-        
+
         li.left
           icons()
           position: relative
@@ -70,7 +70,7 @@
           width: 30px
           height: 30px
           margin: 0 10px 0 10px
-          
+
           .label
             position: absolute
             bottom: -25px
@@ -81,31 +81,31 @@
             font-size: 10px
             font-weight: 700
             color: $blue
-            
+
             &.group
               color: $green
-        
+
         li.right
           float: right
-    
+
     .question
       font-family: "Open Sans"
       position: absolute
       bottom: 0px
       right: 0px
-      
+
       .heading
         text-transform: uppercase
         font-size: 12px
         font-weight: 700
         padding: 0px
         margin: 0px
-      
+
       .text
         font-size: 15px
         padding: 0px
         margin: 0 0 40px 0
-      
+
       .buttons
         display: table
         width: $one-half
@@ -113,13 +113,13 @@
         border-top: 1px solid $dark-blue
         border-right: 1px solid $dark-blue
         border-left: 1px solid $dark-blue
-        
+
         .row
           display: table-row
           height: 120px
           text-align: center
           padding: 10px 0
-          
+
           .answer, .checkbox
             display: table-cell
             position: relative
@@ -127,13 +127,13 @@
             text-align: center
             padding: 0
             cursor: pointer
-            
+
             .icon, .icon .hover
               margin: 0 auto
               display: block
               position: relative
               text-align: center
-              
+
               .hover
                 $line-height = 18px
                 position: relative
@@ -147,21 +147,30 @@
                 line-height: $line-height
                 margin: 0 auto
                 padding: 0px 3px
-              
+
               a
                 workflow-icons()
                 display: block
                 position: relative
                 margin: 0 auto
-            
+
             &.not-iOS:hover
               background-color: rgba(0, 60, 87, 0.7)
-              
+
               .hover
                 color: $light-gray
-            
+
             &.active
               background-color: rgba(0, 60, 87, 1.0)
-              
+
               .hover
                 color: $light-gray
+
+.down-for-maintenance
+  opacity: 1
+  -moz-transition: opacity 0.5s 2s
+  -webkit-transition: opacity 0.5s 2s
+  transition: opacity 0.5s 2s
+
+  &.hidden
+    opacity: 0
