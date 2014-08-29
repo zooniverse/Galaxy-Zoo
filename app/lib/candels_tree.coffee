@@ -2,7 +2,7 @@ DecisionTree = require 'lib/decision_tree'
 
 CandelsTree = new DecisionTree 'candels', ->
   @question 'Shape', 'Is the galaxy simply smooth and rounded, with no sign of a disk?', ->
-    @help "The aim here is to divide featureless galaxies from all the rest. If you can see any interesting features at all, click &quot;features or disk.&quot; Just occasionally you might see something that isn't a galaxy at all - the long streak of a satellite, for example, or a image swamped by light from a bright star. If this happens, just click &quot;star or artifact&quot;. Click to see larger images."
+    @help "The aim here is to divide featureless galaxies from all the rest. If you can see any interesting features at all, click &quot;features or disk.&quot; Just occasionally you might see something that isn't a galaxy at all - the long streak of a satellite, for example, or an image swamped by light from a bright star. If this happens, just click &quot;star or artifact&quot;. Click to see larger images."
     @answer 'Smooth', leadsTo: 'How rounded is it?', icon: 'smooth_round', examples: 1
     @answer 'Features or disk', leadsTo: 'Does the galaxy have a mostly clumpy appearance?', icon: 'feature_clumpy', examples: 2
     @answer 'Star or artifact', leadsTo: 'Would you like to discuss this object?', icon: 'star', examples: 3
