@@ -49,7 +49,7 @@
       "text": "Questa galassia appare omogenea e arrotondata, senza evidenze di un disco?",
       "title": "Forma",
       "help": "Qui lo scopo è selezionare galassie che presentano segni particolari. Se è presente qualche segno interessante clicca &quot;segni particolari o disco.&quot; Occasionalmente l'immagine potrebbe non corrispondere ad una galassia - potrebbe trattarsi ad esempio della lunga scia di un satellite o di un artefatto dovuto ad una stella luminosa. In questo caso clicca &quot;stella o artefatto&quot. Clicca per visualizzare le immagini più grandi.",
-      "answersO": {
+      "answers": {
         "a-0": "Omogenea",
         "a-1": "Segni particolari o disco",
         "a-2": "Stella o artefatto"
