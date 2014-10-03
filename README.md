@@ -17,9 +17,9 @@ open http://localhost:9294/
 
 ##### Install Node.js
 ```bash
+sudo apt-get install curl git python-software-properties python build-essential -y
 sudo add-apt-repository ppa:chris-lea/node.js
 sudo apt-get update && sudo apt-get dist-upgrade -y
-sudo apt-get install curl git python-software-properties python build-essential -y
 sudo apt-get install nodejs -y
 ```
 
