@@ -33,30 +33,37 @@
           color: #efefef
       
       .menu
-        clearfix()
-        display: none
         background: rgba(#2c2c2c, 0.75)
+        display: none
         border-radius: 3px
-        right: 0
-        padding: 5px 10px
+        left: 0
+        padding: 5px 0
         position: absolute
         top: 50px
-        width: 330px
         z-index: 9999999
         
         li
-          float: left
           line-height: 2
-          margin-right: 25px
-          width: auto
+          margin-right: 0
           
           a
             display: block
-      
+
+        &.languages
+          clearfix()
+          left: auto
+          padding: 5px 10px
+          right: 0
+          width: 330px
+
+          li
+            float: left
+            margin-right: 25px
+            width: auto
+
       &:hover .menu
         display: block
       
-
       &.last
         margin-right: 0
       

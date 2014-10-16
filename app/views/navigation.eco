@@ -32,7 +32,7 @@
     </li>
     <li class="last">
       <a><%- I18n.t 'languages.language' %></a>
-      <ul class="menu">
+      <ul class="menu languages">
         <li><a data-lang-switch="en">English</a></li>
         <li><a data-lang-switch="es">Español</a></li>
         <li><a data-lang-switch="fa" class="rtl">فارسی</a></li>
