@@ -44,3 +44,9 @@ open http://localhost:9294
 ```
 
 Depending on your browser, you may have to confirm a security exception to allow a self-signed SSL certificate for dev.zooniverse.org
+
+### License
+
+Apache 2.
+
+Zooniverse Galaxy Zoo translations not contained within this repo are also licensed under Apache 2.
