@@ -14,3 +14,31 @@ html[lang="fa"], .rtl
 html[lang="he"], .rtl
   h1, h2, h3, h4, h5, h6, p, li, ul, span
     direction: rtl
+
+  @media (max-width: 1385px)
+    #zooniverse-top-bar-container h3
+      line-height: 20px
+      margin-top: 0 !important // blah
+
+  #navigation ul li
+    font-size: 14px
+
+  #home
+    .content-block
+      .left,
+      .galaxify
+        float: right
+      .right
+        float: left
+        margin: 0 20px 0 0
+
+    .description
+      font-size: 13px !important // blah
+
+    .blue-button
+      float: right
+
+    .slider .slide-element .left
+      width: 300px
+      .description
+        width: auto
