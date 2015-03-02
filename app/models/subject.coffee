@@ -29,6 +29,18 @@ class Subject extends BaseSubject
       id: Config.surveys.ferengi.id
       workflowId: Config.surveys.ferengi.workflowId
       tree: FerengiTree
+    candels_2epoch:
+      id: Config.surveys.candels_2epoch.id
+      workflowId: Config.surveys.candels.workflowId
+      tree: CandelsTree
+    goods_full:
+      id: Config.surveys.goods_full.id
+      workflowId: Config.surveys.ferengi.workflowId
+      tree: FerengiTree
+    sloan_singleband:
+      id: Config.surveys.sloan_singleband.id
+      workflowId: Config.surveys.sloan.workflowId
+      tree: SloanTree
   
   @url: (params) -> @withParams "/projects/galaxy_zoo/groups/#{ params.surveyId }/subjects", limit: params.limit
   @randomSurveyId: ->
