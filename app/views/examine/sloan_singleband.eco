@@ -1,8 +1,9 @@
 <%- @info I18n.t('examine.telescope'), I18n.t('examine.sdss') %>
-<%- @info I18n.t('examine.survey'), I18n.t('examine.dr8') %>
+<%- @info I18n.t('examine.survey'), I18n.t('examine.sdss_singleband') %>
 <%- @info I18n.t('examine.sdss_id'), @subject.metadata.sdss_id %>
 <%- @info I18n.t('examine.right_ascension'), @subject.coords[0], '&deg;' %>
 <%- @info I18n.t('examine.declination'), @subject.coords[1], '&deg;' %>
+<%- @info I18n.t('examine.band'), @subject.metadata.band %>
 <%- @info I18n.t('examine.petro_rad'), @subject.metadata.petrorad_r, '&quot;' %>
 
 <div class="row">
@@ -28,3 +29,4 @@
     <a target="_blank" href="http://talk.galaxyzoo.org/#/subjects/<%= @subject.zooniverse_id %>"><%- I18n.t 'examine.discuss' %></a>
   </span>
 </div>
+
