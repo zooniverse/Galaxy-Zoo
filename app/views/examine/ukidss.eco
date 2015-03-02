@@ -1,8 +1,9 @@
+<%- @info I18n.t('examine.telescope'), I18n.t('examine.ukirt') %>
 <%- @info I18n.t('examine.survey'), I18n.t('examine.ukidss') %>
 <%- @info I18n.t('examine.sdss_id'), @subject.metadata.sdss_dr7_id %>
 <%- @info I18n.t('examine.right_ascension'), @subject.coords[0], '&deg;' %>
 <%- @info I18n.t('examine.declination'), @subject.coords[1], '&deg;' %>
-<%- @info I18n.t('examine.petro_rad'), @subject.metadata.petrorad_r %>
+<%- @info I18n.t('examine.petro_rad'), @subject.metadata.petrorad_r, '&quot;' %>
 
 <div class="row">
   <span class="blank"></span>
