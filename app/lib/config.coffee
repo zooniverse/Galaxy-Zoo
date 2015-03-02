@@ -15,6 +15,15 @@ Config =
       ferengi:
         id: '5249cbce3ae740728d000001'
         workflowId: '5249cbc33ae74070ed000001'
+      candels_2epoch:
+        id: ''
+        workflowId: '50217499516bcb0fda000003'
+      goods_full:
+        id: ''
+        workflowId: '5249cbc33ae74070ed000001'
+      sloan_singleband:
+        id: ''
+        workflowId: '50217499516bcb0fda000002'
     subjectCache: 1
     quiz:
       invitationId: '502bfa73516bcb3c600003e9'
@@ -36,6 +45,15 @@ Config =
       ferengi:
         id: '5249cbce3ae740728d000001'
         workflowId: '5249cbc33ae74070ed000001'
+      candels_2epoch:
+        id: ''
+        workflowId: '50217499516bcb0fda000003'
+      goods_full:
+        id: ''
+        workflowId: '5249cbc33ae74070ed000001'
+      sloan_singleband:
+        id: ''
+        workflowId: '50217499516bcb0fda000002'
     subjectCache: 5
     quiz:
       invitationId: '502bfa73516bcb3c600003e9'
@@ -57,6 +75,15 @@ Config =
       ferengi:
         id: '5249cbce3ae740728d000001'
         workflowId: '5249cbc33ae74070ed000001'
+      candels_2epoch:
+        id: ''
+        workflowId: '50217499516bcb0fda000003'
+      goods_full:
+        id: ''
+        workflowId: '5249cbc33ae74070ed000001'
+      sloan_singleband:
+        id: ''
+        workflowId: '50217499516bcb0fda000002'
     subjectCache: 5
     quiz:
       invitationId: '502bfa73516bcb3c600003e9'
@@ -78,6 +105,15 @@ Config =
       ferengi:
         id: '5249cbce3ae740728d000001'
         workflowId: '5249cbc33ae74070ed000001'
+      candels_2epoch:
+        id: ''
+        workflowId: '50217499516bcb0fda000003'
+      goods_full:
+        id: ''
+        workflowId: '5249cbc33ae74070ed000001'
+      sloan_singleband:
+        id: ''
+        workflowId: '50217499516bcb0fda000002'
     subjectCache: 5
     quiz:
       invitationId: '502bfa73516bcb3c600003e9'
