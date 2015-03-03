@@ -14,13 +14,13 @@ SloanSinglebandTree = new DecisionTree 'sloan_singleband', ->
   
   @question 'Bar', 'Is there any sign of a bar feature through the center of the galaxy?', leadsTo: 'Is there any sign of a spiral arm pattern?', ->
     @help "Sometimes galaxies have a prominent straight &quot;bar&quot; running through their centre, and that's what we're looking for here. Click to see larger images."
-    @answer 'Bar', icon: 'yes', examples: 4
-    @answer 'No bar', icon: 'no', examples: 4
+    @answer 'Bar', icon: 'yes', examples: 2
+    @answer 'No bar', icon: 'no', examples: 2
   
   @question 'Spiral', 'Is there any sign of a spiral arm pattern?', ->
     @help "Look carefully for spiral arms - remember they may be embedded in the disk and not that easy to see. Click to see larger images."
     @answer 'Spiral', leadsTo: 'How tightly wound do the spiral arms appear?', icon: 'yes', examples: 2
-    @answer 'No spiral', leadsTo: 'How prominent is the central bulge, compared with the rest of the galaxy?', icon: 'no', examples: 1
+    @answer 'No spiral', leadsTo: 'How prominent is the central bulge, compared with the rest of the galaxy?', icon: 'no', examples: 2
   
   @question 'Bulge', 'How prominent is the central bulge, compared with the rest of the galaxy?', leadsTo: 'Is there anything odd?', ->
     @help "It's not always easy to tell, but look at the centre of the galaxy for a round bulge of stars which may obscure any bar and the spiral arms in this central region. Click to see larger images."
@@ -31,17 +31,17 @@ SloanSinglebandTree = new DecisionTree 'sloan_singleband', ->
   
   @question 'Odd', 'Is there anything odd?', ->
     @help "We're looking for signs that the galaxy is merging, is disturbed, or has other unusual features. Click to see larger images."
-    @answer 'Yes', leadsTo: 'What are the odd features?', icon: 'yes', examples: 2
+    @answer 'Yes', leadsTo: 'What are the odd features?', icon: 'yes', examples: 5
     @answer 'No', leadsTo: 'Would you like to discuss this object?', icon: 'no'
   
   @question 'Odd', 'What are the odd features?', ->
     @checkbox 'Ring', icon: 'ring', examples: 1
-    @checkbox 'Lens or arc', icon: 'lens', examples: 1
+    @checkbox 'Lens or arc', icon: 'lens'
     @checkbox 'Disturbed', icon: 'disturbed', examples: 1
     @checkbox 'Irregular', icon: 'irregular', examples: 1
     @checkbox 'Other', icon: 'other', examples: 1
     @checkbox 'Merger', icon: 'merger', examples: 1
-    @checkbox 'Dust lane', icon: 'dustlane', examples: 1
+    @checkbox 'Dust lane', icon: 'dustlane'
     @answer 'Done', leadsTo: 'Would you like to discuss this object?', icon: 'yes'
   
   @question 'Round', 'How rounded is it?', leadsTo: 'Is there anything odd?', ->
