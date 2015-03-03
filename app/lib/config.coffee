@@ -20,10 +20,10 @@ Config =
         workflowId: '50217499516bcb0fda000003'
       goods_full:
         id: ''
-        workflowId: '5249cbc33ae74070ed000001'
+        workflowId: ''
       sloan_singleband:
         id: ''
-        workflowId: '50217499516bcb0fda000002'
+        workflowId: ''
     subjectCache: 1
     quiz:
       invitationId: '502bfa73516bcb3c600003e9'
@@ -50,10 +50,10 @@ Config =
         workflowId: '50217499516bcb0fda000003'
       goods_full:
         id: ''
-        workflowId: '5249cbc33ae74070ed000001'
+        workflowId: ''
       sloan_singleband:
         id: ''
-        workflowId: '50217499516bcb0fda000002'
+        workflowId: ''
     subjectCache: 5
     quiz:
       invitationId: '502bfa73516bcb3c600003e9'
@@ -80,10 +80,10 @@ Config =
         workflowId: '50217499516bcb0fda000003'
       goods_full:
         id: ''
-        workflowId: '5249cbc33ae74070ed000001'
+        workflowId: ''
       sloan_singleband:
         id: ''
-        workflowId: '50217499516bcb0fda000002'
+        workflowId: ''
     subjectCache: 5
     quiz:
       invitationId: '502bfa73516bcb3c600003e9'
@@ -110,10 +110,10 @@ Config =
         workflowId: '50217499516bcb0fda000003'
       goods_full:
         id: ''
-        workflowId: '5249cbc33ae74070ed000001'
+        workflowId: ''
       sloan_singleband:
         id: ''
-        workflowId: '50217499516bcb0fda000002'
+        workflowId: ''
     subjectCache: 5
     quiz:
       invitationId: '502bfa73516bcb3c600003e9'
