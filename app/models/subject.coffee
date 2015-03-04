@@ -6,6 +6,8 @@ SloanTree = require 'lib/sloan_tree'
 CandelsTree = require 'lib/candels_tree'
 UkidssTree = require 'lib/ukidss_tree'
 FerengiTree = require 'lib/ferengi_tree'
+SloanSinglebandTree = require 'lib/sloan_singleband_tree'
+GoodsTree = require 'lib/goods_full_tree'
 UserGroup = require 'models/user_group'
 
 class Subject extends BaseSubject
@@ -29,6 +31,18 @@ class Subject extends BaseSubject
       id: Config.surveys.ferengi.id
       workflowId: Config.surveys.ferengi.workflowId
       tree: FerengiTree
+    candels_2epoch:
+      id: Config.surveys.candels_2epoch.id
+      workflowId: Config.surveys.candels.workflowId
+      tree: CandelsTree
+    goods_full:
+      id: Config.surveys.goods_full.id
+      workflowId: Config.surveys.goods.workflowId
+      tree: GoodsTree
+    sloan_singleband:
+      id: Config.surveys.sloan_singleband.id
+      workflowId: Config.surveys.sloan_singleband.workflowId
+      tree: SloanSinglebandTree
   
   @url: (params) -> @withParams "/projects/galaxy_zoo/groups/#{ params.surveyId }/subjects", limit: params.limit
   @randomSurveyId: ->
@@ -55,6 +69,9 @@ class Subject extends BaseSubject
     idCounts[@::surveys.candels.id] = 0
     idCounts[@::surveys.ukidss.id] = 0
     idCounts[@::surveys.ferengi.id] = 0
+    idCounts[@::surveys.sloan_singleband.id] = 0
+    idCounts[@::surveys.candels_2epoch.id] = 0
+    idCounts[@::surveys.goods_full.id] = 0
     idCounts[@randomSurveyId()] += 1 for i in [1..count]
     
     hasTriggered = false

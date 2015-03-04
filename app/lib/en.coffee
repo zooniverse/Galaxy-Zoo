@@ -600,7 +600,8 @@ module.exports =
       candels: 'CANDELS is using the WFC3 near-infrared filters to image 800 arcmin<sup>2</sup> in established HST legacy fields (e.g. GOODS, COSMOS). The near-infrared WFC3 images are particularly important because morphological analysis is best performed in rest-frame optical wavelengths, which trace the underlying stellar population of the galaxy rather than just the UV-bright star-forming regions.'
       combination: 'The combination of the SDSS and CANDELS Galaxy Zoo samples will offer a formidable tool for answering significant open questions that demand a morphological analysis. For example, at what epochs was the Hubble sequence established? How and when were the primordial spheroids formed? What was the relative role of major mergers and secular processes in driving star formation and black hole growth in the early Universe?'
       ukidss: 'The UKIRT images are from the Large Area Survey (LAS) as part of UKIDSS, which imaged 4000 sq. deg. of the sky overlapping with the SDSS fields. We selected all galaxies classified in Galaxy Zoo 2 that had high-quality UKIDSS imaging, totaling about 70,000 galaxies. The images shown on the site are a colour-composite of the Y, J, and K-band images (where the J-band uses dithered observations to improve the angular resolution in that channel). These images will allow us to trace morphology as a function of wavelength; for example, whether the observed bar fraction increases for galaxies in the rest-frame infrared.'
-      ferengi: 'Finally, Galaxy Zoo also includes a small set of SDSS images that have been artificially processed to simulate the observed effects of redshift. This set used a morphologically diverse sample of galaxies from Galaxy Zoo 2 and were processed using the FERENGI code (<a href="http://www.mpia-hd.mpg.de/FERENGI/">Barden, Jahnke, & Hausler 2008</a>) out to redshifts of z=1. Results from these images will be used as calibration for galaxies in the GZ: Hubble and CANDELS data, since it allows us to assess resolution and brightness-dependent biases independent of true galaxy evolution.'
+      ferengi: 'Galaxy Zoo also includes a small set of SDSS images that have been artificially processed to simulate the observed effects of redshift. This set used a morphologically diverse sample of galaxies from Galaxy Zoo 2 and were processed using the FERENGI code (<a href="http://www.mpia-hd.mpg.de/FERENGI/">Barden, Jahnke, & Hausler 2008</a>) out to redshifts of z=1. Results from these images will be used as calibration for galaxies in the GZ: Hubble and CANDELS data, since it allows us to assess resolution and brightness-dependent biases independent of true galaxy evolution.'
+      newdata: 'In early 2015, three new sets of data were put into Galaxy Zoo. Two of them are from Hubble surveys for which we already have GZ morphological classifications --- GOODS and CANDELS. The new images explore how changing the depth of data (a surface brightness limit) affects the morphological measurements. The new CANDELS images are from 2-epoch data (which is shallower than the 5-epoch data already cataloged), and the GOODS images come from the full-depth images, supplementing the shallow observations already completed in GZH. Finally, we added roughly 1000 images each of galaxies from SDSS in their monochrome <i>ugriz</i> filters, which will allow a more careful measurement of morphology as a function of wavelength.'
       conclusion: 'The purpose of the Galaxy Zoo project is to answer such questions, prepare the ground for morphological work using future instruments like the JWST and produce samples of morphologically selected high-redshift galaxies for follow-up using instruments like the extremely large telescopes and ALMA.'
   
   
@@ -806,6 +807,7 @@ module.exports =
   examine:
     title: 'Examine'
     survey: 'Survey'
+    telescope: 'Telescope'
     right_ascension: 'Right Ascension'
     declination: 'Declination'
     magnitude: 'Magnitude'
@@ -813,10 +815,20 @@ module.exports =
     discuss: 'Discuss this'
     hubble: 'Hubble'
     sdss: 'SDSS'
+    ukirt: 'UKIRT'
+    goods: 'GOODS'
+    goods_full: 'GOODS full-depth'
+    candels: 'CANDELS'
+    candels_2epoch: 'CANDELS 2-epoch'
     ukidss: 'UKIDSS'
-    ferengi: 'Artificially redshifted SDSS'
-    sdss_id: 'SDSS ObjectId'
-    petro_rad: 'Petrosian Radius'
+    sdss_singleband: 'Single-band images'
+    ferengi: 'Artificially redshifted images'
+    dr8: 'Data Release 8'
+    sdss_id: 'SDSS ObjectID'
+    hubble_id: 'Hubble ID'
+    petro_rad: 'Size (Petrosian radius)'
+    kron_rad: 'Size (Kron radius)'
+    band: 'Band'
     skyserver_link: 'View on SkyServer'
   
   
