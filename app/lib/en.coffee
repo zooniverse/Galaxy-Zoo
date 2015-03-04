@@ -615,7 +615,8 @@ module.exports =
     group: 'Group'
     favorite: 'Favourite'
     invert: 'Invert'
-  
+    directions: 'Note: Please always classify the galaxy in the center of the image.'
+
   
   help:
     title: 'Help'
