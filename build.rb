@@ -96,10 +96,10 @@ to_upload.each.with_index do |file, index|
     options[:content_encoding] = 'gzip'
   end
   
-  bucket.objects['www.galaxyzoo.org/' + file].write options
+  bucket.objects['www.galaxyzoo.org/beta/' + file].write options
 end
 
-bucket.objects['www.galaxyzoo.org/index.html'].write file: 'index.html', acl: :public_read, content_type: 'text/html', cache_control: 'no-cache, must-revalidate'
+bucket.objects['www.galaxyzoo.org/beta/index.html'].write file: 'index.html', acl: :public_read, content_type: 'text/html', cache_control: 'no-cache, must-revalidate'
 
 Dir.chdir working_directory
 `rm -rf build`

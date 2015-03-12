@@ -74,4 +74,3 @@ SloanSinglebandTree = new DecisionTree 'sloan_singleband', ->
     @answer 'No', icon: 'no'
 
 module.exports = SloanSinglebandTree
-

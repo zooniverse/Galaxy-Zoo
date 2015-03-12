@@ -33,11 +33,11 @@ class Subject extends BaseSubject
       tree: FerengiTree
     candels_2epoch:
       id: Config.surveys.candels_2epoch.id
-      workflowId: Config.surveys.candels.workflowId
+      workflowId: Config.surveys.candels_2epoch.workflowId
       tree: CandelsTree
     goods_full:
       id: Config.surveys.goods_full.id
-      workflowId: Config.surveys.goods.workflowId
+      workflowId: Config.surveys.goods_full.workflowId
       tree: GoodsTree
     sloan_singleband:
       id: Config.surveys.sloan_singleband.id
@@ -46,7 +46,15 @@ class Subject extends BaseSubject
   
   @url: (params) -> @withParams "/projects/galaxy_zoo/groups/#{ params.surveyId }/subjects", limit: params.limit
   @randomSurveyId: ->
-    @::surveys.sloan.id
+    @::surveys.candels_2epoch.id
+    # n = Math.random()
+    # if n <= 0.33
+    #   @::surveys.candels_2epoch.id
+    # else if n <= 0.66
+    #   @::surveys.goods_full.id
+    # else
+    #   @::surveys.sloan_singleband.id
+
     # return @::surveys.sloan.id if UserGroup.current
     # n = Math.random()
     # if n <= 0.10
@@ -84,13 +92,6 @@ class Subject extends BaseSubject
         if @current and not hasTriggered
           hasTriggered = true
           @trigger 'fetched'
-
-  # @fetch: ->
-  #   hasTriggered = false
-  #   Api.get @url(surveyId: @::surveys.sloan.id, limit: Config.subjectCache - @count()), (results) =>
-  #     @create result for result in results
-  #     @current or= @first()
-  #     @trigger 'fetched' unless hasTriggered
   
   @show: (id) ->
     Api.get "/projects/galaxy_zoo/subjects/#{ id }"
