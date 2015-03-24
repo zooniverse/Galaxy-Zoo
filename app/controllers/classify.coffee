@@ -85,6 +85,9 @@ class Classify extends Spine.Controller
     @classification = new Classification subject_id: @subject.id
     @render()
 
+    setTimeout =>
+      if @subject.showInverted() then @toggleInverted()
+  
   answer: (ev) =>
     answer = $(ev.target).closest '.answer'
     id = answer.data 'id'
@@ -105,7 +108,7 @@ class Classify extends Spine.Controller
   checkBox: (ev) ->
     item = $(ev.target).closest('.checkbox')
     item.toggleClass 'active'
-
+  
   help: (ev) ->
     @helpDialog = new Dialog
       template: 'views/help'

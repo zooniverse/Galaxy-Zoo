@@ -108,4 +108,10 @@ class Subject extends BaseSubject
   image: -> @location.standard
   thumbnail: -> @location.thumbnail
 
+  showInverted: ->
+    if @metadata.survey == 'sloan_singleband'
+      true
+    else
+      false
+
 module.exports = Subject
