@@ -1,6 +1,5 @@
 <div class="question" data-id="<%= @id %>">
   <p class="heading"><%= @title %></p>
-  <% console.log @i18nId() %>
   <p class="text"><%= I18n.t 'questions', @i18nId(), 'text' %></p>
   
   <div class="buttons">
