@@ -119,12 +119,8 @@ Config =
       invitationId: '502bfa73516bcb3c600003e9'
       workflowId: '502a701e516bcb0001000002'
 
-env = if window.jasmine
-  'test'
-else if window.location.port is '9294'
+env = if window.location.port > 1024
   'developmentRemote'
-else if window.location.port > 1024 
-  'developmentLocal'
 else
   'production'
 
