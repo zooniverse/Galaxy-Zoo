@@ -106,14 +106,14 @@ Config =
         id: '5249cbce3ae740728d000001'
         workflowId: '5249cbc33ae74070ed000001'
       candels_2epoch:
-        id: ''
-        workflowId: '50217499516bcb0fda000003'
+        id: '551456e02f0eef2535000001'
+        workflowId: '551456e02f0eef2535000002'
       goods_full:
-        id: ''
-        workflowId: ''
+        id: '551453e12f0eef21f2000001'
+        workflowId: '551453e12f0eef21f2000002'
       sloan_singleband:
-        id: ''
-        workflowId: ''
+        id: '5514521e2f0eef2012000001'
+        workflowId: '5514521f2f0eef2012000002'
     subjectCache: 5
     quiz:
       invitationId: '502bfa73516bcb3c600003e9'
