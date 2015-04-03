@@ -114,7 +114,7 @@ GoodsTree = new DecisionTree 'goods_full', ->
     @checkbox 'Other', icon: 'other', examples: 2
     @checkbox 'Merger', icon: 'merger', examples: 2
     @checkbox 'Dust lane', icon: 'dustlane', examples: 3
-    @answer 'Done', leadsTo: 'Would you like to discuss this object?', icon: 'yes', examples: 2
+    @answer 'Done', leadsTo: 'Would you like to discuss this object?', icon: 'yes'
 
 module.exports = GoodsTree
 
