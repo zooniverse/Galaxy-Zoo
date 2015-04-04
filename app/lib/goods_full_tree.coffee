@@ -32,7 +32,7 @@ GoodsTree = new DecisionTree 'goods_full', ->
     @answer 'Straight Line', icon: 'clump_line', examples: 2
     @answer 'Chain', icon: 'clump_chain', examples: 2
     @answer 'Cluster / Irregular', icon: 'clump_cluster', examples: 2
-    @answer 'Spiral', icon: 'clump_spiral', examples: 2
+    @answer 'Spiral', icon: 'clump_spiral', examples: 1
   
   @question 'Clumps', 'Is there one clump which is clearly brighter than the others?', ->
     @help "Sometimes one clump dominates the scene. If so, click yes, otherwise, no."
@@ -86,7 +86,7 @@ GoodsTree = new DecisionTree 'goods_full', ->
     @answer '1', icon: 'spiral_1', examples: 2
     @answer '2', icon: 'spiral_2', examples: 2
     @answer '3', icon: 'spiral_3', examples: 2
-    @answer '4', icon: 'spiral_4', examples: 2
+    @answer '4', icon: 'spiral_4', examples: 1
     @answer 'More than 4', icon: 'spiral_4-plus', examples: 2
     @answer "Can't tell", icon: 'spiral_cant-tell'
   
