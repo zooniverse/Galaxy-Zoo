@@ -12,7 +12,7 @@
 <div class="row">
   <span class="key"></span>
   <span class="value">
-    <a target="_blank" href="http://cas.sdss.org/dr7/en/tools/quicklook/quickobj.asp?id=<%= @subject.metadata.sdss_id %>"><%- I18n.t 'examine.skyserver_link' %></a>
+    <a target="_blank" href="http://skyserver.sdss.org/dr8/en/tools/explore/obj.asp?ra=<%= @subject.coords[0] %>&dec=<%= @subject.coords[1] %>"><%- I18n.t 'examine.skyserver_link' %></a>
   </span>
 </div>
 <div class="row">
