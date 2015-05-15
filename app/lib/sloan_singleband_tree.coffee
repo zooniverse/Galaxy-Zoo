@@ -27,7 +27,7 @@ SloanSinglebandTree = new DecisionTree 'sloan_singleband', ->
     @answer 'No bulge', icon: 'bulge_none', examples: 2
     @answer 'Just noticeable', icon: 'bulge_noticeable', examples: 2
     @answer 'Obvious', icon: 'bulge_obvious', examples: 2
-    @answer 'Dominant', icon: 'bulge_dominant, examples: 2'
+    @answer 'Dominant', icon: 'bulge_dominant', examples: 0
   
   @question 'Odd', 'Is there anything odd?', ->
     @help "We're looking for signs that the galaxy is merging, is disturbed, or has other unusual features. Click to see larger images."
