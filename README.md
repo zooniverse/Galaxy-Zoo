@@ -50,3 +50,7 @@ Depending on your browser, you may have to confirm a security exception to allow
 Apache 2.
 
 Zooniverse Galaxy Zoo translations not contained within this repo are also licensed under Apache 2.
+
+### Troubleshooting
+
+If you encounter issues, ensure that you are using node version 0.10.x. The [n](https://www.npmjs.com/package/n) package can help with this. Also ensure that you have [SSH access for github](https://help.github.com/articles/generating-ssh-keys/) set up.
