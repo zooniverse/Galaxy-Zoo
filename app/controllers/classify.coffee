@@ -8,6 +8,7 @@ User = require 'zooniverse/lib/models/user'
 UserGroup = require 'models/user_group'
 LoginForm = require 'zooniverse/lib/controllers/login_form'
 Intervention = require 'lib/intervention'
+Analytics = require 'lib/analytics'
 
 window.delay = (ms, fn)-> setTimeout(fn, ms)
 window.timer = (ms, fn)-> setInterval(fn, ms)
@@ -27,6 +28,7 @@ class Classify extends Spine.Controller
     'click .top .buttons .restart': 'restart'
     'click .top .buttons .invert': 'toggleInverted'
     'click .top .buttons .favorite': 'toggleFavorite'
+    'click #dismiss-intervention': 'dismissIntervention'
 
   constructor: ->
     super
@@ -51,6 +53,13 @@ class Classify extends Spine.Controller
   render: =>
     return unless @isActive()
     if @subject
+      if Intervention.interventionNeeded()
+        @showIntervention = true
+        @messageToUse = "classify.bgu_ms_exp1_intervention_text_#{Intervention.getNextIntervention()?.preconfigured_id}"
+        delay Intervention.getNextIntervention()?.presentation_duration * 1000, @completeIntervention
+        Intervention.logInterventionDelivered()
+      else
+        @showIntervention = false
       @html require('views/classify')(@)
     else
       @html '''
@@ -71,6 +80,15 @@ class Classify extends Spine.Controller
 
         @loginPrompt.show()
         new LoginForm el: '.login-prompt .login'
+
+  dismissIntervention: (e) =>
+    e.preventDefault
+    Intervention.logInterventionDismissed()
+    $(".intervention").hide()
+
+  completeIntervention: =>
+    Intervention.logInterventionCompleted()
+    $(".intervention").hide()
 
   signupPrompt: (ev) =>
     @loginPrompt = new Dialog

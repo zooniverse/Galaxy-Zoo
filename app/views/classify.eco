@@ -31,6 +31,12 @@
         </li>
       </ul>
     </div>
+    <% if @showIntervention : %>
+      <div class="intervention">
+        <p style="float:right;"><a id="dismiss-intervention" href="javascript:void(0)">&times;</a></p>
+        <p><%- I18n.t @messageToUse %></p>
+      </div>
+    <% end %>
     <div class="directions"><%- I18n.t 'classify.directions' %></div>
 
     <%- require('views/question')(@classification.question) %>

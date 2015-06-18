@@ -19,66 +19,131 @@ The most recently detected intervention that has been detected and is yet to be 
 ###
 nextIntervention = null
 
+###
+The most recently delivered intervention.
+###
+lastDeliveredIntervention = null
+
+###
+The most recently completed intervention (delivered + presentation_duration elapsed).
+###
+lastCompletedIntervention = null
+
+###
+The most recently dismissed intervention (delivered + user dismissed it prior to presentation_duration).
+###
+lastDismissedIntervention = null
+
+isInterventionNeeded = =>
+  nextIntervention?
+
+getNextIntervention = =>
+  nextIntervention
+
+setNextIntervention = (intervention) =>
+  nextIntervention = intervention
+
 # method to check for a new intervention, and set it into variable ready for delivery. Intended to be polled.
 checkForAndProcessIntervention = =>
   if !nextIntervention?
     $.ajax "#{EXPERIMENT_SERVER_URL}/users/#{User.current?.zooniverse_id}/interventions",
-        success  : (res, status, xhr) ->
+        success  : (res, status, xhr) =>
           if res.length > 0
-            nextIntervention = res[0]
+            setNextIntervention res[0]
             logInterventionDetected nextIntervention
-            console.log nextIntervention
-        error    : (xhr, status, err) ->
+        error    : (xhr, status, err) =>
           Analytics.logError {
             userID: User.current?.zooniverse_id
-            errorCode: status.toString
+            subjectID: Subject.current?.zooniverse_id # subject id
+            errorCode: "I04:"+status.toString
             errorDescription: err.toString
           }
   else
     # there is already an intervention waiting to be delivered, do nothing until next poll
 
-# log intervention as detected
-logInterventionDetected = (intervention) =>
+# log next intervention as detected
+logInterventionDetected = =>
   Analytics.logEvent {
-              projectToken: intervention.project
-              experiment: intervention.experiment_name
-              cohort: intervention.cohort_id
-              userID: intervention.user_id
+              projectToken: nextIntervention.project
+              experiment: nextIntervention.experiment_name
+              cohort: nextIntervention.cohort_id
+              userID: nextIntervention.user_id
               type: "interventionDetected"
-              subjectID: intervention.preconfigured_id # message id
-              relatedID: intervention.id # intervention id
+              subjectID: Subject.current?.zooniverse_id # subject id
+              relatedID: nextIntervention.id # intervention id
             }
 
-# log intervention as delivered (and notify experiment server)
-logInterventionDelivered = (intervention) =>
-  Analytics.logEvent {
-              projectToken: intervention.project
-              experiment: intervention.experiment_name
-              cohort: intervention.cohort_id
-              userID: intervention.user_id
-              type: "interventionDelivered"
-              subjectID: intervention.preconfigured_id # message id
-              relatedID: intervention.id # intervention id
-            }
-  nextIntervention = null
-  $.post '#{EXPERIMENT_SERVER_URL}/interventions/#{intervention.id}/delivered'
+# log next intervention as delivered (and notify experiment server)
+logInterventionDelivered = =>
+  if nextIntervention?
+    Analytics.logEvent {
+                projectToken: nextIntervention.project
+                experiment: nextIntervention.experiment_name
+                cohort: nextIntervention.cohort_id
+                userID: nextIntervention.user_id
+                type: "interventionDelivered"
+                subjectID: Subject.current?.zooniverse_id # subject id
+                relatedID: nextIntervention.id # intervention id
+              }
+    lastDeliveredIntervention = nextIntervention
+    nextIntervention = null
+    $.post "#{EXPERIMENT_SERVER_URL}/interventions/#{lastDeliveredIntervention.id}/delivered"
+  else
+    Analytics.logError {
+      userID: User.current?.zooniverse_id
+      subjectID: Subject.current?.zooniverse_id # subject id
+      errorCode: "I03"
+      errorDescription: "No next intervention available to mark as delivered."
+    }
 
-# log intervention as dismissed (and notify experiment server)
-logInterventionDismissed = (intervention) =>
-  Analytics.logEvent {
-              projectToken: intervention.project
-              experiment: intervention.experiment_name
-              cohort: intervention.cohort_id
-              userID: intervention.user_id
-              type: "interventionDismissed"
-              subjectID: intervention.preconfigured_id # message id
-              relatedID: intervention.id # intervention id
-            }
-  nextIntervention = null
-  $.post '#{EXPERIMENT_SERVER_URL}/interventions/#{intervention.id}/dismissed'
+# log next intervention as dismissed (and notify experiment server)
+logInterventionDismissed = =>
+  if lastDeliveredIntervention?
+    Analytics.logEvent {
+                projectToken: lastDeliveredIntervention.project
+                experiment: lastDeliveredIntervention.experiment_name
+                cohort: lastDeliveredIntervention.cohort_id
+                userID: lastDeliveredIntervention.user_id
+                type: "interventionDismissed"
+                subjectID: Subject.current?.zooniverse_id # subject id
+                relatedID: lastDeliveredIntervention.id # intervention id
+              }
+    lastDismissedIntervention = lastDeliveredIntervention
+    $.post "#{EXPERIMENT_SERVER_URL}/interventions/#{lastDeliveredIntervention.id}/dismissed"
+  else
+    Analytics.logError {
+      userID: User.current?.zooniverse_id
+      subjectID: Subject.current?.zooniverse_id # subject id
+      errorCode: "I01"
+      errorDescription: "No recently delivered intervention available to mark as complete."
+    }
+
+# log next intervention as completed (and notify server)
+logInterventionCompleted = =>
+  if lastDeliveredIntervention?
+    Analytics.logEvent {
+                projectToken: lastDeliveredIntervention.project
+                experiment: lastDeliveredIntervention.experiment_name
+                cohort: lastDeliveredIntervention.cohort_id
+                userID: lastDeliveredIntervention.user_id
+                type: "interventionCompleted"
+                subjectID: Subject.current?.zooniverse_id # subject id
+                relatedID: lastDeliveredIntervention.id # intervention id
+              }
+    lastCompletedIntervention = lastDeliveredIntervention
+    $.post "#{EXPERIMENT_SERVER_URL}/interventions/#{lastDeliveredIntervention.id}/completed"
+  else
+    Analytics.logError {
+      userID: User.current?.zooniverse_id
+      subjectID: Subject.current?.zooniverse_id # subject id
+      errorCode: "I02"
+      errorDescription: "No recently delivered intervention available to mark as complete."
+    }
 
 exports.checkForAndProcessIntervention = checkForAndProcessIntervention
-exports.nextIntervention = nextIntervention
 exports.logInterventionDetected = logInterventionDetected
+exports.interventionNeeded = isInterventionNeeded
+exports.getNextIntervention = getNextIntervention
 exports.logInterventionDelivered = logInterventionDelivered
 exports.logInterventionDismissed = logInterventionDismissed
+exports.logInterventionCompleted = logInterventionCompleted

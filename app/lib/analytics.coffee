@@ -12,7 +12,7 @@ buildEventData = (params) ->
   eventData['subjectID'] = params.subjectID
   eventData['type'] = params.type
   eventData['relatedID'] = params.relatedID
-  eventData['experiment'] = params.experimentName
+  eventData['experiment'] = params.experiment
   eventData['errorCode'] = ""
   eventData['errorDescription'] = ""
   eventData['cohort'] = params.cohort
@@ -58,6 +58,7 @@ This will log an error in Geordi only.
 logError = (params) ->
   eventData = buildEventData(params)
   eventData['errorCode'] = params.errorCode
+  eventData['type'] = "error"
   eventData['errorDescription'] = params.errorDescription
   logToGeordi eventData
 
