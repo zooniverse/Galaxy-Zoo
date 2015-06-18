@@ -21,7 +21,7 @@ nextIntervention = null
 
 # method to check for a new intervention, and set it into variable ready for delivery. Intended to be polled.
 checkForAndProcessIntervention = =>
-  if nextIntervention?
+  if !nextIntervention?
     $.ajax "#{EXPERIMENT_SERVER_URL}/users/#{User.current?.zooniverse_id}/interventions",
         success  : (res, status, xhr) ->
           if res.length > 0
