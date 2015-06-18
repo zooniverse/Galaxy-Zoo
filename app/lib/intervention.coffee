@@ -60,6 +60,7 @@ logInterventionDelivered = (intervention) =>
               subjectID: intervention.preconfigured_id # message id
               relatedID: intervention.id # intervention id
             }
+  nextIntervention = null
   $.post '#{EXPERIMENT_SERVER_URL}/interventions/#{intervention.id}/delivered'
 
 # log intervention as dismissed (and notify experiment server)
@@ -73,6 +74,7 @@ logInterventionDismissed = (intervention) =>
               subjectID: intervention.preconfigured_id # message id
               relatedID: intervention.id # intervention id
             }
+  nextIntervention = null
   $.post '#{EXPERIMENT_SERVER_URL}/interventions/#{intervention.id}/dismissed'
 
 exports.checkForAndProcessIntervention = checkForAndProcessIntervention
