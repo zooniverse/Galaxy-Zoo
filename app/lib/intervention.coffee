@@ -56,7 +56,7 @@ logInterventionDelivered = (intervention) =>
               experiment: intervention.experiment_name
               cohort: intervention.cohort_id
               userID: intervention.user_id
-              type: "delivered"
+              type: "interventionDelivered"
               subjectID: intervention.preconfigured_id # message id
               relatedID: intervention.id # intervention id
             }
@@ -70,7 +70,7 @@ logInterventionDismissed = (intervention) =>
               experiment: intervention.experiment_name
               cohort: intervention.cohort_id
               userID: intervention.user_id
-              type: "dismissed"
+              type: "interventionDismissed"
               subjectID: intervention.preconfigured_id # message id
               relatedID: intervention.id # intervention id
             }
