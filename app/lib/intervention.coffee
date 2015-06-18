@@ -27,7 +27,7 @@ checkForAndProcessIntervention = =>
           if res.length > 0
             nextIntervention = res[0]
             logInterventionDetected nextIntervention
-            console.log intervention
+            console.log nextIntervention
         error    : (xhr, status, err) ->
           Analytics.logError {
             userID: User.current?.zooniverse_id
