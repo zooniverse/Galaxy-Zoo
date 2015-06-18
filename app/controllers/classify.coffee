@@ -29,6 +29,7 @@ class Classify extends Spine.Controller
     'click .top .buttons .invert': 'toggleInverted'
     'click .top .buttons .favorite': 'toggleFavorite'
     'click #dismiss-intervention': 'dismissIntervention'
+    'click #intervention-talk-link': 'exitToTalk'
 
   constructor: ->
     super
@@ -89,6 +90,9 @@ class Classify extends Spine.Controller
   completeIntervention: =>
     Intervention.logInterventionCompleted()
     $(".intervention").hide()
+
+  exitToTalk: =>
+    Intervention.exitToTalk()
 
   signupPrompt: (ev) =>
     @loginPrompt = new Dialog

@@ -40,6 +40,9 @@ isInterventionNeeded = =>
 getNextIntervention = =>
   nextIntervention
 
+setReadyForNextIntervention = =>
+  nextIntervention = null
+
 setNextIntervention = (intervention) =>
   nextIntervention = intervention
 
@@ -86,7 +89,6 @@ logInterventionDelivered = =>
                 relatedID: nextIntervention.id # intervention id
               }
     lastDeliveredIntervention = nextIntervention
-    nextIntervention = null
     $.post "#{EXPERIMENT_SERVER_URL}/interventions/#{lastDeliveredIntervention.id}/delivered"
   else
     Analytics.logError {
@@ -109,6 +111,7 @@ logInterventionDismissed = =>
                 relatedID: lastDeliveredIntervention.id # intervention id
               }
     lastDismissedIntervention = lastDeliveredIntervention
+    setReadyForNextIntervention()
     $.post "#{EXPERIMENT_SERVER_URL}/interventions/#{lastDeliveredIntervention.id}/dismissed"
   else
     Analytics.logError {
@@ -117,6 +120,27 @@ logInterventionDismissed = =>
       errorCode: "I01"
       errorDescription: "No recently delivered intervention available to mark as complete."
     }
+
+# log when the user has followed the link to talk displayed in one of the intervention messages
+exitToTalk = =>
+  if nextIntervention?
+    Analytics.logEvent {
+                projectToken: nextIntervention.project
+                experiment: nextIntervention.experiment_name
+                cohort: nextIntervention.cohort_id
+                userID: nextIntervention.user_id
+                type: "interventionExitToTalk"
+                subjectID: Subject.current?.zooniverse_id # subject id
+                relatedID: nextIntervention.id # intervention id
+              }
+  else
+    Analytics.logError {
+      userID: User.current?.zooniverse_id
+      subjectID: Subject.current?.zooniverse_id # subject id
+      errorCode: "I05"
+      errorDescription: "No next intervention available to use when logging exit to Talk."
+    }
+  window.location = "http://talk.galaxyzoo.org"
 
 # log next intervention as completed (and notify server)
 logInterventionCompleted = =>
@@ -131,6 +155,7 @@ logInterventionCompleted = =>
                 relatedID: lastDeliveredIntervention.id # intervention id
               }
     lastCompletedIntervention = lastDeliveredIntervention
+    setReadyForNextIntervention()
     $.post "#{EXPERIMENT_SERVER_URL}/interventions/#{lastDeliveredIntervention.id}/completed"
   else
     Analytics.logError {
@@ -144,6 +169,9 @@ exports.checkForAndProcessIntervention = checkForAndProcessIntervention
 exports.logInterventionDetected = logInterventionDetected
 exports.interventionNeeded = isInterventionNeeded
 exports.getNextIntervention = getNextIntervention
+exports.setReadyForNextIntervention = setReadyForNextIntervention
 exports.logInterventionDelivered = logInterventionDelivered
 exports.logInterventionDismissed = logInterventionDismissed
 exports.logInterventionCompleted = logInterventionCompleted
+exports.exitToTalk = exitToTalk
+
