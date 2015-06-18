@@ -61,7 +61,7 @@ Config =
   
   developmentRemote:
     quizzesActive: false
-    apiHost: 'https://dev.zooniverse.org'
+    apiHost: 'https://olddev.zooniverse.org'
     surveys:
       candels:
         id: '50251c3b516bcb6ecb000001'

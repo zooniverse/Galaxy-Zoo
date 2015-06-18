@@ -7,6 +7,10 @@ Favorite = require 'zooniverse/lib/models/favorite'
 User = require 'zooniverse/lib/models/user'
 UserGroup = require 'models/user_group'
 LoginForm = require 'zooniverse/lib/controllers/login_form'
+Intervention = require 'lib/intervention'
+
+window.delay = (ms, fn)-> setTimeout(fn, ms)
+window.timer = (ms, fn)-> setInterval(fn, ms)
 
 class Classify extends Spine.Controller
   elements:
@@ -26,6 +30,8 @@ class Classify extends Spine.Controller
 
   constructor: ->
     super
+
+    timer 10000, Intervention.checkForAndProcessIntervention
 
     @classificationCount = 0
 
