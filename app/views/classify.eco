@@ -1,4 +1,5 @@
 <% UserGroup = require 'models/user_group' %>
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 <div id="classify">
   <div class="galaxy">
     <img src="<%= @subject.image() %>" title="<%= @subject.zooniverse_id %>" />
@@ -31,10 +32,10 @@
         </li>
       </ul>
     </div>
-    <% if @showIntervention : %>
-      <div class="intervention">
-        <p style="float:right;"><a id="dismiss-intervention" href="javascript:void(0)">&times;</a></p>
-        <p><%- I18n.t @messageToUse %></p>
+    <% if @renderIntervention : %>
+      <div class="intervention" style="display:none;">
+        <p class="dismiss-control"><a id="dismiss-intervention" href="javascript:void(0)">&times;</a></p>
+        <p class="intervention-message"><%- I18n.t @messageToUse %></p>
       </div>
     <% end %>
     <div class="directions"><%- I18n.t 'classify.directions' %></div>

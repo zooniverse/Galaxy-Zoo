@@ -55,12 +55,11 @@ class Classify extends Spine.Controller
     return unless @isActive()
     if @subject
       if Intervention.interventionNeeded()
-        @showIntervention = true
+        @renderIntervention = true
         @messageToUse = "classify.bgu_ms_exp1_intervention_text_#{Intervention.getNextIntervention()?.preconfigured_id}"
-        delay Intervention.getNextIntervention()?.presentation_duration * 1000, @completeIntervention
-        Intervention.logInterventionDelivered()
+        delay 1000,@showIntervention
       else
-        @showIntervention = false
+        @renderIntervention = false
       @html require('views/classify')(@)
     else
       @html '''
@@ -82,16 +81,21 @@ class Classify extends Spine.Controller
         @loginPrompt.show()
         new LoginForm el: '.login-prompt .login'
 
+  showIntervention: =>
+    $('.intervention').effect("slide",{"direction":"right","mode":"show"},1000);
+    delay Intervention.getNextIntervention()?.presentation_duration * 1000, @completeIntervention
+    Intervention.logInterventionDelivered()
+
   dismissIntervention: (e) =>
     e.preventDefault
     Intervention.logInterventionDismissed()
-    $(".intervention").hide()
+    $('.intervention').effect("slide",{"direction":"right","mode":"hide"},1000);
 
-  completeIntervention: =>
+  completeIntervention: () =>
     Intervention.logInterventionCompleted()
-    $(".intervention").hide()
+    $('.intervention').effect("slide",{"direction":"right","mode":"hide"},1000);
 
-  exitToTalk: =>
+  exitToTalk: () =>
     Intervention.exitToTalk()
 
   signupPrompt: (ev) =>
