@@ -47,11 +47,13 @@ class Subject extends BaseSubject
   @url: (params) -> @withParams "/projects/galaxy_zoo/groups/#{ params.surveyId }/subjects", limit: params.limit
 
   @randomSurveyId: ->
-    n = Math.random()
-    if n <= 0.1
-      @::surveys.sloan_singleband.id
-    else
-      @::surveys.sloan.id
+    return @::surveys.sloan.id
+    
+    # n = Math.random()
+    # if n <= 0.1
+    #   @::surveys.sloan_singleband.id
+    # else
+    #   @::surveys.sloan.id
 
   @next: ->
     if @current
