@@ -54,7 +54,7 @@ class Classify extends Spine.Controller
   render: =>
     return unless @isActive()
     if @subject
-      if Intervention.interventionNeeded()
+      if Intervention.isInterventionNeeded()
         @renderIntervention = true
         @messageToUse = "classify.bgu_ms_exp1_intervention_text_#{Intervention.getNextIntervention()?.preconfigured_id}"
         delay 1000,@showIntervention
@@ -82,18 +82,24 @@ class Classify extends Spine.Controller
         new LoginForm el: '.login-prompt .login'
 
   showIntervention: =>
-    $('.intervention').effect("slide",{"direction":"right","mode":"show"},1000);
-    delay Intervention.getNextIntervention()?.presentation_duration * 1000, @completeIntervention
-    Intervention.logInterventionDelivered()
+    if !@interventionAlreadyPresent
+      $('.intervention').effect("slide",{"direction":"right","mode":"show"},1000)
+      @interventionAlreadyPresent = true
+      delay Intervention.getNextIntervention()?.presentation_duration * 1000, @completeIntervention
+      Intervention.logInterventionDelivered()
 
   dismissIntervention: (e) =>
     e.preventDefault
+    @renderIntervention = false
+    @interventionAlreadyPresent = false
     Intervention.logInterventionDismissed()
-    $('.intervention').effect("slide",{"direction":"right","mode":"hide"},1000);
+    $('.intervention').effect("slide",{"direction":"right","mode":"hide"},1000)
 
   completeIntervention: () =>
     Intervention.logInterventionCompleted()
-    $('.intervention').effect("slide",{"direction":"right","mode":"hide"},1000);
+    if @interventionAlreadyPresent
+      $('.intervention').effect("slide",{"direction":"right","mode":"hide"},1000)
+      @interventionAlreadyPresent = false
 
   exitToTalk: () =>
     Intervention.exitToTalk()

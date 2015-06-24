@@ -167,7 +167,7 @@ logInterventionCompleted = =>
 
 exports.checkForAndProcessIntervention = checkForAndProcessIntervention
 exports.logInterventionDetected = logInterventionDetected
-exports.interventionNeeded = isInterventionNeeded
+exports.isInterventionNeeded = isInterventionNeeded
 exports.getNextIntervention = getNextIntervention
 exports.setReadyForNextIntervention = setReadyForNextIntervention
 exports.logInterventionDelivered = logInterventionDelivered
