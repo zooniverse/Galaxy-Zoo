@@ -8,6 +8,8 @@ UkidssTree = require 'lib/ukidss_tree'
 FerengiTree = require 'lib/ferengi_tree'
 SloanSinglebandTree = require 'lib/sloan_singleband_tree'
 GoodsTree = require 'lib/goods_full_tree'
+DecalsTree = require 'lib/decals_tree'
+IllustrisTree = require 'lib/illustris_tree'
 UserGroup = require 'models/user_group'
 
 class Subject extends BaseSubject
@@ -43,6 +45,14 @@ class Subject extends BaseSubject
       id: Config.surveys.sloan_singleband.id
       workflowId: Config.surveys.sloan_singleband.workflowId
       tree: SloanSinglebandTree
+    decals:
+      id: Config.surveys.decals.id
+      workflowId: Config.surveys.decals.workflowId
+      tree: DecalsTree
+    illustris:
+      id: Config.surveys.sloan_singleband.id
+      workflowId: Config.surveys.illustris.workflowId
+      tree: IllustrisTree
   
   @url: (params) -> @withParams "/projects/galaxy_zoo/groups/#{ params.surveyId }/subjects", limit: params.limit
 
