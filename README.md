@@ -17,9 +17,9 @@ open http://localhost:9294/
 
 ##### Install Node.js
 ```bash
+sudo apt-get install curl git python-software-properties python build-essential -y
 sudo add-apt-repository ppa:chris-lea/node.js
 sudo apt-get update && sudo apt-get dist-upgrade -y
-sudo apt-get install curl git python-software-properties python build-essential -y
 sudo apt-get install nodejs -y
 ```
 
@@ -44,3 +44,13 @@ open http://localhost:9294
 ```
 
 Depending on your browser, you may have to confirm a security exception to allow a self-signed SSL certificate for dev.zooniverse.org
+
+### License
+
+Apache 2.
+
+Zooniverse Galaxy Zoo translations not contained within this repo are also licensed under Apache 2.
+
+### Troubleshooting
+
+If you encounter issues, ensure that you are using node version no later than 0.11.14. The [n](https://www.npmjs.com/package/n) package can help with this. Also ensure that you have [SSH access for github](https://help.github.com/articles/generating-ssh-keys/) set up.

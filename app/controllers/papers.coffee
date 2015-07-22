@@ -1,14 +1,12 @@
-Spine = require 'spine'
+{ Controller } = require 'spine'
 
-class Papers extends Spine.Controller
-  constructor: ->
-    super
-  
+class Papers extends Controller
+
   active: ->
     super
     @render()
   
   render: ->
-    @html require('views/papers')(@)
+    window.location = 'http://www.zooniverse.org/publications?project=hubble'
 
 module.exports = Papers

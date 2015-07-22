@@ -1,9 +1,16 @@
 #!/usr/bin/env ruby
-
 require 'aws-sdk'
-AWS.config access_key_id: ENV['S3_ACCESS_ID'], secret_access_key: ENV['S3_SECRET_KEY']
+
+destination = (ARGV[0] ? ARGV[0] : false)
+key_path = if destination
+  File.join "www.galaxyzoo.org", destination
+else
+  "www.galaxyzoo.org"
+end
+
+AWS.config access_key_id: ENV['AWS_ACCESS_KEY_ID'], secret_access_key: ENV['AWS_SECRET_ACCESS_KEY']
 s3 = AWS::S3.new
-bucket = s3.buckets['www.galaxyzoo.org']
+bucket = s3.buckets['zooniverse-static']
 
 build = <<-BASH
 rm -rf build
@@ -96,10 +103,10 @@ to_upload.each.with_index do |file, index|
     options[:content_encoding] = 'gzip'
   end
   
-  bucket.objects[file].write options
+  bucket.objects["#{ key_path }/#{ file }"].write options
 end
 
-bucket.objects['index.html'].write file: 'index.html', acl: :public_read, content_type: 'text/html', cache_control: 'no-cache, must-revalidate'
+bucket.objects["#{ key_path }/index.html"].write file: 'index.html', acl: :public_read, content_type: 'text/html', cache_control: 'no-cache, must-revalidate'
 
 Dir.chdir working_directory
 `rm -rf build`

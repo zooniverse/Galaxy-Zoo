@@ -33,11 +33,11 @@ class Subject extends BaseSubject
       tree: FerengiTree
     candels_2epoch:
       id: Config.surveys.candels_2epoch.id
-      workflowId: Config.surveys.candels.workflowId
+      workflowId: Config.surveys.candels_2epoch.workflowId
       tree: CandelsTree
     goods_full:
       id: Config.surveys.goods_full.id
-      workflowId: Config.surveys.goods.workflowId
+      workflowId: Config.surveys.goods_full.workflowId
       tree: GoodsTree
     sloan_singleband:
       id: Config.surveys.sloan_singleband.id
@@ -45,15 +45,16 @@ class Subject extends BaseSubject
       tree: SloanSinglebandTree
   
   @url: (params) -> @withParams "/projects/galaxy_zoo/groups/#{ params.surveyId }/subjects", limit: params.limit
+
   @randomSurveyId: ->
-    @::surveys.sloan.id
-    # return @::surveys.sloan.id if UserGroup.current
+    return @::surveys.sloan.id
+    
     # n = Math.random()
-    # if n <= 0.10
-    #   @::surveys.sloan.id   # 10%
+    # if n <= 0.1
+    #   @::surveys.sloan_singleband.id
     # else
-    #   @::surveys.ukidss.id  # 90%
-  
+    #   @::surveys.sloan.id
+
   @next: ->
     if @current
       @current.destroy()
@@ -64,19 +65,14 @@ class Subject extends BaseSubject
   
   @fetch: ->
     count = Config.subjectCache - @count()
-    idCounts = { }
-    idCounts[@::surveys.sloan.id] = 0
-    idCounts[@::surveys.candels.id] = 0
-    idCounts[@::surveys.ukidss.id] = 0
-    idCounts[@::surveys.ferengi.id] = 0
-    idCounts[@::surveys.sloan_singleband.id] = 0
-    idCounts[@::surveys.candels_2epoch.id] = 0
-    idCounts[@::surveys.goods_full.id] = 0
-    idCounts[@randomSurveyId()] += 1 for i in [1..count]
-    
+    idCounts = {}
+    for i in [1..count]
+      survey = @randomSurveyId()
+      idCounts[survey] ||= 0
+      idCounts[survey] += 1
+
     hasTriggered = false
     for id, limit of idCounts
-      continue if limit is 0
       Api.get @url(surveyId: id, limit: limit), (results) =>
         @create result for result in results
         @current or= @first()
@@ -84,13 +80,6 @@ class Subject extends BaseSubject
         if @current and not hasTriggered
           hasTriggered = true
           @trigger 'fetched'
-
-  # @fetch: ->
-  #   hasTriggered = false
-  #   Api.get @url(surveyId: @::surveys.sloan.id, limit: Config.subjectCache - @count()), (results) =>
-  #     @create result for result in results
-  #     @current or= @first()
-  #     @trigger 'fetched' unless hasTriggered
   
   @show: (id) ->
     Api.get "/projects/galaxy_zoo/subjects/#{ id }"
@@ -106,5 +95,11 @@ class Subject extends BaseSubject
   workflowId: -> @survey().workflowId
   image: -> @location.standard
   thumbnail: -> @location.thumbnail
+
+  showInverted: ->
+    if @metadata.survey == 'sloan_singleband'
+      true
+    else
+      false
 
 module.exports = Subject

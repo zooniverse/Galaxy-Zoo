@@ -54,8 +54,13 @@ class Question extends Spine.Model
     question[0] or null
   
   i18nId: =>
+    # This is *getting* ridiculous.
     if @id.match /ukidss/
       @id.replace 'ukidss', 'sloan'
+    else if @id.match /sloan_singleband/
+      @id.replace 'sloan_singleband', 'sloan'
+    else if @id.match /candels_2epoch/
+      @id.replace 'candels_2epoch', 'candels'
     else if @id.match /ferengi/
       n = @id.split('-')[1]
       if n is '10'

@@ -33,14 +33,14 @@
           color: #efefef
       
       .menu
+        background: rgba(#2c2c2c, 0.75)
         display: none
-        background: rgba(black, 0.5)
         border-radius: 3px
         left: 0
         padding: 5px 0
         position: absolute
-        top: 50px;
-        z-index: 9999999;
+        top: 50px
+        z-index: 9999999
         
         li
           line-height: 2
@@ -48,11 +48,22 @@
           
           a
             display: block
-      
+
+        &.languages
+          clearfix()
+          left: auto
+          padding: 5px 10px
+          right: 0
+          width: 330px
+
+          li
+            float: left
+            margin-right: 25px
+            width: auto
+
       &:hover .menu
         display: block
       
-
       &.last
         margin-right: 0
       

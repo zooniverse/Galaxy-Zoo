@@ -44,10 +44,184 @@ module.exports =
   
   
   questions:
+    'goods_full-0':
+      text: "Is the galaxy simply smooth and rounded, with no sign of a disk?"
+      title: "Shape"
+      help: "The aim here is to divide featureless galaxies from all the rest. If you can see any interesting features at all, click &quot;features or disk.&quot; Just occasionally you might see something that isn't a galaxy at all - the long streak of a satellite, for example, or an image swamped by light from a bright star. If this happens, just click &quot;star or artifact&quot;. Click to see larger images."
+      answers:
+        'a-0': 'Smooth'
+        'a-1': 'Features or disk'
+        'a-2': 'Star or artifact'
+
+    'goods_full-1':
+      text: "How rounded is it?"
+      title: "Round"
+      help: "Not all galaxies are perfectly round - just look at the overall shape and put it in one of these three categories. If there's more than one galaxy in the field, remember always to concentrate on the one in the centre. Click to see larger images."
+      answers:
+        'a-0': 'Completely round'
+        'a-1': 'In between'
+        'a-2': 'Cigar shaped'
+
+    'goods_full-2':
+      text: "Does the galaxy have a mostly clumpy appearance?"
+      title: "Clumps"
+      help: "Some galaxies are nothing but bright clumps. We don't mean those that have other features with a few small clusters of stars, but rather those that are made up mostly of bright clumps. Click to see larger images."
+      answers:
+        'a-0': 'Yes'
+        'a-1': 'No'
+
+    'goods_full-3':
+      text: "How many clumps are there?"
+      title: "Clumps"
+      help: "Count the clumps! If there are more than 4, than don't worry about it - just click &quot;more than 4.&quot;"
+      answers:
+        'a-0': '1'
+        'a-1': '2'
+        'a-2': '3'
+        'a-3': '4'
+        'a-4': 'More than 4'
+        'a-5': 'Can\'t tell'
+
+    'goods_full-4':
+      text: "Do the clumps appear in a straight line, a chain, or a cluster?"
+      title: "Clumps"
+      help: "Sometimes the clumps appear in a regular pattern - if so, then click the appropriate symbol."
+      answers:
+        'a-0': 'Straight Line'
+        'a-1': 'Chain'
+        'a-2': 'Cluster'
+        'a-3': 'Spiral'
+
+    'goods_full-5':
+      text: "Is there one clump which is clearly brighter than the others?"
+      title: "Clumps"
+      help: "Sometimes one clump dominates the scene. If so, click yes, otherwise, no."
+      answers:
+        'a-0': 'Yes'
+        'a-1': 'No'
+
+    'goods_full-6':
+      text: "Is the brightest clump central to the galaxy?"
+      title: "Clumps"
+      help: "For very clumpy galaxies it may be difficult to tell, but make your best guess whether that brightest clump lies at the centre of the system or not."
+      answers:
+        'a-0': 'Yes'
+        'a-1': 'No'
+
+    'goods_full-7':
+      text: "Does the galaxy appear symmetrical?"
+      title: "Symmetry"
+      help: "Are both halves of the galaxy the same? Or is one side disrupted or different in some way?"
+      answers:
+        'a-0': 'Yes'
+        'a-1': 'No'
+
+    'goods_full-8':
+      text: "Do the clumps appear to be embedded within a larger object?"
+      title: "Clumps"
+      help: "Look carefully for faint background light surrounding the clumps - are they embedded in a visible galaxy?"
+      answers:
+        'a-0': 'Yes'
+        'a-1': 'No'
+
+    'goods_full-9':
+      text: "Could this be a disk viewed edge-on?"
+      title: "Disk"
+      help: "Disc galaxies are very thin, so look different when viewed from the side. We're trying to find exactly edge-on galaxies with this question. If the galaxy looks needle-like, perhaps with a bulge at the centre, then click &quot;yes,&quot; otherwise choose &quot;no&quot; (even for galaxies almost edge-on). Click to see larger images."
+      answers:
+        'a-0': 'Yes'
+        'a-1': 'No'
+
+    'goods_full-10':
+      text: "Does the galaxy have a bulge at its center? If so, what shape?"
+      title: "Bulge"
+      help: "Concentrate on the centre of the galaxy - if it has a smooth, uninterrupted, needle or lens-shape then click &quot;no bulge.&quot; Otherwise your options are &quot;rounded&quot; bulge or &quot;boxy&quot; (but boxy bulges are rare). Click to see larger images."
+      answers:
+        'a-0': 'Rounded'
+        'a-1': 'Boxy'
+        'a-2': 'No bulge'
+
+    'goods_full-11':
+      text: "Is there any sign of a bar feature through the centre of the galaxy?"
+      title: "Bar"
+      help: "Sometimes galaxies have a prominent straight &quot;bar&quot; running through their centre, and that's what we're looking for here. Click to see larger images."
+      answers:
+        'a-0': 'Bar'
+        'a-1': 'No bar'
+
+    'goods_full-12':
+      text: "Is there any sign of a spiral arm pattern?"
+      title: "Spiral"
+      help: "Look carefully for spiral arms - remember they may be embedded in the disk and not that easy to see. Click to see larger images."
+      answers:
+        'a-0': 'Spiral'
+        'a-1': 'No spiral'
+
+    'goods_full-13':
+      text: "How tightly wound do the spiral arms appear?"
+      title: "Spiral"
+      help: "Astronomers classify galaxies by how tight their arms are - you might find it easiest to see closest to the centre. Click to see larger images."
+      answers:
+        'a-0': 'Tight'
+        'a-1': 'Medium'
+        'a-2': 'Loose'
+
+    'goods_full-14':
+      text: "How many spiral arms are there?"
+      title: "Spiral"
+      help: "Some spiral galaxies are rather complicated, so don't be afraid to use the &quot;more than 4&quot; or &quot;can't tell&quot; buttons here."
+      answers:
+        'a-0': '1'
+        'a-1': '2'
+        'a-2': '3'
+        'a-3': '4'
+        'a-4': 'More than 4'
+        'a-5': 'Can\'t tell'
+
+    'goods_full-15':
+      text: "How prominent is the central bulge, compared with the rest of the galaxy?"
+      title: "Bulge"
+      help: "It's not always easy to tell, but look at the centre of the galaxy for a round bulge of stars which may obscure any bar and the spiral arms in this central region. Click to see larger images."
+      answers:
+        'a-0': 'No bulge'
+        'a-1': 'Obvious'
+        'a-2': 'Dominant'
+
+    'goods_full-16':
+      text: "Would you like to discuss this object?"
+      title: "Discuss"
+      help: "If you have any questions about this object, or think it may be interesting to others, or just have something to say, you can start a discussion on Talk by clicking &quot;Yes&quot;. Talk will open in a new window - just close it to come back to the classification page."
+      answers:
+        'a-0': 'Yes'
+        'a-1': 'No'
+
+    'goods_full-17':
+      text: "Is there anything odd?"
+      title: "Odd"
+      help: "We're looking for signs that the galaxy is merging, is disturbed, or has other unusual features. Click to see larger images."
+      answers:
+        'a-0': 'Yes'
+        'a-1': 'No'
+
+    'goods_full-18':
+      text: "What are the odd features?"
+      title: "Odd"
+      help: ""
+      answers:
+        'a-0': 'Done'
+      checkboxes:
+        'x-0': 'Ring'
+        'x-1': 'Lens or arc'
+        'x-2': 'Disturbed'
+        'x-3': 'Irregular'
+        'x-4': 'Other'
+        'x-5': 'Merger'
+        'x-6': 'Dust lane'
+
     'sloan-0':
       text: "Is the galaxy simply smooth and rounded, with no sign of a disk?"
       title: "Shape"
-      help: "The aim here is to divide featureless galaxies from all the rest. If you can see any interesting features at all, click &quot;features or disk.&quot; Just occasionally you might see something that isn't a galaxy at all - the long streak of a satellite, for example, or a image swamped by light from a bright star. If this happens, just click &quot;star or artifact&quot;. Click to see larger images."
+      help: "The aim here is to divide featureless galaxies from all the rest. If you can see any interesting features at all, click &quot;features or disk.&quot; Just occasionally you might see something that isn't a galaxy at all - the long streak of a satellite, for example, or an image swamped by light from a bright star. If this happens, just click &quot;star or artifact&quot;. Click to see larger images."
       answers:
         'a-0': 'Smooth'
         'a-1': 'Features or disk'
@@ -160,7 +334,7 @@ module.exports =
     'candels-0':
       text: "Is the galaxy simply smooth and rounded, with no sign of a disk?"
       title: "Shape"
-      help: "The aim here is to divide featureless galaxies from all the rest. If you can see any interesting features at all, click &quot;features or disk.&quot; Just occasionally you might see something that isn't a galaxy at all - the long streak of a satellite, for example, or a image swamped by light from a bright star. If this happens, just click &quot;star or artifact&quot;. Click to see larger images."
+      help: "The aim here is to divide featureless galaxies from all the rest. If you can see any interesting features at all, click &quot;features or disk.&quot; Just occasionally you might see something that isn't a galaxy at all - the long streak of a satellite, for example, or an image swamped by light from a bright star. If this happens, just click &quot;star or artifact&quot;. Click to see larger images."
       answers:
         'a-0': 'Smooth'
         'a-1': 'Features or disk'
@@ -579,7 +753,7 @@ module.exports =
     explanation:
       goals: 'This page aims to give background to the scientific motivation behind the project for a more technical audience.'
       data: 'You may be looking for data - public Galaxy Zoo data is available in a range of formats <a href="http://data.galaxyzoo.org">here</a>.'
-      papers: 'Alternatively, you can browse a list of papers published by the team <a href="/#/papers">here</a>.'
+      papers: 'Alternatively, you can browse a list of papers published by the team <a href="http://www.zooniverse.org/publications?project=hubble">here</a>.'
     
     morphology:
       heading: 'Why is galaxy morphology important?'
@@ -613,10 +787,14 @@ module.exports =
     candels: 'Hubble'
     ukidss: 'UKIDSS'
     ferengi: 'SDSS'
+    candels_2epoch: 'Hubble'
+    goods_full: 'Hubble'
+    sloan_singleband: 'SDSS'
     group: 'Group'
     favorite: 'Favourite'
     invert: 'Invert'
-  
+    directions: 'Note: Please always classify the galaxy in the center of the image.'
+
   
   help:
     title: 'Help'
@@ -673,12 +851,6 @@ module.exports =
   languages:
     language: 'Language'
   
-  papers:
-    title: 'Published Papers'
-    description: 'The efforts of the Galaxy Zoo community has resulted in fantastically rich dataset with which to do science. Below is a list of just some of the publications that have come about because of the classifications collected on Galaxy Zoo.'
-    available: 'available here'
-  
-  
   profile:
     favorites: 'Favourites'
     recents: 'Recents'
@@ -722,7 +894,7 @@ module.exports =
     title: 'The Story So Far'
     p1: "The launch of this new version of Galaxy Zoo, the 4th, comes just a few weeks after the site's 5th birthday. It all started back in July 2007, with a data set made up of a million galaxies imaged by the Sloan Digital Sky Survey, who still provide some of the images in the site today. With so many galaxies, we'd assumed it would take years for visitors to the site to work through them all, but within 24 hours of launch we were stunned to be receiving almost 70,000 classifications an hour. In the end, more than 50 million classifications were received by the project during its first year, contributed by more than 150,000 people."
     p2: "That meant that each galaxy was seen by many different participants. This is deliberate; having multiple independent classifications of the same object is important, as it allows us to assess how reliable our results are. For example, for projects where we may only need a few thousand galaxies but want to be sure they're all spirals before using up valuable telescope time on them, there's no problem - we can just use those that 100% of classifiers agree are spiral. For other projects, we may need to look at the properties of hundreds of thousands of galaxies, and can use those that a majority say are spiral."
-    p3: '''The task in that first Galaxy Zoo was slightly simpler than yours; all we asked volunteers to do was to split the galaxies into ellipticals, mergers and spirals and - if the galaxy was spiral - to record the direction of the arms. But it was enough to show that the classifications Galaxy Zoo provides were as good as those from professional astronomers, and were of use to a large number of researchers. You can find out what people have been up to with Galaxy Zoo data in our list of <a href="#/papers" data-nav="/papers">papers published</a> and on the <a href="http://blog.galaxyzoo.org" target="_blank">Galaxy Zoo blog</a>, as well as below. Perhaps the most exciting sign of success is the fact that we’ve been successful in bidding for time on some of the largest telescopes in the world to follow up on many Galaxy Zoo discoveries : the list currently includes the Isaac Newton and William Herschel Telescopes on the island of La Palma in the Canaries, Gemini South in Chile, the WIYN telescope on Kitt Peak, Arizona, the IRAM radio telescope in Spain's Sierra Nevada, Swift, GALEX, Chandra, XMM-Newton and Suzaku up in space, and perhaps most excitingly the Hubble Space Telescope.'''
+    p3: '''The task in that first Galaxy Zoo was slightly simpler than yours; all we asked volunteers to do was to split the galaxies into ellipticals, mergers and spirals and - if the galaxy was spiral - to record the direction of the arms. But it was enough to show that the classifications Galaxy Zoo provides were as good as those from professional astronomers, and were of use to a large number of researchers. You can find out what people have been up to with Galaxy Zoo data in our list of <a href="http://www.zooniverse.org/publications?project=hubble">papers published</a> and on the <a href="http://blog.galaxyzoo.org" target="_blank">Galaxy Zoo blog</a>, as well as below. Perhaps the most exciting sign of success is the fact that we’ve been successful in bidding for time on some of the largest telescopes in the world to follow up on many Galaxy Zoo discoveries : the list currently includes the Isaac Newton and William Herschel Telescopes on the island of La Palma in the Canaries, Gemini South in Chile, the WIYN telescope on Kitt Peak, Arizona, the IRAM radio telescope in Spain's Sierra Nevada, Swift, GALEX, Chandra, XMM-Newton and Suzaku up in space, and perhaps most excitingly the Hubble Space Telescope.'''
     p4: "Galaxy Zoo 2 was inspired by our newfound confidence in the ability of you, our volunteer classifiers, and so we asked for a closer look at just over 200,000 of the brightest of the Sloan galaxies. We asked about the number of spiral arms, the size of the galaxies' bulges and much else besides. Once again, we were thrilled with the response (and a little more prepared for it than we were for Zoo 1!) and in the 14 months the site was up we received a little more than 60 million classifications."
     p5: "Along the way, we added more detailed images from an area of the survey known as 'Stripe 82', but it was soon time to look at the more distant Universe. The site’s third incarnation, Galaxy Zoo : Hubble drew from surveys conducted by the Hubble Space Telescope to view earlier epochs of galaxy formation. In these surveys, which involve many, many days of dedicated observing time, we can see light from galaxies which has taken billions of years to reach us. The idea behind Galaxy Zoo : Hubble was to be able to compare galaxies then to galaxies now, giving us a clear understanding of what factors influence their growth, whether through mergers, active black holes or simply star formation."
     p6: '''The present day Galaxy Zoo combines new imaging from Sloan, giving us our best ever view of the local Universe, with the most distant images yet from Hubble's CANDELS survey. The <a href="http://candels.ucolick.org" target="_blank">CANDELS survey</a> makes use of the new Wide Field Camera 3 - installed during the final shuttle mission to Hubble - to take ultra-deep images of the Universe, so who knows what's out there to be found?'''

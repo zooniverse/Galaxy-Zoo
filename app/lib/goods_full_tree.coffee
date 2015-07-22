@@ -2,7 +2,7 @@ DecisionTree = require 'lib/decision_tree'
 
 GoodsTree = new DecisionTree 'goods_full', ->
   @question 'Shape', 'Is the galaxy simply smooth and rounded, with no sign of a disk?', ->
-    @help "The aim here is to divide featureless galaxies from all the rest. If you can see any interesting features at all, click &quot;features or disk.&quot; Just occasionally you might see something that isn't a galaxy at all - the long streak of a satellite, for example, or a image swamped by light from a bright star. If this happens, just click &quot;star or artifact&quot;. Click to see larger images."
+    @help "The aim here is to divide featureless galaxies from all the rest. If you can see any interesting features at all, click &quot;features or disk.&quot; Just occasionally you might see something that isn't a galaxy at all - the long streak of a satellite, for example, or an image swamped by light from a bright star. If this happens, just click &quot;star or artifact&quot;. Click to see larger images."
     @answer 'Smooth', leadsTo: 'How rounded is it?', icon: 'smooth_round', examples: 2
     @answer 'Features or disk', leadsTo: 'Does the galaxy have a mostly clumpy appearance?', icon: 'feature_clumpy', examples: 2
     @answer 'Star or artifact', leadsTo: 'Would you like to discuss this object?', icon: 'star', examples: 2
@@ -32,7 +32,7 @@ GoodsTree = new DecisionTree 'goods_full', ->
     @answer 'Straight Line', icon: 'clump_line', examples: 2
     @answer 'Chain', icon: 'clump_chain', examples: 2
     @answer 'Cluster / Irregular', icon: 'clump_cluster', examples: 2
-    @answer 'Spiral', icon: 'clump_spiral', examples: 2
+    @answer 'Spiral', icon: 'clump_spiral', examples: 1
   
   @question 'Clumps', 'Is there one clump which is clearly brighter than the others?', ->
     @help "Sometimes one clump dominates the scene. If so, click yes, otherwise, no."
@@ -52,7 +52,7 @@ GoodsTree = new DecisionTree 'goods_full', ->
   @question 'Clumps', 'Do the clumps appear to be embedded within a larger object?', leadsTo: 'Is there anything odd?', ->
     @help "Look carefully for faint background light surrounding the clumps - are they embedded in a visible galaxy?"
     @answer 'Yes', icon: 'yes', examples: 2
-    @answer 'No', icon: 'no', examples: 2
+    @answer 'No', icon: 'no', examples: 1
   
   @question 'Disk', 'Could this be a disk viewed edge-on?', ->
     @help "Disc galaxies are very thin, so look different when viewed from the side. We're trying to find exactly edge-on galaxies with this question. If the galaxy looks needle-like, perhaps with a bulge at the centre, then click &quot;yes,&quot; otherwise choose &quot;no&quot; (even for galaxies almost edge-on). Click to see larger images."
@@ -62,7 +62,7 @@ GoodsTree = new DecisionTree 'goods_full', ->
   @question 'Bulge', 'Does the galaxy have a bulge at its center? If so, what shape?', leadsTo: 'Is there anything odd?', ->
     @help "Concentrate on the centre of the galaxy - if it has a smooth, uninterrupted, needle or lens-shape then click &quot;no bulge.&quot; Otherwise your options are &quot;rounded&quot; bulge or &quot;boxy&quot; (but boxy bulges are rare). Click to see larger images."
     @answer 'Rounded', icon: 'edge_round', examples: 2
-    @answer 'Boxy', icon: 'edge_boxy', examples: 2
+    @answer 'Boxy', icon: 'edge_boxy', examples: 1
     @answer 'No bulge', icon: 'edge_none', examples: 2
   
   @question 'Bar', 'Is there any sign of a bar feature through the centre of the galaxy?', leadsTo: 'Is there any sign of a spiral arm pattern?', ->
@@ -77,7 +77,7 @@ GoodsTree = new DecisionTree 'goods_full', ->
   
   @question 'Spiral', 'How tightly wound do the spiral arms appear?', leadsTo: 'How many spiral arms are there?', ->
     @help "Astronomers classify galaxies by how tight their arms are - you might find it easiest to see closest to the centre. Click to see larger images."
-    @answer 'Tight', icon: 'spiral_tight', examples: 2
+    @answer 'Tight', icon: 'spiral_tight', examples: 1
     @answer 'Medium', icon: 'spiral_medium', examples: 2
     @answer 'Loose', icon: 'spiral_loose', examples: 2
   
@@ -86,13 +86,13 @@ GoodsTree = new DecisionTree 'goods_full', ->
     @answer '1', icon: 'spiral_1', examples: 2
     @answer '2', icon: 'spiral_2', examples: 2
     @answer '3', icon: 'spiral_3', examples: 2
-    @answer '4', icon: 'spiral_4', examples: 2
+    @answer '4', icon: 'spiral_4', examples: 1
     @answer 'More than 4', icon: 'spiral_4-plus', examples: 2
     @answer "Can't tell", icon: 'spiral_cant-tell'
   
   @question 'Bulge', 'How prominent is the central bulge, compared with the rest of the galaxy?', leadsTo: 'Is there anything odd?', ->
     @help "It's not always easy to tell, but look at the centre of the galaxy for a round bulge of stars which may obscure any bar and the spiral arms in this central region. Click to see larger images."
-    @answer 'No bulge', icon: 'bulge_none', examples: 2
+    @answer 'No bulge', icon: 'bulge_none', examples: 1
     @answer 'Obvious', icon: 'bulge_obvious', examples: 2
     @answer 'Dominant', icon: 'bulge_dominant', examples: 2
   
@@ -111,10 +111,10 @@ GoodsTree = new DecisionTree 'goods_full', ->
     @checkbox 'Lens or arc', icon: 'lens', examples: 2
     @checkbox 'Disturbed', icon: 'disturbed', examples: 2
     @checkbox 'Irregular', icon: 'irregular', examples: 2
-    @checkbox 'Other', icon: 'other', examples: 2
+    @checkbox 'Other', icon: 'other', examples: 1
     @checkbox 'Merger', icon: 'merger', examples: 2
     @checkbox 'Dust lane', icon: 'dustlane', examples: 3
-    @answer 'Done', leadsTo: 'Would you like to discuss this object?', icon: 'yes', examples: 2
+    @answer 'Done', leadsTo: 'Would you like to discuss this object?', icon: 'yes'
 
 module.exports = GoodsTree
 

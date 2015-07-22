@@ -76,14 +76,14 @@ Config =
         id: '5249cbce3ae740728d000001'
         workflowId: '5249cbc33ae74070ed000001'
       candels_2epoch:
-        id: ''
-        workflowId: '50217499516bcb0fda000003'
+        id: '5501b09e7b9f9931d4000001'
+        workflowId: '5501b09e7b9f9931d4000002'
       goods_full:
-        id: ''
-        workflowId: ''
+        id: '5501aef27b9f992e7c000001'
+        workflowId: '5501aef27b9f992e7c000002'
       sloan_singleband:
-        id: ''
-        workflowId: ''
+        id: '5501a2c17b9f991a95000001'
+        workflowId: '5501a9be7b9f992679000001'
     subjectCache: 5
     quiz:
       invitationId: '502bfa73516bcb3c600003e9'
@@ -106,25 +106,21 @@ Config =
         id: '5249cbce3ae740728d000001'
         workflowId: '5249cbc33ae74070ed000001'
       candels_2epoch:
-        id: ''
-        workflowId: '50217499516bcb0fda000003'
+        id: '551456e02f0eef2535000001'
+        workflowId: '551456e02f0eef2535000002'
       goods_full:
-        id: ''
-        workflowId: ''
+        id: '551453e12f0eef21f2000001'
+        workflowId: '551453e12f0eef21f2000002'
       sloan_singleband:
-        id: ''
-        workflowId: ''
+        id: '5514521e2f0eef2012000001'
+        workflowId: '5514521f2f0eef2012000002'
     subjectCache: 5
     quiz:
       invitationId: '502bfa73516bcb3c600003e9'
       workflowId: '502a701e516bcb0001000002'
 
-env = if window.jasmine
-  'test'
-else if window.location.port is '9294'
+env = if window.location.port > 1024
   'developmentRemote'
-else if window.location.port > 1024 
-  'developmentLocal'
 else
   'production'
 
