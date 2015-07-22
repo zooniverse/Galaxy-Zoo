@@ -1,0 +1,41 @@
+<%- @info I18n.t('examine.survey'), I18n.t('examine.illustris') %>
+<%- @info I18n.t('examine.subhalo'), @subject.metadata.subhalo_id %>
+<%- @info I18n.t('examine.camera'), @subject.metadata.camera %>
+<%- @info I18n.t('examine.background'), @subject.metadata.background %>
+<%- @info I18n.t('examine.band'), @subject.metadata.bands %>
+<%- @info I18n.t('examine.absmagnitude'), @subject.metadata.mag.absmag_r %>
+<%- @info I18n.t('examine.petro_rad'), @subject.metadata.radius_half, 'kpc' %>
+<%- @info I18n.t('examine.mass'), @subject.metadata.mass_log_msun, 'log M&#9737;' %>
+<%- @info I18n.t('examine.sfr'), @subject.metadata.sfr, 'M_sun/yr' %>
+
+<div class="row">
+  <span class="blank"></span>
+</div>
+
+<div class="row">
+  <span class="key"></span>
+  <span class="value">
+    <a target="_blank" href="http://www.illustris-project.org/api/Illustris-1/snapshots/135/subhalos/<%= @subject.metadata.subhalo_id %>"><%- I18n.t 'examine.illustris_link' %></a>
+  </span>
+</div>
+
+<div class="row">
+  <span class="key"></span>
+  <span class="value">
+    <a target="_blank" href="http://www.illustris-project.org/explorer/#"><%- I18n.t 'examine.explorer_link' %></a>
+  </span>
+</div>
+
+<div class="row">
+  <span class="key"></span>
+  <span class="value">
+    <a target="_blank" href="http://ned.ipac.caltech.edu/cgi-bin/nph-objsearch?search_type=Near+Position+Search&RA=<%= @subject.coords[0] %>&DEC=<%= @subject.coords[1]%>&SR=0.0166666667"><%- I18n.t 'examine.ned_link' %></a>
+  </span>
+</div>
+
+<div class="row">
+  <span class="key"></span>
+  <span class="value">
+    <a target="_blank" href="http://talk.galaxyzoo.org/#/subjects/<%= @subject.zooniverse_id %>"><%- I18n.t 'examine.discuss' %></a>
+  </span>
+</div>
