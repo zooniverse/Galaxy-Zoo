@@ -51,8 +51,9 @@ checkForAndProcessIntervention = =>
   if !nextIntervention?
     $.ajax "#{EXPERIMENT_SERVER_URL}/users/#{User.current?.zooniverse_id}/interventions",
         success  : (res, status, xhr) =>
-          if res.length > 0
-            setNextIntervention res[0]
+          interventions = res.interventions
+          if interventions.length > 0
+            setNextIntervention interventions[0]
             logInterventionDetected nextIntervention
         error    : (xhr, status, err) =>
           Analytics.logError {
@@ -63,6 +64,49 @@ checkForAndProcessIntervention = =>
           }
   else
     # there is already an intervention waiting to be delivered, do nothing until next poll
+
+# record this user's permanent opt out with the experiment server.
+performOptOut = =>
+  $.ajax "#{EXPERIMENT_SERVER_URL}/users/#{User.current?.zooniverse_id}/optout",
+    success  : (res, status, xhr) =>
+      logOptOut()
+    error    : (xhr, status, err) =>
+      Analytics.logError {
+        userID: User.current?.zooniverse_id
+        subjectID: Subject.current?.zooniverse_id # subject id
+        errorCode: "I06:"+status.toString
+        errorDescription: err.toString
+      }
+
+# log user opt out to Geordi and to BGU
+logOptOut = =>
+  eventType = "optOut"
+  # log to Geordi
+  Analytics.logEvent {
+              projectToken: nextIntervention.project
+              experiment: nextIntervention.experiment_name
+              cohort: nextIntervention.cohort_id
+              userID: nextIntervention.user_id
+              type: eventType
+              subjectID: Subject.current?.zooniverse_id # subject id
+              relatedID: nextIntervention.id # intervention id
+            }
+  # log to BGU server
+  bgu_payload =
+    "source" : "galaxy_zoo"
+    "event_type" : eventType
+    "timestamp": Date.now()
+    "user_id": nextIntervention.user_id
+    "experiment_name": nextIntervention.experiment_name
+    "project": nextIntervention.project
+    "additional_info": ""
+  $.ajax {
+    url: 'http://lassi.ise.bgu.ac.il/add_event/"',
+    type: 'POST',
+    contentType: 'application/json; charset=utf-8',
+    data: JSON.stringify(bgu_payload),
+    dataType: 'json'
+  }
 
 # log next intervention as detected
 logInterventionDetected = =>
