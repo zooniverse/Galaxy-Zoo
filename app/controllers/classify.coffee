@@ -29,6 +29,7 @@ class Classify extends Spine.Controller
     'click .top .buttons .invert': 'toggleInverted'
     'click .top .buttons .favorite': 'toggleFavorite'
     'click #dismiss-intervention': 'dismissIntervention'
+    'click #opt-out-link': 'optOut'
     'click #intervention-talk-link': 'exitToTalk'
 
   constructor: ->
@@ -57,6 +58,8 @@ class Classify extends Spine.Controller
       if Intervention.isInterventionNeeded()
         @renderIntervention = true
         @messageToUse = "classify.bgu_ms_exp1_intervention_text_#{Intervention.getNextIntervention()?.preconfigured_id}"
+        @optOutLink = "classify.bgu_ms_exp1_intervention_opt_out_link"
+        @optedOutLinkText = "classify.bgu_ms_exp1_intervention_opted_out_link_text"
         delay 1000,@showIntervention
       else
         @renderIntervention = false
@@ -87,6 +90,12 @@ class Classify extends Spine.Controller
       @interventionAlreadyPresent = true
       delay Intervention.getNextIntervention()?.presentation_duration * 1000, @completeIntervention
       Intervention.logInterventionDelivered()
+
+  optOut: (e) =>
+    e.preventDefault
+    Intervention.performOptOut()
+    $("#opt-out-link").text(I18n.t @optedOutLinkText)
+    $("#opt-out-link").removeAttr('href');
 
   dismissIntervention: (e) =>
     e.preventDefault
@@ -153,12 +162,13 @@ class Classify extends Spine.Controller
       quickHide: true
       closeButton: true
       callback: -> @el().remove()
-
+    Analytics.logEvent { 'type' : 'help' }
     @helpDialog.question = @classification.question
     @helpDialog.show()
     ev.preventDefault()
 
   restart: (ev) ->
+    Analytics.logEvent { 'type' : 'restart' }
     @classification = new Classification subject_id: @subject.id
     @render()
     ev.preventDefault()
@@ -168,12 +178,16 @@ class Classify extends Spine.Controller
       @image.attr 'src', Subject.current.location.standard
     else
       @image.attr 'src', Subject.current.location.inverted
-
+    Analytics.logEvent { 'type' : 'invert' }
     @invertLink.toggleClass 'active'
     @image.toggleClass 'inverted'
 
   toggleFavorite: (ev) ->
     @favoriteLink.toggleClass 'active'
+    if @favoriteLink.hasClass 'active'
+      Analytics.logEvent { 'type' : 'favorite' }
+    else
+      Analytics.logEvent { 'type' : 'unfavorite' }
     @classification.isFavorited = @favoriteLink.hasClass 'active'
     ev.preventDefault()
 
@@ -182,7 +196,7 @@ class Classify extends Spine.Controller
       template: 'views/example'
       quickHide: true
       closeButton: true
-
+    Analytics.logEvent { 'type' : 'example' }
     dialog.example = $(ev.target).closest('.example-thumbnail').data 'example'
     dialog.show()
     dialog.el().find('.dialog').css 'height', @helpDialog.el().find('.dialog').height()
@@ -202,6 +216,7 @@ class Classify extends Spine.Controller
     !@classification.question
 
   finish: ->
+    Analytics.logEvent { 'type' : 'classify' }
     Subject.next()
     @nextSubject()
 

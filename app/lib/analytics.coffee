@@ -1,23 +1,45 @@
-$ = require('jqueryify')
+$ = require 'jqueryify'
+Subject = require 'models/subject'
+UserGetter = require 'lib/userID'
+Intervention = require 'lib/intervention'
 
 buildEventData = (params) ->
   eventData = {}
   # defaults
+  eventData['subjectID'] = Subject.current?.zooniverse_id
+  console.log Subject.current
+  debugger
+  eventData['relatedID'] = Intervention.currentRelatedId
+  eventData['experiment'] = Intervention.currentExperimentName
+  eventData['projectToken'] = Subject.projectName
+  eventData['cohort'] = Intervention.currentCohort
   eventData['projectToken'] = "galaxy_zoo"
   eventData['userID'] = "(anonymous)"
   # set fields from params
   eventData['time'] = Date.now()
   eventData['projectToken'] = params.projectToken if params.projectToken?
   eventData['userID'] = params.userID if params.userID?
-  eventData['subjectID'] = params.subjectID
+  eventData['subjectID'] = params.subjectID if params.subjectID?
   eventData['type'] = params.type
-  eventData['relatedID'] = params.relatedID
-  eventData['experiment'] = params.experiment
+  eventData['relatedID'] = params.relatedID if params.relatedID?
+  eventData['experiment'] = params.experiment if params.experiment?
   eventData['errorCode'] = ""
   eventData['errorDescription'] = ""
-  eventData['cohort'] = params.cohort
-
+  eventData['cohort'] = params.cohort if params.cohort?
   eventData
+
+addUserDetailsToEventData = (eventData) ->
+  eventualUserIdentifier = new $.Deferred
+  UserGetter.getUserIDorIPAddress()
+  .then (data) =>
+    if data?
+      UserGetter.currentUserID = data
+  .fail =>
+    UserGetter.currentUserID = "(anonymous)"
+  .always =>
+    eventData['userID'] = UserGetter.currentUserID
+    eventualUserIdentifier.resolve eventData
+  eventualUserIdentifier.promise()
 
 ###
 log event with Geordi v2
@@ -49,8 +71,10 @@ This will log a user interaction both in the Geordi analytics API and in Google 
 ###
 logEvent = (params) =>
   eventData = buildEventData(params)
-  logToGeordi eventData
-  logToGoogle eventData
+  addUserDetailsToEventData(eventData)
+  .always (eventData) =>
+    logToGeordi eventData
+    logToGoogle eventData
 
 ###
 This will log an error in Geordi only.

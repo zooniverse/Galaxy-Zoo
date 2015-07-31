@@ -9,6 +9,8 @@ Quizzes = require 'controllers/quizzes'
 TopBar = require 'zooniverse/lib/controllers/top_bar'
 googleAnalytics = require 'zooniverse/lib/google_analytics'
 BrowserCheck = require 'zooniverse/lib/controllers/browser_check'
+Analytics = require 'lib/analytics'
+User = require 'zooniverse/lib/models/user'
 
 class App extends Spine.Controller
   constructor: ->
@@ -41,5 +43,18 @@ for image in ['icons.png', 'workflow.png', 'examples.jpg', 'gz-icon-hubble.png',
 googleAnalytics.init account: 'UA-1224199-9', domain: 'galaxyzoo.org'
 
 (new BrowserCheck).check()
+
+$(window).bind('beforeunload', (e) ->
+    Analytics.logEvent { 'type' : 'leave' }
+    event.preventDefault()
+)
+
+recordLoginLogout = =>
+  if User.current?
+    Analytics.logEvent { 'type' : 'login' }
+  else
+    Analytics.logEvent { 'type' : 'logout' }
+
+User.bind('sign-in', recordLoginLogout);
 
 module.exports = App

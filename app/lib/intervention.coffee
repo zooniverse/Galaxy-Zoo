@@ -1,7 +1,6 @@
 $ = require('jqueryify')
 User = require 'zooniverse/lib/models/user'
 Subject = require 'models/subject'
-Classification = require 'models/classification'
 Analytics = require 'lib/analytics'
 
 # CONSTANTS #
@@ -10,7 +9,14 @@ Analytics = require 'lib/analytics'
 The URL of the experiment server to use
 ###
 # prod:
-EXPERIMENT_SERVER_URL = "http://experiments.zooniverse.org"
+# EXPERIMENT_SERVER_URL = "http://experiments.zooniverse.org"
+# dev:
+EXPERIMENT_SERVER_URL = "http://localhost:4567"
+
+###
+Experiment Name
+###
+EXPERIMENT_NAME = "Zooniverse-MSR-BGU GalaxyZoo Experiment 1"
 
 # VARIABLES #
 
@@ -18,6 +24,11 @@ EXPERIMENT_SERVER_URL = "http://experiments.zooniverse.org"
 The most recently detected intervention that has been detected and is yet to be processed. This should be set to null once delivered.
 ###
 nextIntervention = null
+
+###
+The most recently detected intervention. This is never set to null.
+###
+lastDetectedIntervention = null
 
 ###
 The most recently delivered intervention.
@@ -57,9 +68,7 @@ checkForAndProcessIntervention = =>
             logInterventionDetected nextIntervention
         error    : (xhr, status, err) =>
           Analytics.logError {
-            userID: User.current?.zooniverse_id
-            subjectID: Subject.current?.zooniverse_id # subject id
-            errorCode: "I04:"+status.toString
+            errorCode: "I04:"+status.toString()
             errorDescription: err.toString
           }
   else
@@ -67,16 +76,18 @@ checkForAndProcessIntervention = =>
 
 # record this user's permanent opt out with the experiment server.
 performOptOut = =>
-  $.ajax "#{EXPERIMENT_SERVER_URL}/users/#{User.current?.zooniverse_id}/optout",
-    success  : (res, status, xhr) =>
+  $.ajax {
+    url: "#{EXPERIMENT_SERVER_URL}/users/#{User.current?.zooniverse_id}/optout"
+    type: 'POST'
+    data: {project: "galaxy_zoo", experiment_name: EXPERIMENT_NAME}
+    success: (res, status, xhr) =>
       logOptOut()
-    error    : (xhr, status, err) =>
+    error: (xhr, status, err) =>
       Analytics.logError {
-        userID: User.current?.zooniverse_id
-        subjectID: Subject.current?.zooniverse_id # subject id
-        errorCode: "I06:"+status.toString
+        errorCode: "I06:" + status.toString
         errorDescription: err.toString
       }
+  }
 
 # log user opt out to Geordi and to BGU
 logOptOut = =>
@@ -88,7 +99,6 @@ logOptOut = =>
               cohort: nextIntervention.cohort_id
               userID: nextIntervention.user_id
               type: eventType
-              subjectID: Subject.current?.zooniverse_id # subject id
               relatedID: nextIntervention.id # intervention id
             }
   # log to BGU server
@@ -101,22 +111,23 @@ logOptOut = =>
     "project": nextIntervention.project
     "additional_info": ""
   $.ajax {
-    url: 'http://lassi.ise.bgu.ac.il/add_event/"',
+    url: 'http://lassi.ise.bgu.ac.il/add_event/',
     type: 'POST',
     contentType: 'application/json; charset=utf-8',
     data: JSON.stringify(bgu_payload),
     dataType: 'json'
   }
+#TODO add success/error handling
 
 # log next intervention as detected
 logInterventionDetected = =>
+  lastDetectedIntervention = nextIntervention
   Analytics.logEvent {
               projectToken: nextIntervention.project
               experiment: nextIntervention.experiment_name
               cohort: nextIntervention.cohort_id
               userID: nextIntervention.user_id
               type: "interventionDetected"
-              subjectID: Subject.current?.zooniverse_id # subject id
               relatedID: nextIntervention.id # intervention id
             }
 
@@ -129,15 +140,12 @@ logInterventionDelivered = =>
                 cohort: nextIntervention.cohort_id
                 userID: nextIntervention.user_id
                 type: "interventionDelivered"
-                subjectID: Subject.current?.zooniverse_id # subject id
                 relatedID: nextIntervention.id # intervention id
               }
     lastDeliveredIntervention = nextIntervention
     $.post "#{EXPERIMENT_SERVER_URL}/interventions/#{lastDeliveredIntervention.id}/delivered"
   else
     Analytics.logError {
-      userID: User.current?.zooniverse_id
-      subjectID: Subject.current?.zooniverse_id # subject id
       errorCode: "I03"
       errorDescription: "No next intervention available to mark as delivered."
     }
@@ -151,7 +159,6 @@ logInterventionDismissed = =>
                 cohort: lastDeliveredIntervention.cohort_id
                 userID: lastDeliveredIntervention.user_id
                 type: "interventionDismissed"
-                subjectID: Subject.current?.zooniverse_id # subject id
                 relatedID: lastDeliveredIntervention.id # intervention id
               }
     lastDismissedIntervention = lastDeliveredIntervention
@@ -159,8 +166,6 @@ logInterventionDismissed = =>
     $.post "#{EXPERIMENT_SERVER_URL}/interventions/#{lastDeliveredIntervention.id}/dismissed"
   else
     Analytics.logError {
-      userID: User.current?.zooniverse_id
-      subjectID: Subject.current?.zooniverse_id # subject id
       errorCode: "I01"
       errorDescription: "No recently delivered intervention available to mark as complete."
     }
@@ -174,13 +179,10 @@ exitToTalk = =>
                 cohort: nextIntervention.cohort_id
                 userID: nextIntervention.user_id
                 type: "interventionExitToTalk"
-                subjectID: Subject.current?.zooniverse_id # subject id
                 relatedID: nextIntervention.id # intervention id
               }
   else
     Analytics.logError {
-      userID: User.current?.zooniverse_id
-      subjectID: Subject.current?.zooniverse_id # subject id
       errorCode: "I05"
       errorDescription: "No next intervention available to use when logging exit to Talk."
     }
@@ -195,7 +197,6 @@ logInterventionCompleted = =>
                 cohort: lastDeliveredIntervention.cohort_id
                 userID: lastDeliveredIntervention.user_id
                 type: "interventionCompleted"
-                subjectID: Subject.current?.zooniverse_id # subject id
                 relatedID: lastDeliveredIntervention.id # intervention id
               }
     lastCompletedIntervention = lastDeliveredIntervention
@@ -203,13 +204,12 @@ logInterventionCompleted = =>
     $.post "#{EXPERIMENT_SERVER_URL}/interventions/#{lastDeliveredIntervention.id}/completed"
   else
     Analytics.logError {
-      userID: User.current?.zooniverse_id
-      subjectID: Subject.current?.zooniverse_id # subject id
       errorCode: "I02"
       errorDescription: "No recently delivered intervention available to mark as complete."
     }
 
 exports.checkForAndProcessIntervention = checkForAndProcessIntervention
+exports.performOptOut = performOptOut
 exports.logInterventionDetected = logInterventionDetected
 exports.isInterventionNeeded = isInterventionNeeded
 exports.getNextIntervention = getNextIntervention
@@ -218,4 +218,13 @@ exports.logInterventionDelivered = logInterventionDelivered
 exports.logInterventionDismissed = logInterventionDismissed
 exports.logInterventionCompleted = logInterventionCompleted
 exports.exitToTalk = exitToTalk
-
+if lastDetectedIntervention?
+  exports.currentProject = lastDetectedIntervention.project
+  exports.currentExperimentName = lastDetectedIntervention.experiment_name
+  exports.currentCohort = lastDetectedIntervention.cohort
+  exports.currentRelatedId = lastDetectedIntervention.id
+else
+  exports.currentProject = "galaxy_zoo"
+  exports.currentExperimentName = null
+  exports.currentCohort = null
+  exports.currentRelatedId = null

@@ -797,7 +797,9 @@ module.exports =
     bgu_ms_exp1_intervention_text_1: "<strong>Please don't stop just yet. You've been extremely helpful so far.</strong><br/>Your votes are really helping us to understand deep mysteries about galaxies."
     bgu_ms_exp1_intervention_text_2: "<strong>Thousands of people are taking part in the project every month.</strong><br/>Visit Talk at <a id=\"intervention-talk-link\" href=\"javascript:void(0);\">talk.galaxyzoo.org</a> to discuss the images you see with them."
     bgu_ms_exp1_intervention_text_3: "We use statistical techniques to get the most from every answer;<br/>So, <strong>you don’t need to worry about being \"right\".</strong> Just tell us what you see."
-  
+    bgu_ms_exp1_intervention_opt_out_link: "Opt Out from Smart Messages"
+    bgu_ms_exp1_intervention_opted_out_link_text: "You are now opted out from Smart Messages"
+
   help:
     title: 'Help'
     examples: 'Examples'
