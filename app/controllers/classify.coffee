@@ -32,10 +32,13 @@ class Classify extends Spine.Controller
     'click #opt-out-link': 'optOut'
     'click #intervention-talk-link': 'exitToTalk'
 
+  checkInterventionsAndPassSubjectID = =>
+    Intervention.checkForAndProcessIntervention(Subject.current?.zooniverse_id)
+
   constructor: ->
     super
 
-    timer 10000, Intervention.checkForAndProcessIntervention
+    timer 10000, checkInterventionsAndPassSubjectID
 
     @classificationCount = 0
 
@@ -162,13 +165,13 @@ class Classify extends Spine.Controller
       quickHide: true
       closeButton: true
       callback: -> @el().remove()
-    Analytics.logEvent { 'type' : 'help' }
+    Analytics.logEvent { 'type' : 'help' , 'subjectID' : Subject.current?.zooniverse_id}
     @helpDialog.question = @classification.question
     @helpDialog.show()
     ev.preventDefault()
 
   restart: (ev) ->
-    Analytics.logEvent { 'type' : 'restart' }
+    Analytics.logEvent { 'type' : 'restart' , 'subjectID' : Subject.current?.zooniverse_id}
     @classification = new Classification subject_id: @subject.id
     @render()
     ev.preventDefault()
@@ -178,16 +181,16 @@ class Classify extends Spine.Controller
       @image.attr 'src', Subject.current.location.standard
     else
       @image.attr 'src', Subject.current.location.inverted
-    Analytics.logEvent { 'type' : 'invert' }
+    Analytics.logEvent { 'type' : 'invert' , 'subjectID' : Subject.current?.zooniverse_id}
     @invertLink.toggleClass 'active'
     @image.toggleClass 'inverted'
 
   toggleFavorite: (ev) ->
     @favoriteLink.toggleClass 'active'
     if @favoriteLink.hasClass 'active'
-      Analytics.logEvent { 'type' : 'favorite' }
+      Analytics.logEvent { 'type' : 'favorite' , 'subjectID' : Subject.current?.zooniverse_id}
     else
-      Analytics.logEvent { 'type' : 'unfavorite' }
+      Analytics.logEvent { 'type' : 'unfavorite' , 'subjectID' : Subject.current?.zooniverse_id}
     @classification.isFavorited = @favoriteLink.hasClass 'active'
     ev.preventDefault()
 
@@ -196,7 +199,7 @@ class Classify extends Spine.Controller
       template: 'views/example'
       quickHide: true
       closeButton: true
-    Analytics.logEvent { 'type' : 'example' }
+    Analytics.logEvent { 'type' : 'example' , 'subjectID' : Subject.current?.zooniverse_id}
     dialog.example = $(ev.target).closest('.example-thumbnail').data 'example'
     dialog.show()
     dialog.el().find('.dialog').css 'height', @helpDialog.el().find('.dialog').height()
@@ -216,7 +219,7 @@ class Classify extends Spine.Controller
     !@classification.question
 
   finish: ->
-    Analytics.logEvent { 'type' : 'classify' }
+    Analytics.logEvent { 'type' : 'classify' , 'subjectID' : Subject.current?.zooniverse_id}
     Subject.next()
     @nextSubject()
 

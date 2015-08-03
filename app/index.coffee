@@ -11,6 +11,7 @@ googleAnalytics = require 'zooniverse/lib/google_analytics'
 BrowserCheck = require 'zooniverse/lib/controllers/browser_check'
 Analytics = require 'lib/analytics'
 User = require 'zooniverse/lib/models/user'
+Subject = require 'models/subject'
 
 class App extends Spine.Controller
   constructor: ->
@@ -45,7 +46,7 @@ googleAnalytics.init account: 'UA-1224199-9', domain: 'galaxyzoo.org'
 (new BrowserCheck).check()
 
 $(window).bind('beforeunload', (e) ->
-    Analytics.logEvent { 'type' : 'leave' }
+    Analytics.logEvent { 'type' : 'leave', 'subjectID' : Subject.current?.zooniverse_id }
     event.preventDefault()
 )
 
@@ -53,7 +54,7 @@ recordLoginLogout = =>
   if User.current?
     Analytics.logEvent { 'type' : 'login' }
   else
-    Analytics.logEvent { 'type' : 'logout' }
+    Analytics.logEvent { 'type' : 'logout', 'subjectID' : Subject.current?.zooniverse_id }
 
 User.bind('sign-in', recordLoginLogout);
 

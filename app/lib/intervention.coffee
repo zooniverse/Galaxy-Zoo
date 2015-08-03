@@ -45,6 +45,11 @@ The most recently dismissed intervention (delivered + user dismissed it prior to
 ###
 lastDismissedIntervention = null
 
+###
+local cache of current Subject ID, for use in logging
+###
+currentSubjectID = null
+
 isInterventionNeeded = =>
   nextIntervention?
 
@@ -58,7 +63,8 @@ setNextIntervention = (intervention) =>
   nextIntervention = intervention
 
 # method to check for a new intervention, and set it into variable ready for delivery. Intended to be polled.
-checkForAndProcessIntervention = =>
+checkForAndProcessIntervention = (subjectID) =>
+  currentSubjectID = subjectID
   if !nextIntervention?
     $.ajax "#{EXPERIMENT_SERVER_URL}/users/#{User.current?.zooniverse_id}/interventions",
         success  : (res, status, xhr) =>
@@ -80,7 +86,7 @@ performOptOut = =>
     url: "#{EXPERIMENT_SERVER_URL}/users/#{User.current?.zooniverse_id}/optout"
     type: 'POST'
     data: {project: "galaxy_zoo", experiment_name: EXPERIMENT_NAME}
-    success: (res, status, xhr) =>
+    success: (res) =>
       logOptOut()
     error: (xhr, status, err) =>
       Analytics.logError {
@@ -89,35 +95,51 @@ performOptOut = =>
       }
   }
 
+formatDate = (sourceDate) ->
+  d = sourceDate.getDate()
+  m = sourceDate.getMonth()+1
+  y = sourceDate.getFullYear()
+  h = sourceDate.getHours()
+  min = sourceDate.getMinutes()
+  s = sourceDate.getSeconds()
+  y + "-" + m + "-" + d + " " + h + ":" + min + ":" + s
+
 # log user opt out to Geordi and to BGU
 logOptOut = =>
-  eventType = "optOut"
+  geordiEventType = "interventionOptOut"
   # log to Geordi
   Analytics.logEvent {
               projectToken: nextIntervention.project
               experiment: nextIntervention.experiment_name
               cohort: nextIntervention.cohort_id
               userID: nextIntervention.user_id
-              type: eventType
+              subjectID: currentSubjectID
+              type: geordiEventType
               relatedID: nextIntervention.id # intervention id
             }
   # log to BGU server
+  eventType = "optOut"
   bgu_payload =
     "source" : "galaxy_zoo"
     "event_type" : eventType
-    "timestamp": Date.now()
+    "timestamp": formatDate(new Date())
     "user_id": nextIntervention.user_id
     "experiment_name": nextIntervention.experiment_name
     "project": nextIntervention.project
     "additional_info": ""
+
   $.ajax {
-    url: 'http://lassi.ise.bgu.ac.il/add_event/',
-    type: 'POST',
-    contentType: 'application/json; charset=utf-8',
-    data: JSON.stringify(bgu_payload),
+    url: 'http://lassi.ise.bgu.ac.il/add_event/'
+    type: 'POST'
+    contentType: 'application/json; charset=utf-8'
+    data: JSON.stringify(bgu_payload)
     dataType: 'json'
+    error: (xhr, status, err) =>
+      Analytics.logError {
+        errorCode: "I07:" + status.toString
+        errorDescription: err.toString
+      }
   }
-#TODO add success/error handling
 
 # log next intervention as detected
 logInterventionDetected = =>
@@ -127,6 +149,7 @@ logInterventionDetected = =>
               experiment: nextIntervention.experiment_name
               cohort: nextIntervention.cohort_id
               userID: nextIntervention.user_id
+              subjectID: currentSubjectID
               type: "interventionDetected"
               relatedID: nextIntervention.id # intervention id
             }
@@ -139,6 +162,7 @@ logInterventionDelivered = =>
                 experiment: nextIntervention.experiment_name
                 cohort: nextIntervention.cohort_id
                 userID: nextIntervention.user_id
+                subjectID: currentSubjectID
                 type: "interventionDelivered"
                 relatedID: nextIntervention.id # intervention id
               }
@@ -158,6 +182,7 @@ logInterventionDismissed = =>
                 experiment: lastDeliveredIntervention.experiment_name
                 cohort: lastDeliveredIntervention.cohort_id
                 userID: lastDeliveredIntervention.user_id
+                subjectID: currentSubjectID
                 type: "interventionDismissed"
                 relatedID: lastDeliveredIntervention.id # intervention id
               }
@@ -178,6 +203,7 @@ exitToTalk = =>
                 experiment: nextIntervention.experiment_name
                 cohort: nextIntervention.cohort_id
                 userID: nextIntervention.user_id
+                subjectID: currentSubjectID
                 type: "interventionExitToTalk"
                 relatedID: nextIntervention.id # intervention id
               }
@@ -196,6 +222,7 @@ logInterventionCompleted = =>
                 experiment: lastDeliveredIntervention.experiment_name
                 cohort: lastDeliveredIntervention.cohort_id
                 userID: lastDeliveredIntervention.user_id
+                subjectID: currentSubjectID
                 type: "interventionCompleted"
                 relatedID: lastDeliveredIntervention.id # intervention id
               }

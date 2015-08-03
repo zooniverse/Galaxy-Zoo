@@ -7,8 +7,6 @@ buildEventData = (params) ->
   eventData = {}
   # defaults
   eventData['subjectID'] = Subject.current?.zooniverse_id
-  console.log Subject.current
-  debugger
   eventData['relatedID'] = Intervention.currentRelatedId
   eventData['experiment'] = Intervention.currentExperimentName
   eventData['projectToken'] = Subject.projectName
