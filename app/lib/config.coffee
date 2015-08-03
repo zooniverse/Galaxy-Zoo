@@ -24,6 +24,12 @@ Config =
       sloan_singleband:
         id: ''
         workflowId: ''
+      decals:
+        id: ''
+        workflowId: ''
+      illustris:
+        id: ''
+        workflowId: ''
     subjectCache: 1
     quiz:
       invitationId: '502bfa73516bcb3c600003e9'
@@ -52,6 +58,12 @@ Config =
         id: ''
         workflowId: ''
       sloan_singleband:
+        id: ''
+        workflowId: ''
+      decals:
+        id: ''
+        workflowId: ''
+      illustris:
         id: ''
         workflowId: ''
     subjectCache: 5
@@ -84,6 +96,12 @@ Config =
       sloan_singleband:
         id: '5501a2c17b9f991a95000001'
         workflowId: '5501a9be7b9f992679000001'
+      decals:
+        id: ''
+        workflowId: ''
+      illustris:
+        id: ''
+        workflowId: ''
     subjectCache: 5
     quiz:
       invitationId: '502bfa73516bcb3c600003e9'
@@ -114,6 +132,12 @@ Config =
       sloan_singleband:
         id: '5514521e2f0eef2012000001'
         workflowId: '5514521f2f0eef2012000002'
+      decals:
+        id: ''
+        workflowId: ''
+      illustris:
+        id: ''
+        workflowId: ''
     subjectCache: 5
     quiz:
       invitationId: '502bfa73516bcb3c600003e9'
