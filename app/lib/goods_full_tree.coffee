@@ -52,7 +52,7 @@ GoodsTree = new DecisionTree 'goods_full', ->
   @question 'Clumps', 'Do the clumps appear to be embedded within a larger object?', leadsTo: 'Is there anything odd?', ->
     @help "Look carefully for faint background light surrounding the clumps - are they embedded in a visible galaxy?"
     @answer 'Yes', icon: 'yes', examples: 2
-    @answer 'No', icon: 'no', examples: 1
+    @answer 'No', icon: 'no', examples: 2
   
   @question 'Disk', 'Could this be a disk viewed edge-on?', ->
     @help "Disc galaxies are very thin, so look different when viewed from the side. We're trying to find exactly edge-on galaxies with this question. If the galaxy looks needle-like, perhaps with a bulge at the centre, then click &quot;yes,&quot; otherwise choose &quot;no&quot; (even for galaxies almost edge-on). Click to see larger images."
