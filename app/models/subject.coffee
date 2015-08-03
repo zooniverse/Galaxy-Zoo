@@ -50,7 +50,7 @@ class Subject extends BaseSubject
       workflowId: Config.surveys.decals.workflowId
       tree: DecalsTree
     illustris:
-      id: Config.surveys.sloan_singleband.id
+      id: Config.surveys.illustris.id
       workflowId: Config.surveys.illustris.workflowId
       tree: IllustrisTree
   
