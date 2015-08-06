@@ -182,7 +182,7 @@
     display: block
     background-color: rgb(51, 51, 51)
 
-    p.dismiss-control
+    p#dismiss-control
       float:right
       margin-bottom: 0px
       margin-top: -25px
@@ -194,7 +194,7 @@
         text-decoration: none
         font-size: 20px
 
-    p.intervention-message
+    p#intervention-message
       font-size:small
       margin-top: 0px
       margin-bottom: 0px
@@ -208,7 +208,7 @@
     hr
       margin-top: 15px
 
-    p.intervention-opt-out
+    p#intervention-opt-out
       font-size:x-small
       text-align:right
       margin-top: 0px
@@ -219,6 +219,21 @@
       a:not([href])
         color: #efefef
         cursor: default
+
+    p.cancel-button-suppress
+      display:none
+
+    p.intervention-left-button
+      float:left
+      font-size:small !important
+
+    p.intervention-right-button
+      float:right
+      font-size:small !important
+      margin-top: 0px
+      margin-bottom: 0px
+      padding-left: 10px
+      padding-right: 0px
 
 .down-for-maintenance
   opacity: 1

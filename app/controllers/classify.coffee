@@ -29,7 +29,8 @@ class Classify extends Spine.Controller
     'click .top .buttons .invert': 'toggleInverted'
     'click .top .buttons .favorite': 'toggleFavorite'
     'click #dismiss-intervention': 'dismissIntervention'
-    'click #opt-out-link': 'optOut'
+    'click #opt-out-link': 'clickOptOut'
+    'click #cancel-confirmation-panel': 'cancelConfirmationPanel'
     'click #intervention-talk-link': 'exitToTalk'
 
   checkInterventionsAndPassSubjectID = =>
@@ -61,7 +62,10 @@ class Classify extends Spine.Controller
       if Intervention.isInterventionNeeded()
         @renderIntervention = true
         @messageToUse = "classify.bgu_ms_exp1_intervention_text_#{Intervention.getNextIntervention()?.preconfigured_id}"
+        @confirmOptOutText = "classify.bgu_ms_exp1_intervention_confirm_opt_out_text"
+        @confirmOptOutButton = "classify.bgu_ms_exp1_intervention_confirm_opt_out_button"
         @optOutLink = "classify.bgu_ms_exp1_intervention_opt_out_link"
+        @cancelLink = "classify.bgu_ms_exp1_intervention_opt_out_cancel_link"
         @optedOutLinkText = "classify.bgu_ms_exp1_intervention_opted_out_link_text"
         delay 1000,@showIntervention
       else
@@ -94,20 +98,50 @@ class Classify extends Spine.Controller
       delay Intervention.getNextIntervention()?.presentation_duration * 1000, @completeIntervention
       Intervention.logInterventionDelivered()
 
-  optOut: (e) =>
+  clickOptOut: (e) =>
+    if $("#intervention-opt-out").data("confirm-needed")
+      @confirmOptOut(e)
+    else
+      @actuallyOptOut(e)
+
+  reRenderIntervention: () =>
+    $("#intervention-message").html(I18n.t @messageToUse)
+    $("#intervention-opt-out").data("confirm-needed",true)
+    $("#intervention-opt-out-cancel").addClass("cancel-button-suppress")
+    $("#intervention-opt-out").removeClass("intervention-left-button")
+    $("#opt-out-link").text(I18n.t @optOutLink)
+
+  confirmOptOut: (e) =>
+    e.preventDefault
+    $("#intervention-message").html(I18n.t @confirmOptOutText)
+    $("#intervention-opt-out").data("confirm-needed",false)
+    $("#opt-out-link").text(I18n.t @confirmOptOutButton)
+    $("#intervention-opt-out-cancel").removeClass("cancel-button-suppress")
+    $("#intervention-opt-out").addClass("intervention-left-button")
+
+  cancelConfirmationPanel: (e) =>
+    e.preventDefault
+    @reRenderIntervention()
+
+  actuallyOptOut: (e) =>
     e.preventDefault
     Intervention.performOptOut()
+    $("#intervention-message").html(I18n.t @messageToUse)
+    $("#intervention-opt-out-cancel").addClass("cancel-button-suppress")
+    $("#intervention-opt-out").removeClass("intervention-left-button")
     $("#opt-out-link").text(I18n.t @optedOutLinkText)
     $("#opt-out-link").removeAttr('href');
 
   dismissIntervention: (e) =>
     e.preventDefault
+    @reRenderIntervention()
     @renderIntervention = false
     @interventionAlreadyPresent = false
     Intervention.logInterventionDismissed()
     $('.intervention').effect("slide",{"direction":"right","mode":"hide"},1000)
 
   completeIntervention: () =>
+    @reRenderIntervention()
     Intervention.logInterventionCompleted()
     if @interventionAlreadyPresent
       $('.intervention').effect("slide",{"direction":"right","mode":"hide"},1000)
