@@ -29,7 +29,7 @@ DecalsTree = new DecisionTree 'decals', ->
     @answer 'Dominant', icon: 'bulge_dominant', examples: 4
   
   @question 'Spiral', 'How tightly wound do the spiral arms appear?', leadsTo: 'How many spiral arms are there?', ->
-    @help "Astronomers classify galaxies by how tight their arms are - you might find it easiest to see them closest to the centre. Click to see larger images."
+    @help "Astronomers classify spiral galaxies by how tight their arms are - you might find it easiest to assess this by looking at the arms close to the centre. Click to see larger images."
     @answer 'Tight', icon: 'spiral_tight', examples: 5
     @answer 'Medium', icon: 'spiral_medium', examples: 6
     @answer 'Loose', icon: 'spiral_loose', examples: 4
