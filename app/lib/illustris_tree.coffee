@@ -40,10 +40,10 @@ IllustrisTree = new DecisionTree 'illustris', ->
     @checkbox 'Dust lane', icon: 'dustlane'
     @answer 'Done', leadsTo: 'Would you like to discuss this object?', icon: 'yes'
   
-  @question 'Round', 'How rounded is it?', leadsTo: 'Do you see any of these odd features in the image?',->
-    @answer 'Completely round', icon: 'smooth_round', examples: 1
-    @answer 'In between', icon: 'smooth_in-between', examples: 1
-    @answer 'Cigar shaped', icon: 'smooth_cigar', examples: 1
+  @question 'Round', 'How rounded is it?', leadsTo: 'Do you see any of these odd features in the image?', ->
+    @answer 'Completely round', icon: 'smooth_round', examples: 5
+    @answer 'In between', icon: 'smooth_in-between', examples: 5
+    @answer 'Cigar shaped', icon: 'smooth_cigar', examples: 5
   
   @question 'Bulge', 'Does the galaxy have a bulge at its center? If so, what shape?', leadsTo: 'Do you see any of these odd features in the image?', ->
     @help "Concentrate on the centre of the galaxy - if it has a smooth, uninterrupted, needle or lens-shape, then click &quot;no bulge.&quot; Otherwise your options are &quot;rounded&quot; bulge or &quot;boxy&quot; (but boxy bulges are rare). Click to see larger images."

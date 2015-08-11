@@ -15,7 +15,7 @@ DecalsTree = new DecisionTree 'decals', ->
   @question 'Bar', 'Is there any sign of a bar feature through the centre of the galaxy?', leadsTo: 'Is there any sign of a spiral arm pattern?', ->
     @help "Sometimes galaxies have a prominent straight &quot;bar&quot; running through their centre, and that's what we're looking for here. Click to see larger images."
     @answer 'Bar', icon: 'yes', examples: 6
-    @answer 'No bar', icon: 'no', examples: 1
+    @answer 'No bar', icon: 'no', examples: 6
   
   @question 'Spiral', 'Is there any sign of a spiral arm pattern?', ->
     @help "Look carefully for spiral arms - remember they may be embedded in the disk and not that easy to see. Click to see larger images."
