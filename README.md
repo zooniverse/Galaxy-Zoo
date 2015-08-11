@@ -1,6 +1,12 @@
 # Galaxy-Zoo
 
 ### Getting Started
+
+Installation notes: 
+
+* The Ruby builds require node v0.10.xx, since the path.existsSync function was removed in 0.12. You can use ```nvm``` to switch the version if necessary. 
+* Ensure that you are running the ```hem``` command from the local path (```./node_modules/.bin/hem```), rather than any global version.
+
 ```bash
 git clone https://github.com/zooniverse/Galaxy-Zoo.git
 cd Galaxy-Zoo
