@@ -22,7 +22,7 @@ IllustrisTree = new DecisionTree 'illustris', ->
     @answer 'Spiral', leadsTo: 'How tightly wound do the spiral arms appear?', icon: 'yes', examples: 5
     @answer 'No spiral', leadsTo: 'How prominent is the central bulge, compared with the rest of the galaxy?', icon: 'no', examples: 5
   
-  @question 'Bulge', 'How prominent is the central bulge, compared with the rest of the galaxy?', leadsTo: 'Do you see any of these odd features in the image?'->
+  @question 'Bulge', 'How prominent is the central bulge, compared with the rest of the galaxy?', leadsTo: 'Do you see any of these odd features in the image?', ->
     @help "It's not always easy to tell, but look at the centre of the galaxy for a round bulge of stars which may obscure any bar and the spiral arms in this central region. Click to see larger images."
     @answer 'No bulge', icon: 'bulge_none', examples: 5
     @answer 'Just noticeable', icon: 'bulge_noticeable', examples: 5
@@ -40,7 +40,7 @@ IllustrisTree = new DecisionTree 'illustris', ->
     @checkbox 'Dust lane', icon: 'dustlane'
     @answer 'Done', leadsTo: 'Would you like to discuss this object?', icon: 'yes'
   
-  @question 'Round', 'How rounded is it?', leadsTo: 'Do you see any of these odd features in the image?'->
+  @question 'Round', 'How rounded is it?', leadsTo: 'Do you see any of these odd features in the image?',->
     @answer 'Completely round', icon: 'smooth_round', examples: 1
     @answer 'In between', icon: 'smooth_in-between', examples: 1
     @answer 'Cigar shaped', icon: 'smooth_cigar', examples: 1
