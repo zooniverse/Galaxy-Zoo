@@ -57,13 +57,11 @@ class Subject extends BaseSubject
   @url: (params) -> @withParams "/projects/galaxy_zoo/groups/#{ params.surveyId }/subjects", limit: params.limit
 
   @randomSurveyId: ->
-    return @::surveys.sloan.id
-    
-    # n = Math.random()
-    # if n <= 0.1
-    #   @::surveys.sloan_singleband.id
-    # else
-    #   @::surveys.sloan.id
+    n = Math.random()
+    if n <= 0.5
+      @::surveys.decals.id
+    else
+      @::surveys.illustris.id
 
   @next: ->
     if @current
@@ -100,7 +98,7 @@ class Subject extends BaseSubject
     img.src = @image()
   
   survey: -> @surveys[@metadata.survey]
-  surveyId: -> @metadata.hubble_id or @metadata.sdss_id
+  surveyId: -> @metadata.provided_image_id
   tree: -> @survey().tree
   workflowId: -> @survey().workflowId
   image: -> @location.standard
