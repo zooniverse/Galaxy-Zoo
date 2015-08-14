@@ -143,7 +143,7 @@ Config =
       invitationId: '502bfa73516bcb3c600003e9'
       workflowId: '502a701e516bcb0001000002'
 
-env = if window.location.port > 1024
+env = if window.location.port > 1024 || !!location.href.match /localhost|demo|preview|beta/
   'developmentRemote'
 else
   'production'

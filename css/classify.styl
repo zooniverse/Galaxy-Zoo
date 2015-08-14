@@ -171,6 +171,69 @@
 
               .hover
                 color: $light-gray
+  .intervention
+    margin-top: 15px
+    margin-bottom: 5px
+    right: 2px
+    padding: 25px 10px 10px
+    z-index: 999
+    position: absolute
+    float: right
+    display: block
+    background-color: rgb(51, 51, 51)
+
+    p#dismiss-control
+      float:right
+      margin-bottom: 0px
+      margin-top: -25px
+      margin-right: 0px
+      position: relative
+
+      a
+        color: #FFFFFF
+        text-decoration: none
+        font-size: 20px
+
+    p#intervention-message
+      font-size:small
+      margin-top: 0px
+      margin-bottom: 0px
+      padding-left: 10px
+      padding-right: 28px
+
+      br
+        margin-bottom: 4px
+        display: block
+        content: " "
+    hr
+      margin-top: 15px
+
+    p#intervention-opt-out
+      font-size:x-small
+      text-align:right
+      margin-top: 0px
+      margin-bottom: 0px
+      padding-left: 10px
+      padding-right: 0px
+
+      a:not([href])
+        color: #efefef
+        cursor: default
+
+    p.cancel-button-suppress
+      display:none
+
+    p.intervention-left-button
+      float:left
+      font-size:small !important
+
+    p.intervention-right-button
+      float:right
+      font-size:small !important
+      margin-top: 0px
+      margin-bottom: 0px
+      padding-left: 10px
+      padding-right: 0px
 
 .down-for-maintenance
   opacity: 1

@@ -1,6 +1,7 @@
 # Galaxy-Zoo
 
 ### Getting Started
+
 ```bash
 git clone https://github.com/zooniverse/Galaxy-Zoo.git
 cd Galaxy-Zoo
@@ -53,4 +54,14 @@ Zooniverse Galaxy Zoo translations not contained within this repo are also licen
 
 ### Troubleshooting
 
-If you encounter issues, ensure that you are using node version no later than 0.11.14. The [n](https://www.npmjs.com/package/n) package can help with this. Also ensure that you have [SSH access for github](https://help.github.com/articles/generating-ssh-keys/) set up.
+* If you encounter issues with the Ruby builds, ensure that you are using node version no later than 0.11.14. The [n](https://www.npmjs.com/package/n) package can help with this. This is because the path.existsSync function was removed in 0.12. Example:
+```bash
+npm install nvm
+. ~/nvm/nvm.sh
+
+nvm install v0.10
+nvm use v0.10
+```
+* Also ensure that you have [SSH access for github](https://help.github.com/articles/generating-ssh-keys/) set up.
+* Ensure that you are running the ```hem``` command from the local path (```./node_modules/.bin/hem```), rather than any global version when starting ```hem server```.
+
