@@ -22,7 +22,7 @@ IllustrisTree = new DecisionTree 'illustris', ->
     @answer 'Spiral', leadsTo: 'How tightly wound do the spiral arms appear?', icon: 'yes', examples: 5
     @answer 'No spiral', leadsTo: 'How prominent is the central bulge, compared with the rest of the galaxy?', icon: 'no', examples: 5
   
-  @question 'Bulge', 'How prominent is the central bulge, compared with the rest of the galaxy?', leadsTo: 'Do you see any of these odd features in the image?', ->
+  @question 'Bulge', 'How prominent is the central bulge, compared with the rest of the galaxy?', leadsTo: 'Is there anything odd?', ->
     @help "It's not always easy to tell, but look at the centre of the galaxy for a round bulge of stars which may obscure any bar and the spiral arms in this central region. Click to see larger images."
     @answer 'No bulge', icon: 'bulge_none', examples: 5
     @answer 'Just noticeable', icon: 'bulge_noticeable', examples: 5
@@ -40,12 +40,12 @@ IllustrisTree = new DecisionTree 'illustris', ->
     @checkbox 'Dust lane', icon: 'dustlane'
     @answer 'Done', leadsTo: 'Would you like to discuss this object?', icon: 'yes'
   
-  @question 'Round', 'How rounded is it?', leadsTo: 'Do you see any of these odd features in the image?', ->
+  @question 'Round', 'How rounded is it?', leadsTo: 'Is there anything odd?', ->
     @answer 'Completely round', icon: 'smooth_round', examples: 5
     @answer 'In between', icon: 'smooth_in-between', examples: 5
     @answer 'Cigar shaped', icon: 'smooth_cigar', examples: 5
   
-  @question 'Bulge', 'Does the galaxy have a bulge at its center? If so, what shape?', leadsTo: 'Do you see any of these odd features in the image?', ->
+  @question 'Bulge', 'Does the galaxy have a bulge at its center? If so, what shape?', leadsTo: 'Is there anything odd?', ->
     @help "Concentrate on the centre of the galaxy - if it has a smooth, uninterrupted, needle or lens-shape, then click &quot;no bulge.&quot; Otherwise your options are &quot;rounded&quot; bulge or &quot;boxy&quot; (but boxy bulges are rare). Click to see larger images."
     @answer 'Rounded', icon: 'edge_round', examples: 5
     @answer 'Boxy', icon: 'edge_boxy', examples: 5
@@ -65,6 +65,11 @@ IllustrisTree = new DecisionTree 'illustris', ->
     @answer '4', icon: 'spiral_4', examples: 5
     @answer 'More than 4', icon: 'spiral_4-plus', examples: 2
     @answer "Can't tell", icon: 'spiral_cant-tell', examples: 5
+  
+  @question 'Odd', 'Is there anything odd?', ->
+    @help "We're looking for signs that the galaxy is merging, is disturbed, or has other unusual features. Click to see larger images."
+    @answer 'Yes', leadsTo: 'Do you see any of these odd features in the image?', icon: 'yes'
+    @answer 'No', leadsTo: 'Would you like to discuss this object?', icon: 'no'
   
   @question 'Discuss', 'Would you like to discuss this object?', ->
     @help "If you have any questions about this object, or think it may be interesting to others, or just have something to say, you can start a discussion on Talk by clicking &quot;Yes&quot;. Talk will open in a new window - just close it to come back to the classification page."
