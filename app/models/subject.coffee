@@ -59,7 +59,7 @@ class Subject extends BaseSubject
 
   @randomSurveyId: ->
     n = Math.random()
-    if n <= 0.5
+    if n <= (2/3)
       @::surveys.decals.id
     else
       @::surveys.illustris.id
