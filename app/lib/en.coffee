@@ -331,6 +331,119 @@ module.exports =
         'a-0': 'Yes'
         'a-1': 'No'
     
+    'decals-0':
+      text: "Is the galaxy simply smooth and rounded, with no sign of a disk?"
+      title: "Shape"
+      help: "The aim here is to divide featureless galaxies from all the rest. If you can see any interesting features at all, click &quot;features or disk.&quot; Just occasionally you might see something that isn't a galaxy at all - the long streak of a satellite, for example, or an image swamped by light from a bright star. If this happens, just click &quot;star or artifact&quot;. Click to see larger images."
+      answers:
+        'a-0': 'Smooth'
+        'a-1': 'Features or disk'
+        'a-2': 'Star or artifact'
+    
+    'decals-1':
+      text: "Could this be a disk viewed edge-on?"
+      title: "Disk"
+      help: "Disc galaxies are very thin, so look different when viewed from the side. We're trying to find exactly edge-on galaxies with this question. If the galaxy looks needle-like, perhaps with a bulge at the centre, then click &quot;yes,&quot; otherwise choose &quot;no&quot; (even for galaxies almost edge-on). Click to see larger images."
+      answers:
+        'a-0': 'Yes'
+        'a-1': 'No'
+    
+    'decals-2':
+      text: "Is there any sign of a bar feature through the center of the galaxy?"
+      title: "Bar"
+      help: "Sometimes galaxies have a prominent straight &quot;bar&quot; running through their centre, and that's what we're looking for here. Click to see larger images."
+      answers:
+        'a-0': 'Bar'
+        'a-1': 'No bar'
+    
+    'decals-3':
+      text: "Is there any sign of a spiral arm pattern?"
+      title: "Spiral"
+      help: "Look carefully for spiral arms - remember they may be embedded in the disk and not that easy to see. Click to see larger images."
+      answers:
+        'a-0': 'Spiral'
+        'a-1': 'No spiral'
+    
+    'decals-4':
+      text: "How prominent is the central bulge, compared with the rest of the galaxy?"
+      title: "Bulge"
+      help: "It's not always easy to tell, but look at the centre of the galaxy for a round bulge of stars which may obscure any bar and the spiral arms in this central region. If you see a bulge, rank its size and brightness compared to the rest of the galaxy's disk. Click to see larger images."
+      answers:
+        'a-0': 'No bulge'
+        'a-1': 'Obvious'
+        'a-2': 'Dominant'
+    
+    'decals-5':
+      text: "Astronomers classify spiral galaxies by how tight their arms are - you might find it easiest to assess this by looking at the arms close to the centre. Click to see larger images."
+      title: "Spiral"
+      help: ""
+      answers:
+        'a-0': 'Tight'
+        'a-1': 'Medium'
+        'a-2': 'Loose'
+    
+    'decals-6':
+      text: "How many spiral arms are there?"
+      title: "Spiral"
+      help: "Some spiral galaxies are rather complicated, but we want your best guess as to how many individual arms you can see. Note that the arms don't always begin at the very centre of the galaxy. If there are more than four arms, don't worry about counting them individually, but select the &quot;more than 4&quot; button."
+      answers:
+        'a-0': '1'
+        'a-1': '2'
+        'a-2': '3'
+        'a-3': '4'
+        'a-4': 'More than 4'
+    
+    'decals-7':
+      text: "Does the galaxy have a bulge at its center? If so, what shape?"
+      title: "Bulge"
+      help: "Concentrate on the centre of the galaxy - if it has a smooth, uninterrupted, needle or lens-shape then click &quot;no bulge.&quot; Otherwise your options are &quot;rounded&quot; bulge or &quot;boxy&quot; (but boxy bulges are rare). Click to see larger images."
+      answers:
+        'a-0': 'Rounded'
+        'a-1': 'Boxy'
+        'a-2': 'No bulge'
+    
+    'decals-8':
+      text: "How rounded is it?"
+      title: "Round"
+      help: "Not all galaxies are perfectly round - just look at the overall shape and put it in one of these three categories. If there's more than one galaxy in the field, remember always to concentrate on the one in the centre. Click to see larger images."
+      answers:
+        'a-0': 'Completely round'
+        'a-1': 'In between'
+        'a-2': 'Cigar shaped'
+    
+    'decals-9':
+      text: "Is the galaxy currently merging or is there any sign of tidal debris?"
+      title: "Mergers"
+      help: "Now you can look at the larger picture - if the galaxy is colliding with another, click &quot;merger.&quot; If there's no visible second system, but long streams of stars or gas are visible then click &quot;tidal debris.&quot; &quot;Both&quot; and &quot;Neither&quot; are your other options. Click to see larger images."
+      answers:
+        'a-0': 'Merging'
+        'a-1': 'Tidal debris'
+        'a-2': 'Both'
+        'a-3': 'Neither'
+    
+    'decals-10':
+      text: "Do you see any of these odd features in the image?"
+      title: "Odd"
+      help: "These are examples of galaxy morphology that are rare, but still important to note when you see them. You can select more than one option if you see multiple features in the same galaxy. Click to see larger images."
+      answers:
+        'a-0': 'Done'
+      checkboxes:
+        'x-0': 'None'
+        'x-1': 'Ring'
+        'x-2': 'Lens or arc'
+        'x-3': 'Irregular'
+        'x-4': 'Other'
+        'x-5': 'Dust lane'
+        'x-6': 'Overlapping'
+    
+    'decals-11':
+      text: "Would you like to discuss this object?"
+      title: "Discuss"
+      help: "If you have any questions about this object, or think it may be interesting to others, or just have something to say, you can start a discussion on Talk by clicking &quot;Yes&quot;. Talk will open in a new window - just close it to come back to the classification page."
+      answers:
+        'a-0': 'Yes'
+        'a-1': 'No'
+    
     'candels-0':
       text: "Is the galaxy simply smooth and rounded, with no sign of a disk?"
       title: "Shape"
