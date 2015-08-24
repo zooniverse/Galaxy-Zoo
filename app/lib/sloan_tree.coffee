@@ -24,10 +24,10 @@ SloanTree = new DecisionTree 'sloan', ->
   
   @question 'Bulge', 'How prominent is the central bulge, compared with the rest of the galaxy?', leadsTo: 'Is there anything odd?', ->
     @help "It's not always easy to tell, but look at the centre of the galaxy for a round bulge of stars which may obscure any bar and the spiral arms in this central region. Click to see larger images."
-    @answer 'No bulge', icon: 'bulge_none'
-    @answer 'Just noticeable', icon: 'bulge_noticeable'
-    @answer 'Obvious', icon: 'bulge_obvious'
-    @answer 'Dominant', icon: 'bulge_dominant'
+    @answer 'No bulge', icon: 'bulge_none', examples: 4
+    @answer 'Just noticeable', icon: 'bulge_noticeable', examples: 4
+    @answer 'Obvious', icon: 'bulge_obvious', examples: 4
+    @answer 'Dominant', icon: 'bulge_dominant', examples: 4
   
   @question 'Odd', 'Is there anything odd?', ->
     @help "We're looking for signs that the galaxy is merging, is disturbed, or has other unusual features. Click to see larger images."
