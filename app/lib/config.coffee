@@ -34,7 +34,7 @@ Config =
     quiz:
       invitationId: '502bfa73516bcb3c600003e9'
       workflowId: '502a701e516bcb0001000002'
-  
+
   developmentLocal:
     quizzesActive: false
     apiHost: 'http://localhost:3000'
@@ -70,7 +70,7 @@ Config =
     quiz:
       invitationId: '502bfa73516bcb3c600003e9'
       workflowId: '502a701e516bcb0001000002'
-  
+
   developmentRemote:
     quizzesActive: false
     apiHost: 'https://dev.zooniverse.org'
@@ -133,11 +133,11 @@ Config =
         id: '5514521e2f0eef2012000001'
         workflowId: '5514521f2f0eef2012000002'
       decals:
-        id: ''
-        workflowId: ''
+        id: '55db7cf01766276e7b000001'
+        workflowId: '55db7cf01766276e7b000002'
       illustris:
-        id: ''
-        workflowId: ''
+        id: '55db71251766276613000001'
+        workflowId: '55db71251766276613000002'
     subjectCache: 5
     quiz:
       invitationId: '502bfa73516bcb3c600003e9'
