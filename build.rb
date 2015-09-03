@@ -8,7 +8,7 @@ else
   "www.galaxyzoo.org"
 end
 
-AWS.config access_key_id: ENV['AWS_ACCESS_KEY_ID'], secret_access_key: ENV['AWS_SECRET_ACCESS_KEY']
+AWS.config access_key_id: ENV['AMAZON_ACCESS_KEY_ID'], secret_access_key: ENV['AMAZON_SECRET_ACCESS_KEY']
 s3 = AWS::S3.new
 bucket = s3.buckets['zooniverse-static']
 
@@ -80,6 +80,8 @@ end
 to_upload.delete 'index.html'
 total = to_upload.length
 
+puts "Uploading to #{ key_path }"
+
 to_upload.each.with_index do |file, index|
   content_type = case File.extname(file)
   when '.html'
@@ -95,14 +97,14 @@ to_upload.each.with_index do |file, index|
   else
     `file --mime-type -b #{ file }`.chomp
   end
-  
+
   puts "#{ '%2d' % (index + 1) } / #{ '%2d' % total }: Uploading #{ file } as #{ content_type }"
   options = { file: file, acl: :public_read, content_type: content_type }
-  
+
   if content_type == 'application/javascript' || content_type == 'text/css'
     options[:content_encoding] = 'gzip'
   end
-  
+
   bucket.objects["#{ key_path }/#{ file }"].write options
 end
 
