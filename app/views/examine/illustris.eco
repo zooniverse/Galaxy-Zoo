@@ -6,7 +6,7 @@
 <%- @info I18n.t('examine.absmagnitude'), @subject.metadata.mag.absmag_r %>
 <%- @info I18n.t('examine.petro_rad'), @subject.metadata.radius_half, 'kpc' %>
 <%- @info I18n.t('examine.mass'), @subject.metadata.mass_log_msun, 'log M&#9737;' %>
-<%- @info I18n.t('examine.sfr'), @subject.metadata.sfr, 'M_sun/yr' %>
+<%- @info I18n.t('examine.sfr'), @subject.metadata.sfr, 'M&#9737;/yr' %>
 
 <div class="row">
   <span class="blank"></span>
@@ -23,13 +23,6 @@
   <span class="key"></span>
   <span class="value">
     <a target="_blank" href="http://www.illustris-project.org/explorer/#"><%- I18n.t 'examine.explorer_link' %></a>
-  </span>
-</div>
-
-<div class="row">
-  <span class="key"></span>
-  <span class="value">
-    <a target="_blank" href="http://ned.ipac.caltech.edu/cgi-bin/nph-objsearch?search_type=Near+Position+Search&RA=<%= @subject.coords[0] %>&DEC=<%= @subject.coords[1]%>&SR=0.0166666667"><%- I18n.t 'examine.ned_link' %></a>
   </span>
 </div>
 
