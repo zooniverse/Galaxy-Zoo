@@ -374,9 +374,9 @@ module.exports =
         'a-2': 'Dominant'
     
     'decals-5':
-      text: "Astronomers classify spiral galaxies by how tight their arms are - you might find it easiest to assess this by looking at the arms close to the centre. Click to see larger images."
+      text: "How tightly wound do the spiral arms appear?"
       title: "Spiral"
-      help: ""
+      help: "Astronomers classify spiral galaxies by how tight their arms are - you might find it easiest to assess this by looking at the arms close to the centre. Click to see larger images."
       answers:
         'a-0': 'Tight'
         'a-1': 'Medium'
@@ -394,7 +394,7 @@ module.exports =
         'a-4': 'More than 4'
     
     'decals-7':
-      text: "Does the galaxy have a bulge at its center? If so, what shape?"
+      text: "Does the galaxy have a bulge at its centre? If so, what shape?"
       title: "Bulge"
       help: "Concentrate on the centre of the galaxy - if it has a smooth, uninterrupted, needle or lens-shape then click &quot;no bulge.&quot; Otherwise your options are &quot;rounded&quot; bulge or &quot;boxy&quot; (but boxy bulges are rare). Click to see larger images."
       answers:
