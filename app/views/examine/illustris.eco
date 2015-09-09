@@ -3,10 +3,10 @@
 <%- @info I18n.t('examine.camera'), @subject.metadata.camera %>
 <%- @info I18n.t('examine.background'), @subject.metadata.background %>
 <%- @info I18n.t('examine.band'), @subject.metadata.bands %>
-<%- @info I18n.t('examine.absmagnitude'), @subject.metadata.mag.absmag_r %>
-<%- @info I18n.t('examine.petro_rad'), @subject.metadata.radius_half, 'kpc' %>
-<%- @info I18n.t('examine.mass'), @subject.metadata.mass_log_msun, 'log M&#9737;' %>
-<%- @info I18n.t('examine.sfr'), @subject.metadata.sfr, 'M&#9737;/yr' %>
+<%- @info I18n.t('examine.absmagnitude'), @subject.metadata.mag.absmag_r.toFixed(2) %>
+<%- @info I18n.t('examine.petro_rad'), @subject.metadata.radius_half.toFixed(3), 'kpc' %>
+<%- @info I18n.t('examine.mass'), @subject.metadata.mass_log_msun.toFixed(3), 'log M&#9737;' %>
+<%- @info I18n.t('examine.sfr'), @subject.metadata.sfr.toFixed(3), 'M&#9737;/yr' %>
 
 <div class="row">
   <span class="blank"></span>
