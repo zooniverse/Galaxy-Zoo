@@ -1143,7 +1143,7 @@ module.exports =
     sfr: 'Star formation rate'
     skyserver_link: 'View on SkyServer'
     legacyserver_link: 'View on Sky Viewer'
-    illustris_link: 'View full data from the Illustris Project'
+    illustris_link: 'View data from Illustris Project'
     explorer_link: 'Illustris Explorer'
   
   
