@@ -4,8 +4,8 @@
 <%- @info I18n.t('examine.right_ascension'), @subject.coords[0], '&deg;' %>
 <%- @info I18n.t('examine.declination'), @subject.coords[1], '&deg;' %>
 <%- @info I18n.t('examine.petro_rad'), @subject.metadata.petrorad_r, '&quot;' %>
-<%- @info I18n.t('examine.magnitude'), @subject.metadata.mag.r, '&quot;' %>
-<%- @info I18n.t('examine.absmagnitude'), @subject.metadata.mag.abs_r, '&quot;' %>
+<%- @info I18n.t('examine.magnitude'), @subject.metadata.mag.r %>
+<%- @info I18n.t('examine.absmagnitude'), @subject.metadata.mag.abs_r %>
 
 <div class="row">
   <span class="blank"></span>
