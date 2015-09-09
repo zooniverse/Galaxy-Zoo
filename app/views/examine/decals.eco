@@ -14,7 +14,7 @@
 <div class="row">
   <span class="key"></span>
   <span class="value">
-    <a target="_blank" href="http://imagine.legacysurvey.org/jpeg-cutout-decals-dr1?ra=<%= @subject.coords[0] %>&dec=<%= @subject.coords[1] %>&pixscale=2&size=512"><%- I18n.t 'examine.legacyserver_link' %></a>
+    <a target="_blank" href="http://imagine.legacysurvey.org/jpeg-cutout-decals-dr1?ra=<%= @subject.coords[0] %>&dec=<%= @subject.coords[1] %>&pixscale=0.1&size=512"><%- I18n.t 'examine.legacyserver_link' %></a>
   </span>
 </div>
 <div class="row">
