@@ -15,7 +15,7 @@
 <div class="row">
   <span class="key"></span>
   <span class="value">
-    <a target="_blank" href="http://www.illustris-project.org/api/Illustris-1/snapshots/135/subhalos/<%= @subject.metadata.subhalo_id %>"><%- I18n.t 'examine.illustris_link' %></a>
+    <a target="_blank" href="http://www.illustris-project.org/api/Illustris-1/snapshots/135/subhalos/<%= @subject.metadata.subhalo_id %>">/?api_key=f2cf4c796292b7fc0de0422cf1af5b01<%- I18n.t 'examine.illustris_link' %></a>
   </span>
 </div>
 
