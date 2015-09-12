@@ -97,11 +97,11 @@ Config =
         id: '5501a2c17b9f991a95000001'
         workflowId: '5501a9be7b9f992679000001'
       decals:
-        id: ''
-        workflowId: ''
+        id: '55f428ca4dc26150f3000001'
+        workflowId: '50251c3b516bcb6ecb000002'
       illustris:
-        id: ''
-        workflowId: ''
+        id: '55f428d04dc26150f3000002'
+        workflowId: '50251c3b516bcb6ecb000002'
     subjectCache: 5
     quiz:
       invitationId: '502bfa73516bcb3c600003e9'
