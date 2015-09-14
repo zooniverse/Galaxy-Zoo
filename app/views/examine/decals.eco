@@ -5,7 +5,7 @@
 <%- @info I18n.t('examine.declination'), @subject.coords[1].toFixed(4), '&deg;' %>
 <%- @info I18n.t('examine.petro_rad'), @subject.metadata.petrorad_r.toFixed(3), '&quot;' %>
 <%- @info I18n.t('examine.magnitude'), @subject.metadata.mag.r.toFixed(2) %>
-<%- @info I18n.t('examine.absmagnitude'), @subject.metadata.mag.abs_r.toFixed(2) %>
+<%- @info I18n.t('examine.absmagnitude'), @subject.metadata.mag.abs_r.substring(0,6) %>
 
 <div class="row">
   <span class="blank"></span>
