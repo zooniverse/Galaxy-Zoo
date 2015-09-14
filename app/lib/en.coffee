@@ -133,7 +133,7 @@ module.exports =
         'a-1': 'No'
 
     'goods_full-10':
-      text: "Does the galaxy have a bulge at its center? If so, what shape?"
+      text: "Does the galaxy have a bulge at its centre? If so, what shape?"
       title: "Bulge"
       help: "Concentrate on the centre of the galaxy - if it has a smooth, uninterrupted, needle or lens-shape then click &quot;no bulge.&quot; Otherwise your options are &quot;rounded&quot; bulge or &quot;boxy&quot; (but boxy bulges are rare). Click to see larger images."
       answers:
@@ -236,7 +236,7 @@ module.exports =
         'a-1': 'No'
     
     'sloan-2':
-      text: "Is there any sign of a bar feature through the center of the galaxy?"
+      text: "Is there any sign of a bar feature through the centre of the galaxy?"
       title: "Bar"
       help: "Sometimes galaxies have a prominent straight &quot;bar&quot; running through their centre, and that's what we're looking for here. Click to see larger images."
       answers:
@@ -294,7 +294,7 @@ module.exports =
         'a-2': 'Cigar shaped'
     
     'sloan-8':
-      text: "Does the galaxy have a bulge at its center? If so, what shape?"
+      text: "Does the galaxy have a bulge at its centre? If so, what shape?"
       title: "Bulge"
       help: "Concentrate on the centre of the galaxy - if it has a smooth, uninterrupted, needle or lens-shape then click &quot;no bulge.&quot; Otherwise your options are &quot;rounded&quot; bulge or &quot;boxy&quot; (but boxy bulges are rare). Click to see larger images."
       answers:
@@ -334,7 +334,7 @@ module.exports =
     'decals-0':
       text: "Is the galaxy simply smooth and rounded, with no sign of a disk?"
       title: "Shape"
-      help: "The aim here is to divide featureless galaxies from all the rest. If you can see any interesting features at all, click &quot;features or disk.&quot; Just occasionally you might see something that isn't a galaxy at all - the long streak of a satellite, for example, or an image swamped by light from a bright star. If this happens, just click &quot;star or artifact&quot;. Click to see larger images."
+      help: "The aim here is to divide featureless galaxies from all the rest. If you can see any interesting features at all, click &quot;features or disk.&quot; Just occasionally you might see something that isn't a galaxy at all &mdash; the long streak of a satellite, for example, or an image swamped by light from a bright star. If this happens, just click &quot;star or artifact&quot;. Click on the images to see larger examples."
       answers:
         'a-0': 'Smooth'
         'a-1': 'Features or disk'
@@ -343,15 +343,15 @@ module.exports =
     'decals-1':
       text: "Could this be a disk viewed edge-on?"
       title: "Disk"
-      help: "Disc galaxies are very thin, so look different when viewed from the side. We're trying to find exactly edge-on galaxies with this question. If the galaxy looks needle-like, perhaps with a bulge at the centre, then click &quot;yes,&quot; otherwise choose &quot;no&quot; (even for galaxies almost edge-on). Click to see larger images."
+      help: "Disc galaxies are very thin, so they look different when viewed from the side. We're trying to find exactly edge-on galaxies with this question. If the galaxy looks needle-like, perhaps with a bulge at the centre, then click &quot;yes,&quot; otherwise choose &quot;no&quot; (even for galaxies that are almost edge-on). Click on the images to see larger examples."
       answers:
         'a-0': 'Yes'
         'a-1': 'No'
     
     'decals-2':
-      text: "Is there any sign of a bar feature through the center of the galaxy?"
+      text: "Is there any sign of a bar feature through the centre of the galaxy?"
       title: "Bar"
-      help: "Sometimes galaxies have a prominent straight &quot;bar&quot; running through their centre, and that's what we're looking for here. Click to see larger images."
+      help: "Sometimes galaxies have a prominent straight &quot;bar&quot; running through their centre, and that's what we're looking for here. Click on the images to see larger examples."
       answers:
         'a-0': 'Bar'
         'a-1': 'No bar'
@@ -359,7 +359,7 @@ module.exports =
     'decals-3':
       text: "Is there any sign of a spiral arm pattern?"
       title: "Spiral"
-      help: "Look carefully for spiral arms - remember they may be embedded in the disk and not that easy to see. Click to see larger images."
+      help: "Look carefully for spiral arms &mdash; remember they may be embedded in the disk and not that easy to see. Click on the images to see larger examples."
       answers:
         'a-0': 'Spiral'
         'a-1': 'No spiral'
@@ -367,7 +367,7 @@ module.exports =
     'decals-4':
       text: "How prominent is the central bulge, compared with the rest of the galaxy?"
       title: "Bulge"
-      help: "It's not always easy to tell, but look at the centre of the galaxy for a round bulge of stars which may obscure any bar and the spiral arms in this central region. If you see a bulge, rank its size and brightness compared to the rest of the galaxy's disk. Click to see larger images."
+      help: "It's not always easy to tell, but look at the centre of the galaxy for a round bulge of stars which may obscure any bar and the spiral arms in this central region. If you see a bulge, rank its size and brightness compared to the rest of the galaxy's disk. Click on the images to see larger examples."
       answers:
         'a-0': 'No bulge'
         'a-1': 'Obvious'
@@ -376,7 +376,7 @@ module.exports =
     'decals-5':
       text: "How tightly wound do the spiral arms appear?"
       title: "Spiral"
-      help: "Astronomers classify spiral galaxies by how tight their arms are - you might find it easiest to assess this by looking at the arms close to the centre. Click to see larger images."
+      help: "Astronomers classify spiral galaxies by how tight their arms are &mdash; you might find it easiest to assess this by looking at the arms where they're closest to the centre. Click on the images to see larger examples."
       answers:
         'a-0': 'Tight'
         'a-1': 'Medium'
@@ -385,7 +385,7 @@ module.exports =
     'decals-6':
       text: "How many spiral arms are there?"
       title: "Spiral"
-      help: "Some spiral galaxies are rather complicated, but we want your best guess as to how many individual arms you can see. Note that the arms don't always begin at the very centre of the galaxy. If there are more than four arms, don't worry about counting them individually, but select the &quot;more than 4&quot; button."
+      help: "Some spiral galaxies are rather complicated, but we want your best guess as to how many individual arms you can see. Note that the arms don't always begin at the very centre of the galaxy. If there are more than four arms, don't worry about counting them individually, but select the &quot;more than 4&quot; button. Click on the images to see larger examples."
       answers:
         'a-0': '1'
         'a-1': '2'
@@ -396,7 +396,7 @@ module.exports =
     'decals-7':
       text: "Does the galaxy have a bulge at its centre? If so, what shape?"
       title: "Bulge"
-      help: "Concentrate on the centre of the galaxy - if it has a smooth, uninterrupted, needle or lens-shape then click &quot;no bulge.&quot; Otherwise your options are &quot;rounded&quot; bulge or &quot;boxy&quot; (but boxy bulges are rare). Click to see larger images."
+      help: "Concentrate on the centre of the galaxy &mdash; if it has a smooth, uninterrupted, needle or lens-shape then click &quot;no bulge.&quot; Otherwise your options are &quot;rounded&quot; or &quot;boxy&quot; bulges (but boxy bulges are rare). Click on the images to see larger examples."
       answers:
         'a-0': 'Rounded'
         'a-1': 'Boxy'
@@ -405,7 +405,7 @@ module.exports =
     'decals-8':
       text: "How rounded is it?"
       title: "Round"
-      help: "Not all galaxies are perfectly round - just look at the overall shape and put it in one of these three categories. If there's more than one galaxy in the field, remember always to concentrate on the one in the centre. Click to see larger images."
+      help: "Not all galaxies are perfectly round - just look at the overall shape and put it in one of these three categories. If there's more than one galaxy in the field, remember always to concentrate on the one in the centre.  Click on the images to see larger examples."
       answers:
         'a-0': 'Completely round'
         'a-1': 'In between'
@@ -414,7 +414,7 @@ module.exports =
     'decals-9':
       text: "Is the galaxy currently merging or is there any sign of tidal debris?"
       title: "Mergers"
-      help: "Now you can look at the larger picture - if the galaxy is colliding with another, click &quot;merger.&quot; If there's no visible second system, but long streams of stars or gas are visible then click &quot;tidal debris.&quot; &quot;Both&quot; and &quot;Neither&quot; are your other options. Click to see larger images."
+      help: "Now you can look at the larger picture &mdash; if the galaxy is colliding with another, click &quot;merger.&quot; If there's no visible second system, but long streams of stars or gas are visible then click &quot;tidal debris.&quot; &quot;Both&quot; and &quot;Neither&quot; are your other options. Click on the images to see larger examples."
       answers:
         'a-0': 'Merging'
         'a-1': 'Tidal debris'
@@ -424,7 +424,7 @@ module.exports =
     'decals-10':
       text: "Do you see any of these odd features in the image?"
       title: "Odd"
-      help: "These are examples of galaxy morphology that are rare, but still important to note when you see them. You can select more than one option if you see multiple features in the same galaxy. Click to see larger images."
+      help: "These are examples of galaxy morphology that are rare, but still important to note when you see them. You can select more than one option if you see multiple features in the same galaxy. Ring galaxies have a bright circle of stars around the edge of the galaxy. Lenses and arcs are curved, detached bands of light that can be caused by gravitational lensing. Irregular galaxies have shapes that are neither smooth ellipses or well-behaved spirals, but look more like a chaotic blob. Dust lanes are thin, dark features across a galaxy that resemble shadows. Overlapping galaxies occur when two galaxies appear to be located at least partially on top of each other, but where you don't see any distortions or features that would indicate a merger. Click to see larger images."
       answers:
         'a-0': 'Done'
       checkboxes:
@@ -440,6 +440,119 @@ module.exports =
       text: "Would you like to discuss this object?"
       title: "Discuss"
       help: "If you have any questions about this object, or think it may be interesting to others, or just have something to say, you can start a discussion on Talk by clicking &quot;Yes&quot;. Talk will open in a new window - just close it to come back to the classification page."
+      answers:
+        'a-0': 'Yes'
+        'a-1': 'No'
+    
+    'illustris-0':
+      text: "Is the galaxy simply smooth and rounded, with no sign of a disk?"
+      title: "Shape"
+      help: "The aim here is to divide featureless galaxies from all the rest. If you can see any interesting features at all, click &quot;features or disk.&quot; Just occasionally you might see something that isn't a galaxy at all &mdash; the long streak of a satellite, for example, or an image swamped by light from a bright star. If this happens, just click &quot;star or artifact&quot;. Click on the images to see larger examples."
+      answers:
+        'a-0': 'Smooth'
+        'a-1': 'Features or disk'
+        'a-2': 'Star or artifact'
+    
+    'illustris-1':
+      text: "Could this be a disk viewed edge-on?"
+      title: "Disk"
+      help: "Disc galaxies are very thin, so they look different when viewed from the side. We're trying to find exactly edge-on galaxies with this question. If the galaxy looks needle-like, perhaps with a bulge at the centre, then click &quot;yes,&quot; otherwise choose &quot;no&quot; (even for galaxies that are almost edge-on). Click on the images to see larger examples."
+      answers:
+        'a-0': 'Yes'
+        'a-1': 'No'
+    
+    'illustris-2':
+      text: "Is there any sign of a bar feature through the centre of the galaxy?"
+      title: "Bar"
+      help: "Sometimes galaxies have a prominent straight &quot;bar&quot; running through their centre, and that's what we're looking for here. Click on the images to see larger examples."
+      answers:
+        'a-0': 'Bar'
+        'a-1': 'No bar'
+    
+    'illustris-3':
+      text: "Is there any sign of a spiral arm pattern?"
+      title: "Spiral"
+      help: "Look carefully for spiral arms &mdash; remember they may be embedded in the disk and not that easy to see. Click on the images to see larger examples."
+      answers:
+        'a-0': 'Spiral'
+        'a-1': 'No spiral'
+    
+    'illustris-4':
+      text: "How prominent is the central bulge, compared with the rest of the galaxy?"
+      title: "Bulge"
+      help: "It's not always easy to tell, but look at the centre of the galaxy for a round bulge of stars which may obscure any bar and the spiral arms in this central region. If you see a bulge, rank its size and brightness compared to the rest of the galaxy's disk. Click on the images to see larger examples."
+      answers:
+        'a-0': 'No bulge'
+        'a-1': 'Just noticeable'
+        'a-2': 'Obvious'
+        'a-3': 'Dominant'
+    
+    'illustris-5':
+      text: "Do you see any of these odd features in the image?"
+      title: "Odd"
+      help: "Ring galaxies have a bright circle of stars around the edge of the galaxy. Lenses and arcs are curved, detached bands of light that can be caused by gravitational lensing. Disturbed galaxies may have a kink or warp through the center. Irregular galaxies have shapes that are neither smooth ellipses or well-behaved spirals, but look more like a chaotic blob. Mergers happen when galaxies pass near each other, often resulting in long tails of stars stripped out of the galaxies by gravity. Dust lanes are thin, dark features across a galaxy that resemble shadows. Click on the images to see larger examples."
+      answers:
+        'a-0': 'Done'
+      checkboxes:
+        'x-0': 'Ring'
+        'x-1': 'Lens or arc'
+        'x-2': 'Disturbed'
+        'x-3': 'Irregular'
+        'x-4': 'Other'
+        'x-5': 'Merger'
+        'x-6': 'Dust lane'
+    
+    'illustris-6':
+      text: "How rounded is the galaxy?"
+      title: "Round"
+      help: "Not all galaxies are perfectly round - just look at the overall shape and put it in one of these three categories. If there's more than one galaxy in the field, remember always to concentrate on the one in the centre.  Click on the images to see larger examples."
+      answers:
+        'a-0': 'Completely round'
+        'a-1': 'In between'
+        'a-2': 'Cigar shaped'
+    
+    'illustris-7':
+      text: "Does the galaxy have a bulge at its centre? If so, what shape?"
+      title: "Bulge"
+      help: "Concentrate on the centre of the galaxy &mdash; if it has a smooth, uninterrupted, needle or lens-shape then click &quot;no bulge.&quot; Otherwise your options are &quot;rounded&quot; or &quot;boxy&quot; bulges (but boxy bulges are rare). Click on the images to see larger examples."
+      answers:
+        'a-0': 'Rounded'
+        'a-1': 'Boxy'
+        'a-2': 'No bulge'
+    
+    'illustris-8':
+      text: "How tightly wound do the spiral arms appear?"
+      title: "Spiral"
+      help: "Astronomers classify spiral galaxies by how tight their arms are &mdash; you might find it easiest to assess this by looking at the arms where they're closest to the centre. Click on the images to see larger examples."
+      answers:
+        'a-0': 'Tight'
+        'a-1': 'Medium'
+        'a-2': 'Loose'
+    
+    'illustris-9':
+      text: "How many spiral arms are there?"
+      title: "Spiral"
+      help: "Some spiral galaxies are rather complicated, but we want your best guess as to how many individual arms you can see. Note that the arms don't always begin at the very centre of the galaxy. If there are more than four arms, don't worry about counting them individually, but select the &quot;more than 4&quot; button. Click on the images to see larger examples."
+      answers:
+        'a-0': '1'
+        'a-1': '2'
+        'a-2': '3'
+        'a-3': '4'
+        'a-4': 'More than 4'
+        'a-5': "Can't tell"
+
+    'illustris-10':
+      text: "Is there anything odd?"
+      title: "Odd"
+      help: "We're looking for signs that the galaxy is merging, is disturbed, or has other unusual features. If you see anything, just click &quot;Yes&quot; and you can identify the specific type of feature in the next step. Click on the images to see larger examples."
+      answers:
+        'a-0': 'Yes'
+        'a-1': 'No'
+ 
+    'illustris-11':
+      text: "Would you like to discuss this object?"
+      title: "Discuss"
+      help: "If you have any questions about this object, or think it may be interesting to others, or just have something to say, you can start a discussion on Talk by clicking &quot;Yes&quot;. Talk will open in a new window &mdash; just close it to come back to the classification page."
       answers:
         'a-0': 'Yes'
         'a-1': 'No'
@@ -910,7 +1023,7 @@ module.exports =
     group: 'Group'
     favorite: 'Favourite'
     invert: 'Invert'
-    directions: 'Note: Please always classify the galaxy in the center of the image.'
+    directions: 'Note: Please always classify the galaxy in the centre of the image.'
     bgu_ms_exp1_intervention_text_1: "<strong>Please don't stop just yet. You've been extremely helpful so far.</strong><br/>Your classifications are really helping us to understand deep mysteries about galaxies."
     bgu_ms_exp1_intervention_text_2: "<strong>Thousands of people are taking part in the project every month.</strong><br/>Visit Talk at <a id=\"intervention-talk-link\" href=\"javascript:void(0);\">talk.galaxyzoo.org</a> to discuss the images you see with them."
     bgu_ms_exp1_intervention_text_3: "We use statistical techniques to get the most from every answer;<br/>So, <strong>you don’t need to worry about being \"right\".</strong> Just tell us what you see."
