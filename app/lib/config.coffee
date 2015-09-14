@@ -24,11 +24,17 @@ Config =
       sloan_singleband:
         id: ''
         workflowId: ''
+      decals:
+        id: ''
+        workflowId: ''
+      illustris:
+        id: ''
+        workflowId: ''
     subjectCache: 1
     quiz:
       invitationId: '502bfa73516bcb3c600003e9'
       workflowId: '502a701e516bcb0001000002'
-  
+
   developmentLocal:
     quizzesActive: false
     apiHost: 'http://localhost:3000'
@@ -54,11 +60,17 @@ Config =
       sloan_singleband:
         id: ''
         workflowId: ''
+      decals:
+        id: ''
+        workflowId: ''
+      illustris:
+        id: ''
+        workflowId: ''
     subjectCache: 5
     quiz:
       invitationId: '502bfa73516bcb3c600003e9'
       workflowId: '502a701e516bcb0001000002'
-  
+
   developmentRemote:
     quizzesActive: false
     apiHost: 'https://dev.zooniverse.org'
@@ -84,6 +96,12 @@ Config =
       sloan_singleband:
         id: '5501a2c17b9f991a95000001'
         workflowId: '5501a9be7b9f992679000001'
+      decals:
+        id: '55f428ca4dc26150f3000001'
+        workflowId: '50251c3b516bcb6ecb000002'
+      illustris:
+        id: '55f428d04dc26150f3000002'
+        workflowId: '50251c3b516bcb6ecb000002'
     subjectCache: 5
     quiz:
       invitationId: '502bfa73516bcb3c600003e9'
@@ -114,6 +132,12 @@ Config =
       sloan_singleband:
         id: '5514521e2f0eef2012000001'
         workflowId: '5514521f2f0eef2012000002'
+      decals:
+        id: '55db7cf01766276e7b000001'
+        workflowId: '55db7cf01766276e7b000002'
+      illustris:
+        id: '55db71251766276613000001'
+        workflowId: '55db71251766276613000002'
     subjectCache: 5
     quiz:
       invitationId: '502bfa73516bcb3c600003e9'

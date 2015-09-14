@@ -8,6 +8,8 @@ UkidssTree = require 'lib/ukidss_tree'
 FerengiTree = require 'lib/ferengi_tree'
 SloanSinglebandTree = require 'lib/sloan_singleband_tree'
 GoodsTree = require 'lib/goods_full_tree'
+DecalsTree = require 'lib/decals_tree'
+IllustrisTree = require 'lib/illustris_tree'
 UserGroup = require 'models/user_group'
 Analytics = require 'lib/analytics'
 
@@ -44,17 +46,23 @@ class Subject extends BaseSubject
       id: Config.surveys.sloan_singleband.id
       workflowId: Config.surveys.sloan_singleband.workflowId
       tree: SloanSinglebandTree
+    decals:
+      id: Config.surveys.decals.id
+      workflowId: Config.surveys.decals.workflowId
+      tree: DecalsTree
+    illustris:
+      id: Config.surveys.illustris.id
+      workflowId: Config.surveys.illustris.workflowId
+      tree: IllustrisTree
   
   @url: (params) -> @withParams "/projects/galaxy_zoo/groups/#{ params.surveyId }/subjects", limit: params.limit
 
   @randomSurveyId: ->
-    return @::surveys.sloan.id
-    
-    # n = Math.random()
-    # if n <= 0.1
-    #   @::surveys.sloan_singleband.id
-    # else
-    #   @::surveys.sloan.id
+    n = Math.random()
+    if n <= (2/3)
+      @::surveys.decals.id
+    else
+      @::surveys.illustris.id
 
   @next: ->
     if @current
@@ -92,7 +100,7 @@ class Subject extends BaseSubject
     img.src = @image()
   
   survey: -> @surveys[@metadata.survey]
-  surveyId: -> @metadata.hubble_id or @metadata.sdss_id
+  surveyId: -> @metadata.provided_image_id
   tree: -> @survey().tree
   workflowId: -> @survey().workflowId
   image: -> @location.standard
