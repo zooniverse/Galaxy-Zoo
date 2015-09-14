@@ -3,10 +3,10 @@
 <%- @info I18n.t('examine.camera'), @subject.metadata.camera %>
 <%- @info I18n.t('examine.background'), @subject.metadata.background %>
 <%- @info I18n.t('examine.band'), @subject.metadata.bands %>
-<%- @info I18n.t('examine.absmagnitude'), @subject.metadata.mag.absmag_r.toFixed(2) %>
+<%- @info I18n.t('examine.absmagnitude'), @subject.metadata.mag.absmag_r.substring(0,6) %>
 <%- @info I18n.t('examine.petro_rad'), @subject.metadata.radius_half.toFixed(3), 'kpc' %>
-<%- @info I18n.t('examine.mass'), @subject.metadata.mass_log_msun.toFixed(3), 'log M&#9737;' %>
-<%- @info I18n.t('examine.sfr'), @subject.metadata.sfr.toFixed(3), 'M&#9737;/yr' %>
+<%- @info I18n.t('examine.mass'), @subject.metadata.mass_log_msun.toFixed(3), 'log M<sub>&#9737;</sub>' %>
+<%- @info I18n.t('examine.sfr'), @subject.metadata.sfr.toFixed(3), 'M<sub>&#9737;</sub>/yr' %>
 
 <div class="row">
   <span class="blank"></span>
@@ -15,7 +15,7 @@
 <div class="row">
   <span class="key"></span>
   <span class="value">
-    <a target="_blank" href="http://www.illustris-project.org/api/Illustris-1/snapshots/135/subhalos/<%= @subject.metadata.subhalo_id %>">/?api_key=f2cf4c796292b7fc0de0422cf1af5b01<%- I18n.t 'examine.illustris_link' %></a>
+    <a target="_blank" href="http://www.illustris-project.org/api/Illustris-1/snapshots/135/subhalos/<%= @subject.metadata.subhalo_id %>/?api_key=f2cf4c796292b7fc0de0422cf1af5b01"><%- I18n.t 'examine.illustris_link' %></a>
   </span>
 </div>
 
