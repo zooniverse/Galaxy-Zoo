@@ -42,7 +42,7 @@ DecalsTree = new DecisionTree 'decals', ->
     @answer '4', icon: 'spiral_4', examples: 5
     @answer 'More than 4', icon: 'spiral_4-plus', examples: 6
   
-  @question 'Bulge', 'Does the galaxy have a bulge at its centre?', leadsTo: 'Is there anything odd?', ->
+  @question 'Bulge', 'Does the galaxy have a bulge at its centre?', leadsTo: 'Is the galaxy currently merging or is there any sign of tidal debris?', ->
     @help "Concentrate on the centre of the galaxy - if it has a smooth, uninterrupted, needle or lens-shape then click &quot;no bulge.&quot; Otherwise your options are &quot;rounded&quot; bulge or &quot;boxy&quot; (but boxy bulges are rare). Click to see larger images."
     @answer 'Rounded', icon: 'edge_round', examples: 4
     @answer 'Boxy', icon: 'edge_boxy', examples: 5
