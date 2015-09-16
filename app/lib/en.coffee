@@ -1164,6 +1164,14 @@ module.exports =
       kaviraj: '<span class="person">Sugata Kaviraj</span> - Astronomer, University of Hertfordshire and University of Oxford<br />Works on the formation and evolution of galaxies.'
       raddick: '<span class="person">Jordan Raddick</span> - Science Education and Outreach Coordinator, Johns Hopkins University<br />A science writer and educator, creator of the science projects on the SDSS SkyServer web site, and an avid science fiction reader and writer. Jordan wishes he could visit galaxies in their natural habitat.'
       wong: '<span class="person">Ivy Wong</span> - Astronomer, ICRAR/Perth<br /> A Super Science Fellow in Australia, Ivy studies why galaxies start and stop forming stars, how they grow supermassive black holes in their centre, and why they look like they do today, especially their radio properties. Project Scientist for <a href="http://radio.galaxyzoo.org/#/">Radio Galaxy Zoo</a>'
+      cheung: '<span class="person">Edmond Cheung</span> - Astronomer, Kavli IPMU</br> Studies how galaxy structures such as bars and bulges affect galaxy evolution. Also likes to sit in bars.'
+      smethurst: '<span class="person">Becky Smethurst</span> - Astronomer, University of Oxford</br> PhD student working on Bayesian methods to determine star formation histories of galaxies.'
+      galloway: '<span class="person">Melanie Galloway</span> - Astronomer, University of Minnesota</br> PhD student studying the roles AGN and morphology play in galaxy evolution. When she's not writing code and reading papers, she spends an odd amount of time training with a sword.'
+      beck: '<span class="person">Melanie Beck</span> - Astronomer, University of Minnesota</br> PhD student.'
+      hart: '<span class="person">Ross Hart</span> - Astronomer, University of Nottingham</br> PhD student.'
+      kruk: '<span class="person">Sandor Kruk</span> - Astronomer, University of Oxford</br> PhD student.'
+      newnham: '<span class="person">Lucy Newnham</span> - Astronomer, University of Portsmouth </br> PhD student.'
+      
 
     dev:
       title: 'Zooniverse Development Team'
