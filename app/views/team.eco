@@ -33,6 +33,7 @@
         <p><%- I18n.t 'team.science.hart' %></p>
         <p><%- I18n.t 'team.science.kruk' %></p>
         <p><%- I18n.t 'team.science.newnham' %></p>
+        <p><%- I18n.t 'team.science.scarlata' %></p>
         
         <h3 class="sub-heading"><%- I18n.t 'team.dev.title' %></h3>
         <p><%- I18n.t 'team.dev.kapadia' %></p>
