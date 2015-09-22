@@ -7,9 +7,9 @@
         <p><%- I18n.t 'team.science.lintott' %></p>
         <p><%- I18n.t 'team.science.masters' %></p>
         <p><%- I18n.t 'team.science.schawinski' %></p>
+        <p><%- I18n.t 'team.science.willett' %></p>
         <p><%- I18n.t 'team.science.bamford' %></p>
         <p><%- I18n.t 'team.science.simmons' %></p>
-        <p><%- I18n.t 'team.science.willett' %></p>
         <p><%- I18n.t 'team.science.edmondson' %></p>
         <p><%- I18n.t 'team.science.keel' %></p>
         <p><%- I18n.t 'team.science.cardamone' %></p>
@@ -22,7 +22,6 @@
         <p><%- I18n.t 'team.science.szalay' %></p>
         <p><%- I18n.t 'team.science.thomas' %></p>
         <p><%- I18n.t 'team.science.haussler' %></p>
-        <p><%- I18n.t 'team.science.hoyle' %></p>
         <p><%- I18n.t 'team.science.kaviraj' %></p>
         <p><%- I18n.t 'team.science.raddick' %></p>
         <p><%- I18n.t 'team.science.wong' %></p>
@@ -79,7 +78,8 @@
         <p><%- I18n.t 'team.retired.murray' %></p>
         <p><%- I18n.t 'team.retired.slosar' %></p>
         <p><%- I18n.t 'team.retired.darg' %></p>
-        <p><%- I18n.t 'team.science.skibba' %></p>
+        <p><%- I18n.t 'team.retired.hoyle' %></p>
+        <p><%- I18n.t 'team.retired.skibba' %></p>
       </div>
     </div>
   </div>
