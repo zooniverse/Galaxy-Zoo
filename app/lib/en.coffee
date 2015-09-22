@@ -1171,6 +1171,7 @@ module.exports =
       hart: '<span class="person">Ross Hart</span> - Astronomer, University of Nottingham</br> PhD student.'
       kruk: '<span class="person">Sandor Kruk</span> - Astronomer, University of Oxford</br> PhD student.'
       newnham: '<span class="person">Lucy Newnham</span> - Astronomer, University of Portsmouth </br> PhD student.'
+      scarlata: '<span class="person">Claudia Scarlata</span> - Astronomer, University of Minnesota </br> An expert in automated morphology measures, now working on efforts to combine machine learning and human classification.'
 
     dev:
       title: 'Zooniverse Development Team'
