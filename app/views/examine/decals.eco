@@ -17,6 +17,14 @@
     <a target="_blank" href="http://imagine.legacysurvey.org/?ra=<%= @subject.coords[0] %>&dec=<%= @subject.coords[1] %>&zoom=14&layer=decals-dr1j"><%- I18n.t 'examine.legacyserver_link' %></a>
   </span>
 </div>
+
+<div class="row">
+  <span class="key"></span>
+  <span class="value">
+    <a target="_blank" href="http://skyserver.sdss.org/dr9/en/tools/explore/obj.asp?ra=<%= @subject.coords[0] %>&dec=<%= @subject.coords[1] %>"><%- I18n.t 'examine.skyserver_link' %></a>
+  </span>
+</div>
+
 <div class="row">
   <span class="key"></span>
   <span class="value">

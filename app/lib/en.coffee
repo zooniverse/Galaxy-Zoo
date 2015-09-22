@@ -1235,7 +1235,7 @@ module.exports =
     magnitude: 'Apparent magnitude'
     absmagnitude: 'Absolute magnitude'
     ned_link: 'Search NED'
-    discuss: 'Discuss this'
+    discuss: 'Discuss this object'
     hubble: 'Hubble'
     sdss: 'SDSS'
     ukirt: 'UKIRT'
@@ -1261,9 +1261,9 @@ module.exports =
     background: 'Background'
     mass: 'Stellar mass'
     sfr: 'Star formation rate'
-    skyserver_link: 'View on SkyServer'
-    legacyserver_link: 'View on Sky Viewer'
-    illustris_link: 'View data from Illustris Project'
+    skyserver_link: 'SDSS SkyServer'
+    legacyserver_link: 'DECaLS SkyViewer'
+    illustris_link: 'View data on Illustris Project'
     explorer_link: 'Illustris Explorer'
   
   
