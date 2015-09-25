@@ -9,11 +9,10 @@ FerengiTree = require 'lib/ferengi_tree'
 SloanSinglebandTree = require 'lib/sloan_singleband_tree'
 GoodsTree = require 'lib/goods_full_tree'
 UserGroup = require 'models/user_group'
-Analytics = require 'lib/analytics'
 
 class Subject extends BaseSubject
   @configure 'Subject', 'zooniverse_id', 'coords', 'location', 'metadata'
-  @projectName: 'galaxy_zoo'
+  projectName: 'galaxy_zoo'
   
   surveys:
     sloan:
@@ -83,7 +82,6 @@ class Subject extends BaseSubject
           @trigger 'fetched'
   
   @show: (id) ->
-    Analytics.logEvent { "type": "view", "subject_id": id }
     Api.get "/projects/galaxy_zoo/subjects/#{ id }"
   
   constructor: ->
