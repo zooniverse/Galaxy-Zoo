@@ -3,13 +3,8 @@
   "private": true,
   "version": "0.0.1",
   "author": "zooniverse",
-  "engineStrict": true,
-  "engine-strict": true,
-  "engines": {
-    "node": "<= 0.11.14"
-  },
   "repository": {
-    "type": "git",
+    "type" : "git",
     "url": "https://github.com/zooniverse/Galaxy-Zoo.git"
   },
   "scripts": {
@@ -17,20 +12,16 @@
     "pretest": "hem server --port 9290 & echo $! > ./hem.pid",
     "test": "jasmine-phantom-node --port 9290",
     "posttest": "kill `cat hem.pid`; rm hem.pid",
-    "seed-locale": "seed-translation --project galaxy_zoo --env production --deploy-path locales",
-    "deploy-to-staging": "hem build && publisssh ./public zooniverse-demo/galaxyzoo && rm -rf ./public/application.*",
-    "deploy-to-production": "hem build && publisssh ./public zooniverse-static/www.galaxyzoo.org && rm -rf ./public/application.*",
-    "deploy-to-demo": "hem build && publisssh ./public demo.zooniverse.org/galaxyzoo && rm -rf ./public/application.*"
+    "seed-locale": "seed-translation --project galaxy_zoo --env production --deploy-path locales"
   },
   "dependencies": {
     "hem": "git://github.com/edpaget/hem.git#83617d1a4e",
-    "node-pubsub": "*",
+    "node-pubsub" : "*",
     "nib": "0.9.1",
     "es5-shimify": "~0.0.1",
     "json2ify": "~0.0.1",
     "jqueryify": "~0.0.1",
     "underscore": "*",
-    "publisssh": "^1.0.0-beta",
     "spine": "~1.0.7",
     "clean-css": "0.6.0",
     "uglify-js": "1.3.4",
