@@ -46,6 +46,16 @@ open http://localhost:9294
 
 Depending on your browser, you may have to confirm a security exception to allow a self-signed SSL certificate for dev.zooniverse.org
 
+#### Translations
+
+Galaxy Zoo uses our APIs built-in translation management for storing, and serving localized strings. The interface to add translations is available at http://translations.zooniverse.org/, though you need to be a registered dev/translator to save any changes.
+
+##### What do I do when I add new text to the site
+
+The way our translations system works is we store a canonical en-us version of the language strings both within the repo and remotely in a database. When changes are made to the local copy, we need to update the remote copy, so we can tell what text for languages other than en-us are out of date, missing, or otherwise need attention.
+
+To do what, you need to either POST the current translations to the API manually, or use the https://github.com/parrish/translator-seed/ module that Michael wrote for convenience. A proper command to upload new translations to the site is conveniently provided as an npm script, runnable by `npm run seed-locale`. For the system to accept your upload, you must have an OUROBOROS_AUTH env. variable set (see https://github.com/parrish/translator-seed/issues/2 for details on what that expects) and your account must be tagged as a developer.
+
 ### License
 
 Apache 2.
