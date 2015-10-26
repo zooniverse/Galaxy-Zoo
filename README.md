@@ -14,25 +14,8 @@ hem server
 open http://localhost:9294/
 ```
 
-### Bootstrapping an Ubuntu machine from scratch
+### Installation
 
-##### Install Node.js
-```bash
-sudo apt-get install curl git python-software-properties python build-essential -y
-sudo add-apt-repository ppa:chris-lea/node.js
-sudo apt-get update && sudo apt-get dist-upgrade -y
-sudo apt-get install nodejs -y
-```
-
-##### Install Ruby
-```bash
-curl -L https://get.rvm.io | bash
-source ~/.bash_profile
-rvm install 1.9.3 && source ~/.bash_profile && rvm use 1.9.3 --default
-```
-
-
-##### Setup Galaxy Zoo
 ```bash
 echo 'PATH="./node_modules/.bin:${PATH}"' >> ~/.bash_profile
 echo 'export PATH' >> ~/.bash_profile
@@ -46,11 +29,11 @@ open http://localhost:9294
 
 Depending on your browser, you may have to confirm a security exception to allow a self-signed SSL certificate for dev.zooniverse.org
 
-#### Translations
+### Translations
 
 Galaxy Zoo uses our APIs built-in translation management for storing, and serving localized strings. The interface to add translations is available at http://translations.zooniverse.org/, though you need to be a registered dev/translator to save any changes.
 
-##### What do I do when I add new text to the site
+#### What do I do when I add new text to the site
 
 The way our translations system works is we store a canonical en-us version of the language strings both within the repo and remotely in a database. When changes are made to the local copy, we need to update the remote copy, so we can tell what text for languages other than en-us are out of date, missing, or otherwise need attention.
 
