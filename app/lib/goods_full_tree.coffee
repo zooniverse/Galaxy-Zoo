@@ -107,6 +107,7 @@ GoodsTree = new DecisionTree 'goods_full', ->
     @answer 'No', leadsTo: 'Would you like to discuss this object?', icon: 'no'
   
   @question 'Odd', 'What are the odd features?', ->
+    @help "We're looking for signs that the galaxy is merging, is disturbed, or has other unusual/rare features. Ring galaxies have a bright circle of stars around the edge of the galaxy. Lenses and arcs are curved, detached bands of light that can be caused by gravitational lensing. Disturbed galaxies may have a kink or warp through the center. Irregular galaxies have shapes that are neither the smooth ellipticals or well-behaved spirals, like a big blob. Mergers can happen when galaxies pass near each other, often resulting in long tails of stars stripped out by gravity. Dust lanes are thin, dark features across a galaxy that resemble shadows. Click on the images to see larger examples."
     @checkbox 'Ring', icon: 'ring', examples: 2
     @checkbox 'Lens or arc', icon: 'lens', examples: 2
     @checkbox 'Disturbed', icon: 'disturbed', examples: 2

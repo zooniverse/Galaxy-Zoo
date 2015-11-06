@@ -206,7 +206,7 @@ module.exports =
     'goods_full-18':
       text: "What are the odd features?"
       title: "Odd"
-      help: ""
+      help: "We're looking for signs that the galaxy is merging, is disturbed, or has other unusual/rare features. Ring galaxies have a bright circle of stars around the edge of the galaxy. Lenses and arcs are curved, detached bands of light that can be caused by gravitational lensing. Disturbed galaxies may have a kink or warp through the center. Irregular galaxies have shapes that are neither the smooth ellipticals or well-behaved spirals, like a big blob. Mergers can happen when galaxies pass near each other, often resulting in long tails of stars stripped out by gravity. Dust lanes are thin, dark features across a galaxy that resemble shadows. Click on the images to see larger examples."
       answers:
         'a-0': 'Done'
       checkboxes:
@@ -272,7 +272,7 @@ module.exports =
     'sloan-6':
       text: "What are the odd features?"
       title: "Odd"
-      help: ""
+      help: "We're looking for signs that the galaxy is merging, is disturbed, or has other unusual/rare features. Ring galaxies have a bright circle of stars around the edge of the galaxy. Lenses and arcs are curved, detached bands of light that can be caused by gravitational lensing. Disturbed galaxies may have a kink or warp through the center. Irregular galaxies have shapes that are neither the smooth ellipticals or well-behaved spirals, like a big blob. Mergers can happen when galaxies pass near each other, often resulting in long tails of stars stripped out by gravity. Dust lanes are thin, dark features across a galaxy that resemble shadows. Click on the images to see larger examples."
       answers:
         'a-0': 'Done'
       checkboxes:
@@ -287,7 +287,7 @@ module.exports =
     'sloan-7':
       text: "How rounded is it?"
       title: "Round"
-      help: ""
+      help: "Assess the relative roundness of the galaxy's shape, focusing on the edge of the stars that you can see in the galaxy. If the galaxy is very elliptical (cigar shaped; long in one direction and short in the other), look carefully for a central bulge or other indications that it might actually be an edge-on disk galaxy instead. Click on the images to see larger examples."
       answers:
         'a-0': 'Completely round'
         'a-1': 'In between'
@@ -305,7 +305,7 @@ module.exports =
     'sloan-9':
       text: "How tightly wound do the spiral arms appear?"
       title: "Spiral"
-      help: ""
+      help: "Astronomers classify spiral galaxies by how tight their arms are - you might find it easiest to assess this by looking at the arms close to the centre. Click on the images to see larger examples."
       answers:
         'a-0': 'Tight'
         'a-1': 'Medium'
@@ -314,7 +314,7 @@ module.exports =
     'sloan-10':
       text: "How many spiral arms are there?"
       title: "Spiral"
-      help: ""
+      help: "Some spiral galaxies are rather complicated, but we want your best guess as to how many individual arms you can see. Note that the arms don't always begin at the very centre of the galaxy. If there are more than four arms, don't worry about counting them individually, but select the &quot;more than 4&quot; button. Click to see larger images."
       answers:
         'a-0': '1'
         'a-1': '2'
