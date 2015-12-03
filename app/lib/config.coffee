@@ -38,6 +38,7 @@ Config =
   developmentLocal:
     quizzesActive: false
     apiHost: 'http://localhost:3000'
+    apiPath: '/proxy'
     surveys:
       candels:
         id: '50251c3b516bcb6ecb000001'
@@ -74,6 +75,7 @@ Config =
   developmentRemote:
     quizzesActive: false
     apiHost: 'https://dev.zooniverse.org'
+    apiPath: '/proxy'
     surveys:
       candels:
         id: '50251c3b516bcb6ecb000001'
@@ -109,7 +111,8 @@ Config =
 
   production:
     quizzesActive: false
-    apiHost: 'https://api.zooniverse.org'
+    apiHost: 'http://www.galaxyzoo.org'
+    apiPath: '/_ouroboros_api/proxy'
     surveys:
       candels:
         id: '50251c3b516bcb6ecb000001'
