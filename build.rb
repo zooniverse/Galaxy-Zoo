@@ -2,7 +2,7 @@
 require 'aws-sdk'
 
 destination = (ARGV[0] ? ARGV[0] : false)
-key_path = if destination
+key_path = if destination && destination != 'quick'
   File.join "www.galaxyzoo.org", destination
 else
   "www.galaxyzoo.org"
