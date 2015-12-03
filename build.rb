@@ -70,7 +70,7 @@ Dir.chdir 'build'
 
 to_upload = []
 
-if ARGV[0] == 'quick'
+if ARGV[0] == 'quick' || ARGV[1] == 'quick'
   %w(js css html).each{ |ext| to_upload << Dir["**/*.#{ ext }*"] }
   to_upload.flatten!
 else
