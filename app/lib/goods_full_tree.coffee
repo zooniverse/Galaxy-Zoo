@@ -52,7 +52,7 @@ GoodsTree = new DecisionTree 'goods_full', ->
   @question 'Clumps', 'Do the clumps appear to be embedded within a larger object?', leadsTo: 'Is there anything odd?', ->
     @help "Look carefully for faint background light surrounding the clumps - are they embedded in a visible galaxy?"
     @answer 'Yes', icon: 'yes', examples: 2
-    @answer 'No', icon: 'no', examples: 1
+    @answer 'No', icon: 'no', examples: 2
   
   @question 'Disk', 'Could this be a disk viewed edge-on?', ->
     @help "Disc galaxies are very thin, so look different when viewed from the side. We're trying to find exactly edge-on galaxies with this question. If the galaxy looks needle-like, perhaps with a bulge at the centre, then click &quot;yes,&quot; otherwise choose &quot;no&quot; (even for galaxies almost edge-on). Click to see larger images."
@@ -107,6 +107,7 @@ GoodsTree = new DecisionTree 'goods_full', ->
     @answer 'No', leadsTo: 'Would you like to discuss this object?', icon: 'no'
   
   @question 'Odd', 'What are the odd features?', ->
+    @help "We're looking for signs that the galaxy is merging, is disturbed, or has other unusual/rare features. Ring galaxies have a bright circle of stars around the edge of the galaxy. Lenses and arcs are curved, detached bands of light that can be caused by gravitational lensing. Disturbed galaxies may have a kink or warp through the center. Irregular galaxies have shapes that are neither the smooth ellipticals or well-behaved spirals, like a big blob. Mergers can happen when galaxies pass near each other, often resulting in long tails of stars stripped out by gravity. Dust lanes are thin, dark features across a galaxy that resemble shadows. Click on the images to see larger examples."
     @checkbox 'Ring', icon: 'ring', examples: 2
     @checkbox 'Lens or arc', icon: 'lens', examples: 2
     @checkbox 'Disturbed', icon: 'disturbed', examples: 2
