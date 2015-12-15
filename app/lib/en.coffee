@@ -40,7 +40,7 @@ module.exports =
       greeting: 'Hi, <strong>{user}</strong>. Welcome to {appName}!'
       projects:
         title: 'Our Projects'
-        list: 'We currently have 12 projects on subjects ranging from <a href="https://www.zooniverse.org/#space">astronomy</a>, to <a href="https://www.zooniverse.org/#climate">climatology</a>, to <a href="https://www.zooniverse.org/#nature">biology</a>, to <a href="https://www.zooniverse.org/#humanities">humanities</a>.'
+        list: 'We currently have dozens of <a href="https://www.zooniverse.org/#/projects">projects</a> on subjects ranging from astronomy, to climatology, to biology, to humanities.'
   
   
   questions:
@@ -133,7 +133,7 @@ module.exports =
         'a-1': 'No'
 
     'goods_full-10':
-      text: "Does the galaxy have a bulge at its center? If so, what shape?"
+      text: "Does the galaxy have a bulge at its centre? If so, what shape?"
       title: "Bulge"
       help: "Concentrate on the centre of the galaxy - if it has a smooth, uninterrupted, needle or lens-shape then click &quot;no bulge.&quot; Otherwise your options are &quot;rounded&quot; bulge or &quot;boxy&quot; (but boxy bulges are rare). Click to see larger images."
       answers:
@@ -206,7 +206,7 @@ module.exports =
     'goods_full-18':
       text: "What are the odd features?"
       title: "Odd"
-      help: ""
+      help: "We're looking for signs that the galaxy is merging, is disturbed, or has other unusual/rare features. Ring galaxies have a bright circle of stars around the edge of the galaxy. Lenses and arcs are curved, detached bands of light that can be caused by gravitational lensing. Disturbed galaxies may have a kink or warp through the center. Irregular galaxies have shapes that are neither the smooth ellipticals or well-behaved spirals, like a big blob. Mergers can happen when galaxies pass near each other, often resulting in long tails of stars stripped out by gravity. Dust lanes are thin, dark features across a galaxy that resemble shadows. Click on the images to see larger examples."
       answers:
         'a-0': 'Done'
       checkboxes:
@@ -236,7 +236,7 @@ module.exports =
         'a-1': 'No'
     
     'sloan-2':
-      text: "Is there any sign of a bar feature through the center of the galaxy?"
+      text: "Is there any sign of a bar feature through the centre of the galaxy?"
       title: "Bar"
       help: "Sometimes galaxies have a prominent straight &quot;bar&quot; running through their centre, and that's what we're looking for here. Click to see larger images."
       answers:
@@ -272,7 +272,7 @@ module.exports =
     'sloan-6':
       text: "What are the odd features?"
       title: "Odd"
-      help: ""
+      help: "We're looking for signs that the galaxy is merging, is disturbed, or has other unusual/rare features. Ring galaxies have a bright circle of stars around the edge of the galaxy. Lenses and arcs are curved, detached bands of light that can be caused by gravitational lensing. Disturbed galaxies may have a kink or warp through the center. Irregular galaxies have shapes that are neither the smooth ellipticals or well-behaved spirals, like a big blob. Mergers can happen when galaxies pass near each other, often resulting in long tails of stars stripped out by gravity. Dust lanes are thin, dark features across a galaxy that resemble shadows. Click on the images to see larger examples."
       answers:
         'a-0': 'Done'
       checkboxes:
@@ -287,14 +287,14 @@ module.exports =
     'sloan-7':
       text: "How rounded is it?"
       title: "Round"
-      help: ""
+      help: "Assess the relative roundness of the galaxy's shape, focusing on the edge of the stars that you can see in the galaxy. If the galaxy is very elliptical (cigar shaped; long in one direction and short in the other), look carefully for a central bulge or other indications that it might actually be an edge-on disk galaxy instead. Click on the images to see larger examples."
       answers:
         'a-0': 'Completely round'
         'a-1': 'In between'
         'a-2': 'Cigar shaped'
     
     'sloan-8':
-      text: "Does the galaxy have a bulge at its center? If so, what shape?"
+      text: "Does the galaxy have a bulge at its centre? If so, what shape?"
       title: "Bulge"
       help: "Concentrate on the centre of the galaxy - if it has a smooth, uninterrupted, needle or lens-shape then click &quot;no bulge.&quot; Otherwise your options are &quot;rounded&quot; bulge or &quot;boxy&quot; (but boxy bulges are rare). Click to see larger images."
       answers:
@@ -305,7 +305,7 @@ module.exports =
     'sloan-9':
       text: "How tightly wound do the spiral arms appear?"
       title: "Spiral"
-      help: ""
+      help: "Astronomers classify spiral galaxies by how tight their arms are - you might find it easiest to assess this by looking at the arms close to the centre. Click on the images to see larger examples."
       answers:
         'a-0': 'Tight'
         'a-1': 'Medium'
@@ -314,7 +314,7 @@ module.exports =
     'sloan-10':
       text: "How many spiral arms are there?"
       title: "Spiral"
-      help: ""
+      help: "Some spiral galaxies are rather complicated, but we want your best guess as to how many individual arms you can see. Note that the arms don't always begin at the very centre of the galaxy. If there are more than four arms, don't worry about counting them individually, but select the &quot;more than 4&quot; button. Click to see larger images."
       answers:
         'a-0': '1'
         'a-1': '2'
@@ -327,6 +327,232 @@ module.exports =
       text: "Would you like to discuss this object?"
       title: "Discuss"
       help: "If you have any questions about this object, or think it may be interesting to others, or just have something to say, you can start a discussion on Talk by clicking &quot;Yes&quot;. Talk will open in a new window - just close it to come back to the classification page."
+      answers:
+        'a-0': 'Yes'
+        'a-1': 'No'
+    
+    'decals-0':
+      text: "Is the galaxy simply smooth and rounded, with no sign of a disk?"
+      title: "Shape"
+      help: "The aim here is to divide featureless galaxies from all the rest. If you can see any interesting features at all, click &quot;features or disk.&quot; Just occasionally you might see something that isn't a galaxy at all &mdash; the long streak of a satellite, for example, or an image swamped by light from a bright star. If this happens, just click &quot;star or artifact&quot;. Click on the images to see larger examples."
+      answers:
+        'a-0': 'Smooth'
+        'a-1': 'Features or disk'
+        'a-2': 'Star or artifact'
+    
+    'decals-1':
+      text: "Could this be a disk viewed edge-on?"
+      title: "Disk"
+      help: "Disc galaxies are very thin, so they look different when viewed from the side. We're trying to find exactly edge-on galaxies with this question. If the galaxy looks needle-like, perhaps with a bulge at the centre, then click &quot;yes,&quot; otherwise choose &quot;no&quot; (even for galaxies that are almost edge-on). Click on the images to see larger examples."
+      answers:
+        'a-0': 'Yes'
+        'a-1': 'No'
+    
+    'decals-2':
+      text: "Is there any sign of a bar feature through the centre of the galaxy?"
+      title: "Bar"
+      help: "Sometimes galaxies have a prominent straight &quot;bar&quot; running through their centre, and that's what we're looking for here. Click on the images to see larger examples."
+      answers:
+        'a-0': 'Bar'
+        'a-1': 'No bar'
+    
+    'decals-3':
+      text: "Is there any sign of a spiral arm pattern?"
+      title: "Spiral"
+      help: "Look carefully for spiral arms &mdash; remember they may be embedded in the disk and not that easy to see. Click on the images to see larger examples."
+      answers:
+        'a-0': 'Spiral'
+        'a-1': 'No spiral'
+    
+    'decals-4':
+      text: "How prominent is the central bulge, compared with the rest of the galaxy?"
+      title: "Bulge"
+      help: "It's not always easy to tell, but look at the centre of the galaxy for a round bulge of stars which may obscure any bar and the spiral arms in this central region. If you see a bulge, rank its size and brightness compared to the rest of the galaxy's disk. Click on the images to see larger examples."
+      answers:
+        'a-0': 'No bulge'
+        'a-1': 'Obvious'
+        'a-2': 'Dominant'
+    
+    'decals-5':
+      text: "How tightly wound do the spiral arms appear?"
+      title: "Spiral"
+      help: "Astronomers classify spiral galaxies by how tight their arms are &mdash; you might find it easiest to assess this by looking at the arms where they're closest to the centre. Click on the images to see larger examples."
+      answers:
+        'a-0': 'Tight'
+        'a-1': 'Medium'
+        'a-2': 'Loose'
+    
+    'decals-6':
+      text: "How many spiral arms are there?"
+      title: "Spiral"
+      help: "Some spiral galaxies are rather complicated, but we want your best guess as to how many individual arms you can see. Note that the arms don't always begin at the very centre of the galaxy. If there are more than four arms, don't worry about counting them individually, but select the &quot;more than 4&quot; button. Click on the images to see larger examples."
+      answers:
+        'a-0': '1'
+        'a-1': '2'
+        'a-2': '3'
+        'a-3': '4'
+        'a-4': 'More than 4'
+    
+    'decals-7':
+      text: "Does the galaxy have a bulge at its centre? If so, what shape?"
+      title: "Bulge"
+      help: "Concentrate on the centre of the galaxy &mdash; if it has a smooth, uninterrupted, needle or lens-shape then click &quot;no bulge.&quot; Otherwise your options are &quot;rounded&quot; or &quot;boxy&quot; bulges (but boxy bulges are rare). Click on the images to see larger examples."
+      answers:
+        'a-0': 'Rounded'
+        'a-1': 'Boxy'
+        'a-2': 'No bulge'
+    
+    'decals-8':
+      text: "How rounded is it?"
+      title: "Round"
+      help: "Not all galaxies are perfectly round - just look at the overall shape and put it in one of these three categories. If there's more than one galaxy in the field, remember always to concentrate on the one in the centre.  Click on the images to see larger examples."
+      answers:
+        'a-0': 'Completely round'
+        'a-1': 'In between'
+        'a-2': 'Cigar shaped'
+    
+    'decals-9':
+      text: "Is the galaxy currently merging or is there any sign of tidal debris?"
+      title: "Mergers"
+      help: "Now you can look at the larger picture &mdash; if the galaxy is colliding with another, click &quot;merger.&quot; If there's no visible second system, but long streams of stars or gas are visible then click &quot;tidal debris.&quot; &quot;Both&quot; and &quot;Neither&quot; are your other options. Click on the images to see larger examples."
+      answers:
+        'a-0': 'Merging'
+        'a-1': 'Tidal debris'
+        'a-2': 'Both'
+        'a-3': 'Neither'
+    
+    'decals-10':
+      text: "Do you see any of these odd features in the image?"
+      title: "Odd"
+      help: "These are examples of galaxy morphology that are rare, but still important to note when you see them. You can select more than one option if you see multiple features in the same galaxy. Ring galaxies have a bright circle of stars around the edge of the galaxy. Lenses and arcs are curved, detached bands of light that can be caused by gravitational lensing. Irregular galaxies have shapes that are neither smooth ellipses or well-behaved spirals, but look more like a chaotic blob. Dust lanes are thin, dark features across a galaxy that resemble shadows. Overlapping galaxies occur when two galaxies appear to be located at least partially on top of each other, but where you don't see any distortions or features that would indicate a merger. Click to see larger images."
+      answers:
+        'a-0': 'Done'
+      checkboxes:
+        'x-0': 'None'
+        'x-1': 'Ring'
+        'x-2': 'Lens or arc'
+        'x-3': 'Irregular'
+        'x-4': 'Other'
+        'x-5': 'Dust lane'
+        'x-6': 'Overlapping'
+    
+    'decals-11':
+      text: "Would you like to discuss this object?"
+      title: "Discuss"
+      help: "If you have any questions about this object, or think it may be interesting to others, or just have something to say, you can start a discussion on Talk by clicking &quot;Yes&quot;. Talk will open in a new window - just close it to come back to the classification page."
+      answers:
+        'a-0': 'Yes'
+        'a-1': 'No'
+    
+    'illustris-0':
+      text: "Is the galaxy simply smooth and rounded, with no sign of a disk?"
+      title: "Shape"
+      help: "The aim here is to divide featureless galaxies from all the rest. If you can see any interesting features at all, click &quot;features or disk.&quot; Just occasionally you might see something that isn't a galaxy at all &mdash; the long streak of a satellite, for example, or an image swamped by light from a bright star. If this happens, just click &quot;star or artifact&quot;. Click on the images to see larger examples."
+      answers:
+        'a-0': 'Smooth'
+        'a-1': 'Features or disk'
+        'a-2': 'Star or artifact'
+    
+    'illustris-1':
+      text: "Could this be a disk viewed edge-on?"
+      title: "Disk"
+      help: "Disc galaxies are very thin, so they look different when viewed from the side. We're trying to find exactly edge-on galaxies with this question. If the galaxy looks needle-like, perhaps with a bulge at the centre, then click &quot;yes,&quot; otherwise choose &quot;no&quot; (even for galaxies that are almost edge-on). Click on the images to see larger examples."
+      answers:
+        'a-0': 'Yes'
+        'a-1': 'No'
+    
+    'illustris-2':
+      text: "Is there any sign of a bar feature through the centre of the galaxy?"
+      title: "Bar"
+      help: "Sometimes galaxies have a prominent straight &quot;bar&quot; running through their centre, and that's what we're looking for here. Click on the images to see larger examples."
+      answers:
+        'a-0': 'Bar'
+        'a-1': 'No bar'
+    
+    'illustris-3':
+      text: "Is there any sign of a spiral arm pattern?"
+      title: "Spiral"
+      help: "Look carefully for spiral arms &mdash; remember they may be embedded in the disk and not that easy to see. Click on the images to see larger examples."
+      answers:
+        'a-0': 'Spiral'
+        'a-1': 'No spiral'
+    
+    'illustris-4':
+      text: "How prominent is the central bulge, compared with the rest of the galaxy?"
+      title: "Bulge"
+      help: "It's not always easy to tell, but look at the centre of the galaxy for a round bulge of stars which may obscure any bar and the spiral arms in this central region. If you see a bulge, rank its size and brightness compared to the rest of the galaxy's disk. Click on the images to see larger examples."
+      answers:
+        'a-0': 'No bulge'
+        'a-1': 'Just noticeable'
+        'a-2': 'Obvious'
+        'a-3': 'Dominant'
+    
+    'illustris-5':
+      text: "Do you see any of these odd features in the image?"
+      title: "Odd"
+      help: "Ring galaxies have a bright circle of stars around the edge of the galaxy. Lenses and arcs are curved, detached bands of light that can be caused by gravitational lensing. Disturbed galaxies may have a kink or warp through the center. Irregular galaxies have shapes that are neither smooth ellipses or well-behaved spirals, but look more like a chaotic blob. Mergers happen when galaxies pass near each other, often resulting in long tails of stars stripped out of the galaxies by gravity. Dust lanes are thin, dark features across a galaxy that resemble shadows. Click on the images to see larger examples."
+      answers:
+        'a-0': 'Done'
+      checkboxes:
+        'x-0': 'Ring'
+        'x-1': 'Lens or arc'
+        'x-2': 'Disturbed'
+        'x-3': 'Irregular'
+        'x-4': 'Other'
+        'x-5': 'Merger'
+        'x-6': 'Dust lane'
+    
+    'illustris-6':
+      text: "How rounded is the galaxy?"
+      title: "Round"
+      help: "Not all galaxies are perfectly round - just look at the overall shape and put it in one of these three categories. If there's more than one galaxy in the field, remember always to concentrate on the one in the centre.  Click on the images to see larger examples."
+      answers:
+        'a-0': 'Completely round'
+        'a-1': 'In between'
+        'a-2': 'Cigar shaped'
+    
+    'illustris-7':
+      text: "Does the galaxy have a bulge at its centre? If so, what shape?"
+      title: "Bulge"
+      help: "Concentrate on the centre of the galaxy &mdash; if it has a smooth, uninterrupted, needle or lens-shape then click &quot;no bulge.&quot; Otherwise your options are &quot;rounded&quot; or &quot;boxy&quot; bulges (but boxy bulges are rare). Click on the images to see larger examples."
+      answers:
+        'a-0': 'Rounded'
+        'a-1': 'Boxy'
+        'a-2': 'No bulge'
+    
+    'illustris-8':
+      text: "How tightly wound do the spiral arms appear?"
+      title: "Spiral"
+      help: "Astronomers classify spiral galaxies by how tight their arms are &mdash; you might find it easiest to assess this by looking at the arms where they're closest to the centre. Click on the images to see larger examples."
+      answers:
+        'a-0': 'Tight'
+        'a-1': 'Medium'
+        'a-2': 'Loose'
+    
+    'illustris-9':
+      text: "How many spiral arms are there?"
+      title: "Spiral"
+      help: "Some spiral galaxies are rather complicated, but we want your best guess as to how many individual arms you can see. Note that the arms don't always begin at the very centre of the galaxy. If there are more than four arms, don't worry about counting them individually, but select the &quot;more than 4&quot; button. Click on the images to see larger examples."
+      answers:
+        'a-0': '1'
+        'a-1': '2'
+        'a-2': '3'
+        'a-3': '4'
+        'a-4': 'More than 4'
+        'a-5': "Can't tell"
+
+    'illustris-10':
+      text: "Is there anything odd?"
+      title: "Odd"
+      help: "We're looking for signs that the galaxy is merging, is disturbed, or has other unusual features. If you see anything, just click &quot;Yes&quot; and you can identify the specific type of feature in the next step. Click on the images to see larger examples."
+      answers:
+        'a-0': 'Yes'
+        'a-1': 'No'
+ 
+    'illustris-11':
+      text: "Would you like to discuss this object?"
+      title: "Discuss"
+      help: "If you have any questions about this object, or think it may be interesting to others, or just have something to say, you can start a discussion on Talk by clicking &quot;Yes&quot;. Talk will open in a new window &mdash; just close it to come back to the classification page."
       answers:
         'a-0': 'Yes'
         'a-1': 'No'
@@ -753,7 +979,7 @@ module.exports =
     explanation:
       goals: 'This page aims to give background to the scientific motivation behind the project for a more technical audience.'
       data: 'You may be looking for data - public Galaxy Zoo data is available in a range of formats <a href="http://data.galaxyzoo.org">here</a>.'
-      papers: 'Alternatively, you can browse a list of papers published by the team <a href="http://www.zooniverse.org/publications?project=hubble">here</a>.'
+      papers: 'Alternatively, you can browse a list of papers published by the team <a href="https://www.zooniverse.org/#/about/publications">here</a>.'
     
     morphology:
       heading: 'Why is galaxy morphology important?'
@@ -770,13 +996,15 @@ module.exports =
     
     relaunched:
       heading: 'Galaxy Zoo Relaunched'
-      sdss: '''The current site incorporates images from three different telescopes: SDSS, HST, and UKIRT. The SDSS images are from DR8 and the Southern Galactic cap, which increases the sample size of galaxies in the local universe by 40%. The HST images are from CANDELS, the largest HST Treasury Program. This survey is designed to take advantage of the advent of Wide Field Camera 3 (WFC3), which is rapidly opening up a new window into galaxies at z > 1 – the first 50% of the lifetime of the Universe. Previous HST imaging at these epochs largely sampled the rest-frame ultraviolet, since the available survey instruments (e.g. ACS) operated in the optical wavelengths. However, the near-infrared capabilities of the WFC3 (a factor of 20 better than NICMOS) are providing us with unprecedented rest-frame optical data of galaxies at z > 1.'''
+      sdss: '''The current site has incorporated images from a variety of different telescopes, including SDSS, HST, UKIRT, and the CTIO 4-m Blanco telescope. The SDSS images are from DR8 and the Southern Galactic cap, which increases the sample size of galaxies in the local universe by 40%. The HST images are from CANDELS, the largest HST Treasury Program. This survey is designed to take advantage of the advent of Wide Field Camera 3 (WFC3), which is rapidly opening up a new window into galaxies at z > 1 – the first 50% of the lifetime of the Universe. Previous HST imaging at these epochs largely sampled the rest-frame ultraviolet, since the available survey instruments (e.g. ACS) operated in the optical wavelengths. However, the near-infrared capabilities of the WFC3 (a factor of 20 better than NICMOS) are providing us with unprecedented rest-frame optical data of galaxies at z > 1.'''
       candels: 'CANDELS is using the WFC3 near-infrared filters to image 800 arcmin<sup>2</sup> in established HST legacy fields (e.g. GOODS, COSMOS). The near-infrared WFC3 images are particularly important because morphological analysis is best performed in rest-frame optical wavelengths, which trace the underlying stellar population of the galaxy rather than just the UV-bright star-forming regions.'
       combination: 'The combination of the SDSS and CANDELS Galaxy Zoo samples will offer a formidable tool for answering significant open questions that demand a morphological analysis. For example, at what epochs was the Hubble sequence established? How and when were the primordial spheroids formed? What was the relative role of major mergers and secular processes in driving star formation and black hole growth in the early Universe?'
       ukidss: 'The UKIRT images are from the Large Area Survey (LAS) as part of UKIDSS, which imaged 4000 sq. deg. of the sky overlapping with the SDSS fields. We selected all galaxies classified in Galaxy Zoo 2 that had high-quality UKIDSS imaging, totaling about 70,000 galaxies. The images shown on the site are a colour-composite of the Y, J, and K-band images (where the J-band uses dithered observations to improve the angular resolution in that channel). These images will allow us to trace morphology as a function of wavelength; for example, whether the observed bar fraction increases for galaxies in the rest-frame infrared.'
       ferengi: 'Galaxy Zoo also includes a small set of SDSS images that have been artificially processed to simulate the observed effects of redshift. This set used a morphologically diverse sample of galaxies from Galaxy Zoo 2 and were processed using the FERENGI code (<a href="http://www.mpia-hd.mpg.de/FERENGI/">Barden, Jahnke, & Hausler 2008</a>) out to redshifts of z=1. Results from these images will be used as calibration for galaxies in the GZ: Hubble and CANDELS data, since it allows us to assess resolution and brightness-dependent biases independent of true galaxy evolution.'
       newdata: 'In early 2015, three new sets of data were put into Galaxy Zoo. Two of them are from Hubble surveys for which we already have GZ morphological classifications --- GOODS and CANDELS. The new images explore how changing the depth of data (a surface brightness limit) affects the morphological measurements. The new CANDELS images are from 2-epoch data (which is shallower than the 5-epoch data already cataloged), and the GOODS images come from the full-depth images, supplementing the shallow observations already completed in GZH. Finally, we added roughly 1000 images each of galaxies from SDSS in their monochrome <i>ugriz</i> filters, which will allow a more careful measurement of morphology as a function of wavelength.'
-      conclusion: 'The purpose of the Galaxy Zoo project is to answer such questions, prepare the ground for morphological work using future instruments like the JWST and produce samples of morphologically selected high-redshift galaxies for follow-up using instruments like the extremely large telescopes and ALMA.'
+      decals: 'The <a href="http://legacysurvey.org/">Dark Energy Camera Legacy Survey (DECaLS)</a> is a public imaging survey intended to supplement spectroscopic measurements being collected by various iterations of the SDSS. Using the Dark Energy Camera mounted on the 4-m Blanco telescope at the CTIO in Chile, the DECaLS team is imaging 6700 square degrees of the sky overlapping with the SDSS footprints, including Stripe 82. Images are taken in the g, r, and z bands and have significantly better angular resolution and point-source sensitivity than the SDSS images. DECaLS images combined with Galaxy Zoo morphologies will be used for several science goals, including measurement of the Hubble sequence at lower luminosities, detection of tidal tails and minor mergers, and serendipitous discovery of rare and unusual objects. DECaLS images were put into Galaxy Zoo beginning in mid-2015.'
+      illustris: 'Galaxy Zoo is also working with state-of-the-art simulated images of galaxies in order to test the physical models that go into these simulations and assess whether the reproduced morphologies match those that are seen in the Universe. The <a href="http://www.illustris-project.org/">Illustris simulation</a> is a massive cosmological simulation that traces both dark matter and baryons via realistic physical models over evolving conditions down to the Universe at its present day. Galaxy Zoo is classifying simulated images of galaxies formed in the Illustris simulations, which appear as if they were observed with the SDSS telescope located at a distance of 223 Mpc (redshift z=0.05). The galaxies appear at a variety of angles and against several sets of real sky backgrounds, allowing for a direct comparison to the morphologies observed in previous projects such as Galaxy Zoo 2. Illustris data were put into Galaxy Zoo beginning in mid-2015.'
+      conclusion: 'The purpose of the Galaxy Zoo project is to answer a variety of scientific questions, to prepare the ground for morphological work using future instruments like the JWST, and to produce samples of morphologically selected high-redshift galaxies for follow-up using instruments like the extremely large telescopes and ALMA.'
   
   
   classify:
@@ -790,12 +1018,13 @@ module.exports =
     candels_2epoch: 'Hubble'
     goods_full: 'Hubble'
     sloan_singleband: 'SDSS'
+    decals: 'DECaLS'
+    illustris: 'Illustris'
     group: 'Group'
     favorite: 'Favourite'
     invert: 'Invert'
     directions: 'Note: Please always classify the galaxy in the center of the image.'
 
-  
   help:
     title: 'Help'
     examples: 'Examples'
@@ -803,7 +1032,7 @@ module.exports =
   
   home:
     headline: "Few have witnessed what you're about to see"
-    call_to_action: 'Experience a privileged glimpse of the distant universe as observed by the SDSS, the Hubble Space Telescope, and UKIRT'
+    call_to_action: 'Experience a privileged glimpse of the distant universe as observed by the SDSS and the CTIO, and tested through state-of-the-art simulations.'
     
     galaxy_zoo:
       title: 'Classify Galaxies'
@@ -858,11 +1087,15 @@ module.exports =
     favorite_this: 'Favourite this'
     classifications: 'Classifications'
     hubble: 'Hubble'
-    hubble_classifications: 'Hubble Classifications'
+    hubble_classifications: 'Hubble classifications'
     sdss: 'SDSS'
-    sdss_classifications: 'SDSS Classifications'
+    sdss_classifications: 'SDSS classifications'
     ukidss: 'UKIDSS'
-    ukidss_classifications: 'UKIDSS Classifications'
+    ukidss_classifications: 'UKIDSS classifications'
+    decals: 'DECaLS'
+    decals_classifications: 'DECaLS classifications'
+    illustris: 'Illustris'
+    illustris_classifications: 'Illustris classifications'
     quiz: 'Quizzes'
     quizzes: 'Quizzes'
     quizzes_taken: 'Quizzes Taken'
@@ -887,19 +1120,20 @@ module.exports =
     p11: 'A new generation of surveys using the WFC3 is giving us an unprecedented view into the first third of the lifetime of the Universe: the first 3-4 billion years after the Big Bang. Foremost among these is the Cosmic Assembly Deep Extragalactic Near-infrared Survey (CANDELS). The largest treasury survey using the Hubble Space Telescope to date, CANDELS is surveying several patches of sky to put together the largest collection of deep infrared images of galaxies in the early Universe. The combination of Galaxy Zoo and CANDELS offers a formidable tool in our quest to understand the earliest stages of the evolution of the visible Universe, one of the fundamental questions in observational cosmology today.'
     p12: '''While astronomers have learned an amazing amount from the SDSS and Hubble images, there are also areas we can only probe if we look at galaxies in wavelengths beyond those seen by the human eye. For objects that radiate thermally (such as stars), the wavelength used probes the temperature of the object being observed. Stars like our own Sun have temperatures around 5500 K, which show up strongly in the optical wavelengths used in SDSS imaging. If we look at galaxies in ultraviolet wavelengths, however, hotter regions become more prominent; in galaxies, this means we're picking out young, massive stars and individual star-forming regions (often leading to a patchier appearance). For galaxies observed at infrared wavelengths, cooler regions become more prominent; these include older and lower-mass stars, as well as clouds of dust that are heated by the stars and then re-emit that light at lower energies.'''
     p13: '''Comparing the morphologies of galaxies at multiple wavelengths gives astronomers a much more complete picture of the processes that govern their astrophysics. Tracing stars by temperature gives us proxies for their age and chemical evolution, while identifying star formation regions tells us where the densest parts of the disk are and where the mass in these galaxies is being built up.'''
-    p14: '''The new infrared images on Galaxy Zoo come from the United Kingdom Infared Survey Telescope (UKIRT), a 3.8m telescope located on the summit of Mauna Kea in Hawaii at nearly 14,000 ft. elevation. Starting in 2005, UKIRT began an infrared survey of the northern sky called UKIDSS, covering 7500 square degrees at wavelengths of 1--2.5 microns. A portion of this survey was dedicated to covering the same regions as the SDSS. This means that the new UKIDSS images in Galaxy Zoo have already been classified by users in Galaxy Zoo 2; this will let us do direct comparisons for the two samples and examine how morphology (like the fraction of galaxies with bars, for example) changes with the wavelength being used.'''
+    p14: '''Infrared images on Galaxy Zoo came from the United Kingdom Infared Survey Telescope (UKIRT), a 3.8m telescope located on the summit of Mauna Kea in Hawaii at nearly 14,000 ft. elevation. Starting in 2005, UKIRT began an infrared survey of the northern sky called UKIDSS, covering 7500 square degrees at wavelengths of 1--2.5 microns. A portion of this survey was dedicated to covering the same regions as the SDSS. This means that the new UKIDSS images in Galaxy Zoo have already been classified by users in Galaxy Zoo 2; this will let us do direct comparisons for the two samples and examine how morphology (like the fraction of galaxies with bars, for example) changes with the wavelength being used.'''
   
   
   story:
     title: 'The Story So Far'
-    p1: "The launch of this new version of Galaxy Zoo, the 4th, comes just a few weeks after the site's 5th birthday. It all started back in July 2007, with a data set made up of a million galaxies imaged by the Sloan Digital Sky Survey, who still provide some of the images in the site today. With so many galaxies, we'd assumed it would take years for visitors to the site to work through them all, but within 24 hours of launch we were stunned to be receiving almost 70,000 classifications an hour. In the end, more than 50 million classifications were received by the project during its first year, contributed by more than 150,000 people."
-    p2: "That meant that each galaxy was seen by many different participants. This is deliberate; having multiple independent classifications of the same object is important, as it allows us to assess how reliable our results are. For example, for projects where we may only need a few thousand galaxies but want to be sure they're all spirals before using up valuable telescope time on them, there's no problem - we can just use those that 100% of classifiers agree are spiral. For other projects, we may need to look at the properties of hundreds of thousands of galaxies, and can use those that a majority say are spiral."
-    p3: '''The task in that first Galaxy Zoo was slightly simpler than yours; all we asked volunteers to do was to split the galaxies into ellipticals, mergers and spirals and - if the galaxy was spiral - to record the direction of the arms. But it was enough to show that the classifications Galaxy Zoo provides were as good as those from professional astronomers, and were of use to a large number of researchers. You can find out what people have been up to with Galaxy Zoo data in our list of <a href="http://www.zooniverse.org/publications?project=hubble">papers published</a> and on the <a href="http://blog.galaxyzoo.org" target="_blank">Galaxy Zoo blog</a>, as well as below. Perhaps the most exciting sign of success is the fact that we’ve been successful in bidding for time on some of the largest telescopes in the world to follow up on many Galaxy Zoo discoveries : the list currently includes the Isaac Newton and William Herschel Telescopes on the island of La Palma in the Canaries, Gemini South in Chile, the WIYN telescope on Kitt Peak, Arizona, the IRAM radio telescope in Spain's Sierra Nevada, Swift, GALEX, Chandra, XMM-Newton and Suzaku up in space, and perhaps most excitingly the Hubble Space Telescope.'''
-    p4: "Galaxy Zoo 2 was inspired by our newfound confidence in the ability of you, our volunteer classifiers, and so we asked for a closer look at just over 200,000 of the brightest of the Sloan galaxies. We asked about the number of spiral arms, the size of the galaxies' bulges and much else besides. Once again, we were thrilled with the response (and a little more prepared for it than we were for Zoo 1!) and in the 14 months the site was up we received a little more than 60 million classifications."
-    p5: "Along the way, we added more detailed images from an area of the survey known as 'Stripe 82', but it was soon time to look at the more distant Universe. The site’s third incarnation, Galaxy Zoo : Hubble drew from surveys conducted by the Hubble Space Telescope to view earlier epochs of galaxy formation. In these surveys, which involve many, many days of dedicated observing time, we can see light from galaxies which has taken billions of years to reach us. The idea behind Galaxy Zoo : Hubble was to be able to compare galaxies then to galaxies now, giving us a clear understanding of what factors influence their growth, whether through mergers, active black holes or simply star formation."
-    p6: '''The present day Galaxy Zoo combines new imaging from Sloan, giving us our best ever view of the local Universe, with the most distant images yet from Hubble's CANDELS survey. The <a href="http://candels.ucolick.org" target="_blank">CANDELS survey</a> makes use of the new Wide Field Camera 3 - installed during the final shuttle mission to Hubble - to take ultra-deep images of the Universe, so who knows what's out there to be found?'''
-    p7: 'The site also includes images taken with the United Kingdom Infrared Telescope (UKIRT), in Hawaii, for the recently-completed UKIDSS project (http://www.ukidss.org). UKIDSS is the largest, deepest survey of the sky at infrared wavelengths. The UKIDSS infrared-light pictures and the SDSS visible-light pictures are different for two reasons. Firstly, older stars are brighter in infrared wavelengths (while in visible-light we see younger stars), and secondly, infrared light, like a foglight, can penetrate the dust and smoke in the centres of galaxies. Examining the UKIDSS images in Galaxy Zoo will therefore enable us to see how old and young stars are arranged differently in the galaxies, and will reveal more of the structure in the inner parts of galaxies.'
-  
+    p1: 'Galaxy Zoo is now arguably the world’s best-known online citizen science project, and is certainly the one with the <a href="http://www.zooniverse.org/publications?project=hubble">largest number of publications</a> based on citizen scientists input. Our success inspired the creation of <a href="http://www.zooniverse.org">The Zooniverse</a>, hosting project using the same technique across many research areas.'
+    p2: 'It all started back in July 2007, with a data set made up of a million galaxies imaged by the <a href="http://sdss.org">Sloan Digital Sky Survey</a>, who still provide some of the images in the site today. With so many galaxies, we assumed it would take years for visitors to the site to work through them all, but within 24 hours of launch we were stunned to be receiving almost 70,000 classifications an hour. In the end, more than 50 million classifications were received by the project during its first year, contributed by more than 150,000 people.'
+    p3: "That meant that many different participants saw each galaxy. This is deliberate; having multiple independent classifications of the same object is important, as it allows us to assess how reliable our results are. For example, for projects where we may only need a few thousand galaxies but want to be sure they're all spirals before using up valuable telescope time on them, there's no problem — we can just use those that 100% of classifiers agree are spiral. For other projects, we may need to look at the properties of hundreds of thousands of galaxies, and can use those that a majority say are spiral."
+    p4: 'The task in that first Galaxy Zoo was slightly simpler than yours; all we asked volunteers to do was to split the galaxies into ellipticals, mergers and spirals and — if the galaxy was spiral — to record the direction of the arms. But it was enough to show that the classifications Galaxy Zoo provides were as good as those from professional astronomers, and were of use to a large number of researchers. You can find out what people have been up to with Galaxy Zoo data in our <a href="http://www.zooniverse.org/publications?project=hubble">list of papers published</a> and on the <a href="http://blog.galaxyzoo.org/">Galaxy Zoo blog</a>, as well as below. Apart from the <a href="http://www.zooniverse.org/publications?project=hubble">publications</a>, another tangible sign of success is the fact that we’ve been granted time on some of the largest telescopes in the world to follow up on many Galaxy Zoo discoveries: the list currently includes the Isaac Newton and William Herschel Telescopes on the island of La Palma in the Canaries, Gemini South in Chile, the WIYN telescope on Kitt Peak, Arizona, the IRAM radio telescope in the Sierra Nevada of Spain, The Very Large Array in New Mexico, Swift, GALEX, Chandra, XMM-Newton and Suzaku up in space, and perhaps most excitingly the Hubble Space Telescope.'
+    p5: "The second phase of Galaxy Zoo was inspired by our newfound confidence in the ability of you, our volunteer classifiers, and so we asked for a closer look at just over 200,000 of the brightest of the Sloan galaxies. We asked about the number of spiral arms, the size of the galaxies' bulges and much else besides. Once again, we were thrilled with the response (and a little more prepared for it than we were for Zoo 1!) and in the 14 months the site was up we received a little more than 60 million classifications."
+    p6: '''Along the way, we added more detailed images from an area of the survey known as 'Stripe 82', but it was soon time to look at the more distant Universe. The site’s third incarnation, Galaxy Zoo: Hubble drew from surveys conducted by the Hubble Space Telescope to view earlier epochs of galaxy formation. In these surveys, which involve many, many days of dedicated observing time, we can see light from galaxies, which has taken billions of years to reach us. The idea behind Galaxy Zoo: Hubble was to be able to compare galaxies then to galaxies now, giving us a clear understanding of what factors influence their growth, whether through mergers, active black holes or simply star formation. Our <a href="http://www.zooniverse.org/publications?project=hubble">publications</a> already include several results from this phase of the project.'''
+    p7: "The Galaxy Zoo site relaunched with an updated design in September 2014. In this version we combined new imaging from Sloan, giving us our best ever view of the local Universe, with the most distant images yet from Hubble's CANDELS survey. The CANDELS survey makes use of the new Wide Field Camera 3 — installed during the final shuttle mission to Hubble — to take ultra-deep images of the Universe. Our first surprise in this data was that contrary to predictions, galactic bars are still found in the most distant galaxies. Stay tuned to see what else we’ll discover!"
+    p8: '''The relaunched site also allowed us more flexibility to include smaller sets of galaxies. We have included images taken with the United Kingdom Infrared Telescope (UKIRT), in Hawai'i, for the recently completed <a href="http://www.ukidss.org/">UKIDSS</a> project. UKIDSS is the largest, deepest survey of the sky at infrared wavelengths. The UKIDSS infrared-light pictures and the SDSS visible-light pictures are different for two reasons. Firstly, older stars are brighter in infrared wavelengths (while in visible-light we see younger stars), and secondly, infrared light, like a fog light, can penetrate the dust and smoke in the centres of galaxies. Examining the UKIDSS images in Galaxy Zoo will enable us to see how old and young stars are arranged differently in the galaxies, and will reveal more of the structure in the inner parts of galaxies.'''
+    p9: '''The data being put into Galaxy Zoo can now change quickly, thanks to the dedicated work of volunteers and the &quot;retirement&quot; of images that have already been completed. One of the new sets of images to be classified comes from the Dark Energy Camera Legacy Survey (DECaLS), a survey which uses DECam, one of the most sensitive and widest-area cameras ever built and a key tool in our search to measure and understand <a href="https://en.wikipedia.org/wiki/Dark_energy">dark energy</a>. The camera, which is mounted on the 4-m Blanco telescope at CTIO in Chile, images the sky at similar wavelengths to SDSS, but with better resolution and with the ability to detect much fainter galaxies. These images are extending the reach of the science we began with Galaxy Zoo 2 and SDSS. Finally, the site also has Galaxy Zoo's first-ever images of fully simulated galaxies; these are images that have been created entirely on a computer, using sophisticated simulations of the Universe starting just after the Big Bang and then watching as dark matter, gas, and stars evolve to form the galaxies we see today. Your classifications of these images, which come from the <a href="http://www.illustris-project.org/">Illustris</a> project, are a vital test of the physics that go into these simulations. We are asking if our most sophisticated computer models can predict the distribution of galaxy morphologies seen in the real Universe.'''
   
   team:
     title: 'The Galaxy Zoo Team'
@@ -911,34 +1145,35 @@ module.exports =
       schawinski: '<span class="person">Kevin Schawinski</span> - Co-Founder: Astronomer, <a href="http://www.astro.ethz.ch" target="_blank">ETH Zurich</a><br />Works on the formation and evolution of galaxies and their supermassive black holes. Usually trying to get more sleep. And coffee.'
       edmondson: '<span class="person">Edd Edmondson</span> - Astronomer, University of Portsmouth<br />Zookeeper, aiding in accessing Sloan data, and general helper-outer.'
       keel: '''<span class="person">Bill Keel</span> - Astronomer, <a href="http://astronomy.ua.edu/keel" target="_blank">University of Alabama</a><br />Author of 'The Road to Galaxy Formation' and 'The Sky at Einstein's Feet'. With research interests in galaxy formation and evolution, dust content of galaxies, and active galactic nuclei, he couldn't stay away when Galaxy Zoo got started.'''
-      skibba: '<span class="person">Ramin Skibba</span> - Astronomer, UC San Diego<br />Leading the use of marked correlation functions to analyse the Galaxy Zoo morphologies.'
-      cardamone: '''<span class="person">Carie Cardamone</span> - Astronomer, <a href="https://sites.google.com/a/brown.edu/ccardamone/" target="_blank">Brown University</a><br />An educator and astronomer, studying the Zoo's green peas, interested in understanding why galaxies grow they way they do. She's very enthusiastic about engaging the broader public in scientific research and the nature of science.'''
-      willett: '<span class="person">Kyle Willett</span> - Astronomer, <a href="http://homepages.spa.umn.edu/~willett/index.html" target="_blank">University of Minnesota</a><br />  Studies the roles of both morphology and environment on galaxies and their active black holes. He is leading the data reduction and catalog creation from Galaxy Zoo 2 classifications, and is also working on building new tools to enable independent research by citizen science volunteers. In his spare time, he runs probably more than is healthy.'
-      casteels: '<span class="person">Kevin Casteels</span> - Astronomer and System Administrator, Simulation Curriculum Corp<br />  Interested in galaxy evolution and morphologies, specifically how they are affected by mergers and interactions.  Kevin is currently working with the makers of the Starry Night astronomy software, helping to develop new astronomy apps and keep the systems running!  In his spare time he is also a SCUBA instructor and loves the great outdoors.'
+      cardamone: '''<span class="person">Carie Cardamone</span> - Astronomer, Wheelock College<br />An educator and astronomer, studying the Zoo's green peas, interested in understanding why galaxies grow they way they do. She's very enthusiastic about engaging the broader public in scientific research and the nature of science.'''
+      willett: '<span class="person">Kyle Willett</span> - Lead Data Scientist: Astronomer, <a href="http://homepages.spa.umn.edu/~willett/index.html" target="_blank">University of Minnesota</a><br />  Studies the roles of both morphology and environment on galaxies and their active black holes. He lead the data reduction and catalog creation from Galaxy Zoo 2 classifications, has worked on building new tools to enable independent research by citizen science volunteers and now leads efforts to include new data sets in Galaxy Zoo. In his spare time, he runs probably more than is healthy.'
+      casteels: '<span class="person">Kevin Casteels</span> - Astronomer, University of Victoria<br />  Interested in galaxy evolution and morphologies, specifically how they are affected by mergers and interactions.  Kevin is currently working with the makers of the Starry Night astronomy software, helping to develop new astronomy apps and keep the systems running!  In his spare time he is also a SCUBA instructor and loves the great outdoors.'
       urry: '<span class="person">Meg Urry</span> - Physicist, Yale University<br />Works on supermassive black holes (growth history, unification, relativistic jets, blazars) and their interplay with galaxies. In her spare time, she writes for CNN.com and works to increase the participation of women and minorities in science.'
       nichol: '''<span class="person">Bob Nichol</span> - Cosmologist, University of Portsmouth<br />An astronomer, astrophysicist and cosmologist with interests in computer science and statistics. A senior member (or 'Builder') of the Sloan Digital Sky Survey, the most ambitious digital survey of the sky ever undertaken. A long suffering supporter of Manchester City, suffering no more.'''
       fortson: '''<span class="person">Lucy Fortson</span> - Astrophysicist, University of Minnesota<br />Interested in galaxy evolution, black holes and the jets of material beaming from the centers of active galactic nuclei. Started the Zooniverse effort at the Adler Planetarium, now bringing the light to the University of Minnesota. On the odd weekend, when she's not preparing lecture or writing grants, Lucy can be found hanging out with her husband and son at one of Minneapolis' fine dining establishments.'''
       maksym: '''<span class="person">Peter Maksym</span> - Astronomer, University of Alabama<br />Interested in the un-lives and behaviors of black holes and their habitats, amongst other things.  He's currently working on analysis of the Voorwerpjes ("little Voorwerps") but can also be found looking for hapless stars getting ripped to shreds.'''
       masters: '''<span class="person">Karen Masters</span> - Project Scientist: Astronomer, University of Portsmouth<br />  Interested in spiral galaxies of all kinds, red has always been her favourite colour. She's working to disentangle the 'true' red spirals, from those that are reddened because we see them edge on, and along the way learn about interstellar dust, and the nature of red spirals themselves. Bars also a speciality.'''
-      melvin: '<span class="person">Tom Melvin</span> - Astronomer, University of Portsmouth<br />A PhD student currently studying the formation and evolution of bars in disk galaxies.'
+      melvin: '<span class="person">Tom Melvin</span> - Astronomer, University of Portsmouth<br />Concentrated in his PhD thesis on studying the formation and evolution of bars in disk galaxies with Galaxy Zoo data.'
       szalay: '''<span class="person">Alex Szalay</span> - Cosmologist, Johns Hopkins University<br />One of the creators of the SDSS SkyServer, and currently involved in building the Virtual Observatory. Plays some music in his 'spare' time.'''
       thomas: '''<span class="person">Daniel Thomas </span>- Astronomer, University of Portsmouth<br />Interested in galaxies of any shape, age, colour and habitat in the universe. When he's not sunbathing, his research focuses on the stars in galaxies and what they tell us about galaxy formation and evolution.'''
-      haussler: '<span class="person">Boris H&auml;u&szlig;ler</span> - Astronomer, University of Nottingham<br />An expert on analysing Hubble Space Telescope images and automatic morphology methods.'
-      hoyle: '<span class="person">Ben Hoyle</span> - Astronomer, University of Portsmouth<br />Currently developing exciting connections between Google Sky and Galaxy Zoo. Also working on using the lensing of distant quasars to learn about the properties of nearby Galaxy Zoo galaxies.'
+      haussler: '<span class="person">Boris H&auml;u&szlig;ler</span> - Astronomer, University of Oxford/Hertfordshire<br />An expert on analysing Hubble Space Telescope images and automatic morphology methods.'
       kaviraj: '<span class="person">Sugata Kaviraj</span> - Astronomer, University of Hertfordshire and University of Oxford<br />Works on the formation and evolution of galaxies.'
       raddick: '<span class="person">Jordan Raddick</span> - Science Education and Outreach Coordinator, Johns Hopkins University<br />A science writer and educator, creator of the science projects on the SDSS SkyServer web site, and an avid science fiction reader and writer. Jordan wishes he could visit galaxies in their natural habitat.'
-      wong: '<span class="person">Ivy Wong</span> - Astronomer, CSIRO'
-    
+      wong: '<span class="person">Ivy Wong</span> - Astronomer, ICRAR/Perth<br /> A Super Science Fellow in Australia, Ivy studies why galaxies start and stop forming stars, how they grow supermassive black holes in their centre, and why they look like they do today, especially their radio properties. Project Scientist for <a href="http://radio.galaxyzoo.org/#/">Radio Galaxy Zoo</a>'
+      cheung: '<span class="person">Edmond Cheung</span> - Astronomer, Kavli IPMU</br> Studies how galaxy structures such as bars and bulges affect galaxy evolution. Also likes to sit in bars.'
+      smethurst: '<span class="person">Becky Smethurst</span> - Astronomer, University of Oxford</br> PhD student working on Bayesian methods to determine star formation histories of galaxies.'
+      galloway: '''<span class="person">Melanie Galloway</span> - Astronomer, University of Minnesota</br> PhD student studying the roles AGN and morphology play in galaxy evolution. When she's not writing code and reading papers, she spends an odd amount of time training with a sword.'''
+      beck: '<span class="person">Melanie Beck</span> - Astronomer, University of Minnesota</br> PhD student.'
+      hart: '<span class="person">Ross Hart</span> - Astronomer, University of Nottingham</br> PhD student.'
+      kruk: '<span class="person">Sandor Kruk</span> - Astronomer, University of Oxford</br> PhD student.'
+      newnham: '<span class="person">Lucy Newnham</span> - Astronomer, University of Portsmouth </br> PhD student.'
+      scarlata: '<span class="person">Claudia Scarlata</span> - Astronomer, University of Minnesota </br> An expert in automated morphology measures, now working on efforts to combine machine learning and human classification.'
+
     dev:
       title: 'Zooniverse Development Team'
-      kapadia: '<span class="person">Amit Kapadia</span><br />Amit Kapadia develops astronomical web applications. He is a citizen science developer for the crowd-sourcing based platform Zooniverse. New to the world of JavaScript he spends his days dreaming of conducting in-browser analyses on astronomical data sets. On occasion he flexes his modest sway to advocate for more modern solutions to data access in astronomy. He believes the scientific world needs to speak more closely with the tech world, and constantly strives to learn more from the latter. Amit is often found at the Adler Planetarium in Chicago.'
       carstensen: '<span class="person">Brian Carstensen</span><br />Brian is a web developer working on the Zooniverse family of projects at the Adler Planearium. Brian has a degree in graphic design from Columbia College in Chicago, and worked in that field for a number of years before finding a niche in web development.'
-      miller: '''<span class="person">David Miller</span><br />As a visual communicator, David is passionate about tellings stories through clear, clean, and effective design. Before joining the Zooniverse team as Visual Designer, David worked for The Raindance Film Festival, the News 21 Initiative's Apart From War, Syracuse Magazine, and as a freelance designer for his small business, Miller Visual. David is a graduate of the S.I. Newhouse School of Public Communications at Syracuse University, where he studied Visual & Interactive Communications.'''
       paget: '<span class="person">Ed Paget</span><br />Ed somehow went from studying Film at Northwestern University to joining the Zooniverse team as a software developer. Along the way, he picked up a little programming. In his spare time, he enjoys photography, chess, fencing, and growing his beard.'
       parrish: '<span class="person">Michael Parrish</span><br />Michael has a degree in Computer Science and has been working with The Zooniverse for the past three years as a Software Developer. Aside from web development; new technologies, science, AI, reptiles, and coffee tend to occupy his attention.'
-      simpson: '<span class="person">Robert Simpson</span><br />Zooniverse Researcher and developer at Oxford University. PI of the <a href="http://www.milkywayproject.org/" target="_blank">Milky Way Project</a>.'
-      smith: '<span class="person">Arfon Smith</span><br />As an undergraduate, Arfon studied Chemistry at the University of Sheffield before completing his Ph.D. in Astrochemistry at The University of Nottingham in 2006. He worked as a senior developer at the Wellcome Trust Sanger Institute (Human Genome Project) in Cambridge before joining the Galaxy Zoo team in Oxford. Over the past 3 years he has been responsible for leading the development of a platform for citizen science called Zooniverse. In August of 2011 he took up the position of Director of Citizen Science at the Adler Planetarium where he continues to lead the software and infrastructure development for the Zooniverse.'
-      whyte: '''<span class="person">Laura Whyte</span><br />Having spent her PhD trying to get computers to classify galaxies, Laura know only to well the true value of the contribution to science made by the Galaxy Zoo volunteers. Since leaving astronomy she has retrained as a Maths teacher and picked up a few programming skills. It was with great delight she joined the team at the Zooniverse, developing online education and research tools, allowing her to use bits and pieces of all the skills she's picked up over the last decade.'''
     
     czech:
       title: 'Galaxy Zoo Czech Support Team'
@@ -979,17 +1214,24 @@ module.exports =
       murray: '<span class="person">Phil Murray</span> - Web Designer, Artist and Managing Director of Fingerprint Digital Media Responsible for the visual design of the Galaxy Zoo web site. Designer of <a href="http://www.banguniverse.com" target="_blank">www.banguniverse.com</a> for Brian May, Patrick Moore and Chris Lintott. A keen musician and lapsed tennis and soccer player.'
       slosar: '<span class="person">Anze Slosar</span> - Cosmologist, Berkeley Center for Cosmological Physics<br />A theoretical physicist, who has has never sat behind a telescope, likes to drink good beer and wishes he were richer.'
       darg: '<span class="person">Daniel Darg</span> - Astronomer, University of Oxford<br />Working on measuring the number and properties of galaxy mergers identified in Galaxy Zoo.'
-  
-  
+      kapadia: '<span class="person">Amit Kapadia</span><br />Amit Kapadia is a former citizen science developer for the crowd-sourcing based platform Zooniverse. New to the world of JavaScript he spends his days dreaming of conducting in-browser analyses on astronomical data sets. On occasion he flexes his modest sway to advocate for more modern solutions to data access in astronomy. He believes the scientific world needs to speak more closely with the tech world, and constantly strives to learn more from the latter.'
+      miller: '''<span class="person">David Miller</span><br />As a visual communicator, David is passionate about tellings stories through clear, clean, and effective design. Before joining the Zooniverse team as Visual Designer, David worked for The Raindance Film Festival, the News 21 Initiative's Apart From War, Syracuse Magazine, and as a freelance designer for his small business, Miller Visual. David is a graduate of the S.I. Newhouse School of Public Communications at Syracuse University, where he studied Visual & Interactive Communications.'''
+      simpson: '<span class="person">Robert Simpson</span><br />Zooniverse Researcher and developer at Oxford University. PI of the <a href="http://www.milkywayproject.org/" target="_blank">Milky Way Project</a>.'
+      smith: '<span class="person">Arfon Smith</span><br />As an undergraduate, Arfon studied Chemistry at the University of Sheffield before completing his Ph.D. in Astrochemistry at The University of Nottingham in 2006. He worked as a senior developer at the Wellcome Trust Sanger Institute (Human Genome Project) in Cambridge before joining the Galaxy Zoo team in Oxford. He was responsible for leading the development of a platform for citizen science called Zooniverse, and was Director of Citizen Science at the Adler Planetarium where he led the software and infrastructure development for the Zooniverse.'
+      whyte: '''<span class="person">Laura Whyte</span><br />Having spent her PhD trying to get computers to classify galaxies, Laura knows only too well the true value of the contribution to science made by the Galaxy Zoo volunteers. Since leaving astronomy she retrained as a maths teacher and picked up a few programming skills. It was with great delight she joined the team at the Zooniverse, developing online education and research tools, allowing her to use bits and pieces of all the skills she's picked up over the last decade.'''
+      hoyle: '<span class="person">Ben Hoyle</span> - Astronomer, Ludwig-Maximilians-Universität München, Physics<br />While a PhD student in Portsmouth worked on connections between Google Sky and Galaxy Zoo.'
+      skibba: '''<span class="person">Ramin Skibba</span> - Science Writer, Former Astronomer, San Diego<br />Ramin led the use of marked clustering statistics and dark matter halo models to analyse the environmental dependence of Galaxy Zoo morphologies. Always keenly interested in science communication and science policy, he's shifted from research astronomy to science writing.'''
+
   examine:
     title: 'Examine'
     survey: 'Survey'
     telescope: 'Telescope'
     right_ascension: 'Right Ascension'
     declination: 'Declination'
-    magnitude: 'Magnitude'
+    magnitude: 'Apparent magnitude'
+    absmagnitude: 'Absolute magnitude'
     ned_link: 'Search NED'
-    discuss: 'Discuss this'
+    discuss: 'Discuss this object'
     hubble: 'Hubble'
     sdss: 'SDSS'
     ukirt: 'UKIRT'
@@ -999,14 +1241,26 @@ module.exports =
     candels_2epoch: 'CANDELS 2-epoch'
     ukidss: 'UKIDSS'
     sdss_singleband: 'Single-band images'
+    decals: 'DECaLS'
+    ctio: 'Blanco 4-m'
+    illustris: 'Illustris simulated images'
     ferengi: 'Artificially redshifted images'
     dr8: 'Data Release 8'
     sdss_id: 'SDSS ObjectID'
+    iau_id: 'IAU designation'
     hubble_id: 'Hubble ID'
     petro_rad: 'Size (Petrosian radius)'
     kron_rad: 'Size (Kron radius)'
-    band: 'Band'
-    skyserver_link: 'View on SkyServer'
+    band: 'Bands'
+    subhalo: 'Simulation sub-halo'
+    camera: 'Camera angle'
+    background: 'Background'
+    mass: 'Stellar mass'
+    sfr: 'Star formation rate'
+    skyserver_link: 'SDSS SkyServer'
+    legacyserver_link: 'DECaLS SkyViewer'
+    illustris_link: 'View data on Illustris Project'
+    explorer_link: 'Illustris Explorer'
   
   
   fits:

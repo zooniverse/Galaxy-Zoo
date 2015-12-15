@@ -2,13 +2,13 @@
 require 'aws-sdk'
 
 destination = (ARGV[0] ? ARGV[0] : false)
-key_path = if destination
+key_path = if destination && destination != 'quick'
   File.join "www.galaxyzoo.org", destination
 else
   "www.galaxyzoo.org"
 end
 
-AWS.config access_key_id: ENV['AWS_ACCESS_KEY_ID'], secret_access_key: ENV['AWS_SECRET_ACCESS_KEY']
+AWS.config access_key_id: ENV['AMAZON_ACCESS_KEY_ID'], secret_access_key: ENV['AMAZON_SECRET_ACCESS_KEY']
 s3 = AWS::S3.new
 bucket = s3.buckets['zooniverse-static']
 
@@ -70,7 +70,7 @@ Dir.chdir 'build'
 
 to_upload = []
 
-if ARGV[0] == 'quick'
+if ARGV[0] == 'quick' || ARGV[1] == 'quick'
   %w(js css html).each{ |ext| to_upload << Dir["**/*.#{ ext }*"] }
   to_upload.flatten!
 else
@@ -79,6 +79,8 @@ end
 
 to_upload.delete 'index.html'
 total = to_upload.length
+
+puts "Uploading to #{ key_path }"
 
 to_upload.each.with_index do |file, index|
   content_type = case File.extname(file)
@@ -95,14 +97,14 @@ to_upload.each.with_index do |file, index|
   else
     `file --mime-type -b #{ file }`.chomp
   end
-  
+
   puts "#{ '%2d' % (index + 1) } / #{ '%2d' % total }: Uploading #{ file } as #{ content_type }"
   options = { file: file, acl: :public_read, content_type: content_type }
-  
+
   if content_type == 'application/javascript' || content_type == 'text/css'
     options[:content_encoding] = 'gzip'
   end
-  
+
   bucket.objects["#{ key_path }/#{ file }"].write options
 end
 
