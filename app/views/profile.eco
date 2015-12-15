@@ -53,6 +53,18 @@
               <%- I18n.t 'profile.ukidss' %>
               <span class="caption"><%- I18n.t 'profile.ukidss_classifications' %></span>
             </div>
+            
+            <div class="decals">
+              <span class="count"><%= @surveyCount 'decals' %></span>
+              <%- I18n.t 'profile.decals' %>
+              <span class="caption"><%- I18n.t 'profile.decals_classifications' %></span>
+            </div>
+
+            <div class="illustris">
+              <span class="count"><%= @surveyCount 'illustris' %></span>
+              <%- I18n.t 'profile.illustris' %>
+              <span class="caption"><%- I18n.t 'profile.illustris_classifications' %></span>
+            </div>
           </div>
         </div>
         

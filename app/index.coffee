@@ -13,8 +13,8 @@ BrowserCheck = require 'zooniverse/lib/controllers/browser_check'
 class App extends Spine.Controller
   constructor: ->
     super
-   
-    Api.init host: Config.apiHost
+    
+    Api.init host: Config.apiHost, proxyPath: Config.apiPath
     @topBar = new TopBar
       el: '.zooniverse-top-bar'
       languages:
