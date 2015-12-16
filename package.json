@@ -18,9 +18,8 @@
     "test": "jasmine-phantom-node --port 9290",
     "posttest": "kill `cat hem.pid`; rm hem.pid",
     "seed-locale": "seed-translation --project galaxy_zoo --env production --deploy-path locales",
-    "deploy-to-staging": "hem build && publisssh ./public zooniverse-demo/galaxyzoo && rm -rf ./public/application.*",
-    "deploy-to-production": "hem build && publisssh ./public zooniverse-static/www.galaxyzoo.org && rm -rf ./public/application.*",
-    "deploy-to-demo": "hem build && publisssh ./public demo.zooniverse.org/galaxyzoo && rm -rf ./public/application.*"
+    "deploy-to-staging": "hem build && publisssh ./public zooniverse-static/preview.zooniverse.org/galaxyzoo && rm -rf ./public/application.*",
+    "deploy-to-production": "hem build && publisssh ./public zooniverse-static/www.galaxyzoo.org && rm -rf ./public/application.*"
   },
   "dependencies": {
     "hem": "git://github.com/edpaget/hem.git#83617d1a4e",
