@@ -82,11 +82,12 @@ class Classify extends Spine.Controller
 
   nextSubject: =>
     @subject = Subject.current
-    @classification = new Classification subject_id: @subject.id
+    if @subject?
+      @classification = new Classification subject_id: @subject.id
     @render()
 
     setTimeout =>
-      if @subject.showInverted() then @toggleInverted()
+      if @subject?.showInverted() then @toggleInverted()
   
   answer: (ev) =>
     answer = $(ev.target).closest '.answer'
