@@ -90,19 +90,19 @@ Config =
         id: '5249cbce3ae740728d000001'
         workflowId: '5249cbc33ae74070ed000001'
       candels_2epoch:
-        id: '5501b09e7b9f9931d4000001'
+        id: '551456e02f0eef2535000001'
         workflowId: '5501b09e7b9f9931d4000002'
       goods_full:
-        id: '5501aef27b9f992e7c000001'
+        id: '551453e12f0eef21f2000001'
         workflowId: '5501aef27b9f992e7c000002'
       sloan_singleband:
-        id: '5501a2c17b9f991a95000001'
+        id: '5514521e2f0eef2012000001'
         workflowId: '5501a9be7b9f992679000001'
       decals:
-        id: '55f428ca4dc26150f3000001'
+        id: '55db7cf01766276e7b000001'
         workflowId: '50251c3b516bcb6ecb000002'
       illustris:
-        id: '55f428d04dc26150f3000002'
+        id: '55db71251766276613000001'
         workflowId: '50251c3b516bcb6ecb000002'
     subjectCache: 5
     quiz:
