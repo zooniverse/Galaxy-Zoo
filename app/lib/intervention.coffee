@@ -52,6 +52,10 @@ local cache of current Subject ID, for use in logging
 ###
 currentSubjectID = null
 
+delay = (ms, fn)-> setTimeout(fn, ms)
+
+timer = (ms, fn)-> setInterval(fn, ms)
+
 isInterventionNeeded = =>
   nextIntervention?
 
@@ -247,6 +251,8 @@ exports.logInterventionDelivered = logInterventionDelivered
 exports.logInterventionDismissed = logInterventionDismissed
 exports.logInterventionCompleted = logInterventionCompleted
 exports.exitToTalk = exitToTalk
+exports.delay = delay
+exports.timer = timer
 if lastDetectedIntervention?
   exports.currentProject = lastDetectedIntervention.project
   exports.currentExperimentName = lastDetectedIntervention.experiment_name

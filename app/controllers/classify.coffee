@@ -10,9 +10,6 @@ LoginForm = require 'zooniverse/lib/controllers/login_form'
 Intervention = require 'lib/intervention'
 Analytics = require 'lib/analytics'
 
-window.delay = (ms, fn)-> setTimeout(fn, ms)
-window.timer = (ms, fn)-> setInterval(fn, ms)
-
 class Classify extends Spine.Controller
   elements:
     '#classify .galaxy img': 'image'
@@ -39,7 +36,7 @@ class Classify extends Spine.Controller
   constructor: ->
     super
 
-    timer 10000, checkInterventionsAndPassSubjectID
+    Intervention.timer 10000, checkInterventionsAndPassSubjectID
 
     @classificationCount = 0
 
@@ -67,7 +64,7 @@ class Classify extends Spine.Controller
         @optOutLink = "classify.bgu_ms_exp1_intervention_opt_out_link"
         @cancelLink = "classify.bgu_ms_exp1_intervention_opt_out_cancel_link"
         @optedOutLinkText = "classify.bgu_ms_exp1_intervention_opted_out_link_text"
-        delay 1000,@showIntervention
+        Intervention.delay 1000,@showIntervention
       else
         @renderIntervention = false
       @html require('views/classify')(@)
@@ -95,7 +92,7 @@ class Classify extends Spine.Controller
     if !@interventionAlreadyPresent
       $('.intervention').effect("slide",{"direction":"right","mode":"show"},1000)
       @interventionAlreadyPresent = true
-      delay Intervention.getNextIntervention()?.presentation_duration * 1000, @completeIntervention
+      Intervention.delay Intervention.getNextIntervention()?.presentation_duration * 1000, @completeIntervention
       Intervention.logInterventionDelivered()
 
   clickOptOut: (e) =>
