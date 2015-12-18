@@ -1,4 +1,5 @@
 <% UserGroup = require 'models/user_group' %>
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 <div id="classify">
   <div class="galaxy">
     <img src="<%= @subject.image() %>" title="<%= @subject.zooniverse_id %>" />
