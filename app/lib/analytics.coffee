@@ -1,16 +1,12 @@
 $ = require 'jqueryify'
 Subject = require 'models/subject'
 UserGetter = require 'lib/userID'
-Intervention = require 'lib/intervention'
 
 buildEventData = (params) ->
   eventData = {}
   # defaults
   eventData['subjectID'] = Subject.current?.zooniverse_id
-  eventData['relatedID'] = Intervention.currentRelatedId
-  eventData['experiment'] = Intervention.currentExperimentName
   eventData['projectToken'] = Subject.projectName
-  eventData['cohort'] = Intervention.currentCohort
   eventData['projectToken'] = "galaxy_zoo"
   eventData['userID'] = "(anonymous)"
   # set fields from params
