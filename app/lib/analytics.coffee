@@ -7,7 +7,6 @@ buildEventData = (params) ->
   # defaults
   eventData['subjectID'] = Subject.current?.zooniverse_id
   eventData['projectToken'] = Subject.projectName
-  eventData['cohort'] = Intervention.currentCohort
   eventData['projectToken'] = "galaxy_zoo"
   eventData['userID'] = "(anonymous)"
   # set fields from params
