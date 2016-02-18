@@ -58,6 +58,7 @@ class Subject extends BaseSubject
   @url: (params) -> @withParams "/projects/galaxy_zoo/groups/#{ params.surveyId }/subjects", limit: params.limit
 
   @randomSurveyId: ->
+    return @::surveys.decals.id # illustris is complete
     n = Math.random()
     if n <= (2/3)
       @::surveys.decals.id
