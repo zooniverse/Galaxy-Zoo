@@ -29,6 +29,10 @@
           <a title="Invert" class="icon invert" src="">&nbsp;</a>
           <span class="label"><%- I18n.t 'classify.invert' %></span>
         </li>
+        <li class="left">
+          <a title="Zoom" class="icon zoom" src="">&nbsp;</a>
+          <span class="label"><%- I18n.t 'classify.zoom' %></span>
+        </li>
       </ul>
     </div>
     <div class="directions"><%- I18n.t 'classify.directions' %></div>

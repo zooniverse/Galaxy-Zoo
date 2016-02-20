@@ -14,6 +14,7 @@ class Classify extends Spine.Controller
     '#classify .galaxy img': 'image'
     '.tree .question': 'question'
     '.top .buttons .invert': 'invertLink'
+    '.top .buttons .zoom': 'zoomLink'
     '.top .buttons .favorite': 'favoriteLink'
 
   events:
@@ -23,6 +24,7 @@ class Classify extends Spine.Controller
     'click .top .buttons .help': 'help'
     'click .top .buttons .restart': 'restart'
     'click .top .buttons .invert': 'toggleInverted'
+    'click .top .buttons .zoom': 'toggleZoomed'
     'click .top .buttons .favorite': 'toggleFavorite'
 
   constructor: ->
@@ -90,6 +92,9 @@ class Classify extends Spine.Controller
     setTimeout =>
       if @subject?.showInverted() then @toggleInverted()
   
+    setTimeout =>
+      if @subject?.showZoomed() then @toggleZoomed()
+  
   answer: (ev) =>
     answer = $(ev.target).closest '.answer'
     id = answer.data 'id'
@@ -136,6 +141,15 @@ class Classify extends Spine.Controller
     Analytics.logEvent { 'type' : 'invert' , 'subjectID' : Subject.current?.zooniverse_id}
     @invertLink.toggleClass 'active'
     @image.toggleClass 'inverted'
+
+  toggleZoomed: (ev) ->
+    if @image.hasClass 'zoomed'
+      @image.attr 'src', Subject.current.location.standard
+    else
+      @image.attr 'src', Subject.current.location.zoomed
+    Analytics.logEvent { 'type' : 'zoom' , 'subjectID' : Subject.current?.zooniverse_id}
+    @zoomLink.toggleClass 'active'
+    @image.toggleClass 'zoomed'
 
   toggleFavorite: (ev) ->
     @favoriteLink.toggleClass 'active'

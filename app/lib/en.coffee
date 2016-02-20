@@ -1023,6 +1023,7 @@ module.exports =
     group: 'Group'
     favorite: 'Favourite'
     invert: 'Invert'
+    zoom: 'Zoom'
     directions: 'Note: Please always classify the galaxy in the centre of the image.'
 
   help:
