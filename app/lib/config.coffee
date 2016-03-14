@@ -111,7 +111,7 @@ Config =
 
   production:
     quizzesActive: false
-    apiHost: 'http://www.galaxyzoo.org'
+    apiHost: 'https://www.galaxyzoo.org'
     apiPath: '/_ouroboros_api/proxy'
     surveys:
       candels:
