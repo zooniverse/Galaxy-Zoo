@@ -7,6 +7,6 @@ class Papers extends Controller
     @render()
   
   render: ->
-    window.location = 'http://www.zooniverse.org/publications?project=hubble'
+    window.location = 'https://www.zooniverse.org/publications?project=hubble'
 
 module.exports = Papers

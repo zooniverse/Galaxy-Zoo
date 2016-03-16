@@ -21,9 +21,9 @@
       </a>
     </li>
     <li>
-      <a href="http://talk.galaxyzoo.org"><%- I18n.t 'navigation.discuss' %></a>
+      <a href="https://talk.galaxyzoo.org"><%- I18n.t 'navigation.discuss' %></a>
       <ul class="menu">
-        <li><a href="http://talk.galaxyzoo.org"><%- I18n.t 'navigation.talk' %></a></li>
+        <li><a href="https://talk.galaxyzoo.org"><%- I18n.t 'navigation.talk' %></a></li>
         <li><a href="http://blog.galaxyzoo.org" target="_blank"><%- I18n.t 'navigation.blog' %></a></li>
       </ul>
     </li>

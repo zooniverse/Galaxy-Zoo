@@ -96,7 +96,7 @@ class Classify extends Spine.Controller
     talk = answer.data 'talk'
 
     if talk
-      url = "http://talk.galaxyzoo.org/#/subjects/#{ @subject.zooniverse_id }"
+      url = "https://talk.galaxyzoo.org/#/subjects/#{ @subject.zooniverse_id }"
       window.open url, '_blank'
       window.focus()
 
