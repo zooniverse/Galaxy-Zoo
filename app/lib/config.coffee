@@ -141,6 +141,12 @@ Config =
       illustris:
         id: '55db71251766276613000001'
         workflowId: '55db71251766276613000002'
+      decals_dr2:
+        id: '56f3d4645925d95984000001'
+        workflowId: '55db71251766276613000002'
+      sdss_lost_set:
+        id: '56f2b5ed5925d9004200c775'
+        workflowId: '55db71251766276613000002'
     subjectCache: 5
     quiz:
       invitationId: '502bfa73516bcb3c600003e9'
