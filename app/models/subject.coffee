@@ -54,16 +54,24 @@ class Subject extends BaseSubject
       id: Config.surveys.illustris.id
       workflowId: Config.surveys.illustris.workflowId
       tree: IllustrisTree
+    decals_dr2:
+      id: Config.surveys.decals_dr2.id
+      workflowId: Config.surveys.decals_dr2.workflowId
+      tree: DecalsTree
+    sdss_lost_set:
+      id: Config.surveys.sdss_lost_set.id
+      workflowId: Config.surveys.sdss_lost_set.workflowId
+      tree: SloanTree
   
   @url: (params) -> @withParams "/projects/galaxy_zoo/groups/#{ params.surveyId }/subjects", limit: params.limit
 
   @randomSurveyId: ->
-    return @::surveys.decals.id # illustris is complete
+    return @::surveys.decals_dr2.id
     n = Math.random()
     if n <= (2/3)
-      @::surveys.decals.id
+      @::surveys.decals_dr2.id
     else
-      @::surveys.illustris.id
+      @::surveys.sdss_lost_set.id
 
   @next: ->
     if @current
