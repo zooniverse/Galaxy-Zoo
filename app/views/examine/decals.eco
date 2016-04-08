@@ -14,7 +14,7 @@
 <div class="row">
   <span class="key"></span>
   <span class="value">
-    <a target="_blank" href="http://imagine.legacysurvey.org/?ra=<%= @subject.coords[0] %>&dec=<%= @subject.coords[1] %>&zoom=14&layer=decals-dr1j"><%- I18n.t 'examine.legacyserver_link' %></a>
+    <a target="_blank" href="http://legacysurvey.org/viewer?ra=<%= @subject.coords[0] %>&dec=<%= @subject.coords[1] %>&zoom=14&layer=decals-dr2"><%- I18n.t 'examine.legacyserver_link' %></a>
   </span>
 </div>
 
