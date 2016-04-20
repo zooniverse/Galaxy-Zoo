@@ -45,7 +45,7 @@
         <li><a data-lang-switch="fa" class="rtl">فارسی</a></li>
         <li><a data-lang-switch="he" class="rtl">עברית</a></li>
         <li><a data-lang-switch="uk">українська мова</a></li>
-        <li><a data-lang-switch="zh_tw">繁體中文</a></li>
+        <li><a data-lang-switch="zh-tw">繁體中文</a></li>
         <li><a data-lang-switch="zh_cn">简体中文</a></li>
       </ul>
     </li>
