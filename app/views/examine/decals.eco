@@ -5,7 +5,7 @@
 <%- @info I18n.t('examine.declination'), @subject.coords[1].toFixed(4), '&deg;' %>
 <%- @info I18n.t('examine.petro_rad'), @subject.metadata.petrorad_r.toFixed(3), '&quot;' %>
 <%- @info I18n.t('examine.magnitude'), @subject.metadata.mag.r.toFixed(2) %>
-<%- @info I18n.t('examine.absmagnitude'), @subject.metadata.mag.abs_r.substring(0,6) %>
+<%- @info I18n.t('examine.absmagnitude'), if typeof @subject.metadata.mag.abs_r is 'string' then @subject.metadata.mag.abs_r.substring(0,6) else @subject.metadata.mag.abs_r.toFixed(2) %>
 
 <div class="row">
   <span class="blank"></span>
@@ -14,7 +14,7 @@
 <div class="row">
   <span class="key"></span>
   <span class="value">
-    <a target="_blank" href="http://imagine.legacysurvey.org/?ra=<%= @subject.coords[0] %>&dec=<%= @subject.coords[1] %>&zoom=14&layer=decals-dr1j"><%- I18n.t 'examine.legacyserver_link' %></a>
+    <a target="_blank" href="http://legacysurvey.org/viewer?ra=<%= @subject.coords[0] %>&dec=<%= @subject.coords[1] %>&zoom=14&layer=decals-dr2"><%- I18n.t 'examine.legacyserver_link' %></a>
   </span>
 </div>
 
@@ -35,6 +35,6 @@
 <div class="row">
   <span class="key"></span>
   <span class="value">
-    <a target="_blank" href="http://talk.galaxyzoo.org/#/subjects/<%= @subject.zooniverse_id %>"><%- I18n.t 'examine.discuss' %></a>
+    <a target="_blank" href="https://talk.galaxyzoo.org/#/subjects/<%= @subject.zooniverse_id %>"><%- I18n.t 'examine.discuss' %></a>
   </span>
 </div>

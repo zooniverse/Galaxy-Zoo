@@ -54,15 +54,35 @@ class Subject extends BaseSubject
       id: Config.surveys.illustris.id
       workflowId: Config.surveys.illustris.workflowId
       tree: IllustrisTree
+    decals_dr2:
+      id: Config.surveys.decals_dr2.id
+      workflowId: Config.surveys.decals_dr2.workflowId
+      tree: DecalsTree
+    sdss_lost_set:
+      id: Config.surveys.sdss_lost_set.id
+      workflowId: Config.surveys.sdss_lost_set.workflowId
+      tree: SloanTree
   
   @url: (params) -> @withParams "/projects/galaxy_zoo/groups/#{ params.surveyId }/subjects", limit: params.limit
 
+  # NOTE: Before changing the active surveys on the live website,
+  # please give a few days notice to the maintainers of the Android and iPhone apps.
+  # See https://github.com/murraycu/android-galaxyzoo/ and https://github.com/murraycu/ios-galaxyzoo/
+  #
+  # Ideally, any changes to use a new survey would first happen in a branch before being merged to master.
+  # android-galaxyzoo has several tests that can find user-visible errors in the decision trees and their associated
+  # icons and example images. These errors are easy to cause by making simple typos.
+  #
+  # Please also do not immediately disable the older survey on the server. Doing so means that the apps will suddenly
+  # stop working until a user of the app informs the developer and the developer then has time to fix the error.
+  # For iPhone apps there will also be a delay until the updated App is approved.
   @randomSurveyId: ->
+    return @::surveys.decals_dr2.id
     n = Math.random()
     if n <= (2/3)
-      @::surveys.decals.id
+      @::surveys.decals_dr2.id
     else
-      @::surveys.illustris.id
+      @::surveys.sdss_lost_set.id
 
   @next: ->
     if @current
