@@ -9,16 +9,16 @@ Analytics = require 'lib/analytics'
 The URL of the experiment server to use
 ###
 # prod:
-EXPERIMENT_SERVER_URL = "http://experiments.zooniverse.org"
+#EXPERIMENT_SERVER_URL = "http://experiments.zooniverse.org"
 # staging:
-#EXPERIMENT_SERVER_URL = "http://experiments.staging.zooniverse.org"
+EXPERIMENT_SERVER_URL = "http://experiments.staging.zooniverse.org"
 # dev:
 # EXPERIMENT_SERVER_URL = "http://localhost:4567"
 
 ###
 Experiment Name
 ###
-EXPERIMENT_NAME = "Zooniverse-MSR-BGU GalaxyZoo Experiment 2"
+EXPERIMENT_NAME = "Zooniverse-MSR-BGU GalaxyZoo Experiment 3"
 
 # VARIABLES #
 
