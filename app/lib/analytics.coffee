@@ -44,7 +44,7 @@ log event with Geordi v2
 ###
 logToGeordi = (eventData) =>
   $.ajax {
-    url: 'http://geordi.zooniverse.org/api/events/',
+    url: 'https://geordi.zooniverse.org/api/events/',
     type: 'POST',
     contentType: 'application/json; charset=utf-8',
     data: JSON.stringify(eventData),
