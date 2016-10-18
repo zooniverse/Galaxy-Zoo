@@ -43,7 +43,7 @@
             </div>
             
             <div class="sdss">
-              <span class="count"><%= @surveyCount('sloan') + @surveyCount('ferengi') %></span>
+              <span class="count"><%= @surveyCount('sloan') + @surveyCount('ferengi') + @surveyCount('sloan_singleband') %></span>
               <%- I18n.t 'profile.sdss' %>
               <span class="caption"><%- I18n.t 'profile.sdss_classifications' %></span>
             </div>
@@ -55,7 +55,7 @@
             </div>
             
             <div class="decals">
-              <span class="count"><%= @surveyCount 'decals' %></span>
+              <span class="count"><%= @surveyCount('decals') + @surveyCount('decals_dr2') %></span>
               <%- I18n.t 'profile.decals' %>
               <span class="caption"><%- I18n.t 'profile.decals_classifications' %></span>
             </div>
