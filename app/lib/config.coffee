@@ -101,6 +101,12 @@ Config =
       decals:
         id: '55db7cf01766276e7b000001'
         workflowId: '50251c3b516bcb6ecb000002'
+      decals_dr2:
+        id: ''
+        workflowId: ''
+      sdss_lost_set:
+        id: ''
+        workflowId: ''
       illustris:
         id: '55db71251766276613000001'
         workflowId: '50251c3b516bcb6ecb000002'
