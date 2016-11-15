@@ -29,6 +29,14 @@ open http://localhost:9294
 
 Depending on your browser, you may have to confirm a security exception to allow a self-signed SSL certificate for dev.zooniverse.org
 
+### Deploying
+
+Install a working version of ruby (2.1.2) with update to date SSL certs `rvm install ruby-2.1.2` and configure an rvm gemset if you like. Then install the gems:
++ `gem install bundler`
++ `bundle install` (to get the aws deploy script deps)
+
+Then run the ruby build script to deploy to production `./build.rb`.
+
 ### Translations
 
 Galaxy Zoo uses our APIs built-in translation management for storing, and serving localized strings. The interface to add translations is available at http://translations.zooniverse.org/, though you need to be a registered dev/translator to save any changes.
