@@ -16,7 +16,7 @@ cp -RL public build_public
 rm -rf public
 mv build_public public
 echo 'Building application...'
-hem build
+./node_modules/hem/bin/hem build
 echo 'Building fits...'
 ./fits/build.rb
 echo 'Building navigator...'
