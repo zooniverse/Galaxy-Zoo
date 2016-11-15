@@ -77,12 +77,7 @@ class Subject extends BaseSubject
   # stop working until a user of the app informs the developer and the developer then has time to fix the error.
   # For iPhone apps there will also be a delay until the updated App is approved.
   @randomSurveyId: ->
-    return @::surveys.decals_dr2.id
-    n = Math.random()
-    if n <= (2/3)
-      @::surveys.decals_dr2.id
-    else
-      @::surveys.sdss_lost_set.id
+    return @::surveys.decals.id
 
   @next: ->
     if @current
