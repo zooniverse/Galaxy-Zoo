@@ -1,17 +1,9 @@
 #!/usr/bin/env ruby
 require 'aws-sdk'
 
-destination = (ARGV[0] ? ARGV[0] : false)
-key_path = if destination && destination != 'quick'
-  File.join "www.galaxyzoo.org", destination
-else
-  "www.galaxyzoo.org"
-end
-archive_key_path = if destination && destination != 'quick'
-  nil
-else
-  "zoo4.galaxyzoo.org"
-end
+# NOTE: This script will only deploy to staging
+#       do not merge this into master!
+key_path = "preview.zooniverse.org/galaxy_zoo"
 
 AWS.config access_key_id: ENV['AMAZON_ACCESS_KEY_ID'], secret_access_key: ENV['AMAZON_SECRET_ACCESS_KEY']
 s3 = AWS::S3.new
@@ -111,11 +103,9 @@ to_upload.each.with_index do |file, index|
   end
 
   bucket.objects["#{ key_path }/#{ file }"].write options
-  bucket.objects["#{ key_path }/#{ file }"].copy_to(bucket.objects["#{ archive_key_path }/#{ file }"]) if archive_key_path
 end
 
 bucket.objects["#{ key_path }/index.html"].write file: 'index.html', acl: :public_read, content_type: 'text/html', cache_control: 'no-cache, must-revalidate'
-bucket.objects["#{ key_path }/index.html"].copy_to(bucket.objects["#{ archive_key_path }/index.html"]) if archive_key_path
 
 Dir.chdir working_directory
 `rm -rf build`
