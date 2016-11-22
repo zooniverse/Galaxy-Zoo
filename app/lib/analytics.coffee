@@ -1,16 +1,12 @@
 $ = require 'jqueryify'
 Subject = require 'models/subject'
 UserGetter = require 'lib/userID'
-Intervention = require 'lib/intervention'
 
 buildEventData = (params) ->
   eventData = {}
   # defaults
   eventData['subjectID'] = Subject.current?.zooniverse_id
-  eventData['relatedID'] = Intervention.currentRelatedId
-  eventData['experiment'] = Intervention.currentExperimentName
   eventData['projectToken'] = Subject.projectName
-  eventData['cohort'] = Intervention.currentCohort
   eventData['projectToken'] = "galaxy_zoo"
   eventData['userID'] = "(anonymous)"
   # set fields from params
@@ -44,7 +40,7 @@ log event with Geordi v2
 ###
 logToGeordi = (eventData) =>
   $.ajax {
-    url: 'https://geordi.zooniverse.org/api/events/',
+    url: 'http://geordi.zooniverse.org/api/events/',
     type: 'POST',
     contentType: 'application/json; charset=utf-8',
     data: JSON.stringify(eventData),
