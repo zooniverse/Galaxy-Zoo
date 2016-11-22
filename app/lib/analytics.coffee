@@ -64,21 +64,23 @@ logToGoogle = (eventData) =>
 This will log a user interaction both in the Geordi analytics API and in Google Analytics.
 ###
 logEvent = (params) =>
-  eventData = buildEventData(params)
-  addUserDetailsToEventData(eventData)
-  .always (eventData) =>
-    logToGeordi eventData
-    logToGoogle eventData
+  return true
+  # eventData = buildEventData(params)
+  # addUserDetailsToEventData(eventData)
+  # .always (eventData) =>
+  #   logToGeordi eventData
+  #   logToGoogle eventData
 
 ###
 This will log an error in Geordi only.
 ###
 logError = (params) ->
-  eventData = buildEventData(params)
-  eventData['errorCode'] = params.errorCode
-  eventData['type'] = "error"
-  eventData['errorDescription'] = params.errorDescription
-  logToGeordi eventData
+  return true
+  # eventData = buildEventData(params)
+  # eventData['errorCode'] = params.errorCode
+  # eventData['type'] = "error"
+  # eventData['errorDescription'] = params.errorDescription
+  # logToGeordi eventData
 
 exports.logEvent = logEvent
 exports.logError = logError
