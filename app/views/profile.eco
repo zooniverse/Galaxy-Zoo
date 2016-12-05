@@ -60,6 +60,12 @@
               <span class="caption"><%- I18n.t 'profile.decals_classifications' %></span>
             </div>
 
+            <div class="gama">
+              <span class="count"><%= @surveyCount('gama') %></span>
+              <%- I18n.t 'profile.gama' %>
+              <span class="caption"><%- I18n.t 'profile.gama_classifications' %></span>
+            </div>
+
             <div class="illustris">
               <span class="count"><%= @surveyCount 'illustris' %></span>
               <%- I18n.t 'profile.illustris' %>

@@ -1,0 +1,40 @@
+<%- @info I18n.t('examine.telescope'), I18n.t('examine.vst') %>
+<%- @info I18n.t('examine.survey'), I18n.t('examine.gama') %>
+<%- @info I18n.t('examine.gama_cataid'), @subject.metadata.gama_cataid %>
+<%- @info I18n.t('examine.right_ascension'), @subject.coords[0].toFixed(4), '&deg;' %>
+<%- @info I18n.t('examine.declination'), @subject.coords[1].toFixed(4), '&deg;' %>
+<%- @info I18n.t('examine.petro_rad'), @subject.metadata.petrorad_r.toFixed(3), '&quot;' %>
+<%- @info I18n.t('examine.magnitude'), @subject.metadata.mag.r.toFixed(2) %>
+<%- @info I18n.t('examine.absmagnitude'), if typeof @subject.metadata.mag.abs_r is 'string' then @subject.metadata.mag.abs_r.substring(0,6) else @subject.metadata.mag.abs_r.toFixed(2) %>
+
+<div class="row">
+  <span class="blank"></span>
+</div>
+
+<div class="row">
+  <span class="key"></span>
+  <span class="value">
+    <a target="_blank" href="http://www.gama-survey.org/dr2/tools/sov.php?cataid=<%= @subject.metadata.gama_cataid %>"><%- I18n.t 'examine.gamaserver_link' %></a>
+  </span>
+</div>
+
+<div class="row">
+  <span class="key"></span>
+  <span class="value">
+    <a target="_blank" href="http://skyserver.sdss.org/dr9/en/tools/explore/obj.asp?ra=<%= @subject.coords[0] %>&dec=<%= @subject.coords[1] %>"><%- I18n.t 'examine.skyserver_link' %></a>
+  </span>
+</div>
+
+<div class="row">
+  <span class="key"></span>
+  <span class="value">
+    <a target="_blank" href="http://ned.ipac.caltech.edu/cgi-bin/nph-objsearch?search_type=Near+Position+Search&RA=<%= @subject.coords[0] %>&DEC=<%= @subject.coords[1]%>&SR=0.0166666667"><%- I18n.t 'examine.ned_link' %></a>
+  </span>
+</div>
+
+<div class="row">
+  <span class="key"></span>
+  <span class="value">
+    <a target="_blank" href="https://talk.galaxyzoo.org/#/subjects/<%= @subject.zooniverse_id %>"><%- I18n.t 'examine.discuss' %></a>
+  </span>
+</div>

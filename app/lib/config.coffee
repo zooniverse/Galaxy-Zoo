@@ -27,6 +27,9 @@ Config =
       decals:
         id: ''
         workflowId: ''
+      gama:
+        id: ''
+        workflowId: ''
       illustris:
         id: ''
         workflowId: ''
@@ -71,6 +74,9 @@ Config =
         id: ''
         workflowId: ''
       decals:
+        id: ''
+        workflowId: ''
+      gama:
         id: ''
         workflowId: ''
       illustris:
@@ -119,6 +125,9 @@ Config =
       decals:
         id: '55db7cf01766276e7b000001'
         workflowId: '50251c3b516bcb6ecb000002'
+      gama:
+        id: ''
+        workflowId: ''
       illustris:
         id: '55db71251766276613000001'
         workflowId: '50251c3b516bcb6ecb000002'
@@ -165,6 +174,9 @@ Config =
       decals:
         id: '55db7cf01766276e7b000001'
         workflowId: '55db7cf01766276e7b000002'
+      gama:
+        id: ''
+        workflowId: ''
       illustris:
         id: '55db71251766276613000001'
         workflowId: '55db71251766276613000002'
