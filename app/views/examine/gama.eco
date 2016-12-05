@@ -1,6 +1,6 @@
 <%- @info I18n.t('examine.telescope'), I18n.t('examine.vst') %>
 <%- @info I18n.t('examine.survey'), I18n.t('examine.gama') %>
-<%- @info I18n.t('examine.gama_cataid'), @subject.metadata.gama_cataid %>
+<%- @info I18n.t('examine.gama_cataid'), @subject.metadata.provided_image_id %>
 <%- @info I18n.t('examine.right_ascension'), @subject.coords[0].toFixed(4), '&deg;' %>
 <%- @info I18n.t('examine.declination'), @subject.coords[1].toFixed(4), '&deg;' %>
 <%- @info I18n.t('examine.petro_rad'), @subject.metadata.petrorad_r.toFixed(3), '&quot;' %>
@@ -14,7 +14,7 @@
 <div class="row">
   <span class="key"></span>
   <span class="value">
-    <a target="_blank" href="http://www.gama-survey.org/dr2/tools/sov.php?cataid=<%= @subject.metadata.gama_cataid %>"><%- I18n.t 'examine.gamaserver_link' %></a>
+    <a target="_blank" href="http://www.gama-survey.org/dr2/tools/sov.php?cataid=<%= @subject.metadata.provided_image_id %>"><%- I18n.t 'examine.gamaserver_link' %></a>
   </span>
 </div>
 
