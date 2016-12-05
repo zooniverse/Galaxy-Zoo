@@ -1,6 +1,6 @@
 DecisionTree = require 'lib/decision_tree'
 
-GAMATree = new DecisionTree 'gama', ->
+GamaTree = new DecisionTree 'gama', ->
   @question 'Shape', 'Is the galaxy in the centre of the image simply smooth and rounded, or does it have features?', ->
     @help "The aim here is to divide featureless galaxies from all the rest. If you can see any interesting features at all, click &quot;features.&quot; Just occasionally you might see something that isn't a galaxy at all - the long streak of a satellite, for example, or an image swamped by light from a bright star. If this happens, just click &quot;star or artifact&quot;. Click to see larger images."
     @answer 'Smooth', leadsTo: 'How rounded is it?', icon: 'smooth_round', examples: 6
@@ -77,4 +77,4 @@ GAMATree = new DecisionTree 'gama', ->
     @answer 'Yes', icon: 'yes', talk: true
     @answer 'No', icon: 'no'
 
-module.exports = GAMATree
+module.exports = GamaTree

@@ -9,6 +9,7 @@ FerengiTree = require 'lib/ferengi_tree'
 SloanSinglebandTree = require 'lib/sloan_singleband_tree'
 GoodsTree = require 'lib/goods_full_tree'
 DecalsTree = require 'lib/decals_tree'
+GamaTree = require 'lib/gama_tree'
 IllustrisTree = require 'lib/illustris_tree'
 UserGroup = require 'models/user_group'
 Analytics = require 'lib/analytics'
@@ -50,6 +51,10 @@ class Subject extends BaseSubject
       id: Config.surveys.decals.id
       workflowId: Config.surveys.decals.workflowId
       tree: DecalsTree
+    gama:
+      id: Config.surveys.gama.id
+      workflowId: Config.surveys.gama.workflowId
+      tree: GamaTree
     illustris:
       id: Config.surveys.illustris.id
       workflowId: Config.surveys.illustris.workflowId
