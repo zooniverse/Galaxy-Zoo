@@ -147,6 +147,9 @@ Config =
       sdss_lost_set:
         id: '56f2b5ed5925d9004200c775'
         workflowId: '50251c3b516bcb6ecb000002'
+      ferengi_2:
+        id: '58417dcb9afc3a007d000001'
+        workflowId: '5249cbc33ae74070ed000001'
     subjectCache: 5
     quiz:
       invitationId: '502bfa73516bcb3c600003e9'
