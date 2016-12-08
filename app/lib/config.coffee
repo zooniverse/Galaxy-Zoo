@@ -30,6 +30,15 @@ Config =
       illustris:
         id: ''
         workflowId: ''
+      decals_dr2:
+        id: ''
+        workflowId: ''
+      sdss_lost_set:
+        id: ''
+        workflowId: ''
+      ferengi_2:
+        id: ''
+        workflowId: ''
     subjectCache: 1
     quiz:
       invitationId: '502bfa73516bcb3c600003e9'
@@ -65,6 +74,15 @@ Config =
         id: ''
         workflowId: ''
       illustris:
+        id: ''
+        workflowId: ''
+      decals_dr2:
+        id: ''
+        workflowId: ''
+      sdss_lost_set:
+        id: ''
+        workflowId: ''
+      ferengi_2:
         id: ''
         workflowId: ''
     subjectCache: 5
