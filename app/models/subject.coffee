@@ -83,10 +83,12 @@ class Subject extends BaseSubject
   @randomSurveyId: ->
     return @::surveys.decals_dr2.id
     n = Math.random()
-    if n <= (2/3)
+    if n <= (1/3)
       @::surveys.decals_dr2.id
-    else
+    else if n < (2/3)
       @::surveys.sdss_lost_set.id
+    else
+      @::surveys.ferengi_2.id
 
   @next: ->
     if @current
