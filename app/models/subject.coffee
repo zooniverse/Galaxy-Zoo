@@ -62,7 +62,11 @@ class Subject extends BaseSubject
       id: Config.surveys.sdss_lost_set.id
       workflowId: Config.surveys.sdss_lost_set.workflowId
       tree: SloanTree
-  
+    ferengi_2:
+      id: Config.surveys.ferengi_2.id
+      workflowId: Config.surveys.ferengi_2.workflowId
+      tree: FerengiTree
+
   @url: (params) -> @withParams "/projects/galaxy_zoo/groups/#{ params.surveyId }/subjects", limit: params.limit
 
   # NOTE: Before changing the active surveys on the live website,
@@ -79,10 +83,12 @@ class Subject extends BaseSubject
   @randomSurveyId: ->
     return @::surveys.decals_dr2.id
     n = Math.random()
-    if n <= (2/3)
+    if n <= (1/3)
       @::surveys.decals_dr2.id
-    else
+    else if n < (2/3)
       @::surveys.sdss_lost_set.id
+    else
+      @::surveys.ferengi_2.id
 
   @next: ->
     if @current
@@ -91,7 +97,7 @@ class Subject extends BaseSubject
       @fetch() if @count() is 1
     else
       @fetch()
-  
+
   @fetch: ->
     count = Config.subjectCache - @count()
     idCounts = {}
@@ -105,20 +111,20 @@ class Subject extends BaseSubject
       Api.get @url(surveyId: id, limit: limit), (results) =>
         @create result for result in results
         @current or= @first()
-        
+
         if @current and not hasTriggered
           hasTriggered = true
           @trigger 'fetched'
-  
+
   @show: (id) ->
     Analytics.logEvent { "type": "view", "subject_id": id }
     Api.get "/projects/galaxy_zoo/subjects/#{ id }"
-  
+
   constructor: ->
     super
     img = new Image
     img.src = @image()
-  
+
   survey: -> @surveys[@metadata.survey]
   surveyId: -> @metadata.provided_image_id
   tree: -> @survey().tree
