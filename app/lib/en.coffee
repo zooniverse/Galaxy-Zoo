@@ -1155,7 +1155,7 @@ module.exports =
   
   home:
     headline: "Few have witnessed what you're about to see"
-    call_to_action: 'Experience a privileged glimpse of the distant universe as observed by the SDSS and the CTIO.'
+    call_to_action: 'Experience a privileged glimpse of the distant universe as observed by the SDSS, CTIO and VST.'
     
     galaxy_zoo:
       title: 'Classify Galaxies'
