@@ -51,9 +51,17 @@ class Subject extends BaseSubject
       id: Config.surveys.decals.id
       workflowId: Config.surveys.decals.workflowId
       tree: DecalsTree
-    gama:
-      id: Config.surveys.gama.id
-      workflowId: Config.surveys.gama.workflowId
+    gama09:
+      id: Config.surveys.gama09.id
+      workflowId: Config.surveys.gama09.workflowId
+      tree: GamaTree
+    gama12:
+      id: Config.surveys.gama12.id
+      workflowId: Config.surveys.gama12.workflowId
+      tree: GamaTree
+    gama15:
+      id: Config.surveys.gama15.id
+      workflowId: Config.surveys.gama15.workflowId
       tree: GamaTree
     illustris:
       id: Config.surveys.illustris.id
