@@ -22,11 +22,6 @@ html[lang="he"], .rtl
   h1, h2, h3, h4, h5, h6, p, li, ul, span
     direction: rtl
 
-  @media (max-width: 1385px)
-    #zooniverse-top-bar-container h3
-      line-height: 20px
-      margin-top: 0 !important // blah
-
   #navigation ul li
     font-size: 14px
 
@@ -49,3 +44,9 @@ html[lang="he"], .rtl
       width: 300px
       .description
         width: auto
+
+@media (max-width: 1385px)
+  html[lang="he"]
+    #zooniverse-top-bar-container h3
+      line-height: 20px
+      margin-top: 0 !important // blah
