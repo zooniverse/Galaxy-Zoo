@@ -1,5 +1,22 @@
 # Galaxy-Zoo
 
+###Running with Docker
+
+####Local development
+`docker-compose run --service-ports galaxyzoo npm run start`
+
+runs a local server on `http://localhost:9294/`
+
+####Build and deploy
+Deploy to https://galaxyzoo.org/beta for testing
+`docker-compose run --service-ports galaxyzoo npm run deploy-to-staging`
+
+Deploy CSS and JavaScript
+`docker-compose run --service-ports galaxyzoo npm run deploy quick`
+
+Full deploy (including images and other assets)
+`docker-compose run --service-ports galaxyzoo npm run deploy`
+
 ### Getting Started
 
 ```bash

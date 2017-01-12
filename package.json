@@ -13,7 +13,10 @@
     "url": "https://github.com/zooniverse/Galaxy-Zoo.git"
   },
   "scripts": {
-    "start": "hem server --port 6414",
+    "start": "hem server",
+    "deploy": "ruby build.rb",
+    "deploy-to-staging": "ruby build.rb /beta",
+    "deploy-quick": "ruby build.rb quick",
     "pretest": "hem server --port 9290 & echo $! > ./hem.pid",
     "test": "jasmine-phantom-node --port 9290",
     "posttest": "kill `cat hem.pid`; rm hem.pid",
