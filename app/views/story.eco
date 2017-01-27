@@ -15,6 +15,7 @@
         <p><%- I18n.t 'story.p10' %></p>
         <p><%- I18n.t 'story.p11' %></p>
         <p><%- I18n.t 'story.p12' %></p>
+        <p><%- I18n.t 'story.p13' %></p>
       </div>
     </div>
   </div>
