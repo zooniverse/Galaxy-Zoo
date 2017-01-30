@@ -61,7 +61,7 @@
             </div>
 
             <div class="gama">
-              <span class="count"><%= @surveyCount('gama') %></span>
+              <span class="count"><%= @surveyCount('gama09') + @surveyCount('gama12') + @surveyCount('gama15') %></span>
               <%- I18n.t 'profile.gama' %>
               <span class="caption"><%- I18n.t 'profile.gama_classifications' %></span>
             </div>
