@@ -27,6 +27,15 @@ Config =
       decals:
         id: ''
         workflowId: ''
+      gama09:
+        id: ''
+        workflowId: ''
+      gama12:
+        id: ''
+        workflowId: ''
+      gama15:
+        id: ''
+        workflowId: ''
       illustris:
         id: ''
         workflowId: ''
@@ -71,6 +80,15 @@ Config =
         id: ''
         workflowId: ''
       decals:
+        id: ''
+        workflowId: ''
+      gama09:
+        id: ''
+        workflowId: ''
+      gama12:
+        id: ''
+        workflowId: ''
+      gama15:
         id: ''
         workflowId: ''
       illustris:
@@ -119,6 +137,15 @@ Config =
       decals:
         id: '55db7cf01766276e7b000001'
         workflowId: '50251c3b516bcb6ecb000002'
+      gama09:
+        id: ''
+        workflowId: ''
+      gama12:
+        id: ''
+        workflowId: ''
+      gama15:
+        id: ''
+        workflowId: ''
       illustris:
         id: '55db71251766276613000001'
         workflowId: '50251c3b516bcb6ecb000002'
@@ -165,6 +192,15 @@ Config =
       decals:
         id: '55db7cf01766276e7b000001'
         workflowId: '55db7cf01766276e7b000002'
+       gama09:
+        id: '5853fa7b95ad361930000001'
+        workflowId: '5857c2bb95ad365e69000690'
+      gama12:
+        id: '5853faaf95ad361930000002'
+        workflowId: '5857df7c95ad364bc30009a3'
+      gama15:
+        id: '5853fab395ad361930000003'
+        workflowId: '58580c8295ad362a4a0001fa'
       illustris:
         id: '55db71251766276613000001'
         workflowId: '55db71251766276613000002'

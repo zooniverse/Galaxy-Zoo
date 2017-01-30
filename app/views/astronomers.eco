@@ -26,6 +26,7 @@
         <p><%- I18n.t 'astronomers.relaunched.newdata' %></p>
         <p><%- I18n.t 'astronomers.relaunched.decals' %></p>
         <p><%- I18n.t 'astronomers.relaunched.illustris' %></p>
+        <p><%- I18n.t 'astronomers.relaunched.gama' %></p>        
         <p><%- I18n.t 'astronomers.relaunched.conclusion' %></p>
       </div>
     </div>

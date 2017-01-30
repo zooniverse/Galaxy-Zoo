@@ -9,6 +9,7 @@ FerengiTree = require 'lib/ferengi_tree'
 SloanSinglebandTree = require 'lib/sloan_singleband_tree'
 GoodsTree = require 'lib/goods_full_tree'
 DecalsTree = require 'lib/decals_tree'
+GamaTree = require 'lib/gama_tree'
 IllustrisTree = require 'lib/illustris_tree'
 UserGroup = require 'models/user_group'
 Analytics = require 'lib/analytics'
@@ -50,6 +51,18 @@ class Subject extends BaseSubject
       id: Config.surveys.decals.id
       workflowId: Config.surveys.decals.workflowId
       tree: DecalsTree
+    gama09:
+      id: Config.surveys.gama09.id
+      workflowId: Config.surveys.gama09.workflowId
+      tree: GamaTree
+    gama12:
+      id: Config.surveys.gama12.id
+      workflowId: Config.surveys.gama12.workflowId
+      tree: GamaTree
+    gama15:
+      id: Config.surveys.gama15.id
+      workflowId: Config.surveys.gama15.workflowId
+      tree: GamaTree
     illustris:
       id: Config.surveys.illustris.id
       workflowId: Config.surveys.illustris.workflowId
@@ -82,9 +95,9 @@ class Subject extends BaseSubject
   # For iPhone apps there will also be a delay until the updated App is approved.
   @randomSurveyId: ->
     n = Math.random()
-    if n <= (1/3)
-      @::surveys.decals_dr2.id
-    else if n < (2/3)
+    if n <= (0.3)
+      @::surveys.gama09.id
+    else if n < (0.6)
       @::surveys.sdss_lost_set.id
     else
       @::surveys.ferengi_2.id
