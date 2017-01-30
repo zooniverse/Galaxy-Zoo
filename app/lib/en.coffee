@@ -6,19 +6,19 @@ module.exports =
       ie: '''If you use <a href="http://www.microsoft.com/windows/internet-explorer/" target="_blank">Microsoft Internet Explorer</a>, make sure you're running the latest version.'''
       chrome_frame: '''If you can't install the latest Internet Explorer, try <a href="http://google.com/chromeframe" target="_blank">Chrome Frame</a>!'''
       dismiss: 'Dismiss'
-    
+
     login:
       username: 'Username'
       password: 'Password'
       login: 'Login'
       forgot_password: 'Forgot Password?'
-    
+
     sign_in:
       title: 'Sign in with your Zooniverse account'
       sign_up: "Don't have an account? Create one!"
       button: 'Sign in'
       progress: 'Signing in...'
-    
+
     sign_up:
       title: 'Sign up for a new Zooniverse account'
       confirmation: 'Password (confirm)'
@@ -28,12 +28,12 @@ module.exports =
       privacy: 'I agree to the <a href="https://www.zooniverse.org/privacy" target="_blank">privacy policy</a>'
       button: 'Sign up'
       progress: 'Creating account and signing in...'
-    
+
     sign_out:
       current: 'Currently logged in as <strong class="current"></strong>.'
       button: 'Sign Out'
       progress: 'Signing out...'
-    
+
     top_bar:
       title: '<span id="app-name"></span> is a <a href="https://www.zooniverse.org">Zooniverse</a> project.'
       description: 'The Zooniverse is a collection of web-based Citizen Science projects that use the efforts and abilities of volunteers to help reseachers deal with the flood of data that confronts them.'
@@ -41,8 +41,8 @@ module.exports =
       projects:
         title: 'Our Projects'
         list: 'We currently have dozens of <a href="https://www.zooniverse.org/#/projects">projects</a> on subjects ranging from astronomy, to climatology, to biology, to humanities.'
-  
-  
+
+
   questions:
     'goods_full-0':
       text: "Is the galaxy simply smooth and rounded, with no sign of a disk?"
@@ -226,7 +226,7 @@ module.exports =
         'a-0': 'Smooth'
         'a-1': 'Features or disk'
         'a-2': 'Star or artifact'
-    
+
     'sloan-1':
       text: "Could this be a disk viewed edge-on?"
       title: "Disk"
@@ -234,7 +234,7 @@ module.exports =
       answers:
         'a-0': 'Yes'
         'a-1': 'No'
-    
+
     'sloan-2':
       text: "Is there any sign of a bar feature through the centre of the galaxy?"
       title: "Bar"
@@ -242,7 +242,7 @@ module.exports =
       answers:
         'a-0': 'Bar'
         'a-1': 'No bar'
-    
+
     'sloan-3':
       text: "Is there any sign of a spiral arm pattern?"
       title: "Spiral"
@@ -250,7 +250,7 @@ module.exports =
       answers:
         'a-0': 'Spiral'
         'a-1': 'No spiral'
-    
+
     'sloan-4':
       text: "How prominent is the central bulge, compared with the rest of the galaxy?"
       title: "Bulge"
@@ -260,7 +260,7 @@ module.exports =
         'a-1': 'Just noticeable'
         'a-2': 'Obvious'
         'a-3': 'Dominant'
-    
+
     'sloan-5':
       text: "Is there anything odd?"
       title: "Odd"
@@ -268,7 +268,7 @@ module.exports =
       answers:
         'a-0': 'Yes'
         'a-1': 'No'
-    
+
     'sloan-6':
       text: "What are the odd features?"
       title: "Odd"
@@ -283,7 +283,7 @@ module.exports =
         'x-4': 'Other'
         'x-5': 'Merger'
         'x-6': 'Dust lane'
-    
+
     'sloan-7':
       text: "How rounded is it?"
       title: "Round"
@@ -292,7 +292,7 @@ module.exports =
         'a-0': 'Completely round'
         'a-1': 'In between'
         'a-2': 'Cigar shaped'
-    
+
     'sloan-8':
       text: "Does the galaxy have a bulge at its centre? If so, what shape?"
       title: "Bulge"
@@ -301,7 +301,7 @@ module.exports =
         'a-0': 'Rounded'
         'a-1': 'Boxy'
         'a-2': 'No bulge'
-    
+
     'sloan-9':
       text: "How tightly wound do the spiral arms appear?"
       title: "Spiral"
@@ -310,7 +310,7 @@ module.exports =
         'a-0': 'Tight'
         'a-1': 'Medium'
         'a-2': 'Loose'
-    
+
     'sloan-10':
       text: "How many spiral arms are there?"
       title: "Spiral"
@@ -322,7 +322,7 @@ module.exports =
         'a-3': '4'
         'a-4': 'More than 4'
         'a-5': "Can't tell"
-    
+
     'sloan-11':
       text: "Would you like to discuss this object?"
       title: "Discuss"
@@ -330,7 +330,7 @@ module.exports =
       answers:
         'a-0': 'Yes'
         'a-1': 'No'
-    
+
     'decals-0':
       text: "Is the galaxy simply smooth and rounded, with no sign of a disk?"
       title: "Shape"
@@ -339,7 +339,7 @@ module.exports =
         'a-0': 'Smooth'
         'a-1': 'Features or disk'
         'a-2': 'Star or artifact'
-    
+
     'decals-1':
       text: "Could this be a disk viewed edge-on?"
       title: "Disk"
@@ -347,7 +347,7 @@ module.exports =
       answers:
         'a-0': 'Yes'
         'a-1': 'No'
-    
+
     'decals-2':
       text: "Is there any sign of a bar feature through the centre of the galaxy?"
       title: "Bar"
@@ -355,7 +355,7 @@ module.exports =
       answers:
         'a-0': 'Bar'
         'a-1': 'No bar'
-    
+
     'decals-3':
       text: "Is there any sign of a spiral arm pattern?"
       title: "Spiral"
@@ -363,7 +363,7 @@ module.exports =
       answers:
         'a-0': 'Spiral'
         'a-1': 'No spiral'
-    
+
     'decals-4':
       text: "How prominent is the central bulge, compared with the rest of the galaxy?"
       title: "Bulge"
@@ -372,7 +372,7 @@ module.exports =
         'a-0': 'No bulge'
         'a-1': 'Obvious'
         'a-2': 'Dominant'
-    
+
     'decals-5':
       text: "How tightly wound do the spiral arms appear?"
       title: "Spiral"
@@ -381,7 +381,7 @@ module.exports =
         'a-0': 'Tight'
         'a-1': 'Medium'
         'a-2': 'Loose'
-    
+
     'decals-6':
       text: "How many spiral arms are there?"
       title: "Spiral"
@@ -392,7 +392,7 @@ module.exports =
         'a-2': '3'
         'a-3': '4'
         'a-4': 'More than 4'
-    
+
     'decals-7':
       text: "Does the galaxy have a bulge at its centre? If so, what shape?"
       title: "Bulge"
@@ -401,7 +401,7 @@ module.exports =
         'a-0': 'Rounded'
         'a-1': 'Boxy'
         'a-2': 'No bulge'
-    
+
     'decals-8':
       text: "How rounded is it?"
       title: "Round"
@@ -410,7 +410,7 @@ module.exports =
         'a-0': 'Completely round'
         'a-1': 'In between'
         'a-2': 'Cigar shaped'
-    
+
     'decals-9':
       text: "Is the galaxy currently merging or is there any sign of tidal debris?"
       title: "Mergers"
@@ -420,7 +420,7 @@ module.exports =
         'a-1': 'Tidal debris'
         'a-2': 'Both'
         'a-3': 'Neither'
-    
+
     'decals-10':
       text: "Do you see any of these odd features in the image?"
       title: "Odd"
@@ -435,7 +435,7 @@ module.exports =
         'x-4': 'Other'
         'x-5': 'Dust lane'
         'x-6': 'Overlapping'
-    
+
     'decals-11':
       text: "Would you like to discuss this object?"
       title: "Discuss"
@@ -452,7 +452,7 @@ module.exports =
         'a-0': 'Smooth'
         'a-1': 'Features'
         'a-2': 'Star or artifact'
-    
+
     'gama-1':
       text: "Could this be a disk viewed edge-on?"
       title: "Disk"
@@ -460,7 +460,7 @@ module.exports =
       answers:
         'a-0': 'Yes'
         'a-1': 'No'
-    
+
     'gama-2':
       text: "Is there any sign of a bar feature through the centre of the galaxy?"
       title: "Bar"
@@ -468,7 +468,7 @@ module.exports =
       answers:
         'a-0': 'Bar'
         'a-1': 'No bar'
-    
+
     'gama-3':
       text: "Is there any sign of a spiral arm pattern?"
       title: "Spiral"
@@ -476,7 +476,7 @@ module.exports =
       answers:
         'a-0': 'Spiral'
         'a-1': 'No spiral'
-    
+
     'gama-4':
       text: "How prominent is the central bulge, compared with the rest of the galaxy?"
       title: "Bulge"
@@ -485,7 +485,7 @@ module.exports =
         'a-0': 'No bulge'
         'a-1': 'Obvious'
         'a-2': 'Dominant'
-    
+
     'gama-5':
       text: "How tightly wound do the spiral arms appear?"
       title: "Spiral"
@@ -494,7 +494,7 @@ module.exports =
         'a-0': 'Tight'
         'a-1': 'Medium'
         'a-2': 'Loose'
-    
+
     'gama-6':
       text: "How many spiral arms are there?"
       title: "Spiral"
@@ -505,7 +505,7 @@ module.exports =
         'a-2': '3'
         'a-3': '4'
         'a-4': 'More than 4'
-    
+
     'gama-7':
       text: "Does the galaxy have a bulge at its centre? If so, what shape?"
       title: "Bulge"
@@ -514,7 +514,7 @@ module.exports =
         'a-0': 'Rounded'
         'a-1': 'Boxy'
         'a-2': 'No bulge'
-    
+
     'gama-8':
       text: "How rounded is it?"
       title: "Round"
@@ -523,7 +523,7 @@ module.exports =
         'a-0': 'Completely round'
         'a-1': 'In between'
         'a-2': 'Cigar shaped'
-    
+
     'gama-9':
       text: "Is the galaxy currently merging or is there any sign of tidal debris?"
       title: "Mergers"
@@ -533,7 +533,7 @@ module.exports =
         'a-1': 'Tidal debris'
         'a-2': 'Both'
         'a-3': 'Neither'
-    
+
     'gama-10':
       text: "Do you see any of these odd features in the image?"
       title: "Odd"
@@ -548,7 +548,7 @@ module.exports =
         'x-4': 'Other'
         'x-5': 'Dust lane'
         'x-6': 'Overlapping'
-    
+
     'gama-11':
       text: "Would you like to discuss this object?"
       title: "Discuss"
@@ -556,7 +556,7 @@ module.exports =
       answers:
         'a-0': 'Yes'
         'a-1': 'No'
-    
+
     'illustris-0':
       text: "Is the galaxy simply smooth and rounded, with no sign of a disk?"
       title: "Shape"
@@ -565,7 +565,7 @@ module.exports =
         'a-0': 'Smooth'
         'a-1': 'Features or disk'
         'a-2': 'Star or artifact'
-    
+
     'illustris-1':
       text: "Could this be a disk viewed edge-on?"
       title: "Disk"
@@ -573,7 +573,7 @@ module.exports =
       answers:
         'a-0': 'Yes'
         'a-1': 'No'
-    
+
     'illustris-2':
       text: "Is there any sign of a bar feature through the centre of the galaxy?"
       title: "Bar"
@@ -581,7 +581,7 @@ module.exports =
       answers:
         'a-0': 'Bar'
         'a-1': 'No bar'
-    
+
     'illustris-3':
       text: "Is there any sign of a spiral arm pattern?"
       title: "Spiral"
@@ -589,7 +589,7 @@ module.exports =
       answers:
         'a-0': 'Spiral'
         'a-1': 'No spiral'
-    
+
     'illustris-4':
       text: "How prominent is the central bulge, compared with the rest of the galaxy?"
       title: "Bulge"
@@ -599,7 +599,7 @@ module.exports =
         'a-1': 'Just noticeable'
         'a-2': 'Obvious'
         'a-3': 'Dominant'
-    
+
     'illustris-5':
       text: "Do you see any of these odd features in the image?"
       title: "Odd"
@@ -614,7 +614,7 @@ module.exports =
         'x-4': 'Other'
         'x-5': 'Merger'
         'x-6': 'Dust lane'
-    
+
     'illustris-6':
       text: "How rounded is the galaxy?"
       title: "Round"
@@ -623,7 +623,7 @@ module.exports =
         'a-0': 'Completely round'
         'a-1': 'In between'
         'a-2': 'Cigar shaped'
-    
+
     'illustris-7':
       text: "Does the galaxy have a bulge at its centre? If so, what shape?"
       title: "Bulge"
@@ -632,7 +632,7 @@ module.exports =
         'a-0': 'Rounded'
         'a-1': 'Boxy'
         'a-2': 'No bulge'
-    
+
     'illustris-8':
       text: "How tightly wound do the spiral arms appear?"
       title: "Spiral"
@@ -641,7 +641,7 @@ module.exports =
         'a-0': 'Tight'
         'a-1': 'Medium'
         'a-2': 'Loose'
-    
+
     'illustris-9':
       text: "How many spiral arms are there?"
       title: "Spiral"
@@ -661,7 +661,7 @@ module.exports =
       answers:
         'a-0': 'Yes'
         'a-1': 'No'
- 
+
     'illustris-11':
       text: "Would you like to discuss this object?"
       title: "Discuss"
@@ -669,7 +669,7 @@ module.exports =
       answers:
         'a-0': 'Yes'
         'a-1': 'No'
-    
+
     'candels-0':
       text: "Is the galaxy simply smooth and rounded, with no sign of a disk?"
       title: "Shape"
@@ -678,7 +678,7 @@ module.exports =
         'a-0': 'Smooth'
         'a-1': 'Features or disk'
         'a-2': 'Star or artifact'
-    
+
     'candels-1':
       text: "How rounded is it?"
       title: "Round"
@@ -687,7 +687,7 @@ module.exports =
         'a-0': 'Completely round'
         'a-1': 'In between'
         'a-2': 'Cigar shaped'
-    
+
     'candels-2':
       text: "Does the galaxy have a mostly clumpy appearance?"
       title: "Clumps"
@@ -695,7 +695,7 @@ module.exports =
       answers:
         'a-0': 'Yes'
         'a-1': 'No'
-    
+
     'candels-3':
       text: "How many clumps are there?"
       title: "Clumps"
@@ -707,7 +707,7 @@ module.exports =
         'a-3': '4'
         'a-4': 'More than 4'
         'a-5': "Can't tell"
-    
+
     'candels-4':
       text: "Do the clumps appear in a straight line, a chain, or a cluster?"
       title: "Clumps"
@@ -717,7 +717,7 @@ module.exports =
         'a-1': 'Chain'
         'a-2': 'Cluster / Irregular'
         'a-3': 'Spiral'
-    
+
     'candels-5':
       text: "Is there one clump which is clearly brighter than the others?"
       title: "Clumps"
@@ -725,7 +725,7 @@ module.exports =
       answers:
         'a-0': 'Yes'
         'a-1': 'No'
-    
+
     'candels-6':
       text: "Is the brightest clump central to the galaxy?"
       title: "Clumps"
@@ -733,7 +733,7 @@ module.exports =
       answers:
         'a-0': 'Yes'
         'a-1': 'No'
-    
+
     'candels-7':
       text: "Does the galaxy appear symmetrical?"
       title: "Symmetry"
@@ -741,7 +741,7 @@ module.exports =
       answers:
         'a-0': 'Yes'
         'a-1': 'No'
-    
+
     'candels-8':
       text: "Do the clumps appear to be embedded within a larger object?"
       title: "Clumps"
@@ -749,7 +749,7 @@ module.exports =
       answers:
         'a-0': 'Yes'
         'a-1': 'No'
-    
+
     'candels-9':
       text: "Could this be a disk viewed edge-on?"
       title: "Disk"
@@ -757,7 +757,7 @@ module.exports =
       answers:
         'a-0': 'Yes'
         'a-1': 'No'
-    
+
     'candels-10':
       text: "Does the galaxy have a bulge at its centre?"
       title: "Bulge"
@@ -765,7 +765,7 @@ module.exports =
       answers:
         'a-0': 'Yes'
         'a-1': 'No'
-    
+
     'candels-11':
       text: "Is there any sign of a bar feature through the centre of the galaxy?"
       title: "Bar"
@@ -773,7 +773,7 @@ module.exports =
       answers:
         'a-0': 'Bar'
         'a-1': 'No bar'
-    
+
     'candels-12':
       text: "Is there any sign of a spiral arm pattern?"
       title: "Spiral"
@@ -781,7 +781,7 @@ module.exports =
       answers:
         'a-0': 'Spiral'
         'a-1': 'No spiral'
-    
+
     'candels-13':
       text: "How tightly wound do the spiral arms appear?"
       title: "Spiral"
@@ -790,7 +790,7 @@ module.exports =
         'a-0': 'Tight'
         'a-1': 'Medium'
         'a-2': 'Loose'
-    
+
     'candels-14':
       text: "How many spiral arms are there?"
       title: "Spiral"
@@ -802,7 +802,7 @@ module.exports =
         'a-3': '4'
         'a-4': 'More than 4'
         'a-5': "Can't tell"
-    
+
     'candels-15':
       text: "How prominent is the central bulge, compared with the rest of the galaxy?"
       title: "Bulge"
@@ -811,7 +811,7 @@ module.exports =
         'a-0': 'No bulge'
         'a-1': 'Obvious'
         'a-2': 'Dominant'
-    
+
     'candels-16':
       text: "Is the galaxy currently merging or is there any sign of tidal debris?"
       title: "Merger"
@@ -821,7 +821,7 @@ module.exports =
         'a-1': 'Tidal debris'
         'a-2': 'Both'
         'a-3': 'Neither'
-    
+
     'candels-17':
       text: "Would you like to discuss this object?"
       title: "Discuss"
@@ -829,7 +829,7 @@ module.exports =
       answers:
         'a-0': 'Yes'
         'a-1': 'No'
-  
+
   quiz_questions:
     set_1:
       question_0:
@@ -837,14 +837,14 @@ module.exports =
         answer_0: 'inside clusters of galaxies'
         answer_1: 'outside clusters of galaxies'
         answer_2: 'they are equally prevalent everywhere'
-      
+
       question_1:
         text: 'Star A is a red main sequence star and Star B is a blue main sequence star. Which will have a longer lifetime?'
         answer_0: 'Star A'
         answer_1: 'Star B'
         answer_2: 'They will have the same lifetime.'
         answer_3: 'There is insufficient information to determine this.'
-      
+
       question_2:
         text: 'How does the Sun produce the energy that heats our planet?'
         answer_0: 'The gases inside our Sun are burning and producing energy.'
@@ -852,21 +852,21 @@ module.exports =
         answer_2: 'Gas inside the Sun heats up when compressed, giving off energy.'
         answer_3: 'Atoms are broken apart into lighter atoms, giving off energy.'
         answer_4: 'The core of the Sun has radioactive atoms that decay, giving off energy.'
-      
+
       question_3:
         text: 'The diagram represents three different waves of light emitted at the same time by the Sun. Which wave will arrive first at a satellite orbiting just above Earth’s atmosphere?'
         answer_0: 'Wave 1'
         answer_1: 'Wave 2'
         answer_2: 'Wave 3'
         answer_3: 'All three waves arrive at the same time.'
-      
+
       question_4:
         text: 'A galaxy that appears to have very few bright, blue stars, likely:'
         answer_0: 'never had blue stars in the galaxy.'
         answer_1: 'had more blue stars long ago that are no longer present.'
         answer_2: 'has been around long enough for the blue stars to have evolved into red main sequence stars.'
         answer_3: 'never contained enough gas to have blue stars develop.'
-    
+
     set_2:
       question_0:
         text: 'Which is true of Doppler shifted light from galaxies and stars?'
@@ -875,7 +875,7 @@ module.exports =
         answer_2: 'If their light is redshifted, that means the objects are moving quickly.'
         answer_3: 'If their light is blueshifted, that means the objects will appear blue.'
         answer_4: 'None of the above is true.'
-      
+
       question_1:
         text: 'A main sequence star with a long lifetime will be ______ than a main sequence star with a short lifetime.'
         answer_0: 'bluer'
@@ -883,7 +883,7 @@ module.exports =
         answer_2: 'larger'
         answer_3: 'more luminous'
         answer_4: 'less massive'
-      
+
       question_2:
         text: 'The three spectral curves shown in the graphs illustrate the energy output versus wavelength for three Stars A, B, and C. Which of the stars has the highest temperature?'
         answer_0: 'Star A'
@@ -891,21 +891,21 @@ module.exports =
         answer_2: 'Star C'
         answer_3: 'All three stars have the same temperature.'
         answer_4: 'There is insufficient information to determine this.'
-      
+
       question_3:
         text: 'Which of the following correctly lists objects from largest to smallest?'
         answer_0: 'Star, Solar System, Globular Cluster, Galaxy, Local Group'
         answer_1: 'Globular Cluster, Local Group, Galaxy, Star, Solar System'
         answer_2: 'Galaxy, Local Group, Solar System, Globular Cluster, Star'
         answer_3: 'Local Group, Galaxy, Globular Cluster, Solar System, Star'
-      
+
       question_4:
         text: 'Which of the following components of an elliptical galaxy has the most mass?'
         answer_0: 'Stars'
         answer_1: 'Gas and Dust'
         answer_2: 'Dark Matter'
         answer_3: 'There is insufficient information to determine this.'
-      
+
       question_5:
         text: 'How many of the four galaxies shown could be a Spiral Galaxy?'
         answer_0: 'One'
@@ -913,7 +913,7 @@ module.exports =
         answer_2: 'Three'
         answer_3: 'Four'
         answer_4: 'There is insufficient information to determine this.'
-    
+
     set_3:
       question_0:
         text: 'Which of the following has the most energy?'
@@ -921,41 +921,41 @@ module.exports =
         answer_1: 'ultraviolet light'
         answer_2: 'gamma rays'
         answer_3: 'They all have the same energy.'
-      
+
       question_1:
         text: 'Which of the following is true of all main sequence stars that appear red to us on Earth:'
         answer_0: 'They are hotter than blue main sequence stars.'
         answer_1: 'They will live longer than very bright main sequence stars.'
         answer_2: 'They are moving toward Earth.'
         answer_3: 'They are moving away from Earth.'
-      
+
       question_2:
         text: 'Answer the following question using the image, which represents the Milky Way Galaxy.  Approximately how far is it from the white circle to the center of the Milky Way Galaxy?'
         answer_0: '1,000 light years'
         answer_1: '10,000 light years'
         answer_2: '25,000 light years'
         answer_3: '100,000 light years'
-      
+
       question_3:
         text: 'The idea of dark matter is provided to explain which one of the following?'
         answer_0: 'The location and shape of the arms in the disk of spiral galaxies.'
         answer_1: 'The location of the maximum in the distribution of globular clusters of stars in the halo of the galaxy.'
         answer_2: 'The nearly uniform rotation speeds of objects in the Milky Way Galaxy.'
         answer_3: 'That a spiral density wave moves through the disk of spiral galaxies triggering star formation.'
-      
+
       question_4:
         text: 'Why are the arms of spiral galaxies blue?'
         answer_0: 'The arms are usually moving toward us, so they are Doppler shifted to blue wavelengths.'
         answer_1: 'The gas and dust in the arms filter out all but the blue light from stars in the arms.'
         answer_2: 'Active star formation is occurring in the spiral arms.'
         answer_3: 'Most of the stars of the disk are in the arms of the galaxy and their light makes it appear blue.'
-      
+
       question_5:
         text: "In each figure, two pairs of rocky asteroids are shown along with their masses (m), and the distance (d) between each pair of asteroids. Which of the following correctly describes how the gravitational force exerted BY Asteroid A on its 'partner' asteroid compares to the gravitational force exerted BY Asteroid B on its 'partner' asteroid."
         answer_0: 'The force of A on its partner is greater than the force of B on its partner.'
         answer_1: 'The force of B on its partner is greater than the force of A on its partner.'
         answer_2: 'The force of A on its partner is equal to the force of B on its partner.'
-    
+
     set_4:
       question_0:
         text: 'Which of the following has the highest speed?'
@@ -963,7 +963,7 @@ module.exports =
         answer_1: 'ultraviolet light'
         answer_2: 'gamma rays'
         answer_3: 'They all have the same speed.'
-      
+
       question_1:
         text: 'Which of the following determines most characteristics and future events of a star’s existence?'
         answer_0: 'surface temperature'
@@ -971,7 +971,7 @@ module.exports =
         answer_2: 'color'
         answer_3: 'composition (type of atoms)'
         answer_4: 'mass'
-      
+
       question_2:
         text: 'Here are possible plots of how fast objects orbit the center of our galaxy versus their distance from the center. Which one graph best represents how objects actually move in our galaxy?'
         answer_0: 'Graph A'
@@ -980,14 +980,14 @@ module.exports =
         answer_3: 'Graph D'
         answer_4: 'Graph E'
         answer_5: 'Graph F'
-      
+
       question_3:
         text: 'Star A is a red main sequence star and Star B is a blue main sequence star. If both stars appear to be the same brightness, which one is closer to Earth?'
         answer_0: 'Star A'
         answer_1: 'Star B'
         answer_2: 'They are the same distance from Earth.'
         answer_3: 'There is insufficient information to determine this.'
-      
+
       question_4:
         text: 'In how many of the four galaxies shown do we observe regions containing cool gas & dust clouds?'
         answer_0: 'One'
@@ -995,13 +995,13 @@ module.exports =
         answer_2: 'Three'
         answer_3: 'Four'
         answer_4: 'There is insufficient information to determine this.'
-      
+
       question_5:
         text: 'In this picture the Earth-Moon system is shown (not to scale) along with three possible positions (A-C) for a spacecraft traveling from Earth to the Moon. Note that Position B is exactly halfway between Earth and the Moon. In what direction would the net (total) force of gravity on the spacecraft point if it were located at Position B?'
         answer_0: 'toward the Moon'
         answer_1: 'toward Earth'
         answer_2: 'Since the spacecraft is exactly halfway between Earth and the Moon, the gravitational force by Earth on the spacecraft is equal to the gravitational force on the spacecraft by the Moon, so the net (total) force would be zero and not point in either direction.'
-    
+
     set_5:
       question_0:
         text: 'Which of the following is not a form of light?'
@@ -1010,28 +1010,28 @@ module.exports =
         answer_2: 'x-rays'
         answer_3: 'All of the above are a form of light.'
         answer_4: 'None of the above is a form of light.'
-      
+
       question_1:
         text: 'A collision of two spiral galaxies produces'
         answer_0: 'a spiral galaxy.'
         answer_1: 'an elliptical galaxy.'
         answer_2: 'either a spiral or elliptical galaxy.'
         answer_3: 'No galaxy will remain.'
-      
+
       question_2:
         text: 'Which of the following components of a spiral galaxy has the most mass?'
         answer_0: 'Stars'
         answer_1: 'Gas and Dust'
         answer_2: 'Dark Matter'
         answer_3: 'There is insufficient information to determine this.'
-      
+
       question_3:
         text: 'Answer the following question using the image, which represents the Milky Way Galaxy. Approximately how large is the diameter of the white dot?'
         answer_0: '1,000 light years'
         answer_1: '10,000 light years'
         answer_2: '50,000 light years'
         answer_3: '100,000 light years'
-      
+
       question_4:
         text: 'Consider the information given below about three main sequence Stars A, B, and C. Star A will be a main sequence star for a total of 15 billion years. Star B gives off the same amount of light as the Sun. Star C is red. Which of the following is a true statement about these stars?'
         answer_0: 'Star A has the greatest mass.'
@@ -1039,14 +1039,14 @@ module.exports =
         answer_2: 'Star C has the greatest mass.'
         answer_3: 'Stars A, B and C all have approximately the same mass.'
         answer_4: 'There is insufficient information to determine this.'
-      
+
       question_5:
         text: 'Assume the two galaxies shown have the same total number of stars. Which of these two galaxies most likely has the fewest bright blue stars?'
         answer_0: 'Galaxy A'
         answer_1: 'Galaxy B'
         answer_2: 'They have the same number of bright blue stars.'
         answer_3: 'There is insufficient information to determine this.'
-    
+
     set_6:
       question_0:
         text: 'Star A is hotter than Star B. Star B gives off much more light than Star A. Which star is larger?'
@@ -1054,21 +1054,21 @@ module.exports =
         answer_1: 'Star B'
         answer_2: 'They are the same size.'
         answer_3: 'There is insufficient information to determine this.'
-      
+
       question_1:
         text: 'Star F is a red main sequence star and Star G is a blue main sequence star. Which star has a higher temperature?'
         answer_0: 'Star F'
         answer_1: 'Star G'
         answer_2: 'They have the same temperature.'
         answer_3: 'There is insufficient information to determine this.'
-      
+
       question_2:
         text: 'A collision of two elliptical galaxies produces'
         answer_0: 'a spiral galaxy.'
         answer_1: 'an elliptical galaxy.'
         answer_2: 'either a spiral or elliptical galaxy.'
         answer_3: 'No galaxy will remain.'
-      
+
       question_3:
         text: 'Use the graph to answer the following question. Which of the following is the correct ranking for the size of Objects A-C, from largest to smallest?'
         answer_0: 'A > C = B'
@@ -1076,7 +1076,7 @@ module.exports =
         answer_2: 'A = C > B'
         answer_3: 'A > C > B'
         answer_4: 'B > C = A'
-      
+
       question_4:
         text: 'Which diagram best describes the net (total) force of gravity on each of the three galaxies shown? Note that: Galaxy C has much more mass than Galaxy A and B  (which have equal mass). The arrows indicate the direction of the net (total) force of gravity exerted on each galaxy but not the strength'
         answer_0: ''
@@ -1084,29 +1084,29 @@ module.exports =
         answer_2: ''
         answer_3: ''
         answer_4: ''
-  
-  
+
+
   astronomers:
     heading: 'Galaxy Zoo for Astronomers'
-    
+
     explanation:
       goals: 'This page aims to give background to the scientific motivation behind the project for a more technical audience.'
       data: 'You may be looking for data - public Galaxy Zoo data is available in a range of formats <a href="http://data.galaxyzoo.org">here</a>.'
       papers: 'Alternatively, you can browse a list of papers published by the team <a href="https://www.zooniverse.org/#/about/publications">here</a>.'
-    
+
     morphology:
       heading: 'Why is galaxy morphology important?'
       body: '''To first order, the morphology of a galaxy is a tracer of the orbital dynamics of the stars in it, but it also carries an imprint of the processes driving star formation and nuclear activity in galaxies. Visual morphology produces classifications which are strongly correlated with other, physical parameters. To give a single example, the presence of multiple nuclei and extended tidal features indicates that the dominant mechanism driving star formation is an ongoing merger. Equally, the absence of such features implies that the evolution of the galaxy may be being driven by slower ('secular') processes.'''
       reference: '''Traditionally morphology has been derived either by visual inspection of galaxy images (e.g. <a href="http://adsabs.harvard.edu/abs/1926ApJ....64..321H" target="_blank">Hubble 1926</a>, <a href="http://heasarc.nasa.gov/W3Browse/all/rc3.html" target="_blank">de Vaucouleurs 1991</a>, and more recently e.g. <a href="http://arxiv.org/abs/1001.2401" target="_blank">Nair and Abraham 2010</a>) or via morphological parameters, such as Concentration, Asymmetry, Clumpiness, M20, the Gini coefficient, etc (e.g. <a href="http://arxiv.org/abs/astro-ph/0303065" target="_blank">Conselice 2003</a>, <a href="http://adsabs.harvard.edu/abs/2008ApJ...672..177L" target="_blank">Lotz et al. 2008</a>). Strictly speaking, these parameters are morphological 'proxies', each with its own attendant biases, which are typically checked and calibrated against visual inspection. A visual approach is generally more resistant to changing signal-to-noise and resolution in images (e.g. <a href="http://labs.adsabs.harvard.edu/adsabs/abs/2008ApJS..179..319L">Lisker 2008</a>), making it an ideal method for determining galaxy morphology. Nevertheless, morphological parameters have been valuable for classifying large survey-scale datasets, for which visual inspection by individuals (or small groups of researchers) can be prohibitively time-consuming.'''
-    
+
     classification:
       heading: 'Classifications of large survey datasets using Galaxy Zoo'
       body: 'Galaxy Zoo (<a href="http://arxiv.org/abs/0804.4483" target="_blank">Lintott et al. 2008</a>, <a href="http://arxiv.org/abs/1007.3265" target="_blank">2011</a>) pioneered a novel method for performing large-scale visual classifications of survey datasets. Using more than half a million members of the general public, the project has classified – via direct visual inspection - the entire Sloan Digital Sky Survey spectroscopic sample and all existing Hubble Space Telescope surveys (around 1.5 million galaxies in total). With more than 40 classifications per object, Galaxy Zoo provides both a visual classification and an associated uncertainty (which is challenging to estimate if there are only a few human classifiers). The classifications themselves have been demonstrated to be of comparable accuracy to those derived by expert astronomers (see Lintott et al. 2008).'
-    
+
     highlights:
       heading: 'Galaxy Zoo science highlights'
       body: '''The Galaxy Zoo science programme has contributed to a diverse set of topics, largely focused on the nearby and intermediate-redshift Universe. Some recent highlights include the largest studies of galaxy mergers (<a href="http://arxiv.org/abs/0903.4937">Darg et al. 2010</a>), tidal dwarf galaxies (<a href="http://arxiv.org/abs/1108.4410">Kaviraj et al. 2012</a>), dust lanes in early-type galaxies (<a href="http://arxiv.org/abs/1107.5306">Kaviraj et al. 2012</a>) and bars in disc galaxies (<a href="http://arxiv.org/abs/1003.0449">Masters et al. 2011</a>, <a href="http://arxiv.org/abs/1205.5271">2012</a>) in the nearby Universe to date. One of the unique aspects of Galaxy Zoo over automated morphological measurements is the possibility of serendipitous discoveries (often aided by volunteer led discussion on the <a href="http://www.galaxyzooforum.org">Galaxy Zoo Forum</a>). These have included the discovery of 'green peas' (a class of compact extremely star-forming galaxies in the local Universe; <a href="http://arxiv.org/abs/0907.4155">Cardamone et al. 2009</a>) and perhaps most famously "Hanny's Voorwerp" (<a href="http://arxiv.org/abs/0906.5304">Lintott et al. 2009</a>) along with a survey of similar AGN-ionised gas clouds (<a href="http://arxiv.org/abs/1110.6921">Keel et al. 2012</a>). The availability of a large sample of galaxies with both color and morphological information has led to the important realisation that color, not morphology, is most strongly correlated with environment (<a href="http://arxiv.org/abs/0805.2612">Bamford et al. 2009</a>; <a href="http://arxiv.org/abs/0811.3970">Skibba et al. 2009</a>), leading to intriguing subclasses of galaxies like red spiral galaxies (<a href="http://arxiv.org/abs/0910.4113">Masters et al. 2010</a>) and blue ellipticals (<a href="http://arxiv.org/abs/0903.3415">Schawinski et al. 2009</a>).'''
-    
+
     relaunched:
       heading: 'Galaxy Zoo Relaunched'
       sdss: '''The current site has incorporated images from a variety of different telescopes, including SDSS, HST, UKIRT, VST and the CTIO 4-m Blanco telescope. The SDSS images are from DR8 and the Southern Galactic cap, which increases the sample size of galaxies in the local universe by 40%. The HST images are from <a href="http://candels.ucolick.org">CANDELS</a>, the largest HST Treasury Program. This survey is designed to take advantage of the advent of Wide Field Camera 3 (WFC3), which is rapidly opening up a new window into galaxies at z > 1 – the first 50% of the lifetime of the Universe. Previous HST imaging at these epochs largely sampled the rest-frame ultraviolet, since the available survey instruments (e.g. ACS) operated in the optical wavelengths. However, the near-infrared capabilities of the WFC3 (a factor of 20 better than NICMOS) are providing us with unprecedented rest-frame optical data of galaxies at z > 1.'''
@@ -1117,10 +1117,10 @@ module.exports =
       newdata: 'In early 2015, three new sets of data were put into Galaxy Zoo. Two of them are from Hubble surveys for which we already have GZ morphological classifications --- GOODS and CANDELS. The new images explore how changing the depth of data (a surface brightness limit) affects the morphological measurements. The new CANDELS images are from 2-epoch data (which is shallower than the 5-epoch data already cataloged), and the GOODS images come from the full-depth images, supplementing the shallow observations already completed in GZH. Finally, we added roughly 1000 images each of galaxies from SDSS in their monochrome <i>ugriz</i> filters, which will allow a more careful measurement of morphology as a function of wavelength.'
       decals: 'The <a href="http://legacysurvey.org/">Dark Energy Camera Legacy Survey (DECaLS)</a> is a public imaging survey intended to supplement spectroscopic measurements being collected by various iterations of the SDSS. Using the Dark Energy Camera mounted on the 4-m Blanco telescope at the CTIO in Chile, the DECaLS team is imaging 6700 square degrees of the sky overlapping with the SDSS footprints, including Stripe 82. Images are taken in the g, r, and z bands and have significantly better angular resolution and point-source sensitivity than the SDSS images. DECaLS images combined with Galaxy Zoo morphologies will be used for several science goals, including measurement of the Hubble sequence at lower luminosities, detection of tidal tails and minor mergers, and serendipitous discovery of rare and unusual objects. DECaLS images were put into Galaxy Zoo beginning in mid-2015.'
       illustris: 'Galaxy Zoo is also working with state-of-the-art simulated images of galaxies in order to test the physical models that go into these simulations and assess whether the reproduced morphologies match those that are seen in the Universe. The <a href="http://www.illustris-project.org/">Illustris simulation</a> is a massive cosmological simulation that traces both dark matter and baryons via realistic physical models over evolving conditions down to the Universe at its present day. Galaxy Zoo is classifying simulated images of galaxies formed in the Illustris simulations, which appear as if they were observed with the SDSS telescope located at a distance of 223 Mpc (redshift z=0.05). The galaxies appear at a variety of angles and against several sets of real sky backgrounds, allowing for a direct comparison to the morphologies observed in previous projects such as Galaxy Zoo 2. Illustris data were put into Galaxy Zoo beginning in mid-2015.'
-      gama: 'Another new source of images is provided by the <a href="http://gama-survey.org/">Galaxy And Mass Assembly Survey</a>. GAMA combines multi-wavelength data from many ground and space-based survey facilities in order to study the structure of galaxies and dark matter on scales from thousands to millions of light years. In particular, GAMA has added valuable distance information for nearly quarter of a million galaxies via a large redshift survey on the AAT. This enables the environment of galaxies, the groups and large scale structure in which they live, to be very well characterised. GAMA has recently benefitted from images provided by the <a href="http://kids.strw.leidenuniv.nl">Kilo-Degree Survey</a> (KiDS) on ESO's VST. These dramatically improve on SDSS, the previous source of GAMA's optical imaging. The better resolution and depth will allow us to study fainter structures in many more galaxies, helping us to further understand the links between environment and morphological transformations. GAMA KiDS images were first added into Galaxy Zoo at the end of 2016.'
+      gama: 'Another new source of images is provided by the <a href="http://gama-survey.org/">Galaxy And Mass Assembly Survey</a>. GAMA combines multi-wavelength data from many ground and space-based survey facilities in order to study the structure of galaxies and dark matter on scales from thousands to millions of light years. In particular, GAMA has added valuable distance information for nearly quarter of a million galaxies via a large redshift survey on the AAT. This enables the environment of galaxies, the groups and large scale structure in which they live, to be very well characterised. GAMA has recently benefitted from images provided by the <a href="http://kids.strw.leidenuniv.nl">Kilo-Degree Survey</a> (KiDS) on ESO\'s VST. These dramatically improve on SDSS, the previous source of GAMA\'s optical imaging. The better resolution and depth will allow us to study fainter structures in many more galaxies, helping us to further understand the links between environment and morphological transformations. GAMA KiDS images were first added into Galaxy Zoo at the end of 2016.'
       conclusion: 'The purpose of the Galaxy Zoo project is to answer a variety of scientific questions, to prepare the ground for morphological work using future instruments like the JWST, and to produce samples of morphologically selected high-redshift galaxies for follow-up using instruments like the extremely large telescopes and ALMA.'
-  
-  
+
+
   classify:
     heading: 'Classify'
     restart: 'Restart'
@@ -1151,40 +1151,40 @@ module.exports =
   help:
     title: 'Help'
     examples: 'Examples'
-  
-  
+
+
   home:
     headline: "Few have witnessed what you're about to see"
     call_to_action: 'Experience a privileged glimpse of the distant universe as observed by the SDSS, CTIO and VST.'
-    
+
     galaxy_zoo:
       title: 'Classify Galaxies'
       description: "To understand how galaxies formed we need your help to classify them according to their shapes. If you're quick, you may even be the first person to see the galaxies you're asked to classify."
       classify: 'Begin Classifying'
-      
-    
+
+
     galaxy_formation:
       title: 'How Do Galaxies Form?'
       body: 'Roughly one hundred billion galaxies are scattered throughout our observable Universe, each a glorious system that might contain billions of stars. Many are remarkably beautiful, and the aim of Galaxy Zoo is to study them, assisting astronomers in attempting to understand how the galaxies we see around us formed, and what their stories can tell us about the past, present and future of our Universe as a whole. <a data-nav="#/science" href="#/science">more</a>'
-    
+
     history:
       title: 'History of Galaxy Zoo'
       body: '''The launch of this new version of Galaxy Zoo, the 4th, comes just a few weeks after the site’s 5th birthday. It all started back in July 2007, with a data set made up of a million galaxies imaged by the Sloan Digital Sky Survey, who still provide some of the images in the site today. With so many galaxies, we'd assumed it would take years for visitors to the site to work through them all, but within 24 hours of launch we were stunned to be receiving almost 70,000 classifications an hour. In the end, more than 50 million classifications were received by the project during its first year, contributed by more than 150,000 people. <a data-nav="#/story" href="#/story">more</a>'''
-    
+
     classroom:
       title: 'Galaxy Zoo in the Classroom'
       body: 'Are you an educator? Would you like to use Galaxy Zoo with a group of students? The <a href="http://www.galaxyzoo.org/#/navigator/home">Navigator</a> is an interactive tool that allows groups to classify galaxies together and then investigate galaxy characteristics. <a href="http://www.zooteach.org/zoo/galaxy_zoo">Zoo Teach</a> is where educators can share lessons, resources and that compliment the citizen science projects that are part of the Zooniverse.'
       navigator: 'Navigator'
-    
+
     recent_images:
       title: 'Recent Images'
-  
-  
+
+
   login_prompt:
     title: 'Login or create an account to receive credit for your work'
     decline: 'No, thanks'
-  
-  
+
+
   navigation:
     classify: 'Classify'
     science: 'Science'
@@ -1199,10 +1199,10 @@ module.exports =
     talk: 'Talk'
     forum: 'Forum'
     profile: 'Profile'
-  
+
   languages:
     language: 'Language'
-  
+
   profile:
     favorites: 'Favourites'
     recents: 'Recents'
@@ -1227,8 +1227,8 @@ module.exports =
     take_a_quiz: 'Take a quiz now'
     galaxy_zoo_hubble: 'Galaxy Zoo: Hubble'
     galaxy_zoo_hubble_link: '''If you're looking for your old galaxies from Galaxy Zoo Hubble, then you can <a href="http://hubble.galaxyzoo.org/my_galaxies" target="_blank">find them here</a>.'''
-  
-  
+
+
   science:
     title: 'The Science behind the Site'
     p1: 'Roughly one hundred billion galaxies are scattered throughout our observable Universe, each a glorious system that might contain billions of stars. Many are remarkably beautiful, and the aim of Galaxy Zoo is to study them, assisting astronomers in attempting to understand how the galaxies we see around us formed, and what their stories can tell us about the past, present and future of our Universe as a whole.'
@@ -1246,8 +1246,8 @@ module.exports =
     p12: '''While astronomers have learned an amazing amount from the SDSS and Hubble images, there are also areas we can only probe if we look at galaxies in wavelengths beyond those seen by the human eye. For objects that radiate thermally (such as stars), the wavelength used probes the temperature of the object being observed. Stars like our own Sun have temperatures around 5500 K, which show up strongly in the optical wavelengths used in SDSS imaging. If we look at galaxies in ultraviolet wavelengths, however, hotter regions become more prominent; in galaxies, this means we're picking out young, massive stars and individual star-forming regions (often leading to a patchier appearance). For galaxies observed at infrared wavelengths, cooler regions become more prominent; these include older and lower-mass stars, as well as clouds of dust that are heated by the stars and then re-emit that light at lower energies.'''
     p13: '''Comparing the morphologies of galaxies at multiple wavelengths gives astronomers a much more complete picture of the processes that govern their astrophysics. Tracing stars by temperature gives us proxies for their age and chemical evolution, while identifying star formation regions tells us where the densest parts of the disk are and where the mass in these galaxies is being built up.'''
     p14: '''Infrared images on Galaxy Zoo came from the United Kingdom Infared Survey Telescope (UKIRT), a 3.8m telescope located on the summit of Mauna Kea in Hawaii at nearly 14,000 ft. elevation. Starting in 2005, UKIRT began an infrared survey of the northern sky called UKIDSS, covering 7500 square degrees at wavelengths of 1--2.5 microns. A portion of this survey was dedicated to covering the same regions as the SDSS. This means that the new UKIDSS images in Galaxy Zoo have already been classified by users in Galaxy Zoo 2; this will let us do direct comparisons for the two samples and examine how morphology (like the fraction of galaxies with bars, for example) changes with the wavelength being used.'''
-  
-  
+
+
   story:
     title: 'The Story So Far'
     p1: 'Galaxy Zoo is now arguably the world’s best-known online citizen science project, and is certainly the one with the <a href="https://www.zooniverse.org/about/publications">largest number of publications</a> based on citizen scientists input. Our success inspired the creation of <a href="http://www.zooniverse.org">The Zooniverse</a>, hosting project using the same technique across many research areas.'
@@ -1261,9 +1261,9 @@ module.exports =
     p9: '''The data being put into Galaxy Zoo can now change quickly, thanks to the dedicated work of volunteers and the &quot;retirement&quot; of images that have already been completed. One of the new sets of images to be classified comes from the Dark Energy Camera Legacy Survey (DECaLS), a survey which uses DECam, one of the most sensitive and widest-area cameras ever built and a key tool in our search to measure and understand <a href="https://en.wikipedia.org/wiki/Dark_energy">dark energy</a>. The camera, which is mounted on the 4-m Blanco telescope at CTIO in Chile, images the sky at similar wavelengths to SDSS, but with better resolution and with the ability to detect much fainter galaxies. These images are extending the reach of the science we began with Galaxy Zoo 2 and SDSS. Recently, the site also had Galaxy Zoo's first-ever images of fully simulated galaxies; these were images that were created entirely on a computer, using sophisticated simulations of the Universe starting just after the Big Bang and then watching as dark matter, gas, and stars evolve to form the galaxies we see today. The classifications of these images, which came from the <a href="http://www.illustris-project.org/">Illustris</a> project, are a vital test of the physics that go into these simulations.'''
     p10: '''Starting in March 2016 the site began including a new set of DECaLS images, this time taken from the survey's second data release. This new data release covers a larger portion of the sky than the first. Finally, we have included a set of &quot;lost images&quot; from SDSS that should have been included in the Galaxy Zoo 2 sample. These images fill in the hole that currently exists in the SDSS bright galaxy data set.'''
     p11: 'With increasing number of very distant galaxies entering Galaxy Zoo (like the Hubble and CANDELS sets), it was clear that the GZ team needed to find a way to measure and account for any dependence classifications might have on galaxy distance. So, in 2013 a set of 288 nearby SDSS galaxies were simulated using the FERENGI code to create images of these galaxies as viewed at varying distances and brightnesses. The classifications for these were used with great success in debiasing the Galaxy Zoo: Hubble catalog. To continue this effort, in 2016 a second, larger sample of 936 galaxies were simulated again with FERENGI to create 7,488 images of the same galaxies at eight viewing distances. The new FERENGI classifications will aid in the analysis of GZ Hubble data to be used in some exciting high-redshift science projects currently in prep!'
-    p12: '''At the start of 2017 we added in images from another recent project that builds upon the legacy of SDSS, the <a href="http://gama-survey.org/">Galaxy And Mass Assembly Survey</a> (GAMA).  Specifically, we have included optical images from the <a href="http://kids.strw.leidenuniv.nl">Kilo-Degree Survey</a> (KiDS) over the region of sky covered by GAMA's comprehensive multiwavelength dataset.  The Galaxy Zoo classifications of these galaxies will help us study how the properties of galaxies are affected by their neighbours and the surrounding large scale structure.
+    p12: '''At the start of 2017 we added in images from another recent project that builds upon the legacy of SDSS, the <a href="http://gama-survey.org/">Galaxy And Mass Assembly Survey</a> (GAMA).  Specifically, we have included optical images from the <a href="http://kids.strw.leidenuniv.nl">Kilo-Degree Survey</a> (KiDS) over the region of sky covered by GAMA's comprehensive multiwavelength dataset.  The Galaxy Zoo classifications of these galaxies will help us study how the properties of galaxies are affected by their neighbours and the surrounding large scale structure.'''
     p13: '''For access to the ever-growing list of team-led publications based on Galaxy Zoo data, please take a look at our <a href="https://www.zooniverse.org/about/publications">publications</a> page. This includes results from multiple phases of the project, including the original Galaxy Zoo, Galaxy Zoo 2, Galaxy Zoo: Hubble, and Galaxy Zoo: CANDELS. Access to all of the Galaxy Zoo data products is available on our <a href="https://data.galaxyzoo.org/">archive page</a>, or through links in the published papers.'''
-  
+
   team:
     title: 'The Galaxy Zoo Team'
     science:
@@ -1303,23 +1303,23 @@ module.exports =
       carstensen: '<span class="person">Brian Carstensen</span><br />Brian is a web developer working on the Zooniverse family of projects at the Adler Planearium. Brian has a degree in graphic design from Columbia College in Chicago, and worked in that field for a number of years before finding a niche in web development.'
       paget: '<span class="person">Ed Paget</span><br />Ed somehow went from studying Film at Northwestern University to joining the Zooniverse team as a software developer. Along the way, he picked up a little programming. In his spare time, he enjoys photography, chess, fencing, and growing his beard.'
       parrish: '<span class="person">Michael Parrish</span><br />Michael has a degree in Computer Science and has been working with The Zooniverse for the past three years as a Software Developer. Aside from web development; new technologies, science, AI, reptiles, and coffee tend to occupy his attention.'
-    
+
     czech:
       title: 'Galaxy Zoo Czech Support Team'
       vykouril: '<span class="person">Dušan Vykouřil</span><br />Initiator, and coordinator Czech Galaxy Zoo. He thinks that line of the universe is never-ending. He like pushes the limits of the unknown.'
       moudra: '<span class="person">Míla Moudrá</span><br />Main Czech Galaxy Zoo translator. Student from Prague, Czech republic, and amateur astronomer, especially deep-sky objects (i.e. galaxies, among others) visual observer. Interested in protection of environment and small rodents :-)'
       hresil: '<span class="person">Petr Hřešil</span><br />Czech Galaxy Zoo co-translator. He has always been fascinated by the sky and the universe but he got trapped into the IT world and fell into the clutches of the Internet. Fan of Distributed computing, lover of sci-fi which allows him to set out "Where No One Has Gone Before".'
       miksovsky: '<span class="person">Jaroslav Mikšovský</span><br />Czech Galaxy Zoo corrector. Pensioner still economically active.'
-    
+
     french:
       title: 'Galaxy Zoo France Support Team'
       marco: '<span class="person">Olivier Marco</span> - Observatoire de Paris'
-    
+
     german:
       title: 'Galaxy Zoo Germany Support Team'
       poessel: '<span class="person">Markus Poessel</span> - Center for Astronomy Education and Outreach, Heidelberg<br />German Galaxy Zoo co-translator. Managing scientist of the Center for Astronomy Education and Outreach in Heidelberg, whose galaxy-shaped building has a disk, is not clumpy, can be viewed edge-on, has two spiral arms that are medium-tightly wound, and an obvious bulge. (And please tell him if you notice anything odd.).'
       leifke: '<span class="person">Carolin Leifke</span> - Center for Astronomy Education and Outreach, Heidelberg<br />German Galaxy Zoo co-translator. Observes flares on active stars with X-ray satellites and the VLT, and galaxies of all kind with her 16-inch Dobsonian. Has now turned her passion for astronomy education and outreach into a profession.'
-    
+
     polish:
       title: 'Galaxy Zoo Poland Support Team'
       biernacki: '<span class="person">Paweł Biernacki</span><br />Student of astronomy at Wrocław University, enthusiast of the Sun, addicted to sci-fi books; upbeaten optimist and fan of soccer.'
@@ -1332,7 +1332,7 @@ module.exports =
       ogloza: '<span class="person">Waldemar Ogloza</span><br />An astronomer from Pedagogical University of Kracow, variable star observer. He devotes his spare time to astronomical education and sailing.'
       pomierny: '<span class="person">Jan Pomierny</span><br />Founder and team leader of the Polish Astronomy Portal. Philosophy and classical music enthusiast who rests in mountains.'
       skowron: '<span class="person">Tomasz Skowron</span><br />Astronomy amateur and educator. Daily teacher of physics and astronomy in secondary school in Szczecin.'
-    
+
     retired:
       title: 'Retired members of the Galaxy Zoo Team'
       andreescu: '<span class="person">Dan Andreescu</span><br />Consultant by day, programmer and seeker of knowledge and fun by night. Avid basketball player and rookie surfer on the weekends.'
@@ -1393,8 +1393,8 @@ module.exports =
     gamaserver_link: 'GAMA Single Object Viewer'
     illustris_link: 'View data on Illustris Project'
     explorer_link: 'Illustris Explorer'
-  
-  
+
+
   fits:
     view: 'View raw data in different wavelengths'
     x_y: 'X, Y'
@@ -1405,8 +1405,8 @@ module.exports =
     square_root: 'Square Root'
     arcsinh: 'Arcsinh'
     power: 'Power'
-  
-  
+
+
   quiz:
     thanks: 'Thanks!'
     help: 'Galaxy Zoo needs your help!'
@@ -1427,7 +1427,7 @@ module.exports =
     no_thanks: 'No, thanks'
     ask_later: 'Ask later'
     never_again: 'Never ask again'
-    
+
     example:
       prompt: 'If you agree to help you will be given short surveys that contain 6 multiple choice questions, which you can answer at your own pace. The first survey is available immediately after you agree to participate.<br />A question might be:'
       question: "Hubble's observation that galaxies farther away from us are moving faster led to which conclusion?"
@@ -1435,8 +1435,8 @@ module.exports =
       answer_b: 'The universe is contracting'
       answer_c: 'We are located at the center of the universe'
       answer_d: 'Our galaxy repels other galaxies'
-  
-  
+
+
   navigator:
     affirmative: 'Yes'
     negative: 'No'
@@ -1460,7 +1460,7 @@ module.exports =
     no_results: 'You need to classify galaxies first'
     intro: "Welcome to the Galaxy Zoo Navigator, where you can investigate the galaxy classifications you have made as part of a group. To get started you will need to select the group you'd like to work with."
     credit: 'The Navigator is based upon work supported by the National Science Foundation under Grants No. 1041419 and 0941610. Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.'
-    
+
     groups:
       download: "Download Stats"
       rejected: 'These emails did not have an associated Zooniverse account: '
@@ -1501,7 +1501,7 @@ module.exports =
       group: "As a group"
 
 
-    
+
     sample:
       label: 'with a sample size of...'
       choose: 'Choose sample size'
@@ -1511,18 +1511,18 @@ module.exports =
       random_medium: 'Medium Random Sample of Galaxies'
       large: 'Large Sample of Galaxies'
       random_large: 'Large Random Sample of Galaxies'
-    
+
     galaxy_type:
       label: 'in the following galaxy type...'
       smooth: 'Smooth'
       feature: 'Feature/Disk'
-    
+
     source:
       label: "I'd like to use data from..."
       my_group: 'My Group'
       galaxy_zoo: 'Galaxy Zoo'
       my_choice: 'My choice'
-    
+
     histogram:
       title: 'Histogram'
       description: 'Investigate the characteristics of different galaxy types.'
@@ -1533,7 +1533,7 @@ module.exports =
       one_var: 'One-Variable'
       two_var: 'Two-Variable'
       create: 'Create Graph'
-    
+
     scatterplot:
       title: 'Scatter Graph'
       description: 'Compare the characteristics of different galaxy types.'
