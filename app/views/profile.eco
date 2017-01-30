@@ -43,7 +43,7 @@
             </div>
             
             <div class="sdss">
-              <span class="count"><%= @surveyCount('sloan') + @surveyCount('ferengi') + @surveyCount('sloan_singleband') %></span>
+              <span class="count"><%= @surveyCount('sloan') + @surveyCount('ferengi') + @surveyCount('sloan_singleband') + @surveyCount('sdss_lost_set') + @surveyCount('ferengi_2') %></span>
               <%- I18n.t 'profile.sdss' %>
               <span class="caption"><%- I18n.t 'profile.sdss_classifications' %></span>
             </div>
@@ -61,7 +61,7 @@
             </div>
 
             <div class="gama">
-              <span class="count"><%= @surveyCount('gama') %></span>
+              <span class="count"><%= @surveyCount('gama09') + @surveyCount('gama12') + @surveyCount('gama15') %></span>
               <%- I18n.t 'profile.gama' %>
               <span class="caption"><%- I18n.t 'profile.gama_classifications' %></span>
             </div>
