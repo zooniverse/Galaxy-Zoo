@@ -1380,6 +1380,7 @@ module.exports =
     sdss_id: 'SDSS ObjectID'
     iau_id: 'IAU designation'
     hubble_id: 'Hubble ID'
+    gama_cataid: 'GAMA CATAID'
     petro_rad: 'Size (Petrosian radius)'
     kron_rad: 'Size (Kron radius)'
     band: 'Bands'
