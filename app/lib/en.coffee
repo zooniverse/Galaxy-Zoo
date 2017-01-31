@@ -1391,7 +1391,7 @@ module.exports =
     sfr: 'Star formation rate'
     skyserver_link: 'SDSS SkyServer'
     legacyserver_link: 'DECaLS SkyViewer'
-    gamaserver_link: 'GAMA Single Object Viewer'
+    gamaserver_link: 'GAMA Object Viewer'
     illustris_link: 'View data on Illustris Project'
     explorer_link: 'Illustris Explorer'
   
