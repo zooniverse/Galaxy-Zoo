@@ -31,8 +31,8 @@ class Examine extends Spine.Controller
   
   render: =>
     @html require('views/examine/examine')(@)
-    if @checkBrowserFeatures()
-      $('#controls').html require('views/examine/fitsviewer')()
+    #if @checkBrowserFeatures()
+    #  $('#controls').html require('views/examine/fitsviewer')()
   
   info: (key, values...) =>
     value = values.shift()

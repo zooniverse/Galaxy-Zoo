@@ -1380,6 +1380,7 @@ module.exports =
     sdss_id: 'SDSS ObjectID'
     iau_id: 'IAU designation'
     hubble_id: 'Hubble ID'
+    gama_cataid: 'GAMA CATAID'
     petro_rad: 'Size (Petrosian radius)'
     kron_rad: 'Size (Kron radius)'
     band: 'Bands'
@@ -1390,7 +1391,7 @@ module.exports =
     sfr: 'Star formation rate'
     skyserver_link: 'SDSS SkyServer'
     legacyserver_link: 'DECaLS SkyViewer'
-    gamaserver_link: 'GAMA Single Object Viewer'
+    gamaserver_link: 'GAMA Object Viewer'
     illustris_link: 'View data on Illustris Project'
     explorer_link: 'Illustris Explorer'
 
