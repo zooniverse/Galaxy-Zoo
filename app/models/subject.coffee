@@ -102,7 +102,7 @@ class Subject extends BaseSubject
     if n <= (0.3)
       @::surveys.gama09.id
     else if n < (0.6)
-      @::surveys.sdss_lost_set.id
+      @::surveys.missing_manga.id
     else
       @::surveys.ferengi_2.id
 
