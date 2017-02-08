@@ -1,5 +1,8 @@
+<%- @info I18n.t('examine.telescope'), I18n.t('examine.sdss') %>
+<%- @info I18n.t('examine.survey'), I18n.t('examine.dr8') %>
 <%- @info I18n.t('examine.right_ascension'), @subject.coords[0].toFixed(4), '&deg;' %>
 <%- @info I18n.t('examine.declination'), @subject.coords[1].toFixed(4), '&deg;' %>
+<%- @info I18n.t('examine.petro_rad'), parseFloat(@subject.metadata.petro_r50_r).toFixed(3), '&quot;' %>
 
 <div class="row">
   <span class="blank"></span>
@@ -8,10 +11,15 @@
 <div class="row">
   <span class="key"></span>
   <span class="value">
+    <a target="_blank" href="http://skyserver.sdss.org/dr9/en/tools/explore/obj.asp?ra=<%= @subject.coords[0] %>&dec=<%= @subject.coords[1] %>"><%- I18n.t 'examine.skyserver_link' %></a>
+  </span>
+</div>
+<div class="row">
+  <span class="key"></span>
+  <span class="value">
     <a target="_blank" href="http://ned.ipac.caltech.edu/cgi-bin/nph-objsearch?search_type=Near+Position+Search&RA=<%= @subject.coords[0] %>&DEC=<%= @subject.coords[1]%>&SR=0.0166666667"><%- I18n.t 'examine.ned_link' %></a>
   </span>
 </div>
-
 <div class="row">
   <span class="key"></span>
   <span class="value">
