@@ -1134,6 +1134,7 @@ module.exports =
     goods_full: 'Hubble'
     sloan_singleband: 'SDSS'
     sdss_lost_set: 'SDSS'
+    missing_manga: 'SDSS'
     decals: 'DECaLS'
     gama: 'GAMA KiDS'
     gama09: 'GAMA'
