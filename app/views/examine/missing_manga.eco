@@ -1,0 +1,20 @@
+<%- @info I18n.t('examine.right_ascension'), @subject.coords[0].toFixed(4), '&deg;' %>
+<%- @info I18n.t('examine.declination'), @subject.coords[1].toFixed(4), '&deg;' %>
+
+<div class="row">
+  <span class="blank"></span>
+</div>
+
+<div class="row">
+  <span class="key"></span>
+  <span class="value">
+    <a target="_blank" href="http://ned.ipac.caltech.edu/cgi-bin/nph-objsearch?search_type=Near+Position+Search&RA=<%= @subject.coords[0] %>&DEC=<%= @subject.coords[1]%>&SR=0.0166666667"><%- I18n.t 'examine.ned_link' %></a>
+  </span>
+</div>
+
+<div class="row">
+  <span class="key"></span>
+  <span class="value">
+    <a target="_blank" href="https://talk.galaxyzoo.org/#/subjects/<%= @subject.zooniverse_id %>"><%- I18n.t 'examine.discuss' %></a>
+  </span>
+</div>
