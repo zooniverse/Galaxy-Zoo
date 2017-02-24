@@ -65,7 +65,7 @@ GamaTree = new DecisionTree 'gama', ->
     @help "These are examples of galaxy morphology that are rare, but still important to note when you see them. You can select more than one option if you see multiple features in the same galaxy. Click to see larger images."
     @checkbox 'None', icon: 'no', examples: 2
     @checkbox 'Ring', icon: 'ring', examples: 6
-    @checkbox 'Lens or arc', icon: 'lens', examples: 4
+    @checkbox 'Lens or arc', icon: 'lens', examples: 3
     @checkbox 'Irregular', icon: 'irregular', examples: 6
     @checkbox 'Other', icon: 'other', examples: 3
     @checkbox 'Dust lane', icon: 'dustlane', examples: 6
