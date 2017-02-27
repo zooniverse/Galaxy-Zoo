@@ -100,7 +100,7 @@ class Subject extends BaseSubject
     else if n < (0.6)
       @::surveys.sdss_lost_set.id
     else
-      @::surveys.ferengi_2.id
+      @::surveys.illustris.id
 
   @next: ->
     if @current
