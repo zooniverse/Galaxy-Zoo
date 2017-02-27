@@ -48,6 +48,9 @@ Config =
       ferengi_2:
         id: ''
         workflowId: ''
+      missing_manga:
+        id: ''
+        workflowId: ''
     subjectCache: 1
     quiz:
       invitationId: '502bfa73516bcb3c600003e9'
@@ -101,6 +104,9 @@ Config =
         id: ''
         workflowId: ''
       ferengi_2:
+        id: ''
+        workflowId: ''
+      missing_manga:
         id: ''
         workflowId: ''
     subjectCache: 5
@@ -158,6 +164,9 @@ Config =
       ferengi_2:
         id: '58417dcb9afc3a007d000001'
         workflowId: '5249cbc33ae74070ed000001'
+      missing_manga:
+        id: '5894999f7d25c7236f000001'
+        workflowId: '50251c3b516bcb6ecb000002'
     subjectCache: 5
     quiz:
       invitationId: '502bfa73516bcb3c600003e9'
@@ -213,6 +222,9 @@ Config =
       ferengi_2:
         id: '58417dcb9afc3a007d000001'
         workflowId: '5249cbc33ae74070ed000001'
+      missing_manga:
+        id: '5894999f7d25c7236f000001'
+        workflowId: '50251c3b516bcb6ecb000002'
     subjectCache: 5
     quiz:
       invitationId: '502bfa73516bcb3c600003e9'
