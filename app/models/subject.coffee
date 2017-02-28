@@ -99,12 +99,12 @@ class Subject extends BaseSubject
   # For iPhone apps there will also be a delay until the updated App is approved.
   @randomSurveyId: ->
     n = Math.random()
-    if n <= (0.3)
+    if n <= (0.333)
       @::surveys.gama09.id
-    else if n < (0.6)
-      @::surveys.missing_manga.id
+    else if n < (0.667)
+      @::surveys.sdss_lost_set.id
     else
-      @::surveys.ferengi_2.id
+      @::surveys.illustris.id
 
   @next: ->
     if @current
