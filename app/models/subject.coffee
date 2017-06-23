@@ -100,7 +100,7 @@ class Subject extends BaseSubject
   @randomSurveyId: ->
     n = Math.random()
     if n <= (0.333)
-      @::surveys.gama09.id
+      @::surveys.gama12.id
     else if n < (0.667)
       @::surveys.sdss_lost_set.id
     else
