@@ -1,21 +1,39 @@
 # Galaxy-Zoo
 
-###Running with Docker
+### Running with Docker
 
-####Local development
+#### Local development
 `docker-compose run --service-ports galaxyzoo npm run start`
 
 runs a local server on `http://localhost:9294/`
 
-####Build and deploy
-Deploy to https://galaxyzoo.org/beta for testing
-`docker-compose run --service-ports galaxyzoo npm run deploy-to-staging`
+#### Build and deploy
 
-Deploy CSS and JavaScript
-`docker-compose run --service-ports galaxyzoo npm run deploy quick`
+First pull the prebuild Docker image (to save yourself some build time) and then
+build your local image:
 
-Full deploy (including images and other assets)
-`docker-compose run --service-ports galaxyzoo npm run deploy`
+```
+docker pull zooniverse/galaxy-zoo
+docker-compose build
+```
+
+Deploy to https://galaxyzoo.org/beta for testing:
+
+```
+docker-compose run galaxyzoo npm run deploy-to-staging
+```
+
+Deploy CSS and JavaScript:
+
+```
+docker-compose run galaxyzoo npm run deploy quick
+```
+
+Full deploy (including images and other assets):
+
+```
+docker-compose run galaxyzoo npm run deploy
+```
 
 ### Installation and Getting Started
 

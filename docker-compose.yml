@@ -1,10 +1,13 @@
-version: '2'
+version: '3.2'
 
 services:
   galaxyzoo:
     build:
       context: ./
       dockerfile: Dockerfile
+      cache_from:
+        - ubuntu:14.04
+        - zooniverse/galaxy-zoo
     ports:
       - 9294:9294
     environment:
