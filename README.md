@@ -17,21 +17,7 @@ Deploy CSS and JavaScript
 Full deploy (including images and other assets)
 `docker-compose run --service-ports galaxyzoo npm run deploy`
 
-### Getting Started
-
-```bash
-git clone https://github.com/zooniverse/Galaxy-Zoo.git
-cd Galaxy-Zoo
-npm install .
-
-./fits/build.rb
-./interactive/build.rb
-
-hem server
-open http://localhost:9294/
-```
-
-### Installation
+### Installation and Getting Started
 
 ```bash
 echo 'PATH="./node_modules/.bin:${PATH}"' >> ~/.bash_profile
