@@ -7,7 +7,6 @@ Favorite = require 'zooniverse/lib/models/favorite'
 User = require 'zooniverse/lib/models/user'
 UserGroup = require 'models/user_group'
 LoginForm = require 'zooniverse/lib/controllers/login_form'
-Analytics = require 'lib/analytics'
 
 class Classify extends Spine.Controller
   elements:
@@ -89,7 +88,7 @@ class Classify extends Spine.Controller
 
     setTimeout =>
       if @subject?.showInverted() then @toggleInverted()
-  
+
   answer: (ev) =>
     answer = $(ev.target).closest '.answer'
     id = answer.data 'id'
@@ -110,20 +109,18 @@ class Classify extends Spine.Controller
   checkBox: (ev) ->
     item = $(ev.target).closest('.checkbox')
     item.toggleClass 'active'
-  
+
   help: (ev) ->
     @helpDialog = new Dialog
       template: 'views/help'
       quickHide: true
       closeButton: true
       callback: -> @el().remove()
-    Analytics.logEvent { 'type' : 'help' , 'subjectID' : Subject.current?.zooniverse_id}
     @helpDialog.question = @classification.question
     @helpDialog.show()
     ev.preventDefault()
 
   restart: (ev) ->
-    Analytics.logEvent { 'type' : 'restart' , 'subjectID' : Subject.current?.zooniverse_id}
     @classification = new Classification subject_id: @subject.id
     @render()
     ev.preventDefault()
@@ -133,16 +130,11 @@ class Classify extends Spine.Controller
       @image.attr 'src', Subject.current.location.standard
     else
       @image.attr 'src', Subject.current.location.inverted
-    Analytics.logEvent { 'type' : 'invert' , 'subjectID' : Subject.current?.zooniverse_id}
     @invertLink.toggleClass 'active'
     @image.toggleClass 'inverted'
 
   toggleFavorite: (ev) ->
     @favoriteLink.toggleClass 'active'
-    if @favoriteLink.hasClass 'active'
-      Analytics.logEvent { 'type' : 'favorite' , 'subjectID' : Subject.current?.zooniverse_id}
-    else
-      Analytics.logEvent { 'type' : 'unfavorite' , 'subjectID' : Subject.current?.zooniverse_id}
     @classification.isFavorited = @favoriteLink.hasClass 'active'
     ev.preventDefault()
 
@@ -151,7 +143,6 @@ class Classify extends Spine.Controller
       template: 'views/example'
       quickHide: true
       closeButton: true
-    Analytics.logEvent { 'type' : 'example' , 'subjectID' : Subject.current?.zooniverse_id}
     dialog.example = $(ev.target).closest('.example-thumbnail').data 'example'
     dialog.show()
     dialog.el().find('.dialog').css 'height', @helpDialog.el().find('.dialog').height()
@@ -171,7 +162,6 @@ class Classify extends Spine.Controller
     !@classification.question
 
   finish: ->
-    Analytics.logEvent { 'type' : 'classify' , 'subjectID' : Subject.current?.zooniverse_id}
     Subject.next()
     @nextSubject()
 

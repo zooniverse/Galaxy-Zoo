@@ -12,7 +12,6 @@ DecalsTree = require 'lib/decals_tree'
 GamaTree = require 'lib/gama_tree'
 IllustrisTree = require 'lib/illustris_tree'
 UserGroup = require 'models/user_group'
-Analytics = require 'lib/analytics'
 
 class Subject extends BaseSubject
   @configure 'Subject', 'zooniverse_id', 'coords', 'location', 'metadata'
@@ -127,7 +126,6 @@ class Subject extends BaseSubject
           @trigger 'fetched'
 
   @show: (id) ->
-    Analytics.logEvent { "type": "view", "subject_id": id }
     Api.get "/projects/galaxy_zoo/subjects/#{ id }"
 
   constructor: ->
