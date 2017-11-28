@@ -1,5 +1,4 @@
 <% UserGroup = require 'models/user_group' %>
-<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 <div id="classify">
   <div class="galaxy">
     <img src="<%= @subject.image() %>" title="<%= @subject.zooniverse_id %>" />
@@ -32,15 +31,6 @@
         </li>
       </ul>
     </div>
-    <% if @renderIntervention : %>
-      <div class="intervention"<% if !@interventionAlreadyPresent : %> style="display:none;"<% end %>>
-        <p id="dismiss-control"><a id="dismiss-intervention" href="javascript:void(0)">&times;</a></p>
-        <p id="intervention-message"><%- I18n.t @messageToUse %></p>
-        <hr/>
-        <p id="intervention-opt-out" data-confirm-needed="true"><a id="opt-out-link" href="javascript:void(0)"><%- I18n.t @optOutLink %></a></p>
-        <p id="intervention-opt-out-cancel" class="intervention-right-button cancel-button-suppress"><a id="cancel-confirmation-panel" href="javascript:void(0)"><%- I18n.t @cancelLink %></a></p>
-      </div>
-    <% end %>
     <div class="directions"><%- I18n.t 'classify.directions' %></div>
 
     <%- require('views/question')(@classification.question) %>

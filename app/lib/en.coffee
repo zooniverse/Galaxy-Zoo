@@ -1145,14 +1145,6 @@ module.exports =
     favorite: 'Favourite'
     invert: 'Invert'
     directions: 'Note: Please always classify the galaxy in the centre of the image.'
-    bgu_ms_exp1_intervention_text_1: "<strong>Please don't stop just yet. You've been extremely helpful so far.</strong><br/>Your classifications are really helping us to understand deep mysteries about galaxies."
-    bgu_ms_exp1_intervention_text_2: "<strong>Thousands of people are taking part in the project every month.</strong><br/>Visit Talk at <a id=\"intervention-talk-link\" href=\"javascript:void(0);\">talk.galaxyzoo.org</a> to discuss the images you see with them."
-    bgu_ms_exp1_intervention_text_3: "We use statistical techniques to get the most from every answer;<br/>So, <strong>you don’t need to worry about being \"right\".</strong> Just tell us what you see."
-    bgu_ms_exp1_intervention_opt_out_link: "Opt out from these messages"
-    bgu_ms_exp1_intervention_opted_out_link_text: "You are now opted out from all future messages like these."
-    bgu_ms_exp1_intervention_confirm_opt_out_text: "These infrequent messages are guided by your efforts and activities on the site.<br/>If you prefer not to see these messages again, please choose \"Permanently opt out\" below."
-    bgu_ms_exp1_intervention_confirm_opt_out_button: "Permanently opt out"
-    bgu_ms_exp1_intervention_opt_out_cancel_link: "Cancel"
 
   help:
     title: 'Help'
