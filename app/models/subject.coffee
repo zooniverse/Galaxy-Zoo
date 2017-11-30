@@ -97,7 +97,7 @@ class Subject extends BaseSubject
   # stop working until a user of the app informs the developer and the developer then has time to fix the error.
   # For iPhone apps there will also be a delay until the updated App is approved.
   @randomSurveyId: ->
-    @::surveys.gama12.id
+    @::surveys.gama15.id
 
   @next: ->
     if @current
