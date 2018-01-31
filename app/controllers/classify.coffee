@@ -49,7 +49,7 @@ class Classify extends Spine.Controller
     else
       @html '''
         <div id="classify" class="down-for-maintenance hidden">
-          <p style="text-align: center;">Galaxy Zoo is currently down for maintenance&mdash;we're looking for more galaxies!</p>
+          <p style="text-align: center;">Thanks to all your hard work we've finished classifying everything for now. Please check back soon!</p>
         </div>
       '''
       setTimeout => @$('#classify').removeClass 'hidden'
